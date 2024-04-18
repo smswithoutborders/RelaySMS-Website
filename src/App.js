@@ -11,33 +11,33 @@ import PageNotFound from "./Pages/PageNotFound";
 import Download from "./Pages/Download";
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
+	const [darkMode, setDarkMode] = useState(false);
 
-  const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
-  };
+	const toggleDarkMode = () => {
+		setDarkMode((prevMode) => !prevMode);
+	};
 
-  const theme = createTheme({
-    palette: {
-      mode: darkMode ? "dark" : "light",
-    },
-  });
+	const theme = createTheme({
+		palette: {
+			mode: darkMode ? "dark" : "light"
+		}
+	});
 
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Router>
-        <Nav darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/help" element={<Help />} />
-          <Route path="/download" element={<Download />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </ThemeProvider>
-  );
+	return (
+		<ThemeProvider theme={theme}>
+			<CssBaseline />
+			<Router>
+				<Nav darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+				<Routes>
+					<Route path="/" element={<Landing />} />
+					<Route path="/help" element={<Help />} />
+					<Route path="/download" element={<Download />} />
+					<Route path="*" element={<PageNotFound />} />
+				</Routes>
+				<Footer />
+			</Router>
+		</ThemeProvider>
+	);
 };
 
 export default App;

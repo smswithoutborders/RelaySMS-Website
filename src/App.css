@@ -1,38 +1,37 @@
 @font-face {
-  font-family: 'Hind';
-  src: url('/public/Hind-Medium.ttf') format('tff'), 
-       url('/public/Hind-Regular.ttf') format('ttf'); 
+	font-family: "Hind";
+	src:
+		url("/public/Hind-Medium.ttf") format("tff"),
+		url("/public/Hind-Regular.ttf") format("ttf");
 }
 
 * {
-  font-family: 'Hind', sans-serif !important;
+	font-family: "Hind", sans-serif !important;
 }
 
 .cards {
-background-image: linear-gradient(-225deg, #3D4E81 0%, #5753C9 48%, #6E7FF3 100%);
+	background-image: linear-gradient(-225deg, #3d4e81 0%, #5753c9 48%, #6e7ff3 100%);
 }
 
-
-
 a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 a:hover {
-  color: #439aec;
+	color: #439aec;
 }
 
 .progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 10px;
-  background: #414F8D;
-  transform-origin: 0%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 10px;
+	background: #414f8d;
+	transform-origin: 0%;
 }
 
 .google-play:hover {
-  color: #1565C0 !important;
+	color: #1565c0 !important;
 }
