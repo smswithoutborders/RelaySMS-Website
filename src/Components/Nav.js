@@ -11,7 +11,7 @@ export default function Nav({ darkMode, toggleDarkMode }) {
         sx={{
           display: { md: "flex", xs: "none", sm: "flex" },
           justifyContent: "end",
-          py: 3,
+          py: 1.5,
           mx: 5,
           right: 0,
           color: "white",

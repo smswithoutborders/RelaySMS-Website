@@ -8,7 +8,7 @@ import {
   Button,
 } from "@mui/material";
 import React from "react";
-import { FaCircleArrowRight } from "react-icons/fa6";
+import { FaCircleArrowRight, FaGooglePlay } from "react-icons/fa6";
 import CardContent from "@mui/material/CardContent";
 import Faqs from "../Components/FAQs";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
@@ -37,7 +37,11 @@ export default function Landing() {
             item
             md={6}
             xs={12}
-            sx={{ justifyContent: "center", display: "flex", mx: "auto" }}
+            sx={{
+              justifyContent: "center",
+              display: "flex",
+              mx: "auto",
+            }}
           >
             <Box
               component="img"
@@ -60,36 +64,44 @@ export default function Landing() {
             dignissim purus eu nunc ullamcorper, vel convallis ante tincidunt.
           </Typography>
           {/*  */}
-          <Grid container>
-            <Grid item md={3} xs={6}>
-              <Box
-                className="goggle-play"
-                component="img"
-                src="/googleplay.png"
-                sx={{ width: "100%" }}
-              />
-            </Grid>
-            <Grid item md={3} xs={6}>
-              <Button
-                component="a"
-                href="/download"
-                variant="contained"
-                sx={{
-                  py: 1.2,
-                  mt: { md: 7.6, xs: 8.5, sm: 15 },
-                  bgcolor: "black",
-                }}
-              >
-                <Box
-                  component="img"
-                  src="/logo.png"
-                  sx={{ width: { md: "17%", xs: "18%" }, mr: 1 }}
-                />
+          <Box display="flex">
+            <Button
+              component="a"
+              href="/download"
+              variant="contained"
+              sx={{
+                py: 1.2,
+                mt: { md: 7.6, xs: 8.5, sm: 15 },
+                bgcolor: "black",
+                color: "whitesmoke",
+                textTransform: "none",
+              }}
+            >
+              <FaGooglePlay size="20px" />
 
-                <Typography variant="body2">Desktop App</Typography>
-              </Button>
-            </Grid>
-          </Grid>
+              <Typography variant="body2" sx={{ pl: 1 }}>
+                Andriod App
+              </Typography>
+            </Button>
+
+            <Button
+              component="a"
+              href="/download"
+              variant="contained"
+              sx={{
+                py: 1.2,
+                mt: { md: 7.6, xs: 8.5, sm: 15 },
+                bgcolor: "black",
+                color: "whitesmoke",
+                textTransform: "none",
+                mx: 2,
+              }}
+            >
+              <Typography variant="body2" sx={{ pl: 1 }}>
+                Desktop App
+              </Typography>
+            </Button>
+          </Box>
         </Grid>
       </Grid>
       {/*  */}
@@ -141,11 +153,11 @@ export default function Landing() {
           <Grid item md={4} sm={6} xs={12}>
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <Box
-                className="cards"
                 sx={{
                   p: { md: 5, xs: 3 },
                   borderRadius: 5,
                   align: "center",
+                  bgcolor: "#404F88",
                 }}
               >
                 <Typography variant="h4" sx={{ fontWeight: 700, py: 2 }}>
@@ -170,11 +182,11 @@ export default function Landing() {
           <Grid item md={4} sm={6} xs={12} my="auto">
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <Box
-                className="cards"
                 sx={{
                   p: { md: 5, xs: 3 },
                   borderRadius: 5,
                   align: "center",
+                  bgcolor: "#404F88",
                 }}
               >
                 <Typography variant="h4" sx={{ fontWeight: 700, py: 2 }}>
@@ -200,11 +212,11 @@ export default function Landing() {
           <Grid item md={4} sm={6} xs={12} my="auto">
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <Box
-                className="cards"
                 sx={{
                   p: { md: 5, xs: 3 },
                   borderRadius: 5,
                   align: "center",
+                  bgcolor: "#404F88",
                 }}
               >
                 <Typography variant="h4" sx={{ fontWeight: 700, py: 1 }}>

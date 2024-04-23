@@ -20,7 +20,7 @@ a {
 }
 
 a:hover {
-  color: #439aec;
+  color: #484848;
 }
 
 .progress-bar {
@@ -33,6 +33,10 @@ a:hover {
   transform-origin: 0%;
 }
 
-.google-play:hover {
+/* .google-play:hover {
   color: #1565C0 !important;
+} */
+
+button:hover {
+  background-color: #383939 !important;
 }
