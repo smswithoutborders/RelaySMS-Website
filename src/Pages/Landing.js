@@ -1,12 +1,4 @@
-import {
-  Box,
-  Card,
-  CardMedia,
-  Grid,
-  Typography,
-  Avatar,
-  Button,
-} from "@mui/material";
+import { Box, Card, CardMedia, Grid, Typography, Avatar, Button } from "@mui/material";
 import React from "react";
 import { FaCircleArrowRight, FaGooglePlay } from "react-icons/fa6";
 import CardContent from "@mui/material/CardContent";
@@ -182,11 +174,11 @@ export default function Landing() {
           <Grid item md={4} sm={6} xs={12} my="auto">
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <Box
+                className="cards"
                 sx={{
                   p: { md: 5, xs: 3 },
                   borderRadius: 5,
                   align: "center",
-                  bgcolor: "#404F88",
                 }}
               >
                 <Typography variant="h4" sx={{ fontWeight: 700, py: 2 }}>
@@ -198,25 +190,24 @@ export default function Landing() {
                   sx={{ width: { md: "100%", xs: "80%" }, py: 4 }}
                 />
 
-                <Typography variant="body1">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  dignissim purus eu nunc ullamcorper, vel convallis ante
-                  tincidunt. Vivamus lacinia, lacus nec tristique bibendum,
-                  velit libero consequat purus, ut finibus ex lectus eget nisi.
-                  Nulla facilisi.
-                </Typography>
-              </Box>
-            </motion.div>
-          </Grid>
+								<Typography variant="body1">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu
+									nunc ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec
+									tristique bibendum, velit libero consequat purus, ut finibus ex lectus eget nisi.
+									Nulla facilisi.
+								</Typography>
+							</Box>
+						</motion.div>
+					</Grid>
 
           <Grid item md={4} sm={6} xs={12} my="auto">
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <Box
+                className="cards"
                 sx={{
                   p: { md: 5, xs: 3 },
                   borderRadius: 5,
                   align: "center",
-                  bgcolor: "#404F88",
                 }}
               >
                 <Typography variant="h4" sx={{ fontWeight: 700, py: 1 }}>
@@ -228,195 +219,168 @@ export default function Landing() {
                   sx={{ width: { md: "50%", xs: "80%" }, py: 4 }}
                 />
 
-                <Typography variant="body1">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  dignissim purus eu nunc ullamcorper, vel convallis ante
-                  tincidunt. Vivamus lacinia, lacus nec tristique bibendum,
-                  velit libero consequat purus, ut finibus ex lectus eget nisi.
-                  Nulla facilisi.
-                </Typography>
-              </Box>
-            </motion.div>
-          </Grid>
-        </Grid>
-      </Box>
-      {/*  */}
-      {/* Rlay Map */}
-      <Box sx={{ bgcolor: "white", px: { md: 15, sm: 10, xs: 3 } }}>
-        <Grid container rowSpacing={4} sx={{ py: { md: 10, xs: 10 } }}>
-          <Grid item md={5} my="auto">
-            <Typography
-              variant="h3"
-              sx={{
-                fontWeight: 700,
-                fontSize: { md: "48px", xs: "33px" },
-                color: "black",
-              }}
-            >
-              RelaySMS is actively used in over 60 countries.
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                color: "black",
-                py: 3,
-              }}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              dignissim purus eu nunc ullamcorper, vel convallis ante tincidunt.
-            </Typography>
-          </Grid>
-          <Grid
-            item
-            md={7}
-            sx={{ justifyContent: "center", display: "flex", mx: "auto" }}
-          >
-            <Box
-              component="img"
-              src="/map.png"
-              sx={{ width: "100%", borderRadius: "20px" }}
-            />
-          </Grid>
-        </Grid>
-      </Box>
-      {/*  */}
-      {/* Video */}
-      <Box sx={{ px: { md: 15, sm: 10, xs: 3 }, my: { md: 2, xs: 10 } }}>
-        <Box>
-          <Grid
-            container
-            rowSpacing={4}
-            columnSpacing={4}
-            sx={{ py: { md: 15, xs: 10 } }}
-          >
-            <Grid
-              item
-              md={7}
-              sx={{
-                justifyContent: "center",
-                display: "flex",
-                mx: "auto",
-                width: "100%",
-              }}
-            >
-              <iframe
-                width="860"
-                height="415"
-                src="https://www.youtube.com/embed/NLp4VSYGR4Y?si=EmNrXJKsrkIuOEPs"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </Grid>
-            <Grid item md={5} my="auto">
-              <Typography
-                variant="h3"
-                sx={{ fontWeight: 700, fontSize: { md: "48px", xs: "33px" } }}
-              >
-                Get familiar with RelaySMS
-              </Typography>
-            </Grid>
-          </Grid>
-        </Box>
-      </Box>
-      {/*  */}
-      {/* What's New */}
-      <Box sx={{ bgcolor: "#8789C0", p: { md: 3, xs: 2 } }}>
-        <Grid
-          container
-          rowSpacing={4}
-          columnSpacing={4}
-          sx={{ px: { md: 13, sm: 10, xs: 2 }, my: { md: 2, xs: 5 }, pb: 8 }}
-        >
-          <Grid item md={12} xs={12}>
-            <Typography
-              variant="h5"
-              sx={{ fontWeight: 700, py: 2, color: "white" }}
-            >
-              Whats new on RelaySMS ?
-            </Typography>
-          </Grid>
-          <Grid item md={4} sm={6} xs={12}>
-            <Card sx={{ maxWidth: 400 }}>
-              <CardMedia
-                sx={{ height: 200 }}
-                image="/reliability.jpg"
-                title="reliability"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  Reliability Of Gateway Clients In Smswithoutborders
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Gateway Client in SMSWithoutBorders is key in routing messages
-                  from SMS to online platforms. The Gateway Client listens for
-                  messages and routes them to the Gateway server, which
-                  publishes ...{" "}
-                  <a
-                    style={{ color: "#8AC1EE" }}
-                    href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Read more
-                  </a>
-                </Typography>
-              </CardContent>
-              <CardMedia sx={{ display: "flex", px: 2, pb: 2 }}>
-                <Avatar />
-                <Typography variant="body2" sx={{ p: 1 }}>
-                  Aysha Musa
-                </Typography>
-              </CardMedia>
-            </Card>
-          </Grid>
-          <Grid item md={4} sm={6} xs={12}>
-            <Card sx={{ maxWidth: 400 }}>
-              <CardMedia
-                sx={{ height: 200 }}
-                image="/resilience.jpg"
-                title="resilience"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  Resilience Of Gateway Clients In Smswithoutborders
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Gateway Client in SMSWithoutBorders is key in routing messages
-                  from SMS to online platforms. The Gateway Client listens for
-                  messages and routes them to the Gateway server, which
-                  publishes ...{" "}
-                  <a
-                    style={{ color: "#8AC1EE" }}
-                    href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Read more
-                  </a>
-                </Typography>
-              </CardContent>
-              <CardMedia sx={{ display: "flex", px: 2, pb: 2 }}>
-                <Avatar />
-                <Typography variant="body2" sx={{ p: 1 }}>
-                  Aysha Musa
-                </Typography>
-              </CardMedia>
-            </Card>
-          </Grid>
-        </Grid>
-      </Box>
-      {/*  */}
-      {/* FAQS */}
-      <Box sx={{ px: { md: 15, sm: 10, xs: 3 }, my: { md: 15, xs: 10 } }}>
-        <Typography variant="h5" sx={{ fontWeight: 700, py: 4 }}>
-          FAQs
-        </Typography>
+								<Typography variant="body1">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu
+									nunc ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec
+									tristique bibendum, velit libero consequat purus, ut finibus ex lectus eget nisi.
+									Nulla facilisi.
+								</Typography>
+							</Box>
+						</motion.div>
+					</Grid>
+				</Grid>
+			</Box>
+			{/*  */}
+			{/* Rlay Map */}
+			<Box sx={{ bgcolor: "white", px: { md: 15, sm: 10, xs: 3 } }}>
+				<Grid container rowSpacing={4} sx={{ py: { md: 10, xs: 10 } }}>
+					<Grid item md={5} my="auto">
+						<Typography
+							variant="h3"
+							sx={{
+								fontWeight: 700,
+								fontSize: { md: "48px", xs: "33px" },
+								color: "black"
+							}}
+						>
+							RelaySMS is actively used in over 60 countries.
+						</Typography>
+						<Typography
+							variant="body1"
+							sx={{
+								color: "black",
+								py: 3
+							}}
+						>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
+							ullamcorper, vel convallis ante tincidunt.
+						</Typography>
+					</Grid>
+					<Grid item md={7} sx={{ justifyContent: "center", display: "flex", mx: "auto" }}>
+						<Box component="img" src="/map.png" sx={{ width: "100%", borderRadius: "20px" }} />
+					</Grid>
+				</Grid>
+			</Box>
+			{/*  */}
+			{/* Video */}
+			<Box sx={{ px: { md: 15, sm: 10, xs: 3 }, my: { md: 2, xs: 10 } }}>
+				<Box>
+					<Grid container rowSpacing={4} columnSpacing={4} sx={{ py: { md: 15, xs: 10 } }}>
+						<Grid
+							item
+							md={7}
+							sx={{
+								justifyContent: "center",
+								display: "flex",
+								mx: "auto",
+								width: "100%"
+							}}
+						>
+							<iframe
+								width="860"
+								height="415"
+								src="https://www.youtube.com/embed/NLp4VSYGR4Y?si=EmNrXJKsrkIuOEPs"
+								title="YouTube video player"
+								frameBorder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								allowfullscreen
+							></iframe>
+						</Grid>
+						<Grid item md={5} my="auto">
+							<Typography
+								variant="h3"
+								sx={{ fontWeight: 700, fontSize: { md: "48px", xs: "33px" } }}
+							>
+								Get familiar with RelaySMS
+							</Typography>
+						</Grid>
+					</Grid>
+				</Box>
+			</Box>
+			{/*  */}
+			{/* What's New */}
+			<Box sx={{ bgcolor: "#8789C0", p: { md: 3, xs: 2 } }}>
+				<Grid
+					container
+					rowSpacing={4}
+					columnSpacing={4}
+					sx={{ px: { md: 13, sm: 10, xs: 2 }, my: { md: 2, xs: 5 }, pb: 8 }}
+				>
+					<Grid item md={12} xs={12}>
+						<Typography variant="h5" sx={{ fontWeight: 700, py: 2, color: "white" }}>
+							Whats new on RelaySMS ?
+						</Typography>
+					</Grid>
+					<Grid item md={4} sm={6} xs={12}>
+						<Card sx={{ maxWidth: 400 }}>
+							<CardMedia sx={{ height: 200 }} image="/reliability.jpg" title="reliability" />
+							<CardContent>
+								<Typography gutterBottom variant="h5" component="div">
+									Reliability Of Gateway Clients In Smswithoutborders
+								</Typography>
+								<Typography variant="body2" color="text.secondary">
+									Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online
+									platforms. The Gateway Client listens for messages and routes them to the Gateway
+									server, which publishes ...{" "}
+									<a
+										style={{ color: "#8AC1EE" }}
+										href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders"
+										target="_blank"
+										rel="noreferrer"
+									>
+										Read more
+									</a>
+								</Typography>
+							</CardContent>
+							<CardMedia sx={{ display: "flex", px: 2, pb: 2 }}>
+								<Avatar />
+								<Typography variant="body2" sx={{ p: 1 }}>
+									Aysha Musa
+								</Typography>
+							</CardMedia>
+						</Card>
+					</Grid>
+					<Grid item md={4} sm={6} xs={12}>
+						<Card sx={{ maxWidth: 400 }}>
+							<CardMedia sx={{ height: 200 }} image="/resilience.jpg" title="resilience" />
+							<CardContent>
+								<Typography gutterBottom variant="h5" component="div">
+									Resilience Of Gateway Clients In Smswithoutborders
+								</Typography>
+								<Typography variant="body2" color="text.secondary">
+									Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online
+									platforms. The Gateway Client listens for messages and routes them to the Gateway
+									server, which publishes ...{" "}
+									<a
+										style={{ color: "#8AC1EE" }}
+										href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders"
+										target="_blank"
+										rel="noreferrer"
+									>
+										Read more
+									</a>
+								</Typography>
+							</CardContent>
+							<CardMedia sx={{ display: "flex", px: 2, pb: 2 }}>
+								<Avatar />
+								<Typography variant="body2" sx={{ p: 1 }}>
+									Aysha Musa
+								</Typography>
+							</CardMedia>
+						</Card>
+					</Grid>
+				</Grid>
+			</Box>
+			{/*  */}
+			{/* FAQS */}
+			<Box sx={{ px: { md: 15, sm: 10, xs: 3 }, my: { md: 15, xs: 10 } }}>
+				<Typography variant="h5" sx={{ fontWeight: 700, py: 4 }}>
+					FAQs
+				</Typography>
 
-        <Faqs />
-      </Box>
-      {/*  */}
-    </Box>
-  );
+				<Faqs />
+			</Box>
+			{/*  */}
+		</Box>
+	);
 }
