@@ -9,6 +9,7 @@ import Landing from "./Pages/Landing";
 import Help from "./Pages/Help";
 import PageNotFound from "./Pages/PageNotFound";
 import Download from "./Pages/Download";
+import MobileNav from "./Components/MobileNav";
 
 const App = () => {
 	const [darkMode, setDarkMode] = useState(true);
@@ -28,6 +29,7 @@ const App = () => {
 			<CssBaseline />
 			<Router>
 				<Nav darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+				<MobileNav darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 				<Routes>
 					<Route path="/" element={<Landing />} />
 					<Route path="/help" element={<Help />} />

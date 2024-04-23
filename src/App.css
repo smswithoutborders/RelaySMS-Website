@@ -32,10 +32,6 @@ a:hover {
 	transform-origin: 0%;
 }
 
-/* .google-play:hover {
-  color: #1565C0 !important;
-} */
-
 button:hover {
-  background-color: #383939 !important;
+	background-color: #383939 !important;
 }
