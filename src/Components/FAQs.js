@@ -34,14 +34,12 @@ export default function Faqs() {
 					id="panel1-header"
 				>
 					<Typography variant="body1" sx={{ fontWeight: 700 }}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Is RelaySMS same as SMSWithoutBorders?
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
 					<Typography>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-						ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec tristique
-						bibendum, velit libero consequat purus, ut finibus ex lectus eget nisi. Nulla facilisi.
+						RelaySMS is one of the biggest tools provided by SMSWithoutBorders
 					</Typography>
 				</AccordionDetails>
 			</Accordion>
@@ -52,36 +50,23 @@ export default function Faqs() {
 					id="panel2-header"
 				>
 					<Typography variant="body1" sx={{ fontWeight: 700 }}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Is RelaySMS free?
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
 					<Typography>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-						ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec tristique
-						bibendum, velit libero consequat purus, ut finibus ex lectus eget nisi. Nulla facilisi.
+						Yes you can get RelaySMS app for free{" "}
+						<span style={{ color: "skyblue" }}>
+							{" "}
+							<a href="/download" target="_blank">
+								download here
+							</a>
+						</span>
+						, even our code base is open source
 					</Typography>
 				</AccordionDetails>
 			</Accordion>
 			{/*  */}
-			<Accordion>
-				<AccordionSummary
-					expandIcon={<ExpandMoreIcon />}
-					aria-controls="panel2-content"
-					id="panel2-header"
-				>
-					<Typography variant="body1" sx={{ fontWeight: 700 }}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					</Typography>
-				</AccordionSummary>
-				<AccordionDetails>
-					<Typography>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-						ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec tristique
-						bibendum, velit libero consequat purus, ut finibus ex lectus eget nisi. Nulla facilisi.
-					</Typography>
-				</AccordionDetails>
-			</Accordion>
 		</Box>
 	);
 }

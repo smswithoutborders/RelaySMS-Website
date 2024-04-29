@@ -33,7 +33,7 @@ function MobileNav({ darkMode, toggleDarkMode }) {
 			>
 				<Box display="flex">
 					<Typography variant="body1" sx={{ fontWeight: 600, px: 2 }}>
-						Deku SMS
+						RelaySMS
 					</Typography>
 				</Box>{" "}
 				<Toolbar disableGutters>
@@ -67,14 +67,34 @@ function MobileNav({ darkMode, toggleDarkMode }) {
 							}}
 						>
 							<MenuItem onClick={handleCloseNavMenu}>
-								<Typography textAlign="center">Help</Typography>
+								<Typography
+									textAlign="center"
+									component="a"
+									href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+									target="_blank"
+									rel="noreferrer noopener"
+								>
+									Help
+								</Typography>
 							</MenuItem>
 
-							<MenuItem onClick={handleCloseNavMenu}>
-								<Typography textAlign="center">Documentations</Typography>
+							<MenuItem
+								onClick={handleCloseNavMenu}
+								component="a"
+								href="https://github.com/smswithoutborders/"
+								target="_blank"
+								rel="noreferrer noopener"
+							>
+								<Typography textAlign="center">Developers</Typography>
 							</MenuItem>
 
-							<MenuItem onClick={handleCloseNavMenu}>
+							<MenuItem
+								onClick={handleCloseNavMenu}
+								component="a"
+								href="https://blog.smswithoutborders.com/"
+								target="_blank"
+								rel="noreferrer noopener"
+							>
 								<Typography textAlign="center">Blogs</Typography>
 							</MenuItem>
 

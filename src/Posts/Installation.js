@@ -1,30 +1,15 @@
-import { Box, ListItemButton, Typography, List } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 
 export default function Installation() {
 	return (
 		<Box>
 			<Typography variant="h4" sx={{ fontWeight: 700, pb: 5 }}>
-				Installing RelaySMS
+				Download & Install App
 			</Typography>
-			<Typography variant="body1">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-				ullamcorper, vel convallis ante tincidunt.
-			</Typography>
-			<List>
-				<ListItemButton>Andriod</ListItemButton>
-				<ListItemButton>iOS</ListItemButton>
-				<ListItemButton>Linux</ListItemButton>
-				<ListItemButton>Windows</ListItemButton>
-				<ListItemButton>Mac</ListItemButton>
-			</List>
 			<Box>
-				<Typography variant="h6" sx={{ fontWeight: 700, pb: 5 }}>
-					Android
-				</Typography>
 				<Typography variant="body1">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-					ullamcorper, vel convallis ante tincidunt.
+					Download and Install SWOB from Google Play Store , GitHub or build from source
 				</Typography>
 				<Typography variant="h6" sx={{ fontWeight: 700, pb: 5 }}>
 					How to get started

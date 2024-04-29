@@ -31,21 +31,25 @@ export default function Nav({ darkMode, toggleDarkMode }) {
 					>
 						<a href="/">
 							<Typography sx={{ mx: 4 }} textAlign={"center"}>
-								Overview
+								Home
 							</Typography>
 						</a>
-						<a href="/help">
+						<a
+							href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+							target="_blank"
+							rel="noreferrer noopener"
+						>
 							<Typography sx={{ mx: 4 }} textAlign={"center"}>
 								Help
 							</Typography>
 						</a>
 						<a href="https://developers.smswithoutborders.com/" target="_blank" rel="noreferrer">
-							<Typography sx={{ mr: 4 }} textAlign={"center"}>
-								Documentations
+							<Typography sx={{ mx: 4 }} textAlign={"center"}>
+								Developers
 							</Typography>
 						</a>
 						<a href="https://blog.smswithoutborders.com/" target="_blank" rel="noreferrer">
-							<Typography sx={{ mr: 4 }} textAlign={"center"}>
+							<Typography sx={{ mx: 4 }} textAlign={"center"}>
 								Blog
 							</Typography>
 						</a>

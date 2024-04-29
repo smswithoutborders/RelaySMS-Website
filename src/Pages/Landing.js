@@ -11,7 +11,7 @@ export default function Landing() {
 		<Box>
 			<motion.div className="progress-bar" style={{ scaleX: scrollYProgress }} />
 			{/* Banner Page */}
-			<Grid container sx={{ px: { md: 15, sm: 10, xs: 3 }, my: { md: 0, xs: 10 } }}>
+			<Grid container rowSpacing={3} sx={{ px: { md: 15, sm: 10, xs: 3 }, my: { md: 0, xs: 10 } }}>
 				<AnimatePresence
 					transition={{
 						ease: "linear",
@@ -22,6 +22,7 @@ export default function Landing() {
 					<Grid
 						item
 						md={6}
+						sm={12}
 						xs={12}
 						sx={{
 							justifyContent: "center",
@@ -29,21 +30,30 @@ export default function Landing() {
 							mx: "auto"
 						}}
 					>
-						<Box component="img" src="/phones.png" sx={{ width: { md: "80%", xs: "100%" } }} />
+						<Box
+							component="img"
+							src="/nerd1.png"
+							sx={{ width: { md: "100%", xs: "100%", sm: "100%" } }}
+						/>
 					</Grid>
 				</AnimatePresence>
-				<Grid item md={6} xs={12} my="auto">
-					<Box component="img" src="/logo.png" sx={{ width: { md: "10%", xs: "18%" }, mb: 4 }} />
+				<Grid item md={6} sm={12} xs={12} my="auto">
+					<Box
+						component="img"
+						src="/logo.png"
+						sx={{ width: { md: "10%", sm: "10%", xs: "15%" }, mb: 4 }}
+					/>
 					<Typography variant="h3" sx={{ fontWeight: 700 }}>
-						Communicate offline with online platforms
+						Stay connected with RelaySMS
 					</Typography>
-					<Typography variant="h5" sx={{ mt: 7 }}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-						ullamcorper, vel convallis ante tincidunt.
+					<Typography variant="h5" sx={{ mt: 5 }}>
+						Open-source tool that enables you to communicate with various online services using
+						regular SMS text messages.
 					</Typography>
 					{/*  */}
 					<Box display="flex">
 						<Button
+							size="large"
 							component="a"
 							href="/download"
 							variant="contained"
@@ -63,6 +73,7 @@ export default function Landing() {
 						</Button>
 
 						<Button
+							size="large"
 							component="a"
 							href="/download"
 							variant="contained"
@@ -92,9 +103,13 @@ export default function Landing() {
 				<Typography variant="h5" sx={{ p: { md: 5, xs: 2 } }}>
 					By setting up your account while you have an internet connection, you can continue to
 					communicate later using SMS when your no longer have internet access. In the case where
-					you have no stored token, communicate using Relay Bridges.
+					you have no stored token, communicate using Relay bridges.
 				</Typography>
-				<a href="/help">
+				<a
+					href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+					target="_blank"
+					rel="noreferrer noopener"
+				>
 					<Typography variant="body1" sx={{ p: 2, textDecoration: "underline" }}>
 						Getting Started <FaCircleArrowRight size="20px" style={{ rotate: "-30deg" }} />
 					</Typography>
@@ -131,9 +146,8 @@ export default function Landing() {
 								/>
 
 								<Typography variant="body1">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu
-									nunc ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec
-									tristique bibendum.
+									RelaySMS transmits messages in securely encrypted formats. This secures every
+									communication from being accessed by intermediate parties while in transit.
 								</Typography>
 							</Box>
 						</motion.div>
@@ -158,9 +172,8 @@ export default function Landing() {
 								/>
 
 								<Typography variant="body1">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu
-									nunc ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec
-									tristique bibendum.
+									Every component of RelaySMS is open sourced! From the mobile app to the routing
+									mechanisms we use to get your SMS messages to reach your intended platforms
 								</Typography>
 							</Box>
 						</motion.div>
@@ -186,9 +199,8 @@ export default function Landing() {
 								/>
 
 								<Typography variant="body1">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu
-									nunc ullamcorper, vel convallis ante tincidunt. Vivamus lacinia, lacus nec
-									tristique bibendum.
+									RelaySMS is built to work in decentralized models. Anyone can host a RelaySMS
+									server. It’s as easy as understanding how to use it
 								</Typography>
 							</Box>
 						</motion.div>
@@ -209,16 +221,6 @@ export default function Landing() {
 							}}
 						>
 							RelaySMS is actively used in over 60 countries.
-						</Typography>
-						<Typography
-							variant="body1"
-							sx={{
-								color: "black",
-								py: 3
-							}}
-						>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-							ullamcorper, vel convallis ante tincidunt.
 						</Typography>
 					</Grid>
 					<Grid item md={7} sx={{ justifyContent: "center", display: "flex", mx: "auto" }}>
@@ -272,7 +274,7 @@ export default function Landing() {
 					sx={{ px: { md: 13, sm: 10, xs: 2 }, my: { md: 2, xs: 1 }, pb: 8 }}
 				>
 					<Grid item md={12} xs={12}>
-						<Typography variant="h5" sx={{ fontWeight: 700, py: 2, color: "white" }}>
+						<Typography variant="h5" sx={{ fontWeight: 700, py: 2 }}>
 							Whats new on RelaySMS ?
 						</Typography>
 					</Grid>
