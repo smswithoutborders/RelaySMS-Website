@@ -12,8 +12,10 @@
 		"@testing-library/react": "^13.0.0",
 		"@testing-library/user-event": "^13.2.1",
 		"framer-motion": "^11.1.0",
+		"i18next": "^23.11.5",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
+		"react-i18next": "^14.1.2",
 		"react-icons": "^5.1.0",
 		"react-router-dom": "^6.22.3",
 		"react-scripts": "5.0.1",
@@ -45,6 +47,7 @@
 		]
 	},
 	"devDependencies": {
+		"@babel/plugin-proposal-private-property-in-object": "^7.0.0",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-formatter-summary": "^1.1.0",
@@ -53,8 +56,7 @@
 		"eslint-plugin-react": "^7.34.1",
 		"husky": "^9.0.11",
 		"lint-staged": "^15.2.2",
-		"prettier": "^3.2.5",
-		"@babel/plugin-proposal-private-property-in-object": "^7.0.0"
+		"prettier": "^3.2.5"
 	},
 	"lint-staged": {
 		"*.{js,jsx}": "eslint --cache --fix",
