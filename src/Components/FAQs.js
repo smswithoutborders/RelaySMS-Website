@@ -33,7 +33,7 @@ export default function Faqs() {
 					aria-controls="panel1-content"
 					id="panel1-header"
 				>
-					<Typography variant="body1" sx={{ fontWeight: 700 }}>
+					<Typography variant="body1" sx={{ fontWeight: 800 }}>
 						Is RelaySMS same as SMSWithoutBorders?
 					</Typography>
 				</AccordionSummary>

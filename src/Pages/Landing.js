@@ -1,6 +1,6 @@
-import { Box, Card, CardMedia, Grid, Typography, Avatar, Button } from "@mui/material";
 import React from "react";
-import { FaCircleArrowRight, FaGooglePlay } from "react-icons/fa6";
+import { Box, Card, CardMedia, Grid, Typography, Avatar, Button } from "@mui/material";
+import { FaCircleArrowRight } from "react-icons/fa6";
 import CardContent from "@mui/material/CardContent";
 import Faqs from "../Components/FAQs";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
@@ -44,11 +44,10 @@ export default function Landing() {
 						sx={{ width: { md: "10%", sm: "10%", xs: "15%" }, mb: 4 }}
 					/>
 					<Typography variant="h3" sx={{ fontWeight: 700 }}>
-						Stay connected with RelaySMS
+						Keep talking with RelaySMS
 					</Typography>
 					<Typography variant="h5" sx={{ mt: 5 }}>
-						Open-source tool that enables you to communicate with various online services using
-						regular SMS text messages.
+						Send Emails, Posts, and Messages securely via SMS.
 					</Typography>
 					{/*  */}
 					<Box display="flex">
@@ -65,7 +64,11 @@ export default function Landing() {
 								textTransform: "none"
 							}}
 						>
-							<FaGooglePlay size="20px" />
+							<img
+								src="/playstore.svg"
+								alt="Google Play Store"
+								style={{ width: "20px", height: "20px" }}
+							/>
 
 							<Typography variant="body2" sx={{ pl: 1 }}>
 								Andriod App
@@ -94,17 +97,75 @@ export default function Landing() {
 				</Grid>
 			</Grid>
 			{/*  */}
-			{/* About Section */}
-			<Box textAlign="center" sx={{ pt: { md: 20, xs: 7 }, px: { md: 30, xs: 3 } }}>
+			{/* How it works */}
+			<Box textAlign="center" sx={{ pt: { md: 10, xs: 7 }, px: { md: 30, xs: 3 } }}>
 				<Typography variant="h4" sx={{ fontWeight: 700, fontSize: { xs: "25px", md: "33px" } }}>
-					With RelaySMS, you can send emails, tweet and chat on telegram without an active internet
-					connection.
+					How It Works
 				</Typography>
-				<Typography variant="h5" sx={{ p: { md: 5, xs: 2 } }}>
-					By setting up your account while you have an internet connection, you can continue to
-					communicate later using SMS when your no longer have internet access. In the case where
-					you have no stored token, communicate using Relay bridges.
-				</Typography>
+
+				<Grid container spacing={2} justifyContent="center" alignItems="center">
+					<Grid item xs={12} md={6}>
+						<Typography variant="h5" sx={{ p: { md: 5, xs: 2 } }}>
+							Grant permission for RelaySMS to send emails, posts, or messages on your behalf.
+						</Typography>
+					</Grid>
+					<Grid item xs={12} md={6}>
+						{/* Image goes here */}
+						<img
+							src="images/accounts.svg"
+							alt="points"
+							style={{ maxWidth: "100%", height: "auto" }}
+						/>
+					</Grid>
+				</Grid>
+				<Grid container spacing={2} justifyContent="center" alignItems="center">
+					<Grid item xs={12} md={6}>
+						{/* Image goes here */}
+						<img
+							src="images/accounts.svg"
+							alt="points"
+							style={{ maxWidth: "100%", height: "auto" }}
+						/>
+					</Grid>
+					<Grid item xs={12} md={6}>
+						<Typography variant="h5" sx={{ p: { md: 5, xs: 2 } }}>
+							Compose your email, post, or message, and it will be automatically sent using your
+							default SMS app.
+						</Typography>
+					</Grid>
+				</Grid>
+
+				<Grid container spacing={2} justifyContent="center" alignItems="center">
+					<Grid item xs={12} md={6}>
+						<Typography variant="h5" sx={{ p: { md: 5, xs: 2 } }}>
+							Your content reaches RelaySMS access points and is published on your behalf.
+						</Typography>
+					</Grid>
+					<Grid item xs={12} md={6}>
+						{/* Image goes here */}
+						<img
+							src="images/mobile-app.svg"
+							alt="point2"
+							style={{ maxWidth: "100%", height: "auto" }}
+						/>
+					</Grid>
+				</Grid>
+
+				<Grid container spacing={2} justifyContent="center" alignItems="center">
+					<Grid item xs={12} md={6}>
+						{/* Image goes here */}
+						<img
+							src="images/signup-illustration.svg"
+							alt="point3"
+							style={{ maxWidth: "100%", height: "auto" }}
+						/>
+					</Grid>
+					<Grid item xs={12} md={6}>
+						<Typography variant="h5" sx={{ p: { md: 5, xs: 2 } }}>
+							Receive a response via SMS indicating success or failure.
+						</Typography>
+					</Grid>
+				</Grid>
 				<a
 					href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
 					target="_blank"
@@ -115,101 +176,26 @@ export default function Landing() {
 					</Typography>
 				</a>
 			</Box>
+
 			{/*  */}
 			{/* How Relay Works */}
 			<Box
 				sx={{
-					px: { md: 20, xs: 3 },
+					px: { md: 10, xs: 3 },
 					// bgcolor: "#3C3744",
 					color: "white",
-					py: { md: 24, xs: 10 }
+					py: { md: 5, xs: 10 }
 				}}
 			>
 				<Grid container rowSpacing={6} columnSpacing={6} alignItems="center" align="center">
-					<Grid item md={4} sm={6} xs={12}>
-						<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-							<Box
-								sx={{
-									p: { md: 5, xs: 3 },
-									borderRadius: 3,
-									align: "center",
-									bgcolor: "#404F88"
-								}}
-							>
-								<Typography variant="h4" sx={{ fontWeight: 700, py: 2 }}>
-									Secure
-								</Typography>
-								<Box
-									component="img"
-									src="/secure.svg"
-									sx={{ width: { md: "45%", xs: "80%" }, py: 4 }}
-								/>
-
-								<Typography variant="body1">
-									RelaySMS transmits messages in securely encrypted formats. This secures every
-									communication from being accessed by intermediate parties while in transit.
-								</Typography>
-							</Box>
-						</motion.div>
-					</Grid>
-					<Grid item md={4} sm={6} xs={12} my="auto">
-						<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-							<Box
-								sx={{
-									p: { md: 5, xs: 3 },
-									borderRadius: 3,
-									align: "center",
-									bgcolor: "#404F88"
-								}}
-							>
-								<Typography variant="h4" sx={{ fontWeight: 700, py: 2 }}>
-									Open Source
-								</Typography>
-								<Box
-									component="img"
-									src="/open.svg"
-									sx={{ width: { md: "100%", xs: "80%" }, py: 4 }}
-								/>
-
-								<Typography variant="body1">
-									Every component of RelaySMS is open sourced! From the mobile app to the routing
-									mechanisms we use to get your SMS messages to reach your intended platforms
-								</Typography>
-							</Box>
-						</motion.div>
-					</Grid>
-
-					<Grid item md={4} sm={6} xs={12} my="auto">
-						<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-							<Box
-								sx={{
-									p: { md: 5, xs: 3 },
-									borderRadius: 3,
-									align: "center",
-									bgcolor: "#404F88"
-								}}
-							>
-								<Typography variant="h4" sx={{ fontWeight: 700, py: 1 }}>
-									Decentralized
-								</Typography>
-								<Box
-									component="img"
-									src="/serer.svg"
-									sx={{ width: { md: "50%", xs: "80%" }, py: 4 }}
-								/>
-
-								<Typography variant="body1">
-									RelaySMS is built to work in decentralized models. Anyone can host a RelaySMS
-									server. It’s as easy as understanding how to use it
-								</Typography>
-							</Box>
-						</motion.div>
-					</Grid>
+					<Grid item md={4} sm={6} xs={12} />
+					<Grid item md={4} sm={6} xs={12} my="auto" />
 				</Grid>
 			</Box>
 			{/*  */}
+
 			{/* Rlay Map */}
-			<Box sx={{ bgcolor: "white", px: { md: 15, sm: 10, xs: 3 } }}>
+			<Box sx={{ bgcolor: "white", px: { md: 20, sm: 10, xs: 3 } }}>
 				<Grid container rowSpacing={4} sx={{ py: { md: 10, xs: 10 } }}>
 					<Grid item md={5} my="auto">
 						<Typography
@@ -228,42 +214,7 @@ export default function Landing() {
 					</Grid>
 				</Grid>
 			</Box>
-			{/*  */}
-			{/* Video */}
-			<Box sx={{ px: { md: 15, sm: 10, xs: 3 }, my: { md: 2, xs: 5 } }}>
-				<Box>
-					<Grid container rowSpacing={4} columnSpacing={4} sx={{ py: { md: 15, xs: 10 } }}>
-						<Grid
-							item
-							md={7}
-							sx={{
-								justifyContent: "center",
-								display: "flex",
-								mx: "auto",
-								width: "100%"
-							}}
-						>
-							<iframe
-								width="860"
-								height="415"
-								src="https://www.youtube.com/embed/NLp4VSYGR4Y?si=EmNrXJKsrkIuOEPs"
-								title="YouTube video player"
-								frameBorder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								allowfullscreen
-							></iframe>
-						</Grid>
-						<Grid item md={5} my="auto">
-							<Typography
-								variant="h3"
-								sx={{ fontWeight: 700, fontSize: { md: "48px", xs: "33px" } }}
-							>
-								Get familiar with RelaySMS
-							</Typography>
-						</Grid>
-					</Grid>
-				</Box>
-			</Box>
+
 			{/*  */}
 			{/* What's New */}
 			<Box sx={{ p: { md: 3, xs: 2 } }}>
@@ -271,10 +222,10 @@ export default function Landing() {
 					container
 					rowSpacing={4}
 					columnSpacing={4}
-					sx={{ px: { md: 13, sm: 10, xs: 2 }, my: { md: 2, xs: 1 }, pb: 8 }}
+					sx={{ px: { md: 13, sm: 10, xs: 2 }, my: { md: 2, xs: 1 }, pb: 4 }}
 				>
 					<Grid item md={12} xs={12}>
-						<Typography variant="h5" sx={{ fontWeight: 700, py: 2 }}>
+						<Typography textAlign={"center"} variant="h5" sx={{ fontWeight: 700, py: 2 }}>
 							Whats new on RelaySMS ?
 						</Typography>
 					</Grid>
@@ -340,13 +291,20 @@ export default function Landing() {
 			</Box>
 			{/*  */}
 			{/* FAQS */}
-			<Box sx={{ px: { md: 15, sm: 10, xs: 3 }, mb: { md: 15, xs: 8 }, mt: { md: 13, xs: 3 } }}>
+			<Box
+				sx={{
+					px: { md: 15, sm: 10, xs: 3 },
+					mb: { md: 15, xs: 8 },
+					mt: { md: 4, xs: 1 }
+				}}
+			>
 				<Typography variant="h5" sx={{ fontWeight: 700, py: 4 }}>
 					FAQs
 				</Typography>
 
 				<Faqs />
 			</Box>
+
 			{/*  */}
 		</Box>
 	);

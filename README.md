@@ -11,6 +11,7 @@ To get started, navigate to the project directory and execute the following comm
 ```bash
 yarn install
 ```
+
 ```bash
 yarn start
 ```
