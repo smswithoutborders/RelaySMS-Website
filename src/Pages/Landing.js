@@ -110,19 +110,15 @@ export default function Landing() {
 						</Typography>
 					</Grid>
 					<Grid item xs={12} md={6}>
-						<img
-							src="images/accounts.svg"
-							alt="points"
-							style={{ maxWidth: "100%", height: "auto" }}
-						/>
+						<img src="/permission.png" alt="points" style={{ maxWidth: "60%", height: "auto" }} />
 					</Grid>
 				</Grid>
 				<Grid container spacing={2} justifyContent="center" alignItems="center">
 					<Grid item xs={12} md={6}>
 						<img
-							src="images/accounts.svg"
+							src="/composeMessage.png"
 							alt="points"
-							style={{ maxWidth: "100%", height: "auto" }}
+							style={{ maxWidth: "60%", height: "auto" }}
 						/>
 					</Grid>
 					<Grid item xs={12} md={6}>
@@ -140,20 +136,16 @@ export default function Landing() {
 						</Typography>
 					</Grid>
 					<Grid item xs={12} md={6}>
-						<img
-							src="images/mobile-app.svg"
-							alt="point2"
-							style={{ maxWidth: "100%", height: "auto" }}
-						/>
+						<img src="/Online-world.png" alt="point2" style={{ maxWidth: "60%", height: "auto" }} />
 					</Grid>
 				</Grid>
 
 				<Grid container spacing={2} justifyContent="center" alignItems="center">
 					<Grid item xs={12} md={6}>
 						<img
-							src="images/signup-illustration.svg"
+							src="/recievedNotification.png"
 							alt="point3"
-							style={{ maxWidth: "100%", height: "auto" }}
+							style={{ maxWidth: "60%", height: "auto" }}
 						/>
 					</Grid>
 					<Grid item xs={12} md={6}>
