@@ -50,15 +50,7 @@ export default function Faqs() {
 					</Typography>
 				</AccordionDetails>
 			</Accordion>
-
-			<Accordion
-				sx={{
-					"& .MuiAccordion-region": { height: expanded ? "auto" : 0 },
-					"& .MuiAccordionDetails-root": {
-						display: expanded ? "block" : "none"
-					}
-				}}
-			>
+			<Accordion>
 				<AccordionSummary
 					expandIcon={<ExpandMoreIcon />}
 					aria-controls="panel2-content"
@@ -81,92 +73,67 @@ export default function Faqs() {
 					</Typography>
 				</AccordionDetails>
 			</Accordion>
-
-			<Accordion
-				expanded={expanded}
-				onChange={handleExpansion}
-				slots={{ transition: Fade }}
-				slotProps={{ transition: { timeout: 400 } }}
-				sx={{
-					"& .MuiAccordion-region": { height: expanded ? "auto" : 0 },
-					"& .MuiAccordionDetails-root": {
-						display: expanded ? "block" : "none"
-					}
-				}}
-			>
+			<Accordion>
 				<AccordionSummary
 					expandIcon={<ExpandMoreIcon />}
-					aria-controls="panel1-content"
-					id="panel1-header"
+					aria-controls="panel3-content"
+					id="panel3-header"
 				>
-					<Typography variant="body1" sx={{ fontWeight: 800 }}>
-						Is RelaySMS same as SMSWithoutBorders?
+					<Typography variant="body1" sx={{ fontWeight: 700 }}>
+						How can I contribute to the RelaySMS project?
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
 					<Typography>
-						RelaySMS is one of the biggest tools provided by SMSWithoutBorders
+						You can contribute by visiting our{" "}
+						<span style={{ color: "skyblue" }}>
+							<a href="/contribute" target="_blank">
+								contribution page
+							</a>
+						</span>
+						, where you will find guidelines and resources on how to get started.
 					</Typography>
 				</AccordionDetails>
 			</Accordion>
-
-			<Accordion
-				expanded={expanded}
-				onChange={handleExpansion}
-				slots={{ transition: Fade }}
-				slotProps={{ transition: { timeout: 400 } }}
-				sx={{
-					"& .MuiAccordion-region": { height: expanded ? "auto" : 0 },
-					"& .MuiAccordionDetails-root": {
-						display: expanded ? "block" : "none"
-					}
-				}}
-			>
+			<Accordion>
 				<AccordionSummary
 					expandIcon={<ExpandMoreIcon />}
-					aria-controls="panel1-content"
-					id="panel1-header"
+					aria-controls="panel4-content"
+					id="panel4-header"
 				>
-					<Typography variant="body1" sx={{ fontWeight: 800 }}>
-						Is RelaySMS same as SMSWithoutBorders?
+					<Typography variant="body1" sx={{ fontWeight: 700 }}>
+						Is there any customer support available for RelaySMS?
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
 					<Typography>
-						RelaySMS is one of the biggest tools provided by SMSWithoutBorders
+						Yes, we offer 24/7 customer support. You can reach out to us through our{" "}
+						<span style={{ color: "skyblue" }}>
+							<a href="/support" target="_blank">
+								support page
+							</a>
+						</span>
+						.
 					</Typography>
 				</AccordionDetails>
 			</Accordion>
-
-			<Accordion
-				expanded={expanded}
-				onChange={handleExpansion}
-				slots={{ transition: Fade }}
-				slotProps={{ transition: { timeout: 400 } }}
-				sx={{
-					"& .MuiAccordion-region": { height: expanded ? "auto" : 0 },
-					"& .MuiAccordionDetails-root": {
-						display: expanded ? "block" : "none"
-					}
-				}}
-			>
+			<Accordion>
 				<AccordionSummary
 					expandIcon={<ExpandMoreIcon />}
-					aria-controls="panel1-content"
-					id="panel1-header"
+					aria-controls="panel5-content"
+					id="panel5-header"
 				>
-					<Typography variant="body1" sx={{ fontWeight: 800 }}>
-						Is RelaySMS same as SMSWithoutBorders?
+					<Typography variant="body1" sx={{ fontWeight: 700 }}>
+						What platforms is RelaySMS compatible with?
 					</Typography>
 				</AccordionSummary>
 				<AccordionDetails>
 					<Typography>
-						RelaySMS is one of the biggest tools provided by SMSWithoutBorders
+						RelaySMS is compatible with both iOS and Android platforms. You can download the app
+						from the respective app stores.
 					</Typography>
 				</AccordionDetails>
 			</Accordion>
-
-			{/*  */}
 		</Box>
 	);
 }

@@ -292,7 +292,6 @@ export default function Landing() {
 				sx={{
 					bgcolor: "white",
 					color: "black",
-					textAlign: "center",
 					px: { md: 15, sm: 10, xs: 3 },
 					mb: { md: 0, xs: 4 },
 					mt: { md: 4, xs: 1 }
