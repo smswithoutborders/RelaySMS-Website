@@ -43,9 +43,9 @@ export default function Nav({ darkMode, toggleDarkMode }) {
 								Help
 							</Typography>
 						</a>
-						<a href="https://developers.smswithoutborders.com/" target="_blank" rel="noreferrer">
+						<a href="https://github.com/deku-messaging" target="_blank" rel="noreferrer">
 							<Typography sx={{ mx: 4 }} textAlign={"center"}>
-								Developers
+								Github
 							</Typography>
 						</a>
 						<a href="https://blog.smswithoutborders.com/" target="_blank" rel="noreferrer">

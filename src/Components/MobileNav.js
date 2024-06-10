@@ -81,11 +81,11 @@ function MobileNav({ darkMode, toggleDarkMode }) {
 							<MenuItem
 								onClick={handleCloseNavMenu}
 								component="a"
-								href="https://github.com/smswithoutborders/"
+								href="https://github.com/deku-messaging"
 								target="_blank"
 								rel="noreferrer noopener"
 							>
-								<Typography textAlign="center">Developers</Typography>
+								<Typography textAlign="center">Github</Typography>
 							</MenuItem>
 
 							<MenuItem
