@@ -293,6 +293,7 @@ export default function Landing() {
 			{/* FAQS */}
 			<Box
 				sx={{
+					bgcolor: "white",
 					px: { md: 15, sm: 10, xs: 3 },
 					mb: { md: 15, xs: 8 },
 					mt: { md: 4, xs: 1 }
