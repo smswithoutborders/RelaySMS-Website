@@ -55,7 +55,7 @@ export default function Nav({ darkMode, toggleDarkMode }) {
 						</a>
 					</Box>
 					<Typography className="cards" sx={{ borderRadius: 7, px: 3, py: 1, ml: 2 }}>
-						Donate
+						Lang
 					</Typography>
 					{/* Dark/Light mode toggle */}
 					<IconButton
