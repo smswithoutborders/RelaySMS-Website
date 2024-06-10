@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -9,8 +9,12 @@ import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
+import { useTranslation } from "react-i18next";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import Select from "@mui/material/Select";
 
 function MobileNav({ darkMode, toggleDarkMode }) {
+	const { t, i18n } = useTranslation("navbar");
 	const [anchorElNav, setAnchorElNav] = React.useState(null);
 
 	const handleOpenNavMenu = (event) => {
@@ -19,6 +23,11 @@ function MobileNav({ darkMode, toggleDarkMode }) {
 
 	const handleCloseNavMenu = () => {
 		setAnchorElNav(null);
+	};
+
+	const changeLanguage = (lng) => {
+		i18n.changeLanguage(lng);
+		handleCloseNavMenu(); // Close the dropdown after selecting a language
 	};
 
 	return (
@@ -74,7 +83,7 @@ function MobileNav({ darkMode, toggleDarkMode }) {
 									target="_blank"
 									rel="noreferrer noopener"
 								>
-									Help
+									{t("help")}
 								</Typography>
 							</MenuItem>
 
@@ -85,7 +94,7 @@ function MobileNav({ darkMode, toggleDarkMode }) {
 								target="_blank"
 								rel="noreferrer noopener"
 							>
-								<Typography textAlign="center">Github</Typography>
+								<Typography textAlign="center">{t("github")}</Typography>
 							</MenuItem>
 
 							<MenuItem
@@ -95,13 +104,24 @@ function MobileNav({ darkMode, toggleDarkMode }) {
 								target="_blank"
 								rel="noreferrer noopener"
 							>
-								<Typography textAlign="center">Blogs</Typography>
+								<Typography textAlign="center">{t("blog")}</Typography>
 							</MenuItem>
 
 							<MenuItem onClick={handleCloseNavMenu}>
-								<Typography textAlign="center">Donate</Typography>
+								<Typography textAlign="center">{t("donate")}</Typography>
 							</MenuItem>
 						</Menu>
+						<Select
+							value={i18n.language}
+							onChange={(e) => changeLanguage(e.target.value)}
+							IconComponent={ArrowDropDownIcon}
+							sx={{ ml: 1 }}
+						>
+							<MenuItem value="en">🇺🇸</MenuItem>
+							<MenuItem value="fr">🇫🇷</MenuItem>
+							<MenuItem value="fa">🇮🇷</MenuItem>
+							<MenuItem value="es">🇪🇸</MenuItem>
+						</Select>
 						<IconButton
 							onClick={toggleDarkMode}
 							sx={{ ml: 2 }}
