@@ -15,7 +15,14 @@ export default function Faqs() {
 	};
 
 	return (
-		<Box>
+		<Box
+			sx={{
+				backgroundColor: "white",
+				color: "black",
+				borderRadius: 1,
+				p: 2
+			}}
+		>
 			<Accordion
 				expanded={expanded}
 				onChange={handleExpansion}
@@ -43,7 +50,15 @@ export default function Faqs() {
 					</Typography>
 				</AccordionDetails>
 			</Accordion>
-			<Accordion>
+
+			<Accordion
+				sx={{
+					"& .MuiAccordion-region": { height: expanded ? "auto" : 0 },
+					"& .MuiAccordionDetails-root": {
+						display: expanded ? "block" : "none"
+					}
+				}}
+			>
 				<AccordionSummary
 					expandIcon={<ExpandMoreIcon />}
 					aria-controls="panel2-content"
@@ -66,6 +81,91 @@ export default function Faqs() {
 					</Typography>
 				</AccordionDetails>
 			</Accordion>
+
+			<Accordion
+				expanded={expanded}
+				onChange={handleExpansion}
+				slots={{ transition: Fade }}
+				slotProps={{ transition: { timeout: 400 } }}
+				sx={{
+					"& .MuiAccordion-region": { height: expanded ? "auto" : 0 },
+					"& .MuiAccordionDetails-root": {
+						display: expanded ? "block" : "none"
+					}
+				}}
+			>
+				<AccordionSummary
+					expandIcon={<ExpandMoreIcon />}
+					aria-controls="panel1-content"
+					id="panel1-header"
+				>
+					<Typography variant="body1" sx={{ fontWeight: 800 }}>
+						Is RelaySMS same as SMSWithoutBorders?
+					</Typography>
+				</AccordionSummary>
+				<AccordionDetails>
+					<Typography>
+						RelaySMS is one of the biggest tools provided by SMSWithoutBorders
+					</Typography>
+				</AccordionDetails>
+			</Accordion>
+
+			<Accordion
+				expanded={expanded}
+				onChange={handleExpansion}
+				slots={{ transition: Fade }}
+				slotProps={{ transition: { timeout: 400 } }}
+				sx={{
+					"& .MuiAccordion-region": { height: expanded ? "auto" : 0 },
+					"& .MuiAccordionDetails-root": {
+						display: expanded ? "block" : "none"
+					}
+				}}
+			>
+				<AccordionSummary
+					expandIcon={<ExpandMoreIcon />}
+					aria-controls="panel1-content"
+					id="panel1-header"
+				>
+					<Typography variant="body1" sx={{ fontWeight: 800 }}>
+						Is RelaySMS same as SMSWithoutBorders?
+					</Typography>
+				</AccordionSummary>
+				<AccordionDetails>
+					<Typography>
+						RelaySMS is one of the biggest tools provided by SMSWithoutBorders
+					</Typography>
+				</AccordionDetails>
+			</Accordion>
+
+			<Accordion
+				expanded={expanded}
+				onChange={handleExpansion}
+				slots={{ transition: Fade }}
+				slotProps={{ transition: { timeout: 400 } }}
+				sx={{
+					"& .MuiAccordion-region": { height: expanded ? "auto" : 0 },
+					"& .MuiAccordionDetails-root": {
+						display: expanded ? "block" : "none"
+					}
+				}}
+			>
+				<AccordionSummary
+					expandIcon={<ExpandMoreIcon />}
+					aria-controls="panel1-content"
+					id="panel1-header"
+				>
+					<Typography variant="body1" sx={{ fontWeight: 800 }}>
+						Is RelaySMS same as SMSWithoutBorders?
+					</Typography>
+				</AccordionSummary>
+				<AccordionDetails>
+					<Typography>
+						RelaySMS is one of the biggest tools provided by SMSWithoutBorders
+					</Typography>
+				</AccordionDetails>
+			</Accordion>
+
 			{/*  */}
 		</Box>
 	);

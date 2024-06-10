@@ -4,6 +4,7 @@ import { FaCircleArrowRight } from "react-icons/fa6";
 import CardContent from "@mui/material/CardContent";
 import Faqs from "../Components/FAQs";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
+import VerifiedIcon from "@mui/icons-material/Verified";
 
 export default function Landing() {
 	const { scrollYProgress } = useScroll();
@@ -49,7 +50,6 @@ export default function Landing() {
 					<Typography variant="h5" sx={{ mt: 5 }}>
 						Send Emails, Posts, and Messages securely via SMS.
 					</Typography>
-					{/*  */}
 					<Box display="flex">
 						<Button
 							size="large"
@@ -65,13 +65,13 @@ export default function Landing() {
 							}}
 						>
 							<img
-								src="/playstore.svg"
+								src="/googleplay1.png"
 								alt="Google Play Store"
 								style={{ width: "20px", height: "20px" }}
 							/>
 
 							<Typography variant="body2" sx={{ pl: 1 }}>
-								Andriod App
+								Android App
 							</Typography>
 						</Button>
 
@@ -96,9 +96,9 @@ export default function Landing() {
 					</Box>
 				</Grid>
 			</Grid>
-			{/*  */}
+
 			{/* How it works */}
-			<Box textAlign="center" sx={{ pt: { md: 10, xs: 7 }, px: { md: 30, xs: 3 } }}>
+			<Box textAlign="center" sx={{ pt: { md: 10, xs: 7 }, px: { md: 30, xs: 3 }, mb: 0 }}>
 				<Typography variant="h4" sx={{ fontWeight: 700, fontSize: { xs: "25px", md: "33px" } }}>
 					How It Works
 				</Typography>
@@ -110,7 +110,6 @@ export default function Landing() {
 						</Typography>
 					</Grid>
 					<Grid item xs={12} md={6}>
-						{/* Image goes here */}
 						<img
 							src="images/accounts.svg"
 							alt="points"
@@ -120,7 +119,6 @@ export default function Landing() {
 				</Grid>
 				<Grid container spacing={2} justifyContent="center" alignItems="center">
 					<Grid item xs={12} md={6}>
-						{/* Image goes here */}
 						<img
 							src="images/accounts.svg"
 							alt="points"
@@ -142,7 +140,6 @@ export default function Landing() {
 						</Typography>
 					</Grid>
 					<Grid item xs={12} md={6}>
-						{/* Image goes here */}
 						<img
 							src="images/mobile-app.svg"
 							alt="point2"
@@ -153,7 +150,6 @@ export default function Landing() {
 
 				<Grid container spacing={2} justifyContent="center" alignItems="center">
 					<Grid item xs={12} md={6}>
-						{/* Image goes here */}
 						<img
 							src="images/signup-illustration.svg"
 							alt="point3"
@@ -177,14 +173,13 @@ export default function Landing() {
 				</a>
 			</Box>
 
-			{/*  */}
 			{/* How Relay Works */}
 			<Box
 				sx={{
 					px: { md: 10, xs: 3 },
-					// bgcolor: "#3C3744",
 					color: "white",
-					py: { md: 5, xs: 10 }
+					py: { md: 5, xs: 10 },
+					mb: 0
 				}}
 			>
 				<Grid container rowSpacing={6} columnSpacing={6} alignItems="center" align="center">
@@ -192,9 +187,8 @@ export default function Landing() {
 					<Grid item md={4} sm={6} xs={12} my="auto" />
 				</Grid>
 			</Box>
-			{/*  */}
 
-			{/* Rlay Map */}
+			{/* Relay Map */}
 			<Box sx={{ bgcolor: "white", px: { md: 20, sm: 10, xs: 3 } }}>
 				<Grid container rowSpacing={4} sx={{ py: { md: 10, xs: 10 } }}>
 					<Grid item md={5} my="auto">
@@ -215,7 +209,6 @@ export default function Landing() {
 				</Grid>
 			</Box>
 
-			{/*  */}
 			{/* What's New */}
 			<Box sx={{ p: { md: 3, xs: 2 } }}>
 				<Grid
@@ -229,9 +222,20 @@ export default function Landing() {
 							Whats new on RelaySMS ?
 						</Typography>
 					</Grid>
+
 					<Grid item md={4} sm={6} xs={12}>
 						<Card sx={{ maxWidth: 400 }}>
-							<CardMedia sx={{ height: 200 }} image="/reliability.jpg" title="reliability" />
+							<Box
+								sx={{
+									height: 200,
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
+									bgcolor: "#f5f5f5"
+								}}
+							>
+								<VerifiedIcon sx={{ fontSize: 80, color: "green" }} />
+							</Box>
 							<CardContent>
 								<Typography gutterBottom variant="h5" component="div">
 									Reliability Of Gateway Clients In Smswithoutborders
@@ -258,9 +262,10 @@ export default function Landing() {
 							</CardMedia>
 						</Card>
 					</Grid>
+
 					<Grid item md={4} sm={6} xs={12}>
 						<Card sx={{ maxWidth: 400 }}>
-							<CardMedia sx={{ height: 200 }} image="/resilience.jpg" title="resilience" />
+							<CardMedia sx={{ height: 200 }} image="/resilience.svg" title="resilience" />
 							<CardContent>
 								<Typography gutterBottom variant="h5" component="div">
 									Resilience Of Gateway Clients In Smswithoutborders
@@ -289,23 +294,24 @@ export default function Landing() {
 					</Grid>
 				</Grid>
 			</Box>
-			{/*  */}
+
 			{/* FAQS */}
 			<Box
 				sx={{
 					bgcolor: "white",
+					color: "black",
+					textAlign: "center",
 					px: { md: 15, sm: 10, xs: 3 },
-					mb: { md: 15, xs: 8 },
+					mb: { md: 0, xs: 4 },
 					mt: { md: 4, xs: 1 }
 				}}
 			>
-				<Typography variant="h5" sx={{ fontWeight: 700, py: 4 }}>
+				<Typography variant="h5" sx={{ fontWeight: 700, py: 2 }}>
 					FAQs
 				</Typography>
 
 				<Faqs />
 			</Box>
-
 			{/*  */}
 		</Box>
 	);
