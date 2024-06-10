@@ -65,7 +65,7 @@ export default function Landing() {
 							}}
 						>
 							<img
-								src="/googleplay1.png"
+								src="/playstore.svg"
 								alt="Google Play Store"
 								style={{ width: "20px", height: "20px" }}
 							/>
