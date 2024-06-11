@@ -66,7 +66,7 @@ export default function Nav({ darkMode, toggleDarkMode }) {
 					</Box>
 					<Select
 						className="cards"
-						sx={{ borderRadius: 7, px: 3, py: 1, ml: 2 }}
+						sx={{ borderRadius: 7, px: 3, py: 1, ml: 1 }}
 						value={i18n.language}
 						onChange={(e) => changeLanguage(e.target.value)}
 						IconComponent={ArrowDropDownIcon}
