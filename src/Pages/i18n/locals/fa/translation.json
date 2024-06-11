@@ -1,4 +1,13 @@
 {
-	"landingh1": "با Relaysms صحبت کنید",
-	"about": "Send Emails, Posts, and Messages securely via SMS."
+	"Landing": {
+		"landingh1": "با Relaysms صحبت کنید",
+		"subtitle": "ارسال ایمیل، پست و پیام به صورت ایمن از طریق SMS."
+	},
+
+	"Nav": {
+		"Home": "صفحه فرود",
+		"help": "کمک",
+		"github": "GitHub",
+		"Blog": "وبلاگ"
+	}
 }

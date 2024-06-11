@@ -8,7 +8,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Select from "@mui/material/Select";
 
 export default function Nav({ darkMode, toggleDarkMode }) {
-	const { t, i18n } = useTranslation("navbar");
+	const { t, i18n } = useTranslation();
 
 	const changeLanguage = (lng) => {
 		i18n.changeLanguage(lng);
@@ -50,12 +50,12 @@ export default function Nav({ darkMode, toggleDarkMode }) {
 							rel="noreferrer noopener"
 						>
 							<Typography sx={{ mx: 4 }} textAlign={"center"}>
-								{t("Help")}
+								{t("help")}
 							</Typography>
 						</a>
 						<a href="https://github.com/deku-messaging" target="_blank" rel="noreferrer">
 							<Typography sx={{ mx: 4 }} textAlign={"center"}>
-								{t("Github")}
+								{t("github")}
 							</Typography>
 						</a>
 						<a href="https://blog.smswithoutborders.com/" target="_blank" rel="noreferrer">

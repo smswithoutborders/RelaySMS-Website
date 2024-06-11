@@ -1,10 +1,10 @@
 {
-	"LandingPage": {
+	"Landing": {
 		"landingh1": "Keep talking with RelaySMS",
-		"about": "Send Emails, Posts, and Messages securely via SMS."
+		"landingh2": "Send Emails, Posts, and Messages securely via SMS."
 	},
 
-	"navbar": {
+	"Nav": {
 		"Home": "Home",
 		"help": "Help",
 		"github": "GitHub",
