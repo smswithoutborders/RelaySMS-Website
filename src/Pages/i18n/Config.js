@@ -15,19 +15,35 @@ i18n
 			// English
 			en: {
 				translation: {
-					landingh1: "keep talking with Relaysms"
+					landingh1: "keep talking with Relaysms",
+					landingh2: "Send messages seamlessly with RelaySMS",
+					Home: "Home",
+					help: "Help",
+					github: "GitHub",
+					Blog: "Blog"
 				}
 			},
 			// french
 			fr: {
 				translation: {
-					landingh1: "continuez à parler avec Relaysms"
+					landingh1: "continuez à parler avec Relaysms",
+					landingh2:
+						"Envoyez des e-mails, des publications et des messages en toute sécurité via SMS.",
+					Home: "Accueil",
+					help: "Aide",
+					github: "GitHub",
+					Blog: "Blog"
 				}
 			},
 			//fashi
 			fa: {
 				translation: {
-					landingh1: "با Relaysms صحبت کنید"
+					landingh1: "با Relaysms صحبت کنید",
+					landingh2: "ارسال ایمیل، پست و پیام به صورت ایمن از طریق SMS.",
+					Home: "صفحه فرود",
+					help: "کمک",
+					github: "GitHub",
+					Blog: "وبلاگ"
 				}
 			}
 		}

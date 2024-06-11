@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
 import { Box, Card, CardMedia, Grid, Typography, Avatar, Button } from "@mui/material";
 import { FaCircleArrowRight } from "react-icons/fa6";
@@ -53,7 +52,7 @@ export default function Landing() {
 						{t("landingh1")}
 					</Typography>
 					<Typography variant="h5" sx={{ mt: 5 }}>
-						Send Emails, Posts, and Messages securely via SMS.
+						{t("landingh2")}
 					</Typography>
 					<Box display="flex">
 						<Button
