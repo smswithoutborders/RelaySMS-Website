@@ -106,10 +106,6 @@ function MobileNav({ darkMode, toggleDarkMode }) {
 							>
 								<Typography textAlign="center">{t("blog")}</Typography>
 							</MenuItem>
-
-							<MenuItem onClick={handleCloseNavMenu}>
-								<Typography textAlign="center">{t("donate")}</Typography>
-							</MenuItem>
 						</Menu>
 						<Select
 							value={i18n.language}
@@ -120,7 +116,6 @@ function MobileNav({ darkMode, toggleDarkMode }) {
 							<MenuItem value="en">🇺🇸</MenuItem>
 							<MenuItem value="fr">🇫🇷</MenuItem>
 							<MenuItem value="fa">🇮🇷</MenuItem>
-							<MenuItem value="es">🇪🇸</MenuItem>
 						</Select>
 						<IconButton
 							onClick={toggleDarkMode}

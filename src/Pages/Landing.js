@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
 import { Box, Card, CardMedia, Grid, Typography, Avatar, Button } from "@mui/material";
 import { FaCircleArrowRight } from "react-icons/fa6";
@@ -5,9 +6,13 @@ import CardContent from "@mui/material/CardContent";
 import Faqs from "../Components/FAQs";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import VerifiedIcon from "@mui/icons-material/Verified";
+import { useTranslation } from "react-i18next";
+import "./i18n/Config.js";
 
 export default function Landing() {
 	const { scrollYProgress } = useScroll();
+	const { t } = useTranslation();
+
 	return (
 		<Box>
 			<motion.div className="progress-bar" style={{ scaleX: scrollYProgress }} />
@@ -45,7 +50,7 @@ export default function Landing() {
 						sx={{ width: { md: "10%", sm: "10%", xs: "15%" }, mb: 4 }}
 					/>
 					<Typography variant="h3" sx={{ fontWeight: 700 }}>
-						Keep talking with RelaySMS
+						{t("landingh1")}
 					</Typography>
 					<Typography variant="h5" sx={{ mt: 5 }}>
 						Send Emails, Posts, and Messages securely via SMS.

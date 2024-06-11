@@ -2,8 +2,18 @@ import { Typography, Box, IconButton } from "@mui/material";
 import React from "react";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
+import { useTranslation } from "react-i18next";
+import MenuItem from "@mui/material/MenuItem";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import Select from "@mui/material/Select";
 
 export default function Nav({ darkMode, toggleDarkMode }) {
+	const { t, i18n } = useTranslation("navbar");
+
+	const changeLanguage = (lng) => {
+		i18n.changeLanguage(lng);
+	};
+
 	return (
 		<>
 			<Box
@@ -31,7 +41,7 @@ export default function Nav({ darkMode, toggleDarkMode }) {
 					>
 						<a href="/">
 							<Typography sx={{ mx: 4 }} textAlign={"center"}>
-								Home
+								{t("Home")}
 							</Typography>
 						</a>
 						<a
@@ -40,23 +50,31 @@ export default function Nav({ darkMode, toggleDarkMode }) {
 							rel="noreferrer noopener"
 						>
 							<Typography sx={{ mx: 4 }} textAlign={"center"}>
-								Help
+								{t("Help")}
 							</Typography>
 						</a>
 						<a href="https://github.com/deku-messaging" target="_blank" rel="noreferrer">
 							<Typography sx={{ mx: 4 }} textAlign={"center"}>
-								Github
+								{t("Github")}
 							</Typography>
 						</a>
 						<a href="https://blog.smswithoutborders.com/" target="_blank" rel="noreferrer">
 							<Typography sx={{ mx: 4 }} textAlign={"center"}>
-								Blog
+								{t("Blog")}
 							</Typography>
 						</a>
 					</Box>
-					<Typography className="cards" sx={{ borderRadius: 7, px: 3, py: 1, ml: 2 }}>
-						Lang
-					</Typography>
+					<Select
+						className="cards"
+						sx={{ borderRadius: 7, px: 3, py: 1, ml: 2 }}
+						value={i18n.language}
+						onChange={(e) => changeLanguage(e.target.value)}
+						IconComponent={ArrowDropDownIcon}
+					>
+						<MenuItem value="en"> EN 🇺🇸</MenuItem>
+						<MenuItem value="fr"> Fr 🇫🇷</MenuItem>
+						<MenuItem value="fa"> FA 🇮🇷</MenuItem>
+					</Select>
 					{/* Dark/Light mode toggle */}
 					<IconButton
 						className="cards"
