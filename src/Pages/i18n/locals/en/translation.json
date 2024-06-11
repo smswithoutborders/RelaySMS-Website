@@ -1,0 +1,13 @@
+{
+	"LandingPage": {
+		"landingh1": "Keep talking with RelaySMS",
+		"about": "Send Emails, Posts, and Messages securely via SMS."
+	},
+
+	"navbar": {
+		"Home": "Home",
+		"help": "Help",
+		"github": "GitHub",
+		"Blog": "Blog"
+	}
+}
