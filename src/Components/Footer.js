@@ -1,8 +1,11 @@
 import { Box, Typography, Grid, ListItem, List } from "@mui/material";
 import React from "react";
 import { FaEnvelope, FaFacebook, FaGithub, FaXTwitter } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+	const { t } = useTranslation();
+
 	return (
 		<Box
 			component="footer"
@@ -26,12 +29,11 @@ export default function Footer() {
 								alt="smswithoutborders logo"
 							/>
 							<Typography variant="h5" sx={{ fontWeight: 600 }}>
-								RelaySMS
+								{t("RelaySMS")}
 							</Typography>
 						</Box>
 						<Typography variant="body2" sx={{ px: { md: 4, xs: 2 }, py: 2 }}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim purus eu nunc
-							ullamcorper, vel convallis ante tincidunt.
+							{t("footerbody2")}
 						</Typography>
 					</Grid>
 					<Grid item md={2} xs={12}>

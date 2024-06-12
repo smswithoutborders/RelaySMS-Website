@@ -75,7 +75,7 @@ export default function Landing() {
 							/>
 
 							<Typography variant="body2" sx={{ pl: 1 }}>
-								Android App
+								{t("AndroidApp")}
 							</Typography>
 						</Button>
 
@@ -94,7 +94,7 @@ export default function Landing() {
 							}}
 						>
 							<Typography variant="body2" sx={{ pl: 1 }}>
-								Desktop App
+								{t("DesktopApp")}
 							</Typography>
 						</Button>
 					</Box>
@@ -104,13 +104,13 @@ export default function Landing() {
 			{/* How it works */}
 			<Box textAlign="center" sx={{ pt: { md: 10, xs: 7 }, px: { md: 30, xs: 3 }, mb: 0 }}>
 				<Typography variant="h4" sx={{ fontWeight: 700, fontSize: { xs: "25px", md: "33px" } }}>
-					How It Works
+					{t("HowItWorks")}
 				</Typography>
 
 				<Grid container spacing={2} justifyContent="center" alignItems="center">
 					<Grid item xs={12} md={6}>
 						<Typography variant="h5" sx={{ p: { md: 5, xs: 2 } }}>
-							Grant permission for RelaySMS to send emails, posts, or messages on your behalf.
+							{t("HowItWorksA")}
 						</Typography>
 					</Grid>
 					<Grid item xs={12} md={6}>
@@ -127,8 +127,7 @@ export default function Landing() {
 					</Grid>
 					<Grid item xs={12} md={6}>
 						<Typography variant="h5" sx={{ p: { md: 5, xs: 2 } }}>
-							Compose your email, post, or message, and it will be automatically sent using your
-							default SMS app.
+							{t("HowItWorksB")}
 						</Typography>
 					</Grid>
 				</Grid>
@@ -136,7 +135,7 @@ export default function Landing() {
 				<Grid container spacing={2} justifyContent="center" alignItems="center">
 					<Grid item xs={12} md={6}>
 						<Typography variant="h5" sx={{ p: { md: 5, xs: 2 } }}>
-							Your content reaches RelaySMS access points and is published on your behalf.
+							{t("HowItWorksC")}
 						</Typography>
 					</Grid>
 					<Grid item xs={12} md={6}>
@@ -154,7 +153,7 @@ export default function Landing() {
 					</Grid>
 					<Grid item xs={12} md={6}>
 						<Typography variant="h5" sx={{ p: { md: 5, xs: 2 } }}>
-							Receive a response via SMS indicating success or failure.
+							{t("HowItWorksD")}
 						</Typography>
 					</Grid>
 				</Grid>
@@ -164,7 +163,8 @@ export default function Landing() {
 					rel="noreferrer noopener"
 				>
 					<Typography variant="body1" sx={{ p: 2, textDecoration: "underline" }}>
-						Getting Started <FaCircleArrowRight size="20px" style={{ rotate: "-30deg" }} />
+						{t("GettingStartedButton")}
+						<FaCircleArrowRight size="20px" style={{ rotate: "-30deg" }} />
 					</Typography>
 				</a>
 			</Box>
