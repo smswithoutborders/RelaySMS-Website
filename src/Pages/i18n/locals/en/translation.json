@@ -9,5 +9,17 @@
 		"help": "Help",
 		"github": "GitHub",
 		"Blog": "Blog"
+	},
+	"Howitworks": {
+		"HowItWorks": "How it works",
+		"HowItWorksA": "Authorize RelaySMS to send emails, posts, or messages on your behalf",
+		"HowItWorksB": "Compose your email, post, or message, and it will be automatically sent using your default SMS app.",
+		"HowItWorksC": "Your content reaches RelaySMS access points and is published on your behalf.",
+		"HowItWorksD": "Receive a response via SMS indicating success or failure.",
+		"GettingStartedButton": "Get Started"
+	},
+	"footer": {
+		"RelaySMS": "RelaySMS",
+		"footerbody2": "The customer is very important, the customer will be followed by the customer. But now, the best thing is pure football or valley before valley."
 	}
 }

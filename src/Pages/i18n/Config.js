@@ -20,7 +20,16 @@ i18n
 					Home: "Home",
 					help: "Help",
 					github: "GitHub",
-					Blog: "Blog"
+					Blog: "Blog",
+					HowItWorks: "How It Works",
+					HowItWorksA:
+						"Grant permission for RelaySMS to send emails, posts, or messages on your behalf",
+					HowItWorksB:
+						" Compose your email, post, or message, and it will be automatically sent using your default SMS app.",
+					HowItWorksC:
+						"Your content reaches RelaySMS access points and is published on your behalf.",
+					HowItWorksD: "Receive a response via SMS indicating success or failure.",
+					GettingStartedButton: "Getting Started"
 				},
 				footer: {
 					RelaySMS: "RelaySMS"
@@ -30,28 +39,23 @@ i18n
 			fr: {
 				translation: {
 					landingh1: "continuez à parler avec Relaysms",
-					landingh2:
-						"Envoyez des e-mails, des publications et des messages en toute sécurité via SMS.",
+					landingh2: "Envoyez des messages en toute transparence avec RelaySMS",
 					Home: "Accueil",
 					help: "Aide",
 					github: "GitHub",
 					Blog: "Blog",
-					AndroidApp: "Application Android",
-					DesktopApp: "Application de bureau",
-					RelaySMS: "RelaySMS",
-					footerbody2:
-						"Le client est très important, le client sera suivi par le client. Mais maintenant, la meilleure chose c'est le football purullamcorper, ou vallée avant tincidunt."
-				}
-			},
-			//fashi
-			fa: {
-				translation: {
-					landingh1: "با Relaysms صحبت کنید",
-					landingh2: "ارسال ایمیل، پست و پیام به صورت ایمن از طریق SMS.",
-					Home: "صفحه فرود",
-					help: "کمک",
-					github: "GitHub",
-					Blog: "وبلاگ"
+					HowItWorks: "Comment ça marche",
+					HowItWorksA:
+						"Autorisez RelaySMS à envoyer des e-mails, des publications ou des messages en votre nom",
+					HowItWorksB:
+						"Composez votre e-mail, votre publication ou votre message et il sera envoyé automatiquement via votre application SMS par défaut.",
+					HowItWorksC:
+						"Votre contenu atteint les points d'accès de RelaySMS et est publié en votre nom.",
+					HowItWorksD: "Recevez une réponse par SMS indiquant le succès ou l'échec.",
+					GettingStartedButton: "Commencer"
+				},
+				footer: {
+					RelaySMS: "RelaySMS"
 				}
 			}
 		}
