@@ -1,7 +1,9 @@
 {
 	"Landing": {
 		"landingh1": "continuez à parler avec Relaysms",
-		"subtitle": "Envoyez des e-mails, des publications et des messages en toute sécurité via SMS."
+		"subtitle": "Envoyez des e-mails, des publications et des messages en toute sécurité via SMS.",
+		"AndroidApp": "Application Android",
+		"DesktopApp": "Application de bureau"
 	},
 
 	"Nav": {

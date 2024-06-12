@@ -36,6 +36,8 @@ i18n
 					help: "Aide",
 					github: "GitHub",
 					Blog: "Blog",
+					AndroidApp: "Application Android",
+					DesktopApp: "Application de bureau",
 					RelaySMS: "RelaySMS",
 					footerbody2:
 						"Le client est très important, le client sera suivi par le client. Mais maintenant, la meilleure chose c'est le football purullamcorper, ou vallée avant tincidunt."

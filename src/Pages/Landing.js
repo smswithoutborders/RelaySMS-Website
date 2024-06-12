@@ -75,7 +75,7 @@ export default function Landing() {
 							/>
 
 							<Typography variant="body2" sx={{ pl: 1 }}>
-								Android App
+								{t("AndroidApp")}
 							</Typography>
 						</Button>
 
@@ -94,7 +94,7 @@ export default function Landing() {
 							}}
 						>
 							<Typography variant="body2" sx={{ pl: 1 }}>
-								Desktop App
+								{t("DesktopApp")}
 							</Typography>
 						</Button>
 					</Box>
