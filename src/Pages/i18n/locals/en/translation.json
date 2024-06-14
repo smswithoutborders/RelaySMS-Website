@@ -44,6 +44,20 @@
 	},
 	"Footer": {
 		"RelaySMS": "RelaySMS",
-		"footerbody2": "The customer is very important, the customer will be followed by the customer. But now, the best thing is pure football or valley before valley."
+		"footerbody2": "The customer is very important, the customer will be followed by the customer. But now, the best thing is pure football or valley before valley.",
+		"footerHeader1": "Quick links",
+		"footerquick1": "Blog",
+		"footerquick3": "Documentation",
+		"footerquick4": "Privacy Policy",
+		"footerHeader2": "Socials",
+		"footersocial1": "Github",
+		"footersocial2": "FaceBook",
+		"footersocial3": " X",
+		"footersocial4": "Mail",
+		"footerHeader3": "Download",
+		"footerdownload1": "Andriod",
+		"footerdownload2": "iOS",
+		"footerdownload3": "Linux",
+		"footerdownload4": "Windows"
 	}
 }

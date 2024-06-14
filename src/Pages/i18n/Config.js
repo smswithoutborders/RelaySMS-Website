@@ -52,7 +52,23 @@ i18n
 					faq4: "Our Help Center offers resources and tutorials on logging in to your account and If you can't find a solution, you can reach out to our support team at <1>smswithoutborders</1>",
 					FAQ5: "I'm experiencing technical difficulties with the app. How can I get help? ",
 					faq5: "Our Help Center offers resources and troubleshooting guides. You can also reach out to our support team on social media at [link to X handle] or by visiting our website.",
-					ReadMore: "Read More"
+					ReadMore: "Read More",
+					footerbody2:
+						"The customer is very important, the customer will be followed by the customer. But now, the best thing is pure football or valley before valley.",
+					footerHeader1: "Quick links",
+					footerquick1: "Blog",
+					footerquick3: "Documentation",
+					footerquick4: "Privacy Policy",
+					footerHeader2: "Socials",
+					footersocial1: "Github",
+					footersocial2: "FaceBook",
+					footersocial3: " X",
+					footersocial4: "Mail",
+					footerHeader3: "Download",
+					footerdownload1: "Andriod",
+					footerdownload2: "iOS",
+					footerdownload3: "Linux",
+					footerdownload4: "Windows"
 				}
 			},
 			// french
@@ -94,7 +110,23 @@ i18n
 
 					faq4: "Si vous ne trouvez pas de solution, vous pouvez contacter notre équipe d'assistance à l'adresse <1>smswithoutborders</1>.",
 					FAQ5: "Je rencontre des difficultés techniques avec l'application. Comment puis-je obtenir de l'aide ?",
-					faq5: "Our Help Center offers resources and troubleshooting guides. You can also reach out to our support team on social media at [link to X handle] or by visiting our website."
+					faq5: "Our Help Center offers resources and troubleshooting guides. You can also reach out to our support team on social media at [link to X handle] or by visiting our website.",
+					footerbody2:
+						"Le client est très important, le client sera suivi par le client. Mais aujourd'hui, la meilleure chose est le football pur ou la vallée avant la vallée",
+					footerHeader1: "Liens rapides",
+					footerquick1: "Blog",
+					footerquick3: "Documentation",
+					footerquick4: "Politique de confidentialité",
+					footerHeader2: "Sociaux",
+					footersocial1: "Github",
+					footersocial2: "FaceBook",
+					footersocial3: " X",
+					footersocial4: "Mail",
+					footerHeader3: "Télécharger",
+					footerdownload1: "Andriod",
+					footerdownload2: "iOS",
+					footerdownload3: "Linux",
+					footerdownload4: "Windows"
 				}
 			},
 			fa: {
@@ -132,7 +164,23 @@ i18n
 					faq4: "مرکز راهنمای ما منابع و آموزش‌هایی در مورد ورود به حساب کاربری شما ارائه می‌دهد و اگر نتوانستید راه حلی پیدا کنید، می‌توانید با تیم پشتیبانی ما تماس بگیرید در <1>smswithoutborders</1>",
 					FAQ5: "مشکلات فنی با اپلیکیشن را تجربه می‌کنم. چگونه می‌توانم کمک بگیرم؟",
 					faq5: "مرکز راهنمای ما منابع و راهنمایی‌های اشکال‌زدایی ارائه می‌دهد. همچنین می‌توانید با تیم پشتیبانی ما از طریق رسانه‌های اجتماعی به آدرس [لینک به X handle] یا بازدید از وب‌سایت ما تماس بگیرید.",
-					ReadMore: "بیشتر بخوانید"
+					ReadMore: "بیشتر بخوانید",
+					footerbody2:
+						"مشتری بسیار مهم است، مشتری توسط مشتری دنبال می شود. اما اکنون بهترین چیز فوتبال خالص یا دره قبل از دره است.",
+					footerHeader1: "لینک های سریع",
+					footerquick1: "وبلاگ",
+					footerquick3: "مستندات",
+					footerquick4: "سیاست حفظ حریم خصوصی",
+					footerHeader2: "اجتماعی",
+					footersocial1: "گیتهاب",
+					footersocial2: "فیس بوک",
+					footersocial3: " X",
+					footersocial4: "پست",
+					footerHeader3: "دانلود",
+					footerdownload1: "اندریود",
+					footerdownload2: "iOS",
+					footerdownload3: "Linux",
+					footerdownload4: "پنجره ها"
 				}
 			}
 		}
