@@ -75,7 +75,7 @@ export default function Landing() {
 							/>
 
 							<Typography variant="body2" sx={{ pl: 1 }}>
-								{t("AndroidApp")}
+								{t("Android")}
 							</Typography>
 						</Button>
 
@@ -94,7 +94,7 @@ export default function Landing() {
 							}}
 						>
 							<Typography variant="body2" sx={{ pl: 1 }}>
-								{t("DesktopApp")}
+								{t("Desktop")}
 							</Typography>
 						</Button>
 					</Box>
@@ -196,7 +196,7 @@ export default function Landing() {
 								color: "black"
 							}}
 						>
-							RelaySMS is actively used in over 60 countries.
+							{t("RelaySMSMap")}
 						</Typography>
 					</Grid>
 					<Grid item md={7} sx={{ justifyContent: "center", display: "flex", mx: "auto" }}>
@@ -215,7 +215,7 @@ export default function Landing() {
 				>
 					<Grid item md={12} xs={12}>
 						<Typography textAlign={"center"} variant="h5" sx={{ fontWeight: 700, py: 2 }}>
-							Whats new on RelaySMS ?
+							{t("WhatsNew")}
 						</Typography>
 					</Grid>
 
@@ -234,19 +234,18 @@ export default function Landing() {
 							</Box>
 							<CardContent>
 								<Typography gutterBottom variant="h5" component="div">
-									Reliability Of Gateway Clients In Smswithoutborders
+									{t("Reliability")}
 								</Typography>
 								<Typography variant="body2" color="text.secondary">
-									Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online
-									platforms. The Gateway Client listens for messages and routes them to the Gateway
-									server, which publishes ...{" "}
+									{t("ReliabilityD")}{" "}
 									<a
 										style={{ color: "#8AC1EE" }}
 										href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders"
 										target="_blank"
 										rel="noreferrer"
 									>
-										Read more
+										<br></br>
+										{t("ReadMore")}
 									</a>
 								</Typography>
 							</CardContent>
@@ -264,19 +263,18 @@ export default function Landing() {
 							<CardMedia sx={{ height: 200 }} image="/resilience.svg" title="resilience" />
 							<CardContent>
 								<Typography gutterBottom variant="h5" component="div">
-									Resilience Of Gateway Clients In Smswithoutborders
+									{t("Resilience")}
 								</Typography>
 								<Typography variant="body2" color="text.secondary">
-									Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online
-									platforms. The Gateway Client listens for messages and routes them to the Gateway
-									server, which publishes ...{" "}
+									{t("ResilienceD")}{" "}
 									<a
 										style={{ color: "#8AC1EE" }}
 										href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders"
 										target="_blank"
 										rel="noreferrer"
 									>
-										Read more
+										<br></br>
+										{t("ReadMore")}
 									</a>
 								</Typography>
 							</CardContent>
