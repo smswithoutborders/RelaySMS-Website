@@ -1,9 +1,10 @@
 {
 	"Landing": {
 		"landingh1": "Keep talking with RelaySMS",
-		"landingh2": "Send Emails, Posts, and Messages securely via SMS."
+		"landingh2": "Send Emails, Posts, and Messages securely via SMS.",
+		"Android": "Application Android",
+		"Desktop": "Application de bureau"
 	},
-
 	"Nav": {
 		"Home": "Home",
 		"help": "Help",
@@ -18,7 +19,30 @@
 		"HowItWorksD": "Receive a response via SMS indicating success or failure.",
 		"GettingStartedButton": "Get Started"
 	},
-	"footer": {
+	"Map": {
+		"RelaySMSMap": "RelaySMS is actively used in over 60 countries."
+	},
+	"Blog": {
+		"WhatsNew": "Whats New on RelaySMS?",
+		"Resilience": "Resilience Of Gateway Clients In Smswithoutborders",
+		"ResilienceD": "Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online platforms. The Gateway Client listens for messages and routes them to the Gateway server, which publishes ...",
+		"ReliabilityD": "Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online platforms. The Gateway Client listens for messages and routes them to the Gateway server, which publishes ...",
+		"Reliability": "Reliability Of Gateway Clients In Smswithoutborders",
+		"ReadMore": "Read More"
+	},
+	"FAQ": {
+		"FAQ1": "Is RelaySMS available on my device?",
+		"faq1": "RelaySMS is currently available for Android. We are working on expanding compatibility to other platforms.",
+		"FAQ2": "Why do I need to create an account?",
+		"faq2": " ",
+		"FAQ3": "Why do I need to create an account?",
+		"faq3": " ",
+		"FAQ4": "Why do I need to create an account?",
+		"faq4": " ",
+		"FAQ5": "Why do I need to create an account?",
+		"faq5": " "
+	},
+	"Footer": {
 		"RelaySMS": "RelaySMS",
 		"footerbody2": "The customer is very important, the customer will be followed by the customer. But now, the best thing is pure football or valley before valley."
 	}

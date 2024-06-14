@@ -102,3 +102,14 @@ button:hover {
 		transform: scale(1);
 	}
 }
+
+.menu-link {
+	text-decoration: none;
+	color: inherit;
+	padding: 10px;
+	transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+	color: #ff5722;
+}

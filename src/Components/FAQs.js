@@ -1,139 +1,74 @@
 import * as React from "react";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
+import { Accordion, AccordionSummary, AccordionDetails, Typography } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Fade from "@mui/material/Fade";
-import { Box } from "@mui/material";
+import { useTranslation } from "react-i18next";
+
+const FAQ = [
+	{
+		question: "FAQ1",
+		answer: "faq1"
+	},
+	{
+		question: "FAQ2",
+		answer: "faq2"
+	},
+	{
+		question: "FAQ3",
+		answer: "faq3"
+	},
+	{
+		question: "FAQ4",
+		answer: "faq4"
+	},
+	{
+		question: "FAQ5",
+		answer: "faq5"
+	}
+];
 
 export default function Faqs() {
-	const [expanded, setExpanded] = React.useState(false);
+	const [expanded, setExpanded] = React.useState(0);
+	const { t } = useTranslation();
 
-	const handleExpansion = () => {
-		setExpanded((prevExpanded) => !prevExpanded);
+	const handleChange = (panel) => (event, isExpanded) => {
+		setExpanded(isExpanded ? panel : false);
 	};
 
 	return (
-		<Box
-			sx={{
-				backgroundColor: "white",
-				color: "black",
-				borderRadius: 1,
-				p: 2
-			}}
-		>
-			<Accordion
-				expanded={expanded}
-				onChange={handleExpansion}
-				slots={{ transition: Fade }}
-				slotProps={{ transition: { timeout: 400 } }}
-				sx={{
-					"& .MuiAccordion-region": { height: expanded ? "auto" : 0 },
-					"& .MuiAccordionDetails-root": {
-						display: expanded ? "block" : "none"
-					}
-				}}
-			>
-				<AccordionSummary
-					expandIcon={<ExpandMoreIcon />}
-					aria-controls="panel1-content"
-					id="panel1-header"
+		<div style={{ padding: "20px", marginBottom: "20px", maxWidth: "800px", margin: "0 auto" }}>
+			<h1>FAQ</h1>
+			{FAQ.map((item, index) => (
+				<Accordion
+					key={index}
+					expanded={expanded === index}
+					onChange={handleChange(index)}
+					sx={{
+						mb: 2,
+						backgroundColor: "hsl(243, 87%, 12%)",
+						boxShadow: expanded === index ? "0px 4px 4px rgba(0, 0, 0, 0.25)" : "none",
+						borderRadius: 8
+					}}
 				>
-					<Typography variant="body1" sx={{ fontWeight: 800 }}>
-						Is RelaySMS same as SMSWithoutBorders?
-					</Typography>
-				</AccordionSummary>
-				<AccordionDetails>
-					<Typography>
-						RelaySMS is one of the biggest tools provided by SMSWithoutBorders
-					</Typography>
-				</AccordionDetails>
-			</Accordion>
-			<Accordion>
-				<AccordionSummary
-					expandIcon={<ExpandMoreIcon />}
-					aria-controls="panel2-content"
-					id="panel2-header"
-				>
-					<Typography variant="body1" sx={{ fontWeight: 700 }}>
-						Is RelaySMS free?
-					</Typography>
-				</AccordionSummary>
-				<AccordionDetails>
-					<Typography>
-						Yes you can get RelaySMS app for free{" "}
-						<span style={{ color: "skyblue" }}>
-							{" "}
-							<a href="/download" target="_blank">
-								download here
-							</a>
-						</span>
-						, even our code base is open source
-					</Typography>
-				</AccordionDetails>
-			</Accordion>
-			<Accordion>
-				<AccordionSummary
-					expandIcon={<ExpandMoreIcon />}
-					aria-controls="panel3-content"
-					id="panel3-header"
-				>
-					<Typography variant="body1" sx={{ fontWeight: 700 }}>
-						How can I contribute to the RelaySMS project?
-					</Typography>
-				</AccordionSummary>
-				<AccordionDetails>
-					<Typography>
-						You can contribute by visiting our{" "}
-						<span style={{ color: "skyblue" }}>
-							<a href="/contribute" target="_blank">
-								contribution page
-							</a>
-						</span>
-						, where you will find guidelines and resources on how to get started.
-					</Typography>
-				</AccordionDetails>
-			</Accordion>
-			<Accordion>
-				<AccordionSummary
-					expandIcon={<ExpandMoreIcon />}
-					aria-controls="panel4-content"
-					id="panel4-header"
-				>
-					<Typography variant="body1" sx={{ fontWeight: 700 }}>
-						Is there any customer support available for RelaySMS?
-					</Typography>
-				</AccordionSummary>
-				<AccordionDetails>
-					<Typography>
-						Yes, we offer 24/7 customer support. You can reach out to us through our{" "}
-						<span style={{ color: "skyblue" }}>
-							<a href="/support" target="_blank">
-								support page
-							</a>
-						</span>
-						.
-					</Typography>
-				</AccordionDetails>
-			</Accordion>
-			<Accordion>
-				<AccordionSummary
-					expandIcon={<ExpandMoreIcon />}
-					aria-controls="panel5-content"
-					id="panel5-header"
-				>
-					<Typography variant="body1" sx={{ fontWeight: 700 }}>
-						What platforms is RelaySMS compatible with?
-					</Typography>
-				</AccordionSummary>
-				<AccordionDetails>
-					<Typography>
-						RelaySMS is compatible with both iOS and Android platforms. You can download the app
-						from the respective app stores.
-					</Typography>
-				</AccordionDetails>
-			</Accordion>
-		</Box>
+					<AccordionSummary
+						expandIcon={<ExpandMoreIcon />}
+						aria-controls={`faq${index}-content`}
+						id={`faq${index}-header`}
+						sx={{
+							minHeight: 64,
+							"& .MuiAccordionSummary-content": {
+								margin: "12px 0"
+							}
+						}}
+					>
+						<Typography variant="body1" sx={{ fontWeight: 700, color: "#3f51b5" }}>
+							{t(item.question)}
+						</Typography>
+					</AccordionSummary>
+					<AccordionDetails>
+						<Typography>{t(item.answer)}</Typography>
+					</AccordionDetails>
+				</Accordion>
+			))}
+		</div>
 	);
 }
