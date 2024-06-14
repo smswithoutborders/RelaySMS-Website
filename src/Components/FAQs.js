@@ -46,7 +46,8 @@ export default function Faqs() {
 						mb: 2,
 						backgroundColor: "hsl(243, 87%, 12%)",
 						boxShadow: expanded === index ? "0px 4px 4px rgba(0, 0, 0, 0.25)" : "none",
-						borderRadius: 8
+						borderRadius: 8,
+						color: "white"
 					}}
 				>
 					<AccordionSummary
@@ -60,7 +61,7 @@ export default function Faqs() {
 							}
 						}}
 					>
-						<Typography variant="body1" sx={{ fontWeight: 700, color: "#3f51b5" }}>
+						<Typography variant="body1" sx={{ fontWeight: 700, color: "white" }}>
 							{t(item.question)}
 						</Typography>
 					</AccordionSummary>

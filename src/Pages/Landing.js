@@ -17,77 +17,75 @@ export default function Landing() {
 			<motion.div className="progress-bar" style={{ scaleX: scrollYProgress }} />
 			{/* Banner Page */}
 
-			<section style={{ padding: "10px 0" }}>
-				<Grid
-					container
-					style={{ maxWidth: "1400px", margin: "0 auto", padding: "40px 20px" }}
-					spacing={3}
+			<Grid
+				container
+				style={{ maxWidth: "1400px", margin: "0 auto", padding: "40px 20px" }}
+				spacing={3}
+			>
+				<AnimatePresence
+					transition={{
+						ease: "linear",
+						duration: 2,
+						x: { duration: 1 }
+					}}
 				>
-					<AnimatePresence
-						transition={{
-							ease: "linear",
-							duration: 2,
-							x: { duration: 1 }
-						}}
-					>
-						<Grid item md={6} sm={12} xs={12} style={{ display: "flex", justifyContent: "center" }}>
-							<img src="/nerd1.png" alt="Illustration" style={{ maxWidth: "100%" }} />
-						</Grid>
-					</AnimatePresence>
-					<Grid
-						item
-						md={6}
-						sm={12}
-						xs={12}
-						style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}
-					>
-						<img src="/logo.png" alt="Logo" style={{ maxWidth: "10%", marginBottom: "20px" }} />
-						<Typography variant="h3" style={{ fontWeight: 700, marginBottom: "20px" }}>
-							{t("landingh1")}
-						</Typography>
-						<Typography variant="h5" style={{ marginBottom: "20px" }}>
-							{t("landingh2")}
-						</Typography>
-						<div style={{ display: "flex" }}>
-							<Button
-								size="large"
-								component="a"
-								href="/download"
-								variant="contained"
-								style={{
-									padding: "10px 20px",
-									marginRight: "10px",
-									backgroundColor: "black",
-									color: "whitesmoke",
-									textTransform: "none"
-								}}
-							>
-								<img
-									src="/playstore.svg"
-									alt="Google Play Store"
-									style={{ width: "20px", height: "20px", marginRight: "5px" }}
-								/>
-								<Typography variant="body2">{t("Android")}</Typography>
-							</Button>
-
-							<Button
-								size="large"
-								component="a"
-								href="/download"
-								variant="contained"
-								style={{
-									padding: "10px 20px",
-									backgroundColor: "black",
-									color: "whitesmoke",
-									textTransform: "none"
-								}}
-							>
-								<Typography variant="body2">{t("Desktop")}</Typography>
-							</Button>
-						</div>
+					<Grid item md={6} sm={12} xs={12} style={{ display: "flex", justifyContent: "center" }}>
+						<img src="/nerd1.png" alt="Illustration" style={{ maxWidth: "100%" }} />
 					</Grid>
+				</AnimatePresence>
+				<Grid
+					item
+					md={6}
+					sm={12}
+					xs={12}
+					style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}
+				>
+					<img src="/logo.png" alt="Logo" style={{ maxWidth: "10%", marginBottom: "20px" }} />
+					<Typography variant="h3" style={{ fontWeight: 700, marginBottom: "20px" }}>
+						{t("landingh1")}
+					</Typography>
+					<Typography variant="h5" style={{ marginBottom: "20px" }}>
+						{t("landingh2")}
+					</Typography>
+					<div style={{ display: "flex" }}>
+						<Button
+							size="large"
+							component="a"
+							href="/download"
+							variant="contained"
+							style={{
+								padding: "10px 20px",
+								marginRight: "10px",
+								backgroundColor: "black",
+								color: "whitesmoke",
+								textTransform: "none"
+							}}
+						>
+							<img
+								src="/playstore.svg"
+								alt="Google Play Store"
+								style={{ width: "20px", height: "20px", marginRight: "5px" }}
+							/>
+							<Typography variant="body2">{t("Android")}</Typography>
+						</Button>
+
+						<Button
+							size="large"
+							component="a"
+							href="/download"
+							variant="contained"
+							style={{
+								padding: "10px 20px",
+								backgroundColor: "black",
+								color: "whitesmoke",
+								textTransform: "none"
+							}}
+						>
+							<Typography variant="body2">{t("Desktop")}</Typography>
+						</Button>
+					</div>
 				</Grid>
-			</section>
+			</Grid>
 
 			{/* How it works */}
 			<Box textAlign="center" sx={{ pt: { md: 10, xs: 7 }, px: { md: 30, xs: 3 }, mb: 0 }}>
@@ -287,10 +285,6 @@ export default function Landing() {
 					mt: { md: 4, xs: 1 }
 				}}
 			>
-				<Typography variant="h5" sx={{ fontWeight: 700, py: 2 }}>
-					FAQs
-				</Typography>
-
 				<Faqs />
 			</Box>
 			{/*  */}
