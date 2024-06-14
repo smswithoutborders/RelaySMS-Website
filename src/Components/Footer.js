@@ -39,61 +39,58 @@ export default function Footer() {
 					<Grid item md={2} xs={12}>
 						<List>
 							<ListItem variant="body1" sx={{ fontWeight: 600 }}>
-								Quick links
+								{t("footerHeader1")}
 							</ListItem>
 							<ListItem variant="body1">
-								<a href="https://blog.smswithoutborders.com/">Blogs</a>
+								<a href="https://blog.smswithoutborders.com/"> {t("footerquick1")} </a>
 							</ListItem>
 							<ListItem variant="body1">
-								<a href="https://github.com/smswithoutborders">GitHub</a>
+								<a href="/documentation"> {t("footerquick3")} </a>
 							</ListItem>
 							<ListItem variant="body1">
-								<a href="/documentation">Documentation</a>
-							</ListItem>
-							<ListItem variant="body1">
-								<a href="/privacy-policy">Privacy Policy</a>
+								<a href="/privacy-policy"> {t("footerquick4")}</a>
 							</ListItem>
 						</List>
 					</Grid>
 					<Grid item md={2} xs={12}>
 						<List>
 							<ListItem variant="body1" sx={{ fontWeight: 600 }}>
-								Socials
+								{t("footerHeader2")}
 							</ListItem>
 							<ListItem variant="body1">
 								<FaGithub style={{ marginRight: 15 }} />
-								<a href="https://github.com/smswithoutborders">GitHub</a>
+								<a href="https://github.com/smswithoutborders">{t("footersocial1")}</a>
 							</ListItem>
 							<ListItem variant="body1">
 								<FaFacebook style={{ marginRight: 15 }} />
-								<a href="https://www.facebook.com/SMSWithoutBorders">Facebook</a>
+								<a href="https://www.facebook.com/SMSWithoutBorders">{t("footersocial2")}</a>
 							</ListItem>
 							<ListItem variant="body1">
 								<FaXTwitter style={{ marginRight: 15 }} />
-								<a href="https://x.com/SwobOutreach">X </a>
+								<a href="https://x.com/SwobOutreach">{t("footersocial3")}</a>
 							</ListItem>
 							<ListItem variant="body1">
 								<FaEnvelope style={{ marginRight: 15 }} />
-								<a href="mailto:support@smswithoutborders.com">Mail</a>
+								<a href="mailto:support@smswithoutborders.com">{t("footersocial4")}</a>
 							</ListItem>
 						</List>
 					</Grid>
 					<Grid item md={2} xs={12}>
 						<List>
 							<ListItem variant="body1" sx={{ fontWeight: 600 }}>
-								Download
+								{t("footerHeader3")}
 							</ListItem>
 							<ListItem variant="body1">
-								<a href="/download/android">Android</a>
+								<a href="/download/android">{t("footerdownload1")}</a>
 							</ListItem>
 							<ListItem variant="body1">
-								<a href="/download/ios">iOS</a>
+								<a href="/download/ios"> {t("footerdownload2")}</a>
 							</ListItem>
 							<ListItem variant="body1">
-								<a href="/download/linux">Linux</a>
+								<a href="/download/linux"> {t("footerdownload3")}</a>
 							</ListItem>
 							<ListItem variant="body1">
-								<a href="/download/windows">Windows</a>
+								<a href="/download/windows"> {t("footerdownload4")}</a>
 							</ListItem>
 						</List>
 					</Grid>

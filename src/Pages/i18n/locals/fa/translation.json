@@ -43,7 +43,21 @@
 		"faq5": " "
 	},
 	"Footer": {
-		"RelaySMS": "RelaySMS",
-		"footerbody2": "مشتری بسیار مهم است، مشتری پس از مشتری دنبال می‌شود. اما اکنون، بهترین چیز فوتبال خالص یا دره قبل از دره است."
+		"ReadMore": "بیشتر بخوانید",
+		"footerbody2": "مشتری بسیار مهم است، مشتری توسط مشتری دنبال می شود. اما اکنون بهترین چیز فوتبال خالص یا دره قبل از دره است.",
+		"footerHeader1": "لینک های سریع",
+		"footerquick1": "وبلاگ",
+		"footerquick3": "مستندات",
+		"footerquick4": "سیاست حفظ حریم خصوصی",
+		"footerHeader2": "اجتماعی",
+		"footersocial1": "گیتهاب",
+		"footersocial2": "فیس بوک",
+		"footersocial3": " X",
+		"footersocial4": "پست",
+		"footerHeader3": "دانلود",
+		"footerdownload1": "اندریود",
+		"footerdownload2": "iOS",
+		"footerdownload3": "Linux",
+		"footerdownload4": "پنجره ها"
 	}
 }
