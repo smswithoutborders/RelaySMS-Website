@@ -72,7 +72,7 @@ export default function BackToTop(props) {
 
 	const changeLanguage = (lng) => {
 		i18n.changeLanguage(lng);
-		handleClose(); // Close the menu after language change
+		handleClose();
 	};
 
 	return (
@@ -109,10 +109,7 @@ export default function BackToTop(props) {
 									onClose={handleClose}
 								>
 									<MenuItem onClick={handleClose}>
-										<a
-											href="/"
-											className="menu-link" // Add class for styling
-										>
+										<a href="/" className="menu-link">
 											{t("Home")}
 										</a>
 									</MenuItem>
@@ -121,7 +118,7 @@ export default function BackToTop(props) {
 											href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
 											target="_blank"
 											rel="noreferrer noopener"
-											className="menu-link" // Add class for styling
+											className="menu-link"
 										>
 											{t("help")}
 										</a>
@@ -131,7 +128,7 @@ export default function BackToTop(props) {
 											href="https://github.com/deku-messaging"
 											target="_blank"
 											rel="noreferrer"
-											className="menu-link" // Add class for styling
+											className="menu-link"
 										>
 											{t("github")}
 										</a>
@@ -141,7 +138,7 @@ export default function BackToTop(props) {
 											href="https://blog.smswithoutborders.com/"
 											target="_blank"
 											rel="noreferrer"
-											className="menu-link" // Add class for styling
+											className="menu-link"
 										>
 											{t("Blog")}
 										</a>

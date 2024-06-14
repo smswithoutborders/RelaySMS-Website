@@ -107,9 +107,9 @@ button:hover {
 	text-decoration: none;
 	color: inherit;
 	padding: 10px;
-	transition: color 0.3s ease; /* Example of a transition effect */
+	transition: color 0.3s ease;
 }
 
 .menu-link:hover {
-	color: #ff5722; /* Example of hover effect */
+	color: #ff5722;
 }
