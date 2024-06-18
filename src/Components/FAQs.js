@@ -5,24 +5,24 @@ import { useTranslation } from "react-i18next";
 
 const FAQ = [
 	{
-		question: "FAQ1",
-		answer: "faq1"
+		question: "FAQ.FAQ1",
+		answer: "FAQ.faq1"
 	},
 	{
-		question: "FAQ2",
-		answer: "faq2"
+		question: "FAQ.FAQ2",
+		answer: "FAQ.faq2"
 	},
 	{
-		question: "FAQ3",
-		answer: "faq3"
+		question: "FAQ.FAQ3",
+		answer: "FAQ.faq3"
 	},
 	{
-		question: "FAQ4",
-		answer: "faq4"
+		question: "FAQ.FAQ4",
+		answer: "FAQ.faq4"
 	},
 	{
-		question: "FAQ5",
-		answer: "faq5"
+		question: "FAQ.FAQ5",
+		answer: "FAQ.faq5"
 	}
 ];
 
@@ -36,7 +36,7 @@ export default function Faqs() {
 
 	return (
 		<div style={{ padding: "20px", marginBottom: "20px", maxWidth: "800px", margin: "0 auto" }}>
-			<h1>FAQ</h1>
+			<h1>{t("FAQ.FAQ")}</h1>
 			{FAQ.map((item, index) => (
 				<Accordion
 					key={index}
