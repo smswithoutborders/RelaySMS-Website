@@ -152,7 +152,7 @@ export default function Landing() {
 								rel="noreferrer noopener"
 								style={{ textDecoration: "none", color: "inherit" }}
 							>
-								<Typography variant="body1" sx={{ p: 2, textDecoration: "underline" }}>
+								<Typography variant="body1" sx={{ p: 8, textDecoration: "underline" }}>
 									{t("Howitworks.GettingStartedButton")}{" "}
 									<FaCircleArrowRight size="20px" style={{ rotate: "-30deg" }} />
 								</Typography>
