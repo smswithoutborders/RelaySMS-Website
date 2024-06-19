@@ -15,8 +15,8 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
+import { useTheme, createTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
 import "../App.css";
@@ -56,7 +56,7 @@ ScrollTop.propTypes = {
 
 export default function BackToTop(props) {
 	const { darkMode, toggleDarkMode } = props;
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -70,8 +70,13 @@ export default function BackToTop(props) {
 		setAnchorEl(null);
 	};
 
+	const direction = i18n.dir();
+	const themeWithDirection = createTheme({
+		direction: direction
+	});
+
 	return (
-		<React.Fragment>
+		<React.Fragment theme={themeWithDirection}>
 			<CssBaseline />
 			<AppBar>
 				<Toolbar>
@@ -93,12 +98,12 @@ export default function BackToTop(props) {
 									anchorEl={anchorEl}
 									anchorOrigin={{
 										vertical: "top",
-										horizontal: "right"
+										horizontal: direction === "rtl" ? "left" : "right"
 									}}
 									keepMounted
 									transformOrigin={{
 										vertical: "top",
-										horizontal: "right"
+										horizontal: direction === "rtl" ? "left" : "right"
 									}}
 									open={Boolean(anchorEl)}
 									onClose={handleClose}

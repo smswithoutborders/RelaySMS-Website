@@ -2,8 +2,8 @@
 	"Landing": {
 		"landingh1": "Keep talking with RelaySMS",
 		"landingh2": "Send Emails, Posts, and Messages securely via SMS.",
-		"Android": "Application Android",
-		"Desktop": "Application de bureau"
+		"Android": "Android App",
+		"Desktop": "Desktop App"
 	},
 	"Nav": {
 		"Home": "Home",
