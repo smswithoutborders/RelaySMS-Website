@@ -31,7 +31,7 @@ export default function Landing() {
 						}}
 					>
 						<Grid item md={6} sm={12} xs={12} style={{ display: "flex", justifyContent: "center" }}>
-							<img src="/nerd1.png" alt="Illustration" style={{ maxWidth: "100%" }} />
+							<img src="/nerd1.png" alt="Illustration" style={{ maxWidth: "80%" }} />
 						</Grid>
 					</AnimatePresence>
 
