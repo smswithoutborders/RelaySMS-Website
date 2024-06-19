@@ -13,12 +13,12 @@ import IconButton from "@mui/material/IconButton";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
+import { useTheme, createTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import LanguageSwitcher from "../Components/LanguageSwitcher";
 import "../App.css";
 
 function ScrollTop(props) {
@@ -70,13 +70,13 @@ export default function BackToTop(props) {
 		setAnchorEl(null);
 	};
 
-	const changeLanguage = (lng) => {
-		i18n.changeLanguage(lng);
-		handleClose();
-	};
+	const direction = i18n.dir();
+	const themeWithDirection = createTheme({
+		direction: direction
+	});
 
 	return (
-		<React.Fragment>
+		<React.Fragment theme={themeWithDirection}>
 			<CssBaseline />
 			<AppBar>
 				<Toolbar>
@@ -98,19 +98,19 @@ export default function BackToTop(props) {
 									anchorEl={anchorEl}
 									anchorOrigin={{
 										vertical: "top",
-										horizontal: "right"
+										horizontal: direction === "rtl" ? "left" : "right"
 									}}
 									keepMounted
 									transformOrigin={{
 										vertical: "top",
-										horizontal: "right"
+										horizontal: direction === "rtl" ? "left" : "right"
 									}}
 									open={Boolean(anchorEl)}
 									onClose={handleClose}
 								>
 									<MenuItem onClick={handleClose}>
 										<a href="/" className="menu-link">
-											{t("Home")}
+											{t("Nav.Home")}
 										</a>
 									</MenuItem>
 									<MenuItem onClick={handleClose}>
@@ -120,7 +120,7 @@ export default function BackToTop(props) {
 											rel="noreferrer noopener"
 											className="menu-link"
 										>
-											{t("help")}
+											{t("Nav.help")}
 										</a>
 									</MenuItem>
 									<MenuItem onClick={handleClose}>
@@ -130,7 +130,7 @@ export default function BackToTop(props) {
 											rel="noreferrer"
 											className="menu-link"
 										>
-											{t("github")}
+											{t("Nav.github")}
 										</a>
 									</MenuItem>
 									<MenuItem onClick={handleClose}>
@@ -140,7 +140,7 @@ export default function BackToTop(props) {
 											rel="noreferrer"
 											className="menu-link"
 										>
-											{t("Blog")}
+											{t("Nav.Blog")}
 										</a>
 									</MenuItem>
 								</Menu>
@@ -156,7 +156,7 @@ export default function BackToTop(props) {
 								}}
 							>
 								<a href="/" className="menu-link">
-									<Typography>{t("Home")}</Typography>
+									<Typography>{t("Nav.Home")}</Typography>
 								</a>
 								<a
 									href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
@@ -164,7 +164,7 @@ export default function BackToTop(props) {
 									rel="noreferrer noopener"
 									className="menu-link"
 								>
-									<Typography>{t("help")}</Typography>
+									<Typography>{t("Nav.help")}</Typography>
 								</a>
 								<a
 									href="https://github.com/deku-messaging"
@@ -172,7 +172,7 @@ export default function BackToTop(props) {
 									rel="noreferrer"
 									className="menu-link"
 								>
-									<Typography>{t("github")}</Typography>
+									<Typography>{t("Nav.github")}</Typography>
 								</a>
 								<a
 									href="https://blog.smswithoutborders.com/"
@@ -180,7 +180,7 @@ export default function BackToTop(props) {
 									rel="noreferrer"
 									className="menu-link"
 								>
-									<Typography>{t("Blog")}</Typography>
+									<Typography>{t("Nav.Blog")}</Typography>
 								</a>
 							</Box>
 						)}
@@ -191,35 +191,7 @@ export default function BackToTop(props) {
 								gap: 2
 							}}
 						>
-							<Select
-								value={i18n.language}
-								onChange={(e) => changeLanguage(e.target.value)}
-								sx={{
-									backgroundColor: theme.palette.background.paper,
-									borderRadius: theme.shape.borderRadius,
-									"& .MuiSelect-root": {
-										paddingLeft: theme.spacing(2),
-										paddingRight: theme.spacing(2)
-									}
-								}}
-								displayEmpty
-								inputProps={{ "aria-label": "language selector" }}
-								MenuProps={{
-									anchorOrigin: {
-										vertical: "bottom",
-										horizontal: "right"
-									},
-									transformOrigin: {
-										vertical: "top",
-										horizontal: "right"
-									},
-									getContentAnchorEl: null
-								}}
-							>
-								<MenuItem value="en">🇺🇸 English</MenuItem>
-								<MenuItem value="fr">🇫🇷 French</MenuItem>
-								<MenuItem value="fa">🇮🇷 Persian</MenuItem>
-							</Select>
+							<LanguageSwitcher />
 							<IconButton
 								onClick={toggleDarkMode}
 								aria-label={darkMode ? "Light Mode" : "Dark Mode"}

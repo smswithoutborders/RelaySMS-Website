@@ -2,8 +2,8 @@
 	"Landing": {
 		"landingh1": "Keep talking with RelaySMS",
 		"landingh2": "Send Emails, Posts, and Messages securely via SMS.",
-		"Android": "Application Android",
-		"Desktop": "Application de bureau"
+		"Android": "Android App",
+		"Desktop": "Desktop App"
 	},
 	"Nav": {
 		"Home": "Home",
@@ -31,16 +31,17 @@
 		"ReadMore": "Read More"
 	},
 	"FAQ": {
+		"FAQ": "FAQ",
 		"FAQ1": "Is RelaySMS available on my device?",
 		"faq1": "RelaySMS is currently available for Android. We are working on expanding compatibility to other platforms.",
-		"FAQ2": "Why do I need to create an account?",
-		"faq2": " ",
-		"FAQ3": "Why do I need to create an account?",
-		"faq3": " ",
-		"FAQ4": "Why do I need to create an account?",
-		"faq4": " ",
-		"FAQ5": "Why do I need to create an account?",
-		"faq5": " "
+		"FAQ2": "How do I send an offline message? ",
+		"faq2": "Choose the platform you want to send the message to and compose your message within the app. Our Help Center also offers resources and tutorials on how to send messages through the app",
+		"FAQ3": "Are there any limitations on offline messages? ",
+		"faq3": "There are no limits on the size and number of messages you can send with the app.",
+		"FAQ4": "I'm having trouble logging in to my account. What should I do?  ",
+		"faq4": "Our Help Center offers resources and tutorials on logging in to your account and If you can't find a solution, you can reach out to our support team at <1>smswithoutborders</1>",
+		"FAQ5": "I'm experiencing technical difficulties with the app. How can I get help? ",
+		"faq5": "Our Help Center offers resources and troubleshooting guides. You can also reach out to our support team on social media at [link to X handle] or by visiting our website."
 	},
 	"Footer": {
 		"RelaySMS": "RelaySMS",
