@@ -31,7 +31,7 @@ export default function Landing() {
 						}}
 					>
 						<Grid item md={6} sm={12} xs={12} style={{ display: "flex", justifyContent: "center" }}>
-							<img src="/nerd1.png" alt="Illustration" style={{ maxWidth: "80%" }} />
+							<img src="/nerd1.png" alt="Illustration" style={{ maxWidth: "70%" }} />
 						</Grid>
 					</AnimatePresence>
 
@@ -152,7 +152,7 @@ export default function Landing() {
 								rel="noreferrer noopener"
 								style={{ textDecoration: "none", color: "inherit" }}
 							>
-								<Typography variant="body1" sx={{ p: 8, textDecoration: "underline" }}>
+								<Typography variant="body1" sx={{ p: 2, textDecoration: "underline" }}>
 									{t("Howitworks.GettingStartedButton")}{" "}
 									<FaCircleArrowRight size="20px" style={{ rotate: "-30deg" }} />
 								</Typography>
