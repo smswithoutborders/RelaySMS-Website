@@ -5,11 +5,17 @@ import { FaCircleArrowRight } from "react-icons/fa6";
 import CardContent from "@mui/material/CardContent";
 import Faqs from "../Components/FAQs";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { FaDownload } from "react-icons/fa";
 import "../i18n.js";
 
 export default function Landing() {
 	const { scrollYProgress } = useScroll();
 	const { t, i18n } = useTranslation();
+
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
 	const isRTL = i18n.language === "fa";
 
@@ -30,8 +36,21 @@ export default function Landing() {
 							x: { duration: 1 }
 						}}
 					>
-						<Grid item md={6} sm={12} xs={12} style={{ display: "flex", justifyContent: "center" }}>
-							<img src="/nerd1.png" alt="Illustration" style={{ maxWidth: "70%" }} />
+						<Grid
+							item
+							md={6}
+							sm={12}
+							xs={12}
+							style={{ display: "flex", justifyContent: "center" }}
+							sx={{
+								order: { xs: 2, sm: 2, md: 1 }
+							}}
+						>
+							<img
+								src="/nerd1.png"
+								alt="Illustration"
+								style={{ width: "100%", maxWidth: "70%", height: "auto" }}
+							/>
 						</Grid>
 					</AnimatePresence>
 
@@ -41,29 +60,45 @@ export default function Landing() {
 						sm={12}
 						xs={12}
 						style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}
+						sx={{
+							order: { xs: 1, sm: 1, md: 2 }
+						}}
 					>
-						<img src="/logo.png" alt="Logo" style={{ maxWidth: "10%", marginBottom: "20px" }} />
-						<Typography variant="h3" style={{ fontWeight: 700, marginBottom: "20px" }}>
+						{!isMobile && (
+							<img
+								src="/logo.png"
+								alt="Logo"
+								style={{ width: "100%", maxWidth: "10%", height: "auto", marginBottom: "20px" }}
+							/>
+						)}
+						<Typography variant="h3" sx={{ fontWeight: 700, mb: { xs: 3, md: 2 } }}>
 							{t("Landing.landingh1")}
 						</Typography>
-						<Typography variant="h5" style={{ marginBottom: "20px" }}>
+						<Typography variant="h5" sx={{ mb: 3 }}>
 							{t("Landing.landingh2")}
 						</Typography>
-						<div style={{ display: "flex" }}>
+						<div style={{ display: "flex", marginBottom: 3 }}>
 							<Button
 								size="large"
 								component="a"
 								href="/download"
 								variant="contained"
-								style={{
-									padding: "10px 20px",
-									marginRight: "10px",
-									backgroundColor: "black",
+								startIcon={
+									<img
+										src="./playstore.svg"
+										alt="playstore"
+										style={{ height: "25px", marginRight: "10px" }}
+									/>
+								}
+								sx={{
+									px: { xs: 4, md: 5 },
+									mr: { xs: 2, md: 3 },
+									bgcolor: "black",
 									color: "whitesmoke",
 									textTransform: "none"
 								}}
 							>
-								<Typography variant="body2">{t("Landing.Android")}</Typography>
+								{t("Landing.Android")}
 							</Button>
 
 							<Button
@@ -71,14 +106,15 @@ export default function Landing() {
 								component="a"
 								href="/download"
 								variant="contained"
-								style={{
-									padding: "10px 20px",
-									backgroundColor: "black",
+								startIcon={<FaDownload />}
+								sx={{
+									px: { xs: 4, md: 5 },
+									bgcolor: "black",
 									color: "whitesmoke",
 									textTransform: "none"
 								}}
 							>
-								<Typography variant="body2">{t("Landing.Desktop")}</Typography>
+								{t("Landing.Desktop")}
 							</Button>
 						</div>
 					</Grid>
@@ -215,7 +251,7 @@ export default function Landing() {
 										{t("Blog.Reliability")}
 									</Typography>
 									<Typography variant="body2" color="text.secondary">
-										{t("Blog.ReliabilityD")}{" "}
+										{t("Blog.ReliabilityD")}
 										<a
 											style={{ color: "#8AC1EE" }}
 											href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders"
