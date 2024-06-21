@@ -149,7 +149,6 @@ export default function Landing() {
 				</Grid>
 
 				{/* How it works */}
-
 				<Box textAlign="center" sx={{ pt: { md: 10, xs: 7 }, px: { md: 30, xs: 3 }, mb: 0 }}>
 					<Typography variant="h4" sx={{ fontWeight: 700, fontSize: { xs: "25px", md: "33px" } }}>
 						{t("Howitworks.HowItWorks")}
@@ -158,46 +157,110 @@ export default function Landing() {
 					{/* How it works sections */}
 					<Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
 						<Grid item xs={12} sm={6}>
-							<DemoPaper variant="elevation">
-								<CardMedia component="img" height="140" image="/permission.png" alt="permission" />
-								<Typography variant="body1">{t("Howitworks.HowItWorksA")}</Typography>
+							<DemoPaper
+								variant="elevation"
+								sx={{
+									height: { xs: 300, md: 340 },
+									display: "flex",
+									flexDirection: "column",
+									justifyContent: "space-between",
+									maxWidth: { xs: 345, md: "none" },
+									margin: "auto",
+									boxShadow: 3,
+									borderRadius: 2
+								}}
+							>
+								<CardMedia
+									component="img"
+									height="140"
+									image="/permission.png"
+									alt="permission"
+									sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
+								/>
+								<Typography variant="body1" sx={{ p: 2 }}>
+									{t("Howitworks.HowItWorksA")}
+								</Typography>
 							</DemoPaper>
 						</Grid>
 
 						<Grid item xs={12} sm={6}>
-							<DemoPaper variant="elevation">
+							<DemoPaper
+								variant="elevation"
+								sx={{
+									height: { xs: 300, md: 340 },
+									display: "flex",
+									flexDirection: "column",
+									justifyContent: "space-between",
+									maxWidth: { xs: 345, md: "none" },
+									margin: "auto",
+									boxShadow: 3,
+									borderRadius: 2
+								}}
+							>
 								<CardMedia
 									component="img"
 									height="140"
 									image="/composeMessage.png"
 									alt="compose message"
-									maxWidth="345"
+									sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
 								/>
-								<Typography variant="body1">{t("Howitworks.HowItWorksB")}</Typography>
+								<Typography variant="body1" sx={{ p: 2 }}>
+									{t("Howitworks.HowItWorksB")}
+								</Typography>
 							</DemoPaper>
 						</Grid>
 
 						<Grid item xs={12} sm={6}>
-							<DemoPaper variant="elevation">
+							<DemoPaper
+								variant="elevation"
+								sx={{
+									height: { xs: 300, md: 340 },
+									display: "flex",
+									flexDirection: "column",
+									justifyContent: "space-between",
+									maxWidth: { xs: 345, md: "none" },
+									margin: "auto",
+									boxShadow: 3,
+									borderRadius: 2
+								}}
+							>
 								<CardMedia
 									component="img"
 									height="140"
 									image="/Online-world.png"
 									alt="online world"
+									sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
 								/>
-								<Typography variant="body1">{t("Howitworks.HowItWorksC")}</Typography>
+								<Typography variant="body1" sx={{ p: 2 }}>
+									{t("Howitworks.HowItWorksC")}
+								</Typography>
 							</DemoPaper>
 						</Grid>
 
 						<Grid item xs={12} sm={6}>
-							<DemoPaper variant="elevation">
+							<DemoPaper
+								variant="elevation"
+								sx={{
+									height: { xs: 300, md: 340 },
+									display: "flex",
+									flexDirection: "column",
+									justifyContent: "space-between",
+									maxWidth: { xs: 345, md: "none" },
+									margin: "auto",
+									boxShadow: 3,
+									borderRadius: 2
+								}}
+							>
 								<CardMedia
 									component="img"
 									height="140"
 									image="/recievedNotification.png"
 									alt="received notification"
+									sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
 								/>
-								<Typography variant="body1">{t("Howitworks.HowItWorksD")}</Typography>
+								<Typography variant="body1" sx={{ p: 2 }}>
+									{t("Howitworks.HowItWorksD")}
+								</Typography>
 							</DemoPaper>
 						</Grid>
 
@@ -239,7 +302,6 @@ export default function Landing() {
 						</Grid>
 					</Grid>
 				</Box>
-
 				{/* Relay Map */}
 				<Box sx={{ bgcolor: "white", px: { md: 20, sm: 10, xs: 3 } }}>
 					<Grid container rowSpacing={4} sx={{ py: { md: 10, xs: 10 } }}>
