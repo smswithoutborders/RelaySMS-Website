@@ -1,7 +1,7 @@
 import React from "react";
-import { Box, Grid, Typography, Button, Card, CardMedia, Avatar } from "@mui/material";
+import { Box, Grid, Typography, Button, Card, CardMedia, Avatar, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { FaCircleArrowRight } from "react-icons/fa6";
+// import { FaCircleArrowRight } from "react-icons/fa6";
 import CardContent from "@mui/material/CardContent";
 import Faqs from "../Components/FAQs";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
@@ -13,6 +13,10 @@ import "../i18n.js";
 export default function Landing() {
 	const { scrollYProgress } = useScroll();
 	const { t, i18n } = useTranslation();
+
+	const DemoPaper = (props) => (
+		<Paper {...props} style={{ padding: "20px", textAlign: "center" }} />
+	);
 
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -121,78 +125,58 @@ export default function Landing() {
 				</Grid>
 
 				{/* How it works */}
-				<Box textAlign="center" sx={{ pt: { md: 10, xs: 7 }, px: { md: 30, xs: 3 }, mb: 0 }}>
-					<Typography variant="h4" sx={{ fontWeight: 700, fontSize: { xs: "25px", md: "33px" } }}>
+
+				<Box sx={{ flexGrow: 1, pt: { md: 10, xs: 7 }, px: { md: 30, xs: 3 }, mb: 0 }}>
+					<Typography
+						variant="h4"
+						sx={{ fontWeight: 700, fontSize: { xs: "25px", md: "33px" }, textAlign: "center" }}
+					>
 						{t("Howitworks.HowItWorks")}
 					</Typography>
 
 					{/* How it works sections */}
-					<Grid container spacing={4} justifyContent="center" alignItems="center" sx={{ mt: 4 }}>
-						{/* Section A */}
-						<Grid item xs={12} md={6}>
-							<Typography variant="h5" sx={{ px: { md: 5, xs: 2 } }}>
-								{t("Howitworks.HowItWorksA")}
-							</Typography>
-						</Grid>
-						<Grid item xs={12} md={6}>
-							<img src="/permission.png" alt="points" style={{ maxWidth: "60%", height: "auto" }} />
+					<Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
+						<Grid item xs={12} sm={6}>
+							<DemoPaper variant="elevation">
+								<CardMedia component="img" height="140" image="/permission.png" alt="permission" />
+								<Typography variant="body1">{t("Howitworks.HowItWorksA")}</Typography>
+							</DemoPaper>
 						</Grid>
 
-						{/* Section B */}
-						<Grid item xs={12} md={6}>
-							<img
-								src="/composeMessage.png"
-								alt="points"
-								style={{ maxWidth: "60%", height: "auto" }}
-							/>
-						</Grid>
-						<Grid item xs={12} md={6}>
-							<Typography variant="h5" sx={{ px: { md: 5, xs: 2 } }}>
-								{t("Howitworks.HowItWorksB")}
-							</Typography>
+						<Grid item xs={12} sm={6}>
+							<DemoPaper variant="outlined">
+								<CardMedia
+									component="img"
+									height="140"
+									image="/composeMessage.png"
+									alt="compose message"
+								/>
+								<Typography variant="body1">{t("Howitworks.HowItWorksB")}</Typography>
+							</DemoPaper>
 						</Grid>
 
-						{/* Section C */}
-						<Grid item xs={12} md={6}>
-							<Typography variant="h5" sx={{ px: { md: 5, xs: 2 } }}>
-								{t("Howitworks.HowItWorksC")}
-							</Typography>
-						</Grid>
-						<Grid item xs={12} md={6}>
-							<img
-								src="/Online-world.png"
-								alt="point2"
-								style={{ maxWidth: "60%", height: "auto" }}
-							/>
+						<Grid item xs={12} sm={6}>
+							<DemoPaper variant="outlined">
+								<CardMedia
+									component="img"
+									height="140"
+									image="/Online-world.png"
+									alt="online world"
+								/>
+								<Typography variant="body1">{t("Howitworks.HowItWorksC")}</Typography>
+							</DemoPaper>
 						</Grid>
 
-						{/* Section D */}
-						<Grid item xs={12} md={6}>
-							<img
-								src="/recievedNotification.png"
-								alt="point3"
-								style={{ maxWidth: "60%", height: "auto" }}
-							/>
-						</Grid>
-						<Grid item xs={12} md={6}>
-							<Typography variant="h5" sx={{ px: { md: 5, xs: 2 } }}>
-								{t("Howitworks.HowItWorksD")}
-							</Typography>
-						</Grid>
-
-						{/* Getting Started Button */}
-						<Grid item xs={12}>
-							<a
-								href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
-								target="_blank"
-								rel="noreferrer noopener"
-								style={{ textDecoration: "none", color: "inherit" }}
-							>
-								<Typography variant="body1" sx={{ p: 2, textDecoration: "underline" }}>
-									{t("Howitworks.GettingStartedButton")}{" "}
-									<FaCircleArrowRight size="20px" style={{ rotate: "-30deg" }} />
-								</Typography>
-							</a>
+						<Grid item xs={12} sm={6}>
+							<DemoPaper variant="outlined">
+								<CardMedia
+									component="img"
+									height="140"
+									image="/recievedNotification.png"
+									alt="received notification"
+								/>
+								<Typography variant="body1">{t("Howitworks.HowItWorksD")}</Typography>
+							</DemoPaper>
 						</Grid>
 					</Grid>
 				</Box>
