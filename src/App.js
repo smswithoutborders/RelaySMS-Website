@@ -1,5 +1,4 @@
-import "./App.css";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -11,8 +10,48 @@ import PageNotFound from "./Pages/PageNotFound";
 import Download from "./Pages/Download";
 import Loader from "./Components/Loader";
 
+const lightTheme = createTheme({
+	palette: {
+		mode: "light",
+		primary: {
+			main: "#2434a4"
+		},
+		secondary: {
+			main: "#dc004e"
+		},
+		background: {
+			default: "#d2e1fa",
+			paper: "#f4f6f8"
+		},
+		text: {
+			primary: "#000000",
+			secondary: "#555555"
+		}
+	}
+});
+
+const darkTheme = createTheme({
+	palette: {
+		mode: "dark",
+		primary: {
+			main: "#90caf9"
+		},
+		secondary: {
+			main: "#f48fb1"
+		},
+		background: {
+			default: "#1c222c",
+			paper: "#1e1e1e"
+		},
+		text: {
+			primary: "#ffffff",
+			secondary: "#bbbbbb"
+		}
+	}
+});
+
 const App = () => {
-	const [darkMode, setDarkMode] = useState(true);
+	const [darkMode, setDarkMode] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
@@ -27,11 +66,7 @@ const App = () => {
 		setDarkMode((prevMode) => !prevMode);
 	};
 
-	const theme = createTheme({
-		palette: {
-			mode: darkMode ? "dark" : "light"
-		}
-	});
+	const theme = darkMode ? darkTheme : lightTheme;
 
 	return (
 		<ThemeProvider theme={theme}>

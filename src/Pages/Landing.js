@@ -41,7 +41,7 @@ export default function Landing() {
 							md={6}
 							sm={12}
 							xs={12}
-							style={{ display: "flex", justifyContent: "center" }}
+							style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}
 							sx={{
 								order: { xs: 2, sm: 2, md: 1 }
 							}}
@@ -59,7 +59,7 @@ export default function Landing() {
 						md={6}
 						sm={12}
 						xs={12}
-						style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}
+						style={{ display: "block", justifyContent: "center" }}
 						sx={{
 							order: { xs: 1, sm: 1, md: 2 }
 						}}

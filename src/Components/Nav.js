@@ -88,7 +88,11 @@ export default function BackToTop(props) {
 							justifyContent: "space-between"
 						}}
 					>
-						<img src="./logo.png" alt="Logo" style={{ height: "40px", marginRight: "16px" }} />
+						<img
+							src="./logo.png"
+							alt="Logo"
+							style={{ height: "40px", marginRight: "16px", color: "#1c222c" }}
+						/>
 						{isMobile ? (
 							<>
 								<LanguageSwitcher />
