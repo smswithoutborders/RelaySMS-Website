@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, Typography, Button, Card, CardMedia, Avatar, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
-// import { FaCircleArrowRight } from "react-icons/fa6";
+import { FaCircleArrowRight } from "react-icons/fa6";
 import CardContent from "@mui/material/CardContent";
 import Faqs from "../Components/FAQs";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
@@ -126,11 +126,8 @@ export default function Landing() {
 
 				{/* How it works */}
 
-				<Box sx={{ flexGrow: 1, pt: { md: 10, xs: 7 }, px: { md: 30, xs: 3 }, mb: 0 }}>
-					<Typography
-						variant="h4"
-						sx={{ fontWeight: 700, fontSize: { xs: "25px", md: "33px" }, textAlign: "center" }}
-					>
+				<Box textAlign="center" sx={{ pt: { md: 10, xs: 7 }, px: { md: 30, xs: 3 }, mb: 0 }}>
+					<Typography variant="h4" sx={{ fontWeight: 700, fontSize: { xs: "25px", md: "33px" } }}>
 						{t("Howitworks.HowItWorks")}
 					</Typography>
 
@@ -144,19 +141,20 @@ export default function Landing() {
 						</Grid>
 
 						<Grid item xs={12} sm={6}>
-							<DemoPaper variant="outlined">
+							<DemoPaper variant="elevation">
 								<CardMedia
 									component="img"
 									height="140"
 									image="/composeMessage.png"
 									alt="compose message"
+									maxWidth="345"
 								/>
 								<Typography variant="body1">{t("Howitworks.HowItWorksB")}</Typography>
 							</DemoPaper>
 						</Grid>
 
 						<Grid item xs={12} sm={6}>
-							<DemoPaper variant="outlined">
+							<DemoPaper variant="elevation">
 								<CardMedia
 									component="img"
 									height="140"
@@ -168,7 +166,7 @@ export default function Landing() {
 						</Grid>
 
 						<Grid item xs={12} sm={6}>
-							<DemoPaper variant="outlined">
+							<DemoPaper variant="elevation">
 								<CardMedia
 									component="img"
 									height="140"
@@ -177,6 +175,43 @@ export default function Landing() {
 								/>
 								<Typography variant="body1">{t("Howitworks.HowItWorksD")}</Typography>
 							</DemoPaper>
+						</Grid>
+
+						{/* Getting Started Button */}
+						<Grid item xs={12}>
+							<Box textAlign="center" sx={{ p: 2 }}>
+								<a
+									href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+									target="_blank"
+									rel="noreferrer noopener"
+									style={{ textDecoration: "none" }}
+								>
+									<Typography
+										variant="body1"
+										sx={{
+											p: 4,
+											textDecoration: "underline",
+											fontWeight: "bold",
+											color: "primary.main",
+											display: "inline-flex",
+											alignItems: "center",
+											fontSize: { xs: "20px", md: "24px" },
+											"&:hover": {
+												color: "secondary.main",
+												textDecoration: "none",
+												transform: "scale(1.05)"
+											},
+											transition: "transform 0.2s ease-in-out"
+										}}
+									>
+										{t("Howitworks.GettingStartedButton")}{" "}
+										<FaCircleArrowRight
+											size="20px"
+											style={{ marginLeft: "8px", rotate: "-30deg" }}
+										/>
+									</Typography>
+								</a>
+							</Box>
 						</Grid>
 					</Grid>
 				</Box>
@@ -202,7 +237,7 @@ export default function Landing() {
 					</Grid>
 				</Box>
 
-				{/* What's New */}
+				{/* What's New Blog */}
 				<Box sx={{ p: { md: 3, xs: 2 } }}>
 					<Grid
 						container
@@ -285,9 +320,6 @@ export default function Landing() {
 								</CardMedia>
 							</Card>
 						</Grid>
-
-						{/* Third Card or Other Content */}
-						{/* Add more cards or content as needed */}
 					</Grid>
 				</Box>
 			</Box>
