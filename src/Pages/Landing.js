@@ -8,6 +8,7 @@ import { AnimatePresence, motion, useScroll } from "framer-motion";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { FaDownload } from "react-icons/fa";
+import Carousel from "react-material-ui-carousel";
 import "../i18n.js";
 
 export default function Landing() {
@@ -18,6 +19,29 @@ export default function Landing() {
 		<Paper {...props} style={{ padding: "20px", textAlign: "center" }} />
 	);
 
+	const items = [
+		{
+			title: t("Blog.Reliability"),
+			description: t("Blog.ReliabilityD"),
+			link: "https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders",
+			image: "/composeMessage.png",
+			author: "Aysha Musa",
+			avatar: "V"
+		},
+		{
+			title: t("Blog.Resilience"),
+			description: t("Blog.ResilienceD"),
+			link: "https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders",
+			image: "/resilience.svg",
+			author: "Aysha Musa",
+			avatar: "R"
+		}
+	];
+
+	const pairs = [];
+	for (let i = 0; i < items.length; i += 2) {
+		pairs.push(items.slice(i, i + 2));
+	}
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -251,88 +275,74 @@ export default function Landing() {
 							</Typography>
 						</Grid>
 
-						{/* First Card */}
-						<Grid item md={4} sm={6} xs={12}>
-							<Card sx={{ maxWidth: 400 }}>
-								<Box
-									sx={{
-										height: 200,
-										display: "flex",
-										justifyContent: "center",
-										alignItems: "center",
-										bgcolor: "#f5f5f5"
-									}}
-								>
-									<Avatar sx={{ fontSize: 80, bgcolor: "green" }}>V</Avatar>
-								</Box>
-								<CardContent>
-									<Typography gutterBottom variant="h5" component="div">
-										{t("Blog.Reliability")}
-									</Typography>
-									<Typography variant="body2" color="text.secondary">
-										{t("Blog.ReliabilityD")}
-										<a
-											style={{ color: "#8AC1EE" }}
-											href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders"
-											target="_blank"
-											rel="noreferrer"
-										>
-											<br />
-											{t("Blog.ReadMore")}
-										</a>
-									</Typography>
-								</CardContent>
-								<CardMedia sx={{ display: "flex", px: 2, pb: 2 }}>
-									<Avatar />
-									<Typography variant="body2" sx={{ p: 1 }}>
-										Aysha Musa
-									</Typography>
-								</CardMedia>
-							</Card>
-						</Grid>
-
-						{/* Second Card */}
-						<Grid item md={4} sm={6} xs={12}>
-							<Card sx={{ maxWidth: 400 }}>
-								<CardMedia sx={{ height: 200 }} image="/resilience.svg" title="resilience" />
-								<CardContent>
-									<Typography gutterBottom variant="h5" component="div">
-										{t("Blog.Resilience")}
-									</Typography>
-									<Typography variant="body2" color="text.secondary">
-										{t("Blog.ResilienceD")}{" "}
-										<a
-											style={{ color: "#8AC1EE" }}
-											href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders"
-											target="_blank"
-											rel="noreferrer"
-										>
-											<br />
-											{t("Blog.ReadMore")}
-										</a>
-									</Typography>
-								</CardContent>
-								<CardMedia sx={{ display: "flex", px: 2, pb: 2 }}>
-									<Avatar />
-									<Typography variant="body2" sx={{ p: 1 }}>
-										Aysha Musa
-									</Typography>
-								</CardMedia>
-							</Card>
+						<Grid item xs={12}>
+							<Carousel
+								NextIcon={<Button>Next</Button>} // Custom Next button
+								PrevIcon={<Button>Prev</Button>} // Custom Prev button
+							>
+								{pairs.map((pair, index) => (
+									<Box key={index}>
+										<Grid container spacing={2} justifyContent="center">
+											{pair.map((item, idx) => (
+												<Grid item md={6} sm={6} xs={12} key={idx}>
+													<Card sx={{ maxWidth: { xs: "100%", sm: "400px" }, mx: "auto" }}>
+														<CardMedia
+															component="img"
+															height="200"
+															image={item.image}
+															alt={item.title}
+															sx={{ objectFit: "cover", width: "100%" }}
+														/>
+														<CardContent>
+															<Typography
+																gutterBottom
+																variant="h5"
+																component="div"
+																sx={{ fontSize: { xs: "1.25rem", md: "1.5rem" } }}
+															>
+																{item.title}
+															</Typography>
+															<Typography variant="body2" color="text.secondary">
+																{item.description}
+																<a
+																	style={{ color: "#8AC1EE" }}
+																	href={item.link}
+																	target="_blank"
+																	rel="noreferrer"
+																>
+																	<br />
+																	{t("Blog.ReadMore")}
+																</a>
+															</Typography>
+														</CardContent>
+														<Box sx={{ display: "flex", alignItems: "center", px: 2, pb: 2 }}>
+															<Avatar>{item.avatar}</Avatar>
+															<Typography variant="body2" sx={{ p: 1 }}>
+																{item.author}
+															</Typography>
+														</Box>
+													</Card>
+												</Grid>
+											))}
+										</Grid>
+									</Box>
+								))}
+							</Carousel>
 						</Grid>
 					</Grid>
 				</Box>
-			</Box>
-			<Box
-				sx={{
-					bgcolor: "white",
-					color: "black",
-					px: { md: 15, sm: 10, xs: 3 },
-					mb: { md: 0, xs: 4 },
-					mt: { md: 4, xs: 1 }
-				}}
-			>
-				<Faqs />
+				{/* FAQ */}
+				<Box
+					sx={{
+						bgcolor: "white",
+						color: "black",
+						px: { md: 15, sm: 10, xs: 3 },
+						mb: { md: 0, xs: 4 },
+						mt: { md: 4, xs: 1 }
+					}}
+				>
+					<Faqs />
+				</Box>
 			</Box>
 		</>
 	);

@@ -102,7 +102,7 @@ export default function BackToTop(props) {
 									color="inherit"
 									aria-label="menu"
 									onClick={handleMenu}
-									sx={{ padding: "20px" }}
+									sx={{ padding: "20px", color: "white" }}
 								>
 									<MenuIcon />
 								</IconButton>

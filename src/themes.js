@@ -27,15 +27,15 @@ export const darkTheme = createTheme({
 			main: "#90caf9"
 		},
 		secondary: {
-			main: "#f48fb1"
+			main: "#2b3343"
 		},
 		background: {
 			default: "#121212",
-			paper: "#1e1e1e"
+			paper: "#394459"
 		},
 		text: {
-			primary: "#ffffff",
-			secondary: "#bbbbbb"
+			primary: "#7189b1",
+			secondary: "#8eabde"
 		}
 	}
 });
