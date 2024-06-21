@@ -88,9 +88,22 @@ export default function BackToTop(props) {
 							justifyContent: "space-between"
 						}}
 					>
+						<img
+							src="./logo.png"
+							alt="Logo"
+							style={{ height: "40px", marginRight: "16px", color: "#1c222c" }}
+						/>
 						{isMobile ? (
 							<>
-								<IconButton edge="start" color="inherit" aria-label="menu" onClick={handleMenu}>
+								<LanguageSwitcher />
+
+								<IconButton
+									edge="start"
+									color="inherit"
+									aria-label="menu"
+									onClick={handleMenu}
+									sx={{ padding: "20px", color: "white" }}
+								>
 									<MenuIcon />
 								</IconButton>
 								<Menu
@@ -143,6 +156,11 @@ export default function BackToTop(props) {
 											{t("Nav.Blog")}
 										</a>
 									</MenuItem>
+									<MenuItem onClick={toggleDarkMode}>
+										<IconButton aria-label={darkMode ? "Light Mode" : "Dark Mode"} color="inherit">
+											{darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+										</IconButton>
+									</MenuItem>
 								</Menu>
 							</>
 						) : (
@@ -152,7 +170,7 @@ export default function BackToTop(props) {
 									display: "flex",
 									alignItems: "center",
 									gap: 2,
-									flexGrow: 1
+									ml: "auto"
 								}}
 							>
 								<a href="/" className="menu-link">
@@ -182,24 +200,16 @@ export default function BackToTop(props) {
 								>
 									<Typography>{t("Nav.Blog")}</Typography>
 								</a>
+								<LanguageSwitcher />
+								<IconButton
+									onClick={toggleDarkMode}
+									aria-label={darkMode ? "Light Mode" : "Dark Mode"}
+									color="inherit"
+								>
+									{darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+								</IconButton>
 							</Box>
 						)}
-						<Box
-							sx={{
-								display: "flex",
-								alignItems: "center",
-								gap: 2
-							}}
-						>
-							<LanguageSwitcher />
-							<IconButton
-								onClick={toggleDarkMode}
-								aria-label={darkMode ? "Light Mode" : "Dark Mode"}
-								color="inherit"
-							>
-								{darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
-							</IconButton>
-						</Box>
 					</Box>
 				</Toolbar>
 			</AppBar>
