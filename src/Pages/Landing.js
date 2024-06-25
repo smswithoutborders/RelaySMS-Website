@@ -1,11 +1,10 @@
 import React from "react";
 import { Box, Grid, Typography, Button, Card, CardMedia, Avatar, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { FaCircleArrowRight } from "react-icons/fa6";
+import { FaArrowCircleRight, FaDownload } from "react-icons/fa";
 import CardContent from "@mui/material/CardContent";
 import Faqs from "../Components/FAQs.js";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
-import { FaDownload } from "react-icons/fa";
 import Carousel from "react-material-ui-carousel";
 import Container from "@mui/material/Container";
 import { Link as ScrollLink } from "react-scroll";
@@ -212,151 +211,162 @@ export default function Landing() {
 						{/* How it works sections */}
 						<Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
 							<Grid item xs={12} sm={6}>
-								<DemoPaper
-									variant="elevation"
-									sx={{
-										height: { xs: 300, md: 340 },
-										display: "flex",
-										flexDirection: "column",
-										justifyContent: "space-between",
-										maxWidth: { xs: 345, md: "none" },
-										margin: "auto",
-										boxShadow: 3,
-										borderRadius: 2
-									}}
-								>
-									<CardMedia
-										component="img"
-										height="140"
-										image="/permission.png"
-										alt="permission"
-										sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
-									/>
-									<Typography variant="body1" sx={{ p: 2 }}>
-										{t("Howitworks.HowItWorksA")}
-									</Typography>
-								</DemoPaper>
+								<motion.div initial="hidden">
+									<DemoPaper
+										variant="elevation"
+										sx={{
+											height: { xs: 300, md: 340 },
+											display: "flex",
+											flexDirection: "column",
+											justifyContent: "space-between",
+											maxWidth: { xs: 345, md: "none" },
+											margin: "auto",
+											boxShadow: 3,
+											borderRadius: 2
+										}}
+									>
+										<CardMedia
+											component="img"
+											height="140"
+											image="/permission.png"
+											alt="permission"
+											sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
+										/>
+										<Typography variant="body1" sx={{ p: 2 }}>
+											{t("Howitworks.HowItWorksA")}
+										</Typography>
+									</DemoPaper>
+								</motion.div>
 							</Grid>
 
 							<Grid item xs={12} sm={6}>
-								<DemoPaper
-									variant="elevation"
-									sx={{
-										height: { xs: 300, md: 340 },
-										display: "flex",
-										flexDirection: "column",
-										justifyContent: "space-between",
-										maxWidth: { xs: 345, md: "none" },
-										margin: "auto",
-										boxShadow: 3,
-										borderRadius: 2
-									}}
-								>
-									<CardMedia
-										component="img"
-										height="140"
-										image="/composeMessage.png"
-										alt="compose message"
-										sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
-									/>
-									<Typography variant="body1" sx={{ p: 2 }}>
-										{t("Howitworks.HowItWorksB")}
-									</Typography>
-								</DemoPaper>
+								<motion.div initial="hidden">
+									<DemoPaper
+										variant="elevation"
+										sx={{
+											height: { xs: 300, md: 340 },
+											display: "flex",
+											flexDirection: "column",
+											justifyContent: "space-between",
+											maxWidth: { xs: 345, md: "none" },
+											margin: "auto",
+											boxShadow: 3,
+											borderRadius: 2
+										}}
+									>
+										<CardMedia
+											component="img"
+											height="140"
+											image="/composeMessage.png"
+											alt="compose message"
+											sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
+										/>
+										<Typography variant="body1" sx={{ p: 2 }}>
+											{t("Howitworks.HowItWorksB")}
+										</Typography>
+									</DemoPaper>
+								</motion.div>
 							</Grid>
 
 							<Grid item xs={12} sm={6}>
-								<DemoPaper
-									variant="elevation"
-									sx={{
-										height: { xs: 300, md: 340 },
-										display: "flex",
-										flexDirection: "column",
-										justifyContent: "space-between",
-										maxWidth: { xs: 345, md: "none" },
-										margin: "auto",
-										boxShadow: 3,
-										borderRadius: 2
-									}}
-								>
-									<CardMedia
-										component="img"
-										height="140"
-										image="/Online-world.png"
-										alt="online world"
-										sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
-									/>
-									<Typography variant="body1" sx={{ p: 2 }}>
-										{t("Howitworks.HowItWorksC")}
-									</Typography>
-								</DemoPaper>
+								<motion.div initial="hidden">
+									<DemoPaper
+										variant="elevation"
+										sx={{
+											height: { xs: 300, md: 340 },
+											display: "flex",
+											flexDirection: "column",
+											justifyContent: "space-between",
+											maxWidth: { xs: 345, md: "none" },
+											margin: "auto",
+											boxShadow: 3,
+											borderRadius: 2
+										}}
+									>
+										<CardMedia
+											component="img"
+											height="140"
+											image="/Online-world.png"
+											alt="online world"
+											sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
+										/>
+										<Typography variant="body1" sx={{ p: 2 }}>
+											{t("Howitworks.HowItWorksC")}
+										</Typography>
+									</DemoPaper>
+								</motion.div>
 							</Grid>
 
 							<Grid item xs={12} sm={6}>
-								<DemoPaper
-									variant="elevation"
-									sx={{
-										height: { xs: 300, md: 340 },
-										display: "flex",
-										flexDirection: "column",
-										justifyContent: "space-between",
-										maxWidth: { xs: 345, md: "none" },
-										margin: "auto",
-										boxShadow: 3,
-										borderRadius: 2
-									}}
-								>
-									<CardMedia
-										component="img"
-										height="140"
-										image="/recievedNotification.png"
-										alt="received notification"
-										sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
-									/>
-									<Typography variant="body1" sx={{ p: 2 }}>
-										{t("Howitworks.HowItWorksD")}
-									</Typography>
-								</DemoPaper>
+								<motion.div initial="hidden">
+									<DemoPaper
+										variant="elevation"
+										sx={{
+											height: { xs: 300, md: 340 },
+											display: "flex",
+											flexDirection: "column",
+											justifyContent: "space-between",
+											maxWidth: { xs: 345, md: "none" },
+											margin: "auto",
+											boxShadow: 3,
+											borderRadius: 2
+										}}
+									>
+										<CardMedia
+											component="img"
+											height="140"
+											image="/recievedNotification.png"
+											alt="received notification"
+											sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
+										/>
+										<Typography variant="body1" sx={{ p: 2 }}>
+											{t("Howitworks.HowItWorksD")}
+										</Typography>
+									</DemoPaper>
+								</motion.div>
 							</Grid>
 
 							{/* Getting Started Button */}
 							<Grid item xs={12}>
-								<Box textAlign="center" sx={{ p: 2 }}>
-									<a
-										href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
-										target="_blank"
-										rel="noreferrer noopener"
-										style={{ textDecoration: "none" }}
-									>
-										<Typography
-											variant="body1"
-											sx={{
-												p: 4,
-												textDecoration: "underline",
-												fontWeight: "bold",
-												color: "primary.main",
-												display: "inline-flex",
-												alignItems: "center",
-												fontSize: { xs: "20px", md: "24px" },
-												"&:hover": {
-													color: "secondary.main",
-													textDecoration: "none",
-													transform: "scale(1.05)"
-												},
-												transition: "transform 0.2s ease-in-out"
-											}}
+								<motion.div initial="hidden">
+									<Box textAlign="center" sx={{ p: 2 }}>
+										<a
+											href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+											target="_blank"
+											rel="noreferrer noopener"
+											style={{ textDecoration: "none" }}
 										>
-											{t("Howitworks.GettingStartedButton")}{" "}
-											<FaCircleArrowRight
-												size="20px"
-												style={{ marginLeft: "8px", rotate: "-30deg" }}
-											/>
-										</Typography>
-									</a>
-								</Box>
+											<Typography
+												variant="body1"
+												sx={{
+													p: 4,
+													textDecoration: "underline",
+													fontWeight: "bold",
+													color: "primary.main",
+													display: "inline-flex",
+													alignItems: "center",
+													fontSize: { xs: "20px", md: "24px" },
+													"&:hover": {
+														color: "secondary.main",
+														textDecoration: "none",
+														transform: "scale(1.05)"
+													},
+													transition: "transform 0.2s ease-in-out"
+												}}
+											>
+												{t("Howitworks.GettingStartedButton")}{" "}
+												<FaArrowCircleRight
+													size="20px"
+													style={{ marginLeft: "8px", rotate: "-30deg" }}
+												/>
+											</Typography>
+										</a>
+									</Box>
+								</motion.div>
 							</Grid>
 						</Grid>
 					</Box>
+
 					{/* Relay Map */}
 					<Box sx={{ bgcolor: "white", px: { md: 20, sm: 10, xs: 3 } }}>
 						<Grid container rowSpacing={4} sx={{ py: { md: 10, xs: 10 } }}>
