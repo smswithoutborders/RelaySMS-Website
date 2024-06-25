@@ -44,6 +44,11 @@ export default function Landing() {
 
 	const isRTL = i18n.language === "fa";
 
+	const handleDownload = () => {
+		window.open("https://play.google.com/store/apps/details?id=com.afkanerd.sw0b", "_blank");
+		window.open("https://smswithoutborders.com", "_blank");
+	};
+
 	return (
 		<>
 			<Box
@@ -119,31 +124,28 @@ export default function Landing() {
 										{t("Landing.landingh2")}
 									</Typography>
 								</Box>
+
+								{/*  */}
 								<Box sx={{ "& button": { mr: 2 } }}>
-									<ScrollLink to="popular-course" spy smooth offset={0} duration={350}>
+									<ScrollLink to="Android-App" spy smooth offset={0} duration={350}>
 										<Button
 											color="primary"
 											size="large"
 											variant="contained"
+											onClick={handleDownload}
 											startIcon={<FaGooglePlay />}
 										>
 											{t("Landing.Android")}
 										</Button>
 									</ScrollLink>
-									<ScrollLink to="video-section" spy smooth offset={0} duration={350}>
+									<ScrollLink to="Desktop-App" spy smooth offset={0} duration={350}>
 										<Button
 											color="primary"
 											size="large"
 											variant="outlined"
 											startIcon={<FaDesktop />}
-											href="http:alphorm.com"
+											onClick={handleDownload}
 										>
-											{/* <a className="app-btn blu flex vert" href="http:alphorm.com">
-												<i className="fas fa-desktop"></i>
-												<p>
-													Application <br /> <span className="big-txt">Desktop</span>
-												</p>
-											</a> */}
 											{t("Landing.Desktop")}
 										</Button>
 									</ScrollLink>
