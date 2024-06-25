@@ -1,6 +1,13 @@
 import * as React from "react";
-import { Accordion, AccordionSummary, AccordionDetails, Typography } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import {
+	Typography,
+	Accordion,
+	AccordionSummary,
+	AccordionDetails,
+	useMediaQuery,
+	styled
+} from "@mui/material";
+import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";
 
 const FAQ = [
@@ -26,49 +33,65 @@ const FAQ = [
 	}
 ];
 
+// Styled components for enhanced design
+const CustomAccordion = styled(Accordion)(({ theme }) => ({
+	marginBottom: theme.spacing(2),
+	borderRadius: theme.spacing(1),
+	boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+	transition: "box-shadow 0.3s ease-out",
+
+	"&:hover": {
+		boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.2)"
+	}
+}));
+
+const CustomAccordionSummary = styled(AccordionSummary)(({ theme }) => ({
+	backgroundColor: theme.palette.primary.main,
+	color: theme.palette.primary.contrastText,
+	borderBottom: `1px solid ${theme.palette.primary.dark}`,
+	borderRadius: theme.spacing(1, 1, 0, 0),
+
+	"&.Mui-expanded": {
+		minHeight: 64
+	}
+}));
+
+const CustomAccordionDetails = styled(AccordionDetails)(({ theme }) => ({
+	backgroundColor: theme.palette.background.default,
+	padding: theme.spacing(2),
+	borderTop: `1px solid ${theme.palette.primary.dark}`,
+	borderRadius: theme.spacing(0, 0, 1, 1)
+}));
+
 export default function Faqs() {
-	const [expanded, setExpanded] = React.useState(0);
+	const [expanded, setExpanded] = React.useState(null);
 	const { t } = useTranslation();
+	const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
 	const handleChange = (panel) => (event, isExpanded) => {
-		setExpanded(isExpanded ? panel : false);
+		setExpanded(isExpanded ? panel : null);
 	};
 
 	return (
-		<div style={{ padding: "20px", marginBottom: "20px", maxWidth: "800px", margin: "0 auto" }}>
-			<h1>{t("FAQ.FAQ")}</h1>
+		<div style={{ padding: isMobile ? "10px" : "20px", maxWidth: "800px", margin: "0 auto" }}>
+			<Typography variant="h4" gutterBottom align="center">
+				{t("FAQ.FAQ")}
+			</Typography>
 			{FAQ.map((item, index) => (
-				<Accordion
-					key={index}
-					expanded={expanded === index}
-					onChange={handleChange(index)}
-					sx={{
-						mb: 2,
-						backgroundColor: "hsl(243, 87%, 12%)",
-						boxShadow: expanded === index ? "0px 4px 4px rgba(0, 0, 0, 0.25)" : "none",
-						borderRadius: 8,
-						color: "white"
-					}}
-				>
-					<AccordionSummary
+				<CustomAccordion key={index} expanded={expanded === index} onChange={handleChange(index)}>
+					<CustomAccordionSummary
 						expandIcon={<ExpandMoreIcon />}
 						aria-controls={`faq${index}-content`}
 						id={`faq${index}-header`}
-						sx={{
-							minHeight: 64,
-							"& .MuiAccordionSummary-content": {
-								margin: "12px 0"
-							}
-						}}
 					>
-						<Typography variant="body1" sx={{ fontWeight: 700, color: "white" }}>
+						<Typography variant={isMobile ? "body1" : "subtitle1"} sx={{ fontWeight: 600 }}>
 							{t(item.question)}
 						</Typography>
-					</AccordionSummary>
-					<AccordionDetails>
-						<Typography>{t(item.answer)}</Typography>
-					</AccordionDetails>
-				</Accordion>
+					</CustomAccordionSummary>
+					<CustomAccordionDetails>
+						<Typography variant={isMobile ? "body2" : "body1"}>{t(item.answer)}</Typography>
+					</CustomAccordionDetails>
+				</CustomAccordion>
 			))}
 		</div>
 	);
