@@ -1,6 +1,7 @@
 {
 	"Landing": {
-		"landingh1": "Continuez à parler avec RelaySMS",
+		"landingh1a": "Continuez",
+		"landingh1": " à parler avec RelaySMS",
 		"landingh2": "Envoyez des e-mails, des publications et des messages en toute sécurité via SMS.",
 		"Android": "Application Android",
 		"Desktop": "Application de bureau"
