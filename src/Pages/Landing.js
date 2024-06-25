@@ -218,9 +218,8 @@ export default function Landing() {
 								</Box>
 
 								{/*  */}
-								<Box
-									sx={{ "& button": { mr: 2 }, display: "flex", justifyContent: "center", mt: 4 }}
-								>
+								<Box sx={{ "& button": { mr: 2 } }}>
+									{/*  */}
 									<Button
 										color="primary"
 										size={isMobile ? "medium" : "large"}
@@ -229,11 +228,9 @@ export default function Landing() {
 										startIcon={<FaGooglePlay size={isMobile ? "1.5rem" : "2rem"} />}
 										sx={{ minWidth: "150px", mb: isMobile ? 2 : 0 }}
 									>
-										<Typography variant={isMobile ? "body2" : "body1"} sx={{ pr: 1 }}>
-											{t("Landing.Android")}
-										</Typography>
+										{t("Landing.Android")}
 									</Button>
-
+									{/*  */}
 									<Button
 										color="primary"
 										size={isMobile ? "medium" : "large"}
@@ -242,11 +239,10 @@ export default function Landing() {
 										onClick={handleDownload}
 										sx={{ minWidth: "150px", mb: isMobile ? 2 : 0 }}
 									>
-										<Typography variant={isMobile ? "body2" : "body1"} sx={{ pr: 1 }}>
-											{t("Landing.Desktop")}
-										</Typography>
+										{t("Landing.Desktop")}
 									</Button>
 								</Box>
+								{/*  */}
 							</Box>
 						</Grid>
 
