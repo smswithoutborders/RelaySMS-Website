@@ -1,23 +1,111 @@
 import React from "react";
-import { Box, Grid, Typography, Button, Card, CardMedia, Avatar, Paper } from "@mui/material";
+import {
+	Box,
+	Grid,
+	Typography,
+	Button,
+	Accordion,
+	AccordionSummary,
+	AccordionDetails,
+	useMediaQuery,
+	styled,
+	Card,
+	CardContent,
+	useTheme,
+	CardMedia
+} from "@mui/material";
+import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";
-import { FaArrowCircleRight, FaDownload } from "react-icons/fa";
-import CardContent from "@mui/material/CardContent";
-import Faqs from "../Components/FAQs.js";
+import { FaArrowCircleRight, FaDesktop, FaGooglePlay } from "react-icons/fa";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
-import Carousel from "react-material-ui-carousel";
 import Container from "@mui/material/Container";
-import { Link as ScrollLink } from "react-scroll";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import "../i18n.js";
+
+const FAQ = [
+	{
+		question: "FAQ.FAQ1",
+		answer: "FAQ.faq1"
+	},
+	{
+		question: "FAQ.FAQ2",
+		answer: "FAQ.faq2"
+	},
+	{
+		question: "FAQ.FAQ3",
+		answer: "FAQ.faq3"
+	},
+	{
+		question: "FAQ.FAQ4",
+		answer: "FAQ.faq4"
+	},
+	{
+		question: "FAQ.FAQ5",
+		answer: "FAQ.faq5"
+	}
+];
+
+// Styled components for enhanced design
+const CustomAccordion = styled(Accordion)(({ theme }) => ({
+	marginBottom: theme.spacing(2),
+	borderRadius: theme.spacing(1),
+	boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+	transition: "box-shadow 0.3s ease-out",
+
+	"&:hover": {
+		boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.2)"
+	}
+}));
+
+const CustomAccordionSummary = styled(AccordionSummary)(({ theme }) => ({
+	backgroundColor: theme.palette.primary.main,
+	color: theme.palette.primary.contrastText,
+	borderBottom: `1px solid ${theme.palette.primary.dark}`,
+	borderRadius: theme.spacing(1, 1, 0, 0),
+
+	"&.Mui-expanded": {
+		minHeight: 64
+	}
+}));
+
+const CustomAccordionDetails = styled(AccordionDetails)(({ theme }) => ({
+	backgroundColor: theme.palette.background.default,
+	padding: theme.spacing(2),
+	borderTop: `1px solid ${theme.palette.primary.dark}`,
+	borderRadius: theme.spacing(0, 0, 1, 1)
+}));
 
 export default function Landing() {
 	const { scrollYProgress } = useScroll();
 	const { t, i18n } = useTranslation();
+	const [expanded, setExpanded] = React.useState(0);
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-	const DemoPaper = (props) => (
-		<Paper {...props} style={{ padding: "20px", textAlign: "center" }} />
+	const DemoPaper = ({ children }) => (
+		<motion.div initial="hidden">
+			<Card
+				variant="outlined"
+				sx={{
+					height: "100%",
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "space-between",
+					boxShadow: 3,
+					borderRadius: 2,
+					transition: "transform 0.3s ease-in-out",
+					"&:hover": {
+						transform: "scale(1.05)"
+					}
+				}}
+			>
+				{children}
+			</Card>
+		</motion.div>
 	);
+
+	const handleChange = (panel) => (event, isExpanded) => {
+		setExpanded(isExpanded ? panel : false);
+	};
 
 	const items = [
 		{
@@ -44,6 +132,11 @@ export default function Landing() {
 	}
 
 	const isRTL = i18n.language === "fa";
+
+	const handleDownload = () => {
+		window.open("https://play.google.com/store/apps/details?id=com.afkanerd.sw0b", "_blank");
+		window.open("https://smswithoutborders.com", "_blank");
+	};
 
 	return (
 		<>
@@ -85,10 +178,12 @@ export default function Landing() {
 										component="h2"
 										sx={{
 											position: "relative",
-											fontSize: { xs: 40, md: 72 },
+											// fontSize: { xs: 40, md: 72 },
 											letterSpacing: 1.5,
 											fontWeight: "bold",
-											lineHeight: 1.3
+											lineHeight: 1.3,
+											fontSize: { xs: "40px", md: "70px" },
+											mb: 2
 										}}
 									>
 										<Typography
@@ -98,7 +193,8 @@ export default function Landing() {
 												color: "primary.main",
 												fontSize: "inherit",
 												fontWeight: "inherit",
-												backgroundColor: "unset"
+												backgroundColor: "unset",
+												mb: 2
 											}}
 										>
 											{t("Landing.landingh1a")}
@@ -120,27 +216,36 @@ export default function Landing() {
 										{t("Landing.landingh2")}
 									</Typography>
 								</Box>
-								<Box sx={{ "& button": { mr: 2 } }}>
-									<ScrollLink to="popular-course" spy smooth offset={0} duration={350}>
-										<Button
-											color="primary"
-											size="large"
-											variant="contained"
-											startIcon={<FaDownload />}
-										>
+
+								{/*  */}
+								<Box
+									sx={{ "& button": { mr: 2 }, display: "flex", justifyContent: "center", mt: 4 }}
+								>
+									<Button
+										color="primary"
+										size={isMobile ? "medium" : "large"}
+										variant="contained"
+										onClick={handleDownload}
+										startIcon={<FaGooglePlay size={isMobile ? "1.5rem" : "2rem"} />}
+										sx={{ minWidth: "150px", mb: isMobile ? 2 : 0 }}
+									>
+										<Typography variant={isMobile ? "body2" : "body1"} sx={{ pr: 1 }}>
 											{t("Landing.Android")}
-										</Button>
-									</ScrollLink>
-									<ScrollLink to="video-section" spy smooth offset={0} duration={350}>
-										<Button
-											color="primary"
-											size="large"
-											variant="outlined"
-											startIcon={<PlayArrowIcon />}
-										>
+										</Typography>
+									</Button>
+
+									<Button
+										color="primary"
+										size={isMobile ? "medium" : "large"}
+										variant="outlined"
+										startIcon={<FaDesktop size={isMobile ? "1.5rem" : "2rem"} />}
+										onClick={handleDownload}
+										sx={{ minWidth: "150px", mb: isMobile ? 2 : 0 }}
+									>
+										<Typography variant={isMobile ? "body2" : "body1"} sx={{ pr: 1 }}>
 											{t("Landing.Desktop")}
-										</Button>
-									</ScrollLink>
+										</Typography>
+									</Button>
 								</Box>
 							</Box>
 						</Grid>
@@ -160,7 +265,7 @@ export default function Landing() {
 									backgroundColor: "background.paper",
 									display: "flex",
 									alignItems: "flex-start",
-									width: 280
+									width: 200
 								}}
 							>
 								<Box
@@ -185,6 +290,7 @@ export default function Landing() {
 								<Box>
 									<Typography
 										component="h6"
+										href="https://github.com/smswithoutborders"
 										sx={{ color: "secondary.main", fontSize: "1.1rem", fontWeight: 700, mb: 0.5 }}
 									>
 										RelaySMS
@@ -200,31 +306,25 @@ export default function Landing() {
 							</Box>
 						</Grid>
 					</Grid>
-					{/* end of Hero section */}
+					{/*======================================= end of Hero section -------------------------------------*/}
 
-					{/* How it works */}
-					<Box textAlign="center" sx={{ pt: { md: 10, xs: 7 }, px: { md: 30, xs: 3 }, mb: 0 }}>
-						<Typography variant="h4" sx={{ fontWeight: 700, fontSize: { xs: "25px", md: "33px" } }}>
+					{/*----------------------------------------------- How it works------------------------------------- */}
+					<Box textAlign="center" sx={{ pt: { md: 10, xs: 7 }, px: { md: 4, xs: 2 }, mb: 0 }}>
+						<Typography
+							variant="h4"
+							sx={{ fontWeight: 700, fontSize: { xs: "25px", md: "33px" }, mb: 2 }}
+						>
 							{t("Howitworks.HowItWorks")}
+						</Typography>
+						<Typography variant="subtitle1" sx={{ mb: 4, fontSize: { xs: "18px", md: "20px" } }}>
+							{t("Howitworks.Subtitle")}
 						</Typography>
 
 						{/* How it works sections */}
-						<Grid container spacing={4} justifyContent="center" sx={{ mt: 4 }}>
-							<Grid item xs={12} sm={6}>
+						<Grid container spacing={4} justifyContent="center">
+							<Grid item xs={12} sm={6} md={3}>
 								<motion.div initial="hidden">
-									<DemoPaper
-										variant="elevation"
-										sx={{
-											height: { xs: 300, md: 340 },
-											display: "flex",
-											flexDirection: "column",
-											justifyContent: "space-between",
-											maxWidth: { xs: 345, md: "none" },
-											margin: "auto",
-											boxShadow: 3,
-											borderRadius: 2
-										}}
-									>
+									<DemoPaper>
 										<CardMedia
 											component="img"
 											height="140"
@@ -232,28 +332,18 @@ export default function Landing() {
 											alt="permission"
 											sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
 										/>
-										<Typography variant="body1" sx={{ p: 2 }}>
-											{t("Howitworks.HowItWorksA")}
-										</Typography>
+										<CardContent>
+											<Typography variant="body1" sx={{ p: 2 }}>
+												{t("Howitworks.HowItWorksA")}
+											</Typography>
+										</CardContent>
 									</DemoPaper>
 								</motion.div>
 							</Grid>
 
-							<Grid item xs={12} sm={6}>
+							<Grid item xs={12} sm={6} md={3}>
 								<motion.div initial="hidden">
-									<DemoPaper
-										variant="elevation"
-										sx={{
-											height: { xs: 300, md: 340 },
-											display: "flex",
-											flexDirection: "column",
-											justifyContent: "space-between",
-											maxWidth: { xs: 345, md: "none" },
-											margin: "auto",
-											boxShadow: 3,
-											borderRadius: 2
-										}}
-									>
+									<DemoPaper>
 										<CardMedia
 											component="img"
 											height="140"
@@ -261,28 +351,18 @@ export default function Landing() {
 											alt="compose message"
 											sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
 										/>
-										<Typography variant="body1" sx={{ p: 2 }}>
-											{t("Howitworks.HowItWorksB")}
-										</Typography>
+										<CardContent>
+											<Typography variant="body1" sx={{ p: 2 }}>
+												{t("Howitworks.HowItWorksB")}
+											</Typography>
+										</CardContent>
 									</DemoPaper>
 								</motion.div>
 							</Grid>
 
-							<Grid item xs={12} sm={6}>
+							<Grid item xs={12} sm={6} md={3}>
 								<motion.div initial="hidden">
-									<DemoPaper
-										variant="elevation"
-										sx={{
-											height: { xs: 300, md: 340 },
-											display: "flex",
-											flexDirection: "column",
-											justifyContent: "space-between",
-											maxWidth: { xs: 345, md: "none" },
-											margin: "auto",
-											boxShadow: 3,
-											borderRadius: 2
-										}}
-									>
+									<DemoPaper>
 										<CardMedia
 											component="img"
 											height="140"
@@ -290,28 +370,18 @@ export default function Landing() {
 											alt="online world"
 											sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
 										/>
-										<Typography variant="body1" sx={{ p: 2 }}>
-											{t("Howitworks.HowItWorksC")}
-										</Typography>
+										<CardContent>
+											<Typography variant="body1" sx={{ p: 2 }}>
+												{t("Howitworks.HowItWorksC")}
+											</Typography>
+										</CardContent>
 									</DemoPaper>
 								</motion.div>
 							</Grid>
 
-							<Grid item xs={12} sm={6}>
+							<Grid item xs={12} sm={6} md={3}>
 								<motion.div initial="hidden">
-									<DemoPaper
-										variant="elevation"
-										sx={{
-											height: { xs: 300, md: 340 },
-											display: "flex",
-											flexDirection: "column",
-											justifyContent: "space-between",
-											maxWidth: { xs: 345, md: "none" },
-											margin: "auto",
-											boxShadow: 3,
-											borderRadius: 2
-										}}
-									>
+									<DemoPaper>
 										<CardMedia
 											component="img"
 											height="140"
@@ -319,9 +389,11 @@ export default function Landing() {
 											alt="received notification"
 											sx={{ objectFit: "cover", borderRadius: "2px 2px 0 0" }}
 										/>
-										<Typography variant="body1" sx={{ p: 2 }}>
-											{t("Howitworks.HowItWorksD")}
-										</Typography>
+										<CardContent>
+											<Typography variant="body1" sx={{ p: 2 }}>
+												{t("Howitworks.HowItWorksD")}
+											</Typography>
+										</CardContent>
 									</DemoPaper>
 								</motion.div>
 							</Grid>
@@ -367,8 +439,9 @@ export default function Landing() {
 						</Grid>
 					</Box>
 
+					{/* ----------------------------------------------------------------------------------------------------------------------------------------- */}
 					{/* Relay Map */}
-					<Box sx={{ bgcolor: "white", px: { md: 20, sm: 10, xs: 3 } }}>
+					<Box>
 						<Grid container rowSpacing={4} sx={{ py: { md: 10, xs: 10 } }}>
 							<Grid item md={5} my="auto">
 								<Typography
@@ -387,88 +460,38 @@ export default function Landing() {
 							</Grid>
 						</Grid>
 					</Box>
+					{/* ------------------------------------------------------------------------------------ */}
 
-					{/* What's New Blog */}
-					<Box sx={{ p: { md: 3, xs: 2 } }}>
-						<Grid
-							container
-							rowSpacing={4}
-							columnSpacing={4}
-							sx={{ px: { md: 13, sm: 10, xs: 2 }, my: { md: 2, xs: 1 }, pb: 4 }}
-						>
-							<Grid item md={12} xs={12}>
-								<Typography textAlign={"center"} variant="h5" sx={{ fontWeight: 700, py: 2 }}>
-									{t("Blog.WhatsNew")}
-								</Typography>
-							</Grid>
-
-							<Grid item xs={12}>
-								<Carousel
-									NextIcon={<Button>Next</Button>} // Custom Next button
-									PrevIcon={<Button>Prev</Button>} // Custom Prev button
-								>
-									{pairs.map((pair, index) => (
-										<Box key={index}>
-											<Grid container spacing={2} justifyContent="center">
-												{pair.map((item, idx) => (
-													<Grid item md={6} sm={6} xs={12} key={idx}>
-														<Card sx={{ maxWidth: { xs: "100%", sm: "400px" }, mx: "auto" }}>
-															<CardMedia
-																component="img"
-																height="200"
-																image={item.image}
-																alt={item.title}
-																sx={{ objectFit: "cover", width: "100%" }}
-															/>
-															<CardContent>
-																<Typography
-																	gutterBottom
-																	variant="h5"
-																	component="div"
-																	sx={{ fontSize: { xs: "1.25rem", md: "1.5rem" } }}
-																>
-																	{item.title}
-																</Typography>
-																<Typography variant="body2" color="text.secondary">
-																	{item.description}
-																	<a
-																		style={{ color: "#8AC1EE" }}
-																		href={item.link}
-																		target="_blank"
-																		rel="noreferrer"
-																	>
-																		<br />
-																		{t("Blog.ReadMore")}
-																	</a>
-																</Typography>
-															</CardContent>
-															<Box sx={{ display: "flex", alignItems: "center", px: 2, pb: 2 }}>
-																<Avatar>{item.avatar}</Avatar>
-																<Typography variant="body2" sx={{ p: 1 }}>
-																	{item.author}
-																</Typography>
-															</Box>
-														</Card>
-													</Grid>
-												))}
-											</Grid>
-										</Box>
-									))}
-								</Carousel>
-							</Grid>
-						</Grid>
-					</Box>
+					{/* -------------------------------------------------- */}
 					{/* FAQ */}
-					<Box
-						sx={{
-							bgcolor: "white",
-							color: "black",
-							px: { md: 15, sm: 10, xs: 3 },
-							mb: { md: 0, xs: 4 },
-							mt: { md: 4, xs: 1 }
-						}}
-					>
-						<Faqs />
+					<Box>
+						<div
+							style={{ padding: isMobile ? "10px" : "20px", maxWidth: "800px", margin: "0 auto" }}
+						>
+							<Typography variant="h4" gutterBottom align="center">
+								{t("FAQ.FAQ")}
+							</Typography>
+							{FAQ.map((item, index) => (
+								<CustomAccordion
+									key={index}
+									expanded={expanded === index}
+									onChange={handleChange(index)}
+								>
+									<CustomAccordionSummary
+										expandIcon={<ExpandMoreIcon />}
+										aria-controls={`faq${index}-content`}
+										id={`faq${index}-header`}
+									>
+										<Typography variant={isMobile ? "body1" : "subtitle1"} sx={{ fontWeight: 600 }}>
+											{t(item.question)}
+										</Typography>
+									</CustomAccordionSummary>
+									<CustomAccordionDetails>
+										<Typography variant={isMobile ? "body2" : "body1"}>{t(item.answer)}</Typography>
+									</CustomAccordionDetails>
+								</CustomAccordion>
+							))}
+						</div>
 					</Box>
 				</Container>
 			</Box>

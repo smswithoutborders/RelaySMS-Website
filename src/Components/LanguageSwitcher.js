@@ -1,24 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FormControl, Select, MenuItem } from "@mui/material";
+import { FormControl, MenuItem, IconButton, Menu, Box } from "@mui/material";
+import LanguageIcon from "@mui/icons-material/Language";
 
 const LanguageSwitcher = () => {
 	const { i18n } = useTranslation();
-	const [language, setLanguage] = React.useState(i18n.language);
+	const [anchorEl, setAnchorEl] = useState(null);
 
-	const handleChange = (event) => {
-		const newLanguage = event.target.value;
-		setLanguage(newLanguage);
-		i18n.changeLanguage(newLanguage);
+	const handleLanguageMenuClick = (event) => {
+		setAnchorEl(event.currentTarget);
+	};
+
+	const handleLanguageMenuClose = () => {
+		setAnchorEl(null);
+	};
+
+	const handleLanguageChange = (lang) => {
+		i18n.changeLanguage(lang);
+		setAnchorEl(null);
 	};
 
 	return (
 		<FormControl variant="outlined" size="small">
-			<Select value={language} onChange={handleChange} displayEmpty>
-				<MenuItem value="en">🇺🇸 English</MenuItem>
-				<MenuItem value="fr">🇫🇷 French</MenuItem>
-				<MenuItem value="fa">🇮🇷 فارسی</MenuItem>
-			</Select>
+			<Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+				<IconButton
+					color="inherit"
+					onClick={handleLanguageMenuClick}
+					sx={{ display: { xs: "", md: "block" } }}
+				>
+					<LanguageIcon />
+				</IconButton>
+				<Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleLanguageMenuClose}>
+					<MenuItem onClick={() => handleLanguageChange("en")}>🇺🇸 English</MenuItem>
+					<MenuItem onClick={() => handleLanguageChange("fr")}>🇫🇷 Français</MenuItem>
+					<MenuItem onClick={() => handleLanguageChange("fa")}>🇮🇷 فارسی</MenuItem>
+				</Menu>
+			</Box>
 		</FormControl>
 	);
 };

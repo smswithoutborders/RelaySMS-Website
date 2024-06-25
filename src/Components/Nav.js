@@ -185,7 +185,7 @@ export default function BackToTop(props) {
 									<Typography>{t("Nav.help")}</Typography>
 								</a>
 								<a
-									href="https://github.com/deku-messaging"
+									href="https://github.com/smswithoutborders"
 									target="_blank"
 									rel="noreferrer"
 									className="menu-link"
