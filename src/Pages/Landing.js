@@ -1,14 +1,13 @@
 import React from "react";
 import { Box, Grid, Typography, Button, Card, CardMedia, Avatar, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { FaArrowCircleRight, FaDownload } from "react-icons/fa";
+import { FaArrowCircleRight, FaDesktop, FaGooglePlay } from "react-icons/fa";
 import CardContent from "@mui/material/CardContent";
 import Faqs from "../Components/FAQs.js";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import Carousel from "react-material-ui-carousel";
 import Container from "@mui/material/Container";
 import { Link as ScrollLink } from "react-scroll";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import "../i18n.js";
 
 export default function Landing() {
@@ -126,7 +125,7 @@ export default function Landing() {
 											color="primary"
 											size="large"
 											variant="contained"
-											startIcon={<FaDownload />}
+											startIcon={<FaGooglePlay />}
 										>
 											{t("Landing.Android")}
 										</Button>
@@ -136,8 +135,15 @@ export default function Landing() {
 											color="primary"
 											size="large"
 											variant="outlined"
-											startIcon={<PlayArrowIcon />}
+											startIcon={<FaDesktop />}
+											href="http:alphorm.com"
 										>
+											{/* <a className="app-btn blu flex vert" href="http:alphorm.com">
+												<i className="fas fa-desktop"></i>
+												<p>
+													Application <br /> <span className="big-txt">Desktop</span>
+												</p>
+											</a> */}
 											{t("Landing.Desktop")}
 										</Button>
 									</ScrollLink>
