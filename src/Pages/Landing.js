@@ -12,13 +12,15 @@ import {
 	Card,
 	CardContent,
 	useTheme,
-	CardMedia
+	CardMedia,
+	Avatar
 } from "@mui/material";
 import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";
 import { FaArrowCircleRight, FaDesktop, FaGooglePlay } from "react-icons/fa";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import Container from "@mui/material/Container";
+import Carousel from "react-material-ui-carousel";
 import "../i18n.js";
 
 const FAQ = [
@@ -455,6 +457,78 @@ export default function Landing() {
 						</Grid>
 					</Box>
 					{/* ------------------------------------------------------------------------------------ */}
+
+					{/* What's New Blog */}
+					<Box sx={{ p: { md: 3, xs: 2 } }}>
+						<Grid
+							container
+							rowSpacing={4}
+							columnSpacing={4}
+							sx={{ px: { md: 13, sm: 10, xs: 2 }, my: { md: 2, xs: 1 }, pb: 4 }}
+						>
+							<Grid item md={12} xs={12}>
+								<motion.div>
+									<Typography textAlign={"center"} variant="h5" sx={{ fontWeight: 700, py: 2 }}>
+										{t("Blog.WhatsNew")}
+									</Typography>
+								</motion.div>
+							</Grid>
+
+							<Grid item xs={12}>
+								<Carousel NextIcon={<Button>Next</Button>} PrevIcon={<Button>Prev</Button>}>
+									{pairs.map((pair, index) => (
+										<Box key={index}>
+											<Grid container spacing={2} justifyContent="center">
+												{pair.map((item, idx) => (
+													<Grid item md={6} sm={6} xs={12} key={idx}>
+														<motion.div initial="hidden">
+															<Card sx={{ maxWidth: { xs: "100%", sm: "400px" }, mx: "auto" }}>
+																<CardMedia
+																	component="img"
+																	height="200"
+																	image={item.image}
+																	alt={item.title}
+																	sx={{ objectFit: "cover", width: "100%" }}
+																/>
+																<CardContent>
+																	<Typography
+																		gutterBottom
+																		variant="h5"
+																		component="div"
+																		sx={{ fontSize: { xs: "1.25rem", md: "1.5rem" } }}
+																	>
+																		{item.title}
+																	</Typography>
+																	<Typography variant="body2" color="text.secondary">
+																		{item.description}
+																		<a
+																			style={{ color: "#8AC1EE" }}
+																			href={item.link}
+																			target="_blank"
+																			rel="noreferrer"
+																		>
+																			<br />
+																			{t("Blog.ReadMore")}
+																		</a>
+																	</Typography>
+																</CardContent>
+																<Box sx={{ display: "flex", alignItems: "center", px: 2, pb: 2 }}>
+																	<Avatar>{item.avatar}</Avatar>
+																	<Typography variant="body2" sx={{ p: 1 }}>
+																		{item.author}
+																	</Typography>
+																</Box>
+															</Card>
+														</motion.div>
+													</Grid>
+												))}
+											</Grid>
+										</Box>
+									))}
+								</Carousel>
+							</Grid>
+						</Grid>
+					</Box>
 
 					{/* ------------------------------------------------------------------------------------ */}
 					{/* FAQ */}
