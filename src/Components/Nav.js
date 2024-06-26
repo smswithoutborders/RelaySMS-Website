@@ -10,8 +10,6 @@ import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
 import IconButton from "@mui/material/IconButton";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
@@ -55,7 +53,6 @@ ScrollTop.propTypes = {
 };
 
 export default function BackToTop(props) {
-	const { darkMode, toggleDarkMode } = props;
 	const { t, i18n } = useTranslation();
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -156,11 +153,6 @@ export default function BackToTop(props) {
 											{t("Nav.Blog")}
 										</a>
 									</MenuItem>
-									<MenuItem onClick={toggleDarkMode}>
-										<IconButton aria-label={darkMode ? "Light Mode" : "Dark Mode"} color="inherit">
-											{darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
-										</IconButton>
-									</MenuItem>
 								</Menu>
 							</>
 						) : (
@@ -201,13 +193,6 @@ export default function BackToTop(props) {
 									<Typography>{t("Nav.Blog")}</Typography>
 								</a>
 								<LanguageSwitcher />
-								<IconButton
-									onClick={toggleDarkMode}
-									aria-label={darkMode ? "Light Mode" : "Dark Mode"}
-									color="inherit"
-								>
-									{darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
-								</IconButton>
 							</Box>
 						)}
 					</Box>
@@ -222,8 +207,3 @@ export default function BackToTop(props) {
 		</React.Fragment>
 	);
 }
-
-BackToTop.propTypes = {
-	darkMode: PropTypes.bool.isRequired,
-	toggleDarkMode: PropTypes.func.isRequired
-};
