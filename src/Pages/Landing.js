@@ -6,6 +6,7 @@ import "../i18n.js";
 
 export default function Landing() {
 	const { t, i18n } = useTranslation();
+
 	const isRTL = i18n.language === "fa";
 
 	return (
@@ -19,6 +20,7 @@ export default function Landing() {
 					pb: { xs: 8, md: 10 }
 				}}
 			>
+				{/* Banner Page */}
 				<Container maxWidth="lg">
 					<Grid container spacing={0} sx={{ flexDirection: { xs: "column", md: "unset" } }}>
 						<Grid item xs={12} md={7}>
@@ -39,7 +41,8 @@ export default function Landing() {
 											fontSize: { xs: 40, md: 72 },
 											letterSpacing: 1.5,
 											fontWeight: "bold",
-											lineHeight: 1.3
+											lineHeight: 1.3,
+											mb: 2
 										}}
 									>
 										<Typography
@@ -49,10 +52,11 @@ export default function Landing() {
 												color: "primary.main",
 												fontSize: "inherit",
 												fontWeight: "inherit",
-												backgroundColor: "unset"
+												backgroundColor: "unset",
+												mb: 2
 											}}
 										>
-											Keep{" "}
+											{t("Landing.landingh1a")}
 											<Box
 												sx={{
 													position: "absolute",
@@ -63,31 +67,15 @@ export default function Landing() {
 												}}
 											></Box>
 										</Typography>
-										Talking{" "}
-										<Typography
-											component="span"
-											sx={{
-												fontSize: "inherit",
-												fontWeight: "inherit",
-												position: "relative",
-												"& svg": {
-													position: "absolute",
-													top: -16,
-													right: -21,
-													width: { xs: 22, md: 30 },
-													height: "auto"
-												}
-											}}
-										>
-											With RelaySMS
-										</Typography>{" "}
+										{t("Landing.landingh1")}
 									</Typography>
 								</Box>
 								<Box sx={{ mb: 4, width: { xs: "100%", md: "70%" } }}>
 									<Typography sx={{ color: "text.secondary", lineHeight: 1.6 }}>
-										{"Send Emails, Posts, and Messages securely via SMS."}
+										{t("Landing.landingh2")}
 									</Typography>
 								</Box>
+
 								{/*  */}
 								<Box sx={{ "& button": { mr: 2 } }}>
 									{/*  */}
@@ -102,13 +90,22 @@ export default function Landing() {
 								{/*  */}
 							</Box>
 						</Grid>
-						<Grid item xs={12} md={5} sx={{ position: "relative" }}>
-							<Box sx={{ lineHeight: 0 }}>
-								{/* <Image src="/images/home-hero.jpg" width={775} height={787} alt="Hero img" /> */}
-							</Box>
+						<Grid item xs={12} md={4} my={"auto"} sx={{ position: "relative", marginTop: 4 }}>
+							<Box
+								component="img"
+								src="/phonem.png"
+								alt="image"
+								sx={{
+									width: "100%",
+									maxWidth: "80%",
+									height: "auto",
+									transform: "rotate(10deg)"
+								}}
+							/>
 						</Grid>
 					</Grid>
 				</Container>
+				{/*======================================= end of Hero section -------------------------------------*/}
 			</Box>
 		</>
 	);
