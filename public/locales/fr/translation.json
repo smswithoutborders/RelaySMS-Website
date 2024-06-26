@@ -14,6 +14,7 @@
 	},
 	"Howitworks": {
 		"HowItWorks": "Comment ça marche",
+		"HowItWorksSubtitle": "Découvrez comment notre service fonctionne de manière transparente",
 		"HowItWorksA": "Autorisez RelaySMS à envoyer des e-mails, des publications ou des messages en votre nom",
 		"HowItWorksB": "Rédigez votre e-mail, publication ou message, et il sera automatiquement envoyé en utilisant votre application SMS par défaut.",
 		"HowItWorksC": "Votre contenu atteint les points d'accès RelaySMS et est publié en votre nom.",
@@ -46,7 +47,7 @@
 	},
 	"Footer": {
 		"RelaySMS": "RelaySMS",
-		"footerbody2": "Le client est très important, le client sera suivi par le client. Mais maintenant, la meilleure chose est le football pur ou la vallée avant la vallée.",
+		"footerbody2": "Envoyez et recevez des messages de manière transparente avec RelaySMS",
 		"footerHeader1": "Liens rapides",
 		"footerquick1": "Blog",
 		"footerquick3": "Documentation",

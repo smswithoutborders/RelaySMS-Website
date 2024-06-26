@@ -19,6 +19,7 @@ import { useTranslation } from "react-i18next";
 import { FaArrowCircleRight, FaDesktop, FaGooglePlay } from "react-icons/fa";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import Container from "@mui/material/Container";
+import Faqs from "../Components/FAQs.js";
 import "../i18n.js";
 
 const FAQ = [
@@ -178,11 +179,10 @@ export default function Landing() {
 										component="h2"
 										sx={{
 											position: "relative",
-											// fontSize: { xs: 40, md: 72 },
+											fontSize: { xs: 40, md: 72 },
 											letterSpacing: 1.5,
 											fontWeight: "bold",
 											lineHeight: 1.3,
-											fontSize: { xs: "40px", md: "70px" },
 											mb: 2
 										}}
 									>
@@ -313,7 +313,7 @@ export default function Landing() {
 							{t("Howitworks.HowItWorks")}
 						</Typography>
 						<Typography variant="subtitle1" sx={{ mb: 4, fontSize: { xs: "18px", md: "20px" } }}>
-							{t("Howitworks.Subtitle")}
+							{t("Howitworks.HowItWorksSubtitle")}
 						</Typography>
 
 						{/* How it works sections */}
@@ -397,7 +397,7 @@ export default function Landing() {
 							{/* Getting Started Button */}
 							<Grid item xs={12}>
 								<motion.div initial="hidden">
-									<Box textAlign="center" sx={{ p: 2 }}>
+									<Box textAlign="center" sx={{ p: 1 }}>
 										<a
 											href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
 											target="_blank"
@@ -457,8 +457,8 @@ export default function Landing() {
 						</Grid>
 					</Box>
 					{/* ------------------------------------------------------------------------------------ */}
-
-					{/* -------------------------------------------------- */}
+					<Faqs />
+					{/* ------------------------------------------------------------------------------------ */}
 					{/* FAQ */}
 					<Box>
 						<div
