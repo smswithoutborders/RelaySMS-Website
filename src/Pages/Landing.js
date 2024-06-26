@@ -19,7 +19,6 @@ import { useTranslation } from "react-i18next";
 import { FaArrowCircleRight, FaDesktop, FaGooglePlay } from "react-icons/fa";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import Container from "@mui/material/Container";
-import Faqs from "../Components/FAQs.js";
 import "../i18n.js";
 
 const FAQ = [
@@ -45,7 +44,6 @@ const FAQ = [
 	}
 ];
 
-// Styled components for enhanced design
 const CustomAccordion = styled(Accordion)(({ theme }) => ({
 	marginBottom: theme.spacing(2),
 	borderRadius: theme.spacing(1),
@@ -457,7 +455,7 @@ export default function Landing() {
 						</Grid>
 					</Box>
 					{/* ------------------------------------------------------------------------------------ */}
-					<Faqs />
+
 					{/* ------------------------------------------------------------------------------------ */}
 					{/* FAQ */}
 					<Box>

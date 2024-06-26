@@ -1,75 +1,98 @@
-import React from "react";
-import { Box, Typography, Button, Grid } from "@mui/material";
-import { FaApple } from "react-icons/fa"; // Importing Apple icon
+import * as React from "react";
+import {
+	Typography,
+	Accordion,
+	AccordionSummary,
+	AccordionDetails,
+	useMediaQuery,
+	styled
+} from "@mui/material";
+import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
 
-// Play Store image (replace with your actual image URL)
-const playStoreImage = "/playstore.svg";
+const FAQ = [
+	{
+		question: "FAQ.FAQ1",
+		answer: "FAQ.faq1"
+	},
+	{
+		question: "FAQ.FAQ2",
+		answer: "FAQ.faq2"
+	},
+	{
+		question: "FAQ.FAQ3",
+		answer: "FAQ.faq3"
+	},
+	{
+		question: "FAQ.FAQ4",
+		answer: "FAQ.faq4"
+	},
+	{
+		question: "FAQ.FAQ5",
+		answer: "FAQ.faq5"
+	}
+];
 
-export default function DownloadButtons() {
-	const handleDownload = (platform) => {
-		// Handle download logic based on platform (App Store, Play Store)
-		console.log(`Download on ${platform}`);
+// Styled components for enhanced design
+const CustomAccordion = styled(Accordion)(({ theme }) => ({
+	marginBottom: theme.spacing(2),
+	borderRadius: theme.spacing(1),
+	boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+	transition: "box-shadow 0.3s ease-out",
+
+	"&:hover": {
+		boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.2)"
+	}
+}));
+
+const CustomAccordionSummary = styled(AccordionSummary)(({ theme }) => ({
+	backgroundColor: theme.palette.primary.main,
+	color: theme.palette.primary.contrastText,
+	borderBottom: `1px solid ${theme.palette.primary.dark}`,
+	borderRadius: theme.spacing(1, 1, 0, 0),
+
+	"&.Mui-expanded": {
+		minHeight: 64
+	}
+}));
+
+const CustomAccordionDetails = styled(AccordionDetails)(({ theme }) => ({
+	backgroundColor: theme.palette.background.default,
+	padding: theme.spacing(2),
+	borderTop: `1px solid ${theme.palette.primary.dark}`,
+	borderRadius: theme.spacing(0, 0, 1, 1)
+}));
+
+export default function Faqs() {
+	const [expanded, setExpanded] = React.useState(null);
+	const { t } = useTranslation();
+	const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
+	const handleChange = (panel) => (event, isExpanded) => {
+		setExpanded(isExpanded ? panel : null);
 	};
 
 	return (
-		<Box className="flex items-center justify-center h-screen bg-gray-900">
-			<Box>
-				<Typography variant="h4" className="text-3xl text-white font-extrabold my-3 text-center">
-					Get the app
-				</Typography>
-				<Grid
-					container
-					spacing={2}
-					justifyContent="center"
-					alignItems="center"
-					className="flex flex-col w-full gap-2 p-2 md:flex-row"
-				>
-					<Grid item xs={12} md={6}>
-						<Button
-							variant="contained"
-							color="primary"
-							fullWidth
-							onClick={() => handleDownload("App Store")}
-							className="flex items-center justify-center px-5 py-3 text-center text-white bg-white rounded-2xl"
-						>
-							<FaApple className="w-7" style={{ marginRight: "0.75rem" }} />
-							<Box className="flex flex-col ml-2 leading-4 text-left md:ml-3">
-								<Typography variant="body2" className="text-sm text-black">
-									Get it on
-								</Typography>
-								<Typography variant="h5" className="text-base font-semibold text-black">
-									App Store
-								</Typography>
-							</Box>
-						</Button>
-					</Grid>
-					<Grid item xs={12} md={6}>
-						<Button
-							variant="outlined"
-							color="primary"
-							fullWidth
-							onClick={() => handleDownload("Google Play")}
-							className="flex items-center justify-center px-5 py-3 text-center text-white bg-white rounded-2xl"
-						>
-							<img
-								src={playStoreImage}
-								alt="Play Store"
-								className="w-5 md:w-4" // Adjusted width classes for different screen sizes
-								style={{ marginRight: "0.75rem", maxWidth: "10%", height: "auto" }} // Added style for responsive sizing
-							/>
-
-							<Box className="flex flex-col ml-2 leading-4 text-left md:ml-3">
-								<Typography variant="body2" className="text-sm text-black">
-									Get it on
-								</Typography>
-								<Typography variant="h5" className="text-base font-semibold text-black">
-									Play Store
-								</Typography>
-							</Box>
-						</Button>
-					</Grid>
-				</Grid>
-			</Box>
-		</Box>
+		<div style={{ padding: isMobile ? "10px" : "20px", maxWidth: "800px", margin: "0 auto" }}>
+			<Typography variant="h4" gutterBottom align="center">
+				{t("FAQ.FAQ")}
+			</Typography>
+			{FAQ.map((item, index) => (
+				<CustomAccordion key={index} expanded={expanded === index} onChange={handleChange(index)}>
+					<CustomAccordionSummary
+						expandIcon={<ExpandMoreIcon />}
+						aria-controls={`faq${index}-content`}
+						id={`faq${index}-header`}
+					>
+						<Typography variant={isMobile ? "body1" : "subtitle1"} sx={{ fontWeight: 600 }}>
+							{t(item.question)}
+						</Typography>
+					</CustomAccordionSummary>
+					<CustomAccordionDetails>
+						<Typography variant={isMobile ? "body2" : "body1"}>{t(item.answer)}</Typography>
+					</CustomAccordionDetails>
+				</CustomAccordion>
+			))}
+		</div>
 	);
 }
