@@ -10,8 +10,6 @@ import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
 import IconButton from "@mui/material/IconButton";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
@@ -19,6 +17,8 @@ import { useTheme, createTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import "../App.css";
 
 function ScrollTop(props) {
@@ -55,7 +55,6 @@ ScrollTop.propTypes = {
 };
 
 export default function BackToTop(props) {
-	const { darkMode, toggleDarkMode } = props;
 	const { t, i18n } = useTranslation();
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -78,14 +77,15 @@ export default function BackToTop(props) {
 	return (
 		<React.Fragment theme={themeWithDirection}>
 			<CssBaseline />
-			<AppBar>
+			<AppBar sx={{ backgroundColor: "white" }}>
 				<Toolbar>
 					<Box
 						sx={{
 							display: "flex",
 							alignItems: "center",
 							flexGrow: 1,
-							justifyContent: "space-between"
+							justifyContent: "space-between",
+							color: "black"
 						}}
 					>
 						<img
@@ -95,14 +95,12 @@ export default function BackToTop(props) {
 						/>
 						{isMobile ? (
 							<>
-								<LanguageSwitcher />
-
 								<IconButton
 									edge="start"
 									color="inherit"
 									aria-label="menu"
 									onClick={handleMenu}
-									sx={{ padding: "20px", color: "white" }}
+									sx={{ padding: "20px", color: "black" }}
 								>
 									<MenuIcon />
 								</IconButton>
@@ -122,11 +120,6 @@ export default function BackToTop(props) {
 									onClose={handleClose}
 								>
 									<MenuItem onClick={handleClose}>
-										<a href="/" className="menu-link">
-											{t("Nav.Home")}
-										</a>
-									</MenuItem>
-									<MenuItem onClick={handleClose}>
 										<a
 											href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
 											target="_blank"
@@ -136,16 +129,7 @@ export default function BackToTop(props) {
 											{t("Nav.help")}
 										</a>
 									</MenuItem>
-									<MenuItem onClick={handleClose}>
-										<a
-											href="https://github.com/deku-messaging"
-											target="_blank"
-											rel="noreferrer"
-											className="menu-link"
-										>
-											{t("Nav.github")}
-										</a>
-									</MenuItem>
+
 									<MenuItem onClick={handleClose}>
 										<a
 											href="https://blog.smswithoutborders.com/"
@@ -156,10 +140,29 @@ export default function BackToTop(props) {
 											{t("Nav.Blog")}
 										</a>
 									</MenuItem>
-									<MenuItem onClick={toggleDarkMode}>
-										<IconButton aria-label={darkMode ? "Light Mode" : "Dark Mode"} color="inherit">
-											{darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+									<MenuItem onClick={handleClose}>
+										<IconButton
+											href="https://x.com/RelaySMS"
+											target="_blank"
+											rel="noopener noreferrer"
+											color="inherit"
+										>
+											<TwitterIcon />
 										</IconButton>
+									</MenuItem>
+									<MenuItem onClick={handleClose}>
+										<IconButton
+											href="https://github.com/smswithoutborders"
+											target="_blank"
+											rel="noopener noreferrer"
+											color="inherit"
+										>
+											<GitHubIcon />
+										</IconButton>
+									</MenuItem>
+
+									<MenuItem onClick={handleClose}>
+										<LanguageSwitcher />
 									</MenuItem>
 								</Menu>
 							</>
@@ -173,9 +176,6 @@ export default function BackToTop(props) {
 									ml: "auto"
 								}}
 							>
-								<a href="/" className="menu-link">
-									<Typography>{t("Nav.Home")}</Typography>
-								</a>
 								<a
 									href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
 									target="_blank"
@@ -185,14 +185,6 @@ export default function BackToTop(props) {
 									<Typography>{t("Nav.help")}</Typography>
 								</a>
 								<a
-									href="https://github.com/smswithoutborders"
-									target="_blank"
-									rel="noreferrer"
-									className="menu-link"
-								>
-									<Typography>{t("Nav.github")}</Typography>
-								</a>
-								<a
 									href="https://blog.smswithoutborders.com/"
 									target="_blank"
 									rel="noreferrer"
@@ -200,14 +192,23 @@ export default function BackToTop(props) {
 								>
 									<Typography>{t("Nav.Blog")}</Typography>
 								</a>
-								<LanguageSwitcher />
 								<IconButton
-									onClick={toggleDarkMode}
-									aria-label={darkMode ? "Light Mode" : "Dark Mode"}
+									href="https://x.com/RelaySMS"
+									target="_blank"
+									rel="noopener noreferrer"
 									color="inherit"
 								>
-									{darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+									<TwitterIcon />
 								</IconButton>
+								<IconButton
+									href="https://github.com/smswithoutborders"
+									target="_blank"
+									rel="noopener noreferrer"
+									color="inherit"
+								>
+									<GitHubIcon />
+								</IconButton>
+								<LanguageSwitcher />
 							</Box>
 						)}
 					</Box>
@@ -222,8 +223,3 @@ export default function BackToTop(props) {
 		</React.Fragment>
 	);
 }
-
-BackToTop.propTypes = {
-	darkMode: PropTypes.bool.isRequired,
-	toggleDarkMode: PropTypes.func.isRequired
-};
