@@ -32,7 +32,7 @@ const BlogCarousel = () => {
 			arrows
 			autoPlaySpeed={3000}
 			centerMode={false}
-			className=""
+			className="centered-carousel"
 			containerClass="container-with-dots"
 			dotListClass=""
 			draggable

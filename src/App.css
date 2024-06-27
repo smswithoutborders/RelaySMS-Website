@@ -157,3 +157,10 @@ button:hover {
 	font-size: 30px;
 	text-align: center;
 }
+
+/* carousel */
+.centered-carousel {
+	display: flex;
+	/* justify-content: center; */
+	/* align-items: center; */
+}
