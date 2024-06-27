@@ -138,7 +138,7 @@ button:hover {
 
 /* cards */
 .custom-card {
-	border-radius: 50%;
+	border-radius: 40px !important;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 	transition: box-shadow 0.3s ease-in-out;
 }
@@ -147,11 +147,13 @@ button:hover {
 	box-shadow: 0px 15px 16px rgba(0, 0, 0, 0.2);
 }
 
-.card-title-custom {
-	font-size: 30px;
-	font-weight: bold;
+.custom-card-title {
+	font-size: 40px;
+	text-align: center;
+	font-weight: bolder;
 }
 
-.card-text-custom {
-	font-size: 20px;
+.custom-card-text {
+	font-size: 30px;
+	text-align: center;
 }
