@@ -78,7 +78,7 @@ export default function BackToTop(props) {
 		<ThemeProvider theme={themeWithDirection}>
 			<React.Fragment>
 				<CssBaseline />
-				<AppBar sx={{ backgroundColor: "white" }}>
+				<AppBar sx={{ backgroundColor: "white" }} dir={direction}>
 					<Toolbar>
 						<Box
 							sx={{
@@ -88,6 +88,7 @@ export default function BackToTop(props) {
 								justifyContent: "space-between",
 								color: "black"
 							}}
+							dir={direction}
 						>
 							<img
 								src="./logo.png"
@@ -106,6 +107,7 @@ export default function BackToTop(props) {
 										<MenuIcon />
 									</IconButton>
 									<Menu
+										dir={direction}
 										id="menu-appbar"
 										anchorEl={anchorEl}
 										anchorOrigin={{
@@ -174,6 +176,7 @@ export default function BackToTop(props) {
 										gap: 2,
 										ml: "auto"
 									}}
+									dir={direction}
 								>
 									<a
 										href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
