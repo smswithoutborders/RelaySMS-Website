@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import Container from "@mui/material/Container";
 import { GooglePlayButton } from "react-mobile-app-button";
 import { PageAnimationWrapper } from "../Components/PageAnimationWrapper";
-// import { Row, Col, Card } from "react-bootstrap";
 import { FaArrowCircleRight } from "react-icons/fa";
+import Blog from "../Components/Blog.js";
 import { motion } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../i18n.js";
@@ -244,7 +244,32 @@ export default function Landing() {
 						</Grid>
 					</Box>
 					{/* ------------------------------------------------------------------------------------ */}
-					{/* <Blog /> */}
+
+					<Container
+						fluid="lg"
+						item
+						xs={12}
+						md={4}
+						my={"auto"}
+						sx={{ position: "relative", marginTop: 4 }}
+					>
+						<Typography
+							align="center"
+							variant="h4"
+							sx={{ fontWeight: 700, fontSize: { xs: "25px", md: "33px" }, mb: 2 }}
+						>
+							{t("Blog.WhatsNew")}
+						</Typography>
+						<Typography
+							variant="subtitle1"
+							align="center"
+							sx={{ mb: 4, fontSize: { xs: "18px", md: "20px" } }}
+						>
+							{t("Blog.WhatsNew")}
+						</Typography>
+						{/* cards */}
+						<Blog />
+					</Container>
 				</Box>
 			</PageAnimationWrapper>
 		</>
