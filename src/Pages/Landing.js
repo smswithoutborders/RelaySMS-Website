@@ -6,6 +6,7 @@ import { GooglePlayButton } from "react-mobile-app-button";
 import { PageAnimationWrapper } from "../Components/PageAnimationWrapper";
 import { FaArrowCircleRight } from "react-icons/fa";
 import Blog from "../Components/Blog.js";
+import Faqs from "../Components/FAQs.js";
 import { motion } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../i18n.js";
@@ -33,7 +34,6 @@ export default function Landing() {
 				<Box
 					dir={isRTL ? "rtl" : "ltr"}
 					sx={{
-						backgroundColor: "background.paper",
 						position: "relative",
 						pt: 4,
 						pb: { xs: 8, md: 10 }
@@ -62,7 +62,7 @@ export default function Landing() {
 												fontWeight: "bold",
 												lineHeight: 1.3,
 												mb: 2,
-												textAlign: isRTL ? "right" : "left" // Adjust text alignment based on RTL
+												textAlign: isRTL ? "right" : "left"
 											}}
 										>
 											<Typography
@@ -131,7 +131,7 @@ export default function Landing() {
 										maxWidth: "80%",
 										height: "auto",
 										transform: "rotate(10deg)",
-										textAlign: isRTL ? "left" : "right" // Adjust image alignment based on RTL
+										textAlign: isRTL ? "left" : "right"
 									}}
 								/>
 							</Grid>
@@ -295,45 +295,40 @@ export default function Landing() {
 
 					{/* end of blog section */}
 
-					{/* <Container fluid className="mt-5">
-						<Row className="justify-content-center">
-							<Col xs={12} md={6} lg={4}>
-								<Card>
-									<Card.Img
-										variant="top"
-										src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/logo-new-2.svg"
-										alt="GeeksforGeeks Logo"
-									/>
-									<Card.Body>
-										<Card.Title>JavaScript</Card.Title>
-										<Card.Text>
-											JavaScript is a lightweight, cross-platform, single-threaded, and interpreted
-											compiled programming language. It is also known as the scripting language for
-											webpages. It is well-known for the development of web pages, and many
-											non-browser environments also use it.
-										</Card.Text>
-									</Card.Body>
-								</Card>
-							</Col>
-							<Col xs={12} md={6} lg={4}>
-								<Card>
-									<Card.Img
-										variant="top"
-										src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/logo-new-2.svg"
-										alt="GeeksforGeeks Logo"
-									/>
-									<Card.Body>
-										<Card.Title>React.js</Card.Title>
-										<Card.Text>
-											ReactJS is a declarative, efficient, and flexible JavaScript library for
-											building user interfaces. It is an open-source, component-based front-end
-											library that is responsible only for the view layer of the application.
-										</Card.Text>
-									</Card.Body>
-								</Card>
-							</Col>
-						</Row>
-					</Container> */}
+					<Box
+						fluid="lg"
+						item
+						xs={12}
+						md={8}
+						my={"auto"}
+						sx={{ position: "relative", marginTop: 4, direction: isRTL ? "rtl" : "ltr" }}
+					>
+						<Typography
+							align="center"
+							variant="h4"
+							sx={{
+								fontWeight: 700,
+								fontSize: { xs: "25px", md: "33px" },
+								mb: 2,
+								textAlign: isRTL ? "right" : "center"
+							}}
+						>
+							{t("FAQ.FAQ")}
+						</Typography>
+						{/* <Typography
+							variant="subtitle1"
+							align="center"
+							sx={{
+								mb: 4,
+								fontSize: { xs: "18px", md: "20px" },
+								textAlign: isRTL ? "right" : "center"
+							}}
+						>
+							{t("Blog.WhatsNew")}
+						</Typography> */}
+						{/* Blog cards */}
+						<Faqs />
+					</Box>
 				</Box>
 			</PageAnimationWrapper>
 		</>
