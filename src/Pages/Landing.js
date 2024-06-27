@@ -315,18 +315,6 @@ export default function Landing() {
 						>
 							{t("FAQ.FAQ")}
 						</Typography>
-						{/* <Typography
-							variant="subtitle1"
-							align="center"
-							sx={{
-								mb: 4,
-								fontSize: { xs: "18px", md: "20px" },
-								textAlign: isRTL ? "right" : "center"
-							}}
-						>
-							{t("Blog.WhatsNew")}
-						</Typography> */}
-						{/* Blog cards */}
 						<Faqs />
 					</Box>
 				</Box>
