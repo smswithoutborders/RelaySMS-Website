@@ -13,7 +13,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
-import { useTheme, createTheme } from "@mui/material/styles";
+import { useTheme, createTheme, ThemeProvider } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
@@ -75,151 +75,154 @@ export default function BackToTop(props) {
 	});
 
 	return (
-		<React.Fragment theme={themeWithDirection}>
-			<CssBaseline />
-			<AppBar sx={{ backgroundColor: "white" }}>
-				<Toolbar>
-					<Box
-						sx={{
-							display: "flex",
-							alignItems: "center",
-							flexGrow: 1,
-							justifyContent: "space-between",
-							color: "black"
-						}}
-					>
-						<img
-							src="./logo.png"
-							alt="Logo"
-							style={{ height: "40px", marginRight: "16px", color: "#1c222c" }}
-						/>
-						{isMobile ? (
-							<>
-								<IconButton
-									edge="start"
-									color="inherit"
-									aria-label="menu"
-									onClick={handleMenu}
-									sx={{ padding: "20px", color: "black" }}
-								>
-									<MenuIcon />
-								</IconButton>
-								<Menu
-									id="menu-appbar"
-									anchorEl={anchorEl}
-									anchorOrigin={{
-										vertical: "top",
-										horizontal: direction === "rtl" ? "left" : "right"
+		<ThemeProvider theme={themeWithDirection}>
+			<React.Fragment>
+				<CssBaseline />
+				<AppBar sx={{ backgroundColor: "white" }} dir={direction}>
+					<Toolbar>
+						<Box
+							sx={{
+								display: "flex",
+								alignItems: "center",
+								flexGrow: 1,
+								justifyContent: "space-between",
+								color: "black"
+							}}
+							dir={direction}
+						>
+							<img
+								src="./logo.png"
+								alt="Logo"
+								style={{ height: "40px", marginRight: "16px", color: "#1c222c" }}
+							/>
+							{isMobile ? (
+								<>
+									<IconButton
+										edge="start"
+										color="inherit"
+										aria-label="menu"
+										onClick={handleMenu}
+										sx={{ padding: "20px", color: "black" }}
+									>
+										<MenuIcon />
+									</IconButton>
+									<Menu
+										dir={direction}
+										id="menu-appbar"
+										anchorEl={anchorEl}
+										anchorOrigin={{
+											vertical: "top",
+											horizontal: direction === "rtl" ? "left" : "right"
+										}}
+										keepMounted
+										transformOrigin={{
+											vertical: "top",
+											horizontal: direction === "rtl" ? "left" : "right"
+										}}
+										open={Boolean(anchorEl)}
+										onClose={handleClose}
+									>
+										<MenuItem onClick={handleClose}>
+											<a
+												href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+												target="_blank"
+												rel="noreferrer noopener"
+												className="menu-link"
+											>
+												{t("Nav.help")}
+											</a>
+										</MenuItem>
+										<MenuItem onClick={handleClose}>
+											<a
+												href="https://blog.smswithoutborders.com/"
+												target="_blank"
+												rel="noreferrer"
+												className="menu-link"
+											>
+												{t("Nav.Blog")}
+											</a>
+										</MenuItem>
+										<MenuItem onClick={handleClose}>
+											<IconButton
+												href="https://x.com/RelaySMS"
+												target="_blank"
+												rel="noopener noreferrer"
+												color="inherit"
+											>
+												<TwitterIcon />
+											</IconButton>
+										</MenuItem>
+										<MenuItem onClick={handleClose}>
+											<IconButton
+												href="https://github.com/smswithoutborders"
+												target="_blank"
+												rel="noopener noreferrer"
+												color="inherit"
+											>
+												<GitHubIcon />
+											</IconButton>
+										</MenuItem>
+										<MenuItem onClick={handleClose}>
+											<LanguageSwitcher />
+										</MenuItem>
+									</Menu>
+								</>
+							) : (
+								<Box
+									component="nav"
+									sx={{
+										display: "flex",
+										alignItems: "center",
+										gap: 2,
+										ml: "auto"
 									}}
-									keepMounted
-									transformOrigin={{
-										vertical: "top",
-										horizontal: direction === "rtl" ? "left" : "right"
-									}}
-									open={Boolean(anchorEl)}
-									onClose={handleClose}
+									dir={direction}
 								>
-									<MenuItem onClick={handleClose}>
-										<a
-											href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
-											target="_blank"
-											rel="noreferrer noopener"
-											className="menu-link"
-										>
-											{t("Nav.help")}
-										</a>
-									</MenuItem>
-
-									<MenuItem onClick={handleClose}>
-										<a
-											href="https://blog.smswithoutborders.com/"
-											target="_blank"
-											rel="noreferrer"
-											className="menu-link"
-										>
-											{t("Nav.Blog")}
-										</a>
-									</MenuItem>
-									<MenuItem onClick={handleClose}>
-										<IconButton
-											href="https://x.com/RelaySMS"
-											target="_blank"
-											rel="noopener noreferrer"
-											color="inherit"
-										>
-											<TwitterIcon />
-										</IconButton>
-									</MenuItem>
-									<MenuItem onClick={handleClose}>
-										<IconButton
-											href="https://github.com/smswithoutborders"
-											target="_blank"
-											rel="noopener noreferrer"
-											color="inherit"
-										>
-											<GitHubIcon />
-										</IconButton>
-									</MenuItem>
-
-									<MenuItem onClick={handleClose}>
-										<LanguageSwitcher />
-									</MenuItem>
-								</Menu>
-							</>
-						) : (
-							<Box
-								component="nav"
-								sx={{
-									display: "flex",
-									alignItems: "center",
-									gap: 2,
-									ml: "auto"
-								}}
-							>
-								<a
-									href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
-									target="_blank"
-									rel="noreferrer noopener"
-									className="menu-link"
-								>
-									<Typography>{t("Nav.help")}</Typography>
-								</a>
-								<a
-									href="https://blog.smswithoutborders.com/"
-									target="_blank"
-									rel="noreferrer"
-									className="menu-link"
-								>
-									<Typography>{t("Nav.Blog")}</Typography>
-								</a>
-								<IconButton
-									href="https://x.com/RelaySMS"
-									target="_blank"
-									rel="noopener noreferrer"
-									color="inherit"
-								>
-									<TwitterIcon />
-								</IconButton>
-								<IconButton
-									href="https://github.com/smswithoutborders"
-									target="_blank"
-									rel="noopener noreferrer"
-									color="inherit"
-								>
-									<GitHubIcon />
-								</IconButton>
-								<LanguageSwitcher />
-							</Box>
-						)}
-					</Box>
-				</Toolbar>
-			</AppBar>
-			<Toolbar id="back-to-top-anchor" />
-			<ScrollTop {...props}>
-				<Fab size="small" aria-label="scroll back to top">
-					<KeyboardArrowUpIcon />
-				</Fab>
-			</ScrollTop>
-		</React.Fragment>
+									<a
+										href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+										target="_blank"
+										rel="noreferrer noopener"
+										className="menu-link"
+									>
+										<Typography>{t("Nav.help")}</Typography>
+									</a>
+									<a
+										href="https://blog.smswithoutborders.com/"
+										target="_blank"
+										rel="noreferrer"
+										className="menu-link"
+									>
+										<Typography>{t("Nav.Blog")}</Typography>
+									</a>
+									<IconButton
+										href="https://x.com/RelaySMS"
+										target="_blank"
+										rel="noopener noreferrer"
+										color="inherit"
+									>
+										<TwitterIcon />
+									</IconButton>
+									<IconButton
+										href="https://github.com/smswithoutborders"
+										target="_blank"
+										rel="noopener noreferrer"
+										color="inherit"
+									>
+										<GitHubIcon />
+									</IconButton>
+									<LanguageSwitcher />
+								</Box>
+							)}
+						</Box>
+					</Toolbar>
+				</AppBar>
+				<Toolbar id="back-to-top-anchor" />
+				<ScrollTop {...props}>
+					<Fab size="small" aria-label="scroll back to top">
+						<KeyboardArrowUpIcon />
+					</Fab>
+				</ScrollTop>
+			</React.Fragment>
+		</ThemeProvider>
 	);
 }
