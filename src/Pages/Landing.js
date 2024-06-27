@@ -4,17 +4,28 @@ import { useTranslation } from "react-i18next";
 import Container from "@mui/material/Container";
 import { GooglePlayButton } from "react-mobile-app-button";
 import { PageAnimationWrapper } from "../Components/PageAnimationWrapper";
-import { Row, Col, Card } from "react-bootstrap";
+// import { Row, Col, Card } from "react-bootstrap";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../i18n.js";
+
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 export default function Landing() {
 	const { t, i18n } = useTranslation();
 	const APKUrl = "https://play.google.com/store/apps/details?id=com.afkanerd.sw0b";
 
 	const isRTL = i18n.language === "fa";
+
+	const cardContent = [
+		{ key: "HowItWorksA", imageSrc: "/permission.png" },
+		{ key: "HowItWorksB", imageSrc: "/composeMessage.png" },
+		{ key: "HowItWorksC", imageSrc: "/Online-world.png" },
+		{ key: "HowItWorksD", imageSrc: "/recievedNotification.png" }
+	];
 
 	return (
 		<>
@@ -147,57 +158,27 @@ export default function Landing() {
 							>
 								{t("Howitworks.HowItWorksSubtitle")}
 							</Typography>
-							{/* first row */}
-							<Row className="justify-content-center">
-								<Col xs={12} md={6} lg={6} className="mb-4 d-flex">
-									<Card className="w-100 equal-card custom-card">
-										<Card.Img variant="top" src="/permission.png" />
-										<Card.Body>
-											<Card.Title className="card-title-custom">Permission</Card.Title>
-											<Card.Text className="card-text-custom">
-												{t("Howitworks.HowItWorksA")}
-											</Card.Text>
-										</Card.Body>
-									</Card>
-								</Col>
-								<Col xs={12} md={6} lg={6} className="mb-4 d-flex">
-									<Card className="w-100 equal-card custom-card">
-										<Card.Img variant="top" src="/composeMessage.png" />
-										<Card.Body>
-											<Card.Title className="card-title-custom">Compose Message</Card.Title>
-											<Card.Text className="card-text-custom">
-												{t("Howitworks.HowItWorksB")}
-											</Card.Text>
-										</Card.Body>
-									</Card>
-								</Col>
+							{/* cards */}
+							<Row xs={1} md={2} className="g-4">
+								{cardContent.map((card, idx) => (
+									<Col key={idx}>
+										<Card className="custom-card">
+											<Card.Img
+												variant="top"
+												src={card.imageSrc}
+												alt={card.key}
+												className="custom-card-img"
+											/>
+											<Card.Body>
+												<Card.Title className="custom-card-title">Card title</Card.Title>
+												<Card.Title className="custom-card-text">
+													{t(`Howitworks.${card.key}`)}
+												</Card.Title>
+											</Card.Body>
+										</Card>
+									</Col>
+								))}
 							</Row>
-							{/* second row */}
-							<Row className="justify-content-center">
-								<Col xs={12} md={6} lg={6} className="mb-4 d-flex">
-									<Card className="w-100 equal-card custom-card">
-										<Card.Img variant="top" src="/Online-world.png" />
-										<Card.Body>
-											<Card.Title className="card-title-custom">RelaySMS</Card.Title>
-											<Card.Text className="card-text-custom">
-												{t("Howitworks.HowItWorksC")}
-											</Card.Text>
-										</Card.Body>
-									</Card>
-								</Col>
-								<Col xs={12} md={6} lg={6} className="mb-4 d-flex">
-									<Card className="w-100 equal-card custom-card">
-										<Card.Img variant="top" src="/recievedNotification.png" />
-										<Card.Body>
-											<Card.Title className="card-title-custom">Received Notification</Card.Title>
-											<Card.Text className="card-text-custom">
-												{t("Howitworks.HowItWorksD")}
-											</Card.Text>
-										</Card.Body>
-									</Card>
-								</Col>
-							</Row>
-
 							{/* Getting Started Button */}
 							<Grid item xs={12}>
 								<motion.div initial="hidden">
