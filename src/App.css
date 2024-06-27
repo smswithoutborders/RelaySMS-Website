@@ -113,3 +113,39 @@ button:hover {
 .menu-link:hover {
 	color: #ff5722;
 }
+
+.custom-button {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+.custom-button:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.desktop-favicon {
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	width: 24px;
+	height: 24px;
+}
+
+/* cards */
+.equal-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	transition: box-shadow 0.3s ease;
+}
+
+.hover-shadow:hover {
+	box-shadow:
+		0 4px 8px rgba(0, 0, 0, 0.2),
+		0 6px 20px rgba(0, 0, 0, 0.19);
+}
