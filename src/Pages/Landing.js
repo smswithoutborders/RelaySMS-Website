@@ -41,7 +41,7 @@ export default function Landing() {
 				>
 					{/* Banner Page */}
 					<Container maxWidth="lg">
-						<Grid container spacing={0} sx={{ flexDirection: { xs: "column", md: "unset" } }}>
+						<Grid container spacing={0} sx={{ flexDirection: { xs: "column", md: "row-reverse" } }}>
 							<Grid item xs={12} md={7}>
 								<Box
 									sx={{
@@ -61,7 +61,8 @@ export default function Landing() {
 												letterSpacing: 1.5,
 												fontWeight: "bold",
 												lineHeight: 1.3,
-												mb: 2
+												mb: 2,
+												textAlign: isRTL ? "right" : "left" // Adjust text alignment based on RTL
 											}}
 										>
 											<Typography
@@ -90,14 +91,19 @@ export default function Landing() {
 										</Typography>
 									</Box>
 									<Box sx={{ mb: 4, width: { xs: "100%", md: "70%" } }}>
-										<Typography sx={{ color: "text.secondary", lineHeight: 1.6 }}>
+										<Typography
+											sx={{
+												color: "text.secondary",
+												lineHeight: 1.6,
+												textAlign: isRTL ? "right" : "left"
+											}}
+										>
 											{t("Landing.landingh2")}
 										</Typography>
 									</Box>
 
-									{/*  */}
+									{/* Buttons */}
 									<Box sx={{ "& button": { mr: 2 } }}>
-										{/*  */}
 										<Button>
 											<GooglePlayButton
 												color="primary"
@@ -108,14 +114,11 @@ export default function Landing() {
 												fontSize={10}
 												className={"custom-style"}
 											/>
-											{/* {t("Landing.Android")} */}
 										</Button>
-										{/*  */}
 										<Button color="primary" variant="outlined">
 											{t("Landing.Desktop")}
 										</Button>
 									</Box>
-									{/*  */}
 								</Box>
 							</Grid>
 							<Grid item xs={12} md={4} my={"auto"} sx={{ position: "relative", marginTop: 4 }}>
@@ -127,7 +130,8 @@ export default function Landing() {
 										width: { md: "100%", xs: "60%", mx: "center" },
 										maxWidth: "80%",
 										height: "auto",
-										transform: "rotate(10deg)"
+										transform: "rotate(10deg)",
+										textAlign: isRTL ? "left" : "right" // Adjust image alignment based on RTL
 									}}
 								/>
 							</Grid>
@@ -170,8 +174,16 @@ export default function Landing() {
 												className="custom-card-img"
 											/>
 											<Card.Body>
-												<Card.Title className="custom-card-title">Card title</Card.Title>
-												<Card.Title className="custom-card-text">
+												<Card.Title
+													className="custom-card-title"
+													style={{ textAlign: isRTL ? "right" : "left" }}
+												>
+													Card title
+												</Card.Title>
+												<Card.Title
+													className="custom-card-text"
+													style={{ textAlign: isRTL ? "right" : "left" }}
+												>
 													{t(`Howitworks.${card.key}`)}
 												</Card.Title>
 											</Card.Body>
@@ -179,6 +191,7 @@ export default function Landing() {
 									</Col>
 								))}
 							</Row>
+
 							{/* Getting Started Button */}
 							<Grid item xs={12}>
 								<motion.div initial="hidden">
@@ -244,32 +257,83 @@ export default function Landing() {
 						</Grid>
 					</Box>
 					{/* ------------------------------------------------------------------------------------ */}
-
+					{/* blog section */}
 					<Container
 						fluid="lg"
 						item
 						xs={12}
 						md={4}
 						my={"auto"}
-						sx={{ position: "relative", marginTop: 4 }}
+						sx={{ position: "relative", marginTop: 4, direction: isRTL ? "rtl" : "ltr" }}
 					>
 						<Typography
 							align="center"
 							variant="h4"
-							sx={{ fontWeight: 700, fontSize: { xs: "25px", md: "33px" }, mb: 2 }}
+							sx={{
+								fontWeight: 700,
+								fontSize: { xs: "25px", md: "33px" },
+								mb: 2,
+								textAlign: isRTL ? "right" : "center"
+							}}
 						>
 							{t("Blog.WhatsNew")}
 						</Typography>
 						<Typography
 							variant="subtitle1"
 							align="center"
-							sx={{ mb: 4, fontSize: { xs: "18px", md: "20px" } }}
+							sx={{
+								mb: 4,
+								fontSize: { xs: "18px", md: "20px" },
+								textAlign: isRTL ? "right" : "center"
+							}}
 						>
 							{t("Blog.WhatsNew")}
 						</Typography>
-						{/* cards */}
+						{/* Blog cards */}
 						<Blog />
 					</Container>
+
+					{/* end of blog section */}
+
+					{/* <Container fluid className="mt-5">
+						<Row className="justify-content-center">
+							<Col xs={12} md={6} lg={4}>
+								<Card>
+									<Card.Img
+										variant="top"
+										src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/logo-new-2.svg"
+										alt="GeeksforGeeks Logo"
+									/>
+									<Card.Body>
+										<Card.Title>JavaScript</Card.Title>
+										<Card.Text>
+											JavaScript is a lightweight, cross-platform, single-threaded, and interpreted
+											compiled programming language. It is also known as the scripting language for
+											webpages. It is well-known for the development of web pages, and many
+											non-browser environments also use it.
+										</Card.Text>
+									</Card.Body>
+								</Card>
+							</Col>
+							<Col xs={12} md={6} lg={4}>
+								<Card>
+									<Card.Img
+										variant="top"
+										src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/logo-new-2.svg"
+										alt="GeeksforGeeks Logo"
+									/>
+									<Card.Body>
+										<Card.Title>React.js</Card.Title>
+										<Card.Text>
+											ReactJS is a declarative, efficient, and flexible JavaScript library for
+											building user interfaces. It is an open-source, component-based front-end
+											library that is responsible only for the view layer of the application.
+										</Card.Text>
+									</Card.Body>
+								</Card>
+							</Col>
+						</Row>
+					</Container> */}
 				</Box>
 			</PageAnimationWrapper>
 		</>
