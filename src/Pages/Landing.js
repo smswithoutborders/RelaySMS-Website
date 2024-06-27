@@ -5,6 +5,8 @@ import Container from "@mui/material/Container";
 import { GooglePlayButton } from "react-mobile-app-button";
 import { PageAnimationWrapper } from "../Components/PageAnimationWrapper";
 import { Row, Col, Card } from "react-bootstrap";
+import { FaArrowCircleRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../i18n.js";
 
@@ -121,9 +123,15 @@ export default function Landing() {
 						</Grid>
 					</Container>
 					{/*======================================= end of Hero section -------------------------------------*/}
-
 					{/* ------------------------------------------Start of how it works section------------------------ */}
-					<Container fluid="lg">
+					<Container
+						fluid="lg"
+						item
+						xs={12}
+						md={4}
+						my={"auto"}
+						sx={{ position: "relative", marginTop: 4 }}
+					>
 						<Grid spacing={0} sx={{ flexDirection: { xs: "column", md: "unset" } }}>
 							<Typography
 								align="center"
@@ -141,47 +149,96 @@ export default function Landing() {
 							</Typography>
 							{/* first row */}
 							<Row className="justify-content-center">
-								<Col xs={12} md={6} lg={3} className="mb-4 d-flex">
-									<Card className="w-100 equal-card hover-shadow">
+								<Col xs={12} md={6} lg={6} className="mb-4 d-flex">
+									<Card className="w-100 equal-card custom-card">
 										<Card.Img variant="top" src="/permission.png" />
 										<Card.Body>
-											<Card.Text>{t("Howitworks.HowItWorksD")}</Card.Text>
+											<Card.Title className="card-title-custom">Permission</Card.Title>
+											<Card.Text className="card-text-custom">
+												{t("Howitworks.HowItWorksA")}
+											</Card.Text>
 										</Card.Body>
 									</Card>
 								</Col>
-								<Col xs={12} md={6} lg={3} className="mb-4 d-flex">
-									<Card className="w-100 equal-card hover-shadow">
+								<Col xs={12} md={6} lg={6} className="mb-4 d-flex">
+									<Card className="w-100 equal-card custom-card">
 										<Card.Img variant="top" src="/composeMessage.png" />
 										<Card.Body>
-											<Card.Text>{t("Howitworks.HowItWorksB")}</Card.Text>
+											<Card.Title className="card-title-custom">Compose Message</Card.Title>
+											<Card.Text className="card-text-custom">
+												{t("Howitworks.HowItWorksB")}
+											</Card.Text>
 										</Card.Body>
 									</Card>
 								</Col>
 							</Row>
 							{/* second row */}
 							<Row className="justify-content-center">
-								<Col xs={12} md={6} lg={3} className="mb-4 d-flex">
-									<Card className="w-100 equal-card hover-shadow">
+								<Col xs={12} md={6} lg={6} className="mb-4 d-flex">
+									<Card className="w-100 equal-card custom-card">
 										<Card.Img variant="top" src="/Online-world.png" />
 										<Card.Body>
-											<Card.Text>{t("Howitworks.HowItWorksC")}</Card.Text>
+											<Card.Title className="card-title-custom">RelaySMS</Card.Title>
+											<Card.Text className="card-text-custom">
+												{t("Howitworks.HowItWorksC")}
+											</Card.Text>
 										</Card.Body>
 									</Card>
 								</Col>
-								<Col xs={12} md={6} lg={3} className="mb-4 d-flex">
-									<Card className="w-100 equal-card hover-shadow">
+								<Col xs={12} md={6} lg={6} className="mb-4 d-flex">
+									<Card className="w-100 equal-card custom-card">
 										<Card.Img variant="top" src="/recievedNotification.png" />
 										<Card.Body>
-											<Card.Text>{t("Howitworks.HowItWorksD")}</Card.Text>
+											<Card.Title className="card-title-custom">Received Notification</Card.Title>
+											<Card.Text className="card-text-custom">
+												{t("Howitworks.HowItWorksD")}
+											</Card.Text>
 										</Card.Body>
 									</Card>
 								</Col>
 							</Row>
+
+							{/* Getting Started Button */}
+							<Grid item xs={12}>
+								<motion.div initial="hidden">
+									<Box textAlign="center" sx={{ p: 1 }}>
+										<a
+											href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+											target="_blank"
+											rel="noreferrer noopener"
+											style={{ textDecoration: "none" }}
+										>
+											<Typography
+												variant="body1"
+												sx={{
+													p: 4,
+													textDecoration: "underline",
+													fontWeight: "bold",
+													color: "primary.main",
+													display: "inline-flex",
+													alignItems: "center",
+													fontSize: { xs: "20px", md: "24px" },
+													"&:hover": {
+														color: "secondary.main",
+														textDecoration: "none",
+														transform: "scale(1.05)"
+													},
+													transition: "transform 0.2s ease-in-out"
+												}}
+											>
+												{t("Howitworks.GettingStartedButton")}{" "}
+												<FaArrowCircleRight
+													size="20px"
+													style={{ marginLeft: "8px", rotate: "-30deg" }}
+												/>
+											</Typography>
+										</a>
+									</Box>
+								</motion.div>
+							</Grid>
 						</Grid>
 					</Container>
-
 					{/* -------------------------------------========= End ==========------------------------------- */}
-
 					{/*  */}
 				</Box>
 			</PageAnimationWrapper>
