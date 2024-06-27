@@ -221,6 +221,30 @@ export default function Landing() {
 					</Container>
 					{/* -------------------------------------========= End ==========------------------------------- */}
 					{/*  */}
+
+					{/* ----------------------------------------------------------------------------------------------------------------------------------------- */}
+					{/* Relay Map */}
+					<Box sx={{ margin: "auto", maxWidth: 1200, padding: "20px" }}>
+						<Grid container rowSpacing={4} sx={{ py: { md: 10, xs: 10 } }}>
+							<Grid item md={5} my="auto">
+								<Typography
+									variant="h3"
+									sx={{
+										fontWeight: 700,
+										fontSize: { md: "48px", xs: "33px" },
+										color: "black"
+									}}
+								>
+									{t("Map.RelaySMSMap")}
+								</Typography>
+							</Grid>
+							<Grid item md={7} sx={{ justifyContent: "center", display: "flex", mx: "auto" }}>
+								<Box component="img" src="/map.png" sx={{ width: "100%", borderRadius: "20px" }} />
+							</Grid>
+						</Grid>
+					</Box>
+					{/* ------------------------------------------------------------------------------------ */}
+					{/* <Blog /> */}
 				</Box>
 			</PageAnimationWrapper>
 		</>
