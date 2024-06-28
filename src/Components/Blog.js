@@ -37,42 +37,51 @@ const MultiItemCarousel = () => {
 	const cardStyles = {
 		maxWidth: "600px",
 		width: "100%",
-		boxShadow: "0 4px 8px #041c94",
-		borderRadius: 30,
+		boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+		borderRadius: 20,
 		border: "1px solid #e0e0e0",
-		marginRight: isRTL ? "0" : "30px",
-		marginLeft: isRTL ? "30px" : "0",
-		marginBottom: "20px",
+		margin: isRTL ? "0 30px 20px 0" : "0 0 20px 30px",
+		transition: "transform 0.2s, box-shadow 0.2s",
 		"&:hover": {
 			transform: "scale(1.02)",
-			boxShadow: "0 8px 16px #041c94",
+			boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
 			border: "1px solid #8AC1EE"
 		}
 	};
 
 	const imgStyles = {
-		width: "60%",
+		width: "100%",
 		height: "auto",
-		objectFit: "cover"
+		objectFit: "cover",
+		borderTopLeftRadius: 20,
+		borderTopRightRadius: 20
 	};
 
 	const titleStyles = {
 		fontSize: isMobile ? "1.2rem" : "1.5rem",
 		marginBottom: "0.5rem",
-		fontWeight: "bold"
+		fontWeight: "bold",
+		textAlign: "center"
 	};
 
 	const descriptionStyles = {
-		fontSize: isMobile ? "0.9rem" : "0.8rem",
+		fontSize: isMobile ? "0.9rem" : "1rem",
 		color: "#666",
-		alignContent: "center"
+		textAlign: "center"
+	};
+
+	const linkStyles = {
+		display: "block",
+		textAlign: "center",
+		marginTop: "1rem",
+		color: "#007bff",
+		textDecoration: "none"
 	};
 
 	return (
 		<Box
 			style={{
-				paddingRight: "50px",
-				paddingleft: "50px",
+				padding: "0 50px",
 				marginBottom: "20px",
 				maxWidth: "2000px",
 				margin: "0 auto"
@@ -97,16 +106,18 @@ const MultiItemCarousel = () => {
 									<p className="card-text" style={descriptionStyles}>
 										{item.description}
 									</p>
-									<a href={item.link}>{t("Blog.ReadMore")}</a>
+									<a href={item.link} style={linkStyles}>
+										{t("Blog.ReadMore")}
+									</a>
 								</div>
 							</div>
 						</Carousel.Item>
 					))}
 				</Carousel>
 			) : (
-				<Box className="row">
+				<Box className="row" sx={{ display: "flex", justifyContent: "center" }}>
 					{items.map((item) => (
-						<div className="col-lg-4" key={item.id}>
+						<Box key={item.id} sx={{ maxWidth: "33.33%", flex: "1 1 33.33%" }}>
 							<div className="card" style={cardStyles}>
 								<img
 									src={item.imgSrc}
@@ -121,10 +132,12 @@ const MultiItemCarousel = () => {
 									<p className="card-text" style={descriptionStyles}>
 										{item.description}
 									</p>
-									<a href={item.link}>{t("Blog.ReadMore")}</a>
+									<a href={item.link} style={linkStyles}>
+										{t("Blog.ReadMore")}
+									</a>
 								</div>
 							</div>
-						</div>
+						</Box>
 					))}
 				</Box>
 			)}

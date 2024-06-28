@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Grid, Typography, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { PageAnimationWrapper } from "../Components/PageAnimationWrapper.js";
-import { FaArrowCircleRight } from "react-icons/fa";
+import { FaArrowCircleRight, FaDesktop } from "react-icons/fa";
 import Blog from "../Components/Blog.js";
 import Faqs from "../Components/FAQs.js";
 import { motion } from "framer-motion";
@@ -10,12 +10,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../i18n.js";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import { FaDesktop } from "react-icons/fa";
 import Row from "react-bootstrap/Row";
 
 export default function Landing() {
 	const { t, i18n } = useTranslation();
-
 	const isRTL = i18n.language === "fa";
 
 	const cardContent = [
@@ -29,7 +27,7 @@ export default function Landing() {
 		<>
 			<PageAnimationWrapper>
 				<Box>
-					{/* landing Page section */}
+					{/* Landing Page section */}
 					<Container
 						dir={isRTL ? "rtl" : "ltr"}
 						sx={{
@@ -38,8 +36,7 @@ export default function Landing() {
 						}}
 					>
 						<Row>
-							<Col lg={8} md={6} sm={4} xs={12} className="hero-text-container">
-								{" "}
+							<Col lg={8} md={6} sm={12} xs={12} className="hero-text-container">
 								<Box
 									sx={{
 										textAlign: { xs: "center", md: "left" },
@@ -72,12 +69,6 @@ export default function Landing() {
 												}}
 											>
 												{t("Landing.landingh1a")} <br />
-												<Box
-													sx={{
-														position: "absolute",
-														top: { xs: 24, md: 34 }
-													}}
-												></Box>
 											</Typography>
 											{t("Landing.landingh1")}
 										</Typography>
@@ -114,8 +105,7 @@ export default function Landing() {
 									</Box>
 								</Box>
 							</Col>
-							<Col sm={4} xs={12}>
-								{" "}
+							<Col lg={4} md={6} sm={12} xs={12} className="hero-image-container">
 								<Grid item xs={12} md={4} my={"auto"} sx={{ marginTop: 4 }}>
 									<Box
 										component="img"
@@ -134,12 +124,9 @@ export default function Landing() {
 						</Row>
 					</Container>
 
-					{/* ===================================================================================== */}
-
-					{/* ========================================================================================= */}
 					{/* How it works section */}
 					<Container fluid="lg" sx={{ position: "relative", marginTop: 2 }}>
-						<Grid spacing={0} sx={{ flexDirection: { xs: "column", md: "unset" } }}>
+						<Grid container spacing={0} sx={{ flexDirection: { xs: "column", md: "unset" } }}>
 							<Typography
 								variant="h2"
 								align="center"
@@ -168,6 +155,10 @@ export default function Landing() {
 												src={card.imageSrc}
 												alt={card.key}
 												className="custom-card-img"
+												style={{
+													objectFit: "cover",
+													height: "200px"
+												}}
 											/>
 											<Card.Body>
 												<Card.Title
@@ -267,19 +258,9 @@ export default function Landing() {
 						>
 							{t("Blog.WhatsNew")}
 						</Typography>
-						<Typography
-							variant="subtitle1"
-							align="center"
-							sx={{
-								mb: 4,
-								fontSize: { xs: "18px", md: "20px" },
-								textAlign: isRTL ? "right" : "center"
-							}}
-						>
-							{t("Blog.WhatsNew")}
-						</Typography>
 						<Blog />
 					</Container>
+
 					{/* FAQ section */}
 					<Container
 						fluid="lg"
