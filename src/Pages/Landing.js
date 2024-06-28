@@ -11,20 +11,15 @@ import "../i18n.js";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
 
 export default function Landing() {
 	const { t, i18n } = useTranslation();
 	const isRTL = i18n.language === "fa";
 
 	const cardContent = [
-		{ key: "HowItWorksC", title: "HowItWorkstitleC", imageSrc: "/Online-world.png" },
-		{ key: "HowItWorksD", title: "HowItWorkstitleD", imageSrc: "/recievedNotification.png" }
-	];
-
-	const cardContent2 = [
-		{ key: "HowItWorksA", title: "HowItWorkstitleA", imageSrc: "/permission.png" },
-		{ key: "HowItWorksB", title: "HowItWorkstitleB", imageSrc: "/composeMessage.png" }
+		{ key: "HowItWorksA", title: "HowItWorkstitleA", imageSrc: "/authoriza.svg" },
+		{ key: "HowItWorksB", title: "HowItWorkstitleB", imageSrc: "/compose.svg" },
+		{ key: "HowItWorksC", title: "HowItWorkstitleC", imageSrc: "/notification.svg" }
 	];
 
 	return (
@@ -64,17 +59,6 @@ export default function Landing() {
 												textAlign: isRTL ? "right" : { xs: "center", md: "left" }
 											}}
 										>
-											<Typography
-												sx={{
-													position: "relative",
-													color: "primary.main",
-													fontSize: "inherit",
-													fontWeight: "inherit",
-													mb: 2
-												}}
-											>
-												{t("Landing.landingh1a")} <br />
-											</Typography>
 											{t("Landing.landingh1")}
 										</Typography>
 									</Box>
@@ -193,34 +177,6 @@ export default function Landing() {
 								</Col>
 							))}
 						</Row>
-						<Row className="justify-content-center">
-							{cardContent2.map((card, idx) => (
-								<Col xs={12} sm={6} lg={6} key={idx} className="mb-4">
-									<Card className="custom-card">
-										<Card.Img
-											variant="top"
-											src={card.imageSrc}
-											alt={card.key}
-											className="custom-card-img"
-										/>
-										<Card.Body>
-											<Card.Title
-												className="custom-card-title"
-												style={{ textAlign: isRTL ? "right" : "left" }}
-											>
-												{t(`Howitworks.${card.title}`)}
-											</Card.Title>
-											<Card.Text
-												className="custom-card-text"
-												style={{ textAlign: isRTL ? "right" : "left" }}
-											>
-												{t(`Howitworks.${card.key}`)}
-											</Card.Text>
-										</Card.Body>
-									</Card>
-								</Col>
-							))}
-						</Row>
 
 						<Row>
 							<Col xs={12}>
@@ -231,17 +187,11 @@ export default function Landing() {
 										rel="noreferrer noopener"
 										style={{ textDecoration: "none" }}
 									>
-										<Button
-											variant="link"
-											className="p-4 text-decoration-none font-weight-bold"
-											style={{ fontSize: "calc(1.25rem + 0.5vw)", color: "#007bff" }}
-										>
-											{t("Howitworks.GettingStartedButton")}
-											<FaArrowCircleRight
-												size="20px"
-												style={{ marginLeft: "8px", transform: "rotate(-30deg)" }}
-											/>
-										</Button>
+										{t("Howitworks.GettingStartedButton")}
+										<FaArrowCircleRight
+											size="20px"
+											style={{ marginLeft: "8px", transform: "rotate(-30deg)" }}
+										/>
 									</a>
 								</div>
 							</Col>
