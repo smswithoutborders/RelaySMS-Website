@@ -11,20 +11,19 @@ import "../i18n.js";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
 
 export default function Landing() {
 	const { t, i18n } = useTranslation();
 	const isRTL = i18n.language === "fa";
 
 	const cardContent = [
-		{ key: "HowItWorksC", title: "HowItWorkstitleC", imageSrc: "/Online-world.png" },
-		{ key: "HowItWorksD", title: "HowItWorkstitleD", imageSrc: "/recievedNotification.png" }
+		{ key: "HowItWorksC", title: "HowItWorkstitleC", imageSrc: "/authoriza.svg" },
+		{ key: "HowItWorksD", title: "HowItWorkstitleD", imageSrc: "/notification.svg" }
 	];
 
 	const cardContent2 = [
-		{ key: "HowItWorksA", title: "HowItWorkstitleA", imageSrc: "/permission.png" },
-		{ key: "HowItWorksB", title: "HowItWorkstitleB", imageSrc: "/composeMessage.png" }
+		{ key: "HowItWorksA", title: "HowItWorkstitleA", imageSrc: "/authoriza.svg" },
+		{ key: "HowItWorksB", title: "HowItWorkstitleB", imageSrc: "/compose.svg" }
 	];
 
 	return (
@@ -64,17 +63,6 @@ export default function Landing() {
 												textAlign: isRTL ? "right" : { xs: "center", md: "left" }
 											}}
 										>
-											<Typography
-												sx={{
-													position: "relative",
-													color: "primary.main",
-													fontSize: "inherit",
-													fontWeight: "inherit",
-													mb: 2
-												}}
-											>
-												{t("Landing.landingh1a")} <br />
-											</Typography>
 											{t("Landing.landingh1")}
 										</Typography>
 									</Box>
@@ -231,17 +219,11 @@ export default function Landing() {
 										rel="noreferrer noopener"
 										style={{ textDecoration: "none" }}
 									>
-										<Button
-											variant="link"
-											className="p-4 text-decoration-none font-weight-bold"
-											style={{ fontSize: "calc(1.25rem + 0.5vw)", color: "#007bff" }}
-										>
-											{t("Howitworks.GettingStartedButton")}
-											<FaArrowCircleRight
-												size="20px"
-												style={{ marginLeft: "8px", transform: "rotate(-30deg)" }}
-											/>
-										</Button>
+										{t("Howitworks.GettingStartedButton")}
+										<FaArrowCircleRight
+											size="20px"
+											style={{ marginLeft: "8px", transform: "rotate(-30deg)" }}
+										/>
 									</a>
 								</div>
 							</Col>
