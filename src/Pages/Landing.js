@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Grid, Typography, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { PageAnimationWrapper } from "../Components/PageAnimationWrapper.js";
-import { FaArrowCircleRight, FaDesktop } from "react-icons/fa";
+import { FaArrowCircleRight } from "react-icons/fa";
 import Blog from "../Components/Blog.js";
 import Faqs from "../Components/FAQs.js";
 // import { motion } from "framer-motion";
@@ -85,7 +85,7 @@ export default function Landing() {
 										sx={{
 											"& button": { mr: { xs: 0, md: 2 }, mb: { xs: 2, md: 0 } },
 											display: "flex",
-											flexDirection: { xs: "column", md: "row" },
+											flexDirection: { xs: "row", md: "column" },
 											justifyContent: { xs: "center", md: "flex-start" },
 											alignItems: "center",
 											width: "100%"
@@ -98,9 +98,9 @@ export default function Landing() {
 										>
 											<button
 												className="hero-btn"
-												style={{ width: "50%", maxWidth: { xs: "280px", md: "auto" } }}
+												style={{ width: "90%", maxWidth: { xs: "280px", md: "auto" } }}
 											>
-												<img src="/playstore.svg" alt="Android" style={{ marginRight: "8px" }} />
+												<img src="/playstore.svg" alt="Android" style={{ marginRight: "4px" }} />
 												{t("Landing.Android")}
 											</button>
 										</a>
@@ -111,9 +111,9 @@ export default function Landing() {
 										>
 											<button
 												className="hero-btn"
-												style={{ width: "50%", maxWidth: { xs: "280px", md: "auto" } }}
+												style={{ width: "90%", maxWidth: { xs: "240px", md: "auto" } }}
 											>
-												<FaDesktop style={{ marginRight: "8px" }} />
+												<img src="/desktop.svg" alt="Android" style={{ marginRight: "4px" }} />
 												{t("Landing.Desktop")}
 											</button>
 										</a>
@@ -121,7 +121,7 @@ export default function Landing() {
 								</Box>
 							</Col>
 							{/* ======end of button ============= */}
-							<Col lg={4} md={6} sm={12} xs={12} className="hero-image-container">
+							<Col lg={4} md={6} sm={8} xs={12} className="hero-image-container">
 								<Grid
 									item
 									xs={12}
@@ -150,8 +150,8 @@ export default function Landing() {
 					{/* ===================================================================================== */}
 
 					{/* ========================= how it works ========================================= */}
-					<Container className="mt-1">
-						<Row className="justify-content-center mb-4">
+					<Container className="mt-0">
+						<Row className="justify-content-center mb-2">
 							<Col xs={12}>
 								<h2
 									className="text-center"
@@ -167,7 +167,7 @@ export default function Landing() {
 
 						<Row className="justify-content-center">
 							{cardContent.map((card, idx) => (
-								<Col xs={12} sm={6} lg={6} key={idx} className="mb-4">
+								<Col xs={10} sm={4} lg={6} key={idx} className="mb-4">
 									<Card className="custom-card">
 										<Card.Img
 											variant="top"
