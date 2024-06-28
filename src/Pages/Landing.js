@@ -47,7 +47,8 @@ export default function Landing() {
 										height: "100%",
 										display: "flex",
 										flexDirection: "column",
-										justifyContent: "center"
+										justifyContent: "center",
+										alignItems: { xs: "center", md: "flex-start" }
 									}}
 								>
 									<Box sx={{ mb: 3 }}>
@@ -60,7 +61,7 @@ export default function Landing() {
 												fontWeight: "bold",
 												lineHeight: 1.3,
 												mb: 2,
-												textAlign: isRTL ? "right" : "left"
+												textAlign: isRTL ? "right" : { xs: "center", md: "left" }
 											}}
 										>
 											<Typography
@@ -77,12 +78,18 @@ export default function Landing() {
 											{t("Landing.landingh1")}
 										</Typography>
 									</Box>
-									<Box sx={{ mb: 4, width: { xs: "100%", md: "70%" } }}>
+									<Box
+										sx={{
+											mb: 4,
+											width: { xs: "100%", md: "70%" },
+											textAlign: { xs: "center", md: "left" }
+										}}
+									>
 										<Typography
 											sx={{
 												color: "text.secondary",
 												lineHeight: 1.8,
-												textAlign: isRTL ? "right" : "left"
+												textAlign: isRTL ? "right" : { xs: "center", md: "left" }
 											}}
 										>
 											{t("Landing.landingh2")}
@@ -90,7 +97,13 @@ export default function Landing() {
 									</Box>
 
 									{/* Buttons */}
-									<Box sx={{ "& button": { mr: 2 } }}>
+									<Box
+										sx={{
+											"& button": { mr: 2 },
+											display: "flex",
+											justifyContent: { xs: "center", md: "flex-start" }
+										}}
+									>
 										<a
 											href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 											className="hero-btn-link"
@@ -110,13 +123,19 @@ export default function Landing() {
 								</Box>
 							</Col>
 							<Col lg={4} md={6} sm={12} xs={12} className="hero-image-container">
-								<Grid item xs={12} md={4} my={"auto"} sx={{ marginTop: 4 }}>
+								<Grid
+									item
+									xs={12}
+									md={4}
+									my={"auto"}
+									sx={{ mt: { xs: 4, md: 0 }, display: "flex", justifyContent: "center" }}
+								>
 									<Box
 										component="img"
 										src="/phone3.png"
 										alt="image"
 										sx={{
-											width: { md: "100%", xs: "60%", mx: "center" },
+											width: { md: "100%", xs: "60%" },
 											maxWidth: "80%",
 											height: "auto",
 											transform: "rotate(10deg)",
@@ -127,6 +146,7 @@ export default function Landing() {
 							</Col>
 						</Row>
 					</Container>
+
 					{/* ===================================================================================== */}
 
 					{/* ========================= how it works ========================================= */}
