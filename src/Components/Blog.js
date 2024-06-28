@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 const MultiItemCarousel = () => {
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+	const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
 	const { t, i18n } = useTranslation();
 
 	const items = [
@@ -35,12 +36,12 @@ const MultiItemCarousel = () => {
 	const isRTL = i18n.language === "fa";
 
 	const cardStyles = {
-		maxWidth: "600px",
+		maxWidth: isMobile ? "90%" : "600px",
 		width: "100%",
 		boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
 		borderRadius: 20,
 		border: "1px solid #e0e0e0",
-		margin: isRTL ? "0 30px 20px 0" : "0 0 20px 30px",
+		margin: "10px auto",
 		transition: "transform 0.2s, box-shadow 0.2s",
 		"&:hover": {
 			transform: "scale(1.02)",
@@ -81,14 +82,14 @@ const MultiItemCarousel = () => {
 	return (
 		<Box
 			style={{
-				padding: "0 50px",
+				padding: "0 20px",
 				marginBottom: "20px",
 				maxWidth: "2000px",
 				margin: "0 auto"
 			}}
 			sx={{ direction: isRTL ? "rtl" : "ltr", display: "flex", justifyContent: "center" }}
 		>
-			{isMobile ? (
+			{isMobile || isTablet ? (
 				<Carousel variant="dark" style={{ maxWidth: "100%", margin: "auto" }}>
 					{items.map((item) => (
 						<Carousel.Item key={item.id}>
@@ -117,7 +118,7 @@ const MultiItemCarousel = () => {
 			) : (
 				<Box className="row" sx={{ display: "flex", justifyContent: "center" }}>
 					{items.map((item) => (
-						<Box key={item.id} sx={{ maxWidth: "33.33%", flex: "1 1 33.33%" }}>
+						<Box key={item.id} sx={{ maxWidth: "33.33%", flex: "1 1 33.33%", padding: "10px" }}>
 							<div className="card" style={cardStyles}>
 								<img
 									src={item.imgSrc}
