@@ -27,7 +27,7 @@ const FAQ = [
 ];
 
 export default function Faqs() {
-	const [expanded, setExpanded] = React.useState(0);
+	const [expanded, setExpanded] = React.useState(false);
 	const { t } = useTranslation();
 
 	const handleChange = (panel) => (event, isExpanded) => {
@@ -35,7 +35,7 @@ export default function Faqs() {
 	};
 
 	return (
-		<div style={{ padding: "20px", marginBottom: "20px", maxWidth: "800px", margin: "0 auto" }}>
+		<div style={{ padding: "20px", maxWidth: "100%", margin: "0 auto" }}>
 			{FAQ.map((item, index) => (
 				<Accordion
 					key={index}
@@ -45,16 +45,19 @@ export default function Faqs() {
 						mb: 2,
 						backgroundColor: "hsl(243, 87%, 12%)",
 						boxShadow: expanded === index ? "0px 4px 4px rgba(0, 0, 0, 0.25)" : "none",
-						borderRadius: 8,
-						color: "white"
+						borderRadius: 2,
+						color: "white",
+						"&:before": {
+							display: "none"
+						}
 					}}
 				>
 					<AccordionSummary
-						expandIcon={<ExpandMoreIcon />}
+						expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
 						aria-controls={`faq${index}-content`}
 						id={`faq${index}-header`}
 						sx={{
-							minHeight: 64,
+							minHeight: 56,
 							"& .MuiAccordionSummary-content": {
 								margin: "12px 0"
 							}
@@ -65,7 +68,7 @@ export default function Faqs() {
 						</Typography>
 					</AccordionSummary>
 					<AccordionDetails>
-						<Typography>{t(item.answer)}</Typography>
+						<Typography sx={{ color: "white" }}>{t(item.answer)}</Typography>
 					</AccordionDetails>
 				</Accordion>
 			))}
