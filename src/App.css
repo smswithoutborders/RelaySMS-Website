@@ -1,12 +1,5 @@
-@font-face {
-	font-family: "Hind";
-	src:
-		url("/public/Hind-Medium.ttf") format("tff"),
-		url("/public/Hind-Regular.ttf") format("ttf");
-}
-
 * {
-	font-family: "Hind", sans-serif !important;
+	font-family: "Ubuntu", sans-serif !important;
 }
 
 .cards {
@@ -102,6 +95,24 @@ button:hover {
 		transform: scale(1);
 	}
 }
+/* ============================navbar========================= */
+
+.menu-link::after {
+	content: "";
+	display: block;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: -24px;
+	width: 0;
+	height: 4px;
+	background-image: linear-gradient(to right, hsl(248, 85%, 38%), hsl(192, 70%, 51%));
+	transition: width 0.3s;
+}
+
+#menu-appbar .menu-link:hover::after {
+	width: 50px;
+}
 
 .menu-link {
 	text-decoration: none;
@@ -110,22 +121,45 @@ button:hover {
 	transition: color 0.3s ease;
 }
 
-.menu-link:hover {
+.menu-link:hover::after {
 	color: #ff5722;
+	width: 50px;
+}
+/* ============================================================== */
+
+.hero-btn-link {
+	text-decoration: none;
 }
 
-.custom-button {
-	position: relative;
+.hero-btn {
+	background-image: linear-gradient(to right, hsl(248, 85%, 38%), hsl(192, 70%, 51%));
+	color: white;
+	padding: 20px 30px;
+	border: none;
 	display: inline-flex;
 	align-items: center;
+	cursor: pointer;
 	transition:
-		transform 0.3s ease,
-		box-shadow 0.3s ease;
+		background-color 0.3s ease,
+		transform 0.3s ease;
+	margin-right: 10px;
+	border-radius: 20px;
+	white-space: nowrap;
+	text-align: center;
+	font-weight: 500;
+	margin-bottom: 8%;
 }
 
-.custom-button:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.hero-btn:hover {
+	background-color: #0056b3;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn img {
+	width: 25px;
+	height: 25px;
+	margin-right: 8px;
 }
 
 .desktop-favicon {
@@ -136,11 +170,18 @@ button:hover {
 	height: 24px;
 }
 
-/* cards */
+/* ====================== cards =================================== */
 .custom-card {
 	border-radius: 40px !important;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 	transition: box-shadow 0.3s ease-in-out;
+}
+
+.custom-card-img {
+	width: 70%;
+	height: 400px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 
 .custom-card:hover {
@@ -148,19 +189,36 @@ button:hover {
 }
 
 .custom-card-title {
-	font-size: 40px;
-	text-align: center;
+	font-size: 30px !important;
+	text-align: center !important;
 	font-weight: bolder;
 }
 
 .custom-card-text {
-	font-size: 30px;
+	font-size: 20px !important;
 	text-align: center;
 }
 
 /* carousel */
 .centered-carousel {
 	display: flex;
-	/* justify-content: center; */
-	/* align-items: center; */
+	justify-content: center;
+	align-items: center;
+}
+/* =================================================================== */
+
+/* -----------------------------responsive design--------------------------------------------- */
+@media screen and (max-width: 768px) {
+	/* =========================================================================================== */
+
+	/* ===================================================================================== */
+
+	/* =============================================================================== */
+	.custom-card {
+		border-radius: 40px !important;
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+		transition: box-shadow 0.3s ease-in-out;
+		width: 100% !important;
+	}
+	/* =========================================================================================== */
 }

@@ -2,7 +2,7 @@
 	"Landing": {
 		"landingh1a": "Continuez",
 		"landingh1": " à parler avec RelaySMS",
-		"landingh2": "Envoyez des e-mails, des publications et des messages en toute sécurité via SMS.",
+		"landingh2": "Envoyez des courriels, des messages et des messages par SMS sans avoir besoin d'une connexion internet. Cela vous permet de rester connecté et de partager des informations importantes même dans les zones où l'accès à Internet est limité ou inexistant. C'est une solution idéale pour maintenir une communication sans faille dans des environnements éloignés ou difficiles",
 		"Android": "Application Android",
 		"Desktop": "Application de bureau"
 	},
@@ -15,10 +15,14 @@
 	"Howitworks": {
 		"HowItWorks": "Comment ça marche",
 		"HowItWorksSubtitle": "Découvrez comment notre service fonctionne de manière transparente",
-		"HowItWorksA": "Autorisez RelaySMS à envoyer des e-mails, des publications ou des messages en votre nom",
-		"HowItWorksB": "Rédigez votre e-mail, publication ou message, et il sera automatiquement envoyé en utilisant votre application SMS par défaut.",
-		"HowItWorksC": "Votre contenu atteint les points d'accès RelaySMS et est publié en votre nom.",
-		"HowItWorksD": "Recevez une réponse par SMS indiquant le succès ou l'échec.",
+		"HowItWorkstitleA": "Autoriser RelaySMS",
+		"HowItWorksA": "Accordez à RelaySMS la permission d'envoyer des courriels, des messages ou des messages en votre nom de manière sécurisée",
+		"HowItWorkstitleB": "Composer et envoyer",
+		"HowItWorksB": "Rédigez votre contenu sans effort. Avec RelaySMS, vos messages sont automatiquement envoyés à l'aide de votre application SMS préférée.",
+		"HowItWorkstitleC": "Relay and Publish :",
+		"HowItWorksC": "Votre contenu atteint rapidement les points d'accès RelaySMS, ce qui garantit qu'il est distribué à votre public sans délai.",
+		"HowItWorkstitleD": "Restez informé",
+		"HowItWorksD": "Recevez des notifications SMS instantanées, qui vous informent de l'état de la livraison et vous garantissent la tranquillité d'esprit",
 		"GettingStartedButton": "Commencer"
 	},
 	"Map": {

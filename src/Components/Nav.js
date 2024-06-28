@@ -86,7 +86,8 @@ export default function BackToTop(props) {
 								alignItems: "center",
 								flexGrow: 1,
 								justifyContent: "space-between",
-								color: "black"
+								color: "black",
+								className: "navbar"
 							}}
 							dir={direction}
 						>
@@ -132,6 +133,7 @@ export default function BackToTop(props) {
 												{t("Nav.help")}
 											</a>
 										</MenuItem>
+
 										<MenuItem onClick={handleClose}>
 											<a
 												href="https://blog.smswithoutborders.com/"
