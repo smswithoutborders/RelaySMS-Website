@@ -1,48 +1,45 @@
 import React from "react";
-import { Box, Grid, Typography, Button } from "@mui/material";
+import { Box, Grid, Typography, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import Container from "@mui/material/Container";
-import { GooglePlayButton } from "react-mobile-app-button";
-import { PageAnimationWrapper } from "../Components/PageAnimationWrapper";
+import { PageAnimationWrapper } from "../Components/PageAnimationWrapper.js";
 import { FaArrowCircleRight } from "react-icons/fa";
 import Blog from "../Components/Blog.js";
 import Faqs from "../Components/FAQs.js";
 import { motion } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../i18n.js";
-
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
+import { FaDesktop } from "react-icons/fa";
 import Row from "react-bootstrap/Row";
 
 export default function Landing() {
 	const { t, i18n } = useTranslation();
-	const APKUrl = "https://play.google.com/store/apps/details?id=com.afkanerd.sw0b";
 
 	const isRTL = i18n.language === "fa";
 
 	const cardContent = [
-		{ key: "HowItWorksA", imageSrc: "/permission.png" },
-		{ key: "HowItWorksB", imageSrc: "/composeMessage.png" },
-		{ key: "HowItWorksC", imageSrc: "/Online-world.png" },
-		{ key: "HowItWorksD", imageSrc: "/recievedNotification.png" }
+		{ key: "HowItWorksA", title: "HowItWorkstitleA", imageSrc: "/permission.png" },
+		{ key: "HowItWorksB", title: "HowItWorkstitleB", imageSrc: "/composeMessage.png" },
+		{ key: "HowItWorksC", title: "HowItWorkstitleC", imageSrc: "/Online-world.png" },
+		{ key: "HowItWorksD", title: "HowItWorkstitleD", imageSrc: "/recievedNotification.png" }
 	];
 
 	return (
 		<>
 			<PageAnimationWrapper>
-				<Box
-					dir={isRTL ? "rtl" : "ltr"}
-					sx={{
-						position: "relative",
-						pt: 4,
-						pb: { xs: 8, md: 10 }
-					}}
-				>
+				<Box>
 					{/* Banner Page */}
-					<Container maxWidth="lg">
-						<Grid container spacing={0} sx={{ flexDirection: { xs: "column", md: "row-reverse" } }}>
-							<Grid item xs={12} md={7}>
+					<Container
+						dir={isRTL ? "rtl" : "ltr"}
+						sx={{
+							pt: 4,
+							pb: { xs: 10, md: 10 }
+						}}
+					>
+						<Row>
+							<Col lg={8} md={6} sm={4} xs={12} className="hero-text-container">
+								{" "}
 								<Box
 									sx={{
 										textAlign: { xs: "center", md: "left" },
@@ -66,24 +63,19 @@ export default function Landing() {
 											}}
 										>
 											<Typography
-												component="mark"
 												sx={{
 													position: "relative",
 													color: "primary.main",
 													fontSize: "inherit",
 													fontWeight: "inherit",
-													backgroundColor: "unset",
 													mb: 2
 												}}
 											>
-												{t("Landing.landingh1a")}
+												{t("Landing.landingh1a")} <br />
 												<Box
 													sx={{
 														position: "absolute",
-														top: { xs: 24, md: 34 },
-														left: 2,
-														transform: "rotate(3deg)",
-														"& img": { width: { xs: 146, md: 210 }, height: "auto" }
+														top: { xs: 24, md: 34 }
 													}}
 												></Box>
 											</Typography>
@@ -94,7 +86,7 @@ export default function Landing() {
 										<Typography
 											sx={{
 												color: "text.secondary",
-												lineHeight: 1.6,
+												lineHeight: 1.8,
 												textAlign: isRTL ? "right" : "left"
 											}}
 										>
@@ -104,65 +96,69 @@ export default function Landing() {
 
 									{/* Buttons */}
 									<Box sx={{ "& button": { mr: 2 } }}>
-										<Button>
-											<GooglePlayButton
-												color="primary"
-												url={APKUrl}
-												height={52}
-												theme="dark"
-												width={250}
-												fontSize={10}
-												className={"custom-style"}
-											/>
-										</Button>
-										<Button color="primary" variant="outlined">
-											{t("Landing.Desktop")}
-										</Button>
+										<a
+											href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
+											className="hero-btn-link"
+										>
+											<button className="hero-btn">
+												<img src="/playstore.svg" alt="Android" style={{ marginRight: "8px" }} />
+												{t("Landing.Android")}
+											</button>
+										</a>
+										<a href="https://smswithoutborders.com" className="hero-btn-link">
+											<button className="hero-btn">
+												<FaDesktop style={{ marginRight: "8px" }} />
+												{t("Landing.Desktop")}
+											</button>
+										</a>
 									</Box>
 								</Box>
-							</Grid>
-							<Grid item xs={12} md={4} my={"auto"} sx={{ position: "relative", marginTop: 4 }}>
-								<Box
-									component="img"
-									src="/phonem.png"
-									alt="image"
-									sx={{
-										width: { md: "100%", xs: "60%", mx: "center" },
-										maxWidth: "80%",
-										height: "auto",
-										transform: "rotate(10deg)",
-										textAlign: isRTL ? "left" : "right"
-									}}
-								/>
-							</Grid>
-						</Grid>
+							</Col>
+							<Col sm={4} xs={12}>
+								{" "}
+								<Grid item xs={12} md={4} my={"auto"} sx={{ marginTop: 4 }}>
+									<Box
+										component="img"
+										src="/phone3.png"
+										alt="image"
+										sx={{
+											width: { md: "100%", xs: "60%", mx: "center" },
+											maxWidth: "80%",
+											height: "auto",
+											transform: "rotate(10deg)",
+											textAlign: isRTL ? "left" : "right"
+										}}
+									/>
+								</Grid>
+							</Col>
+						</Row>
 					</Container>
-					{/*======================================= end of Hero section -------------------------------------*/}
-					{/* ------------------------------------------Start of how it works section------------------------ */}
-					<Container
-						fluid="lg"
-						item
-						xs={12}
-						md={4}
-						my={"auto"}
-						sx={{ position: "relative", marginTop: 4 }}
-					>
+
+					{/* ===================================================================================== */}
+
+					{/* ========================================================================================= */}
+					{/* How it works section */}
+					<Container fluid="lg" sx={{ position: "relative", marginTop: 2 }}>
 						<Grid spacing={0} sx={{ flexDirection: { xs: "column", md: "unset" } }}>
 							<Typography
+								variant="h2"
 								align="center"
-								variant="h4"
-								sx={{ fontWeight: 700, fontSize: { xs: "25px", md: "33px" }, mb: 2 }}
+								sx={{
+									fontSize: { xs: 30, md: 50 },
+									fontWeight: "bold",
+									mb: 2
+								}}
 							>
 								{t("Howitworks.HowItWorks")}
 							</Typography>
 							<Typography
 								variant="subtitle1"
 								align="center"
-								sx={{ mb: 4, fontSize: { xs: "18px", md: "20px" } }}
+								sx={{ mb: 4, fontSize: { xs: "20px", md: "25px" } }}
 							>
 								{t("Howitworks.HowItWorksSubtitle")}
 							</Typography>
-							{/* cards */}
+							{/* Cards */}
 							<Row xs={1} md={2} className="g-4">
 								{cardContent.map((card, idx) => (
 									<Col key={idx}>
@@ -178,7 +174,7 @@ export default function Landing() {
 													className="custom-card-title"
 													style={{ textAlign: isRTL ? "right" : "left" }}
 												>
-													Card title
+													{t(`Howitworks.${card.title}`)}
 												</Card.Title>
 												<Card.Title
 													className="custom-card-text"
@@ -232,10 +228,6 @@ export default function Landing() {
 							</Grid>
 						</Grid>
 					</Container>
-					{/* -------------------------------------========= End ==========------------------------------- */}
-					{/*  */}
-
-					{/* ----------------------------------------------------------------------------------------------------------------------------------------- */}
 					{/* Relay Map */}
 					<Box sx={{ margin: "auto", maxWidth: 1200, padding: "20px" }}>
 						<Grid container rowSpacing={4} sx={{ py: { md: 10, xs: 10 } }}>
@@ -256,14 +248,9 @@ export default function Landing() {
 							</Grid>
 						</Grid>
 					</Box>
-					{/* ------------------------------------------------------------------------------------ */}
-					{/* blog section */}
+					{/* Blog section */}
 					<Container
 						fluid="lg"
-						item
-						xs={12}
-						md={4}
-						my={"auto"}
 						sx={{ position: "relative", marginTop: 4, direction: isRTL ? "rtl" : "ltr" }}
 					>
 						<Typography
@@ -289,18 +276,11 @@ export default function Landing() {
 						>
 							{t("Blog.WhatsNew")}
 						</Typography>
-						{/* Blog cards */}
 						<Blog />
 					</Container>
-
-					{/* end of blog section */}
-
-					<Box
+					{/* FAQ section */}
+					<Container
 						fluid="lg"
-						item
-						xs={12}
-						md={8}
-						my={"auto"}
 						sx={{ position: "relative", marginTop: 4, direction: isRTL ? "rtl" : "ltr" }}
 					>
 						<Typography
@@ -316,7 +296,7 @@ export default function Landing() {
 							{t("FAQ.FAQ")}
 						</Typography>
 						<Faqs />
-					</Box>
+					</Container>
 				</Box>
 			</PageAnimationWrapper>
 		</>

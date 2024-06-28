@@ -8,6 +8,7 @@ import Help from "./Pages/Help";
 import PageNotFound from "./Pages/PageNotFound";
 import Download from "./Pages/Download";
 import Loader from "./Components/Loader";
+import "./App.css";
 
 const App = () => {
 	const [darkMode, setDarkMode] = useState(false);

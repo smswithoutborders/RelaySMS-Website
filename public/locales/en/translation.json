@@ -2,7 +2,7 @@
 	"Landing": {
 		"landingh1a": "Keep",
 		"landingh1": " Talking with RelaySMS",
-		"landingh2": "Send Emails, Posts, and Messages securely via SMS.",
+		"landingh2": "Send emails, posts, and messages via SMS without needing an internet connection. This ensures that you can stay connected and share important information even in areas with limited or no internet access. It's an ideal solution for maintaining seamless communication in remote or challenging environments",
 		"Android": "Android App",
 		"Desktop": "Desktop App"
 	},
@@ -15,10 +15,14 @@
 	"Howitworks": {
 		"HowItWorks": "How it works",
 		"HowItWorksSubtitle": "Learn how our service functions seamlessly",
-		"HowItWorksA": "Authorize RelaySMS to send emails, posts, or messages on your behalf",
-		"HowItWorksB": "Compose your email, post, or message, and it will be automatically sent using your default SMS app.",
-		"HowItWorksC": "Your content reaches RelaySMS access points and is published on your behalf.",
-		"HowItWorksD": "Receive a response via SMS indicating success or failure.",
+		"HowItWorkstitleA": "Authorize RelaySMS",
+		"HowItWorksA": "Grant RelaySMS permission to send emails, posts, or messages on your behalf securely.",
+		"HowItWorkstitleB": "Compose and Send",
+		"HowItWorksB": "Craft your content effortlessly. With RelaySMS, your messages are automatically dispatched using your preferred SMS app.",
+		"HowItWorkstitleC": "Relay and Publish:",
+		"HowItWorksC": "Your content swiftly reaches RelaySMS access points, ensuring it's distributed to your audience without delay.",
+		"HowItWorkstitleD": "Stay Informed",
+		"HowItWorksD": "Receive instant SMS notifications, keeping you informed of delivery status and ensuring peace of mind.",
 		"GettingStartedButton": "Get Started"
 	},
 	"Map": {

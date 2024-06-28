@@ -70,7 +70,13 @@ const MultiItemCarousel = () => {
 
 	return (
 		<Box
-			className="container my-4"
+			style={{
+				paddingRight: "50px",
+				paddingleft: "50px",
+				marginBottom: "20px",
+				maxWidth: "2000px",
+				margin: "0 auto"
+			}}
 			sx={{ direction: isRTL ? "rtl" : "ltr", display: "flex", justifyContent: "center" }}
 		>
 			{isMobile ? (
