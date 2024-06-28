@@ -5,22 +5,26 @@ import { PageAnimationWrapper } from "../Components/PageAnimationWrapper.js";
 import { FaArrowCircleRight, FaDesktop } from "react-icons/fa";
 import Blog from "../Components/Blog.js";
 import Faqs from "../Components/FAQs.js";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../i18n.js";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
 
 export default function Landing() {
 	const { t, i18n } = useTranslation();
 	const isRTL = i18n.language === "fa";
 
 	const cardContent = [
-		{ key: "HowItWorksA", title: "HowItWorkstitleA", imageSrc: "/permission.png" },
-		{ key: "HowItWorksB", title: "HowItWorkstitleB", imageSrc: "/composeMessage.png" },
 		{ key: "HowItWorksC", title: "HowItWorkstitleC", imageSrc: "/Online-world.png" },
 		{ key: "HowItWorksD", title: "HowItWorkstitleD", imageSrc: "/recievedNotification.png" }
+	];
+
+	const cardContent2 = [
+		{ key: "HowItWorksA", title: "HowItWorkstitleA", imageSrc: "/permission.png" },
+		{ key: "HowItWorksB", title: "HowItWorkstitleB", imageSrc: "/composeMessage.png" }
 	];
 
 	return (
@@ -123,104 +127,110 @@ export default function Landing() {
 							</Col>
 						</Row>
 					</Container>
+					{/* ===================================================================================== */}
 
-					{/* How it works section */}
-					<Container fluid="lg" sx={{ position: "relative", marginTop: 2 }}>
-						<Grid container spacing={0} sx={{ flexDirection: { xs: "column", md: "unset" } }}>
-							<Typography
-								variant="h2"
-								align="center"
-								sx={{
-									fontSize: { xs: 30, md: 50 },
-									fontWeight: "bold",
-									mb: 2
-								}}
-							>
-								{t("Howitworks.HowItWorks")}
-							</Typography>
-							<Typography
-								variant="subtitle1"
-								align="center"
-								sx={{ mb: 4, fontSize: { xs: "20px", md: "25px" } }}
-							>
-								{t("Howitworks.HowItWorksSubtitle")}
-							</Typography>
-							{/* Cards */}
-							<Row xs={1} md={2} className="g-4">
-								{cardContent.map((card, idx) => (
-									<Col key={idx}>
-										<Card className="custom-card">
-											<Card.Img
-												variant="top"
-												src={card.imageSrc}
-												alt={card.key}
-												className="custom-card-img"
-												style={{
-													objectFit: "cover",
-													height: "200px"
-												}}
-											/>
-											<Card.Body>
-												<Card.Title
-													className="custom-card-title"
-													style={{ textAlign: isRTL ? "right" : "left" }}
-												>
-													{t(`Howitworks.${card.title}`)}
-												</Card.Title>
-												<Card.Title
-													className="custom-card-text"
-													style={{ textAlign: isRTL ? "right" : "left" }}
-												>
-													{t(`Howitworks.${card.key}`)}
-												</Card.Title>
-											</Card.Body>
-										</Card>
-									</Col>
-								))}
-							</Row>
+					{/* ========================= how it works ========================================= */}
+					<Container className="mt-4">
+						<Row className="justify-content-center mb-4">
+							<Col xs={12}>
+								<h2
+									className="text-center"
+									style={{ fontSize: "calc(1.875rem + 1.5vw)", fontWeight: "bold" }}
+								>
+									{t("Howitworks.HowItWorks")}
+								</h2>
+								<p className="text-center" style={{ fontSize: "calc(1.25rem + 0.5vw)" }}>
+									{t("Howitworks.HowItWorksSubtitle")}
+								</p>
+							</Col>
+						</Row>
 
-							{/* Getting Started Button */}
-							<Grid item xs={12}>
-								<motion.div initial="hidden">
-									<Box textAlign="center" sx={{ p: 1 }}>
-										<a
-											href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
-											target="_blank"
-											rel="noreferrer noopener"
-											style={{ textDecoration: "none" }}
-										>
-											<Typography
-												variant="body1"
-												sx={{
-													p: 4,
-													textDecoration: "underline",
-													fontWeight: "bold",
-													color: "primary.main",
-													display: "inline-flex",
-													alignItems: "center",
-													fontSize: { xs: "20px", md: "24px" },
-													"&:hover": {
-														color: "secondary.main",
-														textDecoration: "none",
-														transform: "scale(1.05)"
-													},
-													transition: "transform 0.2s ease-in-out"
-												}}
+						<Row className="justify-content-center">
+							{cardContent.map((card, idx) => (
+								<Col xs={12} sm={6} lg={6} key={idx} className="mb-4">
+									<Card className="custom-card">
+										<Card.Img
+											variant="top"
+											src={card.imageSrc}
+											alt={card.key}
+											className="custom-card-img"
+										/>
+										<Card.Body>
+											<Card.Title
+												className="custom-card-title"
+												style={{ textAlign: isRTL ? "right" : "left" }}
 											>
-												{t("Howitworks.GettingStartedButton")}{" "}
-												<FaArrowCircleRight
-													size="20px"
-													style={{ marginLeft: "8px", rotate: "-30deg" }}
-												/>
-											</Typography>
-										</a>
-									</Box>
-								</motion.div>
-							</Grid>
-						</Grid>
+												{t(`Howitworks.${card.title}`)}
+											</Card.Title>
+											<Card.Text
+												className="custom-card-text"
+												style={{ textAlign: isRTL ? "right" : "left" }}
+											>
+												{t(`Howitworks.${card.key}`)}
+											</Card.Text>
+										</Card.Body>
+									</Card>
+								</Col>
+							))}
+						</Row>
+						<Row className="justify-content-center">
+							{cardContent2.map((card, idx) => (
+								<Col xs={12} sm={6} lg={6} key={idx} className="mb-4">
+									<Card className="custom-card">
+										<Card.Img
+											variant="top"
+											src={card.imageSrc}
+											alt={card.key}
+											className="custom-card-img"
+										/>
+										<Card.Body>
+											<Card.Title
+												className="custom-card-title"
+												style={{ textAlign: isRTL ? "right" : "left" }}
+											>
+												{t(`Howitworks.${card.title}`)}
+											</Card.Title>
+											<Card.Text
+												className="custom-card-text"
+												style={{ textAlign: isRTL ? "right" : "left" }}
+											>
+												{t(`Howitworks.${card.key}`)}
+											</Card.Text>
+										</Card.Body>
+									</Card>
+								</Col>
+							))}
+						</Row>
+
+						<Row>
+							<Col xs={12}>
+								<div className="text-center p-1">
+									<a
+										href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+										target="_blank"
+										rel="noreferrer noopener"
+										style={{ textDecoration: "none" }}
+									>
+										<Button
+											variant="link"
+											className="p-4 text-decoration-none font-weight-bold"
+											style={{ fontSize: "calc(1.25rem + 0.5vw)", color: "#007bff" }}
+										>
+											{t("Howitworks.GettingStartedButton")}
+											<FaArrowCircleRight
+												size="20px"
+												style={{ marginLeft: "8px", transform: "rotate(-30deg)" }}
+											/>
+										</Button>
+									</a>
+								</div>
+							</Col>
+						</Row>
 					</Container>
 
-					{/* Relay Map */}
+					{/* ===========================end of how it works =================================== */}
+
+					{/*==================================== Relay Map =========================================*/}
 					<Box sx={{ margin: "auto", maxWidth: 1200, padding: "20px" }}>
 						<Grid container rowSpacing={4} sx={{ py: { md: 10, xs: 10 } }}>
 							<Grid item md={5} my="auto">
