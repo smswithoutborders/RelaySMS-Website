@@ -29,7 +29,7 @@ export default function Landing() {
 		<>
 			<PageAnimationWrapper>
 				<Box>
-					{/* Banner Page */}
+					{/* landing Page section */}
 					<Container
 						dir={isRTL ? "rtl" : "ltr"}
 						sx={{
@@ -228,6 +228,7 @@ export default function Landing() {
 							</Grid>
 						</Grid>
 					</Container>
+
 					{/* Relay Map */}
 					<Box sx={{ margin: "auto", maxWidth: 1200, padding: "20px" }}>
 						<Grid container rowSpacing={4} sx={{ py: { md: 10, xs: 10 } }}>
@@ -248,6 +249,7 @@ export default function Landing() {
 							</Grid>
 						</Grid>
 					</Box>
+
 					{/* Blog section */}
 					<Container
 						fluid="lg"
