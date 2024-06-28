@@ -132,10 +132,9 @@ button:hover {
 }
 
 .hero-btn {
-	background-image: linear-gradient(to right, hsl(248, 85%, 38%), hsl(192, 70%, 51%));
-	color: white;
+	color: #2d4ade;
 	padding: 20px 30px;
-	border: none;
+	border: 1px solid rgb(44, 41, 41);
 	display: inline-flex;
 	align-items: center;
 	cursor: pointer;
@@ -151,9 +150,9 @@ button:hover {
 }
 
 .hero-btn:hover {
-	background-color: #0056b3;
+	background-color: #e0e4e9;
 	transform: translateY(-2px);
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 8px rgba(220, 215, 215, 0.2);
 }
 
 .hero-btn img {
@@ -172,13 +171,15 @@ button:hover {
 
 /* ====================== cards =================================== */
 .custom-card {
-	border-radius: 40px !important;
+	border-radius: 30px !important;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 	transition: box-shadow 0.3s ease-in-out;
+	width: 70%;
+	align-items: center;
 }
 
 .custom-card-img {
-	width: 70%;
+	width: 60%;
 	height: 400px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
