@@ -43,17 +43,17 @@ export default function Faqs() {
 					onChange={handleChange(index)}
 					sx={{
 						mb: 2,
-						backgroundColor: "hsl(243, 87%, 12%)",
+						// backgroundColor: "hsl(243, 87%, 12%)",
 						boxShadow: expanded === index ? "0px 4px 4px rgba(0, 0, 0, 0.25)" : "none",
 						borderRadius: 2,
-						color: "white",
+						color: "#041c94",
 						"&:before": {
 							display: "none"
 						}
 					}}
 				>
 					<AccordionSummary
-						expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
+						expandIcon={<ExpandMoreIcon style={{ color: "#041c94" }} />}
 						aria-controls={`faq${index}-content`}
 						id={`faq${index}-header`}
 						sx={{
@@ -63,12 +63,12 @@ export default function Faqs() {
 							}
 						}}
 					>
-						<Typography variant="body1" sx={{ fontWeight: 700, color: "white" }}>
+						<Typography variant="body1" sx={{ fontWeight: 700, color: "#1c222c" }}>
 							{t(item.question)}
 						</Typography>
 					</AccordionSummary>
 					<AccordionDetails>
-						<Typography sx={{ color: "white" }}>{t(item.answer)}</Typography>
+						<Typography sx={{ color: "#000000" }}>{t(item.answer)}</Typography>
 					</AccordionDetails>
 				</Accordion>
 			))}
