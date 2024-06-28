@@ -35,7 +35,7 @@ export default function Faqs() {
 	};
 
 	return (
-		<div style={{ padding: "20px", maxWidth: "100%", margin: "0 auto" }}>
+		<div style={{ padding: "20px", maxWidth: "100%", margin: "0 auto", boxShadow: "gray" }}>
 			{FAQ.map((item, index) => (
 				<Accordion
 					key={index}
@@ -43,7 +43,6 @@ export default function Faqs() {
 					onChange={handleChange(index)}
 					sx={{
 						mb: 2,
-						// backgroundColor: "hsl(243, 87%, 12%)",
 						boxShadow: expanded === index ? "0px 4px 4px rgba(0, 0, 0, 0.25)" : "none",
 						borderRadius: 2,
 						color: "#041c94",

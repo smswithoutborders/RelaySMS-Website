@@ -51,7 +51,7 @@ export default function Landing() {
 											component="h2"
 											sx={{
 												position: "relative",
-												fontSize: { xs: 40, md: 72 },
+												fontSize: { xs: 36, md: 72 },
 												letterSpacing: 1.5,
 												fontWeight: "bold",
 												lineHeight: 1.3,
@@ -65,7 +65,7 @@ export default function Landing() {
 									<Box
 										sx={{
 											mb: 4,
-											width: { xs: "100%", md: "70%" },
+											width: { xs: "90%", md: "70%" },
 											textAlign: { xs: "center", md: "left" }
 										}}
 									>
@@ -83,22 +83,36 @@ export default function Landing() {
 									{/* Buttons */}
 									<Box
 										sx={{
-											"& button": { mr: 2 },
+											"& button": { mr: { xs: 0, md: 2 }, mb: { xs: 2, md: 0 } },
 											display: "flex",
-											justifyContent: { xs: "center", md: "flex-start" }
+											flexDirection: { xs: "column", md: "row" },
+											justifyContent: { xs: "center", md: "flex-start" },
+											alignItems: "center",
+											width: "100%"
 										}}
 									>
 										<a
 											href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 											className="hero-btn-link"
+											style={{ width: "100%", display: "flex", justifyContent: "center" }}
 										>
-											<button className="hero-btn">
+											<button
+												className="hero-btn"
+												style={{ width: "50%", maxWidth: { xs: "280px", md: "auto" } }}
+											>
 												<img src="/playstore.svg" alt="Android" style={{ marginRight: "8px" }} />
 												{t("Landing.Android")}
 											</button>
 										</a>
-										<a href="https://smswithoutborders.com" className="hero-btn-link">
-											<button className="hero-btn">
+										<a
+											href="https://smswithoutborders.com"
+											className="hero-btn-link"
+											style={{ width: "100%", display: "flex", justifyContent: "center" }}
+										>
+											<button
+												className="hero-btn"
+												style={{ width: "50%", maxWidth: { xs: "280px", md: "auto" } }}
+											>
 												<FaDesktop style={{ marginRight: "8px" }} />
 												{t("Landing.Desktop")}
 											</button>
@@ -106,24 +120,26 @@ export default function Landing() {
 									</Box>
 								</Box>
 							</Col>
+							{/* ======end of button ============= */}
 							<Col lg={4} md={6} sm={12} xs={12} className="hero-image-container">
 								<Grid
 									item
 									xs={12}
 									md={4}
 									my={"auto"}
-									sx={{ mt: { xs: 4, md: 0 }, display: "flex", justifyContent: "center" }}
+									sx={{ mt: { xs: 3, md: 0 }, display: "flex", justifyContent: "center" }}
 								>
 									<Box
 										component="img"
 										src="/phone3.png"
 										alt="image"
 										sx={{
-											width: { md: "100%", xs: "60%" },
-											maxWidth: "80%",
+											width: { md: "100%", xs: "85%" },
+											maxWidth: "100%",
 											height: "auto",
 											transform: "rotate(10deg)",
-											textAlign: isRTL ? "left" : "right"
+											textAlign: isRTL ? "left" : "right",
+											paddingTop: "10px"
 										}}
 									/>
 								</Grid>
@@ -134,7 +150,7 @@ export default function Landing() {
 					{/* ===================================================================================== */}
 
 					{/* ========================= how it works ========================================= */}
-					<Container className="mt-4">
+					<Container className="mt-1">
 						<Row className="justify-content-center mb-4">
 							<Col xs={12}>
 								<h2
