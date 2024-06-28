@@ -1,7 +1,7 @@
 {
 	"Landing": {
 		"landingh1": "Continuez de parler avec RelaySMS",
-		"landingh2": "Envoyez des courriels, des messages et des messages par SMS sans avoir besoin d'une connexion internet. Cela vous permet de rester connecté et de partager des informations importantes même dans les zones où l'accès à Internet est limité ou inexistant. C'est une solution idéale pour maintenir une communication sans faille dans des environnements éloignés ou difficiles",
+		"landingh2": "Envoyez des courriels, des messages et des messages par SMS sans avoir besoin d'une connexion internet. Vous pouvez ainsi rester connecté et partager des informations importantes même dans les zones où l'accès à l'internet est limité ou inexistant",
 		"Android": "Application Android",
 		"Desktop": "Application de bureau"
 	},
