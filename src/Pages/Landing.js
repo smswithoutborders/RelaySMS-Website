@@ -24,7 +24,6 @@ export default function Landing() {
 	return (
 		<>
 			<PageAnimationWrapper>
-				{/* <Container> */}
 				<Container
 					dir={isRTL ? "rtl" : "ltr"}
 					sx={{
@@ -136,12 +135,10 @@ export default function Landing() {
 							</Grid>
 						</Col>
 					</Row>
-					{/* </Container> */}
 
 					{/* ===================================================================================== */}
 
 					{/* ========================= how it works ========================================= */}
-					{/* <Container className="mt-0"> */}
 					<Row className="justify-content-center mb-2">
 						<Col xs={12}>
 							<h2
@@ -203,12 +200,11 @@ export default function Landing() {
 							</div>
 						</Col>
 					</Row>
-					{/* </Container> */}
 
 					{/* ===========================end of how it works =================================== */}
 
 					{/*==================================== Relay Map =========================================*/}
-					<Box sx={{ margin: "auto", maxWidth: 1200, padding: "20px" }}>
+					<Row sx={{ margin: "auto", maxWidth: 1200, padding: "20px" }}>
 						<Grid container rowSpacing={4} sx={{ py: { md: 10, xs: 10 } }}>
 							<Grid item md={5} my="auto">
 								<Typography
@@ -226,10 +222,10 @@ export default function Landing() {
 								<Box component="img" src="/map.png" sx={{ width: "100%", borderRadius: "20px" }} />
 							</Grid>
 						</Grid>
-					</Box>
+					</Row>
 
 					{/* Blog section */}
-					<Container
+					<Row
 						fluid="lg"
 						sx={{ position: "relative", marginTop: 4, direction: isRTL ? "rtl" : "ltr" }}
 					>
@@ -246,10 +242,10 @@ export default function Landing() {
 							{t("Blog.WhatsNew")}
 						</Typography>
 						<Blog />
-					</Container>
+					</Row>
 
 					{/* FAQ section */}
-					<Container
+					<Row
 						fluid="lg"
 						sx={{ position: "relative", marginTop: 4, direction: isRTL ? "rtl" : "ltr" }}
 					>
@@ -266,7 +262,7 @@ export default function Landing() {
 							{t("FAQ.FAQ")}
 						</Typography>
 						<Faqs />
-					</Container>
+					</Row>
 				</Container>
 			</PageAnimationWrapper>
 		</>
