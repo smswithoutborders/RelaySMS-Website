@@ -17,13 +17,9 @@ export default function Landing() {
 	const isRTL = i18n.language === "fa";
 
 	const cardContent = [
-		{ key: "HowItWorksC", title: "HowItWorkstitleC", imageSrc: "/authoriza.svg" },
-		{ key: "HowItWorksD", title: "HowItWorkstitleD", imageSrc: "/notification.svg" }
-	];
-
-	const cardContent2 = [
 		{ key: "HowItWorksA", title: "HowItWorkstitleA", imageSrc: "/authoriza.svg" },
-		{ key: "HowItWorksB", title: "HowItWorkstitleB", imageSrc: "/compose.svg" }
+		{ key: "HowItWorksB", title: "HowItWorkstitleB", imageSrc: "/compose.svg" },
+		{ key: "HowItWorksC", title: "HowItWorkstitleC", imageSrc: "/notification.svg" }
 	];
 
 	return (
@@ -155,34 +151,6 @@ export default function Landing() {
 
 						<Row className="justify-content-center">
 							{cardContent.map((card, idx) => (
-								<Col xs={12} sm={6} lg={6} key={idx} className="mb-4">
-									<Card className="custom-card">
-										<Card.Img
-											variant="top"
-											src={card.imageSrc}
-											alt={card.key}
-											className="custom-card-img"
-										/>
-										<Card.Body>
-											<Card.Title
-												className="custom-card-title"
-												style={{ textAlign: isRTL ? "right" : "left" }}
-											>
-												{t(`Howitworks.${card.title}`)}
-											</Card.Title>
-											<Card.Text
-												className="custom-card-text"
-												style={{ textAlign: isRTL ? "right" : "left" }}
-											>
-												{t(`Howitworks.${card.key}`)}
-											</Card.Text>
-										</Card.Body>
-									</Card>
-								</Col>
-							))}
-						</Row>
-						<Row className="justify-content-center">
-							{cardContent2.map((card, idx) => (
 								<Col xs={12} sm={6} lg={6} key={idx} className="mb-4">
 									<Card className="custom-card">
 										<Card.Img
