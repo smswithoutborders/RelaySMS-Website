@@ -81,11 +81,14 @@ export default function Landing() {
 									</Box>
 
 									{/* Buttons */}
+									{/* ================================================ */}
+
+									{/* ======================================================= */}
 									<Box
 										sx={{
 											"& button": { mr: { xs: 0, md: 2 }, mb: { xs: 2, md: 0 } },
 											display: "flex",
-											flexDirection: { xs: "row", md: "column" },
+											flexDirection: { xs: "row" },
 											justifyContent: { xs: "center", md: "flex-start" },
 											alignItems: "center",
 											width: "100%"
@@ -111,7 +114,7 @@ export default function Landing() {
 										>
 											<button
 												className="hero-btn"
-												style={{ width: "90%", maxWidth: { xs: "240px", md: "auto" } }}
+												style={{ width: "90%", maxWidth: { xs: "280px", md: "auto" } }}
 											>
 												<img src="/desktop.svg" alt="Android" style={{ marginRight: "4px" }} />
 												{t("Landing.Desktop")}
@@ -120,7 +123,7 @@ export default function Landing() {
 									</Box>
 								</Box>
 							</Col>
-							{/* ======end of button ============= */}
+							{/* ============================= end of button ============= */}
 							<Col lg={4} md={6} sm={8} xs={12} className="hero-image-container">
 								<Grid
 									item

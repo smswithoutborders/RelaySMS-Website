@@ -132,7 +132,6 @@ button:hover {
 }
 
 .hero-btn {
-	/* color: #f5f6f9; */
 	background-color: rgba(220, 215, 215, 0.2);
 	padding: 15px 30px;
 	border: 1px solid rgb(73, 74, 74);
@@ -209,5 +208,4 @@ button:hover {
 		transition: box-shadow 0.3s ease-in-out;
 		width: 100% !important;
 	}
-	/* =========================================================================================== */
 }
