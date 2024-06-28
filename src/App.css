@@ -132,22 +132,16 @@ button:hover {
 }
 
 .hero-btn {
-	color: #e5e7ed;
-	background-color: #5b5a5a;
-	padding: 20px 30px;
-	border: 1px solid rgb(44, 41, 41);
+	/* color: #f5f6f9; */
+	background-color: rgba(220, 215, 215, 0.2);
+	padding: 15px 30px;
+	border: 1px solid rgb(73, 74, 74);
 	display: inline-flex;
 	align-items: center;
 	cursor: pointer;
-	transition:
-		background-color 0.3s ease,
-		transform 0.3s ease;
-	margin-right: 10px;
-	border-radius: 20px;
+	border-radius: 10px;
 	white-space: nowrap;
 	text-align: center;
-	font-weight: 500;
-	margin-bottom: 8%;
 }
 
 .hero-btn:hover {
@@ -190,31 +184,25 @@ button:hover {
 }
 
 .custom-card-title {
-	font-size: 30px !important;
+	font-size: 30px;
 	text-align: center !important;
 	font-weight: bolder;
 }
 
 .custom-card-text {
-	font-size: 20px !important;
-	text-align: center;
+	font-size: 20px;
+	text-align: center !important;
 }
 
-/* carousel */
+/* ===================== blog carousel ============================ */
 .centered-carousel {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-/* =================================================================== */
+/* ===============================  responsive design==================================== */
 
-/* -----------------------------responsive design--------------------------------------------- */
 @media screen and (max-width: 768px) {
-	/* =========================================================================================== */
-
-	/* ===================================================================================== */
-
-	/* =============================================================================== */
 	.custom-card {
 		border-radius: 40px !important;
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
