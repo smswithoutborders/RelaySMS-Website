@@ -4,7 +4,8 @@ import { FaEnvelope, FaFacebook, FaGithub, FaXTwitter } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 
 export default function Footer() {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const isRTL = i18n.dir() === "rtl";
 
 	const linkStyle = {
 		color: "inherit",
@@ -26,7 +27,8 @@ export default function Footer() {
 				p: 3,
 				px: { xs: 3, md: 10 },
 				position: "static",
-				bottom: 0
+				bottom: 0,
+				direction: isRTL ? "rtl" : "ltr"
 			}}
 		>
 			<Box>
@@ -49,20 +51,18 @@ export default function Footer() {
 					</Grid>
 					<Grid item md={2} xs={12}>
 						<List>
-							<ListItem variant="body1" sx={{ fontWeight: 600 }}>
-								{t("Footer.footerHeader1")}
-							</ListItem>
-							<ListItem variant="body1">
+							<ListItem sx={{ fontWeight: 600 }}>{t("Footer.footerHeader1")}</ListItem>
+							<ListItem>
 								<a href="https://blog.smswithoutborders.com/" style={linkStyle}>
 									{t("Footer.footerquick1")}
 								</a>
 							</ListItem>
-							<ListItem variant="body1">
+							<ListItem>
 								<a href="/documentation" style={linkStyle}>
 									{t("Footer.footerquick3")}
 								</a>
 							</ListItem>
-							<ListItem variant="body1">
+							<ListItem>
 								<a href="/privacy-policy" style={linkStyle}>
 									{t("Footer.footerquick4")}
 								</a>
@@ -71,29 +71,27 @@ export default function Footer() {
 					</Grid>
 					<Grid item md={2} xs={12}>
 						<List>
-							<ListItem variant="body1" sx={{ fontWeight: 600 }}>
-								{t("Footer.footerHeader2")}
-							</ListItem>
-							<ListItem variant="body1">
-								<FaGithub style={{ marginRight: 15 }} />
+							<ListItem sx={{ fontWeight: 600 }}>{t("Footer.footerHeader2")}</ListItem>
+							<ListItem>
+								<FaGithub style={{ marginInlineEnd: 15 }} />
 								<a href="https://github.com/smswithoutborders" style={linkStyle}>
 									{t("Footer.footersocial1")}
 								</a>
 							</ListItem>
-							<ListItem variant="body1">
-								<FaFacebook style={{ marginRight: 15 }} />
+							<ListItem>
+								<FaFacebook style={{ marginInlineEnd: 15 }} />
 								<a href="https://www.facebook.com/SMSWithoutBorders" style={linkStyle}>
 									{t("Footer.footersocial2")}
 								</a>
 							</ListItem>
-							<ListItem variant="body1">
-								<FaXTwitter style={{ marginRight: 15 }} />
+							<ListItem>
+								<FaXTwitter style={{ marginInlineEnd: 15 }} />
 								<a href="https://x.com/SwobOutreach" style={linkStyle}>
 									{t("Footer.footersocial3")}
 								</a>
 							</ListItem>
-							<ListItem variant="body1">
-								<FaEnvelope style={{ marginRight: 15 }} />
+							<ListItem>
+								<FaEnvelope style={{ marginInlineEnd: 15 }} />
 								<a href="mailto:support@smswithoutborders.com" style={linkStyle}>
 									{t("Footer.footersocial4")}
 								</a>
@@ -102,25 +100,23 @@ export default function Footer() {
 					</Grid>
 					<Grid item md={2} xs={12}>
 						<List>
-							<ListItem variant="body1" sx={{ fontWeight: 600 }}>
-								{t("Footer.footerHeader3")}
-							</ListItem>
-							<ListItem variant="body1">
+							<ListItem sx={{ fontWeight: 600 }}>{t("Footer.footerHeader3")}</ListItem>
+							<ListItem>
 								<a href="/download/android" style={linkStyle}>
 									{t("Footer.footerdownload1")}
 								</a>
 							</ListItem>
-							<ListItem variant="body1">
+							<ListItem>
 								<a href="/download/ios" style={linkStyle}>
 									{t("Footer.footerdownload2")}
 								</a>
 							</ListItem>
-							<ListItem variant="body1">
+							<ListItem>
 								<a href="/download/linux" style={linkStyle}>
 									{t("Footer.footerdownload3")}
 								</a>
 							</ListItem>
-							<ListItem variant="body1">
+							<ListItem>
 								<a href="/download/windows" style={linkStyle}>
 									{t("Footer.footerdownload4")}
 								</a>
