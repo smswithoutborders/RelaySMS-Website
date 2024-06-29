@@ -32,109 +32,109 @@ export default function Landing() {
 					}}
 				>
 					{/* ... */}
-					<Row>
-						<Col lg={8} md={6} sm={12} xs={12} className="hero-text-container">
-							<Box
-								sx={{
-									textAlign: { xs: "center", md: "left" },
-									height: "100%",
-									display: "flex",
-									flexDirection: "column",
-									justifyContent: "center",
-									alignItems: { xs: "center", md: "flex-start" }
-								}}
-							>
-								<Box sx={{ mb: 3 }}>
-									<Typography
-										component="h2"
-										sx={{
-											position: "relative",
-											fontSize: { xs: 36, md: 72 },
-											letterSpacing: 1.5,
-											fontWeight: "bold",
-											lineHeight: 1.3,
-											mb: 2,
-											textAlign: isRTL ? "right" : { xs: "center", md: "left" }
-										}}
-									>
-										{t("Landing.landingh1")}
-									</Typography>
-								</Box>
+					<Container
+						dir={isRTL ? "rtl" : "ltr"}
+						sx={{
+							pt: 4,
+							pb: { xs: 10, md: 10 }
+						}}
+					>
+						<Row>
+							<Col lg={8} md={6} sm={12} xs={12} className="hero-text-container">
 								<Box
 									sx={{
-										mb: 4,
-										width: { xs: "90%", md: "70%" },
-										textAlign: { xs: "center", md: "left" }
-									}}
-								>
-									<Typography
-										sx={{
-											color: "text.secondary",
-											lineHeight: 1.8,
-											textAlign: isRTL ? "right" : { xs: "center", md: "left" }
-										}}
-									>
-										{t("Landing.landingh2")}
-									</Typography>
-								</Box>
-
-								{/* Buttons */}
-								<Box
-									sx={{
+										textAlign: { xs: "center", md: "left" },
+										height: "100%",
 										display: "flex",
-										flexDirection: { xs: "column", md: "row" },
-										justifyContent: { xs: "center", md: "flex-start" },
-										alignItems: "center",
-										width: "100%"
+										flexDirection: "column",
+										justifyContent: "center",
+										alignItems: { xs: "center", md: "flex-start" }
 									}}
 								>
-									<a
-										href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
-										className="hero-btn-link"
-										style={{ marginBottom: { xs: 2, md: 0 }, marginRight: { xs: 0, md: 2 } }}
+									<Box sx={{ mb: 3 }}>
+										<Typography
+											component="h2"
+											sx={{
+												position: "relative",
+												fontSize: { xs: 40, md: 72 },
+												letterSpacing: 1.5,
+												fontWeight: "bold",
+												lineHeight: 1.3,
+												mb: 2,
+												textAlign: isRTL ? "right" : { xs: "center", md: "left" }
+											}}
+										>
+											{t("Landing.landingh1")}
+										</Typography>
+									</Box>
+									<Box
+										sx={{
+											mb: 4,
+											width: { xs: "100%", md: "70%" },
+											textAlign: { xs: "center", md: "left" }
+										}}
 									>
-										<button className="hero-btn d-flex">
-											<img src="/playstore.svg" alt="Android" style={{ marginRight: "4px" }} />
-											{t("Landing.Android")}
-										</button>
-									</a>
-									<a
-										href="https://smswithoutborders.com"
-										className="hero-btn-link"
-										style={{ marginBottom: { xs: 2, md: 0 }, marginRight: { xs: 0, md: 2 } }}
+										<Typography
+											sx={{
+												color: "text.secondary",
+												lineHeight: 1.8,
+												textAlign: isRTL ? "right" : { xs: "center", md: "left" }
+											}}
+										>
+											{t("Landing.landingh2")}
+										</Typography>
+									</Box>
+
+									{/* Buttons */}
+									<Box
+										sx={{
+											"& button": { mr: 2 },
+											display: "flex",
+											justifyContent: { xs: "center", md: "flex-start" }
+										}}
 									>
-										<button className="hero-btn d-flex">
-											<img src="/desktop.svg" alt="Desktop" style={{ marginRight: "4px" }} />
-											{t("Landing.Desktop")}
-										</button>
-									</a>
+										<a
+											href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
+											className="hero-btn-link"
+										>
+											<button className="hero-btn">
+												<img src="/playstore.svg" alt="Android" style={{ marginRight: "8px" }} />
+												{t("Landing.Android")}
+											</button>
+										</a>
+										<a href="https://smswithoutborders.com" className="hero-btn-link">
+											<button className="hero-btn">
+												{/* <FaDesktop style={{ marginRight: "8px" }} /> */}
+												{t("Landing.Desktop")}
+											</button>
+										</a>
+									</Box>
 								</Box>
-							</Box>
-						</Col>
-						<Col lg={4} md={6} sm={8} xs={12} className="hero-image-container">
-							<Grid
-								item
-								xs={12}
-								md={4}
-								my={"auto"}
-								sx={{ mt: { xs: 3, md: 0 }, display: "flex", justifyContent: "center" }}
-							>
-								<Box
-									component="img"
-									src="/phone3.png"
-									alt="image"
-									sx={{
-										width: { md: "100%", xs: "85%" },
-										maxWidth: "100%",
-										height: "auto",
-										transform: "rotate(10deg)",
-										textAlign: isRTL ? "left" : "right",
-										paddingTop: "10px"
-									}}
-								/>
-							</Grid>
-						</Col>
-					</Row>
+							</Col>
+							<Col lg={4} md={6} sm={12} xs={12} className="hero-image-container">
+								<Grid
+									item
+									xs={12}
+									md={4}
+									my={"auto"}
+									sx={{ mt: { xs: 4, md: 0 }, display: "flex", justifyContent: "center" }}
+								>
+									<Box
+										component="img"
+										src="/phone3.png"
+										alt="image"
+										sx={{
+											width: { md: "100%", xs: "60%" },
+											maxWidth: "80%",
+											height: "auto",
+											transform: "rotate(10deg)",
+											textAlign: isRTL ? "left" : "right"
+										}}
+									/>
+								</Grid>
+							</Col>
+						</Row>
+					</Container>
 
 					{/* ===================================================================================== */}
 
