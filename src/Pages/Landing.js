@@ -104,7 +104,7 @@ export default function Landing() {
 										</a>
 										<a href="https://smswithoutborders.com" className="hero-btn-link">
 											<button className="hero-btn">
-												{/* <FaDesktop style={{ marginRight: "8px" }} /> */}
+												<img src="/desktop.svg" alt="Android" style={{ marginRight: "8px" }} />
 												{t("Landing.Desktop")}
 											</button>
 										</a>
