@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Accordion, AccordionSummary, AccordionDetails, Typography } from "@mui/material";
+import { Container, Row } from "react-bootstrap";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTranslation } from "react-i18next";
 
@@ -28,49 +29,61 @@ const FAQ = [
 
 export default function Faqs() {
 	const [expanded, setExpanded] = React.useState(false);
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const isRTL = i18n.dir() === "rtl";
 
 	const handleChange = (panel) => (event, isExpanded) => {
 		setExpanded(isExpanded ? panel : false);
 	};
 
 	return (
-		<div style={{ padding: "20px", maxWidth: "100%", margin: "0 auto", boxShadow: "gray" }}>
-			{FAQ.map((item, index) => (
-				<Accordion
-					key={index}
-					expanded={expanded === index}
-					onChange={handleChange(index)}
-					sx={{
-						mb: 2,
-						boxShadow: expanded === index ? "0px 4px 4px rgba(0, 0, 0, 0.25)" : "none",
+		<Container>
+			<Row>
+				<div
+					style={{
+						padding: "20px",
+						maxWidth: "100%",
+						margin: "0 auto",
+						color: "#f5f5f5",
 						borderRadius: 2,
-						color: "#041c94",
-						"&:before": {
-							display: "none"
-						}
+						direction: isRTL ? "rtl" : "ltr"
 					}}
 				>
-					<AccordionSummary
-						expandIcon={<ExpandMoreIcon style={{ color: "#041c94" }} />}
-						aria-controls={`faq${index}-content`}
-						id={`faq${index}-header`}
-						sx={{
-							minHeight: 56,
-							"& .MuiAccordionSummary-content": {
-								margin: "12px 0"
-							}
-						}}
-					>
-						<Typography variant="body1" sx={{ fontWeight: 700, color: "#1c222c" }}>
-							{t(item.question)}
-						</Typography>
-					</AccordionSummary>
-					<AccordionDetails>
-						<Typography sx={{ color: "#000000" }}>{t(item.answer)}</Typography>
-					</AccordionDetails>
-				</Accordion>
-			))}
-		</div>
+					{FAQ.map((item, index) => (
+						<Accordion
+							key={index}
+							expanded={expanded === index}
+							onChange={handleChange(index)}
+							sx={{
+								mb: 2,
+								"&:before": {
+									display: "none",
+									borderRadius: "40%"
+								}
+							}}
+						>
+							<AccordionSummary
+								expandIcon={<ExpandMoreIcon style={{ color: "#041c94" }} />}
+								aria-controls={`faq${index}-content`}
+								id={`faq${index}-header`}
+								sx={{
+									minHeight: 56,
+									"& .MuiAccordionSummary-content": {
+										margin: "12px 0"
+									}
+								}}
+							>
+								<Typography variant="body1" sx={{ fontWeight: 700, color: "#1c222c" }}>
+									{t(item.question)}
+								</Typography>
+							</AccordionSummary>
+							<AccordionDetails>
+								<Typography sx={{ color: "#000000" }}>{t(item.answer)}</Typography>
+							</AccordionDetails>
+						</Accordion>
+					))}
+				</div>
+			</Row>
+		</Container>
 	);
 }

@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme, Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { Container, Row } from "react-bootstrap";
 
 const MultiItemCarousel = () => {
 	const theme = useTheme();
@@ -36,7 +37,7 @@ const MultiItemCarousel = () => {
 	const isRTL = i18n.language === "fa";
 
 	const cardStyles = {
-		maxWidth: isMobile ? "90%" : "600px",
+		maxWidth: isMobile ? "100%" : "500px",
 		width: "100%",
 		boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
 		borderRadius: 20,
@@ -80,69 +81,75 @@ const MultiItemCarousel = () => {
 	};
 
 	return (
-		<Box
+		<Container
 			style={{
 				padding: "0 20px",
 				marginBottom: "20px",
 				maxWidth: "2000px",
 				margin: "0 auto"
 			}}
-			sx={{ direction: isRTL ? "rtl" : "ltr", display: "flex", justifyContent: "center" }}
+			sx={{
+				direction: isRTL ? "rtl" : "ltr",
+				display: "flex",
+				justifyContent: "center"
+			}}
 		>
-			{isMobile || isTablet ? (
-				<Carousel variant="dark" style={{ maxWidth: "100%", margin: "auto" }}>
-					{items.map((item) => (
-						<Carousel.Item key={item.id}>
-							<div className="card" style={cardStyles}>
-								<img
-									src={item.imgSrc}
-									className="card-img-top"
-									alt={item.imgAlt}
-									style={imgStyles}
-								/>
-								<div className="card-body">
-									<h5 className="card-title" style={titleStyles}>
-										{item.title}
-									</h5>
-									<p className="card-text" style={descriptionStyles}>
-										{item.description}
-									</p>
-									<a href={item.link} style={linkStyles}>
-										{t("Blog.ReadMore")}
-									</a>
+			<Row>
+				{isMobile || isTablet ? (
+					<Carousel variant="dark" style={{ maxWidth: "100%", margin: "auto" }}>
+						{items.map((item) => (
+							<Carousel.Item key={item.id}>
+								<div className="card" style={cardStyles}>
+									<img
+										src={item.imgSrc}
+										className="card-img-top"
+										alt={item.imgAlt}
+										style={imgStyles}
+									/>
+									<div className="card-body">
+										<h5 className="card-title" style={titleStyles}>
+											{item.title}
+										</h5>
+										<p className="card-text" style={descriptionStyles}>
+											{item.description}
+										</p>
+										<a href={item.link} style={linkStyles}>
+											{t("Blog.ReadMore")}
+										</a>
+									</div>
 								</div>
-							</div>
-						</Carousel.Item>
-					))}
-				</Carousel>
-			) : (
-				<Box className="row" sx={{ display: "flex", justifyContent: "center" }}>
-					{items.map((item) => (
-						<Box key={item.id} sx={{ maxWidth: "33.33%", flex: "1 1 33.33%", padding: "10px" }}>
-							<div className="card" style={cardStyles}>
-								<img
-									src={item.imgSrc}
-									className="card-img-top"
-									alt={item.imgAlt}
-									style={imgStyles}
-								/>
-								<div className="card-body">
-									<h5 className="card-title" style={titleStyles}>
-										{item.title}
-									</h5>
-									<p className="card-text" style={descriptionStyles}>
-										{item.description}
-									</p>
-									<a href={item.link} style={linkStyles}>
-										{t("Blog.ReadMore")}
-									</a>
+							</Carousel.Item>
+						))}
+					</Carousel>
+				) : (
+					<Box className="row" sx={{ display: "flex", justifyContent: "center" }}>
+						{items.map((item) => (
+							<Box key={item.id} sx={{ maxWidth: "33.33%", flex: "1 1 33.33%", padding: "10px" }}>
+								<div className="card" style={cardStyles}>
+									<img
+										src={item.imgSrc}
+										className="card-img-top"
+										alt={item.imgAlt}
+										style={imgStyles}
+									/>
+									<div className="card-body">
+										<h5 className="card-title" style={titleStyles}>
+											{item.title}
+										</h5>
+										<p className="card-text" style={descriptionStyles}>
+											{item.description}
+										</p>
+										<a href={item.link} style={linkStyles}>
+											{t("Blog.ReadMore")}
+										</a>
+									</div>
 								</div>
-							</div>
-						</Box>
-					))}
-				</Box>
-			)}
-		</Box>
+							</Box>
+						))}
+					</Box>
+				)}
+			</Row>
+		</Container>
 	);
 };
 

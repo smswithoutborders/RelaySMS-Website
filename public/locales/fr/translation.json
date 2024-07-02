@@ -28,7 +28,8 @@
 		"RelaySMSMap": "RelaySMS est utilisé activement dans plus de 60 pays."
 	},
 	"Blog": {
-		"WhatsNew": "Quoi de neuf sur RelaySMS ?",
+		"BlogHeader": " Quoi de neuf sur RelaySMS?",
+		"BlogSubHeader": "Restez au courant des dernières nouvelles, des articles et des idées de RelaySMS",
 		"Resilience": "Résilience des clients Gateway dans SMSWithoutBorders",
 		"ResilienceD": "Le client Gateway dans SMSWithoutBorders est essentiel pour acheminer les messages des SMS vers les plateformes en ligne. Le client Gateway écoute les messages et les achemine vers le serveur Gateway, qui publie ...",
 		"ReliabilityD": "Le client Gateway dans SMSWithoutBorders est essentiel pour acheminer les messages des SMS vers les plateformes en ligne. Le client Gateway écoute les messages et les achemine vers le serveur Gateway, qui publie ...",
@@ -36,8 +37,8 @@
 		"ReadMore": "Lire la suite"
 	},
 	"FAQ": {
-		"FAQ": "FAQ",
-		"FAQ1": "RelaySMS est-il disponible sur mon appareil ?",
+		"FAQ": "Questions fréquemment posées",
+		"FAQSubheader": "Trouvez les réponses aux questions les plus courantes",
 		"faq1": "RelaySMS est actuellement disponible pour Android. Nous travaillons à étendre la compatibilité à d'autres plateformes.",
 		"FAQ2": "Comment envoyer un message hors ligne ?",
 		"faq2": "Choisissez la plateforme à laquelle vous souhaitez envoyer le message et rédigez votre message dans l'application. Notre centre d'aide propose également des ressources et des tutoriels sur l'envoi de messages via l'application.",
