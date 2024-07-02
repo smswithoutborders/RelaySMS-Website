@@ -32,25 +32,26 @@ const Landing = () => {
 					>
 						<h1 className="display-4 fw-bold mb-3 landing-header">{t("Landing.landingh1")}</h1>
 						<p className="lead mb-4 landing-subheader">{t("Landing.landingh2")}</p>
-						<div className="d-flex justify-content-center justify-content-md-start">
+						<div className="d-block d-md-flex justify-content-center justify-content-md-start text-center text-md-start">
 							<Button
 								href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 								target="_blank"
-								className="market-btn me-3 mb-3 mb-md-0 d-flex align-items-center"
+								className="market-btn mb-3 mb-md-0 d-flex align-items-center mx-auto mx-md-0"
 								size="lg"
 								style={{
 									backgroundColor: "#1c222c",
 									color: "#FFFFFF",
-									display: "flex",
-									justifyContent: "center"
+									justifyContent: "center",
+									width: "100%",
+									maxWidth: "300px"
 								}}
 							>
-								<div className="d-flex align-items-center">
+								<div className="d-flex align-items-center w-100 justify-content-center">
 									<img
 										src="/playstore.svg"
 										alt="Android"
 										className="img-fluid logo"
-										style={{ maxWidth: "50px", marginRight: "10px" }}
+										style={{ maxWidth: "40px", marginRight: "10px" }}
 									/>
 									<div className="text-start">
 										<span className="market-button-subtitle">Download on the</span>
@@ -63,21 +64,22 @@ const Landing = () => {
 							<Button
 								href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 								target="_blank"
-								className="market-btn me-3 mb-3 mb-md-0 d-flex align-items-center"
+								className="market-btn mb-3 mb-md-0 d-flex align-items-center mx-auto mx-md-0"
 								size="lg"
 								style={{
 									backgroundColor: "white",
 									color: "#1c222c",
-									display: "flex",
-									justifyContent: "center"
+									justifyContent: "center",
+									width: "100%",
+									maxWidth: "300px"
 								}}
 							>
-								<div className="d-flex align-items-center">
+								<div className="d-flex align-items-center w-100 justify-content-center">
 									<img
 										src="/desktop.svg"
 										alt="Desktop"
 										className="img-fluid logo"
-										style={{ maxWidth: "50px", marginRight: "10px" }}
+										style={{ maxWidth: "40px", marginRight: "10px" }}
 									/>
 									<div className="text-start">
 										<span className="market-button-subtitle">Download on the</span>
