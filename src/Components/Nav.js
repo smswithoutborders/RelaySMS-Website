@@ -78,7 +78,7 @@ export default function BackToTop(props) {
 		<ThemeProvider theme={themeWithDirection}>
 			<React.Fragment>
 				<CssBaseline />
-				<AppBar sx={{ backgroundColor: "white" }} dir={direction}>
+				<AppBar dir={direction} sx={{ backgroundColor: "white" }} elevation={0}>
 					<Toolbar>
 						<Box
 							sx={{
@@ -86,8 +86,7 @@ export default function BackToTop(props) {
 								alignItems: "center",
 								flexGrow: 1,
 								justifyContent: "space-between",
-								color: "black",
-								className: "navbar"
+								color: "black"
 							}}
 							dir={direction}
 						>
