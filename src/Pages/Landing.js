@@ -21,41 +21,83 @@ const Landing = () => {
 
 	return (
 		<PageAnimationWrapper>
-			<Container fluid className="p-5 bg-light">
+			<Container fluid className="p-1">
 				{/* Hero Section */}
-				<Row className="justify-content-center align-items-center py-5 header-row">
+				<Row className="justify-content-center align-items-center py-5 mt-1 header-row">
 					<Col
 						md={8}
-						lg={6} // Adjust the width to 4/12 on large devices
-						xl={4} // Adjust the width to 3/12 on extra-large devices
-						className={`text-center ${isRTL ? "text-end" : "text-start"} pt-10 pb-5 px-3`}
+						lg={6}
+						xl={4}
+						className={`text-center ${isRTL ? "text-end" : "text-start"} pb-5 px-3`}
 					>
 						<h1 className="display-4 fw-bold mb-3 landing-header">{t("Landing.landingh1")}</h1>
 						<p className="lead mb-4 landing-subheader">{t("Landing.landingh2")}</p>
 						<div className="d-flex justify-content-center justify-content-md-start">
-							<Button variant="primary" size="lg" className="me-3 mb-3 mb-md-0">
-								<img
-									src="/playstore.svg"
-									alt="Android"
-									className="img-fluid me-2"
-									style={{ width: 24, height: 24 }}
-								/>
-								{t("Landing.Android")}
+							<Button
+								href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
+								target="_blank"
+								className="market-btn me-3 mb-3 mb-md-0"
+								size="lg"
+								style={{ backgroundColor: "#1c222c", color: "#FFFFFF" }}
+							>
+								<Row className="align-items-center">
+									<Col
+										md={8}
+										lg={6}
+										xl={4}
+										className={`text-center ${isRTL ? "text-end" : "text-start"}`}
+									>
+										<img src="/playstore.svg" alt="Android" className="img-fluid logo" />
+									</Col>
+									<Col
+										md={6}
+										lg={4}
+										xl={2}
+										className={`text-center ${isRTL ? "text-end" : "text-start"}`}
+										style={{ flex: 1, width: "inherit" }}
+									>
+										<span className="market-button-subtitle">Download on the</span>
+										<br />
+										<span className="market-button-title">{t("Landing.Android")}</span>
+									</Col>
+								</Row>
 							</Button>
-							<Button variant="outline-secondary" size="lg">
-								<img
-									src="/desktop.svg"
-									alt="Desktop"
-									className="img-fluid me-2"
-									style={{ width: 24, height: 24 }}
-								/>
-								{t("Landing.Desktop")}
+							{/* second button */}
+							{/*  */}
+							<Button
+								href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
+								target="_blank"
+								className="market-btn me-3 mb-3 mb-md-0"
+								size="lg"
+								style={{ backgroundColor: "white", color: "#1c222c" }}
+							>
+								<Row className="align-items-center">
+									<Col
+										md={8}
+										lg={6}
+										xl={4}
+										className={`text-center ${isRTL ? "text-end" : "text-start"}`}
+									>
+										<img src="/desktop.svg" alt="Android" className="img-fluid logo" />
+									</Col>
+									<Col
+										md={6}
+										lg={4}
+										xl={2}
+										className={`text-center ${isRTL ? "text-end" : "text-start"}`}
+										style={{ flex: 1, width: "inherit" }}
+									>
+										<span className="market-button-subtitle">Download on the</span>
+										<br />
+										<span className="market-button-title">{t("Landing.Desktop")}</span>
+									</Col>
+								</Row>
 							</Button>
 						</div>
 					</Col>
 
 					<Col md={6} className="text-center">
-						<img src="/phone3.png" alt="Hero" className="hero-image" />
+						<img src="/phone1.png" alt="Hero" className="hero-image" />
 					</Col>
 				</Row>
 
