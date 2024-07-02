@@ -29,7 +29,8 @@
 		"RelaySMSMap": "RelaySMS is actively used in over 60 countries."
 	},
 	"Blog": {
-		"WhatsNew": "Whats New on RelaySMS?",
+		"BlogHeader": "Whats New on RelaySMS?",
+		"BlogSubHeader": "Stay updated with the latest news, articles, and insights from RelaySMS.",
 		"Resilience": "Resilience Of Gateway Clients In Smswithoutborders",
 		"ResilienceD": "Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online platforms. The Gateway Client listens for messages and routes them to the Gateway server, which publishes ...",
 		"ReliabilityD": "Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online platforms. The Gateway Client listens for messages and routes them to the Gateway server, which publishes ...",
@@ -37,7 +38,8 @@
 		"ReadMore": "Read More"
 	},
 	"FAQ": {
-		"FAQ": "FAQ",
+		"FAQ": "Frequently Asked Questions",
+		"FAQSubheader": "Find answers to the most common questions.",
 		"FAQ1": "Is RelaySMS available on my device?",
 		"faq1": "RelaySMS is currently available for Android. We are working on expanding compatibility to other platforms.",
 		"FAQ2": "How do I send an offline message? ",
