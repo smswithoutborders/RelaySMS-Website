@@ -1,163 +1,229 @@
-import { Typography, Box, IconButton, Grid } from "@mui/material";
-import React from "react";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
+import * as React from "react";
+import PropTypes from "prop-types";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import CssBaseline from "@mui/material/CssBaseline";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import Box from "@mui/material/Box";
+import Fab from "@mui/material/Fab";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import Fade from "@mui/material/Fade";
+import IconButton from "@mui/material/IconButton";
+import MenuItem from "@mui/material/MenuItem";
+import MenuIcon from "@mui/icons-material/Menu";
+import Menu from "@mui/material/Menu";
+import { useTheme, createTheme, ThemeProvider } from "@mui/material/styles";
+import { useTranslation } from "react-i18next";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import LanguageSwitcher from "../Components/LanguageSwitcher";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import "../App.css";
 
-export default function Nav({ darkMode, toggleDarkMode }) {
-  return (
-    <>
-      <Box
-        component="nav"
-        sx={{
-          display: { md: "flex", xs: "none", sm: "flex" },
-          justifyContent: "end",
-          py: 3,
-          mx: 5,
-          right: 0,
-          color: "white",
-        }}
-      >
-        <Box sx={{ display: "flex" }}>
-          <Box
-            className="cards"
-            sx={{
-              display: "flex",
+function ScrollTop(props) {
+	const { children, window } = props;
+	const trigger = useScrollTrigger({
+		target: window ? window() : undefined,
+		disableHysteresis: true,
+		threshold: 100
+	});
 
-              borderRadius: 7,
-              p: 1,
-              px: 2,
-              justifyItems: "space-between",
-            }}
-          >
-            <a href="/">
-              <Typography sx={{ mx: 4 }} textAlign={"center"}>
-                Overview
-              </Typography>
-            </a>
-            <a href="/help">
-              <Typography sx={{ mx: 4 }} textAlign={"center"}>
-                Help
-              </Typography>
-            </a>
-            <a
-              href="https://developers.smswithoutborders.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Typography sx={{ mr: 4 }} textAlign={"center"}>
-                Documentations
-              </Typography>
-            </a>
-            <a
-              href="https://blog.smswithoutborders.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Typography sx={{ mr: 4 }} textAlign={"center"}>
-                Blog
-              </Typography>
-            </a>
-          </Box>
-          <Typography
-            className="cards"
-            sx={{ borderRadius: 7, px: 3, py: 1, ml: 2 }}
-          >
-            Donate
-          </Typography>
-          {/* Dark/Light mode toggle */}
-          <IconButton
-            className="cards"
-            onClick={toggleDarkMode}
-            sx={{ ml: 2 }}
-            aria-label={darkMode ? "Light Mode" : "Dark Mode"}
-            color="inherit"
-          >
-            {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
-          </IconButton>
-        </Box>
-      </Box>
-      {/*  */}
-      <Box
-        maxWidth="xs"
-        component="nav"
-        sx={{
-          display: { md: "none", xs: "block", sm: "none" },
-          justifyContent: "space-between",
-          py: { md: 3, xs: 2 },
-          mx: 1,
+	const handleClick = (event) => {
+		const anchor = (event.target.ownerDocument || document).querySelector("#back-to-top-anchor");
+		if (anchor) {
+			anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+		}
+	};
 
-          color: "white",
-        }}
-      >
-        <Grid container>
-          <Grid item xs={12} sx={{ display: "flex" }}>
-            <Box
-              className="cards"
-              sx={{
-                display: "flex",
+	return (
+		<Fade in={trigger}>
+			<Box
+				onClick={handleClick}
+				role="presentation"
+				sx={{ position: "fixed", bottom: 16, right: 16 }}
+			>
+				{children}
+			</Box>
+		</Fade>
+	);
+}
 
-                borderRadius: 7,
-                p: 1,
-                px: 2,
-                justifyItems: "space-between",
-              }}
-            >
-              <a href="/help">
-                <Typography
-                  variant="body2"
-                  sx={{ mx: 1, fontSize: "13px" }}
-                  textAlign={"center"}
-                >
-                  Help
-                </Typography>
-              </a>
-              <a
-                href="https://developers.smswithoutborders.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Typography
-                  variant="body2"
-                  sx={{ mr: 1, fontSize: "13px" }}
-                  textAlign={"center"}
-                >
-                  Documentations
-                </Typography>
-              </a>
-              <a
-                href="https://blog.smswithoutborders.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Typography
-                  variant="body2"
-                  sx={{ mr: 1, fontSize: "13px" }}
-                  textAlign={"center"}
-                >
-                  Blog
-                </Typography>
-              </a>
-            </Box>
-            <Typography
-              variant="body2"
-              className="cards"
-              sx={{ borderRadius: 5, px: 2, py: 1, ml: 1 }}
-            >
-              Donate
-            </Typography>
-            {/* Dark/Light mode toggle */}
-            <IconButton
-              className="cards"
-              onClick={toggleDarkMode}
-              sx={{ ml: 1 }}
-              aria-label={darkMode ? "Light Mode" : "Dark Mode"}
-              color="inherit"
-            >
-              {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton>
-          </Grid>
-        </Grid>
-      </Box>
-    </>
-  );
+ScrollTop.propTypes = {
+	children: PropTypes.element.isRequired,
+	window: PropTypes.func
+};
+
+export default function BackToTop(props) {
+	const { t, i18n } = useTranslation();
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+	const [anchorEl, setAnchorEl] = React.useState(null);
+
+	const handleMenu = (event) => {
+		setAnchorEl(event.currentTarget);
+	};
+
+	const handleClose = () => {
+		setAnchorEl(null);
+	};
+
+	const direction = i18n.dir();
+	const themeWithDirection = createTheme({
+		direction: direction
+	});
+
+	return (
+		<ThemeProvider theme={themeWithDirection}>
+			<React.Fragment>
+				<CssBaseline />
+				<AppBar dir={direction} sx={{ backgroundColor: "white" }} elevation={0}>
+					<Toolbar>
+						<Box
+							sx={{
+								display: "flex",
+								alignItems: "center",
+								flexGrow: 1,
+								justifyContent: "space-between",
+								color: "black"
+							}}
+							dir={direction}
+						>
+							<img
+								src="./logo.png"
+								alt="Logo"
+								style={{ height: "40px", marginRight: "16px", color: "#1c222c" }}
+							/>
+							{isMobile ? (
+								<>
+									<IconButton
+										edge="start"
+										color="inherit"
+										aria-label="menu"
+										onClick={handleMenu}
+										sx={{ padding: "20px", color: "black" }}
+									>
+										<MenuIcon />
+									</IconButton>
+									<Menu
+										dir={direction}
+										id="menu-appbar"
+										anchorEl={anchorEl}
+										anchorOrigin={{
+											vertical: "top",
+											horizontal: direction === "rtl" ? "left" : "right"
+										}}
+										keepMounted
+										transformOrigin={{
+											vertical: "top",
+											horizontal: direction === "rtl" ? "left" : "right"
+										}}
+										open={Boolean(anchorEl)}
+										onClose={handleClose}
+									>
+										<MenuItem onClick={handleClose}>
+											<a
+												href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+												target="_blank"
+												rel="noreferrer noopener"
+												className="menu-link"
+											>
+												{t("Nav.help")}
+											</a>
+										</MenuItem>
+
+										<MenuItem onClick={handleClose}>
+											<a
+												href="https://blog.smswithoutborders.com/"
+												target="_blank"
+												rel="noreferrer"
+												className="menu-link"
+											>
+												{t("Nav.Blog")}
+											</a>
+										</MenuItem>
+										<MenuItem onClick={handleClose}>
+											<IconButton
+												href="https://x.com/RelaySMS"
+												target="_blank"
+												rel="noopener noreferrer"
+												color="inherit"
+											>
+												<TwitterIcon />
+											</IconButton>
+										</MenuItem>
+										<MenuItem onClick={handleClose}>
+											<IconButton
+												href="https://github.com/smswithoutborders"
+												target="_blank"
+												rel="noopener noreferrer"
+												color="inherit"
+											>
+												<GitHubIcon />
+											</IconButton>
+										</MenuItem>
+										<MenuItem onClick={handleClose}>
+											<LanguageSwitcher />
+										</MenuItem>
+									</Menu>
+								</>
+							) : (
+								<Box
+									component="nav"
+									sx={{
+										display: "flex",
+										alignItems: "center",
+										gap: 2,
+										ml: "auto"
+									}}
+									dir={direction}
+								>
+									<a
+										href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+										target="_blank"
+										rel="noreferrer noopener"
+										className="menu-link"
+									>
+										<Typography>{t("Nav.help")}</Typography>
+									</a>
+									<a
+										href="https://blog.smswithoutborders.com/"
+										target="_blank"
+										rel="noreferrer"
+										className="menu-link"
+									>
+										<Typography>{t("Nav.Blog")}</Typography>
+									</a>
+									<IconButton
+										href="https://x.com/RelaySMS"
+										target="_blank"
+										rel="noopener noreferrer"
+										color="inherit"
+									>
+										<TwitterIcon />
+									</IconButton>
+									<IconButton
+										href="https://github.com/smswithoutborders"
+										target="_blank"
+										rel="noopener noreferrer"
+										color="inherit"
+									>
+										<GitHubIcon />
+									</IconButton>
+									<LanguageSwitcher />
+								</Box>
+							)}
+						</Box>
+					</Toolbar>
+				</AppBar>
+				<Toolbar id="back-to-top-anchor" />
+				<ScrollTop {...props}>
+					<Fab size="small" aria-label="scroll back to top">
+						<KeyboardArrowUpIcon />
+					</Fab>
+				</ScrollTop>
+			</React.Fragment>
+		</ThemeProvider>
+	);
 }

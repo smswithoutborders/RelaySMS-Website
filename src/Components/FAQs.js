@@ -1,90 +1,89 @@
 import * as React from "react";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
+import { Accordion, AccordionSummary, AccordionDetails, Typography } from "@mui/material";
+import { Container, Row } from "react-bootstrap";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Fade from "@mui/material/Fade";
-import { Box } from "@mui/material";
+import { useTranslation } from "react-i18next";
+
+const FAQ = [
+	{
+		question: "FAQ.FAQ1",
+		answer: "FAQ.faq1"
+	},
+	{
+		question: "FAQ.FAQ2",
+		answer: "FAQ.faq2"
+	},
+	{
+		question: "FAQ.FAQ3",
+		answer: "FAQ.faq3"
+	},
+	{
+		question: "FAQ.FAQ4",
+		answer: "FAQ.faq4"
+	},
+	{
+		question: "FAQ.FAQ5",
+		answer: "FAQ.faq5"
+	}
+];
 
 export default function Faqs() {
-  const [expanded, setExpanded] = React.useState(false);
+	const [expanded, setExpanded] = React.useState(false);
+	const { t, i18n } = useTranslation();
+	const isRTL = i18n.dir() === "rtl";
 
-  const handleExpansion = () => {
-    setExpanded((prevExpanded) => !prevExpanded);
-  };
+	const handleChange = (panel) => (event, isExpanded) => {
+		setExpanded(isExpanded ? panel : false);
+	};
 
-  return (
-    <Box>
-      <Accordion
-        expanded={expanded}
-        onChange={handleExpansion}
-        slots={{ transition: Fade }}
-        slotProps={{ transition: { timeout: 400 } }}
-        sx={{
-          "& .MuiAccordion-region": { height: expanded ? "auto" : 0 },
-          "& .MuiAccordionDetails-root": {
-            display: expanded ? "block" : "none",
-          },
-        }}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1-content"
-          id="panel1-header"
-        >
-          <Typography variant="body1" sx={{ fontWeight: 700 }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            dignissim purus eu nunc ullamcorper, vel convallis ante tincidunt.
-            Vivamus lacinia, lacus nec tristique bibendum, velit libero
-            consequat purus, ut finibus ex lectus eget nisi. Nulla facilisi.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2-content"
-          id="panel2-header"
-        >
-          <Typography variant="body1" sx={{ fontWeight: 700 }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            dignissim purus eu nunc ullamcorper, vel convallis ante tincidunt.
-            Vivamus lacinia, lacus nec tristique bibendum, velit libero
-            consequat purus, ut finibus ex lectus eget nisi. Nulla facilisi.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      {/*  */}
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2-content"
-          id="panel2-header"
-        >
-          <Typography variant="body1" sx={{ fontWeight: 700 }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            dignissim purus eu nunc ullamcorper, vel convallis ante tincidunt.
-            Vivamus lacinia, lacus nec tristique bibendum, velit libero
-            consequat purus, ut finibus ex lectus eget nisi. Nulla facilisi.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-    </Box>
-  );
+	return (
+		<Container>
+			<Row>
+				<div
+					style={{
+						padding: "20px",
+						maxWidth: "100%",
+						margin: "0 auto",
+						color: "#f5f5f5",
+						borderRadius: 2,
+						direction: isRTL ? "rtl" : "ltr"
+					}}
+				>
+					{FAQ.map((item, index) => (
+						<Accordion
+							key={index}
+							expanded={expanded === index}
+							onChange={handleChange(index)}
+							sx={{
+								mb: 2,
+								"&:before": {
+									display: "none",
+									borderRadius: "40%"
+								}
+							}}
+						>
+							<AccordionSummary
+								expandIcon={<ExpandMoreIcon style={{ color: "#041c94" }} />}
+								aria-controls={`faq${index}-content`}
+								id={`faq${index}-header`}
+								sx={{
+									minHeight: 56,
+									"& .MuiAccordionSummary-content": {
+										margin: "12px 0"
+									}
+								}}
+							>
+								<Typography variant="body1" sx={{ fontWeight: 700, color: "#1c222c" }}>
+									{t(item.question)}
+								</Typography>
+							</AccordionSummary>
+							<AccordionDetails>
+								<Typography sx={{ color: "#000000" }}>{t(item.answer)}</Typography>
+							</AccordionDetails>
+						</Accordion>
+					))}
+				</div>
+			</Row>
+		</Container>
+	);
 }
