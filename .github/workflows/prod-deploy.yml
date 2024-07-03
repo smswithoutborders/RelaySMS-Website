@@ -1,4 +1,4 @@
-name: Deploy SMSWithoutBorders RelaySMS on Server (production)
+name: Deploy SMSWithoutBorders Relay Homepage on Server (production)
 on:
   push:
     branches:
@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://relaysms.smswithoutborders.com
+      url: https://relay.smswithoutborders.com
     steps:
       - name: Checkout Git Repository
         uses: actions/checkout@v4
