@@ -52,11 +52,11 @@ const MultiItemCarousel = () => {
 	};
 
 	const imgStyles = {
-		width: "100%",
+		width: "60%",
 		height: "auto",
 		objectFit: "cover",
-		borderTopLeftRadius: 20,
-		borderTopRightRadius: 20
+		borderTopLeftRadius: 10,
+		borderTopRightRadius: 10
 	};
 
 	const titleStyles = {

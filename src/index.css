@@ -6,7 +6,7 @@
 }
 
 /* -----------------------------responsive design--------------------------------------------- */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
 	.how-it-works-section {
 		padding-top: 55%;
 		padding-bottom: 10%;
@@ -27,4 +27,56 @@
 		margin: auto;
 		margin-bottom: 10%;
 	}
+} */
+
+/* Adjusting the hero text for different screen sizes */
+.landing-header {
+	font-size: calc(2.5rem + 1.5vw); /* Adjusts based on viewport size */
+	font-weight: bold;
+}
+
+@media (max-width: 768px) {
+	.landing-header {
+		font-size: 2rem; /* Smaller font for small screens */
+	}
+}
+
+.landing-subheader {
+	font-size: calc(1.25rem + 0.5vw);
+	margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+	.landing-subheader {
+		font-size: 1rem; /* Smaller font for small screens */
+	}
+}
+
+.section-header {
+	font-size: calc(1.875rem + 1.5vw);
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+	.section-header {
+		font-size: 1.5rem; /* Smaller font for small screens */
+	}
+}
+
+.section-subheader {
+	font-size: calc(1.1rem + 0.5vw);
+}
+
+@media (max-width: 768px) {
+	.section-subheader {
+		font-size: 1rem; /* Smaller font for small screens */
+	}
+}
+
+.market-btn {
+	width: 100%;
+	max-width: 300px;
+	margin-bottom: 1rem;
 }
