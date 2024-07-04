@@ -3,8 +3,10 @@
 		"landingh1a": "Keep",
 		"landingh1": " Keep Talking with RelaySMS",
 		"landingh2": "Send emails, posts, and messages via SMS without needing an internet connection. This ensures that you can stay connected and share important information even in areas with limited or no internet access.",
-		"Android": "Android App",
-		"Desktop": "Desktop App"
+		"Android": "PlayStore",
+		"AndroidSub": "Download from",
+		"Desktop": "Desktop",
+		"DesktopSub": "Download on"
 	},
 	"Nav": {
 		"Home": "Home",

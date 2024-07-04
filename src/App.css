@@ -177,39 +177,112 @@ button:hover {
 
 /* ================================================================ */
 
-.header-row {
-	border-bottom-left-radius: 50px;
-	border-bottom-right-radius: 50px;
-	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-	background-color: #f6f8fb;
-	padding-top: 20px;
+/* ============================================== */
+.hero-content {
+	text-align: left;
+	padding: 20px;
+}
+
+.hero-content h1 {
+	font-size: 2.5rem;
+	font-weight: bold;
 	margin-bottom: 20px;
+	color: #333;
+	animation: fadeIn 1s ease-in-out;
+}
+
+.hero-content p {
+	font-size: 1.25rem;
+	margin-bottom: 20px;
+	color: #555;
+	animation: fadeIn 1.5s ease-in-out;
+}
+
+.button-icon {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+	.hero-content {
+		text-align: center;
+	}
+
+	.hero-content h1 {
+		font-size: 2rem;
+	}
+
+	.hero-content p {
+		font-size: 1rem;
+	}
+
+	.button-icon {
+		width: 18px;
+		height: 18px;
+	}
+}
+
+img.rotated {
+	transform: rotate(-10deg);
+	animation: rotateIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes rotateIn {
+	from {
+		transform: rotate(-30deg);
+		opacity: 0;
+	}
+	to {
+		transform: rotate(-10deg);
+		opacity: 1;
+	}
+}
+
+.hero-container {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+.btn .button-subtitle {
+	font-size: 0.75rem;
+	line-height: 1;
+}
+
+.btn .button-title {
+	font-size: 1.25rem;
+	line-height: 1;
 }
 
 .hero-image {
-	width: 100%;
-	max-width: 350px;
-	border-radius: 50px;
-	margin: 0 auto;
-	display: block;
-	height: inherit;
-}
-/* ============================================== */
-
-.logo {
-	width: 5rem;
-	margin-right: 0.1rem;
+	max-width: 100%;
+	animation: fadeIn 2s ease-in-out;
 }
 
-.market-btn .market-button-title {
-	font-size: 1.15rem;
+.header-row {
+	text-align: center;
 }
 
-.market-btn .market-button-subtitle {
-	font-size: 0.8rem;
+.button-wrapper {
+	margin-bottom: 15px;
 }
 
-.market-btn:hover {
-	background-color: #f7f7f7;
-	text-decoration: none;
+@media (min-width: 768px) {
+	.button-wrapper {
+		margin-right: 15px;
+	}
+
+	.button-wrapper:last-child {
+		margin-right: 0;
+	}
 }

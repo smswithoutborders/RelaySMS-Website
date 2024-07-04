@@ -48,15 +48,19 @@ const MultiItemCarousel = () => {
 			transform: "scale(1.02)",
 			boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
 			border: "1px solid #8AC1EE"
-		}
+		},
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center"
 	};
 
 	const imgStyles = {
 		width: "60%",
-		height: "auto",
+		height: "100%",
 		objectFit: "cover",
 		borderTopLeftRadius: 10,
-		borderTopRightRadius: 10
+		borderTopRightRadius: 10,
+		margin: "0 auto"
 	};
 
 	const titleStyles = {
