@@ -101,30 +101,14 @@ const Landing = () => {
 					</Col>
 				</Row>
 
-				{/* How It Works Section */}
-				<Row className="justify-content-center mb-4">
-					<Col xs={12}>
-						<h2
-							className={`text-center section-header ${isRTL ? "text-end" : "text-start"}`}
-							style={{
-								fontSize: "calc(1.875rem + 1.5vw)",
-								fontWeight: "bold",
-								padding: "10px",
-								borderRadius: "10px"
-							}}
-						>
-							{t("Howitworks.HowItWorks")}
-						</h2>
-						<p
-							className={`text-center section-subheader ${isRTL ? "text-end" : "text-start"}`}
-							style={{ fontSize: "calc(1.10rem + 0.5vw)" }}
-						>
-							{t("Howitworks.HowItWorksSubtitle")}
-						</p>
+				{/* ============= How It Works Section =========================== */}
+				<Row className="header-row text-center py-5">
+					<Col>
+						<h1 className="header-title">{t("Howitworks.HowItWorks")}</h1>
+						<p className="subheader-text">{t("Howitworks.HowItWorksSubtitle")}</p>
 					</Col>
 				</Row>
-
-				{/* Cards Section */}
+				{/* ============================ Cards Section=====================  */}
 				<Row className="justify-content-center mb-4 card-row">
 					{cardContent.map((card, idx) => (
 						<Col xs={10} sm={6} lg={4} key={idx} className="mb-4">
@@ -169,6 +153,40 @@ const Landing = () => {
 						</div>
 					</Col>
 				</Row>
+
+				{/* =================================== */}
+
+				<Row className="card-row mb-4 py-5 mt-1">
+					<div className="header-row text-center">
+						<h1 className="header-title">{t("Howitworks.HowItWorks")}</h1>
+						<p className="subheader-text">{t("Howitworks.HowItWorksSubtitle")}</p>
+					</div>
+					{cardContent.map((card, idx) => (
+						<Col xs={12} sm={6} lg={4} key={idx} className="mb-4">
+							<Card className="custom-card shadow-sm border-0" data-aos="zoom-in">
+								<Card.Img
+									variant="top"
+									src={card.imageSrc}
+									alt={card.key}
+									className="custom-card-img"
+									style={{ height: "200px", objectFit: "cover" }}
+								/>
+								<Card.Body className="d-flex flex-column custom-card-body">
+									<Card.Title className={`custom-card-title ${isRTL ? "text-end" : "text-start"}`}>
+										{t(`Howitworks.${card.title}`)}
+									</Card.Title>
+									<Card.Text
+										className={`custom-card-text flex-grow-1 ${isRTL ? "text-end" : "text-start"}`}
+									>
+										{t(`Howitworks.${card.key}`)}
+									</Card.Text>
+								</Card.Body>
+							</Card>
+						</Col>
+					))}
+				</Row>
+
+				{/* ============================== */}
 
 				{/* Blog Section */}
 				<Row className="justify-content-center mb-4">
