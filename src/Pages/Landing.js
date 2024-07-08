@@ -148,19 +148,19 @@ export default function Landing() {
 					))}
 				</Row>
 
-				<Row>
+				<Row style={{ marginTop: "20px" }}>
 					<Col xs={12}>
-						<div className="text-center p-1">
+						<div className="text-center p-1 howitworks">
 							<a
 								href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
 								target="_blank"
 								rel="noreferrer noopener"
-								style={{ textDecoration: "none" }}
+								style={{ textDecoration: "none", fontSize: "25px" }}
 							>
 								{t("Howitworks.GettingStartedButton")}
 								<FaArrowCircleRight
 									size="20px"
-									style={{ marginLeft: "8px", transform: "rotate(-30deg)" }}
+									style={{ marginLeft: "10px", transform: "rotate(-30deg)" }}
 								/>
 							</a>
 						</div>

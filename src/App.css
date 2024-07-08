@@ -254,6 +254,18 @@ button:hover {
 	text-align: center !important;
 }
 
+/*======================= how it works button ========================*/
+
+.howitworksbutton {
+	text-decoration: none;
+	font-size: 16px;
+	color: inherit; /* Keeps the original color */
+	transition: color 0.3s ease; /* Smooth transition for the color change */
+}
+.howitworksbutton:hover {
+	color: #007bff;
+}
+
 /* ===================== blog carousel ============================ */
 .centered-carousel {
 	display: flex;
