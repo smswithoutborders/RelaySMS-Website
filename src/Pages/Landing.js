@@ -91,13 +91,9 @@ export default function Landing() {
 							</Button>
 						</div>
 					</Col>
-					<Col lg={4} md={6} sm={12} xs={12} className="hero-image-container">
-						<div className="hero-img-box">
-							<img
-								src="/phone3.png"
-								alt="Woman enjoying food, meals in storage container, and food bowls on a table"
-								className="hero-img"
-							/>
+					<Col lg={4} md={6} sm={12} xs={12} className="hero-image-container ">
+						<div className="hero-img-box move-down-sm">
+							<img src="/phone3.png" alt="Relaysms App" className="hero-img" />
 						</div>
 					</Col>
 				</Row>
