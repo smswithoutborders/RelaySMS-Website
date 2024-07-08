@@ -21,8 +21,14 @@ export default function Landing() {
 
 	return (
 		<PageAnimationWrapper>
-			<Container fluid className="p-1" dir={isRTL ? "rtl" : "ltr"}>
-				<Row className="justify-content-center align-items-center py-5 mt-1 hero-row">
+			<Container
+				dir={isRTL ? "rtl" : "ltr"}
+				sx={{
+					pt: 4,
+					pb: { xs: 10, md: 10 }
+				}}
+			>
+				<Row>
 					<Col lg={8} md={6} sm={12} xs={12} className="hero-text-container hero-text-box">
 						<h1 className="heading-primary">{t("Landing.landingh1")}</h1>
 						<p className="hero-description">{t("Landing.landingh2")}</p>

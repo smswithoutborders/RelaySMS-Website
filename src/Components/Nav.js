@@ -10,15 +10,16 @@ import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Fade from "@mui/material/Fade";
 import IconButton from "@mui/material/IconButton";
-import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import { useTheme, createTheme, ThemeProvider } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import CloseIcon from "@mui/icons-material/Close";
 import "../App.css";
 
 function ScrollTop(props) {
@@ -60,13 +61,16 @@ export default function BackToTop(props) {
 	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
 	const [anchorEl, setAnchorEl] = React.useState(null);
+	const [menuOpen, setMenuOpen] = React.useState(false); // State for menu open/close
 
 	const handleMenu = (event) => {
 		setAnchorEl(event.currentTarget);
+		setMenuOpen(true); // Open the menu
 	};
 
 	const handleClose = () => {
 		setAnchorEl(null);
+		setMenuOpen(false); // Close the menu
 	};
 
 	const direction = i18n.dir();
@@ -97,15 +101,27 @@ export default function BackToTop(props) {
 							/>
 							{isMobile ? (
 								<>
-									<IconButton
-										edge="start"
-										color="inherit"
-										aria-label="menu"
-										onClick={handleMenu}
-										sx={{ padding: "20px", color: "black" }}
-									>
-										<MenuIcon />
-									</IconButton>
+									{menuOpen ? ( // Show close button if menu is open
+										<IconButton
+											edge="start"
+											color="inherit"
+											aria-label="close"
+											onClick={handleClose}
+											sx={{ padding: "20px", color: "black" }}
+										>
+											<CloseIcon />
+										</IconButton>
+									) : (
+										<IconButton
+											edge="start"
+											color="inherit"
+											aria-label="menu"
+											onClick={handleMenu}
+											sx={{ padding: "20px", color: "black" }}
+										>
+											<MenuIcon />
+										</IconButton>
+									)}
 									<Menu
 										dir={direction}
 										id="menu-appbar"
@@ -132,7 +148,6 @@ export default function BackToTop(props) {
 												{t("Nav.help")}
 											</a>
 										</MenuItem>
-
 										<MenuItem onClick={handleClose}>
 											<a
 												href="https://blog.smswithoutborders.com/"
