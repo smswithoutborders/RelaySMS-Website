@@ -21,14 +21,8 @@ export default function Landing() {
 
 	return (
 		<PageAnimationWrapper>
-			<Container
-				dir={isRTL ? "rtl" : "ltr"}
-				sx={{
-					pt: 4,
-					pb: { xs: 10, md: 10 }
-				}}
-			>
-				<Row>
+			<Container fluid className="p-1" dir={isRTL ? "rtl" : "ltr"}>
+				<Row className="justify-content-center align-items-center py-5 mt-1 hero-row">
 					<Col lg={8} md={6} sm={12} xs={12} className="hero-text-container hero-text-box">
 						<h1 className="heading-primary">{t("Landing.landingh1")}</h1>
 						<p className="hero-description">{t("Landing.landingh2")}</p>
@@ -104,7 +98,7 @@ export default function Landing() {
 				<Row className="justify-content-center mb-2">
 					<Col xs={12}>
 						<h2
-							className="text-center"
+							className="text-center move-down-sm"
 							style={{ fontSize: "calc(1.875rem + 1.5vw)", fontWeight: "bold" }}
 						>
 							{t("Howitworks.HowItWorks")}
@@ -189,40 +183,47 @@ export default function Landing() {
 				{/* Blog section */}
 				<Row
 					fluid="lg"
-					sx={{ position: "relative", marginTop: 4, direction: isRTL ? "rtl" : "ltr" }}
+					sx={{
+						position: "relative",
+						backgroundColor: "#f0f0f0",
+						padding: "20px",
+						marginBottom: 10,
+						direction: isRTL ? "rtl" : "ltr"
+					}}
 				>
-					<Typography
-						align="center"
-						variant="h4"
-						sx={{
+					<h2
+						style={{
 							fontWeight: 700,
-							fontSize: { xs: "25px", md: "33px" },
-							mb: 2,
+							fontSize: "33px",
+							marginTop: "40px",
 							textAlign: isRTL ? "right" : "center"
 						}}
 					>
-						{t("Blog.WhatsNew")}
-					</Typography>
+						{t("Blog.BlogHeader")}
+					</h2>
 					<Blog />
 				</Row>
 
 				{/* FAQ section */}
 				<Row
 					fluid="lg"
-					sx={{ position: "relative", marginTop: 4, direction: isRTL ? "rtl" : "ltr" }}
+					sx={{
+						position: "relative",
+						marginTop: 4,
+						backgroundColor: "#e0e0e0",
+						direction: isRTL ? "rtl" : "ltr"
+					}}
 				>
-					<Typography
-						align="center"
-						variant="h4"
-						sx={{
+					<h2
+						style={{
 							fontWeight: 700,
 							fontSize: { xs: "25px", md: "33px" },
-							mb: 2,
+							marginTop: "40px",
 							textAlign: isRTL ? "right" : "center"
 						}}
 					>
 						{t("FAQ.FAQ")}
-					</Typography>
+					</h2>
 					<Faqs />
 				</Row>
 			</Container>

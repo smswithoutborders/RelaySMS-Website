@@ -90,7 +90,8 @@ const MultiItemCarousel = () => {
 				padding: "0 20px",
 				marginBottom: "20px",
 				maxWidth: "2000px",
-				margin: "0 auto"
+				margin: "0 auto",
+				direction: isRTL ? "rtl" : "ltr"
 			}}
 			sx={{
 				direction: isRTL ? "rtl" : "ltr",
