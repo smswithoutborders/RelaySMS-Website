@@ -167,7 +167,7 @@ button:hover {
 
 .heading-primary {
 	font-size: 2.5rem;
-	color: #549ff5;
+	color: #367ed0;
 	font-weight: 700;
 	letter-spacing: -0.5px;
 	line-height: 1.2;
@@ -202,7 +202,7 @@ button:hover {
 	}
 }
 
-.hero-img {
+/* .hero-img {
 	width: 100%;
 	height: auto;
 	margin-top: 2rem;
@@ -210,7 +210,7 @@ button:hover {
 	@media (min-width: 992px) {
 		margin-top: 5.6rem;
 	}
-}
+} */
 
 .margin-right-btn {
 	margin-right: 1rem;
@@ -221,6 +221,38 @@ button:hover {
 
 	@media (min-width: 768px) {
 		margin-right: 2.4rem;
+	}
+}
+/* ================= */
+.hero-image-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hero-img-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hero-img {
+	max-width: 100%;
+	height: auto;
+}
+
+@media (max-width: 768px) {
+	.hero-img {
+		width: 80%;
+	}
+	.move-down-sm {
+		margin-top: 30px;
+	}
+}
+
+@media (max-width: 576px) {
+	.hero-img {
+		width: 60%;
 	}
 }
 
@@ -252,6 +284,18 @@ button:hover {
 .custom-card-text {
 	font-size: 20px;
 	text-align: center !important;
+}
+
+/*======================= how it works button ========================*/
+
+.howitworksbutton {
+	text-decoration: none;
+	font-size: 16px;
+	color: inherit; /* Keeps the original color */
+	transition: color 0.3s ease; /* Smooth transition for the color change */
+}
+.howitworksbutton:hover {
+	color: #007bff;
 }
 
 /* ===================== blog carousel ============================ */

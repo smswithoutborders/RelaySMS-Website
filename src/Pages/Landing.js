@@ -91,13 +91,9 @@ export default function Landing() {
 							</Button>
 						</div>
 					</Col>
-					<Col lg={4} md={6} sm={12} xs={12} className="hero-image-container">
-						<div className="hero-img-box">
-							<img
-								src="/phone3.png"
-								alt="Woman enjoying food, meals in storage container, and food bowls on a table"
-								className="hero-img"
-							/>
+					<Col lg={4} md={6} sm={12} xs={12} className="hero-image-container ">
+						<div className="hero-img-box move-down-sm">
+							<img src="/phone3.png" alt="Relaysms App" className="hero-img" />
 						</div>
 					</Col>
 				</Row>
@@ -148,19 +144,19 @@ export default function Landing() {
 					))}
 				</Row>
 
-				<Row>
+				<Row style={{ marginTop: "20px" }}>
 					<Col xs={12}>
-						<div className="text-center p-1">
+						<div className="text-center p-1 howitworks">
 							<a
 								href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
 								target="_blank"
 								rel="noreferrer noopener"
-								style={{ textDecoration: "none" }}
+								style={{ textDecoration: "none", fontSize: "25px" }}
 							>
 								{t("Howitworks.GettingStartedButton")}
 								<FaArrowCircleRight
 									size="20px"
-									style={{ marginLeft: "8px", transform: "rotate(-30deg)" }}
+									style={{ marginLeft: "10px", transform: "rotate(-30deg)" }}
 								/>
 							</a>
 						</div>
