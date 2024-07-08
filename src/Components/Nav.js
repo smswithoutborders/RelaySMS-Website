@@ -90,7 +90,7 @@ export default function BackToTop(props) {
 								alignItems: "center",
 								flexGrow: 1,
 								justifyContent: "space-between",
-								color: "black"
+								color: "#043957"
 							}}
 							dir={direction}
 						>
@@ -101,7 +101,7 @@ export default function BackToTop(props) {
 							/>
 							{isMobile ? (
 								<>
-									{menuOpen ? ( // Show close button if menu is open
+									{menuOpen ? (
 										<IconButton
 											edge="start"
 											color="inherit"
