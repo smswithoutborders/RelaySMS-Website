@@ -1,6 +1,7 @@
 services:
   relaysms-homepage:
     container_name: relaysms-homepage
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile
