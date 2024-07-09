@@ -11,7 +11,7 @@
 }
 
 .section-subtitle {
-	font-size: calc(1.2rem + 0.5vw);
+	font-size: calc(1rem + 0.5vw);
 	color: #6c757d;
 }
 
@@ -19,11 +19,12 @@
 	border: none;
 	overflow: hidden;
 	transition: transform 0.2s;
-	border-radius: 20px !important;
+	border-radius: 25px !important;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 	transition: box-shadow 0.3s ease-in-out;
-	width: 70%;
+	width: 70% !important;
 	align-items: center;
+	height: 100% !important;
 }
 
 .custom-card:hover {
@@ -89,7 +90,7 @@
 }
 
 .hero-text-box {
-	padding: 2rem;
+	padding: 1rem;
 }
 
 .heading-primary {
@@ -171,10 +172,15 @@
 }
 @media screen and (max-width: 768px) {
 	.custom-card {
-		border-radius: 20px !important;
-		width: 80%;
-		align-items: center;
+		width: 100%;
 	}
+
+	.custom-card-img {
+		width: 80%;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+
 	.hero-btn {
 		font-size: 1.2rem;
 		font-family: inherit;

@@ -27,14 +27,7 @@ const Howitworks = () => {
 
 			<Row className="justify-content-center">
 				{cardContent.map((card, idx) => (
-					<Col
-						xs={12}
-						sm={8}
-						md={6}
-						lg={4}
-						key={idx}
-						className="mb-4 d-flex justify-content-center"
-					>
+					<Col xs={10} sm={6} lg={4} key={idx} className="mb-4 d-flex justify-content-center">
 						<Card className="custom-card h-100 shadow-sm">
 							<Card.Img
 								variant="top"
