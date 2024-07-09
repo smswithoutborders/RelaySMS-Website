@@ -22,14 +22,15 @@ export default function Landing() {
 	return (
 		<PageAnimationWrapper>
 			<Container
-				dir={isRTL ? "rtl" : "ltr"}
+				fluid
 				sx={{
-					pt: 4,
-					pb: { xs: 10, md: 10 }
+					pt: 1,
+					pb: { xs: 5, md: 5 }
 				}}
 			>
+				{/* ============================  Hero section ==================================== */}
 				<Row>
-					<Col lg={8} md={6} sm={12} xs={12} className="hero-text-container hero-text-box">
+					<Col xl={8} lg={8} md={6} sm={12} xs={12} className="hero-text-container hero-text-box">
 						<h1 className="heading-primary">{t("Landing.landingh1")}</h1>
 						<p className="hero-description">{t("Landing.landingh2")}</p>
 
@@ -40,14 +41,14 @@ export default function Landing() {
 								className="hero-btn btn btn--fill"
 								size="lg"
 								style={{
-									backgroundColor: "#1c222c",
+									backgroundColor: "#367ed0",
 									color: "#FFFFFF",
 									justifyContent: "center",
 									width: "100%",
 									maxWidth: "200px"
 								}}
 							>
-								<div className="d-flex w-100 ">
+								<div className="d-flex w-100">
 									<img
 										src="/playstore.svg"
 										alt="Android"
@@ -55,9 +56,9 @@ export default function Landing() {
 										style={{ maxWidth: "40px", marginRight: "10px" }}
 									/>
 									<div className="text-start">
-										<span className="button-subtitle">{t("Landing.AndroidSub")}</span>
+										<span className="button-subtitle fs-8">{t("Landing.AndroidSub")}</span>
 										<br />
-										<span className="button-title">{t("Landing.Android")}</span>
+										<span className="button-title fs-4">{t("Landing.Android")}</span>
 									</div>
 								</div>
 							</Button>
@@ -83,15 +84,15 @@ export default function Landing() {
 										style={{ maxWidth: "40px", marginRight: "10px" }}
 									/>
 									<div className="text-start">
-										<span className="button-subtitle">{t("Landing.DesktopSub")}</span>
+										<span className="button-subtitle  fs-8">{t("Landing.DesktopSub")}</span>
 										<br />
-										<span className="button-title">{t("Landing.Desktop")}</span>
+										<span className="button-title  fs-4">{t("Landing.Desktop")}</span>
 									</div>
 								</div>
 							</Button>
 						</div>
 					</Col>
-					<Col lg={4} md={6} sm={12} xs={12} className="hero-image-container ">
+					<Col xl={4} lg={4} md={6} sm={12} xs={12} className="hero-image-container">
 						<div className="hero-img-box move-down-sm">
 							<img src="/phone3.png" alt="Relaysms App" className="hero-img" />
 						</div>

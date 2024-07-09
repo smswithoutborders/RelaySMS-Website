@@ -48,19 +48,15 @@ const MultiItemCarousel = () => {
 			transform: "scale(1.02)",
 			boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
 			border: "1px solid #8AC1EE"
-		},
-		display: "flex",
-		flexDirection: "column",
-		alignItems: "center"
+		}
 	};
 
 	const imgStyles = {
-		width: "60%",
-		height: "100%",
+		width: "100%",
+		height: "auto",
 		objectFit: "cover",
-		borderTopLeftRadius: 10,
-		borderTopRightRadius: 10,
-		margin: "0 auto"
+		borderTopLeftRadius: 20,
+		borderTopRightRadius: 20
 	};
 
 	const titleStyles = {
@@ -90,8 +86,7 @@ const MultiItemCarousel = () => {
 				padding: "0 20px",
 				marginBottom: "20px",
 				maxWidth: "2000px",
-				margin: "0 auto",
-				direction: isRTL ? "rtl" : "ltr"
+				margin: "0 auto"
 			}}
 			sx={{
 				direction: isRTL ? "rtl" : "ltr",
