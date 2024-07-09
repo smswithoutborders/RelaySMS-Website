@@ -98,13 +98,14 @@ button:hover {
 /* ============================navbar========================= */
 .navbar-custom .nav-link {
 	color: #043957;
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 	margin: 0 1rem;
 	transition: color 0.3s ease;
 }
 
 .navbar-custom .nav-link:hover {
-	color: #1c222c;
+	color: #e79405;
+	font-weight: 600;
 }
 
 .navbar-custom .navbar-nav {
@@ -119,7 +120,8 @@ button:hover {
 }
 
 .navbar-custom .nav-icon:hover {
-	color: #1c222c;
+	color: #e79405;
+	font-weight: 600;
 }
 
 /* ============================================================== */
