@@ -1,44 +1,32 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { PageAnimationWrapper } from "../Components/PageAnimationWrapper.js";
+import { Container, Row, Col, Image } from "react-bootstrap";
+import { PageAnimationWrapper } from "../Components/PageAnimationWrapper.js"; // Corrected import
 import Blog from "../Components/Blog.js";
 import Faqs from "../Components/FAQs.js";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../i18n.js";
-import { Container, Row } from "react-bootstrap";
 import HowItWorks from "../Components/Howitworks.js";
 import Hero from "../Components/Hero.js";
+import "../i18n.js";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Landing() {
 	const { t, i18n } = useTranslation();
-	const isRTL = i18n.language === "fa";
+	const isRTL = i18n.dir() === "rtl";
 
 	return (
 		<PageAnimationWrapper>
-			<Container>
+			<Container fluid>
 				{/* ============================  Hero section ==================================== */}
-				<Row
-					fluid="lg"
-					sx={{
-						position: "relative",
-						backgroundColor: "#f0f0f0",
-						padding: "20px",
-						marginBottom: 10,
-						direction: isRTL ? "rtl" : "ltr"
-					}}
-				>
+				<Row className="hero-section align-items-center">
 					<Hero />
 				</Row>
-
 				{/* ========================= how it works ========================================= */}
 				<Row
-					fluid="lg"
-					sx={{
-						position: "relative",
+					className="howitworks-section align-items-center"
+					style={{
 						backgroundColor: "#f0f0f0",
 						padding: "20px",
-						marginBottom: 10,
+						margin: 0,
 						direction: isRTL ? "rtl" : "ltr"
 					}}
 				>
@@ -46,68 +34,66 @@ export default function Landing() {
 				</Row>
 
 				{/*==================================== Relay Map =========================================*/}
-				<Row sx={{ margin: "auto", maxWidth: 1200, padding: "20px" }}>
-					<Grid container rowSpacing={4} sx={{ py: { md: 10, xs: 10 } }}>
-						<Grid item md={5} my="auto">
-							<Typography
-								variant="h3"
-								sx={{
-									fontWeight: 700,
-									fontSize: { md: "48px", xs: "33px" },
-									color: "black"
-								}}
-							>
-								{t("Map.RelaySMSMap")}
-							</Typography>
-						</Grid>
-						<Grid item md={7} sx={{ justifyContent: "center", display: "flex", mx: "auto" }}>
-							<Box component="img" src="/map.png" sx={{ width: "100%", borderRadius: "20px" }} />
-						</Grid>
-					</Grid>
+				<Row
+					className="align-items-center justify-content-center my-4 py-4 px-3"
+					style={{
+						marginLeft: 30,
+						marginRight: 30
+					}}
+				>
+					<Col md={5} className="text-md-start text-center">
+						<h3 className="fw-bold" style={{ fontSize: "33px", color: "black" }}>
+							{t("Map.RelaySMSMap")}
+						</h3>
+					</Col>
+					<Col md={7} className="text-center">
+						<Image src="/map.png" fluid rounded />
+					</Col>
 				</Row>
 
 				{/* Blog section */}
 				<Row
-					sx={{
-						position: "relative",
+					className="blog-section align-items-center"
+					style={{
 						backgroundColor: "#f0f0f0",
 						padding: "20px",
-						marginBottom: 10,
+						margin: 0,
 						direction: isRTL ? "rtl" : "ltr"
 					}}
 				>
-					<h2
-						style={{
-							fontWeight: 700,
-							fontSize: "33px",
-							marginTop: "40px",
-							textAlign: isRTL ? "right" : "center"
-						}}
-					>
-						{t("Blog.BlogHeader")}
-					</h2>
-					<Blog />
+					<Col xs={12}>
+						<h2 className="text-center fw-bold" style={{ fontSize: "33px", marginTop: "40px" }}>
+							{t("Blog.BlogHeader")}
+						</h2>
+					</Col>
+					<Col xs={12}>
+						<Blog />
+					</Col>
 				</Row>
 
 				{/* FAQ section */}
 				<Row
-					sx={{
-						position: "relative",
-						marginTop: 4,
+					className="faq-section align-items-center"
+					style={{
+						marginTop: "40px",
+						margin: 0,
 						direction: isRTL ? "rtl" : "ltr"
 					}}
 				>
-					<h2
-						style={{
-							fontWeight: 700,
-							fontSize: { xs: "25px", md: "33px" },
-							marginTop: "40px",
-							textAlign: isRTL ? "right" : "center"
-						}}
-					>
-						{t("FAQ.FAQ")}
-					</h2>
-					<Faqs />
+					<Col xs={12}>
+						<h2 className="text-center fw-bold" style={{ fontSize: "33px", marginTop: "40px" }}>
+							{t("FAQ.FAQ")}
+						</h2>
+						<p
+							className={`text-center section-subheader ${isRTL ? "text-end" : "text-start"}`}
+							style={{ fontSize: "calc(1.10rem + 0.5vw)" }}
+						>
+							{t("FAQ.FAQSubheader")}
+						</p>
+					</Col>
+					<Col xs={12}>
+						<Faqs />
+					</Col>
 				</Row>
 			</Container>
 		</PageAnimationWrapper>

@@ -1,6 +1,5 @@
-/*============ Howitworks.css============*/
+/*============ Howitworks============*/
 .howitworks-section {
-	background-color: #f8f9fa;
 	padding: 3rem 1rem;
 }
 
@@ -68,10 +67,29 @@
 	text-align: center !important;
 	color: #6c757d;
 }
+
 /* ================ hero section ========================== */
+.Map {
+	padding: 1rem 0.75rem;
+	margin: 1rem 0;
+}
+
+.hero-section,
+.howitworks-section,
+.blog-section,
+.faq-section {
+	margin: 0 !important;
+	padding-top: 0 !important;
+}
+
 .hero-section {
-	background-color: #f8f9fa;
-	padding: 3rem 1rem;
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+
+.container-fluid {
+	padding-left: 10 !important;
+	padding-right: 10 !important;
 }
 
 .hero-text-box {

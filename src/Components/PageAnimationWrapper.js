@@ -1,26 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
 export const PageAnimationWrapper = ({ children }) => {
-	const x = { target: "0%", initial: "-150%" };
 	return (
 		<motion.div
-			className="font-display"
-			initial={{ x: x.initial }}
-			animate={{
-				x: x.target,
-				transitionEnd: {
-					x: 0
-				}
-			}}
-			transition={{ type: "spring", damping: 19 }}
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			transition={{ duration: 0.5 }}
 		>
 			{children}
 		</motion.div>
 	);
-};
-
-PageAnimationWrapper.propTypes = {
-	children: PropTypes.node
 };

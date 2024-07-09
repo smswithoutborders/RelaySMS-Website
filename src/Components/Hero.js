@@ -11,8 +11,15 @@ const Hero = () => {
 	const isRTL = i18n.dir() === "rtl";
 
 	return (
-		<Container fluid className="hero-section py-5" style={{ direction: isRTL ? "rtl" : "ltr" }}>
-			<Row className="align-items-center">
+		<Container fluid className="hero-section" style={{ direction: isRTL ? "rtl" : "ltr" }}>
+			<Row
+				className="align-items-center"
+				style={{
+					marginLeft: 30,
+					marginRight: 30,
+					direction: isRTL ? "rtl" : "ltr"
+				}}
+			>
 				<Col xl={8} lg={8} md={6} sm={12} xs={12} className="hero-text-container hero-text-box">
 					<h1 className="heading-primary">{t("Landing.landingh1")}</h1>
 					<p className="hero-description">{t("Landing.landingh2")}</p>
@@ -77,7 +84,7 @@ const Hero = () => {
 				</Col>
 				<Col xl={4} lg={4} md={6} sm={12} xs={12} className="hero-image-container">
 					<div className="hero-img-box move-down-sm">
-						<img src="/phone3.png" alt="Relaysms App" className="hero-img img-fluid" />
+						<img src="/phone1.png" alt="Relaysms App" className="hero-img img-fluid" />
 					</div>
 				</Col>
 			</Row>
