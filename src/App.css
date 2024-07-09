@@ -96,37 +96,32 @@ button:hover {
 	}
 }
 /* ============================navbar========================= */
-
-.menu-link::after {
-	content: "";
-	display: block;
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
-	bottom: -24px;
-	width: 0;
-	height: 4px;
-	background-image: linear-gradient(to right, hsl(248, 85%, 38%), hsl(192, 70%, 51%));
-	transition: width 0.3s;
-}
-
-#menu-appbar .menu-link:hover::after {
-	width: 50px;
-}
-
-.menu-link {
-	text-decoration: none;
+.navbar-custom .nav-link {
 	color: #043957;
-	padding: 10px;
+	font-size: 1.2rem;
+	margin: 0 1rem;
 	transition: color 0.3s ease;
-	font-size: 19px;
-	font-weight: 400;
 }
 
-.menu-link:hover::after {
-	color: #043957;
-	width: 50px;
+.navbar-custom .nav-link:hover {
+	color: #1c222c;
 }
+
+.navbar-custom .navbar-nav {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-custom .nav-icon {
+	font-size: 1.5rem;
+	margin: 0 1rem;
+	transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-icon:hover {
+	color: #1c222c;
+}
+
 /* ============================================================== */
 
 .button-wrapper {

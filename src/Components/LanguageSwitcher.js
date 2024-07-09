@@ -21,12 +21,12 @@ const LanguageSwitcher = () => {
 	};
 
 	return (
-		<FormControl variant="outlined" size="small">
+		<FormControl size="small">
 			<Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
 				<IconButton
 					color="inherit"
 					onClick={handleLanguageMenuClick}
-					sx={{ display: { xs: "", md: "block" } }}
+					sx={{ display: { md: "block" } }}
 				>
 					<LanguageIcon />
 				</IconButton>
