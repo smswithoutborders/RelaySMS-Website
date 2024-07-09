@@ -65,6 +65,12 @@ export default function Landing() {
 						<h2 className="text-center fw-bold" style={{ fontSize: "33px", marginTop: "40px" }}>
 							{t("Blog.BlogHeader")}
 						</h2>
+						<p
+							className={`text-center section-subheader ${isRTL ? "text-end" : "text-start"}`}
+							style={{ fontSize: "calc(1rem + 0.5vw)" }}
+						>
+							{t("Blog.BlogSubHeader")}
+						</p>
 					</Col>
 					<Col xs={12}>
 						<Blog />
