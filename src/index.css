@@ -172,7 +172,7 @@
 @media screen and (max-width: 768px) {
 	.custom-card {
 		border-radius: 20px !important;
-		width: 90%;
+		width: 80%;
 		align-items: center;
 	}
 	.hero-btn {

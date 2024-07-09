@@ -125,11 +125,20 @@ button:hover {
 }
 
 /* ===================== blog carousel ============================ */
+.card {
+	width: 80% !important;
+	align-items: center;
+}
 .centered-carousel {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
+.card-img-top {
+	width: 55% !important;
+}
+
 .Map {
 	padding: 1rem 0.75rem;
 	margin: 1rem 0;
