@@ -124,22 +124,6 @@ button:hover {
 	font-weight: 600;
 }
 
-/* ============================================================== */
-
-/* ====================== cards =================================== */
-
-/*======================= how it works button ========================*/
-
-.howitworksbutton {
-	text-decoration: none;
-	font-size: 16px;
-	color: inherit;
-	transition: color 0.3s ease;
-}
-.howitworksbutton:hover {
-	color: #007bff;
-}
-
 /* ===================== blog carousel ============================ */
 .centered-carousel {
 	display: flex;

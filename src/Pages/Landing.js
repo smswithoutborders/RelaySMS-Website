@@ -16,9 +16,8 @@ export default function Landing() {
 
 	return (
 		<PageAnimationWrapper>
-			<Container fluid>
+			<Container>
 				{/* ============================  Hero section ==================================== */}
-
 				<Row
 					fluid="lg"
 					sx={{
@@ -32,10 +31,7 @@ export default function Landing() {
 					<Hero />
 				</Row>
 
-				{/* ===================================================================================== */}
-
 				{/* ========================= how it works ========================================= */}
-
 				<Row
 					fluid="lg"
 					sx={{
@@ -48,8 +44,6 @@ export default function Landing() {
 				>
 					<HowItWorks />
 				</Row>
-
-				{/* ===========================end of how it works =================================== */}
 
 				{/*==================================== Relay Map =========================================*/}
 				<Row sx={{ margin: "auto", maxWidth: 1200, padding: "20px" }}>
@@ -74,7 +68,6 @@ export default function Landing() {
 
 				{/* Blog section */}
 				<Row
-					fluid="lg"
 					sx={{
 						position: "relative",
 						backgroundColor: "#f0f0f0",
@@ -98,11 +91,9 @@ export default function Landing() {
 
 				{/* FAQ section */}
 				<Row
-					fluid="lg"
 					sx={{
 						position: "relative",
 						marginTop: 4,
-						backgroundColor: "#e0e0e0",
 						direction: isRTL ? "rtl" : "ltr"
 					}}
 				>

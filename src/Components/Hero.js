@@ -1,13 +1,17 @@
+// Hero.js
+
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import "../index.css"; // Ensure to create and import your custom CSS for additional styling
+import "../index.css";
+import "../i18n.js";
 
 const Hero = () => {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const isRTL = i18n.dir() === "rtl";
 
 	return (
-		<Container fluid className="hero-section py-5">
+		<Container fluid className="hero-section py-5" style={{ direction: isRTL ? "rtl" : "ltr" }}>
 			<Row className="align-items-center">
 				<Col xl={8} lg={8} md={6} sm={12} xs={12} className="hero-text-container hero-text-box">
 					<h1 className="heading-primary">{t("Landing.landingh1")}</h1>
