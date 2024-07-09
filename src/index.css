@@ -22,7 +22,7 @@
 	border-radius: 20px !important;
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 	transition: box-shadow 0.3s ease-in-out;
-	width: 60%;
+	width: 70%;
 	align-items: center;
 }
 
@@ -69,10 +69,6 @@
 }
 
 /* ================ hero section ========================== */
-.Map {
-	padding: 1rem 0.75rem;
-	margin: 1rem 0;
-}
 
 .hero-section,
 .howitworks-section,
@@ -175,11 +171,10 @@
 }
 @media screen and (max-width: 768px) {
 	.custom-card {
-		border-radius: 40px !important;
-		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-		transition: box-shadow 0.3s ease-in-out;
+		border-radius: 20px !important;
+		width: 90%;
+		align-items: center;
 	}
-
 	.hero-btn {
 		font-size: 1.2rem;
 		font-family: inherit;
