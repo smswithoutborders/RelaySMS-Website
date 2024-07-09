@@ -45,7 +45,6 @@ export default function Faqs() {
 						maxWidth: "100%",
 						margin: "0 auto",
 						color: "#f5f5f5",
-						// backgroundColor: "#e0e0e0",
 						borderRadius: 2,
 						direction: isRTL ? "rtl" : "ltr"
 					}}

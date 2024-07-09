@@ -1,236 +1,99 @@
 import React from "react";
-import { Box, Grid, Typography, Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { PageAnimationWrapper } from "../Components/PageAnimationWrapper.js";
-import { FaArrowCircleRight } from "react-icons/fa";
+import { Container, Row, Col, Image } from "react-bootstrap";
+import { PageAnimationWrapper } from "../Components/PageAnimationWrapper.js"; // Corrected import
 import Blog from "../Components/Blog.js";
 import Faqs from "../Components/FAQs.js";
-import "bootstrap/dist/css/bootstrap.min.css";
+import HowItWorks from "../Components/Howitworks.js";
+import Hero from "../Components/Hero.js";
 import "../i18n.js";
-import { Card, Col, Row, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Landing() {
 	const { t, i18n } = useTranslation();
-	const isRTL = i18n.language === "fa";
-
-	const cardContent = [
-		{ key: "HowItWorksA", title: "HowItWorkstitleA", imageSrc: "/authoriza.svg" },
-		{ key: "HowItWorksB", title: "HowItWorkstitleB", imageSrc: "/compose.svg" },
-		{ key: "HowItWorksC", title: "HowItWorkstitleC", imageSrc: "/notification.svg" }
-	];
+	const isRTL = i18n.dir() === "rtl";
 
 	return (
 		<PageAnimationWrapper>
-			<Container
-				dir={isRTL ? "rtl" : "ltr"}
-				sx={{
-					pt: 4,
-					pb: { xs: 10, md: 10 }
-				}}
-			>
-				<Row>
-					<Col lg={8} md={6} sm={12} xs={12} className="hero-text-container hero-text-box">
-						<h1 className="heading-primary">{t("Landing.landingh1")}</h1>
-						<p className="hero-description">{t("Landing.landingh2")}</p>
-
-						<div className="button-wrapper">
-							<Button
-								href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
-								target="_blank"
-								className="hero-btn btn btn--fill"
-								size="lg"
-								style={{
-									backgroundColor: "#1c222c",
-									color: "#FFFFFF",
-									justifyContent: "center",
-									width: "100%",
-									maxWidth: "200px"
-								}}
-							>
-								<div className="d-flex w-100 ">
-									<img
-										src="/playstore.svg"
-										alt="Android"
-										className="img-fluid logo"
-										style={{ maxWidth: "40px", marginRight: "10px" }}
-									/>
-									<div className="text-start">
-										<span className="button-subtitle">{t("Landing.AndroidSub")}</span>
-										<br />
-										<span className="button-title">{t("Landing.Android")}</span>
-									</div>
-								</div>
-							</Button>
-
-							<Button
-								href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
-								target="_blank"
-								className="hero-btn btn btn--outline"
-								size="lg"
-								style={{
-									backgroundColor: "white",
-									color: "#1c222c",
-									justifyContent: "center",
-									width: "100%",
-									maxWidth: "200px"
-								}}
-							>
-								<div className="d-flex w-100">
-									<img
-										src="/desktop.svg"
-										alt="Desktop"
-										className="img-fluid logo"
-										style={{ maxWidth: "40px", marginRight: "10px" }}
-									/>
-									<div className="text-start">
-										<span className="button-subtitle">{t("Landing.DesktopSub")}</span>
-										<br />
-										<span className="button-title">{t("Landing.Desktop")}</span>
-									</div>
-								</div>
-							</Button>
-						</div>
-					</Col>
-					<Col lg={4} md={6} sm={12} xs={12} className="hero-image-container ">
-						<div className="hero-img-box move-down-sm">
-							<img src="/phone3.png" alt="Relaysms App" className="hero-img" />
-						</div>
-					</Col>
+			<Container fluid>
+				{/* ============================  Hero section ==================================== */}
+				<Row className="hero-section align-items-center">
+					<Hero />
 				</Row>
-
-				{/* ===================================================================================== */}
-
 				{/* ========================= how it works ========================================= */}
-				<Row className="justify-content-center mb-2">
-					<Col xs={12}>
-						<h2
-							className="text-center move-down-sm"
-							style={{ fontSize: "calc(1.875rem + 1.5vw)", fontWeight: "bold" }}
-						>
-							{t("Howitworks.HowItWorks")}
-						</h2>
-						<p className="text-center" style={{ fontSize: "calc(1.25rem + 0.5vw)" }}>
-							{t("Howitworks.HowItWorksSubtitle")}
-						</p>
-					</Col>
+				<Row
+					className="howitworks-section align-items-center"
+					style={{
+						backgroundColor: "#f0f0f0",
+						padding: "20px",
+						margin: 0,
+						direction: isRTL ? "rtl" : "ltr"
+					}}
+				>
+					<HowItWorks />
 				</Row>
-
-				<Row className="justify-content-center">
-					{cardContent.map((card, idx) => (
-						<Col xs={10} sm={4} lg={6} key={idx} className="mb-4">
-							<Card className="custom-card">
-								<Card.Img
-									variant="top"
-									src={card.imageSrc}
-									alt={card.key}
-									className="custom-card-img"
-								/>
-								<Card.Body>
-									<Card.Title
-										className="custom-card-title"
-										style={{ textAlign: isRTL ? "right" : "left" }}
-									>
-										{t(`Howitworks.${card.title}`)}
-									</Card.Title>
-									<Card.Text
-										className="custom-card-text"
-										style={{ textAlign: isRTL ? "right" : "left" }}
-									>
-										{t(`Howitworks.${card.key}`)}
-									</Card.Text>
-								</Card.Body>
-							</Card>
-						</Col>
-					))}
-				</Row>
-
-				<Row style={{ marginTop: "20px" }}>
-					<Col xs={12}>
-						<div className="text-center p-1 howitworks">
-							<a
-								href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
-								target="_blank"
-								rel="noreferrer noopener"
-								style={{ textDecoration: "none", fontSize: "25px" }}
-							>
-								{t("Howitworks.GettingStartedButton")}
-								<FaArrowCircleRight
-									size="20px"
-									style={{ marginLeft: "10px", transform: "rotate(-30deg)" }}
-								/>
-							</a>
-						</div>
-					</Col>
-				</Row>
-
-				{/* ===========================end of how it works =================================== */}
 
 				{/*==================================== Relay Map =========================================*/}
-				<Row sx={{ margin: "auto", maxWidth: 1200, padding: "20px" }}>
-					<Grid container rowSpacing={4} sx={{ py: { md: 10, xs: 10 } }}>
-						<Grid item md={5} my="auto">
-							<Typography
-								variant="h3"
-								sx={{
-									fontWeight: 700,
-									fontSize: { md: "48px", xs: "33px" },
-									color: "black"
-								}}
-							>
-								{t("Map.RelaySMSMap")}
-							</Typography>
-						</Grid>
-						<Grid item md={7} sx={{ justifyContent: "center", display: "flex", mx: "auto" }}>
-							<Box component="img" src="/map.png" sx={{ width: "100%", borderRadius: "20px" }} />
-						</Grid>
-					</Grid>
+				<Row
+					className="align-items-center justify-content-center my-4 py-4 px-3"
+					style={{
+						marginLeft: 30,
+						marginRight: 30
+					}}
+				>
+					<Col md={5} className="text-md-start text-center">
+						<h3 className="fw-bold" style={{ fontSize: "33px", color: "black" }}>
+							{t("Map.RelaySMSMap")}
+						</h3>
+					</Col>
+					<Col md={7} className="text-center">
+						<Image src="/map.png" fluid rounded />
+					</Col>
 				</Row>
 
 				{/* Blog section */}
 				<Row
-					fluid="lg"
-					sx={{
-						position: "relative",
+					className="blog-section align-items-center"
+					style={{
 						backgroundColor: "#f0f0f0",
 						padding: "20px",
-						marginBottom: 10,
+						margin: 0,
 						direction: isRTL ? "rtl" : "ltr"
 					}}
 				>
-					<h2
-						style={{
-							fontWeight: 700,
-							fontSize: "33px",
-							marginTop: "40px",
-							textAlign: isRTL ? "right" : "center"
-						}}
-					>
-						{t("Blog.BlogHeader")}
-					</h2>
-					<Blog />
+					<Col xs={12}>
+						<h2 className="text-center fw-bold" style={{ fontSize: "33px", marginTop: "40px" }}>
+							{t("Blog.BlogHeader")}
+						</h2>
+					</Col>
+					<Col xs={12}>
+						<Blog />
+					</Col>
 				</Row>
 
 				{/* FAQ section */}
 				<Row
-					fluid="lg"
-					sx={{
-						position: "relative",
-						marginTop: 4,
-						backgroundColor: "#e0e0e0",
+					className="faq-section align-items-center"
+					style={{
+						marginTop: "40px",
+						margin: 0,
 						direction: isRTL ? "rtl" : "ltr"
 					}}
 				>
-					<h2
-						style={{
-							fontWeight: 700,
-							fontSize: { xs: "25px", md: "33px" },
-							marginTop: "40px",
-							textAlign: isRTL ? "right" : "center"
-						}}
-					>
-						{t("FAQ.FAQ")}
-					</h2>
-					<Faqs />
+					<Col xs={12}>
+						<h2 className="text-center fw-bold" style={{ fontSize: "33px", marginTop: "40px" }}>
+							{t("FAQ.FAQ")}
+						</h2>
+						<p
+							className={`text-center section-subheader ${isRTL ? "text-end" : "text-start"}`}
+							style={{ fontSize: "calc(1.10rem + 0.5vw)" }}
+						>
+							{t("FAQ.FAQSubheader")}
+						</p>
+					</Col>
+					<Col xs={12}>
+						<Faqs />
+					</Col>
 				</Row>
 			</Container>
 		</PageAnimationWrapper>
