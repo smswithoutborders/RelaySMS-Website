@@ -1,11 +1,14 @@
+// Howitworks.js
+
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { FaArrowCircleRight } from "react-icons/fa";
 import "../index.css";
 
-const Howitworks = ({ isRTL }) => {
-	const { t } = useTranslation();
+const Howitworks = () => {
+	const { t, i18n } = useTranslation();
+	const isRTL = i18n.dir() === "rtl";
 
 	const cardContent = [
 		{ key: "HowItWorksA", title: "HowItWorkstitleA", imageSrc: "/authoriza.svg" },
@@ -14,7 +17,7 @@ const Howitworks = ({ isRTL }) => {
 	];
 
 	return (
-		<Container className="howitworks-section py-5">
+		<Container className="howitworks-section py-5" style={{ direction: isRTL ? "rtl" : "ltr" }}>
 			<Row className="justify-content-center mb-4">
 				<Col xs={12}>
 					<h2 className="text-center move-down-sm section-title">{t("Howitworks.HowItWorks")}</h2>
