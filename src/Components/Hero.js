@@ -82,7 +82,14 @@ const Hero = () => {
 						</Button>
 					</div>
 				</Col>
-				<Col xl={4} lg={4} md={6} sm={12} xs={12} className="hero-image-container">
+				<Col
+					xl={4}
+					lg={4}
+					md={6}
+					sm={12}
+					xs={12}
+					className="hero-image-container d-none d-md-block"
+				>
 					<div className="hero-img-box move-down-sm">
 						<img src="/phone1.png" alt="Relaysms App" className="hero-img img-fluid" />
 					</div>

@@ -172,13 +172,21 @@
 }
 @media screen and (max-width: 768px) {
 	.custom-card {
-		width: 100%;
+		width: 110% !important;
 	}
 
 	.custom-card-img {
 		width: 80%;
-		border-top-left-radius: 10px;
-		border-top-right-radius: 10px;
+	}
+
+	.section-title {
+		font-size: calc(0.5rem);
+		color: #343a40;
+	}
+
+	.section-subtitle {
+		font-size: calc(1rem + 0.5vw);
+		color: #6c757d;
 	}
 
 	.hero-btn {
