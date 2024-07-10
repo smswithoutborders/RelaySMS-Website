@@ -64,13 +64,12 @@
 }
 
 .custom-card-text {
-	font-size: 20px;
+	font-size: 15px;
 	text-align: center !important;
 	color: #6c757d;
 }
 
 /* ================ hero section ========================== */
-.hero-section,
 .howitworks-section,
 .blog-section,
 .faq-section {
@@ -172,7 +171,8 @@
 }
 @media screen and (max-width: 768px) {
 	.custom-card {
-		width: 110% !important;
+		width: 120% !important;
+		height: 150% !important;
 	}
 
 	.hero-img {
@@ -202,5 +202,11 @@
 		border-radius: 9px;
 		padding-top: 2rem;
 		text-decoration: none;
+	}
+
+	.hero-row {
+		margin-left: 4px !important;
+		margin-right: 4px !important;
+		margin-bottom: 18px !important;
 	}
 }

@@ -13,10 +13,10 @@ const Hero = () => {
 	return (
 		<Container fluid className="hero-section" style={{ direction: isRTL ? "rtl" : "ltr" }}>
 			<Row
-				className="align-items-center"
+				className="align-items-center hero-row"
 				style={{
-					marginLeft: 30,
-					marginRight: 30,
+					marginLeft: 35,
+					marginRight: 35,
 					direction: isRTL ? "rtl" : "ltr"
 				}}
 			>
