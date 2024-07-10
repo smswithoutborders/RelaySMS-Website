@@ -20,6 +20,7 @@ export default function Landing() {
 				<Row className="hero-section align-items-center">
 					<Hero />
 				</Row>
+
 				{/* ========================= how it works ========================================= */}
 				<Row
 					className="howitworks-section align-items-center"
@@ -42,7 +43,7 @@ export default function Landing() {
 					}}
 				>
 					<Col md={5} className="text-md-start text-center">
-						<h3 className="fw-bold" style={{ fontSize: "33px", color: "black" }}>
+						<h3 className="fw-bold section-title" style={{ fontSize: "33px", color: "black" }}>
 							{t("Map.RelaySMSMap")}
 						</h3>
 					</Col>
@@ -51,7 +52,7 @@ export default function Landing() {
 					</Col>
 				</Row>
 
-				{/* Blog section */}
+				{/*================= Blog section =================================*/}
 				<Row
 					className="blog-section align-items-center"
 					style={{
@@ -62,11 +63,14 @@ export default function Landing() {
 					}}
 				>
 					<Col xs={12}>
-						<h2 className="text-center fw-bold" style={{ fontSize: "33px", marginTop: "40px" }}>
+						<h2
+							className="text-center fw-bold section-title "
+							style={{ fontSize: "33px", marginTop: "40px" }}
+						>
 							{t("Blog.BlogHeader")}
 						</h2>
 						<p
-							className={`text-center section-subheader ${isRTL ? "text-end" : "text-start"}`}
+							className={`text-center section-subtitle  ${isRTL ? "text-end" : "text-start"}`}
 							style={{ fontSize: "calc(1rem + 0.5vw)" }}
 						>
 							{t("Blog.BlogSubHeader")}
@@ -77,9 +81,9 @@ export default function Landing() {
 					</Col>
 				</Row>
 
-				{/* FAQ section */}
+				{/*======================== FAQ section ========================*/}
 				<Row
-					className="faq-section align-items-center"
+					className="faq-section align-items-center section-title "
 					style={{
 						marginTop: "40px",
 						margin: 0,
@@ -91,7 +95,7 @@ export default function Landing() {
 							{t("FAQ.FAQ")}
 						</h2>
 						<p
-							className={`text-center section-subheader ${isRTL ? "text-end" : "text-start"}`}
+							className={`text-center section-subtitle  ${isRTL ? "text-end" : "text-start"}`}
 							style={{ fontSize: "calc(1.10rem + 0.5vw)" }}
 						>
 							{t("FAQ.FAQSubheader")}

@@ -1,4 +1,4 @@
-/*============ Howitworks============*/
+/*============ Howitworks===========*/
 .howitworks-section {
 	padding: 3rem 1rem;
 }
@@ -70,7 +70,6 @@
 }
 
 /* ================ hero section ========================== */
-
 .hero-section,
 .howitworks-section,
 .blog-section,
@@ -160,6 +159,7 @@
 		margin-right: 2.4rem;
 	}
 }
+
 .hero-img-box {
 	display: flex;
 	justify-content: center;
@@ -180,23 +180,22 @@
 	}
 
 	.section-title {
-		font-size: calc(0.5rem);
+		font-size: calc(1.5rem);
 		color: #343a40;
 	}
 
 	.section-subtitle {
 		font-size: calc(1rem + 0.5vw);
-		color: #6c757d;
+		color: #5f6c74;
 	}
 
 	.hero-btn {
 		font-size: 1.2rem;
 		font-family: inherit;
-		border: 1px solid black;
+		border: 1px solid rgb(42, 41, 41);
 		cursor: pointer;
 		border-radius: 9px;
 		padding-top: 2rem;
 		text-decoration: none;
 	}
 }
-/* -------------------------end of hero section------------------------- */
