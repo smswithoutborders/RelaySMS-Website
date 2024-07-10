@@ -175,6 +175,11 @@
 		width: 110% !important;
 	}
 
+	.hero-img {
+		max-width: 70%;
+		height: auto;
+	}
+
 	.custom-card-img {
 		width: 80%;
 	}
