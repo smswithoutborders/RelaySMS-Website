@@ -5,6 +5,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme, Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Container, Row } from "react-bootstrap";
+import "../App.css";
 
 const MultiItemCarousel = () => {
 	const theme = useTheme();
@@ -85,7 +86,7 @@ const MultiItemCarousel = () => {
 			style={{
 				padding: "0 20px",
 				marginBottom: "20px",
-				maxWidth: "2000px",
+				maxWidth: "1500px",
 				margin: "0 auto"
 			}}
 			sx={{

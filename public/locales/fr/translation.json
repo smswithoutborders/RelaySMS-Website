@@ -2,8 +2,10 @@
 	"Landing": {
 		"landingh1": "Continuez de parler avec RelaySMS",
 		"landingh2": "Envoyez des courriels, des messages et des messages par SMS sans avoir besoin d'une connexion internet. Vous pouvez ainsi rester connecté et partager des informations importantes même dans les zones où l'accès à l'internet est limité ou inexistant",
-		"Android": "Application Android",
-		"Desktop": "Application de bureau"
+		"Android": "PlayStore",
+		"AndroidSub": "Télécharger à partir de",
+		"Desktop": "Bureau",
+		"DesktopSub": "Télécharger sur"
 	},
 	"Nav": {
 		"Home": "Accueil",
@@ -28,7 +30,7 @@
 		"RelaySMSMap": "RelaySMS est utilisé activement dans plus de 60 pays."
 	},
 	"Blog": {
-		"BlogHeader": " Quoi de neuf sur RelaySMS?",
+		"BlogHeader": "Quoi de neuf sur RelaySMS?",
 		"BlogSubHeader": "Restez au courant des dernières nouvelles, des articles et des idées de RelaySMS",
 		"Resilience": "Résilience des clients Gateway dans SMSWithoutBorders",
 		"ResilienceD": "Le client Gateway dans SMSWithoutBorders est essentiel pour acheminer les messages des SMS vers les plateformes en ligne. Le client Gateway écoute les messages et les achemine vers le serveur Gateway, qui publie ...",
@@ -39,15 +41,16 @@
 	"FAQ": {
 		"FAQ": "Questions fréquemment posées",
 		"FAQSubheader": "Trouvez les réponses aux questions les plus courantes",
+		"FAQ1": "RelaySMS est-il disponible sur mon appareil ?",
 		"faq1": "RelaySMS est actuellement disponible pour Android. Nous travaillons à étendre la compatibilité à d'autres plateformes.",
-		"FAQ2": "Comment envoyer un message hors ligne ?",
-		"faq2": "Choisissez la plateforme à laquelle vous souhaitez envoyer le message et rédigez votre message dans l'application. Notre centre d'aide propose également des ressources et des tutoriels sur l'envoi de messages via l'application.",
-		"FAQ3": "Y a-t-il des limitations sur les messages hors ligne ?",
-		"faq3": "Il n'y a pas de limites sur la taille et le nombre de messages que vous pouvez envoyer avec l'application.",
-		"FAQ4": "J'ai des problèmes pour me connecter à mon compte. Que dois-je faire ?",
-		"faq4": "Notre centre d'aide propose des ressources et des tutoriels sur la connexion à votre compte. Si vous ne trouvez pas de solution, vous pouvez contacter notre équipe de support à <1>smswithoutborders</1>.",
-		"FAQ5": "Je rencontre des difficultés techniques avec l'application. Comment puis-je obtenir de l'aide ?",
-		"faq5": "Notre centre d'aide propose des ressources et des guides de dépannage. Vous pouvez également contacter notre équipe de support sur les réseaux sociaux via [lien vers le compte X] ou en visitant notre site web."
+		"FAQ2": "Comment envoyer un message hors ligne?",
+		"faq2": "Choisissez la plateforme à laquelle vous souhaitez envoyer le message et composez votre message dans l'application. Notre centre d'aide propose également des ressources et des tutoriels sur la manière d'envoyer des messages via l'application.",
+		"FAQ3": "Les messages hors ligne sont-ils limités ? ",
+		"faq3": "Il n'y a pas de limites à la taille et au nombre de messages que vous pouvez envoyer avec l'application.",
+		"FAQ4": "Je n'arrive pas à me connecter à mon compte. Que dois-je faire ?",
+		"faq4": "Notre centre d'aide propose des ressources et des tutoriels sur la connexion à votre compte. Si vous ne trouvez pas de solution, vous pouvez contacter notre équipe d'assistance à <a href='smswithoutborders'>smswithoutborders</a>",
+		"FAQ5": "Je rencontre des difficultés techniques avec l'application. Comment puis-je obtenir de l'aide ? ",
+		"faq5": "Notre centre d'aide propose des ressources et des guides de dépannage. Vous pouvez également contacter notre équipe d'assistance sur les médias sociaux à l'adresse [lien vers X handle] ou en visitant notre site web."
 	},
 	"Footer": {
 		"RelaySMS": "RelaySMS",

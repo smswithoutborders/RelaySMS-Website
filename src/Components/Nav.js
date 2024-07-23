@@ -1,24 +1,14 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import React from "react";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../Components/LanguageSwitcher";
+import { FaTwitter, FaGithub, FaArrowUp } from "react-icons/fa";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Fade from "@mui/material/Fade";
-import IconButton from "@mui/material/IconButton";
-import MenuItem from "@mui/material/MenuItem";
-import MenuIcon from "@mui/icons-material/Menu";
-import Menu from "@mui/material/Menu";
-import { useTheme, createTheme, ThemeProvider } from "@mui/material/styles";
-import { useTranslation } from "react-i18next";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import LanguageSwitcher from "../Components/LanguageSwitcher";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import "../App.css";
 
 function ScrollTop(props) {
@@ -49,26 +39,8 @@ function ScrollTop(props) {
 	);
 }
 
-ScrollTop.propTypes = {
-	children: PropTypes.element.isRequired,
-	window: PropTypes.func
-};
-
 export default function BackToTop(props) {
 	const { t, i18n } = useTranslation();
-	const theme = useTheme();
-	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
-	const [anchorEl, setAnchorEl] = React.useState(null);
-
-	const handleMenu = (event) => {
-		setAnchorEl(event.currentTarget);
-	};
-
-	const handleClose = () => {
-		setAnchorEl(null);
-	};
-
 	const direction = i18n.dir();
 	const themeWithDirection = createTheme({
 		direction: direction
@@ -78,149 +50,63 @@ export default function BackToTop(props) {
 		<ThemeProvider theme={themeWithDirection}>
 			<React.Fragment>
 				<CssBaseline />
-				<AppBar dir={direction} sx={{ backgroundColor: "white" }} elevation={0}>
-					<Toolbar>
-						<Box
-							sx={{
-								display: "flex",
-								alignItems: "center",
-								flexGrow: 1,
-								justifyContent: "space-between",
-								color: "black"
-							}}
-							dir={direction}
-						>
-							<img
-								src="./logo.png"
-								alt="Logo"
-								style={{ height: "40px", marginRight: "16px", color: "#1c222c" }}
-							/>
-							{isMobile ? (
-								<>
-									<IconButton
-										edge="start"
-										color="inherit"
-										aria-label="menu"
-										onClick={handleMenu}
-										sx={{ padding: "20px", color: "black" }}
-									>
-										<MenuIcon />
-									</IconButton>
-									<Menu
-										dir={direction}
-										id="menu-appbar"
-										anchorEl={anchorEl}
-										anchorOrigin={{
-											vertical: "top",
-											horizontal: direction === "rtl" ? "left" : "right"
-										}}
-										keepMounted
-										transformOrigin={{
-											vertical: "top",
-											horizontal: direction === "rtl" ? "left" : "right"
-										}}
-										open={Boolean(anchorEl)}
-										onClose={handleClose}
-									>
-										<MenuItem onClick={handleClose}>
-											<a
-												href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
-												target="_blank"
-												rel="noreferrer noopener"
-												className="menu-link"
-											>
-												{t("Nav.help")}
-											</a>
-										</MenuItem>
-
-										<MenuItem onClick={handleClose}>
-											<a
-												href="https://blog.smswithoutborders.com/"
-												target="_blank"
-												rel="noreferrer"
-												className="menu-link"
-											>
-												{t("Nav.Blog")}
-											</a>
-										</MenuItem>
-										<MenuItem onClick={handleClose}>
-											<IconButton
-												href="https://x.com/RelaySMS"
-												target="_blank"
-												rel="noopener noreferrer"
-												color="inherit"
-											>
-												<TwitterIcon />
-											</IconButton>
-										</MenuItem>
-										<MenuItem onClick={handleClose}>
-											<IconButton
-												href="https://github.com/smswithoutborders"
-												target="_blank"
-												rel="noopener noreferrer"
-												color="inherit"
-											>
-												<GitHubIcon />
-											</IconButton>
-										</MenuItem>
-										<MenuItem onClick={handleClose}>
-											<LanguageSwitcher />
-										</MenuItem>
-									</Menu>
-								</>
-							) : (
-								<Box
-									component="nav"
-									sx={{
-										display: "flex",
-										alignItems: "center",
-										gap: 2,
-										ml: "auto"
-									}}
-									dir={direction}
+				<Navbar
+					dir={direction}
+					bg="light"
+					expand="lg"
+					sticky="top"
+					className="shadow-sm p-3 mb-5 bg-white rounded navbar-custom"
+				>
+					<Container>
+						<Navbar.Brand href="#" className="me-auto">
+							<img src="./logo.png" alt="Logo" style={{ height: "40px" }} />
+						</Navbar.Brand>
+						<Navbar.Toggle aria-controls="basic-navbar-nav" />
+						<Navbar.Collapse id="basic-navbar-nav">
+							<Nav className="ms-auto">
+								<Nav.Link
+									href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+									target="_blank"
+									rel="noreferrer noopener"
+									className="nav-link"
 								>
-									<a
-										href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
-										target="_blank"
-										rel="noreferrer noopener"
-										className="menu-link"
-									>
-										<Typography>{t("Nav.help")}</Typography>
-									</a>
-									<a
-										href="https://blog.smswithoutborders.com/"
-										target="_blank"
-										rel="noreferrer"
-										className="menu-link"
-									>
-										<Typography>{t("Nav.Blog")}</Typography>
-									</a>
-									<IconButton
-										href="https://x.com/RelaySMS"
-										target="_blank"
-										rel="noopener noreferrer"
-										color="inherit"
-									>
-										<TwitterIcon />
-									</IconButton>
-									<IconButton
-										href="https://github.com/smswithoutborders"
-										target="_blank"
-										rel="noopener noreferrer"
-										color="inherit"
-									>
-										<GitHubIcon />
-									</IconButton>
+									{t("Nav.help")}
+								</Nav.Link>
+								<Nav.Link
+									href="https://blog.smswithoutborders.com/"
+									target="_blank"
+									rel="noreferrer"
+									className="nav-link"
+								>
+									{t("Nav.Blog")}
+								</Nav.Link>
+								<Nav.Link
+									href="https://x.com/RelaySMS"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="nav-link nav-icon"
+								>
+									<FaTwitter />
+								</Nav.Link>
+								<Nav.Link
+									href="https://github.com/smswithoutborders"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="nav-link nav-icon"
+								>
+									<FaGithub />
+								</Nav.Link>
+								<Nav.Link className="nav-link">
 									<LanguageSwitcher />
-								</Box>
-							)}
-						</Box>
-					</Toolbar>
-				</AppBar>
-				<Toolbar id="back-to-top-anchor" />
+								</Nav.Link>
+							</Nav>
+						</Navbar.Collapse>
+					</Container>
+				</Navbar>
+				<div id="back-to-top-anchor" />
 				<ScrollTop {...props}>
 					<Fab size="small" aria-label="scroll back to top">
-						<KeyboardArrowUpIcon />
+						<FaArrowUp />
 					</Fab>
 				</ScrollTop>
 			</React.Fragment>
