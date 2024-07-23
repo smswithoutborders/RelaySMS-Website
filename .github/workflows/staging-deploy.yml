@@ -16,7 +16,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
+          password: ${{ secrets.PASSWORD }}
           script: |
             set -e
 
@@ -42,12 +42,4 @@ jobs:
             echo "==========================="
             echo "✅ Project build complete"
             echo "==========================="
-            if ! ${{ secrets.CLEANUP_CMD }}; then
-              echo "❌ Error cleaning up builds!"
-              exit 1
-            fi
-            echo "============================="
-            echo "✅ Cleanup complete"
-            echo "============================="
-
             

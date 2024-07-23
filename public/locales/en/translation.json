@@ -3,10 +3,8 @@
 		"landingh1a": "Keep",
 		"landingh1": " Keep Talking with RelaySMS",
 		"landingh2": "Send emails, posts, and messages via SMS without needing an internet connection. This ensures that you can stay connected and share important information even in areas with limited or no internet access.",
-		"Android": "PlayStore",
-		"AndroidSub": "Download from",
-		"Desktop": "Desktop",
-		"DesktopSub": "Download on"
+		"Android": "Android App",
+		"Desktop": "Desktop App"
 	},
 	"Nav": {
 		"Home": "Home",
@@ -53,7 +51,6 @@
 		"FAQ5": "I'm experiencing technical difficulties with the app. How can I get help? ",
 		"faq5": "Our Help Center offers resources and troubleshooting guides. You can also reach out to our support team on social media at [link to X handle] or by visiting our website."
 	},
-
 	"Footer": {
 		"RelaySMS": "RelaySMS",
 		"footerbody2": "Send Messages seamlessly with RelaySMS.",
