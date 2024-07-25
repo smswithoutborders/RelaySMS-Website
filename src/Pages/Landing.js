@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Container, Row, Col, Image } from "react-bootstrap";
-import { PageAnimationWrapper } from "../Components/PageAnimationWrapper.js"; // Corrected import
+import { PageAnimationWrapper } from "../Components/PageAnimationWrapper.js";
 import Blog from "../Components/Blog.js";
 import Faqs from "../Components/FAQs.js";
 import HowItWorks from "../Components/Howitworks.js";
@@ -16,6 +16,7 @@ export default function Landing() {
 	return (
 		<PageAnimationWrapper>
 			<Container fluid>
+				<div className="circular-blob"></div>
 				{/* ============================  Hero section ==================================== */}
 				<Row className="hero-section align-items-center">
 					<Hero />
