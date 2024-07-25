@@ -21,19 +21,9 @@ export default function Landing() {
 				<Row className="hero-section align-items-center">
 					<Hero />
 				</Row>
+				<HowItWorks />
 
 				{/* ========================= how it works ========================================= */}
-				<Row
-					className="howitworks-section align-items-center"
-					style={{
-						backgroundColor: "#f0f0f0",
-						padding: "20px",
-						margin: 0,
-						direction: isRTL ? "rtl" : "ltr"
-					}}
-				>
-					<HowItWorks />
-				</Row>
 
 				{/*==================================== Relay Map =========================================*/}
 				<Row
@@ -55,28 +45,13 @@ export default function Landing() {
 
 				{/*================= Blog section =================================*/}
 				<Row
-					className="blog-section align-items-center"
+					className="blog-section align-items-center "
 					style={{
-						backgroundColor: "#f0f0f0",
 						padding: "20px",
 						margin: 0,
 						direction: isRTL ? "rtl" : "ltr"
 					}}
 				>
-					<Col xs={12}>
-						<h2
-							className="text-center fw-bold section-title "
-							style={{ fontSize: "33px", marginTop: "40px" }}
-						>
-							{t("Blog.BlogHeader")}
-						</h2>
-						<p
-							className={`text-center section-subtitle  ${isRTL ? "text-end" : "text-start"}`}
-							style={{ fontSize: "calc(1rem + 0.5vw)" }}
-						>
-							{t("Blog.BlogSubHeader")}
-						</p>
-					</Col>
 					<Col xs={12}>
 						<Blog />
 					</Col>
@@ -92,12 +67,15 @@ export default function Landing() {
 					}}
 				>
 					<Col xs={12}>
-						<h2 className="text-center fw-bold" style={{ fontSize: "33px", marginTop: "40px" }}>
+						<h2
+							className="text-center fw-bold"
+							style={{ fontSize: "33px", marginTop: "60px", color: "#2666af" }}
+						>
 							{t("FAQ.FAQ")}
 						</h2>
 						<p
 							className={`text-center section-subtitle  ${isRTL ? "text-end" : "text-start"}`}
-							style={{ fontSize: "calc(1.10rem + 0.5vw)" }}
+							style={{ fontSize: "calc(1rem + 0.5vw)", marginTop: "30px" }}
 						>
 							{t("FAQ.FAQSubheader")}
 						</p>

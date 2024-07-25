@@ -39,21 +39,24 @@
 		"Reliability": "Reliability Of Gateway Clients In Smswithoutborders",
 		"ReadMore": "Read More"
 	},
-	"FAQ": {
-		"FAQ": "Frequently Asked Questions",
-		"FAQSubheader": "Find answers to the most common questions.",
-		"FAQ1": "Is RelaySMS available on my device?",
-		"faq1": "RelaySMS is currently available for Android. We are working on expanding compatibility to other platforms.",
-		"FAQ2": "How do I send an offline message? ",
-		"faq2": "Choose the platform you want to send the message to and compose your message within the app. Our Help Center also offers resources and tutorials on how to send messages through the app",
-		"FAQ3": "Are there any limitations on offline messages? ",
-		"faq3": "There are no limits on the size and number of messages you can send with the app.",
-		"FAQ4": "I'm having trouble logging in to my account. What should I do?  ",
-		"faq4": "Our Help Center offers resources and tutorials on logging in to your account. If you can't find a solution, you can reach out to our support team at <a href='smswithoutborders'>smswithoutborders</a>",
-		"FAQ5": "I'm experiencing technical difficulties with the app. How can I get help? ",
-		"faq5": "Our Help Center offers resources and troubleshooting guides. You can also reach out to our support team on social media at [link to X handle] or by visiting our website."
-	},
-
+		"FAQ": {
+			"FAQ": "Frequently Asked Questions",
+			"FAQSubheader": "Find answers to the most common questions.",
+			"FAQ1": "Is RelaySMS available on my device?",
+			"faq1": "RelaySMS is currently available for <a href='https://example.com' target='_blank'>Android</a>. We are working on expanding compatibility to other platforms.",
+			"FAQ2": "How much does RelaySMS cost?",
+			"faq2": "RelaySMS is free.",
+			"FAQ3": "How do I send an offline message?",
+			"faq3": "Choose the platform you want to send the message to and compose your message within the app. Or click the <a href='#' class='help-link'>Help</a> button to find full tutorials on how to send messages through the app.",
+			"FAQ4": "Are there any limitations on offline messages?",
+			"faq4": "There are no limits on the size and number of messages you can send with the app.",
+			"FAQ5": "I'm having trouble logging in to my account. What should I do?",
+			"faq5": "Click the <a href='#' class='help-link'>help</a> button to find full tutorials on logging in to your account and if you can't find a solution, you can reach out to our support team at <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a>.",
+			"FAQ6": "I'm experiencing technical difficulties with the app. How can I get help?",
+			"faq6": "You can reach out to our support team at <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a> or on social media at <a href='https://x.com/RelaySMS' target='_blank'>https://x.com/RelaySMS</a> or by visiting our website.",
+			"FAQ7": "How do I update the RelaySMS app?",
+			"faq7": "The app will usually prompt you to update when a new version is available. You can also manually check for updates through your device's app store."
+		},
 	"Footer": {
 		"RelaySMS": "RelaySMS",
 		"footerbody2": "Send Messages seamlessly with RelaySMS.",

@@ -24,6 +24,14 @@ const FAQ = [
 	{
 		question: "FAQ.FAQ5",
 		answer: "FAQ.faq5"
+	},
+	{
+		question: "FAQ.FAQ6",
+		answer: "FAQ.faq6"
+	},
+	{
+		question: "FAQ.FAQ7",
+		answer: "FAQ.faq7"
 	}
 ];
 
@@ -42,10 +50,10 @@ export default function Faqs() {
 				<div
 					style={{
 						padding: "20px",
-						maxWidth: "100%",
+						maxWidth: "800px",
 						margin: "0 auto",
 						color: "#f5f5f5",
-						borderRadius: 2,
+						borderRadius: 8,
 						direction: isRTL ? "rtl" : "ltr"
 					}}
 				>
@@ -57,9 +65,10 @@ export default function Faqs() {
 							sx={{
 								mb: 2,
 								"&:before": {
-									display: "none",
-									borderRadius: "40%"
-								}
+									display: "none"
+								},
+								borderRadius: 2,
+								boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)"
 							}}
 						>
 							<AccordionSummary
@@ -78,7 +87,10 @@ export default function Faqs() {
 								</Typography>
 							</AccordionSummary>
 							<AccordionDetails>
-								<Typography sx={{ color: "#000000" }}>{t(item.answer)}</Typography>
+								<Typography
+									sx={{ color: "#000000" }}
+									dangerouslySetInnerHTML={{ __html: t(item.answer) }}
+								/>
 							</AccordionDetails>
 						</Accordion>
 					))}
