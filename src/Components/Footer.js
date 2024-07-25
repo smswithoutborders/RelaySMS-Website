@@ -88,7 +88,7 @@ export default function Footer() {
 								</ListItem>
 								<ListItem>
 									<FaXTwitter style={{ marginInlineEnd: 15 }} />
-									<a href="https://x.com/SwobOutreach" style={linkStyle}>
+									<a href="https://x.com/RelaySMS" style={linkStyle}>
 										{t("Footer.footersocial3")}
 									</a>
 								</ListItem>

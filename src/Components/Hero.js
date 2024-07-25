@@ -1,26 +1,51 @@
-// Hero.js
-
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "../index.css";
+import "../App.css";
 import "../i18n.js";
 
 const Hero = () => {
 	const { t, i18n } = useTranslation();
 	const isRTL = i18n.dir() === "rtl";
 
+	useEffect(() => {
+		const handleScroll = () => {
+			const elements = document.querySelectorAll(".slide-in");
+			elements.forEach((el) => {
+				const rect = el.getBoundingClientRect();
+				if (rect.top < window.innerHeight * 0.9) {
+					el.classList.add("visible");
+				} else {
+					el.classList.remove("visible");
+				}
+			});
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		handleScroll();
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
 	return (
-		<Container fluid className="hero-section" style={{ direction: isRTL ? "rtl" : "ltr" }}>
+		<Container
+			fluid
+			id="hero"
+			className="hero-section"
+			style={{ direction: isRTL ? "rtl" : "ltr" }}
+		>
 			<Row
-				className="align-items-center"
+				className="align-items-center hero-row"
 				style={{
-					marginLeft: 30,
-					marginRight: 30,
+					marginLeft: 35,
+					marginRight: 35,
 					direction: isRTL ? "rtl" : "ltr"
 				}}
 			>
-				<Col xl={8} lg={8} md={6} sm={12} xs={12} className="hero-text-container hero-text-box">
+				<Col xs={12} md={6} className="content hero-text-box">
 					<h1 className="heading-primary">{t("Landing.landingh1")}</h1>
 					<p className="hero-description">{t("Landing.landingh2")}</p>
 
@@ -35,7 +60,8 @@ const Hero = () => {
 								color: "#FFFFFF",
 								justifyContent: "center",
 								width: "100%",
-								maxWidth: "200px"
+								maxWidth: "200px",
+								marginLeft: "5%"
 							}}
 						>
 							<div className="d-flex w-100">
@@ -82,9 +108,18 @@ const Hero = () => {
 						</Button>
 					</div>
 				</Col>
-				<Col xl={4} lg={4} md={6} sm={12} xs={12} className="hero-image-container ">
+				<Col
+					xs={12}
+					md={6}
+					className="hero-image-container d-flex justify-content-center justify-content-md-end align-items-center"
+				>
 					<div className="hero-img-box move-down-sm">
-						<img src="/phone1.png" alt="Relaysms App" className="hero-img img-fluid" />
+						<img
+							src="/one1.png"
+							alt="Relaysms App"
+							className="hero-img img-fluid"
+							style={{ width: "450px", height: "auto" }}
+						/>
 					</div>
 				</Col>
 			</Row>

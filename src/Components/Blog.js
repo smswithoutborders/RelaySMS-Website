@@ -1,157 +1,104 @@
 import React from "react";
-import Carousel from "react-bootstrap/Carousel";
-import "bootstrap/dist/css/bootstrap.min.css";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme, Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { Container, Row } from "react-bootstrap";
-import "../App.css";
+import { Container, Row, Col } from "react-bootstrap";
+import "../index.css";
 
-const MultiItemCarousel = () => {
-	const theme = useTheme();
-	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-	const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+const Blog = () => {
 	const { t, i18n } = useTranslation();
-
-	const items = [
-		{
-			id: 1,
-			imgSrc: "/composeMessage.png",
-			imgAlt: "Waterfall",
-			title: t("Blog.Reliability"),
-			description: t("Blog.ReliabilityD"),
-			link: "https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders",
-			author: "Aysha Musa",
-			avatar: "V"
-		},
-		{
-			id: 2,
-			imgSrc: "/resilience.svg",
-			title: t("Blog.Resilience"),
-			description: t("Blog.ResilienceD"),
-			link: "https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders",
-			author: "Aysha Musa",
-			avatar: "R"
-		}
-	];
 
 	const isRTL = i18n.language === "fa";
 
-	const cardStyles = {
-		maxWidth: isMobile ? "100%" : "500px",
-		width: "100%",
-		boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-		borderRadius: 20,
-		border: "1px solid #e0e0e0",
-		margin: "10px auto",
-		transition: "transform 0.2s, box-shadow 0.2s",
-		"&:hover": {
-			transform: "scale(1.02)",
-			boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
-			border: "1px solid #8AC1EE"
-		}
-	};
-
-	const imgStyles = {
-		width: "100%",
-		height: "auto",
-		objectFit: "cover",
-		borderTopLeftRadius: 20,
-		borderTopRightRadius: 20
-	};
-
-	const titleStyles = {
-		fontSize: isMobile ? "1.2rem" : "1.5rem",
-		marginBottom: "0.5rem",
-		fontWeight: "bold",
-		textAlign: "center"
-	};
-
-	const descriptionStyles = {
-		fontSize: isMobile ? "0.9rem" : "1rem",
-		color: "#666",
-		textAlign: "center"
-	};
-
-	const linkStyles = {
-		display: "block",
-		textAlign: "center",
-		marginTop: "1rem",
-		color: "#007bff",
-		textDecoration: "none"
-	};
-
 	return (
-		<Container
-			style={{
-				padding: "0 20px",
-				marginBottom: "20px",
-				maxWidth: "1500px",
-				margin: "0 auto"
-			}}
-			sx={{
-				direction: isRTL ? "rtl" : "ltr",
-				display: "flex",
-				justifyContent: "center"
-			}}
-		>
-			<Row>
-				{isMobile || isTablet ? (
-					<Carousel variant="dark" style={{ maxWidth: "100%", margin: "auto" }}>
-						{items.map((item) => (
-							<Carousel.Item key={item.id}>
-								<div className="card" style={cardStyles}>
-									<img
-										src={item.imgSrc}
-										className="card-img-top"
-										alt={item.imgAlt}
-										style={imgStyles}
-									/>
-									<div className="card-body">
-										<h5 className="card-title" style={titleStyles}>
-											{item.title}
-										</h5>
-										<p className="card-text" style={descriptionStyles}>
-											{item.description}
-										</p>
-										<a href={item.link} style={linkStyles}>
-											{t("Blog.ReadMore")}
-										</a>
-									</div>
-								</div>
-							</Carousel.Item>
-						))}
-					</Carousel>
-				) : (
-					<Box className="row" sx={{ display: "flex", justifyContent: "center" }}>
-						{items.map((item) => (
-							<Box key={item.id} sx={{ maxWidth: "33.33%", flex: "1 1 33.33%", padding: "10px" }}>
-								<div className="card" style={cardStyles}>
-									<img
-										src={item.imgSrc}
-										className="card-img-top"
-										alt={item.imgAlt}
-										style={imgStyles}
-									/>
-									<div className="card-body">
-										<h5 className="card-title" style={titleStyles}>
-											{item.title}
-										</h5>
-										<p className="card-text" style={descriptionStyles}>
-											{item.description}
-										</p>
-										<a href={item.link} style={linkStyles}>
-											{t("Blog.ReadMore")}
-										</a>
-									</div>
-								</div>
-							</Box>
-						))}
-					</Box>
-				)}
+		<Container className="blog-section" style={{ direction: isRTL ? "rtl" : "ltr" }}>
+			<h2
+				className="text-center fw-bold section-title"
+				style={{ fontSize: "33px", marginTop: "60px", color: "#2666af" }}
+			>
+				{t("Blog.BlogHeader")}
+			</h2>
+			<p
+				className={`text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
+				style={{ fontSize: "calc(1rem + 0.5vw)", marginTop: "30px", marginBottom: "60px" }}
+			>
+				{t("Blog.BlogSubHeader")}
+			</p>
+			<Row className="blog-row">
+				<Col xs={12} md={6} lg={4} className="mb-4">
+					<div className="blog">
+						<div className="blog-image">
+							<img src="/resilience.jpg" alt="Blog Image 1" />
+							<div className="date">April 16, 2024</div>
+						</div>
+						<div className="blog-content">
+							<h2>{t("Blog.Resilience")}</h2>
+							<p>{t("Blog.ResilienceD")}</p>
+							<a href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders">
+								{t("Blog.ReadMore")}
+							</a>
+						</div>
+					</div>
+				</Col>
+
+				<Col xs={12} md={6} lg={4} className="mb-4">
+					<div className="blog">
+						<div className="blog-image">
+							<img src="/ID.jpg" alt="Blog Image 5" />
+							<div className="date">July 1, 2024</div>
+						</div>
+						<div className="blog-content">
+							<h2>RelaySMS Expands User Control with Device ID Registration</h2>
+							<p>
+								RelaySMS (swob app) introduces a powerful new feature: Device ID Registration with
+								RelaySMS Vault! This innovative approach gives you more control over your offline
+								messaging experience.
+							</p>
+							<a href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders">
+								{t("Blog.ReadMore")}
+							</a>
+						</div>
+					</div>
+				</Col>
+			</Row>
+
+			<Row className="blog-row">
+				<Col xs={12} md={6} lg={4} className="mb-4">
+					<div className="blog">
+						<div className="blog-image">
+							<img src="/reliability.jpg" alt="Blog Image 2" />
+							<div className="date">April 5, 2024</div>
+						</div>
+						<div className="blog-content">
+							<h2>{t("Blog.Reliability")}</h2>
+							<p>{t("Blog.ReliabilityD")}</p>
+							<a href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders">
+								{t("Blog.ReadMore")}
+							</a>
+						</div>
+					</div>
+				</Col>
+				<Col xs={12} md={6} lg={4} className="mb-4">
+					<div className="blog">
+						<div className="blog-image">
+							<img src="/rebrand.jpg" alt="Blog Image 6" />
+							<div className="date">June 27, 2024</div>
+						</div>
+						<div className="blog-content">
+							<h2>Rebranding</h2>
+							<p>
+								SMSWithoutBorders itself is becoming the umbrella project encompassing RelaySMS and
+								other messaging tools. The core functionality remains the same, but users can expect
+								a new name, enhanced security features, and a focus on future growth under the
+								SMSWithoutBorders project.
+							</p>
+							<a href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders">
+								{t("Blog.ReadMore")}
+							</a>
+						</div>
+					</div>
+				</Col>
 			</Row>
 		</Container>
 	);
 };
 
-export default MultiItemCarousel;
+export default Blog;
