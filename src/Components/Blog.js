@@ -56,12 +56,8 @@ const Blog = () => {
 									<div className="date">July 1, 2024</div>
 								</div>
 								<div className="blog-content">
-									<h2>RelaySMS Expands User Control with Device ID Registration</h2>
-									<p>
-										RelaySMS (swob app) introduces a powerful new feature: Device ID Registration
-										with RelaySMS Vault! This innovative approach gives you more control over your
-										offline messaging experience.
-									</p>
+									<h2>{t("Blog.IDHeader")}</h2>
+									<p>{t("Blog.IDD")}</p>
 									<a href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders">
 										{t("Blog.ReadMore")}
 									</a>
@@ -92,13 +88,8 @@ const Blog = () => {
 									<div className="date">June 27, 2024</div>
 								</div>
 								<div className="blog-content">
-									<h2>Rebranding</h2>
-									<p>
-										SMSWithoutBorders itself is becoming the umbrella project encompassing RelaySMS
-										and other messaging tools. The core functionality remains the same, but users
-										can expect a new name, enhanced security features, and a focus on future growth
-										under the SMSWithoutBorders project.
-									</p>
+									<h2>{t("Blog.RebrandHeader")}</h2>
+									<p>{t("Blog.RebrandD")}</p>
 									<a href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders">
 										{t("Blog.ReadMore")}
 									</a>

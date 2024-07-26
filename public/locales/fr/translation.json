@@ -1,7 +1,8 @@
 {
 	"Landing": {
-		"landingh1": "Continuez de parler avec RelaySMS",
-		"landingh2": "Envoyez des courriels, des messages et des messages par SMS sans avoir besoin d'une connexion internet. Vous pouvez ainsi rester connecté et partager des informations importantes même dans les zones où l'accès à l'internet est limité ou inexistant",
+		"span": " Pas de données ? Pas d'inquiétude ",
+		"landingh1": "Restez connecté partout avec RelaySMS",
+		"landingh2": "Envoyez des courriels, des messages et des messages par SMS sans connexion Internet. Partagez des informations importantes même dans les zones où l'accès à l'internet est limité ou inexistant.",
 		"Android": "PlayStore",
 		"AndroidSub": "Télécharger à partir de",
 		"Desktop": "Bureau",
@@ -30,14 +31,18 @@
 		"RelaySMSMap": "RelaySMS est utilisé activement dans plus de 60 pays."
 	},
 	"Blog": {
-		"BlogHeader": "Quoi de neuf sur RelaySMS?",
-		"BlogSubHeader": "Restez au courant des dernières nouvelles, des articles et des idées de RelaySMS",
-		"Resilience": "Résilience des clients Gateway dans SMSWithoutBorders",
-		"ResilienceD": "Le client Gateway dans SMSWithoutBorders est essentiel pour acheminer les messages des SMS vers les plateformes en ligne. Le client Gateway écoute les messages et les achemine vers le serveur Gateway, qui publie ...",
-		"ReliabilityD": "Le client Gateway dans SMSWithoutBorders est essentiel pour acheminer les messages des SMS vers les plateformes en ligne. Le client Gateway écoute les messages et les achemine vers le serveur Gateway, qui publie ...",
-		"Reliability": "Fiabilité des clients Gateway dans SMSWithoutBorders",
-		"ReadMore": "Lire la suite"
-	},
+			"BlogHeader": "Quoi de neuf sur RelaySMS ?",
+			"BlogSubHeader": "Restez au courant des dernières nouvelles, des articles et des idées de RelaySMS",
+			"Resilience": "Résilience des clients de la passerelle dans Smswithoutborders",
+			"ResilienceD": "Le client passerelle de SMSWithoutBorders joue un rôle clé dans l'acheminement des messages des SMS vers les plateformes en ligne. Le client de la passerelle écoute les messages et les achemine vers le serveur de la passerelle, qui les publie...",
+			"ReliabilityD": "Le client de passerelle dans SMSWithoutBorders est clé dans l'acheminement des messages des SMS vers les plateformes en ligne. Le client de passerelle écoute les messages et les achemine vers le serveur de passerelle, qui les publie...",
+			"Reliability": "Fiabilité des clients de la passerelle dans Smswithoutborders",
+			"IDHeader": "RelaySMS étend le contrôle de l'utilisateur avec l'enregistrement de l'ID de l'appareil",
+			"IDD": "RelaySMS (application swob) introduit une nouvelle fonctionnalité puissante : L'enregistrement de l'ID de l'appareil avec RelaySMS Vault ! Cette approche innovante vous donne plus de contrôle sur votre expérience de messagerie hors ligne.",
+			"RebrandHeader": "Rebranding",
+			"RebrandD": "SMSWithoutBorders devient le projet parapluie englobant RelaySMS et d'autres outils de messagerie. La fonctionnalité de base reste la même, mais les utilisateurs peuvent s'attendre à un nouveau nom, à des fonctions de sécurité améliorées et à une concentration sur la croissance future dans le cadre du projet SMSWithoutBorders.",
+			"ReadMore": "Lire la suite"
+		  },
 		"FAQ": {
 			"FAQ1": "RelaySMS est-il disponible sur mon appareil ?",
 			"faq1": "RelaySMS est actuellement disponible pour <a href='https://example.com' target='_blank'>Android</a>. Nous travaillons à étendre la compatibilité à d'autres plateformes",
