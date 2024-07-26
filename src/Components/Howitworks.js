@@ -27,21 +27,21 @@ const Features = () => {
 				<Row className="justify-content-center">
 					{cardContent.map((card, idx) => (
 						<Col
-							xs={10}
+							xs={12}
 							sm={8}
 							md={6}
 							lg={4}
 							key={idx}
 							className="mb-4 d-flex justify-content-center"
 						>
-							<Card className="custom-card h-100 shadow-sm">
+							<Card className="custom-card h-100 shadow-sm d-flex flex-column">
 								<Card.Img
 									variant="top"
 									src={card.imageSrc}
 									alt={card.key}
 									className="custom-card-img"
 								/>
-								<Card.Body>
+								<Card.Body className="d-flex flex-column">
 									<Card.Title
 										className="custom-card-title"
 										style={{ textAlign: isRTL ? "right" : "left" }}
@@ -49,7 +49,7 @@ const Features = () => {
 										{t(`Howitworks.${card.title}`)}
 									</Card.Title>
 									<Card.Text
-										className="custom-card-text"
+										className="custom-card-text flex-grow-1"
 										style={{ textAlign: isRTL ? "right" : "left" }}
 									>
 										{t(`Howitworks.${card.key}`)}

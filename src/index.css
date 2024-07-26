@@ -254,11 +254,22 @@ button:hover {
 	align-items: center;
 	height: 100%;
 	max-width: 500px;
-	line-height: 2;
+	display: flex;
+	flex-direction: column;
 }
 
 .custom-card:hover {
 	transform: scale(1.05);
+}
+
+.custom-card-body {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.custom-card-text {
+	flex-grow: 1;
 }
 
 .getting-started-link {
@@ -284,7 +295,7 @@ button:hover {
 /* ======================================================================================= */
 .blog-row {
 	display: flex;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	justify-content: center;
 	flex-wrap: wrap;
 }
@@ -301,6 +312,17 @@ button:hover {
 	margin: -10px;
 }
 
+@media (max-width: 768px) {
+	.blog {
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 480px) {
+	.blog {
+		margin-bottom: 50px;
+	}
+}
 .blog-image {
 	display: flex;
 	justify-content: center !important;
