@@ -31,12 +31,7 @@ const Hero = () => {
 	}, []);
 
 	return (
-		<Container
-			fluid
-			id="hero"
-			className="hero-section"
-			style={{ direction: isRTL ? "rtl" : "ltr" }}
-		>
+		<Container fluid id="hero" style={{ direction: isRTL ? "rtl" : "ltr" }}>
 			<Row
 				className="align-items-center hero-row"
 				style={{
@@ -45,9 +40,16 @@ const Hero = () => {
 					direction: isRTL ? "rtl" : "ltr"
 				}}
 			>
-				<Col xs={12} md={6} className="content hero-text-box">
-					<h1 className="heading-primary">{t("Landing.landingh1")}</h1>
-					<p className="hero-description">{t("Landing.landingh2")}</p>
+				<Col
+					xs={12}
+					md={6}
+					className="content hero-info
+"
+				>
+					<h6>discover</h6>
+					<h1>{t("Landing.landingh1")}</h1>
+					<hr />
+					<p>{t("Landing.landingh2")}</p>
 
 					<div className="button-wrapper">
 						<Button

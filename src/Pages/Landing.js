@@ -15,23 +15,19 @@ export default function Landing() {
 
 	return (
 		<PageAnimationWrapper>
-			<Container fluid>
-				<div className="circular-blob"></div>
+			<Container fluid className="p-0">
 				{/* ============================  Hero section ==================================== */}
-				<Row className="hero-section align-items-center">
+				<Row className="hero-section align-items-center m-0">
 					<Hero />
 				</Row>
-				<HowItWorks />
 
 				{/* ========================= how it works ========================================= */}
+				<HowItWorks />
 
 				{/*==================================== Relay Map =========================================*/}
 				<Row
 					className="align-items-center justify-content-center my-4 py-4 px-3"
-					style={{
-						marginLeft: 30,
-						marginRight: 30
-					}}
+					style={{ margin: 0 }}
 				>
 					<Col md={5} className="text-md-start text-center">
 						<h3 className="fw-bold section-title" style={{ fontSize: "33px", color: "black" }}>
@@ -45,12 +41,8 @@ export default function Landing() {
 
 				{/*================= Blog section =================================*/}
 				<Row
-					className="blog-section align-items-center "
-					style={{
-						padding: "20px",
-						margin: 0,
-						direction: isRTL ? "rtl" : "ltr"
-					}}
+					className="blog-section align-items-center m-0"
+					style={{ padding: "20px", direction: isRTL ? "rtl" : "ltr" }}
 				>
 					<Col xs={12}>
 						<Blog />
@@ -59,12 +51,8 @@ export default function Landing() {
 
 				{/*======================== FAQ section ========================*/}
 				<Row
-					className="faq-section align-items-center section-title "
-					style={{
-						marginTop: "40px",
-						margin: 0,
-						direction: isRTL ? "rtl" : "ltr"
-					}}
+					className="faq-section align-items-center section-title m-0"
+					style={{ marginTop: "40px", direction: isRTL ? "rtl" : "ltr" }}
 				>
 					<Col xs={12}>
 						<h2

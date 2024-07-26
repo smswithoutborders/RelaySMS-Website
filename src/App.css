@@ -1,138 +1,78 @@
-* {
-	font-family: "Ubuntu", sans-serif !important;
-}
-body {
-	width: 100%;
-	height: 100%;
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-a {
-	text-decoration: none;
-	color: inherit;
+@import "https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css";
+
+.progress-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 10px;
+	background: #414f8d;
+	transform-origin: 0%;
 }
 
-a:hover {
-	color: #484848;
-}
-
-button:hover {
-	background-color: #383939 !important;
-}
-.content h1 {
-	font-size: 4rem;
-	width: 95%;
-	margin-left: 5%;
-}
-
-.content p {
-	text-align: left;
-	font-size: 1.5rem;
-	color: #616464;
-	margin-left: 5%;
-	margin-top: 5%;
-}
-
-/* ============================navbar========================= */
-.navbar-custom .nav-link {
-	color: #043957;
-	font-size: 1.3rem;
-	margin: 0 1rem;
-	transition: color 0.3s ease;
-}
-
-.navbar-custom .nav-link:hover {
-	color: #e79405;
-	font-weight: 600;
-}
-
-.navbar-custom .navbar-nav {
-	display: flex;
-	align-items: center;
-}
-
-.navbar-custom .nav-icon {
-	font-size: 1.5rem;
-	margin: 0 1rem;
-	transition: color 0.3s ease;
-}
-
-.navbar-custom .nav-icon:hover {
-	color: #e79405;
-	font-weight: 600;
-}
-
-/* ===================== blog carousel ============================ */
-.card {
-	width: 80% !important;
-	align-items: center;
-}
-.centered-carousel {
+.loader-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 100vh;
 }
 
-.card-img-top {
-	width: 55% !important;
+.loader {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
 }
 
-.Map {
-	padding: 1rem 0.75rem;
-	margin: 1rem 0;
-}
-/* ========================================================= */
-/* ============================================= */
-.circular-blob {
-	background-color: rgb(167, 198, 230);
-	backdrop-filter: blur(100px);
-	border-radius: 380px;
-	width: 400px;
-	height: 600px;
-	position: absolute;
-	top: 30%;
-	left: 55%;
+.loader-inner {
+	vertical-align: top;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #333;
 }
 
-@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-	#hero {
-		-webkit-backdrop-filter: blur(10px);
-		backdrop-filter: blur(10px);
-		background-color: rgba(255, 255, 255, 0.356);
+.loader-inner:nth-child(1) {
+	animation: loader-animation 0.8s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+.loader-inner:nth-child(2) {
+	animation: loader-animation 0.8s cubic-bezier(0.165, 0.84, 0.44, 1.02) 0.125s infinite;
+}
+
+.loader-inner:nth-child(3) {
+	animation: loader-animation 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.25s infinite;
+}
+
+.loader-inner:nth-child(4) {
+	animation: loader-animation 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.375s infinite;
+}
+
+.loader-inner:nth-child(5) {
+	animation: loader-animation 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s infinite;
+}
+
+.loader-inner:nth-child(6) {
+	animation: loader-animation 0.8s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.625s infinite;
+}
+
+.loader-inner:nth-child(7) {
+	animation: loader-animation 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.75s infinite;
+}
+
+.loader-inner:nth-child(8) {
+	animation: loader-animation 0.8s cubic-bezier(0.93, 0.095, 0.88, 0.26) 0.875s infinite;
+}
+
+@keyframes loader-animation {
+	0% {
+		transform: scale(1);
+	}
+	20% {
+		transform: scale(0.3);
+	}
+	40% {
+		transform: scale(1);
 	}
 }
-
-.hero-img {
-	width: 100%;
-	height: auto;
-}
-
-@media (min-width: 576px) {
-	.hero-img {
-		max-width: 100%;
-	}
-}
-
-@media (min-width: 768px) {
-	.hero-img {
-		max-width: 450px;
-	}
-}
-
-@media (min-width: 992px) {
-	.hero-img {
-		max-width: 450px;
-	}
-}
-
-@media (max-width: 767px) {
-	.hero-image-container {
-		text-align: center;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-bottom: 20px;
-	}
-}
-/* ============================================ */

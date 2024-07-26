@@ -50,7 +50,7 @@ export default function Faqs() {
 				<div
 					style={{
 						padding: "20px",
-						maxWidth: "800px",
+						maxWidth: "1500px",
 						margin: "0 auto",
 						color: "#f5f5f5",
 						borderRadius: 8,
@@ -82,7 +82,7 @@ export default function Faqs() {
 									}
 								}}
 							>
-								<Typography variant="body1" sx={{ fontWeight: 700, color: "#1c222c" }}>
+								<Typography variant="body1" sx={{ fontWeight: 800, color: "#1c222c" }}>
 									{t(item.question)}
 								</Typography>
 							</AccordionSummary>
