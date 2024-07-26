@@ -99,9 +99,9 @@ const Hero = () => {
 					</div>
 				</Col>
 				<Col
-					xs={8}
+					xs={12}
 					md={4}
-					className="hero-image-container d-flex justify-content-center justify-content-md-end align-items-center"
+					className="hero-image-container d-flex justify-content-center align-items-center"
 				>
 					<div className="hero-img-box move-down-sm">
 						<img
