@@ -41,6 +41,7 @@ function ScrollTop(props) {
 
 export default function BackToTop(props) {
 	const { t, i18n } = useTranslation();
+	const isRTL = i18n.dir() === "rtl";
 	const direction = i18n.dir();
 	const themeWithDirection = createTheme({
 		direction: direction
@@ -56,13 +57,14 @@ export default function BackToTop(props) {
 					expand="lg"
 					sticky="top"
 					className="shadow-sm p-3 mb-5 bg-white rounded navbar-custom"
+					style={{ direction: isRTL ? "rtl" : "ltr" }}
 				>
 					<Navbar.Brand href="#" className="me-auto">
 						<img src="./logo.png" alt="Logo" style={{ height: "40px" }} />
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
-						<Nav className="ms-auto">
+						<Nav className="ms-auto" style={{ direction: isRTL ? "rtl" : "ltr" }}>
 							<Nav.Link
 								href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
 								target="_blank"

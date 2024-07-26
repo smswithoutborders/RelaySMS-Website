@@ -34,7 +34,7 @@ const Hero = () => {
 		<Container fluid id="hero" style={{ direction: isRTL ? "rtl" : "ltr" }}>
 			<div className="hero-container" style={{ direction: isRTL ? "rtl" : "ltr" }}>
 				<Col xs={12} md={6} className="content hero-info">
-					<h6>discover</h6>
+					<h6>{t("Landing.span")}</h6>
 					<h1>{t("Landing.landingh1")}</h1>
 					<hr />
 					<p>{t("Landing.landingh2")}</p>
