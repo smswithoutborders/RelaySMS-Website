@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Col, Button } from "react-bootstrap";
 import "../index.css";
 import "../App.css";
 import "../i18n.js";
@@ -32,20 +32,8 @@ const Hero = () => {
 
 	return (
 		<Container fluid id="hero" style={{ direction: isRTL ? "rtl" : "ltr" }}>
-			<Row
-				className="align-items-center hero-row"
-				style={{
-					marginLeft: 35,
-					marginRight: 35,
-					direction: isRTL ? "rtl" : "ltr"
-				}}
-			>
-				<Col
-					xs={12}
-					md={6}
-					className="content hero-info
-"
-				>
+			<div className="hero-container" style={{ direction: isRTL ? "rtl" : "ltr" }}>
+				<Col xs={12} md={6} className="content hero-info">
 					<h6>discover</h6>
 					<h1>{t("Landing.landingh1")}</h1>
 					<hr />
@@ -111,8 +99,8 @@ const Hero = () => {
 					</div>
 				</Col>
 				<Col
-					xs={12}
-					md={6}
+					xs={8}
+					md={4}
 					className="hero-image-container d-flex justify-content-center justify-content-md-end align-items-center"
 				>
 					<div className="hero-img-box move-down-sm">
@@ -120,11 +108,11 @@ const Hero = () => {
 							src="/one1.png"
 							alt="Relaysms App"
 							className="hero-img img-fluid"
-							style={{ width: "450px", height: "auto" }}
+							style={{ width: "400px", height: "auto" }}
 						/>
 					</div>
 				</Col>
-			</Row>
+			</div>
 		</Container>
 	);
 };
