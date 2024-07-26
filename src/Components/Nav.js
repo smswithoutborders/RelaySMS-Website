@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
 import { FaTwitter, FaGithub, FaArrowUp } from "react-icons/fa";
@@ -57,51 +57,49 @@ export default function BackToTop(props) {
 					sticky="top"
 					className="shadow-sm p-3 mb-5 bg-white rounded navbar-custom"
 				>
-					<Container>
-						<Navbar.Brand href="#" className="me-auto">
-							<img src="./logo.png" alt="Logo" style={{ height: "40px" }} />
-						</Navbar.Brand>
-						<Navbar.Toggle aria-controls="basic-navbar-nav" />
-						<Navbar.Collapse id="basic-navbar-nav">
-							<Nav className="ms-auto">
-								<Nav.Link
-									href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
-									target="_blank"
-									rel="noreferrer noopener"
-									className="nav-link"
-								>
-									{t("Nav.help")}
-								</Nav.Link>
-								<Nav.Link
-									href="https://blog.smswithoutborders.com/"
-									target="_blank"
-									rel="noreferrer"
-									className="nav-link"
-								>
-									{t("Nav.Blog")}
-								</Nav.Link>
-								<Nav.Link
-									href="https://x.com/RelaySMS"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="nav-link nav-icon"
-								>
-									<FaTwitter />
-								</Nav.Link>
-								<Nav.Link
-									href="https://github.com/smswithoutborders"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="nav-link nav-icon"
-								>
-									<FaGithub />
-								</Nav.Link>
-								<Nav.Link className="nav-link">
-									<LanguageSwitcher />
-								</Nav.Link>
-							</Nav>
-						</Navbar.Collapse>
-					</Container>
+					<Navbar.Brand href="#" className="me-auto">
+						<img src="./logo.png" alt="Logo" style={{ height: "40px" }} />
+					</Navbar.Brand>
+					<Navbar.Toggle aria-controls="basic-navbar-nav" />
+					<Navbar.Collapse id="basic-navbar-nav">
+						<Nav className="ms-auto">
+							<Nav.Link
+								href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+								target="_blank"
+								rel="noreferrer noopener"
+								className="nav-link"
+							>
+								{t("Nav.help")}
+							</Nav.Link>
+							<Nav.Link
+								href="https://blog.smswithoutborders.com/"
+								target="_blank"
+								rel="noreferrer"
+								className="nav-link"
+							>
+								{t("Nav.Blog")}
+							</Nav.Link>
+							<Nav.Link
+								href="https://x.com/RelaySMS"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="nav-link nav-icon"
+							>
+								<FaTwitter />
+							</Nav.Link>
+							<Nav.Link
+								href="https://github.com/smswithoutborders"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="nav-link nav-icon"
+							>
+								<FaGithub />
+							</Nav.Link>
+							<Nav.Link className="nav-link">
+								<LanguageSwitcher />
+							</Nav.Link>
+						</Nav>
+					</Navbar.Collapse>
 				</Navbar>
 				<div id="back-to-top-anchor" />
 				<ScrollTop {...props}>

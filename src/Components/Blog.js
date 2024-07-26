@@ -9,7 +9,17 @@ const Blog = () => {
 	const isRTL = i18n.language === "fa";
 
 	return (
-		<Container className="blog-section" style={{ direction: isRTL ? "rtl" : "ltr" }}>
+		<Container
+			className="blog-section"
+			style={{
+				padding: "20px",
+				maxWidth: "2000px",
+				margin: "0 auto",
+				color: "#f5f5f5",
+				borderRadius: 8,
+				direction: isRTL ? "rtl" : "ltr"
+			}}
+		>
 			<h2
 				className="text-center fw-bold section-title"
 				style={{ fontSize: "33px", marginTop: "60px", color: "#2666af" }}
