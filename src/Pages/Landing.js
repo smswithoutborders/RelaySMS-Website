@@ -10,68 +10,36 @@ import "../i18n.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Landing() {
-	const { t, i18n } = useTranslation();
-	const isRTL = i18n.dir() === "rtl";
+	const { t } = useTranslation();
 
 	return (
 		<PageAnimationWrapper>
-			<Container fluid className="p-0">
-				{/* ============================  Hero section ==================================== */}
-				<Row className="hero-section align-items-center m-0">
-					<Hero />
-				</Row>
-
-				{/* ========================= how it works ========================================= */}
+			<Container fluid>
+				<Hero />
 				<HowItWorks />
+				<Blog />
 
-				{/*==================================== Relay Map =========================================*/}
-				<Row
-					className="align-items-center justify-content-center my-4 py-4 px-3"
-					style={{ margin: 0 }}
+				<div
+					style={{
+						padding: "20px",
+						maxWidth: "1500px",
+						margin: "0 auto",
+						color: "#f5f5f5",
+						borderRadius: 8
+					}}
 				>
-					<Col md={5} className="text-md-start text-center">
-						<h3 className="fw-bold section-title" style={{ fontSize: "33px", color: "black" }}>
-							{t("Map.RelaySMSMap")}
-						</h3>
-					</Col>
-					<Col md={7} className="text-center">
-						<Image src="/map.png" fluid rounded />
-					</Col>
-				</Row>
-
-				{/*================= Blog section =================================*/}
-				<Row
-					className="blog-section align-items-center m-0"
-					style={{ padding: "20px", direction: isRTL ? "rtl" : "ltr" }}
-				>
-					<Col xs={12}>
-						<Blog />
-					</Col>
-				</Row>
-
-				{/*======================== FAQ section ========================*/}
-				<Row
-					className="faq-section align-items-center section-title m-0"
-					style={{ marginTop: "40px", direction: isRTL ? "rtl" : "ltr" }}
-				>
-					<Col xs={12}>
-						<h2
-							className="text-center fw-bold"
-							style={{ fontSize: "33px", marginTop: "60px", color: "#2666af" }}
-						>
-							{t("FAQ.FAQ")}
-						</h2>
-						<p
-							className={`text-center section-subtitle  ${isRTL ? "text-end" : "text-start"}`}
-							style={{ fontSize: "calc(1rem + 0.5vw)", marginTop: "30px" }}
-						>
-							{t("FAQ.FAQSubheader")}
-						</p>
-					</Col>
-					<Col xs={12}>
-						<Faqs />
-					</Col>
-				</Row>
+					<Row className="align-items-center my-4 py-4 px-3" style={{ margin: 0 }}>
+						<Col md={5} className="text-md-start text-center">
+							<h3 className="fw-bold section-title" style={{ fontSize: "33px", color: "black" }}>
+								{t("Map.RelaySMSMap")}
+							</h3>
+						</Col>
+						<Col md={7} className="text-center">
+							<Image src="/map.png" alt={t("Map.ImageAltText")} fluid rounded />
+						</Col>
+					</Row>
+				</div>
+				<Faqs />
 			</Container>
 		</PageAnimationWrapper>
 	);
