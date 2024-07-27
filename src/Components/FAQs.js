@@ -1,8 +1,10 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import { Accordion, AccordionSummary, AccordionDetails, Typography } from "@mui/material";
 import { Container, Row } from "react-bootstrap";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTranslation } from "react-i18next";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const FAQ = [
 	{
@@ -44,10 +46,15 @@ export default function Faqs() {
 		setExpanded(isExpanded ? panel : false);
 	};
 
+	useEffect(() => {
+		AOS.init({ duration: 1000 });
+	}, []);
+
 	return (
 		<Container>
 			<Row>
 				<div
+					data-aos="zoom-in"
 					style={{
 						padding: "20px",
 						maxWidth: "1500px",
@@ -58,12 +65,14 @@ export default function Faqs() {
 					}}
 				>
 					<h2
+						data-aos="fade-up"
 						className="text-center fw-bold"
 						style={{ fontSize: "33px", marginTop: "60px", color: "#2666af" }}
 					>
 						{t("FAQ.FAQ")}
 					</h2>
 					<p
+						data-aos="zoom-out-left"
 						className={`text-center section-subtitle  ${isRTL ? "text-end" : "text-start"}`}
 						style={{ fontSize: "calc(1rem + 0.5vw)", marginTop: "30px" }}
 					>

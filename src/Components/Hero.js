@@ -31,19 +31,32 @@ const Hero = () => {
 	}, []);
 
 	return (
-		<Container fluid id="hero" style={{ direction: isRTL ? "rtl" : "ltr" }}>
+		<Container
+			fluid
+			id="hero"
+			style={{ direction: isRTL ? "rtl" : "ltr" }}
+			data-aos="fade-up"
+			data-aos-anchor-placement="top-center"
+		>
 			<div className="hero-container" style={{ direction: isRTL ? "rtl" : "ltr" }}>
-				<Col xs={12} md={6} className="content hero-info">
+				<Col
+					xs={12}
+					md={6}
+					className="content hero-info"
+					data-aos="fade-right"
+					data-aos-offset="300"
+					data-aos-easing="ease-in-sine"
+				>
 					<h6>{t("Landing.span")}</h6>
-					<h1>{t("Landing.landingh1")}</h1>
+					<h1 data-aos="fade-up-right">{t("Landing.landingh1")}</h1>
 					<hr />
 					<p>{t("Landing.landingh2")}</p>
 
-					<div className="button-wrapper">
+					<div className="d-block d-md-flex justify-content-center justify-content-md-start text-center text-md-start button-wrapper">
 						<Button
 							href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 							target="_blank"
-							className="hero-btn btn btn--fill"
+							className="market-btn mb-3 mb-md-0 d-flex align-items-center mx-auto mx-md-0"
 							size="lg"
 							style={{
 								backgroundColor: "#367ed0",
@@ -72,7 +85,7 @@ const Hero = () => {
 						<Button
 							href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 							target="_blank"
-							className="hero-btn btn btn--outline"
+							className="market-btn mb-3 mb-md-0 d-flex align-items-center mx-auto mx-md-0"
 							size="lg"
 							style={{
 								backgroundColor: "white",
@@ -97,20 +110,11 @@ const Hero = () => {
 							</div>
 						</Button>
 					</div>
+					{/* ================================================================================================= */}
 				</Col>
-				<Col
-					xs={12}
-					md={4}
-					className="hero-image-container d-flex justify-content-center align-items-center"
-				>
-					<div className="hero-img-box move-down-sm">
-						<img
-							src="/one1.png"
-							alt="Relaysms App"
-							className="hero-img img-fluid"
-							style={{ width: "400px", height: "auto" }}
-						/>
-					</div>
+
+				<Col md={6} className="text-center">
+					<img src="/one1.png" alt="Hero" className="hero-image" />
 				</Col>
 			</div>
 		</Container>
