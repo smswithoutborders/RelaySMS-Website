@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Container, Row, Col } from "react-bootstrap";
+import { FaArrowCircleRight } from "react-icons/fa";
 import "../index.css";
 import AOS from "aos";
 
@@ -102,11 +103,20 @@ const Blog = () => {
 							</div>
 						</Col>
 					</Row> */}
-					<Row>
-						<Col className="text-center mt-4">
-							<a href="https://blog.smswithoutborders.com">{t("Blog.ReadOtherArticles")}</a>
-						</Col>
-					</Row>
+
+					<Col xs={12}>
+						<div className="text-center p-1">
+							<a
+								href="https://blog.smswithoutborders.com"
+								target="_blank"
+								rel="noreferrer noopener"
+								className="getting-started-link"
+							>
+								{t("Blog.ReadOtherArticles")}
+								<FaArrowCircleRight className="ml-2 arrow-icon" />
+							</a>
+						</div>
+					</Col>
 				</div>
 			</Row>
 		</Container>
