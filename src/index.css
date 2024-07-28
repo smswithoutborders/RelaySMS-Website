@@ -224,18 +224,6 @@ a:hover {
 	transform: rotate(-30deg);
 }
 
-.container,
-.row {
-	max-width: 100%;
-	margin: 0 auto;
-	padding: 0 15px;
-}
-
-.row {
-	margin-right: 0;
-	margin-left: 0;
-}
-
 @media (max-width: 576px) {
 	.custom-card {
 		max-width: 100%;
@@ -243,7 +231,9 @@ a:hover {
 }
 
 /* ==================================== blog ==================================== */
-
+.blog-row {
+	justify-content: center;
+}
 .blog {
 	border-radius: 20px;
 	box-shadow: 0 8px 10px rgba(21, 20, 20, 0.1);
@@ -356,8 +346,6 @@ a:hover {
 	.blog {
 		margin-bottom: 50px;
 		width: 100%;
-		align-items: center;
-		height: 100%;
-		max-width: 500px;
+		max-width: none; /* Ensure it takes full width */
 	}
 }
