@@ -14,7 +14,7 @@ const Blog = () => {
 	}, []);
 
 	return (
-		<Container>
+		<Container fluid>
 			<Row>
 				<h2
 					data-aos="fade-up"
@@ -42,8 +42,8 @@ const Blog = () => {
 					}}
 				>
 					<Row className="blog-row">
-						<Col xs={12} md={6} lg={4} className="mb-4 d-flex justify-content-center">
-							<div className="blog" data-aos="fade-right">
+						<Col xs={12} sm={8} md={6} lg={4} className="mb-4 d-flex justify-content-center">
+							<div className="blog " data-aos="fade-right">
 								<div className="blog-image">
 									<img src="/resilience.jpg" alt="Blog Image 1" />
 									<div className="date">April 16, 2024</div>
@@ -57,7 +57,7 @@ const Blog = () => {
 								</div>
 							</div>
 						</Col>
-						<Col xs={12} md={6} lg={4} className="mb-4 d-flex justify-content-center">
+						<Col xs={12} md={8} lg={6} className="mb-4 d-flex justify-content-center">
 							<div className="blog" data-aos="fade-left">
 								<div className="blog-image">
 									<img src="/ID.jpg" alt="Blog Image 5" />
@@ -73,36 +73,6 @@ const Blog = () => {
 							</div>
 						</Col>
 					</Row>
-					{/* <Row className="blog-row">
-						<Col xs={12} md={6} lg={4} className="mb-4 d-flex justify-content-center">
-							<div className="blog">
-								<div className="blog-image">
-									<img src="/relia.jpg" alt="Blog Image 2" />
-									<div className="date">April 5, 2024</div>
-								</div>
-								<div className="blog-content">
-									<h2>{t("Blog.Reliability")}</h2>
-									<p>{t("Blog.ReliabilityD")}</p>
-									<a href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders">
-										{t("Blog.ReadMore")}
-									</a>
-								</div>
-							</div>
-						</Col>
-						<Col xs={12} md={6} lg={4} className="mb-4 d-flex justify-content-center">
-							<div className="blog">
-								<div className="blog-image">
-									<img src="/rebrand.jpg" alt="Blog Image 6" />
-									<div className="date">June 27, 2024</div>
-								</div>
-								<div className="blog-content">
-									<h2>{t("Blog.RebrandHeader")}</h2>
-									<p>{t("Blog.RebrandD")}</p>
-									<a href="">{t("Blog.ReadMore")}</a>
-								</div>
-							</div>
-						</Col>
-					</Row> */}
 
 					<Col xs={12}>
 						<div className="text-center p-1">

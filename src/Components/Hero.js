@@ -2,53 +2,23 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Container, Col, Button } from "react-bootstrap";
 import "../index.css";
-import "../App.css";
 import "../i18n.js";
+import AOS from "aos";
 
 const Hero = () => {
 	const { t, i18n } = useTranslation();
 	const isRTL = i18n.dir() === "rtl";
 
 	useEffect(() => {
-		const handleScroll = () => {
-			const elements = document.querySelectorAll(".slide-in");
-			elements.forEach((el) => {
-				const rect = el.getBoundingClientRect();
-				if (rect.top < window.innerHeight * 0.9) {
-					el.classList.add("visible");
-				} else {
-					el.classList.remove("visible");
-				}
-			});
-		};
-
-		window.addEventListener("scroll", handleScroll);
-		handleScroll();
-
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
+		AOS.init({});
 	}, []);
 
 	return (
-		<Container
-			fluid
-			id="hero"
-			style={{ direction: isRTL ? "rtl" : "ltr" }}
-			data-aos="fade-up"
-			data-aos-anchor-placement="top-center"
-		>
+		<Container fluid id="hero" style={{ direction: isRTL ? "rtl" : "ltr" }} data-aos="fade-up">
 			<div className="hero-container" style={{ direction: isRTL ? "rtl" : "ltr" }}>
-				<Col
-					xs={12}
-					md={6}
-					className="content hero-info"
-					data-aos="fade-right"
-					data-aos-offset="300"
-					data-aos-easing="ease-in-sine"
-				>
+				<Col xs={12} md={6} className="content hero-info" data-aos="fade-right">
 					<h6>{t("Landing.span")}</h6>
-					<h1 data-aos="fade-up-right">{t("Landing.landingh1")}</h1>
+					<h1>{t("Landing.landingh1")}</h1>
 					<hr />
 					<p>{t("Landing.landingh2")}</p>
 
@@ -110,7 +80,6 @@ const Hero = () => {
 							</div>
 						</Button>
 					</div>
-					{/* ================================================================================================= */}
 				</Col>
 
 				<Col md={6} className="text-center">
