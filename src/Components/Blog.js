@@ -42,8 +42,8 @@ const Blog = () => {
 					}}
 				>
 					<Row className="blog-row">
-						<Col xs={12} sm={8} md={6} lg={4} className="mb-4 d-flex justify-content-center">
-							<div className="blog " data-aos="fade-right">
+						<Col xs={12} sm={8} md={6} lg={4} className="mb-4 d-flex">
+							<div className="blog" data-aos="fade-right">
 								<div className="blog-image">
 									<img src="/resilience.jpg" alt="Blog Image 1" />
 									<div className="date">April 16, 2024</div>
@@ -57,7 +57,7 @@ const Blog = () => {
 								</div>
 							</div>
 						</Col>
-						<Col xs={12} md={8} lg={6} className="mb-4 d-flex justify-content-center">
+						<Col xs={12} sm={8} md={6} lg={4} className="mb-4 d-flex">
 							<div className="blog" data-aos="fade-left">
 								<div className="blog-image">
 									<img src="/ID.jpg" alt="Blog Image 5" />
@@ -72,9 +72,6 @@ const Blog = () => {
 								</div>
 							</div>
 						</Col>
-					</Row>
-
-					<Col xs={12}>
 						<div className="text-center p-1">
 							<a
 								href="https://blog.smswithoutborders.com"
@@ -86,7 +83,7 @@ const Blog = () => {
 								<FaArrowCircleRight className="ml-2 arrow-icon" />
 							</a>
 						</div>
-					</Col>
+					</Row>
 				</div>
 			</Row>
 		</Container>

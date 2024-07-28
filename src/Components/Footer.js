@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Box, Typography, Grid, ListItem, List } from "@mui/material";
 import { FaEnvelope, FaFacebook, FaGithub, FaXTwitter } from "react-icons/fa6";
 import { Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import AOS from "aos";
 
 export default function Footer() {
 	const { t, i18n } = useTranslation();
@@ -20,13 +19,8 @@ export default function Footer() {
 		transition: "background-color 0.3s ease, color 0.3s ease"
 	};
 
-	useEffect(() => {
-		AOS.init({ duration: 1000 });
-	}, []);
-
 	return (
 		<Box
-			data-aos="zoom-in"
 			component="footer"
 			sx={{
 				backgroundColor: "#0e1116",
@@ -40,7 +34,7 @@ export default function Footer() {
 		>
 			<Row>
 				<Grid container justifyContent="space-between">
-					<Grid data-aos="fade-right" item md={4} xs={12}>
+					<Grid item md={4} xs={12}>
 						<Box sx={{ display: "flex", pt: 3 }}>
 							<Box
 								component="img"
@@ -56,7 +50,7 @@ export default function Footer() {
 							{t("Footer.footerbody2")}
 						</Typography>
 					</Grid>
-					<Grid data-aos="fade-up" item md={2} xs={12}>
+					<Grid item md={2} xs={12}>
 						<List>
 							<ListItem sx={{ fontWeight: 600 }}>{t("Footer.footerHeader1")}</ListItem>
 							<ListItem>
@@ -76,7 +70,7 @@ export default function Footer() {
 							</ListItem>
 						</List>
 					</Grid>
-					<Grid data-aos="fade-down" item md={2} xs={12}>
+					<Grid item md={2} xs={12}>
 						<List>
 							<ListItem sx={{ fontWeight: 600 }}>{t("Footer.footerHeader2")}</ListItem>
 							<ListItem>
@@ -105,7 +99,7 @@ export default function Footer() {
 							</ListItem>
 						</List>
 					</Grid>
-					<Grid data-aos="fade-left" item md={2} xs={12}>
+					<Grid item md={2} xs={12}>
 						<List>
 							<ListItem sx={{ fontWeight: 600 }}>{t("Footer.footerHeader3")}</ListItem>
 							<ListItem>
@@ -133,7 +127,7 @@ export default function Footer() {
 				</Grid>
 				<br />
 			</Row>
-			<Typography data-aos="fade-up" variant="body1" sx={{ mx: 4 }}>
+			<Typography variant="body1" sx={{ mx: 4 }}>
 				© 2024 SMSWithoutBorders
 			</Typography>
 		</Box>
