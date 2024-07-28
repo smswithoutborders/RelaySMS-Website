@@ -32,7 +32,6 @@ const Features = () => {
 							{t("Howitworks.HowItWorks")}
 						</h2>
 						<p
-							data-aos="fade-up"
 							className={`text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
 							style={{ fontSize: "calc(1rem + 0.5vw)", marginTop: "30px", marginBottom: "60px" }}
 						>

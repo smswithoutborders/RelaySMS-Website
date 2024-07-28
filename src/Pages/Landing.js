@@ -4,7 +4,6 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 import { PageAnimationWrapper } from "../Components/PageAnimationWrapper.js";
 import Blog from "../Components/Blog.js";
 import Faqs from "../Components/FAQs.js";
-import Nav from "../Components/Nav.js";
 import HowItWorks from "../Components/Howitworks.js";
 import Hero from "../Components/Hero.js";
 import "../i18n.js";
@@ -15,13 +14,12 @@ export default function Landing() {
 	const { t } = useTranslation();
 
 	useEffect(() => {
-		AOS.init({ duration: 1000 });
+		AOS.init({});
 	}, []);
 
 	return (
 		<PageAnimationWrapper>
-			<Container fluid data-aos="zoom-out">
-				<Nav />
+			<Container fluid>
 				<Hero />
 				<HowItWorks />
 				<Blog />
