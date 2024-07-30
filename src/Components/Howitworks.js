@@ -1,82 +1,75 @@
 import React, { useEffect } from "react";
-import { Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import { FaArrowCircleRight } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import "../index.css";
-import { FaArrowCircleRight } from "react-icons/fa";
 import AOS from "aos";
 
-const Features = () => {
+const About = () => {
 	const { t, i18n } = useTranslation();
 	const isRTL = i18n.dir() === "rtl";
-
-	const cardContent = [
-		{ key: "HowItWorksA", title: "HowItWorkstitleA", imageSrc: "/swob.png" },
-		{ key: "HowItWorksB", title: "HowItWorkstitleB", imageSrc: "/compose.jpg" },
-		{ key: "HowItWorksC", title: "HowItWorkstitleC", imageSrc: "/noti.jpg" }
-	];
 
 	useEffect(() => {
 		AOS.init({ duration: 1000 });
 	}, []);
 
 	return (
-		<div className="container">
-			<div className="row justify-content-center">
-				<Row className="justify-content-center mb-4">
+		<section id="about" className={`section_all bg-light ${isRTL ? "text-end" : "text-start"}`}>
+			<Container>
+				<Row>
+					<Col lg={12}>
+						<div className="blog-head text-center">
+							<h2>{t("Howitworks.HowItWorks")}</h2>
+							<h6>{t("Howitworks.HowItWorksSubtitle")}</h6>
+						</div>
+					</Col>
+				</Row>
+				<Row className="mt-5">
 					<Col xs={12}>
-						<h2
-							data-aos="fade-up"
-							className="text-center fw-bold section-title"
-							style={{ fontSize: "33px", marginTop: "20px", color: "#2666af" }}
-						>
-							{t("Howitworks.HowItWorks")}
-						</h2>
-						<p
-							className={`text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
-							style={{ fontSize: "calc(1rem + 0.5vw)", marginTop: "30px", marginBottom: "60px" }}
-						>
-							{t("Howitworks.HowItWorksSubtitle")}
-						</p>
+						<p className="about-description text-center">{t("AboutRelaySMS.Description")}</p>
 					</Col>
 				</Row>
 
-				<Row className="justify-content-center">
-					{cardContent.map((card, idx) => (
-						<Col
-							xs={12}
-							sm={8}
-							md={6}
-							lg={4}
-							key={idx}
-							className="mb-4 d-flex justify-content-center"
-							data-aos="fade-right"
-							data-aos-offset="300"
-							data-aos-easing="ease-in-sine"
-						>
-							<Card className="custom-card h-100 shadow-sm d-flex flex-column">
-								<Card.Img
-									variant="top"
-									src={card.imageSrc}
-									alt={card.key}
-									className="custom-card-img"
-								/>
-								<Card.Body className="d-flex flex-column">
-									<Card.Title
-										className="custom-card-title"
-										style={{ textAlign: isRTL ? "right" : "left" }}
-									>
-										{t(`Howitworks.${card.title}`)}
-									</Card.Title>
-									<Card.Text
-										className="custom-card-text flex-grow-1"
-										style={{ textAlign: isRTL ? "right" : "left" }}
-									>
-										{t(`Howitworks.${card.key}`)}
-									</Card.Text>
-								</Card.Body>
-							</Card>
-						</Col>
-					))}
+				<Row className="mt-3">
+					<Col lg={4}>
+						<div className="about_content_box_all mt-3">
+							<div className="about_detail text-center">
+								<div className="about_icon">
+									<img src="/swob.png" alt="" className="img-fluid mx-auto d-block" />
+								</div>
+								<h5 className="text-dark text-capitalize mt-3 font-weight-bold">
+									{t("Howitworks.HowItWorkstitleA")}
+								</h5>
+								<p className="edu_desc mt-3 mb-0 text-muted">{t("Howitworks.HowItWorksA")}</p>
+							</div>
+						</div>
+					</Col>
+					<Col lg={4}>
+						<div className="about_content_box_all mt-3">
+							<div className="about_detail text-center">
+								<div className="about_icon">
+									<img src="/compose.jpg" alt="" className="img-fluid mx-auto d-block" />
+								</div>
+								<h5 className="text-dark text-capitalize mt-3 font-weight-bold">
+									{t("Howitworks.HowItWorkstitleB")}
+								</h5>
+								<p className="edu_desc mb-0 mt-3 text-muted">{t("Howitworks.HowItWorksB")}</p>
+							</div>
+						</div>
+					</Col>
+					<Col lg={4}>
+						<div className="about_content_box_all mt-3">
+							<div className="about_detail text-center">
+								<div className="about_icon">
+									<img src="./notifMessages.jpg" alt="" className="img-fluid mx-auto d-block" />
+								</div>
+								<h5 className="text-dark text-capitalize mt-3 font-weight-bold">
+									{t("Howitworks.HowItWorkstitleC")}
+								</h5>
+								<p className="edu_desc mb-0 mt-3 text-muted">{t("Howitworks.HowItWorksC")}</p>
+							</div>
+						</div>
+					</Col>
 				</Row>
 				<Row className="mt-4">
 					<Col xs={12}>
@@ -93,9 +86,9 @@ const Features = () => {
 						</div>
 					</Col>
 				</Row>
-			</div>
-		</div>
+			</Container>
+		</section>
 	);
 };
 
-export default Features;
+export default About;

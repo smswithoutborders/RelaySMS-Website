@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
+import { Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import { Container, Row, Col } from "react-bootstrap";
 import { FaArrowCircleRight } from "react-icons/fa";
 import "../index.css";
 import AOS from "aos";
 
-const Blog = () => {
-	const { t, i18n } = useTranslation();
+const BlogPost = ({ imageUrl, category, title, description, comments, link }) => {
+	const { i18n } = useTranslation();
 	const isRTL = i18n.language === "fa";
 
 	useEffect(() => {
@@ -14,80 +14,100 @@ const Blog = () => {
 	}, []);
 
 	return (
-		<Container fluid>
-			<Row>
-				<h2
-					data-aos="fade-up"
-					className="text-center fw-bold section-title"
-					style={{ fontSize: "33px", marginTop: "60px", color: "#2666af" }}
-				>
-					{t("Blog.BlogHeader")}
-				</h2>
-				<p
-					data-aos="fade-up"
-					className={`text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
-					style={{ fontSize: "calc(1rem + 0.5vw)", marginTop: "30px", marginBottom: "60px" }}
-				>
-					{t("Blog.BlogSubHeader")}
-				</p>
-
+		<div className="col-md-4 p-3">
+			<div className="blog-card">
 				<div
+					className="image-container"
 					style={{
-						padding: "20px",
-						maxWidth: "1500px",
-						margin: "0 auto",
-						color: "#f5f5f5",
-						borderRadius: 8,
-						direction: isRTL ? "rtl" : "ltr"
+						backgroundImage: `url(${imageUrl})`,
+						borderRadius: "12px 12px 0 0"
 					}}
 				>
-					<Row className="blog-row">
-						<Col xs={12} sm={8} md={6} lg={4} className="mb-4 d-flex">
-							<div className="blog" data-aos="fade-right">
-								<div className="blog-image">
-									<img src="/resilience.jpg" alt="Blog Image 1" />
-									<div className="date">April 16, 2024</div>
-								</div>
-								<div className="blog-content">
-									<h2>{t("Blog.Resilience")}</h2>
-									<p>{t("Blog.ResilienceD")}</p>
-									<a href="https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders">
-										{t("Blog.ReadMore")}
-									</a>
-								</div>
-							</div>
-						</Col>
-						<Col xs={12} sm={8} md={6} lg={4} className="mb-4 d-flex">
-							<div className="blog" data-aos="fade-left">
-								<div className="blog-image">
-									<img src="/ID.jpg" alt="Blog Image 5" />
-									<div className="date">July 1, 2024</div>
-								</div>
-								<div className="blog-content">
-									<h2>{t("Blog.IDHeader")}</h2>
-									<p>{t("Blog.IDD")}</p>
-									<a href="https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration">
-										{t("Blog.ReadMore")}
-									</a>
-								</div>
-							</div>
-						</Col>
-						<div className="text-center p-1">
-							<a
-								href="https://blog.smswithoutborders.com"
-								target="_blank"
-								rel="noreferrer noopener"
-								className="getting-started-link"
-							>
-								{t("Blog.ReadOtherArticles")}
-								<FaArrowCircleRight className="ml-2 arrow-icon" />
-							</a>
-						</div>
-					</Row>
+					<div className="overlay"></div>
+					<a href={link} className="category-badge">
+						<small>{category}</small>
+					</a>
 				</div>
-			</Row>
-		</Container>
+				<div className={`content ${isRTL ? "text-right" : ""}`}>
+					<a href={link} className="title">
+						<h6>{title}</h6>
+					</a>
+					<p>{description}</p>
+					<div className="meta">
+						<div className="meta-item">
+							<small>{comments}</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	);
 };
 
-export default Blog;
+const BlogSection = () => {
+	const { t, i18n } = useTranslation();
+	const isRTL = i18n.dir() === "rtl";
+
+	const blogPosts = [
+		{
+			imageUrl: "/resilience.jpg",
+			date: { day: "16", month: "April" },
+			category: t("article"),
+			title: t("Blog.Resilience"),
+			description: t("Blog.ResilienceD"),
+			link: "https://blog.smswithoutborders.com/posts/resilience"
+		},
+		{
+			imageUrl: "/ID.jpg",
+			date: { day: "1", month: "July" },
+			category: t("release"),
+			title: t("Blog.IDHeader"),
+			description: t("Blog.IDD"),
+			link: "https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
+		},
+		{
+			imageUrl: "/rebrand.jpg",
+			date: { day: "", month: "MAR" },
+			category: t("release"),
+			title: t("Blog.RebrandHeader"),
+			description: t("Blog.RebrandD"),
+			link: "https://blog.smswithoutborders.com/posts/rebranding"
+		}
+	];
+
+	return (
+		<section className={`container mt-5 ${isRTL ? "text-right" : ""}`}>
+			{/* Header Section */}
+			<Row>
+				<Col className="text-center">
+					<div
+						className={`blog-head text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
+					>
+						<h2 data-aos="fade-right">{t("Blog.BlogHeader")}</h2>
+						<h6>{t("Blog.BlogSubHeader")}</h6>
+					</div>
+				</Col>
+			</Row>
+
+			{/* Blog Posts */}
+			<Row className="d-flex flex-wrap">
+				{blogPosts.map((post, index) => (
+					<BlogPost key={index} {...post} />
+				))}
+				<div className="text-center p-1 w-100">
+					<a
+						href="https://blog.smswithoutborders.com"
+						target="_blank"
+						rel="noreferrer noopener"
+						className="getting-started-link"
+					>
+						{t("Blog.ReadOtherArticles")}
+						<FaArrowCircleRight className="ml-2 arrow-icon" />
+					</a>
+				</div>
+			</Row>
+		</section>
+	);
+};
+
+export default BlogSection;

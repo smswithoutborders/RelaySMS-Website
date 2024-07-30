@@ -20,7 +20,7 @@ const Hero = () => {
 					<h6>{t("Landing.span")}</h6>
 					<h1>{t("Landing.landingh1")}</h1>
 					<hr />
-					<p>{t("Landing.landingh2")}</p>
+					<p className="hero-p">{t("Landing.landingh2")}</p>
 
 					<div className="d-block d-md-flex justify-content-center justify-content-md-start text-center text-md-start button-wrapper">
 						<Button

@@ -59,12 +59,11 @@ export default function Faqs() {
 						padding: "20px",
 						maxWidth: "1500px",
 						margin: "0 auto",
-						color: "#f5f5f5",
 						borderRadius: 8,
 						direction: isRTL ? "rtl" : "ltr"
 					}}
 				>
-					<h2
+					{/* <h2
 						data-aos="fade-up"
 						className="text-center fw-bold"
 						style={{ fontSize: "33px", marginTop: "60px", color: "#2666af" }}
@@ -77,7 +76,14 @@ export default function Faqs() {
 						style={{ fontSize: "calc(1rem + 0.5vw)", marginTop: "30px" }}
 					>
 						{t("FAQ.FAQSubheader")}
-					</p>
+					</p> */}
+
+					<div
+						className={`blog-head text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
+					>
+						<h2 data-aos="fade-right text-secondary"> {t("FAQ.FAQ")}</h2>
+						<h6>{t("FAQ.FAQSubheader")}</h6>
+					</div>
 					{FAQ.map((item, index) => (
 						<Accordion
 							key={index}

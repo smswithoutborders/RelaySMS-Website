@@ -14,6 +14,10 @@
 		"github": "GitHub",
 		"Blog": "Blog"
 	},
+
+	"AboutRelaySMS": {
+		"Description": "Introducing RelaySMS, the new name for the app formerly known as SMSWithoutBorders! Our rebranding reflects the expanding capabilities and exciting future of our platform. RelaySMS continues to offer the same great features you love, with enhanced flexibility for secure offline messaging. Dive into the future of communication with us"
+	},
 	"Howitworks": {
 		"HowItWorks": "How it works",
 		"HowItWorksSubtitle": "Learn how our service functions seamlessly",
