@@ -14,6 +14,14 @@
 		"github": "GitHub",
 		"Blog": "Blog"
 	},
+	"AboutRelaySMS": {
+		"About": "À propos de RelaySMS",
+		"AboutQ": "Qu'est-ce que RelaySMS?",
+		"Description": "RelaySMS, anciennement connu sous le nom de SMSWithoutBorders (swob) app, est une application conviviale qui vous permet d'envoyer des messages sur vos plates-formes de messagerie préférées, même lorsque vous êtes déconnecté d'Internet. Il s'agit d'un pont sécurisé qui relie votre monde hors ligne aux canaux de communication en ligne. RelaySMS utilise la technologie SMS comme un relais fiable, ce qui vous permet de transmettre des messages de manière transparente, même dans les zones où l'accès à l'internet est limité ou inexistant. Traduit avec DeepL.com (version gratuite)",
+		"Description1": "Le concept de SMSWithoutBorders, aujourd'hui RelaySMS, est né d'une vision simple mais puissante : faire en sorte que tout le monde ait accès à une communication fiable, quelle que soit la connectivité internet. De nombreuses régions du monde disposent d'une infrastructure internet limitée ou peu fiable, ce qui crée des obstacles à la communication qui peuvent perturber les individus et les communautés. RelaySMS est né pour combler ce fossé, en permettant aux utilisateurs de rester en contact avec leurs amis, leur famille et leurs collègues, même lorsqu'ils sont hors ligne. Traduit avec DeepL.com (version gratuite)",
+		"ReadMore": "Lire la suite",
+		"ReadLess": "Réduire"
+	},
 	"Howitworks": {
 		"HowItWorks": "Comment ça marche",
 		"HowItWorksSubtitle": "Découvrez comment notre service fonctionne de manière transparente",
@@ -41,7 +49,8 @@
 		"IDD": "RelaySMS (application swob) introduit une nouvelle fonctionnalité puissante : L'enregistrement de l'ID de l'appareil avec RelaySMS Vault ! Cette approche innovante vous donne plus de contrôle sur votre expérience de messagerie hors ligne.",
 		"RebrandHeader": "Rebranding",
 		"RebrandD": "SMSWithoutBorders devient le projet parapluie englobant RelaySMS et d'autres outils de messagerie. La fonctionnalité de base reste la même, mais les utilisateurs peuvent s'attendre à un nouveau nom, à des fonctions de sécurité améliorées et à une concentration sur la croissance future dans le cadre du projet SMSWithoutBorders.",
-		"ReadMore": "Lire la suite"
+		"ReadMore": "Lire la suite",
+		"ReadOtherArticles": "Lire d'autres articles"
 	},
 	"FAQ": {
 		"FAQ1": "RelaySMS est-il disponible sur mon appareil ?",

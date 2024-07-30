@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
@@ -8,25 +8,62 @@ import AOS from "aos";
 const About = () => {
 	const { t, i18n } = useTranslation();
 	const isRTL = i18n.dir() === "rtl";
+	const [showMore, setShowMore] = useState(false);
 
 	useEffect(() => {
 		AOS.init({ duration: 1000 });
 	}, []);
+
+	const handleToggle = () => {
+		setShowMore(!showMore);
+	};
 
 	return (
 		<section id="about" className={`section_all bg-light ${isRTL ? "text-end" : "text-start"}`}>
 			<Container>
 				<Row>
 					<Col lg={12}>
-						<div className="blog-head text-center">
-							<h2>{t("Howitworks.HowItWorks")}</h2>
-							<h6>{t("Howitworks.HowItWorksSubtitle")}</h6>
+						<div
+							className={`blog-head text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
+						>
+							<span
+								className="inline-block mb-3 uppercase tracking-wide font-semibold text-blue-700"
+								data-aos="fade-right"
+							>
+								{t("Howitworks.HowItWorks")}
+							</span>
+							<h1
+								className="text-4xl md:text-5xl md:leading-tight font-bold text-gray-800 xl:max-w-full"
+								data-aos="fade-right"
+							>
+								{t("Howitworks.HowItWorksSubtitle")}
+							</h1>
 						</div>
 					</Col>
 				</Row>
 				<Row className="mt-5">
 					<Col xs={12}>
-						<p className="about-description text-center">{t("AboutRelaySMS.Description")}</p>
+						<h6>{t("AboutRelaySMS.About")}</h6>
+						<h2>{t("AboutRelaySMS.AboutQ")}</h2>
+						<p className="about-description text-center">
+							{t("AboutRelaySMS.Description")}
+							{!showMore && " ..."}
+						</p>
+						{showMore && (
+							<div>
+								<p>{t("AboutRelaySMS.Description1")}</p>
+								<button onClick={handleToggle} className="read-more-btn">
+									{showMore ? t("AboutRelaySMS.ReadLess") : t("AboutRelaySMS.ReadMore")}
+								</button>
+							</div>
+						)}
+						{!showMore && (
+							<div className="text-center">
+								<button onClick={handleToggle} className="read-more-btn">
+									{t("AboutRelaySMS.ReadMore")}
+								</button>
+							</div>
+						)}
 					</Col>
 				</Row>
 
@@ -35,7 +72,7 @@ const About = () => {
 						<div className="about_content_box_all mt-3">
 							<div className="about_detail text-center">
 								<div className="about_icon">
-									<img src="/swob.png" alt="" className="img-fluid mx-auto d-block" />
+									<img src="/swob.png" alt="Swob logo" className="img-fluid mx-auto d-block" />
 								</div>
 								<h5 className="text-dark text-capitalize mt-3 font-weight-bold">
 									{t("Howitworks.HowItWorkstitleA")}
@@ -48,7 +85,11 @@ const About = () => {
 						<div className="about_content_box_all mt-3">
 							<div className="about_detail text-center">
 								<div className="about_icon">
-									<img src="/compose.jpg" alt="" className="img-fluid mx-auto d-block" />
+									<img
+										src="/compose.jpg"
+										alt="Compose message"
+										className="img-fluid mx-auto d-block"
+									/>
 								</div>
 								<h5 className="text-dark text-capitalize mt-3 font-weight-bold">
 									{t("Howitworks.HowItWorkstitleB")}
@@ -61,7 +102,11 @@ const About = () => {
 						<div className="about_content_box_all mt-3">
 							<div className="about_detail text-center">
 								<div className="about_icon">
-									<img src="./notifMessages.jpg" alt="" className="img-fluid mx-auto d-block" />
+									<img
+										src="./notifMessages.jpg"
+										alt="Notification messages"
+										className="img-fluid mx-auto d-block"
+									/>
 								</div>
 								<h5 className="text-dark text-capitalize mt-3 font-weight-bold">
 									{t("Howitworks.HowItWorkstitleC")}

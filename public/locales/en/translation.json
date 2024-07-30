@@ -16,7 +16,12 @@
 	},
 
 	"AboutRelaySMS": {
-		"Description": "Introducing RelaySMS, the new name for the app formerly known as SMSWithoutBorders! Our rebranding reflects the expanding capabilities and exciting future of our platform. RelaySMS continues to offer the same great features you love, with enhanced flexibility for secure offline messaging. Dive into the future of communication with us"
+		"About": "About RelaySMS",
+		"AboutQ": "What is RelaySMS?",
+		"Description": "RelaySMS, formerly known as SMSWithoutBorders (swob) app, is a user-friendly application that empowers you to send messages across your favorite messaging platforms, even when you're disconnected from the internet. Think of it as a secure bridge that connects your offline world to online communication channels. RelaySMS utilizes SMS technology as a reliable relay, allowing you to seamlessly transmit messages even in areas with limited or no internet access.",
+		"Description1": "The concept for SMSWithoutBorders, now RelaySMS, originated from a simple yet powerful vision: ensuring everyone has access to reliable communication, regardless of internet connectivity. Many regions around the world have limited or unreliable internet infrastructure, creating communication barriers that can be disruptive for individuals and communities. RelaySMS was born to bridge this gap, empowering users to stay connected with friends, family, and colleagues even when offline.",
+		"ReadMore": "Read More",
+		"ReadLess": "Read Less"
 	},
 	"Howitworks": {
 		"HowItWorks": "How it works",

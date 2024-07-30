@@ -55,16 +55,28 @@ export default function BackToTop(props) {
 					dir={direction}
 					bg="light"
 					expand="lg"
-					sticky="top"
-					className="shadow-sm p-3 mb-5 bg-white rounded navbar-custom"
-					style={{ direction: isRTL ? "rtl" : "ltr" }}
+					className="shadow-sm p-3 mb-0 bg-white rounded navbar-custom"
+					style={{
+						direction: isRTL ? "rtl" : "ltr",
+						position: "fixed",
+						top: 0,
+						width: "100%",
+						zIndex: 1030
+					}}
 				>
-					<Navbar.Brand href="#" className="me-auto">
-						<img src="./logo.png" alt="Logo" style={{ height: "40px" }} />
+					<Navbar.Brand className={`me-auto ${isRTL ? "ms-auto" : "me-auto"}`}>
+						<img src="./logo.png" alt="Logo" style={{ height: "40px", width: "auto" }} />
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
-						<Nav className="ms-auto" style={{ direction: isRTL ? "rtl" : "ltr" }}>
+						<Nav
+							className={`ms-auto ${isRTL ? "me-auto" : "ms-auto"}`}
+							style={{
+								display: "flex",
+								alignItems: "center",
+								justifyContent: isRTL ? "flex-start" : "flex-end"
+							}}
+						>
 							<Nav.Link
 								href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
 								target="_blank"
