@@ -117,7 +117,6 @@ p {
 	font-size: 16px;
 	color: #126fac !important;
 	line-height: 1.5;
-	text-align: center;
 }
 
 h6 {
@@ -125,6 +124,12 @@ h6 {
 	font-size: 16px;
 	color: #126fac !important;
 	line-height: 1.5;
+}
+h5 {
+	letter-spacing: 1.5px;
+	font-size: 15px;
+	color: #126fac !important;
+	line-height: 1.2;
 	text-align: center;
 }
 
@@ -299,10 +304,38 @@ h6 {
 	margin-left: 10px;
 	transform: rotate(-30deg);
 }
+.about-description {
+	font-size: 1.5rem;
+	color: #333;
+	padding: 15px;
+	line-height: 1.6;
+	margin: 0 auto;
+	text-align: justify;
+}
+
+.read-more-btn {
+	background: none;
+	border: none;
+	color: #0257b3;
+	font-size: 1.2rem;
+	cursor: pointer;
+	padding: 0;
+	transition:
+		color 0.3s ease,
+		text-decoration 0.3s ease;
+	margin-top: 1rem;
+}
+
+.read-more-btn:hover {
+	color: #0056b3;
+	text-decoration: none;
+}
+
+.read-more-btn:focus {
+	outline: none;
+}
 
 /* ==================================== blog ==================================== */
-/* ======================================BLOG BLOG====================================== */
-
 .blog-card {
 	display: flex;
 	flex-direction: column;

@@ -30,7 +30,7 @@ const BlogPost = ({ imageUrl, category, title, description, comments, link }) =>
 				</div>
 				<div className={`content ${isRTL ? "text-right" : ""}`}>
 					<a href={link} className="title">
-						<h6>{title}</h6>
+						<h5>{title}</h5>
 					</a>
 					<p>{description}</p>
 					<div className="meta">
