@@ -42,11 +42,11 @@ export default function Footer() {
 								sx={{ width: "40px", mx: 2 }}
 								alt="smswithoutborders logo"
 							/>
-							<Typography variant="h5" sx={{ fontWeight: 600 }}>
+							<Typography variant="h5" sx={{ fontWeight: 600, color: "white" }}>
 								{t("Footer.RelaySMS")}
 							</Typography>
 						</Box>
-						<Typography variant="body2" sx={{ px: { md: 4, xs: 2 }, py: 2 }}>
+						<Typography variant="body2" sx={{ px: { md: 4, xs: 2 }, py: 2, color: "white" }}>
 							{t("Footer.footerbody2")}
 						</Typography>
 					</Grid>
@@ -127,7 +127,7 @@ export default function Footer() {
 				</Grid>
 				<br />
 			</Row>
-			<Typography variant="body1" sx={{ mx: 4 }}>
+			<Typography variant="body1" sx={{ mx: 4, color: "white" }}>
 				© 2024 SMSWithoutBorders
 			</Typography>
 		</Box>

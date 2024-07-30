@@ -63,21 +63,6 @@ export default function Faqs() {
 						direction: isRTL ? "rtl" : "ltr"
 					}}
 				>
-					{/* <h2
-						data-aos="fade-up"
-						className="text-center fw-bold"
-						style={{ fontSize: "33px", marginTop: "60px", color: "#2666af" }}
-					>
-						{t("FAQ.FAQ")}
-					</h2>
-					<p
-						data-aos="zoom-out-left"
-						className={`text-center section-subtitle  ${isRTL ? "text-end" : "text-start"}`}
-						style={{ fontSize: "calc(1rem + 0.5vw)", marginTop: "30px" }}
-					>
-						{t("FAQ.FAQSubheader")}
-					</p> */}
-
 					<div
 						className={`blog-head text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
 					>
