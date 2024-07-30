@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
@@ -8,15 +8,10 @@ import AOS from "aos";
 const About = () => {
 	const { t, i18n } = useTranslation();
 	const isRTL = i18n.dir() === "rtl";
-	const [showMore, setShowMore] = useState(false);
 
 	useEffect(() => {
 		AOS.init({ duration: 1000 });
 	}, []);
-
-	const handleToggle = () => {
-		setShowMore(!showMore);
-	};
 
 	return (
 		<section id="about" className={`section_all bg-light ${isRTL ? "text-end" : "text-start"}`}>
@@ -39,31 +34,6 @@ const About = () => {
 								{t("Howitworks.HowItWorksSubtitle")}
 							</h1>
 						</div>
-					</Col>
-				</Row>
-				<Row className="mt-5">
-					<Col xs={12}>
-						<h6>{t("AboutRelaySMS.About")}</h6>
-						<h2>{t("AboutRelaySMS.AboutQ")}</h2>
-						<p className="about-description text-center">
-							{t("AboutRelaySMS.Description")}
-							{!showMore && " ..."}
-						</p>
-						{showMore && (
-							<div>
-								<p>{t("AboutRelaySMS.Description1")}</p>
-								<button onClick={handleToggle} className="read-more-btn">
-									{showMore ? t("AboutRelaySMS.ReadLess") : t("AboutRelaySMS.ReadMore")}
-								</button>
-							</div>
-						)}
-						{!showMore && (
-							<div className="text-center">
-								<button onClick={handleToggle} className="read-more-btn">
-									{t("AboutRelaySMS.ReadMore")}
-								</button>
-							</div>
-						)}
 					</Col>
 				</Row>
 

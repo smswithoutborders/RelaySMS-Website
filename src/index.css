@@ -80,7 +80,7 @@ p {
 	padding: 20px;
 	max-width: 100%;
 	margin: 10px;
-	margin-top: 100px; /* Adjust as needed */
+	margin-top: 100px;
 }
 
 .button-wrapper {
@@ -131,7 +131,7 @@ p {
 
 .hero-info {
 	margin: 20px 0;
-	margin-top: 180px; /* Adjust as needed */
+	margin-top: 180px;
 }
 
 .hero-info h6 {
@@ -208,8 +208,7 @@ h5 {
 	margin: 0 auto;
 	display: block;
 	height: inherit;
-	margin: auto;
-	margin-top: 50px;
+	margin-top: 100px;
 	box-shadow: -30px 20px 1px gray;
 	border-radius: 30px;
 }
@@ -222,6 +221,14 @@ h5 {
 		margin-top: 0;
 		order: -1;
 	}
+	.hero-image {
+		max-width: 200px;
+		margin-top: 5px;
+	}
+	.button-wrapper {
+		gap: 1.5rem;
+		padding-top: 10px;
+	}
 }
 
 /*==================================================== Howitworks ==================================================*/
@@ -233,15 +240,6 @@ h5 {
 	background: #fff;
 	border-radius: 35px;
 	box-shadow: 0 8px 20px -2px rgba(158, 152, 153, 0.5);
-}
-
-.about_header_main .about_heading {
-	max-width: 450px;
-	font-size: 24px;
-}
-
-.about_content_box_all {
-	padding: 28px;
 }
 
 .blog-head {
@@ -303,15 +301,6 @@ h5 {
 	display: block;
 }
 
-.about-description {
-	font-size: 1.5rem;
-	color: #333;
-	padding: 15px;
-	line-height: 1.6;
-	margin: 0 auto;
-	text-align: justify;
-}
-
 @media (max-width: 767.98px) {
 	.about_icon img {
 		height: 150px;
@@ -336,36 +325,6 @@ h5 {
 .arrow-icon {
 	margin-left: 10px;
 	transform: rotate(-30deg);
-}
-.about-description {
-	font-size: 1.5rem;
-	color: #333;
-	padding: 15px;
-	line-height: 1.6;
-	margin: 0 auto;
-	text-align: justify;
-}
-
-.read-more-btn {
-	background: none;
-	border: none;
-	color: #0257b3;
-	font-size: 1.2rem;
-	cursor: pointer;
-	padding: 0;
-	transition:
-		color 0.3s ease,
-		text-decoration 0.3s ease;
-	margin-top: 1rem;
-}
-
-.read-more-btn:hover {
-	color: #0056b3;
-	text-decoration: none;
-}
-
-.read-more-btn:focus {
-	outline: none;
 }
 
 /* ==================================== blog ==================================== */
