@@ -242,15 +242,6 @@ h5 {
 	box-shadow: 0 8px 20px -2px rgba(158, 152, 153, 0.5);
 }
 
-.about_header_main .about_heading {
-	max-width: 450px;
-	font-size: 24px;
-}
-
-.about_content_box_all {
-	padding: 28px;
-}
-
 .blog-head {
 	margin-bottom: 70px;
 }
@@ -310,15 +301,6 @@ h5 {
 	display: block;
 }
 
-.about-description {
-	font-size: 1.5rem;
-	color: #333;
-	padding: 15px;
-	line-height: 1.6;
-	margin: 0 auto;
-	text-align: justify;
-}
-
 @media (max-width: 767.98px) {
 	.about_icon img {
 		height: 150px;
@@ -343,36 +325,6 @@ h5 {
 .arrow-icon {
 	margin-left: 10px;
 	transform: rotate(-30deg);
-}
-.about-description {
-	font-size: 1.5rem;
-	color: #333;
-	padding: 15px;
-	line-height: 1.6;
-	margin: 0 auto;
-	text-align: justify;
-}
-
-.read-more-btn {
-	background: none;
-	border: none;
-	color: #0257b3;
-	font-size: 1.2rem;
-	cursor: pointer;
-	padding: 0;
-	transition:
-		color 0.3s ease,
-		text-decoration 0.3s ease;
-	margin-top: 1rem;
-}
-
-.read-more-btn:hover {
-	color: #0056b3;
-	text-decoration: none;
-}
-
-.read-more-btn:focus {
-	outline: none;
 }
 
 /* ==================================== blog ==================================== */
