@@ -73,7 +73,6 @@ p {
 	color: #e79405;
 	font-weight: 600;
 }
-
 /* ======================================== hero section ============================================== */
 .hero-container {
 	display: flex;
@@ -81,7 +80,7 @@ p {
 	padding: 20px;
 	max-width: 100%;
 	margin: 10px;
-	margin-top: 100px;
+	margin-top: 100px; /* Adjust as needed */
 }
 
 .button-wrapper {
@@ -99,6 +98,10 @@ p {
 	}
 	.hero-info {
 		margin: 5px 0;
+		margin-top: 5px;
+	}
+	.hero-container {
+		margin: 10px;
 	}
 }
 
@@ -128,7 +131,7 @@ p {
 
 .hero-info {
 	margin: 20px 0;
-	margin-top: 180px;
+	margin-top: 180px; /* Adjust as needed */
 }
 
 .hero-info h6 {
@@ -144,6 +147,7 @@ h6 {
 	color: #126fac !important;
 	line-height: 1.5;
 }
+
 h5 {
 	letter-spacing: 1.5px;
 	font-size: 15px;
@@ -208,6 +212,16 @@ h5 {
 	margin-top: 50px;
 	box-shadow: -30px 20px 1px gray;
 	border-radius: 30px;
+}
+
+@media (max-width: 576px) {
+	.hero-container {
+		margin-top: 5;
+	}
+	.hero-info {
+		margin-top: 0;
+		order: -1;
+	}
 }
 
 /*==================================================== Howitworks ==================================================*/
