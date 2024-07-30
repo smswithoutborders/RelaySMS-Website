@@ -47,6 +47,14 @@ p {
 }
 
 /* ============================navbar========================= */
+.navbar-custom {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100; /* Ensure the navbar is on top of other content */
+}
+
 .navbar-custom .nav-link {
 	color: #043957;
 	font-size: 1.3rem;
@@ -73,6 +81,13 @@ p {
 .navbar-custom .nav-icon:hover {
 	color: #e79405;
 	font-weight: 600;
+}
+
+.scroll-to-top-btn {
+	position: fixed;
+	bottom: 16px;
+	right: 16px;
+	z-index: 100; /* Ensure the button is on top */
 }
 
 /* ======================================== hero section ============================================== */
@@ -142,13 +157,6 @@ h6 {
 	font-size: 16px;
 	color: #126fac !important;
 	line-height: 1.5;
-}
-h5 {
-	letter-spacing: 1.5px;
-	font-size: 15px;
-	color: #126fac !important;
-	line-height: 1.2;
-	text-align: center;
 }
 
 .hero-p {

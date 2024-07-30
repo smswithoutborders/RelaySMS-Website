@@ -55,8 +55,7 @@ export default function BackToTop(props) {
 					dir={direction}
 					bg="light"
 					expand="lg"
-					sticky="top"
-					className="shadow-sm p-3 mb-5 bg-white rounded navbar-custom"
+					className="shadow-sm p-3 mb-0 bg-white rounded navbar-custom"
 					style={{ direction: isRTL ? "rtl" : "ltr" }}
 				>
 					<Navbar.Brand href="#" className="me-auto">
