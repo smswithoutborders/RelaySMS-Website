@@ -8,6 +8,7 @@
 body,
 html {
 	overflow-x: hidden;
+	font-family: "Ubuntu", sans-serif !important;
 }
 
 a {
@@ -26,6 +27,23 @@ p {
 	line-height: 1.6;
 	margin: 0 auto;
 	text-align: justify;
+}
+
+.text-blue-700 {
+	color: #2b6cb0;
+	font-size: 1.2rem;
+}
+
+.text-gray-800 {
+	color: #1a202c;
+}
+
+.font-semibold {
+	font-weight: 600;
+}
+
+.font-bold {
+	font-weight: 700;
 }
 
 /* ============================navbar========================= */

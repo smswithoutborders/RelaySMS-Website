@@ -66,9 +66,20 @@ export default function Faqs() {
 					<div
 						className={`blog-head text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
 					>
-						<h2 data-aos="fade-right text-secondary"> {t("FAQ.FAQ")}</h2>
-						<h6>{t("FAQ.FAQSubheader")}</h6>
+						<span
+							className="inline-block mb-3 uppercase text-sm tracking-wide font-semibold text-blue-700"
+							data-aos="fade-right"
+						>
+							{t("FAQ.FAQSubheader")}
+						</span>
+						<h1
+							className="text-4xl md:text-5xl md:leading-tight font-bold text-gray-800 xl:max-w-full"
+							data-aos="fade-right"
+						>
+							{t("FAQ.FAQ")}
+						</h1>
 					</div>
+
 					{FAQ.map((item, index) => (
 						<Accordion
 							key={index}
