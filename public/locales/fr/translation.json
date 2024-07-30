@@ -49,7 +49,8 @@
 		"IDD": "RelaySMS (application swob) introduit une nouvelle fonctionnalité puissante : L'enregistrement de l'ID de l'appareil avec RelaySMS Vault ! Cette approche innovante vous donne plus de contrôle sur votre expérience de messagerie hors ligne.",
 		"RebrandHeader": "Rebranding",
 		"RebrandD": "SMSWithoutBorders devient le projet parapluie englobant RelaySMS et d'autres outils de messagerie. La fonctionnalité de base reste la même, mais les utilisateurs peuvent s'attendre à un nouveau nom, à des fonctions de sécurité améliorées et à une concentration sur la croissance future dans le cadre du projet SMSWithoutBorders.",
-		"ReadMore": "Lire la suite"
+		"ReadMore": "Lire la suite",
+		"ReadOtherArticles": "Lire d'autres articles"
 	},
 	"FAQ": {
 		"FAQ1": "RelaySMS est-il disponible sur mon appareil ?",

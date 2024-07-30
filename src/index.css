@@ -8,7 +8,6 @@
 body,
 html {
 	overflow-x: hidden;
-	font-family: "Ubuntu", sans-serif !important;
 }
 
 a {
@@ -31,7 +30,7 @@ p {
 
 .text-blue-700 {
 	color: #2b6cb0;
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 
 .text-gray-800 {
@@ -47,14 +46,6 @@ p {
 }
 
 /* ============================navbar========================= */
-.navbar-custom {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 100; /* Ensure the navbar is on top of other content */
-}
-
 .navbar-custom .nav-link {
 	color: #043957;
 	font-size: 1.3rem;
@@ -83,20 +74,14 @@ p {
 	font-weight: 600;
 }
 
-.scroll-to-top-btn {
-	position: fixed;
-	bottom: 16px;
-	right: 16px;
-	z-index: 100; /* Ensure the button is on top */
-}
-
 /* ======================================== hero section ============================================== */
 .hero-container {
 	display: flex;
 	flex-direction: column;
 	padding: 20px;
-	max-width: 100%; /* Changed to prevent overflow */
-	margin: 0 auto;
+	max-width: 100%;
+	margin: 10px;
+	margin-top: 100px;
 }
 
 .button-wrapper {
@@ -143,6 +128,7 @@ p {
 
 .hero-info {
 	margin: 20px 0;
+	margin-top: 180px;
 }
 
 .hero-info h6 {
@@ -157,6 +143,13 @@ h6 {
 	font-size: 16px;
 	color: #126fac !important;
 	line-height: 1.5;
+}
+h5 {
+	letter-spacing: 1.5px;
+	font-size: 15px;
+	color: #126fac !important;
+	line-height: 1.2;
+	text-align: center;
 }
 
 .hero-p {
