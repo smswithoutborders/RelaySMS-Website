@@ -185,6 +185,9 @@ h5 {
 	.hero-info h1 {
 		font-size: 32px;
 	}
+	.hero-image {
+		box-shadow: -15px 20px 0 gray !important;
+	}
 }
 
 .hero-info hr {
