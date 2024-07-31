@@ -186,16 +186,15 @@ h5 {
 		font-size: 32px;
 	}
 	.hero-image {
-		box-shadow: -15px 20px 0 gray !important;
+		box-shadow: -15px px 0 gray !important;
 	}
 }
 
-.hero-info hr {
+.hr {
 	display: block;
 	background: #03182a;
 	height: 3px;
 	width: 15%;
-	margin: 20px auto;
 }
 
 .hero-info p {
@@ -330,156 +329,92 @@ h5 {
 	transform: rotate(-30deg);
 }
 
-.custom-card-img {
-	width: 60%;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-}
-
-.custom-card-title {
-	font-size: 30px;
-	text-align: center !important;
-	font-weight: bolder;
-}
-
-.custom-card-text {
-	font-size: 20px;
-	text-align: center !important;
-	color: #6c757d;
-}
-
-/* ================ hero section ========================== */
-.hero-section,
-.howitworks-section,
-.blog-section,
-.faq-section {
-	margin: 0 !important;
-	padding-top: 0 !important;
-}
-
-.hero-section {
-	margin-top: 0 !important;
-	padding-top: 0 !important;
-}
-
-.container-fluid {
-	padding-left: 10 !important;
-	padding-right: 10 !important;
-}
-
-.hero-text-box {
-	padding: 1rem;
-}
-
-.heading-primary {
-	font-size: 2.5rem;
-	color: #367ed0;
-	font-weight: 700;
-	letter-spacing: -0.5px;
-	line-height: 1.2;
-	margin-bottom: 1.6rem;
-
-	@media (min-width: 576px) {
-		font-size: 3.2rem;
-	}
-
-	@media (min-width: 768px) {
-		font-size: 3.8rem;
-	}
-
-	@media (min-width: 992px) {
-		font-size: 4.2rem;
-	}
-}
-
-.hero-description {
-	font-size: 1.2rem;
-	line-height: 1.5;
-	margin-bottom: 2.4rem;
-	color: #6c757d;
-	@media (min-width: 576px) {
-		font-size: 1.4rem;
-	}
-
-	@media (min-width: 768px) {
-		font-size: 1.5rem;
-	}
-}
-
-.button-wrapper {
+/* ==================================== blog ==================================== */
+.blog-card {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	gap: 1rem;
+	justify-content: space-between;
+	border: none;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+	height: 100%;
 }
 
-@media (min-width: 576px) {
-	.button-wrapper {
-		flex-direction: row;
-	}
+.blog-card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
-.button-subtitle {
-	font-size: 10px;
+.image-container {
+	position: relative;
+	height: 200px;
+	background-size: cover;
+	background-position: center;
 }
 
-.button-title {
-	font-size: 26px;
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 12px 12px 0 0;
 }
 
-.margin-right-btn {
-	margin-right: 1rem;
-
-	@media (min-width: 576px) {
-		margin-right: 1.5rem;
-	}
-
-	@media (min-width: 768px) {
-		margin-right: 2.4rem;
-	}
+.category-badge {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	background: #009688;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 5px;
+	text-decoration: none;
+	font-size: 12px;
 }
 
-.hero-img-box {
+.content {
+	padding: 15px;
+	flex: 1;
+}
+
+.title {
+	color: #333;
+	text-decoration: none;
+}
+
+.title h4 {
+	margin: 0;
+	font-size: 1.25rem;
+}
+
+.meta {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.meta-item {
+	display: flex;
 	align-items: center;
+	color: #888;
 }
 
-.hero-img {
-	max-width: 100%;
-	height: auto;
+.meta-item svg {
+	fill: #888;
 }
-@media screen and (max-width: 768px) {
-	.custom-card {
-		width: 110% !important;
-	}
 
-	.hero-img {
-		max-width: 70%;
-		height: auto;
-	}
+.meta-item small {
+	margin-left: 5px;
+}
 
-	.custom-card-img {
-		width: 80%;
-	}
-
-	.section-title {
-		font-size: calc(1.5rem);
-		color: #343a40;
-	}
-
-	.section-subtitle {
-		font-size: calc(1rem + 0.5vw);
-		color: #5f6c74;
-	}
-
-	.hero-btn {
-		font-size: 1.2rem;
-		font-family: inherit;
-		border: 1px solid rgb(42, 41, 41);
-		cursor: pointer;
-		border-radius: 9px;
-		padding-top: 2rem;
-		text-decoration: none;
+@media (max-width: 767px) {
+	.blog-card {
+		margin-bottom: 15px;
 	}
 }
