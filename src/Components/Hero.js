@@ -26,7 +26,7 @@ const Hero = () => {
 						<Button
 							href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 							target="_blank"
-							className="market-btn mb-3 mb-md-0 d-flex align-items-center mx-auto mx-md-0"
+							className="hero-btn mb-3 mb-md-0 d-flex align-items-center mx-auto mx-md-0"
 							size="lg"
 							style={{
 								backgroundColor: "#367ed0",
@@ -55,7 +55,7 @@ const Hero = () => {
 						<Button
 							href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 							target="_blank"
-							className="market-btn mb-3 mb-md-0 d-flex align-items-center mx-auto mx-md-0"
+							className="hero-btn mb-3 mb-md-0 d-flex align-items-center mx-auto mx-md-0"
 							size="lg"
 							style={{
 								backgroundColor: "white",
