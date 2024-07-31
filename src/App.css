@@ -74,3 +74,51 @@
 		transform: scale(1);
 	}
 }
+/* ============================navbar========================= */
+.navbar-custom .nav-link {
+	color: #043957;
+	font-size: 1.3rem;
+	margin: 0 1rem;
+	transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+	color: #e79405;
+	font-weight: 600;
+}
+
+.navbar-custom .navbar-nav {
+	display: flex;
+	align-items: center;
+}
+
+.navbar-custom .nav-icon {
+	font-size: 1.5rem;
+	margin: 0 1rem;
+	transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-icon:hover {
+	color: #e79405;
+	font-weight: 600;
+}
+
+/* ===================== blog carousel ============================ */
+.card {
+	width: 80% !important;
+	align-items: center;
+}
+.centered-carousel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-img-top {
+	width: 55% !important;
+}
+
+.Map {
+	padding: 1rem 0.75rem;
+	margin: 1rem 0;
+}
