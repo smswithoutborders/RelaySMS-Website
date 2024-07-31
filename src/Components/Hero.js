@@ -14,10 +14,10 @@ const Hero = () => {
 	}, []);
 
 	return (
-		<Container fluid id="hero" style={{ direction: isRTL ? "rtl" : "ltr" }} data-aos="fade-up">
+		<Container fluid id="hero" style={{ direction: isRTL ? "rtl" : "ltr" }}>
 			<div className="hero-container" style={{ direction: isRTL ? "rtl" : "ltr" }}>
-				<Col xs={12} md={6} className="content hero-info" data-aos="fade-right">
-					<h6>{t("Landing.span")}</h6>
+				<Col xs={12} md={6} className="content hero-info">
+					<h6>discover</h6>
 					<h1>{t("Landing.landingh1")}</h1>
 					<hr className="hr" />
 					<p className="hero-p">{t("Landing.landingh2")}</p>
@@ -81,9 +81,19 @@ const Hero = () => {
 						</Button>
 					</div>
 				</Col>
-
-				<Col md={6} className="text-center">
-					<img src="/one1.png" alt="Hero" className="hero-image" />
+				<Col
+					xs={8}
+					md={4}
+					className="hero-image-container d-flex justify-content-center justify-content-md-end align-items-center"
+				>
+					<div className="hero-img-box move-down-sm">
+						<img
+							src="/one1.png"
+							alt="Relaysms App"
+							className="hero-img img-fluid"
+							style={{ width: "400px", height: "auto" }}
+						/>
+					</div>
 				</Col>
 			</div>
 		</Container>
