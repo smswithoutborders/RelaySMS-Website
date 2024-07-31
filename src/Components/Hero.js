@@ -19,7 +19,7 @@ const Hero = () => {
 				<Col xs={12} md={6} className="content hero-info" data-aos="fade-right">
 					<h6>{t("Landing.span")}</h6>
 					<h1>{t("Landing.landingh1")}</h1>
-					<hr />
+					<hr className="hr" />
 					<p className="hero-p">{t("Landing.landingh2")}</p>
 
 					<div className="d-block d-md-flex justify-content-center justify-content-md-start text-center text-md-start button-wrapper">
