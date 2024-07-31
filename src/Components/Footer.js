@@ -8,17 +8,6 @@ export default function Footer() {
 	const { t, i18n } = useTranslation();
 	const isRTL = i18n.dir() === "rtl";
 
-	const linkStyle = {
-		color: "inherit",
-		textDecoration: "none",
-		"&:hover": {
-			color: "#ffcc00",
-			textDecoration: "none",
-			backgroundColor: "#444"
-		},
-		transition: "background-color 0.3s ease, color 0.3s ease"
-	};
-
 	return (
 		<Box
 			component="footer"
@@ -54,19 +43,58 @@ export default function Footer() {
 						<List>
 							<ListItem sx={{ fontWeight: 600 }}>{t("Footer.footerHeader1")}</ListItem>
 							<ListItem>
-								<a href="https://blog.smswithoutborders.com/" style={linkStyle}>
+								<Box
+									component="a"
+									href="https://blog.smswithoutborders.com/"
+									sx={{
+										color: "inherit",
+										textDecoration: "none",
+										"&:hover": {
+											color: "#ffcc00",
+											textDecoration: "none",
+											backgroundColor: "#444"
+										},
+										transition: "background-color 0.3s ease, color 0.3s ease"
+									}}
+								>
 									{t("Footer.footerquick1")}
-								</a>
+								</Box>
 							</ListItem>
 							<ListItem>
-								<a href="/documentation" style={linkStyle}>
+								<Box
+									component="a"
+									href="/documentation"
+									sx={{
+										color: "inherit",
+										textDecoration: "none",
+										"&:hover": {
+											color: "#ffcc00",
+											textDecoration: "none",
+											backgroundColor: "#444"
+										},
+										transition: "background-color 0.3s ease, color 0.3s ease"
+									}}
+								>
 									{t("Footer.footerquick3")}
-								</a>
+								</Box>
 							</ListItem>
 							<ListItem>
-								<a href="/privacy-policy" style={linkStyle}>
+								<Box
+									component="a"
+									href="/privacy-policy"
+									sx={{
+										color: "inherit",
+										textDecoration: "none",
+										"&:hover": {
+											color: "#ffcc00",
+											textDecoration: "none",
+											backgroundColor: "#444"
+										},
+										transition: "background-color 0.3s ease, color 0.3s ease"
+									}}
+								>
 									{t("Footer.footerquick4")}
-								</a>
+								</Box>
 							</ListItem>
 						</List>
 					</Grid>
@@ -75,27 +103,79 @@ export default function Footer() {
 							<ListItem sx={{ fontWeight: 600 }}>{t("Footer.footerHeader2")}</ListItem>
 							<ListItem>
 								<FaGithub style={{ marginInlineEnd: 15 }} />
-								<a href="https://github.com/smswithoutborders" style={linkStyle}>
+								<Box
+									component="a"
+									href="https://github.com/smswithoutborders"
+									sx={{
+										color: "inherit",
+										textDecoration: "none",
+										"&:hover": {
+											color: "#ffcc00",
+											textDecoration: "none",
+											backgroundColor: "#444"
+										},
+										transition: "background-color 0.3s ease, color 0.3s ease"
+									}}
+								>
 									{t("Footer.footersocial1")}
-								</a>
+								</Box>
 							</ListItem>
 							<ListItem>
 								<FaFacebook style={{ marginInlineEnd: 15 }} />
-								<a href="https://www.facebook.com/SMSWithoutBorders" style={linkStyle}>
+								<Box
+									component="a"
+									href="https://www.facebook.com/SMSWithoutBorders"
+									sx={{
+										color: "inherit",
+										textDecoration: "none",
+										"&:hover": {
+											color: "#ffcc00",
+											textDecoration: "none",
+											backgroundColor: "#444"
+										},
+										transition: "background-color 0.3s ease, color 0.3s ease"
+									}}
+								>
 									{t("Footer.footersocial2")}
-								</a>
+								</Box>
 							</ListItem>
 							<ListItem>
 								<FaXTwitter style={{ marginInlineEnd: 15 }} />
-								<a href="https://x.com/RelaySMS" style={linkStyle}>
+								<Box
+									component="a"
+									href="https://x.com/RelaySMS"
+									sx={{
+										color: "inherit",
+										textDecoration: "none",
+										"&:hover": {
+											color: "#ffcc00",
+											textDecoration: "none",
+											backgroundColor: "#444"
+										},
+										transition: "background-color 0.3s ease, color 0.3s ease"
+									}}
+								>
 									{t("Footer.footersocial3")}
-								</a>
+								</Box>
 							</ListItem>
 							<ListItem>
 								<FaEnvelope style={{ marginInlineEnd: 15 }} />
-								<a href="mailto:support@smswithoutborders.com" style={linkStyle}>
+								<Box
+									component="a"
+									href="mailto:support@smswithoutborders.com"
+									sx={{
+										color: "inherit",
+										textDecoration: "none",
+										"&:hover": {
+											color: "#ffcc00",
+											textDecoration: "none",
+											backgroundColor: "#444"
+										},
+										transition: "background-color 0.3s ease, color 0.3s ease"
+									}}
+								>
 									{t("Footer.footersocial4")}
-								</a>
+								</Box>
 							</ListItem>
 						</List>
 					</Grid>
@@ -103,24 +183,76 @@ export default function Footer() {
 						<List>
 							<ListItem sx={{ fontWeight: 600 }}>{t("Footer.footerHeader3")}</ListItem>
 							<ListItem>
-								<a href="/download/android" style={linkStyle}>
+								<Box
+									component="a"
+									href="/download/android"
+									sx={{
+										color: "inherit",
+										textDecoration: "none",
+										"&:hover": {
+											color: "#ffcc00",
+											textDecoration: "none",
+											backgroundColor: "#444"
+										},
+										transition: "background-color 0.3s ease, color 0.3s ease"
+									}}
+								>
 									{t("Footer.footerdownload1")}
-								</a>
+								</Box>
 							</ListItem>
 							<ListItem>
-								<a href="/download/ios" style={linkStyle}>
+								<Box
+									component="a"
+									href="/download/ios"
+									sx={{
+										color: "inherit",
+										textDecoration: "none",
+										"&:hover": {
+											color: "#ffcc00",
+											textDecoration: "none",
+											backgroundColor: "#444"
+										},
+										transition: "background-color 0.3s ease, color 0.3s ease"
+									}}
+								>
 									{t("Footer.footerdownload2")}
-								</a>
+								</Box>
 							</ListItem>
 							<ListItem>
-								<a href="/download/linux" style={linkStyle}>
+								<Box
+									component="a"
+									href="/download/linux"
+									sx={{
+										color: "inherit",
+										textDecoration: "none",
+										"&:hover": {
+											color: "#ffcc00",
+											textDecoration: "none",
+											backgroundColor: "#444"
+										},
+										transition: "background-color 0.3s ease, color 0.3s ease"
+									}}
+								>
 									{t("Footer.footerdownload3")}
-								</a>
+								</Box>
 							</ListItem>
 							<ListItem>
-								<a href="/download/windows" style={linkStyle}>
+								<Box
+									component="a"
+									href="/download/windows"
+									sx={{
+										color: "inherit",
+										textDecoration: "none",
+										"&:hover": {
+											color: "#ffcc00",
+											textDecoration: "none",
+											backgroundColor: "#444"
+										},
+										transition: "background-color 0.3s ease, color 0.3s ease"
+									}}
+								>
 									{t("Footer.footerdownload4")}
-								</a>
+								</Box>
 							</ListItem>
 						</List>
 					</Grid>
