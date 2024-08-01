@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { FaArrowCircleRight } from "react-icons/fa";
 import "../index.css";
 import AOS from "aos";
+import "aos/dist/aos.css";
 
 const BlogPost = ({ imageUrl, category, title, description, comments, link }) => {
 	const { i18n } = useTranslation();
@@ -76,9 +77,9 @@ const BlogSection = () => {
 	];
 
 	return (
-		<section className={`container mt-5 ${isRTL ? "text-right" : ""}`}>
+		<section data-aos="zoom-in" className={`container mt-5 ${isRTL ? "text-right" : ""}`}>
 			{/* Header Section */}
-			<Row>
+			<Row data-aos="zoom-in">
 				<Col className="text-center">
 					<div
 						className={`blog-head text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
