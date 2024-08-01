@@ -1,76 +1,67 @@
-.progress-bar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 10px;
-	background: #414f8d;
-	transform-origin: 0%;
-}
-
 .loader-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+	background-color: #d1e6e6;
 }
 
 .loader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.loader h2 {
+	font-size: 50px;
+	font-weight: 900;
+	margin-bottom: 20px;
+	color: #8bc0e3;
+}
+
+.loading02 {
+	display: flex;
+	gap: 5px;
+}
+
+.loading02 span {
 	display: inline-block;
-	position: relative;
-	width: 80px;
-	height: 80px;
+	font-size: 50px;
+	font-weight: bold;
+	color: #0c3e60;
+	animation: loading02 1.2s infinite alternate;
 }
 
-.loader-inner {
-	vertical-align: top;
-	display: inline-block;
-	width: 16px;
-	height: 16px;
-	border-radius: 50%;
-	background: #333;
+.loading02 span:nth-child(1) {
+	animation-delay: 0s;
+}
+.loading02 span:nth-child(2) {
+	animation-delay: 0.2s;
+}
+.loading02 span:nth-child(3) {
+	animation-delay: 0.4s;
+}
+.loading02 span:nth-child(4) {
+	animation-delay: 0.6s;
+}
+.loading02 span:nth-child(5) {
+	animation-delay: 0.8s;
+}
+.loading02 span:nth-child(6) {
+	animation-delay: 1s;
+}
+.loading02 span:nth-child(7) {
+	animation-delay: 1.2s;
 }
 
-.loader-inner:nth-child(1) {
-	animation: loader-animation 0.8s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
-}
-
-.loader-inner:nth-child(2) {
-	animation: loader-animation 0.8s cubic-bezier(0.165, 0.84, 0.44, 1.02) 0.125s infinite;
-}
-
-.loader-inner:nth-child(3) {
-	animation: loader-animation 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.25s infinite;
-}
-
-.loader-inner:nth-child(4) {
-	animation: loader-animation 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.375s infinite;
-}
-
-.loader-inner:nth-child(5) {
-	animation: loader-animation 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s infinite;
-}
-
-.loader-inner:nth-child(6) {
-	animation: loader-animation 0.8s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.625s infinite;
-}
-
-.loader-inner:nth-child(7) {
-	animation: loader-animation 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.75s infinite;
-}
-
-.loader-inner:nth-child(8) {
-	animation: loader-animation 0.8s cubic-bezier(0.93, 0.095, 0.88, 0.26) 0.875s infinite;
-}
-
-@keyframes loader-animation {
+/* Animation keyframes */
+@keyframes loading02 {
 	0% {
-		transform: scale(1);
+		filter: blur(0);
+		opacity: 1;
 	}
-	20% {
-		transform: scale(0.3);
-	}
-	40% {
-		transform: scale(1);
+	100% {
+		filter: blur(5px);
+		opacity: 0.2;
 	}
 }
