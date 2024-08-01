@@ -1,17 +1,22 @@
 import React from "react";
 import "../App.css";
+
 const Loader = () => {
 	return (
 		<div className="loader-container">
 			<div className="loader">
-				<div className="loader-inner"></div>
-				<div className="loader-inner"></div>
-				<div className="loader-inner"></div>
-				<div className="loader-inner"></div>
-				<div className="loader-inner"></div>
-				<div className="loader-inner"></div>
-				<div className="loader-inner"></div>
-				<div className="loader-inner"></div>
+				<section>
+					<div className="loading loading02">
+						<span>R</span>
+						<span>E</span>
+						<span>L</span>
+						<span>A</span>
+						<span>Y</span>
+						<span>S</span>
+						<span>M</span>
+						<span>S</span>
+					</div>
+				</section>
 			</div>
 		</div>
 	);
