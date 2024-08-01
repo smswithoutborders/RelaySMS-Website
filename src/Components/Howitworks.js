@@ -14,7 +14,11 @@ const About = () => {
 	}, []);
 
 	return (
-		<section id="about" className={`section_all bg-light ${isRTL ? "text-end" : "text-start"}`}>
+		<section
+			id="about"
+			className={`section_all bg-light ${isRTL ? "text-end" : "text-start"}`}
+			data-aos="zoom-out"
+		>
 			<Container>
 				<Row>
 					<Col lg={12}>
