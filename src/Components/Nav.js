@@ -137,7 +137,7 @@ export default function BackToTop(props) {
 												rel="noreferrer noopener"
 												style={{
 													color: "#043957",
-													fontSize: "1.25rem", // Increased font size
+													fontSize: "1.25rem",
 													margin: "0 0.5rem",
 													textDecoration: "none",
 													transition: "color 0.3s ease",
@@ -156,7 +156,7 @@ export default function BackToTop(props) {
 												rel="noreferrer"
 												style={{
 													color: "#043957",
-													fontSize: "1.25rem", // Increased font size
+													fontSize: "1.25rem",
 													margin: "0 0.5rem",
 													textDecoration: "none",
 													transition: "color 0.3s ease",
@@ -218,7 +218,7 @@ export default function BackToTop(props) {
 										rel="noreferrer noopener"
 										style={{
 											color: "#043957",
-											fontSize: "1.25rem", // Increased font size
+											fontSize: "1.25rem",
 											margin: "0 0.5rem",
 											textDecoration: "none",
 											transition: "color 0.3s ease",
@@ -227,7 +227,7 @@ export default function BackToTop(props) {
 										onMouseEnter={(e) => (e.currentTarget.style.color = "#e79405")}
 										onMouseLeave={(e) => (e.currentTarget.style.color = "#043957")}
 									>
-										<Typography>{t("Nav.help")}</Typography>
+										<Typography variant="body1">{t("Nav.help")}</Typography>
 									</a>
 									<a
 										href="https://blog.smswithoutborders.com/"
@@ -235,7 +235,7 @@ export default function BackToTop(props) {
 										rel="noreferrer"
 										style={{
 											color: "#043957",
-											fontSize: "1.25rem", // Increased font size
+											fontSize: "1.25rem",
 											margin: "0 0.5rem",
 											textDecoration: "none",
 											transition: "color 0.3s ease",
@@ -244,7 +244,7 @@ export default function BackToTop(props) {
 										onMouseEnter={(e) => (e.currentTarget.style.color = "#e79405")}
 										onMouseLeave={(e) => (e.currentTarget.style.color = "#043957")}
 									>
-										<Typography>{t("Nav.Blog")}</Typography>
+										<Typography variant="body1">{t("Nav.Blog")}</Typography>
 									</a>
 									<IconButton
 										href="https://x.com/RelaySMS"
