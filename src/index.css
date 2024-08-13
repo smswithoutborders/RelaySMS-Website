@@ -39,32 +39,11 @@ p {
 
 .font-semibold {
 	font-weight: 600;
+	font-size: 2rem !important;
 }
 
 .font-bold {
 	font-weight: 700;
-}
-
-/* ============================navbar========================= */
-.menu-link {
-	color: #043957;
-	font-size: 1rem;
-	margin: 0 0.5rem;
-	transition: color 0.3s ease;
-	text-decoration: none;
-}
-
-.menu-link:hover {
-	color: #e79405;
-	font-weight: 400;
-}
-
-.MuiIconButton-root {
-	color: #043957;
-}
-
-.MuiIconButton-root:hover {
-	color: #a46c0d;
 }
 
 /* ======================================== hero section ============================================== */
@@ -148,7 +127,7 @@ p {
 
 .hero-info h6 {
 	letter-spacing: 1.5px;
-	font-size: 16px;
+	font-size: 20px;
 	color: #126fac !important;
 	line-height: 1.5;
 }
@@ -173,6 +152,7 @@ h5 {
 	color: #333;
 	line-height: 1.6;
 }
+
 .hero-info h1 {
 	letter-spacing: 2px;
 	font-weight: 800;
@@ -205,9 +185,6 @@ h5 {
 	.hero-info h1 {
 		font-size: 32px;
 	}
-	.hero-image {
-		box-shadow: -15px px 0 gray !important;
-	}
 }
 
 .hr {
@@ -226,14 +203,18 @@ h5 {
 
 .hero-image {
 	width: 100%;
-	max-width: 350px;
+	max-width: 300px;
 	margin: 0 auto;
 	display: block;
 	height: inherit;
 	margin-top: 100px;
 	box-shadow: -30px 20px 1px gray;
 	border-radius: 30px;
+	transform: rotateY(0deg) rotate(28deg);
+	transition: transform 2s;
 }
+
+/* ======================================== Responsive Adjustments ============================================== */
 
 @media (max-width: 576px) {
 	.hero-container {
@@ -244,12 +225,23 @@ h5 {
 		order: -1;
 	}
 	.hero-image {
-		max-width: 250px;
+		max-width: 200px;
 		margin-top: 5px;
+		transform: rotateY(0deg) rotate(30deg);
+		transition: transform 2s;
 	}
 	.button-wrapper {
 		gap: 1.5rem;
 		padding-top: 10px;
+	}
+}
+
+@media (max-width: 400px) {
+	.hero-image {
+		max-width: 200px;
+		margin-top: 5px;
+		transform: rotateY(0deg) rotate(30deg);
+		transition: transform 2s;
 	}
 }
 

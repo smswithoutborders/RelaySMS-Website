@@ -19,7 +19,6 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import "../App.css";
 
 function ScrollTop(props) {
 	const { children, window } = props;
@@ -82,11 +81,8 @@ export default function BackToTop(props) {
 					dir={direction}
 					sx={{
 						backgroundColor: "white",
-						width: "100%",
-						left: 0,
-						right: 0,
-						position: "fixed",
-						top: 0,
+						color: "#043957",
+						boxShadow: "0px 2px 10px rgba(0,0,0,0.1)",
 						zIndex: 1300,
 						borderBottom: `1px solid ${theme.palette.divider}`
 					}}
@@ -96,26 +92,25 @@ export default function BackToTop(props) {
 							sx={{
 								display: "flex",
 								alignItems: "center",
-								flexGrow: 1,
-								justifyContent: "space-between",
-								color: "black",
-								width: "100%"
+								width: "100%",
+								justifyContent: "space-between"
 							}}
-							dir={direction}
 						>
 							<img
 								src="./logo.png"
 								alt="Logo"
-								style={{ height: "40px", marginRight: "16px", color: "#1c222c" }}
+								style={{
+									height: "40px",
+									marginRight: "16px"
+								}}
 							/>
 							{isMobile ? (
 								<>
 									<IconButton
 										edge="start"
-										color="inherit"
 										aria-label="menu"
 										onClick={handleMenu}
-										sx={{ padding: "20px", color: "black" }}
+										sx={{ color: "#043957" }}
 									>
 										<MenuIcon />
 									</IconButton>
@@ -137,10 +132,19 @@ export default function BackToTop(props) {
 									>
 										<MenuItem onClick={handleClose}>
 											<a
-												href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+												href="https://docs.smswithoutborders.com/"
 												target="_blank"
 												rel="noreferrer noopener"
-												className="menu-link"
+												style={{
+													color: "#043957",
+													fontSize: "1.25rem",
+													margin: "0 0.5rem",
+													textDecoration: "none",
+													transition: "color 0.3s ease",
+													fontWeight: 500
+												}}
+												onMouseEnter={(e) => (e.currentTarget.style.color = "#e79405")}
+												onMouseLeave={(e) => (e.currentTarget.style.color = "#043957")}
 											>
 												{t("Nav.help")}
 											</a>
@@ -150,7 +154,16 @@ export default function BackToTop(props) {
 												href="https://blog.smswithoutborders.com/"
 												target="_blank"
 												rel="noreferrer"
-												className="menu-link"
+												style={{
+													color: "#043957",
+													fontSize: "1.25rem",
+													margin: "0 0.5rem",
+													textDecoration: "none",
+													transition: "color 0.3s ease",
+													fontWeight: 500
+												}}
+												onMouseEnter={(e) => (e.currentTarget.style.color = "#e79405")}
+												onMouseLeave={(e) => (e.currentTarget.style.color = "#043957")}
 											>
 												{t("Nav.Blog")}
 											</a>
@@ -160,7 +173,12 @@ export default function BackToTop(props) {
 												href="https://x.com/RelaySMS"
 												target="_blank"
 												rel="noopener noreferrer"
-												color="inherit"
+												sx={{
+													color: "#043957",
+													transition: "color 0.3s ease"
+												}}
+												onMouseEnter={(e) => (e.currentTarget.style.color = "#e79405")}
+												onMouseLeave={(e) => (e.currentTarget.style.color = "#043957")}
 											>
 												<TwitterIcon />
 											</IconButton>
@@ -170,7 +188,12 @@ export default function BackToTop(props) {
 												href="https://github.com/smswithoutborders"
 												target="_blank"
 												rel="noopener noreferrer"
-												color="inherit"
+												sx={{
+													color: "#043957",
+													transition: "color 0.3s ease"
+												}}
+												onMouseEnter={(e) => (e.currentTarget.style.color = "#e79405")}
+												onMouseLeave={(e) => (e.currentTarget.style.color = "#043957")}
 											>
 												<GitHubIcon />
 											</IconButton>
@@ -186,32 +209,53 @@ export default function BackToTop(props) {
 									sx={{
 										display: "flex",
 										alignItems: "center",
-										gap: 2,
-										ml: "auto"
+										gap: 2
 									}}
-									dir={direction}
 								>
 									<a
-										href="https://smswithoutborders.github.io/docs/tutorials/getting-started/"
+										href="https://docs.smswithoutborders.com/"
 										target="_blank"
 										rel="noreferrer noopener"
-										className="menu-link"
+										style={{
+											color: "#043957",
+											fontSize: "1.25rem",
+											margin: "0 0.5rem",
+											textDecoration: "none",
+											transition: "color 0.3s ease",
+											fontWeight: 500
+										}}
+										onMouseEnter={(e) => (e.currentTarget.style.color = "#e79405")}
+										onMouseLeave={(e) => (e.currentTarget.style.color = "#043957")}
 									>
-										<Typography>{t("Nav.help")}</Typography>
+										<Typography variant="body1">{t("Nav.help")}</Typography>
 									</a>
 									<a
 										href="https://blog.smswithoutborders.com/"
 										target="_blank"
 										rel="noreferrer"
-										className="menu-link"
+										style={{
+											color: "#043957",
+											fontSize: "1.25rem",
+											margin: "0 0.5rem",
+											textDecoration: "none",
+											transition: "color 0.3s ease",
+											fontWeight: 500
+										}}
+										onMouseEnter={(e) => (e.currentTarget.style.color = "#e79405")}
+										onMouseLeave={(e) => (e.currentTarget.style.color = "#043957")}
 									>
-										<Typography>{t("Nav.Blog")}</Typography>
+										<Typography variant="body1">{t("Nav.Blog")}</Typography>
 									</a>
 									<IconButton
 										href="https://x.com/RelaySMS"
 										target="_blank"
 										rel="noopener noreferrer"
-										color="inherit"
+										sx={{
+											color: "#043957",
+											transition: "color 0.3s ease"
+										}}
+										onMouseEnter={(e) => (e.currentTarget.style.color = "#e79405")}
+										onMouseLeave={(e) => (e.currentTarget.style.color = "#043957")}
 									>
 										<TwitterIcon />
 									</IconButton>
@@ -219,7 +263,12 @@ export default function BackToTop(props) {
 										href="https://github.com/smswithoutborders"
 										target="_blank"
 										rel="noopener noreferrer"
-										color="inherit"
+										sx={{
+											color: "#043957",
+											transition: "color 0.3s ease"
+										}}
+										onMouseEnter={(e) => (e.currentTarget.style.color = "#e79405")}
+										onMouseLeave={(e) => (e.currentTarget.style.color = "#043957")}
 									>
 										<GitHubIcon />
 									</IconButton>
@@ -231,7 +280,11 @@ export default function BackToTop(props) {
 				</AppBar>
 				<Toolbar id="back-to-top-anchor" />
 				<ScrollTop {...props}>
-					<Fab size="small" aria-label="scroll back to top">
+					<Fab
+						size="small"
+						aria-label="scroll back to top"
+						sx={{ backgroundColor: "#043957", color: "white" }}
+					>
 						<KeyboardArrowUpIcon />
 					</Fab>
 				</ScrollTop>

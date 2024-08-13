@@ -46,7 +46,7 @@ const About = () => {
 						<div className="about_content_box_all mt-3">
 							<div className="about_detail text-center">
 								<div className="about_icon">
-									<img src="/swob.png" alt="Swob logo" className="img-fluid mx-auto d-block" />
+									<img src="/authorize.png" alt="Swob logo" className="img-fluid mx-auto d-block" />
 								</div>
 								<h5 className="text-dark text-capitalize mt-3 font-weight-bold">
 									{t("Howitworks.HowItWorkstitleA")}
