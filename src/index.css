@@ -20,7 +20,7 @@ a:hover {
 }
 
 p {
-	font-size: 1.1rem;
+	font-size: 1rem;
 	color: #333;
 	padding: 15px;
 	line-height: 1.6;
@@ -39,14 +39,13 @@ p {
 
 .font-semibold {
 	font-weight: 600;
-	font-size: 2rem !important;
+	font-size: 1.5rem !important;
 }
 
 .font-bold {
 	font-weight: 700;
 }
 
-/* ======================================== hero section ============================================== */
 .hero-container {
 	display: flex;
 	flex-direction: column;
@@ -75,11 +74,12 @@ p {
 		0 6px 6px rgba(0, 0, 0, 0.23);
 	cursor: pointer;
 	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-	&:hover {
-		box-shadow:
-			0 1px 3px rgba(0, 0, 0, 0.12),
-			0 1px 2px rgba(0, 0, 0, 0.24);
-	}
+}
+
+.hero-btn:hover {
+	box-shadow:
+		0 1px 3px rgba(0, 0, 0, 0.12),
+		0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 @media (min-width: 576px) {
@@ -113,11 +113,11 @@ p {
 }
 
 .button-subtitle {
-	font-size: 10px;
+	font-size: 0.875rem;
 }
 
 .button-title {
-	font-size: 26px;
+	font-size: 1.625rem;
 }
 
 .hero-info {
@@ -127,28 +127,28 @@ p {
 
 .hero-info h6 {
 	letter-spacing: 1.5px;
-	font-size: 20px;
+	font-size: 1.25rem;
 	color: #126fac !important;
 	line-height: 1.5;
 }
 
 h6 {
 	letter-spacing: 1.5px;
-	font-size: 16px;
+	font-size: 1rem;
 	color: #126fac !important;
 	line-height: 1.5;
 }
 
 h5 {
 	letter-spacing: 1.5px;
-	font-size: 15px;
+	font-size: 0.9375rem;
 	color: #126fac !important;
 	line-height: 1.2;
 	text-align: center;
 }
 
 .hero-p {
-	font-size: 2.1rem;
+	font-size: 1.25rem;
 	color: #333;
 	line-height: 1.6;
 }
@@ -156,7 +156,7 @@ h5 {
 .hero-info h1 {
 	letter-spacing: 2px;
 	font-weight: 800;
-	font-size: 60px;
+	font-size: 3.75rem;
 	color: #333;
 	font-family: "Montserrat", sans-serif;
 	background: linear-gradient(90deg, #011a7c, #5f88c9);
@@ -177,13 +177,13 @@ h5 {
 
 @media (max-width: 768px) {
 	.hero-info h1 {
-		font-size: 42px;
+		font-size: 2.625rem;
 	}
 }
 
 @media (max-width: 480px) {
 	.hero-info h1 {
-		font-size: 32px;
+		font-size: 2rem;
 	}
 }
 
@@ -196,9 +196,8 @@ h5 {
 
 .hero-info p {
 	letter-spacing: 0.2px;
-	font-size: 20px;
+	font-size: 1rem;
 	color: #4d5f6e;
-	font-size: 16px;
 }
 
 .hero-image {
@@ -213,8 +212,6 @@ h5 {
 	transform: rotateY(0deg) rotate(28deg);
 	transition: transform 2s;
 }
-
-/* ======================================== Responsive Adjustments ============================================== */
 
 @media (max-width: 576px) {
 	.hero-container {
@@ -245,7 +242,7 @@ h5 {
 	}
 }
 
-/*==================================================== Howitworks ==================================================*/
+/*======================= How it Works ========================= */
 .about_icon img {
 	height: 200px;
 	width: 200px;
@@ -285,19 +282,17 @@ h5 {
 	left: 120%;
 }
 
-/* ================================================================================================================ */
-
 .section_all {
 	padding: 60px 0;
 }
 
 .blog-head h2 {
-	font-size: 2.5rem;
+	font-size: 2rem;
 	margin-bottom: 0.5rem;
 }
 
 .blog-head h6 {
-	font-size: 1.25rem;
+	font-size: 1rem;
 	color: #6c757d;
 }
 
@@ -323,7 +318,7 @@ h5 {
 }
 
 .getting-started-link {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	color: #024995;
 	font-weight: 600;
 	text-decoration: none;
@@ -333,7 +328,6 @@ h5 {
 	text-decoration: none;
 	color: #e79405;
 	font-weight: 800;
-	font-size: x-large;
 }
 
 .arrow-icon {
@@ -341,7 +335,7 @@ h5 {
 	transform: rotate(-30deg);
 }
 
-/* ==================================== blog ==================================== */
+/* Blog Cards */
 .blog-card {
 	display: flex;
 	flex-direction: column;
@@ -387,7 +381,7 @@ h5 {
 	padding: 5px 10px;
 	border-radius: 5px;
 	text-decoration: none;
-	font-size: 12px;
+	font-size: 0.75rem;
 }
 
 .content {
@@ -429,4 +423,30 @@ h5 {
 	.blog-card {
 		margin-bottom: 15px;
 	}
+}
+/* =============================================== */
+
+.contact-card {
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.icon-btn {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24px;
+}
+
+.icon-btn .h3 {
+	margin: 0;
 }

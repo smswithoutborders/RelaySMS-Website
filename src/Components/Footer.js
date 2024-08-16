@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Grid, ListItem, List } from "@mui/material";
-import { FaEnvelope, FaFacebook, FaGithub, FaXTwitter } from "react-icons/fa6";
+import { FaEnvelope, FaGithub, FaXTwitter } from "react-icons/fa6";
 import { Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
@@ -41,7 +41,9 @@ export default function Footer() {
 					</Grid>
 					<Grid item md={2} xs={12}>
 						<List>
-							<ListItem sx={{ fontWeight: 600 }}>{t("Footer.footerHeader1")}</ListItem>
+							<ListItem sx={{ fontWeight: 600, color: "#ffcc00" }}>
+								{t("Footer.footerHeader1")}
+							</ListItem>
 							<ListItem>
 								<Box
 									component="a"
@@ -100,7 +102,9 @@ export default function Footer() {
 					</Grid>
 					<Grid item md={2} xs={12}>
 						<List>
-							<ListItem sx={{ fontWeight: 600 }}>{t("Footer.footerHeader2")}</ListItem>
+							<ListItem sx={{ fontWeight: 600, color: "#ffcc00" }}>
+								{t("Footer.footerHeader2")}
+							</ListItem>
 							<ListItem>
 								<FaGithub style={{ marginInlineEnd: 15 }} />
 								<Box
@@ -118,25 +122,6 @@ export default function Footer() {
 									}}
 								>
 									{t("Footer.footersocial1")}
-								</Box>
-							</ListItem>
-							<ListItem>
-								<FaFacebook style={{ marginInlineEnd: 15 }} />
-								<Box
-									component="a"
-									href="https://www.facebook.com/SMSWithoutBorders"
-									sx={{
-										color: "inherit",
-										textDecoration: "none",
-										"&:hover": {
-											color: "#ffcc00",
-											textDecoration: "none",
-											backgroundColor: "#444"
-										},
-										transition: "background-color 0.3s ease, color 0.3s ease"
-									}}
-								>
-									{t("Footer.footersocial2")}
 								</Box>
 							</ListItem>
 							<ListItem>
@@ -181,11 +166,13 @@ export default function Footer() {
 					</Grid>
 					<Grid item md={2} xs={12}>
 						<List>
-							<ListItem sx={{ fontWeight: 600 }}>{t("Footer.footerHeader3")}</ListItem>
+							<ListItem sx={{ fontWeight: 800, color: "#ffcc00" }}>
+								{t("Footer.footerHeader3")}
+							</ListItem>
 							<ListItem>
 								<Box
 									component="a"
-									href="/download/android"
+									href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 									sx={{
 										color: "inherit",
 										textDecoration: "none",
@@ -203,7 +190,7 @@ export default function Footer() {
 							<ListItem>
 								<Box
 									component="a"
-									href="/download/ios"
+									href="https://apps.apple.com/us/app/relaysms/id6630382970"
 									sx={{
 										color: "inherit",
 										textDecoration: "none",
@@ -218,24 +205,7 @@ export default function Footer() {
 									{t("Footer.footerdownload2")}
 								</Box>
 							</ListItem>
-							<ListItem>
-								<Box
-									component="a"
-									href="/download/linux"
-									sx={{
-										color: "inherit",
-										textDecoration: "none",
-										"&:hover": {
-											color: "#ffcc00",
-											textDecoration: "none",
-											backgroundColor: "#444"
-										},
-										transition: "background-color 0.3s ease, color 0.3s ease"
-									}}
-								>
-									{t("Footer.footerdownload3")}
-								</Box>
-							</ListItem>
+
 							<ListItem>
 								<Box
 									component="a"
@@ -259,9 +229,32 @@ export default function Footer() {
 				</Grid>
 				<br />
 			</Row>
-			<Typography variant="body1" sx={{ mx: 4, color: "white" }}>
-				© 2024 SMSWithoutBorders
-			</Typography>
+			<hr />
+			<Box
+				component="footer"
+				sx={{
+					backgroundColor: "#0e1116",
+					color: "#f5f5f5",
+					px: { xs: 3, md: 10 },
+					position: "relative",
+					width: "100%",
+					bottom: 0,
+					direction: isRTL ? "rtl" : "ltr",
+					textAlign: "center"
+				}}
+			>
+				<Typography
+					variant="body1"
+					sx={{
+						color: "white",
+						mt: 2,
+						textAlign: "center",
+						width: "100%"
+					}}
+				>
+					© 2024 SMSWithoutBorders
+				</Typography>
+			</Box>
 		</Box>
 	);
 }
