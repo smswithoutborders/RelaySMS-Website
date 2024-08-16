@@ -65,28 +65,35 @@
 	}
 }
 /* ============================navbar========================= */
-.menu-link {
-	color: #043957;
-	font-size: 1.5rem !important;
-	margin: 0 0.5rem;
-	transition: color 0.3s ease;
-	text-decoration: none;
-	font-weight: 500;
+
+.custom-navbar {
+	box-shadow: 0px 4px 10px rgba(1, 46, 129, 0.3);
+	height: 10%;
+	background-color: white;
 }
 
-.menu-link:hover {
-	color: #e79405 !important;
+.navbar-expand-lg .navbar-collapse {
+	background-color: white;
 }
 
-.MuiIconButton-root {
-	color: #043957;
-	transition: color 0.3s ease;
-}
-
-.MuiIconButton-root:hover {
+.MuiIconButton-root:hover,
+Nav.Link:hover {
 	color: #e79405;
 }
-/* ------------------------------blog------------------------------------------ */
+
+.nav-link-custom {
+	font-size: 18px !important;
+	color: #091426;
+	margin: 0 15px;
+	transition: color 0.3s ease;
+	font-weight: 400 !important;
+}
+
+.nav-link-custom:hover {
+	color: #dc9909 !important;
+}
+
+/* -----------------===========-------------blog---------------------===========--------------------- */
 .relay_blog_box {
 	font-weight: 300;
 	padding: 2rem;
