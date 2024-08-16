@@ -46,7 +46,7 @@ const CustomNavbar = () => {
 						>
 							{t("Nav.Blog")}
 						</Nav.Link>
-						<LinkContainer to="/Contact">
+						<LinkContainer to="/Contact_Us">
 							<Nav.Link className="nav-link-custom">{t("Nav.Contact")}</Nav.Link>
 						</LinkContainer>
 						<Nav.Link
