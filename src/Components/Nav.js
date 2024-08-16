@@ -5,6 +5,7 @@ import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { LinkContainer } from "react-router-bootstrap";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
+import "../App.css"; // Ensure this file is imported
 
 const CustomNavbar = () => {
 	const { t, i18n } = useTranslation();
@@ -17,13 +18,7 @@ const CustomNavbar = () => {
 			variant="light"
 			dir={direction}
 			fixed="top"
-			style={{
-				width: "100%",
-				boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-				fontSize: "1.2rem",
-				fontWeight: "bold",
-				height: "80px"
-			}}
+			className="custom-navbar"
 		>
 			<Container fluid>
 				<Navbar.Brand href="/" className="ms-3">
@@ -33,12 +28,12 @@ const CustomNavbar = () => {
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="ms-auto d-flex align-items-center">
 						<LinkContainer to="/">
-							<Nav.Link className="text-dark mx-3">{t("Nav.Home")}</Nav.Link>
+							<Nav.Link className="nav-link-custom">{t("Nav.Home")}</Nav.Link>
 						</LinkContainer>
 						<Nav.Link
 							href="https://docs.smswithoutborders.com/"
 							target="_blank"
-							className="text-dark mx-3"
+							className="nav-link-custom"
 							rel="noopener noreferrer"
 						>
 							{t("Nav.help")}
@@ -46,18 +41,18 @@ const CustomNavbar = () => {
 						<Nav.Link
 							href="https://blog.smswithoutborders.com/"
 							target="_blank"
-							className="text-dark mx-3"
+							className="nav-link-custom"
 							rel="noopener noreferrer"
 						>
 							{t("Nav.Blog")}
 						</Nav.Link>
 						<LinkContainer to="/Contact">
-							<Nav.Link className="text-dark mx-3">{t("Nav.Contact")}</Nav.Link>
+							<Nav.Link className="nav-link-custom">{t("Nav.Contact")}</Nav.Link>
 						</LinkContainer>
 						<Nav.Link
 							href="https://x.com/RelaySMS"
 							target="_blank"
-							className="text-dark mx-3"
+							className="nav-link-custom"
 							rel="noopener noreferrer"
 						>
 							<FontAwesomeIcon icon={faTwitter} size="lg" />
@@ -65,7 +60,7 @@ const CustomNavbar = () => {
 						<Nav.Link
 							href="https://github.com/smswithoutborders"
 							target="_blank"
-							className="text-dark mx-3"
+							className="nav-link-custom"
 							rel="noopener noreferrer"
 						>
 							<FontAwesomeIcon icon={faGithub} size="lg" />
