@@ -1,122 +1,85 @@
 import React, { useEffect } from "react";
-import { Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { FaArrowCircleRight } from "react-icons/fa";
-import "../index.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-const BlogPost = ({ imageUrl, category, title, description, comments, link }) => {
-	const { i18n } = useTranslation();
-	const isRTL = i18n.language === "fa";
-
-	useEffect(() => {
-		AOS.init({ duration: 1000 });
-	}, []);
-
-	return (
-		<div className="col-md-4 p-3">
-			<div className="blog-card">
-				<div
-					className="image-container"
-					style={{
-						backgroundImage: `url(${imageUrl})`,
-						borderRadius: "12px 12px 0 0"
-					}}
-				>
-					<div className="overlay"></div>
-					<a href={link} className="category-badge">
-						<small>{category}</small>
-					</a>
-				</div>
-				<div className={`content ${isRTL ? "text-right" : ""}`}>
-					<a href={link} className="title">
-						<h5>{title}</h5>
-					</a>
-					<p>{description}</p>
-					<div className="meta">
-						<div className="meta-item">
-							<small>{comments}</small>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
-};
+import "../App.css";
 
 const BlogSection = () => {
 	const { t, i18n } = useTranslation();
 	const isRTL = i18n.dir() === "rtl";
 
+	useEffect(() => {
+		AOS.init({ duration: 1000 });
+	}, []);
+
 	const blogPosts = [
 		{
-			imageUrl: "/resilience.jpg",
-			date: { day: "16", month: "April" },
-			category: t("article"),
 			title: t("Blog.Resilience"),
-			description: t("Blog.ResilienceD"),
+			text: t("Blog.ResilienceD"),
 			link: "https://blog.smswithoutborders.com/posts/resilience"
 		},
 		{
-			imageUrl: "/ID.jpg",
-			date: { day: "1", month: "July" },
-			category: t("release"),
 			title: t("Blog.IDHeader"),
-			description: t("Blog.IDD"),
+			text: t("Blog.IDD"),
 			link: "https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
 		},
 		{
-			imageUrl: "/rebrand.jpg",
-			date: { day: "", month: "MAR" },
-			category: t("release"),
 			title: t("Blog.RebrandHeader"),
-			description: t("Blog.RebrandD"),
+			text: t("Blog.RebrandD"),
 			link: "https://blog.smswithoutborders.com/posts/rebranding"
 		}
 	];
 
 	return (
-		<section data-aos="zoom-in" className={`container mt-5 ${isRTL ? "text-right" : ""}`}>
+		<section className="relay_blog_section my-5">
 			{/* Header Section */}
-			<Row data-aos="zoom-in">
-				<Col className="text-center">
-					<div
-						className={`blog-head text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
-					>
-						<span
-							className="inline-block mb-3 uppercase tracking-wide font-semibold text-blue-700"
-							data-aos="fade-right"
-						>
-							{t("Blog.BlogHeader")}
-						</span>
-						<h1
-							className="text-4xl md:text-5xl md:leading-tight font-bold text-gray-800 xl:max-w-full"
-							data-aos="fade-right"
-						>
-							{t("Blog.BlogSubHeader")}
-						</h1>
-					</div>
-				</Col>
-			</Row>
+			<div
+				className={`blog-head text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
+			>
+				<span
+					className="inline-block mb-3 uppercase tracking-wide font-semibold text-blue-700"
+					data-aos="fade-right"
+				>
+					{t("Blog.BlogHeader")}
+				</span>
+				<h1
+					className="text-4xl md:text-5xl md:leading-tight font-bold text-gray-800 xl:max-w-full"
+					data-aos="fade-right"
+				></h1>
+			</div>
 
 			{/* Blog Posts */}
-			<Row className="d-flex flex-wrap">
-				{blogPosts.map((post, index) => (
-					<BlogPost key={index} {...post} />
-				))}
-				<div className="text-center p-1 w-100">
-					<a
-						href="https://blog.smswithoutborders.com"
-						target="_blank"
-						rel="noreferrer noopener"
-						className="getting-started-link"
-					>
-						{t("Blog.ReadOtherArticles")}
-						<FaArrowCircleRight className="ml-2 arrow-icon" />
-					</a>
+			<div className="container">
+				<div className="row">
+					<div className="col-md-12">
+						<h1 className="text-center pb-5"> {t("Blog.BlogSubHeader")}</h1>
+					</div>
+					{blogPosts.map((post, index) => (
+						<div className="col-md-12 col-lg-4" key={index}>
+							<div className="relay_blog_box mt-4">
+								<a href={post.link} className="blog-title-link">
+									<h2 className="text-justify">{post.title}</h2>
+								</a>
+								<p className="text-justify">{post.text}</p>
+							</div>
+						</div>
+					))}
 				</div>
-			</Row>
+			</div>
+
+			{/* Footer Link to More Articles */}
+			<div className="text-center p-1 w-100">
+				<a
+					href="https://blog.smswithoutborders.com"
+					target="_blank"
+					rel="noreferrer noopener"
+					className="getting-started-link"
+				>
+					{t("Blog.ReadOtherArticles")}
+					<FaArrowCircleRight className="ml-2 arrow-icon" />
+				</a>
+			</div>
 		</section>
 	);
 };

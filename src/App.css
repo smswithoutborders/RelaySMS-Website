@@ -54,7 +54,6 @@
 	animation-delay: 1.2s;
 }
 
-/* Animation keyframes */
 @keyframes loading02 {
 	0% {
 		filter: blur(0);
@@ -87,3 +86,135 @@
 .MuiIconButton-root:hover {
 	color: #e79405;
 }
+/* ------------------------------blog------------------------------------------ */
+.relay_blog_box {
+	font-weight: 300;
+	padding: 2rem;
+	margin: 2rem;
+	border: 1px solid #405fbd;
+	position: relative;
+	transition: 1s;
+	background-color: #fff;
+	border-radius: 4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: auto;
+	max-width: 100%;
+}
+
+.relay_blog_box:hover {
+	box-shadow: 2px 4px 8px #d6d8da;
+	border: 1px solid #fff;
+	transform: scale(1.02);
+	z-index: 1;
+}
+
+@media (max-width: 575px) {
+	.relay_blog_section {
+		padding: 3rem 0;
+	}
+
+	.relay_blog_section h1 {
+		font-size: 2rem;
+		padding-bottom: 1rem !important;
+	}
+
+	.relay_blog_box {
+		padding: 1rem;
+		margin: 0.5rem;
+		border-radius: 2rem;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+	.relay_blog_box {
+		padding: 1.5rem;
+		margin: 1rem;
+		border-radius: 3rem;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.relay_blog_box {
+		padding: 1.5rem;
+		margin: 1.5rem;
+		border-radius: 3rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.relay_blog_box {
+		padding: 2rem;
+		margin: 2rem;
+		border-radius: 4rem;
+	}
+}
+/* ========================Contact us section =================================== */
+.section-contact {
+	background-color: #fff;
+	padding: 120px 0;
+}
+
+.header-section .title {
+	position: relative;
+	margin-bottom: 17px;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 55px;
+}
+
+.header-section .description {
+	font-family: "Roboto", sans-serif;
+	color: #2a6287;
+}
+
+.header-section .big-title {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translate(-50%, 70%);
+	font-size: 120px;
+	font-weight: 700;
+	opacity: 0.15;
+}
+
+.contact-card {
+	border-radius: 10px;
+	border: none;
+	overflow: hidden;
+}
+
+.icon-btn {
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+}
+
+.icon-btn:hover {
+	background-color: #e0e0e0;
+}
+
+.contact-card a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.contact-card a:hover {
+	text-decoration: underline;
+}
+
+.contact-card .text-muted {
+	color: #6c757d;
+}
+
+@media (max-width: 767.99px) {
+	.contact-card {
+		margin-bottom: 20px;
+	}
+}
+/* ===================================footer=============================================== */
