@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { FiMail, FiMessageSquare, FiGlobe } from "react-icons/fi";
+import { FiMail, FiMessageSquare } from "react-icons/fi";
 import { FaTwitter as FaXTwitter, FaGithub } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -41,16 +41,6 @@ const ContactHeader = () => {
 			variant: "success"
 		},
 		{
-			icon: FiGlobe,
-			title: "Website",
-			link: {
-				href: "https://relay.smswithoutborders.com/",
-				text: "https://relay.smswithoutborders.com/"
-			},
-			buttonText: "Visit Website",
-			variant: "info"
-		},
-		{
 			icon: FaXTwitter,
 			title: "Twitter",
 			link: { href: "https://x.com/RelaySMS", text: "https://x.com/RelaySMS" },
@@ -61,8 +51,8 @@ const ContactHeader = () => {
 			icon: FaGithub,
 			title: "GitHub",
 			link: {
-				href: "https://github.com/smswithoutborders/SMSWithoutBorders-App-Android",
-				text: "https://github.com/smswithoutborders/SMSWithoutBorders-App-Android"
+				href: "https://github.com/smswithoutborders",
+				text: "https://github.com/smswithoutborders"
 			},
 			buttonText: "View on GitHub",
 			variant: "secondary"
@@ -106,7 +96,7 @@ const ContactHeader = () => {
 				</Row>
 				<Row>
 					{contactItems.map((item, index) => (
-						<Col md={4} sm={6} key={index}>
+						<Col md={6} sm={6} xs={12} key={index}>
 							<ContactItem {...item} />
 						</Col>
 					))}
