@@ -1,5 +1,5 @@
 * {
-	font-family: "Ubuntu", sans-serif;
+	font-family: "Roboto", sans-serif;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
@@ -158,7 +158,7 @@ h5 {
 	font-weight: 800;
 	font-size: 3.75rem;
 	color: #333;
-	font-family: "Montserrat", sans-serif;
+	font-family: "Roboto", sans-serif;
 	background: linear-gradient(90deg, #011a7c, #5f88c9);
 	background-clip: text;
 	-webkit-background-clip: text;
