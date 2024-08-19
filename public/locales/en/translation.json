@@ -21,8 +21,7 @@
 		"AboutQ": "What is RelaySMS?",
 		"Description": "RelaySMS, formerly known as SMSWithoutBorders (swob) app, is a user-friendly application that empowers you to send messages across your favorite messaging platforms, even when you're disconnected from the internet. Think of it as a secure bridge that connects your offline world to online communication channels. RelaySMS utilizes SMS technology as a reliable relay, allowing you to seamlessly transmit messages even in areas with limited or no internet access.",
 		"Description1": "The concept for SMSWithoutBorders, now RelaySMS, originated from a simple yet powerful vision: ensuring everyone has access to reliable communication, regardless of internet connectivity. Many regions around the world have limited or unreliable internet infrastructure, creating communication barriers that can be disruptive for individuals and communities. RelaySMS was born to bridge this gap, empowering users to stay connected with friends, family, and colleagues even when offline.",
-		"ReadMore": "Read More",
-		"ReadLess": "Read Less"
+		"ReadMore": "Read More"
 	},
 	"Howitworks": {
 		"HowItWorks": "How it works",
@@ -31,7 +30,7 @@
 		"HowItWorksA": "Grant RelaySMS permission to send emails, posts, or messages on your behalf securely.",
 		"HowItWorkstitleB": "Compose and Send",
 		"HowItWorksB": "Craft your content effortlessly. With RelaySMS, your messages are automatically dispatched using your preferred SMS app.",
-		"HowItWorkstitleC": "Relay and Publish",
+		"HowItWorkstitleC": "Receives and Publish",
 		"HowItWorksC": "Your content swiftly reaches RelaySMS access points, ensuring it's distributed to your audience without delay.",
 		"HowItWorkstitleD": "Stay Informed",
 		"HowItWorksD": "Receive instant SMS notifications, keeping you informed of delivery status and ensuring peace of mind.",
@@ -41,7 +40,7 @@
 		"RelaySMSMap": "RelaySMS is actively used in over 60 countries."
 	},
 	"Blog": {
-		"BlogHeader": "Whats New on RelaySMS?",
+		"BlogHeader": "Our Blog",
 		"BlogSubHeader": "Stay updated with the latest news, articles, and insights from RelaySMS.",
 		"Resilience": "Resilience Of Gateway Clients In Smswithoutborders",
 		"ResilienceD": "Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online platforms. The Gateway Client listens for messages and routes them to the Gateway server, which publishes ...",

@@ -9,6 +9,7 @@ import Contact_Us from "./Pages/Contact_Us";
 import PageNotFound from "./Pages/PageNotFound";
 import Download from "./Pages/Download";
 import Loader from "./Components/Loader";
+import BackToTopButton from "./Components/BackToTopButton";
 import "./App.css";
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
 						<Route path="*" element={<PageNotFound />} />
 					</Routes>
 					<Footer />
+					<BackToTopButton />
 				</Router>
 			)}
 		</>

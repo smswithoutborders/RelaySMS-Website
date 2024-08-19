@@ -5,11 +5,12 @@ import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { LinkContainer } from "react-router-bootstrap";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
-import "../App.css"; // Ensure this file is imported
+import "../App.css";
 
 const CustomNavbar = () => {
 	const { t, i18n } = useTranslation();
-	const direction = i18n.dir();
+	const direction = i18n.dir(); // Get current language direction
+	const rtlClass = direction === "rtl" ? "rtl" : "ltr"; // Apply RTL or LTR class
 
 	return (
 		<Navbar
@@ -18,7 +19,7 @@ const CustomNavbar = () => {
 			variant="light"
 			dir={direction}
 			fixed="top"
-			className="custom-navbar"
+			className={`custom-navbar ${rtlClass}`} // Apply class based on direction
 		>
 			<Container fluid>
 				<Navbar.Brand href="/" className="ms-3">
