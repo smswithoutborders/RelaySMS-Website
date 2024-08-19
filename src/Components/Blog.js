@@ -18,7 +18,7 @@ const ResponsiveCardSection = () => {
 		<Container
 			fluid
 			className="my-5 py-5 px-4"
-			dir="rtl" // Set direction to RTL
+			dir="rtl"
 			style={{
 				maxWidth: "1500px",
 				margin: "0 auto"
@@ -93,8 +93,7 @@ const ResponsiveCardSection = () => {
 							<div className="text-center">
 								<Button
 									href="https://blog.smswithoutborders.com/posts/rebranding"
-									variant="primary"
-									style={{ padding: "10px 20px", fontSize: "16px" }}
+									className="custom-readmore-btn"
 								>
 									{t("AboutRelaySMS.ReadMore")}
 								</Button>
@@ -141,8 +140,7 @@ const ResponsiveCardSection = () => {
 							<div className="text-center">
 								<Button
 									href="https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
-									variant="primary"
-									style={{ padding: "10px 20px", fontSize: "16px" }}
+									className="custom-readmore-btn"
 								>
 									{t("AboutRelaySMS.ReadMore")}
 								</Button>
@@ -189,8 +187,7 @@ const ResponsiveCardSection = () => {
 							<div className="text-center">
 								<Button
 									href="https://blog.smswithoutborders.com/posts/resilience"
-									variant="primary"
-									style={{ padding: "10px 20px", fontSize: "16px" }}
+									className="custom-readmore-btn"
 								>
 									{t("AboutRelaySMS.ReadMore")}
 								</Button>
@@ -201,22 +198,22 @@ const ResponsiveCardSection = () => {
 			</Row>
 
 			{/* Footer Link to More Articles */}
-			<div className="text-center p-1 w-100" data-aos="fade-up" data-aos-delay="300">
-				<a
-					href="https://blog.smswithoutborders.com"
-					target="_blank"
-					rel="noreferrer noopener"
-					className="getting-started-link"
-					style={{
-						fontSize: "18px",
-						color: "#007bff",
-						textDecoration: "none"
-					}}
-				>
-					{t("Blog.ReadOtherArticles")}
-					<FaArrowCircleRight className="ml-2 arrow-icon" />
-				</a>
-			</div>
+
+			<Row className="mt-4">
+				<Col xs={12}>
+					<div className="text-center p-1 howitworks">
+						<a
+							href="https://blog.smswithoutborders.com"
+							target="_blank"
+							rel="noreferrer noopener"
+							className="getting-started-link"
+						>
+							<FaArrowCircleRight className="ml-2 arrow-icon" />
+							{t("Blog.ReadOtherArticles")}
+						</a>
+					</div>
+				</Col>
+			</Row>
 		</Container>
 	);
 };

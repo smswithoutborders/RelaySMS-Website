@@ -94,24 +94,31 @@ Nav.Link:hover {
 }
 
 /* -----------------===========-------------blog---------------------===========--------------------- */
-
-.card-title {
-	font-size: 1.25rem;
-	font-weight: 600;
+.custom-readmore-btn {
+	border: none;
+	border-bottom: #091426;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 12px 24px;
+	border-radius: 8px;
+	transition:
+		background-color 0.3s ease,
+		transform 0.3s ease;
 }
 
-.card-text {
-	font-size: 1rem;
-	color: #6c757d;
+.custom-readmore-btn:hover {
+	background-color: #0056b3;
+	transform: scale(1.05);
 }
 
-.btn-outline-primary {
-	border-radius: 0.25rem;
+.custom-readmore-btn:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
 
-.relay_blog_section {
-	padding: 50px 0;
-}
+/* ============================== */
+
 /* ========================Contact us section =================================== */
 .section-contact {
 	background-color: #fff;
@@ -231,7 +238,6 @@ Nav.Link:hover {
 	margin-left: 0;
 }
 /* ============ backto top ====================*/
-
 .back-to-top {
 	position: fixed;
 	bottom: 20px;
