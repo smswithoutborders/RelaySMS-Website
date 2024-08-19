@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Typography, Grid, ListItem, List } from "@mui/material";
 import { FaEnvelope, FaGithub, FaXTwitter } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../Components/LanguageSwitcher";
 
 export default function Footer() {
 	const { t, i18n } = useTranslation();
@@ -41,6 +42,11 @@ export default function Footer() {
 					<Typography variant="body2" sx={{ px: { md: 4, xs: 2 }, py: 2, color: "white" }}>
 						{t("Footer.footerbody2")}
 					</Typography>
+					<Box
+						style={{ backgroundColor: "white", padding: "10px", borderRadius: "5px", width: "30%" }}
+					>
+						<LanguageSwitcher style={{ color: "white" }} />
+					</Box>
 				</Grid>
 				<Grid item md={2} xs={12}>
 					<List>

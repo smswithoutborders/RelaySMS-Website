@@ -12,7 +12,8 @@
 		"Home": "Accueil",
 		"help": "Aide",
 		"github": "GitHub",
-		"Blog": "Blog"
+		"Blog": "Blog",
+		"Contact": "Contactez-nous"
 	},
 	"AboutRelaySMS": {
 		"About": "À propos de RelaySMS",
@@ -29,7 +30,7 @@
 		"HowItWorksA": "Accordez à RelaySMS la permission d'envoyer des courriels, des messages ou des messages en votre nom de manière sécurisée",
 		"HowItWorkstitleB": "Composer et envoyer",
 		"HowItWorksB": "Rédigez votre contenu sans effort. Avec RelaySMS, vos messages sont automatiquement envoyés à l'aide de votre application SMS préférée.",
-		"HowItWorkstitleC": "Relay and Publish :",
+		"HowItWorkstitleC": "Recevoir et Publier",
 		"HowItWorksC": "Votre contenu atteint rapidement les points d'accès RelaySMS, ce qui garantit qu'il est distribué à votre public sans délai.",
 		"HowItWorkstitleD": "Restez informé",
 		"HowItWorksD": "Recevez des notifications SMS instantanées, qui vous informent de l'état de la livraison et vous garantissent la tranquillité d'esprit",
@@ -39,7 +40,7 @@
 		"RelaySMSMap": "RelaySMS est utilisé activement dans plus de 60 pays."
 	},
 	"Blog": {
-		"BlogHeader": "Quoi de neuf sur RelaySMS ?",
+		"BlogHeader": "Notre Blog",
 		"BlogSubHeader": "Restez au courant des dernières nouvelles, des articles et des idées de RelaySMS",
 		"Resilience": "Résilience des clients de la passerelle dans Smswithoutborders",
 		"ResilienceD": "Le client passerelle de SMSWithoutBorders joue un rôle clé dans l'acheminement des messages des SMS vers les plateformes en ligne. Le client de la passerelle écoute les messages et les achemine vers le serveur de la passerelle, qui les publie...",
@@ -53,6 +54,8 @@
 		"ReadOtherArticles": "Lire d'autres articles"
 	},
 	"FAQ": {
+		"FAQ": "Questions Fréquemment Posées",
+		"FAQSubheader": "Trouvez des réponses aux questions les plus courantes.",
 		"FAQ1": "RelaySMS est-il disponible sur mon appareil ?",
 		"faq1": "RelaySMS est actuellement disponible pour <a href='https://example.com' target='_blank'>Android</a>. Nous travaillons à étendre la compatibilité à d'autres plateformes",
 		"FAQ2": "Combien coûte RelaySMS ?",

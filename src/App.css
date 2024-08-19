@@ -94,68 +94,23 @@ Nav.Link:hover {
 }
 
 /* -----------------===========-------------blog---------------------===========--------------------- */
-.relay_blog_box {
-	font-weight: 300;
-	padding: 2rem;
-	margin: 2rem;
-	border: 1px solid #405fbd;
-	position: relative;
-	transition: 1s;
-	background-color: #fff;
-	border-radius: 4rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: auto;
-	max-width: 100%;
+
+.card-title {
+	font-size: 1.25rem;
+	font-weight: 600;
 }
 
-.relay_blog_box:hover {
-	box-shadow: 2px 4px 8px #d6d8da;
-	border: 1px solid #fff;
-	transform: scale(1.02);
-	z-index: 1;
+.card-text {
+	font-size: 1rem;
+	color: #6c757d;
 }
 
-@media (max-width: 575px) {
-	.relay_blog_section {
-		padding: 3rem 0;
-	}
-
-	.relay_blog_section h1 {
-		font-size: 2rem;
-		padding-bottom: 1rem !important;
-	}
-
-	.relay_blog_box {
-		padding: 1rem;
-		margin: 0.5rem;
-		border-radius: 2rem;
-	}
+.btn-outline-primary {
+	border-radius: 0.25rem;
 }
 
-@media (min-width: 576px) and (max-width: 767px) {
-	.relay_blog_box {
-		padding: 1.5rem;
-		margin: 1rem;
-		border-radius: 3rem;
-	}
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-	.relay_blog_box {
-		padding: 1.5rem;
-		margin: 1.5rem;
-		border-radius: 3rem;
-	}
-}
-
-@media (min-width: 992px) {
-	.relay_blog_box {
-		padding: 2rem;
-		margin: 2rem;
-		border-radius: 4rem;
-	}
+.relay_blog_section {
+	padding: 50px 0;
 }
 /* ========================Contact us section =================================== */
 .section-contact {
@@ -224,4 +179,84 @@ Nav.Link:hover {
 		margin-bottom: 20px;
 	}
 }
-/* ===================================footer=============================================== */
+/* ===================================farsi Direction=============================================== */
+.custom-navbar {
+	transition: all 0.3s ease;
+}
+
+.custom-navbar.ltr .navbar-brand {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.custom-navbar.ltr .navbar-nav {
+	margin-left: auto;
+	margin-right: 0;
+	text-align: left;
+}
+
+.custom-navbar.ltr .nav-link-custom {
+	margin-left: 15px;
+	margin-right: 0;
+}
+
+.custom-navbar.rtl .navbar-brand {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.custom-navbar.rtl .navbar-nav {
+	margin-left: 0;
+	margin-right: auto;
+	text-align: right;
+}
+
+.custom-navbar.rtl .nav-link-custom {
+	margin-right: 15px;
+	margin-left: 0;
+}
+
+/* end of nav */
+[dir="rtl"] .text-center {
+	text-align: right;
+}
+
+[dir="rtl"] .ml-2 {
+	margin-left: 0.5rem;
+	margin-right: 0;
+}
+
+[dir="rtl"] .mr-2 {
+	margin-right: 0.5rem;
+	margin-left: 0;
+}
+/* ============ backto top ====================*/
+
+.back-to-top {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition:
+		background-color 0.3s,
+		transform 0.3s;
+}
+
+.back-to-top:hover {
+	background-color: #0056b3;
+	transform: scale(1.1);
+}
+
+.back-to-top svg {
+	font-size: 24px;
+}
