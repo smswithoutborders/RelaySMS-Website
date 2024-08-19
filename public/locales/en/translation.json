@@ -41,7 +41,7 @@
 	},
 	"Blog": {
 		"BlogHeader": "Our Blog",
-		"BlogSubHeader": "Stay updated with the latest news, articles, and insights from RelaySMS.",
+		"BlogSubHeader": "Stay updated with the latest news, articles, and insights from RelaySMS",
 		"Resilience": "Resilience Of Gateway Clients In Smswithoutborders",
 		"ResilienceD": "Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online platforms. The Gateway Client listens for messages and routes them to the Gateway server, which publishes ...",
 		"ReliabilityD": "Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online platforms. The Gateway Client listens for messages and routes them to the Gateway server, which publishes ...",

@@ -223,20 +223,6 @@ Nav.Link:hover {
 	margin-left: 0;
 }
 
-/* end of nav */
-[dir="rtl"] .text-center {
-	text-align: right;
-}
-
-[dir="rtl"] .ml-2 {
-	margin-left: 0.5rem;
-	margin-right: 0;
-}
-
-[dir="rtl"] .mr-2 {
-	margin-right: 0.5rem;
-	margin-left: 0;
-}
 /* ============ backto top ====================*/
 .back-to-top {
 	position: fixed;
