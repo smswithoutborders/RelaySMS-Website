@@ -68,12 +68,14 @@ const ResponsiveCardSection = () => {
 						}}
 					>
 						<Card.Body
-							className="d-flex flex-column justify-content-between"
+							dir="ltr"
+							className="d-flex flex-column justify-content-center align-items-center"
 							style={{ height: "100%" }}
 						>
-							<div>
+							<div className="text-center">
 								<Card.Title
-									className="text-center mb-3"
+									className="mb-3"
+									dir="rtl"
 									style={{
 										fontWeight: "bold",
 										fontSize: "1.5rem",
@@ -116,12 +118,13 @@ const ResponsiveCardSection = () => {
 						}}
 					>
 						<Card.Body
-							className="d-flex flex-column justify-content-between"
+							dir="ltr" // Card Body LTR
+							className="d-flex flex-column justify-content-center align-items-center"
 							style={{ height: "100%" }}
 						>
-							<div>
+							<div className="text-center">
 								<Card.Title
-									className="text-center mb-3"
+									className="mb-3"
 									style={{
 										fontWeight: "bold",
 										fontSize: "1.5rem",
@@ -163,12 +166,13 @@ const ResponsiveCardSection = () => {
 						}}
 					>
 						<Card.Body
-							className="d-flex flex-column justify-content-between"
+							dir="ltr" // Card Body LTR
+							className="d-flex flex-column justify-content-center align-items-center"
 							style={{ height: "100%" }}
 						>
-							<div>
+							<div className="text-center">
 								<Card.Title
-									className="text-center mb-3"
+									className="mb-3"
 									style={{
 										fontWeight: "bold",
 										fontSize: "1.5rem",
@@ -198,7 +202,6 @@ const ResponsiveCardSection = () => {
 			</Row>
 
 			{/* Footer Link to More Articles */}
-
 			<Row className="mt-4">
 				<Col xs={12}>
 					<div className="text-center p-1 howitworks">

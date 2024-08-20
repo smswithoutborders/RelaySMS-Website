@@ -65,10 +65,9 @@
 	}
 }
 /* ============================navbar========================= */
-
 .custom-navbar {
 	box-shadow: 0px 4px 10px rgba(1, 46, 129, 0.3);
-	height: 10%;
+	height: 8%;
 	background-color: white;
 }
 
@@ -116,8 +115,6 @@ Nav.Link:hover {
 	outline: none;
 	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
 }
-
-/* ============================== */
 
 /* ========================Contact us section =================================== */
 .section-contact {
@@ -185,42 +182,6 @@ Nav.Link:hover {
 	.contact-card {
 		margin-bottom: 20px;
 	}
-}
-/* ===================================farsi Direction=============================================== */
-.custom-navbar {
-	transition: all 0.3s ease;
-}
-
-.custom-navbar.ltr .navbar-brand {
-	margin-right: 0;
-	margin-left: auto;
-}
-
-.custom-navbar.ltr .navbar-nav {
-	margin-left: auto;
-	margin-right: 0;
-	text-align: left;
-}
-
-.custom-navbar.ltr .nav-link-custom {
-	margin-left: 15px;
-	margin-right: 0;
-}
-
-.custom-navbar.rtl .navbar-brand {
-	margin-left: 0;
-	margin-right: auto;
-}
-
-.custom-navbar.rtl .navbar-nav {
-	margin-left: 0;
-	margin-right: auto;
-	text-align: right;
-}
-
-.custom-navbar.rtl .nav-link-custom {
-	margin-right: 15px;
-	margin-left: 0;
 }
 
 /* ============ backto top ====================*/

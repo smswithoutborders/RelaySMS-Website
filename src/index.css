@@ -253,47 +253,8 @@ h5 {
 	box-shadow: 0 8px 20px -2px rgba(158, 152, 153, 0.5);
 }
 
-.blog-head {
-	margin-bottom: 70px;
-}
-
-.blog-head h6 {
-	color: #f05907;
-	position: relative;
-	display: inline-block;
-	text-transform: capitalize;
-}
-
-.blog-head h6:after,
-.blog-head h6:before {
-	position: absolute;
-	content: "";
-	width: 50px;
-	height: 3px;
-	background: #f05907;
-	top: 50%;
-}
-
-.blog-head h6:after {
-	right: 120%;
-}
-
-.blog-head h6:before {
-	left: 120%;
-}
-
 .section_all {
 	padding: 60px 0;
-}
-
-.blog-head h2 {
-	font-size: 2rem;
-	margin-bottom: 0.5rem;
-}
-
-.blog-head h6 {
-	font-size: 1rem;
-	color: #6c757d;
 }
 
 .about_icon {
@@ -335,95 +296,6 @@ h5 {
 	transform: rotate(-30deg);
 }
 
-/* Blog Cards */
-.blog-card {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	border: none;
-	border-radius: 12px;
-	overflow: hidden;
-	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-	transition:
-		transform 0.3s ease,
-		box-shadow 0.3s ease;
-	height: 100%;
-}
-
-.blog-card:hover {
-	transform: translateY(-10px);
-	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
-
-.image-container {
-	position: relative;
-	height: 200px;
-	background-size: cover;
-	background-position: center;
-}
-
-.overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.3);
-	border-radius: 12px 12px 0 0;
-}
-
-.category-badge {
-	position: absolute;
-	bottom: 10px;
-	left: 10px;
-	background: #009688;
-	color: white;
-	padding: 5px 10px;
-	border-radius: 5px;
-	text-decoration: none;
-	font-size: 0.75rem;
-}
-
-.content {
-	padding: 15px;
-	flex: 1;
-}
-
-.title {
-	color: #333;
-	text-decoration: none;
-}
-
-.title h4 {
-	margin: 0;
-	font-size: 1.25rem;
-}
-
-.meta {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 10px;
-}
-
-.meta-item {
-	display: flex;
-	align-items: center;
-	color: #888;
-}
-
-.meta-item svg {
-	fill: #888;
-}
-
-.meta-item small {
-	margin-left: 5px;
-}
-
-@media (max-width: 767px) {
-	.blog-card {
-		margin-bottom: 15px;
-	}
-}
 /* =============================================== */
 
 .contact-card {
