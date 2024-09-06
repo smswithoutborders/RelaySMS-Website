@@ -53,7 +53,7 @@ const Hero = () => {
 						</Button>
 
 						<Button
-							href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
+							href="https://apps.apple.com/us/app/relaysms/id6630382970"
 							target="_blank"
 							className="hero-btn mb-3 mb-md-0 d-flex align-items-center mx-auto mx-md-0"
 							size="lg"
@@ -62,18 +62,18 @@ const Hero = () => {
 								color: "#1c222c",
 								justifyContent: "center",
 								width: "100%",
-								maxWidth: "200px"
+								maxWidth: "225px"
 							}}
 						>
 							<div className="d-flex w-100">
 								<img
-									src="/desktop.svg"
-									alt="Desktop"
+									src="/app.png"
+									alt="app"
 									className="img-fluid logo"
-									style={{ maxWidth: "40px", marginRight: "10px" }}
+									style={{ maxWidth: "50px", maxHeight: "50px", marginRight: "6px" }}
 								/>
 								<div className="text-start">
-									<span className="button-subtitle fs-8">{t("Landing.DesktopSub")}</span>
+									<span className="button-subtitle fs-10">{t("Landing.DesktopSub")}</span>
 									<br />
 									<span className="button-title fs-4">{t("Landing.Desktop")}</span>
 								</div>
