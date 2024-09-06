@@ -5,8 +5,8 @@
 		"landingh2": "Send emails, posts, and messages via SMS without an internet connection. Share important information even in areas with limited or no internet access",
 		"Android": "PlayStore",
 		"AndroidSub": "Download from",
-		"Desktop": "Desktop",
-		"DesktopSub": "Download on"
+		"Desktop": "Appstore",
+		"DesktopSub": "Download on the"
 	},
 	"Nav": {
 		"Home": "Home",
