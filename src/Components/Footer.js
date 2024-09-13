@@ -73,7 +73,7 @@ export default function Footer() {
 						<ListItem>
 							<Box
 								component="a"
-								href="/documentation"
+								href="https://docs.smswithoutborders.com/"
 								sx={{
 									color: "inherit",
 									textDecoration: "none",
@@ -90,7 +90,7 @@ export default function Footer() {
 						<ListItem>
 							<Box
 								component="a"
-								href="/privacy-policy"
+								href="https://smswithoutborders.com/privacy-policy/"
 								sx={{
 									color: "inherit",
 									textDecoration: "none",
@@ -206,7 +206,7 @@ export default function Footer() {
 								{t("Footer.footerdownload2")}
 							</Box>
 						</ListItem>
-						<ListItem>
+						{/* <ListItem>
 							<Box
 								component="a"
 								href="https://github.com/smswithoutborders/relaysms-desktop/tags"
@@ -222,7 +222,7 @@ export default function Footer() {
 							>
 								{t("Footer.footerdownload4")}
 							</Box>
-						</ListItem>
+						</ListItem> */}
 					</List>
 				</Grid>
 			</Grid>
