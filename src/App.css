@@ -54,7 +54,6 @@
 	animation-delay: 1.2s;
 }
 
-/* Animation keyframes */
 @keyframes loading02 {
 	0% {
 		filter: blur(0);
@@ -66,24 +65,151 @@
 	}
 }
 /* ============================navbar========================= */
-.menu-link {
-	color: #043957;
-	font-size: 1.5rem !important;
-	margin: 0 0.5rem;
-	transition: color 0.3s ease;
-	text-decoration: none;
-	font-weight: 500;
+.custom-navbar {
+	box-shadow: 0px 4px 10px rgba(1, 46, 129, 0.3);
+	height: 8%;
+	background-color: white;
 }
 
-.menu-link:hover {
-	color: #e79405 !important;
+.navbar-expand-lg .navbar-collapse {
+	background-color: white;
 }
 
-.MuiIconButton-root {
-	color: #043957;
-	transition: color 0.3s ease;
-}
-
-.MuiIconButton-root:hover {
+.MuiIconButton-root:hover,
+Nav.Link:hover {
 	color: #e79405;
+}
+
+.nav-link-custom {
+	font-size: 18px !important;
+	color: #091426;
+	margin: 0 15px;
+	transition: color 0.3s ease;
+	font-weight: 400 !important;
+}
+
+.nav-link-custom:hover {
+	color: #dc9909 !important;
+}
+
+/* -----------------===========-------------blog---------------------===========--------------------- */
+.custom-readmore-btn {
+	border: none;
+	border-bottom: #091426;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 12px 24px;
+	border-radius: 8px;
+	transition:
+		background-color 0.3s ease,
+		transform 0.3s ease;
+}
+
+.custom-readmore-btn:hover {
+	background-color: #0056b3;
+	transform: scale(1.05);
+}
+
+.custom-readmore-btn:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* ========================Contact us section =================================== */
+.section-contact {
+	background-color: #fff;
+	padding: 120px 0;
+}
+
+.header-section .title {
+	position: relative;
+	margin-bottom: 17px;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 55px;
+}
+
+.header-section .description {
+	font-family: "Roboto", sans-serif;
+	color: #2a6287;
+}
+
+.header-section .big-title {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translate(-50%, 70%);
+	font-size: 120px;
+	font-weight: 700;
+	opacity: 0.15;
+}
+
+.contact-card {
+	border-radius: 10px;
+	border: none;
+	overflow: hidden;
+}
+
+.icon-btn {
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+}
+
+.icon-btn:hover {
+	background-color: #e0e0e0;
+}
+
+.contact-card a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.contact-card a:hover {
+	text-decoration: underline;
+}
+
+.contact-card .text-muted {
+	color: #6c757d;
+}
+
+@media (max-width: 767.99px) {
+	.contact-card {
+		margin-bottom: 20px;
+	}
+}
+
+/* ============ backto top ====================*/
+.back-to-top {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	transition:
+		background-color 0.3s,
+		transform 0.3s;
+}
+
+.back-to-top:hover {
+	background-color: #0056b3;
+	transform: scale(1.1);
+}
+
+.back-to-top svg {
+	font-size: 24px;
 }

@@ -5,9 +5,11 @@ import Footer from "./Components/Footer";
 import Nav from "./Components/Nav";
 import Landing from "./Pages/Landing";
 import Help from "./Pages/Help";
+import Contact_Us from "./Pages/Contact_Us";
 import PageNotFound from "./Pages/PageNotFound";
 import Download from "./Pages/Download";
 import Loader from "./Components/Loader";
+import BackToTopButton from "./Components/BackToTopButton";
 import "./App.css";
 
 const App = () => {
@@ -32,10 +34,12 @@ const App = () => {
 					<Routes>
 						<Route path="/" element={<Landing />} />
 						<Route path="/help" element={<Help />} />
+						<Route path="/Contact_Us" element={<Contact_Us />} />
 						<Route path="/download" element={<Download />} />
 						<Route path="*" element={<PageNotFound />} />
 					</Routes>
 					<Footer />
+					<BackToTopButton />
 				</Router>
 			)}
 		</>

@@ -1,124 +1,224 @@
 import React, { useEffect } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { FaArrowCircleRight } from "react-icons/fa";
-import "../index.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "../App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const BlogPost = ({ imageUrl, category, title, description, comments, link }) => {
-	const { i18n } = useTranslation();
-	const isRTL = i18n.language === "fa";
+const ResponsiveCardSection = () => {
+	const { t } = useTranslation();
 
 	useEffect(() => {
-		AOS.init({ duration: 1000 });
+		AOS.init();
 	}, []);
 
 	return (
-		<div className="col-md-4 p-3">
-			<div className="blog-card">
-				<div
-					className="image-container"
+		<Container
+			fluid
+			className="my-5 py-5 px-4"
+			dir="rtl"
+			style={{
+				maxWidth: "1500px",
+				margin: "0 auto"
+			}}
+		>
+			<div className="blog-head text-center section-subtitle">
+				<span
 					style={{
-						backgroundImage: `url(${imageUrl})`,
-						borderRadius: "12px 12px 0 0"
+						marginBottom: "50px",
+						fontSize: "2rem",
+						fontWeight: "bold",
+						letterSpacing: "1px",
+						lineHeight: "1.5"
+					}}
+					className="inline-block mb-3 uppercase tracking-wide font-semibold text-blue-700"
+					data-aos="fade-right"
+				>
+					{t("Blog.BlogHeader")}
+				</span>
+
+				<h2
+					className="text-center mb-5"
+					data-aos="fade-up"
+					style={{
+						marginBottom: "50px",
+						fontSize: "2rem",
+						fontWeight: "bold",
+						color: "#343a40",
+						letterSpacing: "1px",
+						lineHeight: "1.5"
 					}}
 				>
-					<div className="overlay"></div>
-					<a href={link} className="category-badge">
-						<small>{category}</small>
-					</a>
-				</div>
-				<div className={`content ${isRTL ? "text-right" : ""}`}>
-					<a href={link} className="title">
-						<h5>{title}</h5>
-					</a>
-					<p>{description}</p>
-					<div className="meta">
-						<div className="meta-item">
-							<small>{comments}</small>
-						</div>
-					</div>
-				</div>
+					{t("Blog.BlogSubHeader")}
+				</h2>
 			</div>
-		</div>
-	);
-};
-
-const BlogSection = () => {
-	const { t, i18n } = useTranslation();
-	const isRTL = i18n.dir() === "rtl";
-
-	const blogPosts = [
-		{
-			imageUrl: "/resilience.jpg",
-			date: { day: "16", month: "April" },
-			category: t("article"),
-			title: t("Blog.Resilience"),
-			description: t("Blog.ResilienceD"),
-			link: "https://blog.smswithoutborders.com/posts/resilience"
-		},
-		{
-			imageUrl: "/ID.jpg",
-			date: { day: "1", month: "July" },
-			category: t("release"),
-			title: t("Blog.IDHeader"),
-			description: t("Blog.IDD"),
-			link: "https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
-		},
-		{
-			imageUrl: "/rebrand.jpg",
-			date: { day: "", month: "MAR" },
-			category: t("release"),
-			title: t("Blog.RebrandHeader"),
-			description: t("Blog.RebrandD"),
-			link: "https://blog.smswithoutborders.com/posts/rebranding"
-		}
-	];
-
-	return (
-		<section data-aos="zoom-in" className={`container mt-5 ${isRTL ? "text-right" : ""}`}>
-			{/* Header Section */}
-			<Row data-aos="zoom-in">
-				<Col className="text-center">
-					<div
-						className={`blog-head text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
+			<Row className="justify-content-center">
+				<Col xs={12} md={6} lg={4} className="mb-4 d-flex justify-content-center">
+					<Card
+						className="h-100"
+						data-aos="fade-up"
+						style={{
+							width: "90%",
+							height: "900px",
+							border: "none",
+							borderRadius: "10px",
+							boxShadow: "10px 10px 8px rgba(0, 0, 0, 0.3)"
+						}}
 					>
-						<span
-							className="inline-block mb-3 uppercase tracking-wide font-semibold text-blue-700"
-							data-aos="fade-right"
+						<Card.Body
+							dir="ltr"
+							className="d-flex flex-column justify-content-center align-items-center"
+							style={{ height: "100%" }}
 						>
-							{t("Blog.BlogHeader")}
-						</span>
-						<h1
-							className="text-4xl md:text-5xl md:leading-tight font-bold text-gray-800 xl:max-w-full"
-							data-aos="fade-right"
+							<div className="text-center">
+								<Card.Title
+									className="mb-3"
+									dir="rtl"
+									style={{
+										fontWeight: "bold",
+										fontSize: "1.5rem",
+										color: "#2c3e50",
+										textTransform: "uppercase",
+										letterSpacing: "0.5px",
+										lineHeight: "1.2"
+									}}
+								>
+									{t("Blog.RebrandHeader")}
+								</Card.Title>
+
+								<Card.Text className="mb-4" style={{ color: "#6c757d" }}>
+									{t("Blog.RebrandD")}
+								</Card.Text>
+							</div>
+							<div className="text-center">
+								<Button
+									href="https://blog.smswithoutborders.com/posts/rebranding"
+									className="custom-readmore-btn"
+								>
+									{t("AboutRelaySMS.ReadMore")}
+								</Button>
+							</div>
+						</Card.Body>
+					</Card>
+				</Col>
+
+				<Col xs={12} md={6} lg={4} className="mb-4 d-flex justify-content-center">
+					<Card
+						className="h-100"
+						data-aos="fade-up"
+						data-aos-delay="100"
+						style={{
+							width: "90%",
+							height: "900px",
+							border: "none",
+							borderRadius: "10px",
+							boxShadow: "10px 10px 8px rgba(0, 0, 0, 0.3)"
+						}}
+					>
+						<Card.Body
+							dir="ltr" // Card Body LTR
+							className="d-flex flex-column justify-content-center align-items-center"
+							style={{ height: "100%" }}
 						>
-							{t("Blog.BlogSubHeader")}
-						</h1>
-					</div>
+							<div className="text-center">
+								<Card.Title
+									className="mb-3"
+									style={{
+										fontWeight: "bold",
+										fontSize: "1.5rem",
+										color: "#2c3e50",
+										textTransform: "uppercase",
+										letterSpacing: "0.5px",
+										lineHeight: "1.2"
+									}}
+								>
+									{t("Blog.IDHeader")}
+								</Card.Title>
+								<Card.Text className="mb-4" style={{ color: "#6c757d" }}>
+									{t("Blog.IDD")}
+								</Card.Text>
+							</div>
+							<div className="text-center">
+								<Button
+									href="https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
+									className="custom-readmore-btn"
+								>
+									{t("AboutRelaySMS.ReadMore")}
+								</Button>
+							</div>
+						</Card.Body>
+					</Card>
+				</Col>
+
+				<Col xs={12} md={6} lg={4} className="mb-4 d-flex justify-content-center">
+					<Card
+						className="h-100"
+						data-aos="fade-up"
+						data-aos-delay="200"
+						style={{
+							width: "90%",
+							height: "900px",
+							border: "none",
+							borderRadius: "10px",
+							boxShadow: "10px 10px 8px rgba(0, 0, 0, 0.3)"
+						}}
+					>
+						<Card.Body
+							dir="ltr" // Card Body LTR
+							className="d-flex flex-column justify-content-center align-items-center"
+							style={{ height: "100%" }}
+						>
+							<div className="text-center">
+								<Card.Title
+									className="mb-3"
+									style={{
+										fontWeight: "bold",
+										fontSize: "1.5rem",
+										color: "#2c3e50",
+										textTransform: "uppercase",
+										letterSpacing: "0.5px",
+										lineHeight: "1.2"
+									}}
+								>
+									{t("Blog.Resilience")}
+								</Card.Title>
+								<Card.Text className="mb-4" style={{ color: "#6c757d" }}>
+									{t("Blog.ResilienceD")}
+								</Card.Text>
+							</div>
+							<div className="text-center">
+								<Button
+									href="https://blog.smswithoutborders.com/posts/resilience"
+									className="custom-readmore-btn"
+								>
+									{t("AboutRelaySMS.ReadMore")}
+								</Button>
+							</div>
+						</Card.Body>
+					</Card>
 				</Col>
 			</Row>
 
-			{/* Blog Posts */}
-			<Row className="d-flex flex-wrap">
-				{blogPosts.map((post, index) => (
-					<BlogPost key={index} {...post} />
-				))}
-				<div className="text-center p-1 w-100">
-					<a
-						href="https://blog.smswithoutborders.com"
-						target="_blank"
-						rel="noreferrer noopener"
-						className="getting-started-link"
-					>
-						{t("Blog.ReadOtherArticles")}
-						<FaArrowCircleRight className="ml-2 arrow-icon" />
-					</a>
-				</div>
+			{/* Footer Link to More Articles */}
+			<Row className="mt-4">
+				<Col xs={12}>
+					<div className="text-center p-1 howitworks">
+						<a
+							href="https://blog.smswithoutborders.com"
+							target="_blank"
+							rel="noreferrer noopener"
+							className="getting-started-link"
+						>
+							<FaArrowCircleRight className="ml-2 arrow-icon" />
+							{t("Blog.ReadOtherArticles")}
+						</a>
+					</div>
+				</Col>
 			</Row>
-		</section>
+		</Container>
 	);
 };
 
-export default BlogSection;
+export default ResponsiveCardSection;
