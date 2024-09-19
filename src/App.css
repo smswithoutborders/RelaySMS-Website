@@ -1,95 +1,73 @@
-.loader-container {
+/* Navbar Custom Styles */
+.navbar-custom {
+	background-color: white;
+	z-index: 1030;
+}
+
+.navbar-toggler {
+	border: none;
+	padding: 0;
+}
+
+.navbar-toggler-icon {
+	background-image: none;
+	width: 20px;
+	height: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
-	background-color: #d1e6e6;
 }
 
-.loader {
+.nav-link {
+	color: #0056b3;
+	font-size: 16px;
+}
+
+.nav-link:hover {
+	color: #003d7a;
+}
+
+/* Hero Section Custom Styling */
+.hero-section {
+	background-color: #94b4ec;
+	padding: 60px 0;
+	margin-top: 40px;
+}
+
+.pt-5 {
+	padding-top: 100px;
+}
+
+.playstore-button,
+.appstore-button {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-}
-
-.loader h2 {
-	font-size: 50px;
-	font-weight: 900;
-	margin-bottom: 20px;
-	color: #8bc0e3;
-}
-
-.loading02 {
-	display: flex;
-	gap: 5px;
-}
-
-.loading02 span {
-	display: inline-block;
-	font-size: 50px;
+	background-color: #ffffff;
+	border: none;
 	font-weight: bold;
-	color: #0c3e60;
-	animation: loading02 1.2s infinite alternate;
+	padding: 10px 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.loading02 span:nth-child(1) {
-	animation-delay: 0s;
-}
-.loading02 span:nth-child(2) {
-	animation-delay: 0.2s;
-}
-.loading02 span:nth-child(3) {
-	animation-delay: 0.4s;
-}
-.loading02 span:nth-child(4) {
-	animation-delay: 0.6s;
-}
-.loading02 span:nth-child(5) {
-	animation-delay: 0.8s;
-}
-.loading02 span:nth-child(6) {
-	animation-delay: 1s;
-}
-.loading02 span:nth-child(7) {
-	animation-delay: 1.2s;
+.playstore-button img,
+.appstore-button img {
+	height: 40px;
 }
 
-@keyframes loading02 {
-	0% {
-		filter: blur(0);
-		opacity: 1;
-	}
-	100% {
-		filter: blur(5px);
-		opacity: 0.2;
-	}
-}
-/* ============================navbar========================= */
-.custom-navbar {
-	box-shadow: 0px 4px 10px rgba(1, 46, 129, 0.3);
-	height: 8%;
-	background-color: white;
+.playstore-button:hover,
+.appstore-button:hover {
+	background-color: #f8f8f8;
 }
 
-.navbar-expand-lg .navbar-collapse {
-	background-color: white;
+.hero-section img {
+	max-width: 80%;
+	height: auto;
 }
 
-.MuiIconButton-root:hover,
-Nav.Link:hover {
-	color: #e79405;
-}
-
-.nav-link-custom {
-	font-size: 18px !important;
-	color: #091426;
-	margin: 0 15px;
-	transition: color 0.3s ease;
-	font-weight: 400 !important;
-}
-
-.nav-link-custom:hover {
-	color: #dc9909 !important;
+button.btn-dark {
+	display: flex;
+	align-items: center;
 }
 
 /* -----------------===========-------------blog---------------------===========--------------------- */
@@ -178,38 +156,195 @@ Nav.Link:hover {
 	color: #6c757d;
 }
 
-@media (max-width: 767.99px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+	/*====================== Tablet styles========================= */
+}
+@media (max-width: 767px) {
+	/*============  Mobile styles =====================*/
 	.contact-card {
 		margin-bottom: 20px;
 	}
 }
 
-/* ============ backto top ====================*/
+@media (max-width: 479px) {
+	/* =============== Small mobile styles ============== */
+}
+
+/* FAQ.css */
+@media (max-width: 768px) {
+	.accordion-header {
+		font-size: 1.1rem;
+	}
+	.accordion-body {
+		font-size: 0.9rem;
+	}
+}
+
+/* ============ back-to-top ==================== */
 .back-to-top {
 	position: fixed;
-	bottom: 20px;
+	bottom: 5px;
 	right: 20px;
-	background-color: #007bff;
-	color: white;
-	border: none;
 	border-radius: 50%;
-	width: 50px;
-	height: 50px;
+	width: 30px;
+	height: 30px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	cursor: pointer;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	font-size: 18px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	color: #fff;
+	background-color: #0056b3;
+	border: none;
 	transition:
 		background-color 0.3s,
-		transform 0.3s;
+		color 0.3s;
 }
 
 .back-to-top:hover {
-	background-color: #0056b3;
-	transform: scale(1.1);
+	background-color: #004494;
+	color: #e0e5ea;
 }
 
-.back-to-top svg {
-	font-size: 24px;
+/* ============================================================================ */
+
+.hero-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 20px;
+	font-size: 10px;
+	font-weight: 300;
+	border-radius: 8px;
+}
+
+.hero-btn .logo {
+	max-height: 30px;
+	margin-right: 10px;
+}
+
+.button-wrapper {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.button-title {
+	font-size: 16px;
+	font-weight: 300;
+	color: inherit;
+}
+
+@media (max-width: 768px) {
+	.hero-btn {
+		max-width: 50%;
+		padding: 10px 13px;
+	}
+
+	.hero-btn .logo {
+		max-height: 25px;
+	}
+
+	.button-wrapper {
+		flex-direction: column;
+	}
+}
+
+/* =========== footer ================== */
+.footer {
+	padding: 1rem 1rem;
+	background-color: #01040b;
+	background-image: url("/public/map.png");
+	background-size: cover;
+	background-position: center;
+}
+
+.footer-column {
+	text-align: left;
+	margin-bottom: 1rem;
+}
+
+.nav-item .nav-link {
+	display: flex;
+	align-items: center;
+	color: #bbd0f3;
+	text-decoration: none;
+	padding: 0.25rem 0;
+	margin-top: 0.25rem;
+}
+
+.nav-item .nav-link:hover {
+	color: #477df0;
+}
+
+.footer-title {
+	font-size: 14px;
+	font-weight: 700;
+	color: #fff;
+	text-transform: uppercase;
+	margin-bottom: 0.75rem;
+	line-height: 1.2;
+}
+
+.social-buttons li {
+	margin-top: 0.75rem;
+}
+
+.social-buttons li a {
+	font-size: 16px;
+	display: block;
+	width: 30px;
+	height: 30px;
+	color: #fff;
+}
+
+.social-buttons li a:hover {
+	color: #477df0;
+}
+
+.quick-links {
+	font-size: 85%;
+	line-height: 30px;
+	color: white;
+}
+
+.copyright {
+	color: white;
+}
+
+.footer-divider {
+	border: 0;
+	height: 1px;
+	background-color: #0c151e;
+	margin: 0.5rem 1rem;
+	width: 100%;
+	opacity: 0.8;
+}
+
+/* Download Section Styles */
+.download-section {
+	text-align: left;
+}
+
+.download-section .nav-link {
+	display: flex;
+	align-items: center;
+	padding: 0.25rem 0;
+	margin-top: 0.25rem;
+}
+
+.download-section .icon-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 24px;
+	margin-right: 8px;
+}
+
+.download-section .footer-icon {
+	font-size: 16px;
+}
+
+.download-section .link-text {
+	color: #bbd0f3;
 }

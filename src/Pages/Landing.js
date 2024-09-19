@@ -3,7 +3,6 @@ import { Container } from "react-bootstrap";
 import { PageAnimationWrapper } from "../Components/PageAnimationWrapper.js";
 import Blog from "../Components/Blog.js";
 import Faqs from "../Components/FAQs.js";
-import HowItWorks from "../Components/Howitworks.js";
 import Hero from "../Components/Hero.js";
 import "../i18n.js";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -18,9 +17,7 @@ export default function Landing() {
 		<PageAnimationWrapper>
 			<Container fluid>
 				<Hero />
-				<HowItWorks />
 				<Blog />
-
 				<Faqs />
 			</Container>
 		</PageAnimationWrapper>

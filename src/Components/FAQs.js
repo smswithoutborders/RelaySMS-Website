@@ -1,124 +1,52 @@
-import React, { useEffect } from "react";
-import { Accordion, AccordionSummary, AccordionDetails, Typography } from "@mui/material";
-import { Container, Row } from "react-bootstrap";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import React from "react";
+import { Accordion, Container } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
-const FAQ = [
-	{
-		question: "FAQ.FAQ1",
-		answer: "FAQ.faq1"
-	},
-	{
-		question: "FAQ.FAQ2",
-		answer: "FAQ.faq2"
-	},
-	{
-		question: "FAQ.FAQ3",
-		answer: "FAQ.faq3"
-	},
-	{
-		question: "FAQ.FAQ4",
-		answer: "FAQ.faq4"
-	},
-	{
-		question: "FAQ.FAQ5",
-		answer: "FAQ.faq5"
-	},
-	{
-		question: "FAQ.FAQ6",
-		answer: "FAQ.faq6"
-	},
-	{
-		question: "FAQ.FAQ7",
-		answer: "FAQ.faq7"
-	}
-];
-
-export default function Faqs() {
-	const [expanded, setExpanded] = React.useState(false);
+const FAQ = () => {
 	const { t, i18n } = useTranslation();
-	const isRTL = i18n.dir() === "rtl";
-
-	const handleChange = (panel) => (event, isExpanded) => {
-		setExpanded(isExpanded ? panel : false);
-	};
-
-	useEffect(() => {
-		AOS.init({ duration: 1000 });
-	}, []);
 
 	return (
-		<Container>
-			<Row>
-				<div
-					data-aos="zoom-in"
-					style={{
-						padding: "20px",
-						maxWidth: "1500px",
-						margin: "0 auto",
-						borderRadius: 8,
-						direction: isRTL ? "rtl" : "ltr"
-					}}
-				>
-					<div
-						className={`blog-head text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
-					>
-						<span
-							className="inline-block mb-3 uppercase text-sm tracking-wide font-semibold text-blue-700"
-							data-aos="fade-right"
-						>
-							{t("FAQ.FAQSubheader")}
-						</span>
-						<h1
-							className="text-4xl md:text-5xl md:leading-tight font-bold text-gray-800 xl:max-w-full"
-							data-aos="fade-right"
-						>
-							{t("FAQ.FAQ")}
-						</h1>
-					</div>
+		<Container className="my-5" dir={i18n.language === "fa" ? "rtl" : "ltr"}>
+			<h2 className="text-center mb-4">{t("FAQ.Header")}</h2>
 
-					{FAQ.map((item, index) => (
-						<Accordion
-							key={index}
-							expanded={expanded === index}
-							onChange={handleChange(index)}
-							sx={{
-								mb: 2,
-								"&:before": {
-									display: "none"
-								},
-								borderRadius: 2,
-								boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)"
-							}}
-						>
-							<AccordionSummary
-								expandIcon={<ExpandMoreIcon style={{ color: "#041c94" }} />}
-								aria-controls={`faq${index}-content`}
-								id={`faq${index}-header`}
-								sx={{
-									minHeight: 56,
-									"& .MuiAccordionSummary-content": {
-										margin: "12px 0"
-									}
-								}}
-							>
-								<Typography variant="body1" sx={{ fontWeight: 800, color: "#1c222c" }}>
-									{t(item.question)}
-								</Typography>
-							</AccordionSummary>
-							<AccordionDetails>
-								<Typography
-									sx={{ color: "#000000" }}
-									dangerouslySetInnerHTML={{ __html: t(item.answer) }}
-								/>
-							</AccordionDetails>
-						</Accordion>
-					))}
-				</div>
-			</Row>
+			<Accordion>
+				<Accordion.Item eventKey="0">
+					<Accordion.Header>{t("FAQ.Q1")}</Accordion.Header>
+					<Accordion.Body dangerouslySetInnerHTML={{ __html: t("FAQ.A1") }} />
+				</Accordion.Item>
+
+				<Accordion.Item eventKey="1">
+					<Accordion.Header>{t("FAQ.Q2")}</Accordion.Header>
+					<Accordion.Body>{t("FAQ.A2")}</Accordion.Body>
+				</Accordion.Item>
+
+				<Accordion.Item eventKey="2">
+					<Accordion.Header>{t("FAQ.Q3")}</Accordion.Header>
+					<Accordion.Body dangerouslySetInnerHTML={{ __html: t("FAQ.A3") }} />
+				</Accordion.Item>
+
+				<Accordion.Item eventKey="3">
+					<Accordion.Header>{t("FAQ.Q4")}</Accordion.Header>
+					<Accordion.Body>{t("FAQ.A4")}</Accordion.Body>
+				</Accordion.Item>
+
+				<Accordion.Item eventKey="4">
+					<Accordion.Header>{t("FAQ.Q5")}</Accordion.Header>
+					<Accordion.Body dangerouslySetInnerHTML={{ __html: t("FAQ.A5") }} />
+				</Accordion.Item>
+
+				<Accordion.Item eventKey="5">
+					<Accordion.Header>{t("FAQ.Q6")}</Accordion.Header>
+					<Accordion.Body dangerouslySetInnerHTML={{ __html: t("FAQ.A6") }} />
+				</Accordion.Item>
+
+				<Accordion.Item eventKey="6">
+					<Accordion.Header>{t("FAQ.Q7")}</Accordion.Header>
+					<Accordion.Body>{t("FAQ.A7")}</Accordion.Body>
+				</Accordion.Item>
+			</Accordion>
 		</Container>
 	);
-}
+};
+
+export default FAQ;
