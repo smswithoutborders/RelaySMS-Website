@@ -1,7 +1,7 @@
 {
 	"Nav": {
 		"Home": "Home",
-		"help": "Help",
+		"Help": "Help",
 		"github": "GitHub",
 		"Blog": "Blog",
 		"Contact": "Contact Us"
@@ -24,7 +24,8 @@
 		"Breadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button' target='_blank'>Read More</a>",
 		"titleC": "Receives and Publish",
 		"C": "RelaySMS supports decentralized SMS Gateway clients which can receive and forward SMS messages to online Vault servers. The messages remain encrypted throughout their journey and only the Vault servers can decrypt to publish to your online platforms.",
-		"Creadmore": "<a href='https://docs.smswithoutborders.com/docs/contributing/introduction' target='_blank'>Read More</a>"
+		"Creadmore": "<a href='https://docs.smswithoutborders.com/docs/contributing/introduction' target='_blank'>Read More</a>",
+		"ReadMore": "Read More"
 	},
 	"Blog": {
 		"Header": "Our Blog",
@@ -34,7 +35,7 @@
 		"Reliability": "Reliability Of Gateway Clients In Smswithoutborders",
 		"IDHeader": "RelaySMS Expands User Control with Device ID Registration",
 		"IDD": "RelaySMS (swob app) introduces a powerful new feature: Device ID Registration with RelaySMS Vault! This innovative approach gives you more control over your offline messaging experience.",
-		"RebrandHeader": "Rebranding",
+		"Rebrand": "Rebranding",
 		"RebrandD": "SMSWithoutBorders itself is becoming the umbrella project encompassing RelaySMS and other messaging tools. The core functionality remains the same, but users can expect a new name, enhanced security features, and a focus on future growth under the SMSWithoutBorders project.",
 		"ReadMore": "Read More",
 		"ReadOtherArticles": "Read Other Articles"

@@ -1,7 +1,7 @@
 {
 	"Nav": {
 		"Home": "Accueil",
-		"help": "Aide",
+		"Help": "Aide",
 		"github": "GitHub",
 		"Blog": "Blog",
 		"Contact": "Nous Contacter"
@@ -34,7 +34,7 @@
 		"Reliability": "Fiabilité des Clients de Passerelle dans SMSWithoutBorders",
 		"IDHeader": "RelaySMS Élargit le Contrôle des Utilisateurs avec l'Enregistrement d'ID de Dispositif",
 		"IDD": "RelaySMS (application swob) introduit une nouvelle fonctionnalité puissante : l'Enregistrement d'ID de Dispositif avec RelaySMS Vault ! Cette approche innovante vous donne plus de contrôle sur votre expérience de messagerie hors ligne.",
-		"RebrandHeader": "Rebranding",
+		"Rebrand": "Rebranding",
 		"RebrandD": "SMSWithoutBorders lui-même devient le projet global englobant RelaySMS et d'autres outils de messagerie. La fonctionnalité de base reste la même, mais les utilisateurs peuvent s'attendre à un nouveau nom, des fonctionnalités de sécurité améliorées et un accent sur la croissance future sous le projet SMSWithoutBorders.",
 		"ReadMore": "En savoir plus",
 		"ReadOtherArticles": "Lire d'autres articles"

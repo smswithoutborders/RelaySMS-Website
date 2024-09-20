@@ -1,52 +1,61 @@
 import React from "react";
-import { Accordion, Container } from "react-bootstrap";
+import { Container, Accordion } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
-const FAQ = () => {
+function FAQ() {
 	const { t, i18n } = useTranslation();
+	const isFarsi = i18n.language === "fa"; // Check if the selected language is Farsi
 
 	return (
-		<Container className="my-5" dir={i18n.language === "fa" ? "rtl" : "ltr"}>
-			<h2 className="text-center mb-4">{t("FAQ.Header")}</h2>
-
-			<Accordion>
-				<Accordion.Item eventKey="0">
-					<Accordion.Header>{t("FAQ.Q1")}</Accordion.Header>
-					<Accordion.Body dangerouslySetInnerHTML={{ __html: t("FAQ.A1") }} />
-				</Accordion.Item>
-
-				<Accordion.Item eventKey="1">
-					<Accordion.Header>{t("FAQ.Q2")}</Accordion.Header>
-					<Accordion.Body>{t("FAQ.A2")}</Accordion.Body>
-				</Accordion.Item>
-
-				<Accordion.Item eventKey="2">
-					<Accordion.Header>{t("FAQ.Q3")}</Accordion.Header>
-					<Accordion.Body dangerouslySetInnerHTML={{ __html: t("FAQ.A3") }} />
-				</Accordion.Item>
-
-				<Accordion.Item eventKey="3">
-					<Accordion.Header>{t("FAQ.Q4")}</Accordion.Header>
-					<Accordion.Body>{t("FAQ.A4")}</Accordion.Body>
-				</Accordion.Item>
-
-				<Accordion.Item eventKey="4">
-					<Accordion.Header>{t("FAQ.Q5")}</Accordion.Header>
-					<Accordion.Body dangerouslySetInnerHTML={{ __html: t("FAQ.A5") }} />
-				</Accordion.Item>
-
-				<Accordion.Item eventKey="5">
-					<Accordion.Header>{t("FAQ.Q6")}</Accordion.Header>
-					<Accordion.Body dangerouslySetInnerHTML={{ __html: t("FAQ.A6") }} />
-				</Accordion.Item>
-
-				<Accordion.Item eventKey="6">
-					<Accordion.Header>{t("FAQ.Q7")}</Accordion.Header>
-					<Accordion.Body>{t("FAQ.A7")}</Accordion.Body>
-				</Accordion.Item>
+		<Container fluid className="faq-section py-5" dir={isFarsi ? "rtl" : "ltr"}>
+			<h2 className="text-center mb-5" style={faqStyles.header}>
+				{t("FAQ.Header")}
+			</h2>
+			<Accordion defaultActiveKey="0" flush>
+				{faqData.map((faq, idx) => (
+					<Accordion.Item eventKey={idx.toString()} key={idx} className="faq-item">
+						<Accordion.Header style={faqStyles.question}>{t(faq.question)}</Accordion.Header>
+						<Accordion.Body
+							style={faqStyles.answer}
+							dangerouslySetInnerHTML={{ __html: t(faq.answer) }}
+						/>
+					</Accordion.Item>
+				))}
 			</Accordion>
 		</Container>
 	);
+}
+
+const faqData = [
+	{
+		question: "FAQ.Q1",
+		answer: "FAQ.A1"
+	},
+	{
+		question: "FAQ.Q2",
+		answer: "FAQ.A2"
+	},
+	{
+		question: "FAQ.Q3",
+		answer: "FAQ.A3"
+	}
+];
+
+const faqStyles = {
+	header: {
+		fontSize: "2.5rem",
+		color: "#333",
+		marginBottom: "2rem"
+	},
+	question: {
+		fontSize: "1.25rem",
+		color: "#333",
+		fontWeight: "600"
+	},
+	answer: {
+		color: "#555",
+		lineHeight: "1.6"
+	}
 };
 
 export default FAQ;

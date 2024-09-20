@@ -1,350 +1,78 @@
-/* Navbar Custom Styles */
-.navbar-custom {
-	background-color: white;
-	z-index: 1030;
+.how-it-works-section {
+	background-color: #f0f4f8; /* Light background for the section */
+	padding: 50px 0; /* Add some padding */
 }
 
-.navbar-toggler {
-	border: none;
-	padding: 0;
+.how-it-works-card {
+	background: white;
+	border-radius: 12px;
+	padding: 30px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	text-align: center; /* Center align text */
+	transition: transform 0.3s;
+	position: relative; /* Positioning for the step number */
 }
 
-.navbar-toggler-icon {
-	background-image: none;
-	width: 20px;
-	height: 20px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.nav-link {
-	color: #0056b3;
-	font-size: 16px;
-}
-
-.nav-link:hover {
-	color: #003d7a;
-}
-
-/* Hero Section Custom Styling */
-.hero-section {
-	background-color: #94b4ec;
-	padding: 60px 0;
-	margin-top: 40px;
-}
-
-.pt-5 {
-	padding-top: 100px;
-}
-
-.playstore-button,
-.appstore-button {
-	display: flex;
-	align-items: center;
-	background-color: #ffffff;
-	border: none;
-	font-weight: bold;
-	padding: 10px 20px;
-	border-radius: 8px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.playstore-button img,
-.appstore-button img {
-	height: 40px;
-}
-
-.playstore-button:hover,
-.appstore-button:hover {
-	background-color: #f8f8f8;
-}
-
-.hero-section img {
-	max-width: 80%;
-	height: auto;
-}
-
-button.btn-dark {
-	display: flex;
-	align-items: center;
-}
-
-/* -----------------===========-------------blog---------------------===========--------------------- */
-.custom-readmore-btn {
-	border: none;
-	border-bottom: #091426;
-	color: white;
-	font-size: 16px;
-	font-weight: bold;
-	padding: 12px 24px;
-	border-radius: 8px;
-	transition:
-		background-color 0.3s ease,
-		transform 0.3s ease;
-}
-
-.custom-readmore-btn:hover {
-	background-color: #0056b3;
-	transform: scale(1.05);
-}
-
-.custom-readmore-btn:focus {
-	outline: none;
-	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
-}
-
-/* ========================Contact us section =================================== */
-.section-contact {
-	background-color: #fff;
-	padding: 120px 0;
-}
-
-.header-section .title {
-	position: relative;
-	margin-bottom: 17px;
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 55px;
-}
-
-.header-section .description {
-	font-family: "Roboto", sans-serif;
-	color: #2a6287;
-}
-
-.header-section .big-title {
+.step-number {
 	position: absolute;
-	bottom: 100%;
+	top: -20px;
 	left: 50%;
-	transform: translate(-50%, 70%);
-	font-size: 120px;
-	font-weight: 700;
-	opacity: 0.15;
-}
-
-.contact-card {
-	border-radius: 10px;
-	border: none;
-	overflow: hidden;
-}
-
-.icon-btn {
-	border-radius: 50%;
-	width: 60px;
-	height: 60px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 24px;
-}
-
-.icon-btn:hover {
-	background-color: #e0e0e0;
-}
-
-.contact-card a {
-	text-decoration: none;
-	color: inherit;
-}
-
-.contact-card a:hover {
-	text-decoration: underline;
-}
-
-.contact-card .text-muted {
-	color: #6c757d;
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-	/*====================== Tablet styles========================= */
-}
-@media (max-width: 767px) {
-	/*============  Mobile styles =====================*/
-	.contact-card {
-		margin-bottom: 20px;
-	}
-}
-
-@media (max-width: 479px) {
-	/* =============== Small mobile styles ============== */
-}
-
-/* FAQ.css */
-@media (max-width: 768px) {
-	.accordion-header {
-		font-size: 1.1rem;
-	}
-	.accordion-body {
-		font-size: 0.9rem;
-	}
-}
-
-/* ============ back-to-top ==================== */
-.back-to-top {
-	position: fixed;
-	bottom: 5px;
-	right: 20px;
-	border-radius: 50%;
-	width: 30px;
-	height: 30px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 18px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	z-index: 1000;
-	color: #fff;
-	background-color: #0056b3;
-	border: none;
-	transition:
-		background-color 0.3s,
-		color 0.3s;
-}
-
-.back-to-top:hover {
-	background-color: #004494;
-	color: #e0e5ea;
-}
-
-/* ============================================================================ */
-
-.hero-btn {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 10px 20px;
-	font-size: 10px;
-	font-weight: 300;
-	border-radius: 8px;
-}
-
-.hero-btn .logo {
-	max-height: 30px;
-	margin-right: 10px;
-}
-
-.button-wrapper {
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.button-title {
-	font-size: 16px;
-	font-weight: 300;
-	color: inherit;
-}
-
-@media (max-width: 768px) {
-	.hero-btn {
-		max-width: 50%;
-		padding: 10px 13px;
-	}
-
-	.hero-btn .logo {
-		max-height: 25px;
-	}
-
-	.button-wrapper {
-		flex-direction: column;
-	}
-}
-
-/* =========== footer ================== */
-.footer {
-	padding: 1rem 1rem;
-	background-color: #01040b;
-	background-image: url("/public/map.png");
-	background-size: cover;
-	background-position: center;
-}
-
-.footer-column {
-	text-align: left;
-	margin-bottom: 1rem;
-}
-
-.nav-item .nav-link {
-	display: flex;
-	align-items: center;
-	color: #bbd0f3;
-	text-decoration: none;
-	padding: 0.25rem 0;
-	margin-top: 0.25rem;
-}
-
-.nav-item .nav-link:hover {
-	color: #477df0;
-}
-
-.footer-title {
-	font-size: 14px;
-	font-weight: 700;
-	color: #fff;
-	text-transform: uppercase;
-	margin-bottom: 0.75rem;
-	line-height: 1.2;
-}
-
-.social-buttons li {
-	margin-top: 0.75rem;
-}
-
-.social-buttons li a {
-	font-size: 16px;
-	display: block;
-	width: 30px;
-	height: 30px;
-	color: #fff;
-}
-
-.social-buttons li a:hover {
-	color: #477df0;
-}
-
-.quick-links {
-	font-size: 85%;
-	line-height: 30px;
+	transform: translateX(-50%);
+	background: #041c94;
 	color: white;
-}
-
-.copyright {
-	color: white;
-}
-
-.footer-divider {
-	border: 0;
-	height: 1px;
-	background-color: #0c151e;
-	margin: 0.5rem 1rem;
-	width: 100%;
-	opacity: 0.8;
-}
-
-/* Download Section Styles */
-.download-section {
-	text-align: left;
-}
-
-.download-section .nav-link {
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
 	display: flex;
 	align-items: center;
-	padding: 0.25rem 0;
-	margin-top: 0.25rem;
-}
-
-.download-section .icon-wrapper {
-	display: flex;
 	justify-content: center;
-	align-items: center;
-	width: 24px;
-	margin-right: 8px;
+	font-size: 1.2rem;
 }
 
-.download-section .footer-icon {
-	font-size: 16px;
+.how-it-works-icon {
+	width: 120px; /* Adjust size as needed */
+	margin-bottom: 10px;
 }
 
-.download-section .link-text {
-	color: #bbd0f3;
+.link:hover {
+	background-color: #041c94;
+	color: #fff;
+}
+
+/* ======================================================== */
+
+.faq-section {
+	background-color: #f0f4f8; /* Light background for the section */
+	padding: 3rem 1rem; /* Adjust padding */
+}
+
+.accordion {
+	max-width: 800px; /* Set a maximum width for the accordion */
+	margin: 0 auto; /* Center the accordion */
+}
+
+.faq-item {
+	border: 1px solid #ccc; /* Light border around each FAQ item */
+	border-radius: 8px; /* Rounded corners */
+	margin-bottom: 1rem; /* Space between items */
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+	transition: box-shadow 0.3s; /* Smooth transition on hover */
+}
+
+.faq-item:hover {
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.faq-item .accordion-header {
+	background-color: #ffffff; /* Background for the header */
+	border: none; /* Remove border */
+}
+
+.faq-item .accordion-body {
+	background-color: #f9f9f9; /* Slightly different background for the body */
+}
+
+.faq-item .accordion-button {
+	color: #333; /* Text color for the button */
+	font-weight: 600; /* Bold text */
 }
