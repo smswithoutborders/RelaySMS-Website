@@ -1,124 +1,61 @@
-import React, { useEffect } from "react";
-import { Accordion, AccordionSummary, AccordionDetails, Typography } from "@mui/material";
-import { Container, Row } from "react-bootstrap";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import React from "react";
+import { Container, Accordion } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
-const FAQ = [
-	{
-		question: "FAQ.FAQ1",
-		answer: "FAQ.faq1"
-	},
-	{
-		question: "FAQ.FAQ2",
-		answer: "FAQ.faq2"
-	},
-	{
-		question: "FAQ.FAQ3",
-		answer: "FAQ.faq3"
-	},
-	{
-		question: "FAQ.FAQ4",
-		answer: "FAQ.faq4"
-	},
-	{
-		question: "FAQ.FAQ5",
-		answer: "FAQ.faq5"
-	},
-	{
-		question: "FAQ.FAQ6",
-		answer: "FAQ.faq6"
-	},
-	{
-		question: "FAQ.FAQ7",
-		answer: "FAQ.faq7"
-	}
-];
-
-export default function Faqs() {
-	const [expanded, setExpanded] = React.useState(false);
+function FAQ() {
 	const { t, i18n } = useTranslation();
-	const isRTL = i18n.dir() === "rtl";
-
-	const handleChange = (panel) => (event, isExpanded) => {
-		setExpanded(isExpanded ? panel : false);
-	};
-
-	useEffect(() => {
-		AOS.init({ duration: 1000 });
-	}, []);
+	const isFarsi = i18n.language === "fa"; // Check if the selected language is Farsi
 
 	return (
-		<Container>
-			<Row>
-				<div
-					data-aos="zoom-in"
-					style={{
-						padding: "20px",
-						maxWidth: "1500px",
-						margin: "0 auto",
-						borderRadius: 8,
-						direction: isRTL ? "rtl" : "ltr"
-					}}
-				>
-					<div
-						className={`blog-head text-center section-subtitle ${isRTL ? "text-end" : "text-start"}`}
-					>
-						<span
-							className="inline-block mb-3 uppercase text-sm tracking-wide font-semibold text-blue-700"
-							data-aos="fade-right"
-						>
-							{t("FAQ.FAQSubheader")}
-						</span>
-						<h1
-							className="text-4xl md:text-5xl md:leading-tight font-bold text-gray-800 xl:max-w-full"
-							data-aos="fade-right"
-						>
-							{t("FAQ.FAQ")}
-						</h1>
-					</div>
-
-					{FAQ.map((item, index) => (
-						<Accordion
-							key={index}
-							expanded={expanded === index}
-							onChange={handleChange(index)}
-							sx={{
-								mb: 2,
-								"&:before": {
-									display: "none"
-								},
-								borderRadius: 2,
-								boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)"
-							}}
-						>
-							<AccordionSummary
-								expandIcon={<ExpandMoreIcon style={{ color: "#041c94" }} />}
-								aria-controls={`faq${index}-content`}
-								id={`faq${index}-header`}
-								sx={{
-									minHeight: 56,
-									"& .MuiAccordionSummary-content": {
-										margin: "12px 0"
-									}
-								}}
-							>
-								<Typography variant="body1" sx={{ fontWeight: 800, color: "#1c222c" }}>
-									{t(item.question)}
-								</Typography>
-							</AccordionSummary>
-							<AccordionDetails>
-								<Typography
-									sx={{ color: "#000000" }}
-									dangerouslySetInnerHTML={{ __html: t(item.answer) }}
-								/>
-							</AccordionDetails>
-						</Accordion>
-					))}
-				</div>
-			</Row>
+		<Container fluid className="faq-section py-5" dir={isFarsi ? "rtl" : "ltr"}>
+			<h2 className="text-center mb-5" style={faqStyles.header}>
+				{t("FAQ.Header")}
+			</h2>
+			<Accordion defaultActiveKey="0" flush>
+				{faqData.map((faq, idx) => (
+					<Accordion.Item eventKey={idx.toString()} key={idx} className="faq-item">
+						<Accordion.Header style={faqStyles.question}>{t(faq.question)}</Accordion.Header>
+						<Accordion.Body
+							style={faqStyles.answer}
+							dangerouslySetInnerHTML={{ __html: t(faq.answer) }}
+						/>
+					</Accordion.Item>
+				))}
+			</Accordion>
 		</Container>
 	);
 }
+
+const faqData = [
+	{
+		question: "FAQ.Q1",
+		answer: "FAQ.A1"
+	},
+	{
+		question: "FAQ.Q2",
+		answer: "FAQ.A2"
+	},
+	{
+		question: "FAQ.Q3",
+		answer: "FAQ.A3"
+	}
+];
+
+const faqStyles = {
+	header: {
+		fontSize: "2.5rem",
+		color: "#333",
+		marginBottom: "2rem"
+	},
+	question: {
+		fontSize: "1.25rem",
+		color: "#333",
+		fontWeight: "600"
+	},
+	answer: {
+		color: "#555",
+		lineHeight: "1.6"
+	}
+};
+
+export default FAQ;

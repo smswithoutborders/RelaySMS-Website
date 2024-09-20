@@ -1,215 +1,78 @@
-.loader-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	background-color: #d1e6e6;
+.how-it-works-section {
+	background-color: #f0f4f8; /* Light background for the section */
+	padding: 50px 0; /* Add some padding */
 }
 
-.loader {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.how-it-works-card {
+	background: white;
+	border-radius: 12px;
+	padding: 30px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	text-align: center; /* Center align text */
+	transition: transform 0.3s;
+	position: relative; /* Positioning for the step number */
 }
 
-.loader h2 {
-	font-size: 50px;
-	font-weight: 900;
-	margin-bottom: 20px;
-	color: #8bc0e3;
-}
-
-.loading02 {
-	display: flex;
-	gap: 5px;
-}
-
-.loading02 span {
-	display: inline-block;
-	font-size: 50px;
-	font-weight: bold;
-	color: #0c3e60;
-	animation: loading02 1.2s infinite alternate;
-}
-
-.loading02 span:nth-child(1) {
-	animation-delay: 0s;
-}
-.loading02 span:nth-child(2) {
-	animation-delay: 0.2s;
-}
-.loading02 span:nth-child(3) {
-	animation-delay: 0.4s;
-}
-.loading02 span:nth-child(4) {
-	animation-delay: 0.6s;
-}
-.loading02 span:nth-child(5) {
-	animation-delay: 0.8s;
-}
-.loading02 span:nth-child(6) {
-	animation-delay: 1s;
-}
-.loading02 span:nth-child(7) {
-	animation-delay: 1.2s;
-}
-
-@keyframes loading02 {
-	0% {
-		filter: blur(0);
-		opacity: 1;
-	}
-	100% {
-		filter: blur(5px);
-		opacity: 0.2;
-	}
-}
-/* ============================navbar========================= */
-.custom-navbar {
-	box-shadow: 0px 4px 10px rgba(1, 46, 129, 0.3);
-	height: 8%;
-	background-color: white;
-}
-
-.navbar-expand-lg .navbar-collapse {
-	background-color: white;
-}
-
-.MuiIconButton-root:hover,
-Nav.Link:hover {
-	color: #e79405;
-}
-
-.nav-link-custom {
-	font-size: 18px !important;
-	color: #091426;
-	margin: 0 15px;
-	transition: color 0.3s ease;
-	font-weight: 400 !important;
-}
-
-.nav-link-custom:hover {
-	color: #dc9909 !important;
-}
-
-/* -----------------===========-------------blog---------------------===========--------------------- */
-.custom-readmore-btn {
-	border: none;
-	border-bottom: #091426;
-	color: white;
-	font-size: 16px;
-	font-weight: bold;
-	padding: 12px 24px;
-	border-radius: 8px;
-	transition:
-		background-color 0.3s ease,
-		transform 0.3s ease;
-}
-
-.custom-readmore-btn:hover {
-	background-color: #0056b3;
-	transform: scale(1.05);
-}
-
-.custom-readmore-btn:focus {
-	outline: none;
-	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
-}
-
-/* ========================Contact us section =================================== */
-.section-contact {
-	background-color: #fff;
-	padding: 120px 0;
-}
-
-.header-section .title {
-	position: relative;
-	margin-bottom: 17px;
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 55px;
-}
-
-.header-section .description {
-	font-family: "Roboto", sans-serif;
-	color: #2a6287;
-}
-
-.header-section .big-title {
+.step-number {
 	position: absolute;
-	bottom: 100%;
+	top: -20px;
 	left: 50%;
-	transform: translate(-50%, 70%);
-	font-size: 120px;
-	font-weight: 700;
-	opacity: 0.15;
-}
-
-.contact-card {
-	border-radius: 10px;
-	border: none;
-	overflow: hidden;
-}
-
-.icon-btn {
-	border-radius: 50%;
-	width: 60px;
-	height: 60px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 24px;
-}
-
-.icon-btn:hover {
-	background-color: #e0e0e0;
-}
-
-.contact-card a {
-	text-decoration: none;
-	color: inherit;
-}
-
-.contact-card a:hover {
-	text-decoration: underline;
-}
-
-.contact-card .text-muted {
-	color: #6c757d;
-}
-
-@media (max-width: 767.99px) {
-	.contact-card {
-		margin-bottom: 20px;
-	}
-}
-
-/* ============ backto top ====================*/
-.back-to-top {
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	background-color: #007bff;
+	transform: translateX(-50%);
+	background: #041c94;
 	color: white;
-	border: none;
 	border-radius: 50%;
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	cursor: pointer;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	transition:
-		background-color 0.3s,
-		transform 0.3s;
+	font-size: 1.2rem;
 }
 
-.back-to-top:hover {
-	background-color: #0056b3;
-	transform: scale(1.1);
+.how-it-works-icon {
+	width: 120px; /* Adjust size as needed */
+	margin-bottom: 10px;
 }
 
-.back-to-top svg {
-	font-size: 24px;
+.link:hover {
+	background-color: #041c94;
+	color: #fff;
+}
+
+/* ======================================================== */
+
+.faq-section {
+	background-color: #f0f4f8; /* Light background for the section */
+	padding: 3rem 1rem; /* Adjust padding */
+}
+
+.accordion {
+	max-width: 800px; /* Set a maximum width for the accordion */
+	margin: 0 auto; /* Center the accordion */
+}
+
+.faq-item {
+	border: 1px solid #ccc; /* Light border around each FAQ item */
+	border-radius: 8px; /* Rounded corners */
+	margin-bottom: 1rem; /* Space between items */
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+	transition: box-shadow 0.3s; /* Smooth transition on hover */
+}
+
+.faq-item:hover {
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.faq-item .accordion-header {
+	background-color: #ffffff; /* Background for the header */
+	border: none; /* Remove border */
+}
+
+.faq-item .accordion-body {
+	background-color: #f9f9f9; /* Slightly different background for the body */
+}
+
+.faq-item .accordion-button {
+	color: #333; /* Text color for the button */
+	font-weight: 600; /* Bold text */
 }
