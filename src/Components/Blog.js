@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { FaArrowRight } from "react-icons/fa";
+import AOS from "aos";
 
 function Blog() {
 	const { t } = useTranslation();
@@ -11,44 +12,74 @@ function Blog() {
 			id: 1,
 			title: t("Blog.Resilience"),
 			description: t("Blog.ResilienceD"),
-			link: "/blog/resilience"
-		},
-		{
-			id: 2,
-			title: t("Blog.Reliability"),
-			description: t("Blog.ReliabilityD"),
-			link: "/blog/reliability"
+			link: "https://blog.smswithoutborders.com/posts/resilience",
+			author: "Aysha Musa",
+			readTime: "2 min read",
+			authorImage: "/.jpg"
 		},
 		{
 			id: 3,
 			title: t("Blog.IDHeader"),
 			description: t("Blog.IDD"),
-			link: "/blog/device-id-registration"
+			link: "https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration",
+			author: "Aysha Musa",
+			readTime: "2 min read",
+			authorImage: "/.jpg"
 		},
 		{
 			id: 4,
 			title: t("Blog.Rebrand"),
 			description: t("Blog.RebrandD"),
-			link: "/blog/rebranding"
+			link: "https://blog.smswithoutborders.com/posts/rebranding",
+			author: "Aysha Musa",
+			readTime: "2 min read",
+			authorImage: "/.jpg"
 		}
 	];
 
+	useEffect(() => {
+		AOS.init({
+			duration: 1000,
+			easing: "ease-in-out",
+			once: true
+		});
+	}, []);
+
 	return (
 		<Container fluid className="blog-list-section py-5" style={styles.container}>
-			<h2 className="text-center mb-5" style={styles.header}>
-				{t("Blog.Header")}
-			</h2>
+			<h2 className="text-center mb-5" style={styles.header} data-aos="fade-up"></h2>
+			<header data-aos="fade-up">
+				<h3 className="text-lighter">{t("Blog.Header")}</h3>
+			</header>
 
-			{/* Group articles into rows of two */}
 			<Row className="justify-content-center">
-				{articles.map((article) => (
-					<Col md={6} key={article.id} className="mb-4 d-flex">
-						<div className="blog-card flex-fill" style={styles.card}>
+				{articles.map((article, index) => (
+					<Col
+						md={6}
+						key={article.id}
+						className="mb-4 d-flex"
+						data-aos="fade-up"
+						data-aos-delay={`${index * 100}`}
+					>
+						<div className="blog-card flex-fill d-flex flex-column" style={styles.card}>
 							<h4 style={styles.title}>{article.title}</h4>
+
 							<p style={styles.text}>{article.description}</p>
-							<a href={article.link} style={styles.link}>
-								{t("Blog.ReadMore")} <FaArrowRight />
-							</a>
+
+							<div className="mt-auto" style={styles.readMoreContainer}>
+								<a href={article.link} style={styles.link}>
+									{t("Blog.ReadMore")}
+									<FaArrowRight />
+								</a>
+							</div>
+
+							<div style={styles.metaContainer}>
+								<div style={styles.authorContainer}>
+									<img src={article.authorImage} style={styles.authorImage} alt="Author" />
+									<span style={styles.author}>{article.author}</span>
+								</div>
+								<span style={styles.readTime}>{article.readTime}</span>
+							</div>
 						</div>
 					</Col>
 				))}
@@ -59,41 +90,75 @@ function Blog() {
 
 const styles = {
 	container: {
-		padding: "3rem 0"
+		padding: "10px"
 	},
 	header: {
-		fontSize: "2.5rem",
-		color: "black", // White text for the header
+		fontSize: "2rem",
+		color: "black",
 		marginBottom: "2rem"
 	},
 	card: {
-		backgroundColor: "#e4edfc", // Section background color
-		padding: "2rem",
+		padding: "1.5rem",
 		borderRadius: "8px",
-		boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Add subtle shadow
-		transition: "transform 0.3s"
+		boxShadow: "0 3px 6px rgba(0, 0, 0, 0.1)",
+		transition: "transform 0.3s",
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "space-between"
 	},
 	title: {
-		fontSize: "1.5rem",
+		fontSize: "1.15rem",
 		color: "#333",
 		fontWeight: "600",
-		margin: "1rem 0"
+		margin: "8px 0"
 	},
 	text: {
 		color: "#555",
-		lineHeight: "1.6",
-		marginBottom: "1rem"
+		lineHeight: "1.4",
+		marginBottom: "1rem",
+		fontSize: "0.9rem"
+	},
+	readMoreContainer: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "flex-end",
+		marginTop: "auto"
 	},
 	link: {
 		color: "#041c94",
 		textDecoration: "none",
-		fontWeight: "600",
+		fontWeight: "400",
 		display: "inline-flex",
 		alignItems: "center",
-		border: "2px solid #041c94",
-		padding: "0.5rem 1rem",
-		borderRadius: "4px",
-		transition: "background-color 0.3s, color 0.3s"
+		transition: "background-color 0.3s, color 0.3s",
+		padding: "0.5rem 0",
+		fontSize: "0.85rem"
+	},
+	metaContainer: {
+		borderTop: "1px solid #eaeaea",
+		paddingTop: "0.5rem",
+		marginTop: "1rem",
+		color: "#666",
+		display: "flex",
+		justifyContent: "space-between",
+		alignItems: "center"
+	},
+	authorContainer: {
+		display: "flex",
+		alignItems: "center"
+	},
+	authorImage: {
+		width: "25px",
+		height: "25px",
+		borderRadius: "50%",
+		marginRight: "8px"
+	},
+	author: {
+		fontWeight: "bold",
+		fontSize: "0.85rem"
+	},
+	readTime: {
+		color: "#888"
 	}
 };
 

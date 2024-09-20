@@ -6,10 +6,11 @@
 
 /* ================= Hero ============================= */
 .hero-container {
-	background-color: #fff;
+	background-color: #edf3fd;
 	overflow: hidden;
 	position: relative;
 	margin-top: 56px;
+	background-color: #f0f4f8;
 }
 
 .hero-title {
@@ -76,37 +77,17 @@
 	padding: 2rem 0;
 }
 
-.blog-header {
-	color: #333;
+.Readmore {
+	color: "#041c94";
+	text-decoration: none;
+	font-weight: "600";
+	display: "inline-flex";
+	align-items: "center";
+	transition: "background-color 0.3s, color 0.3s";
+	padding: "0.5rem 0";
 }
-
-.blog-card {
-	padding: 20px;
-	margin: 10px;
-}
-
-.author-img {
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	margin-right: 10px;
-}
-
-.read-time {
-	font-size: 10px;
-}
-
-.read-more-link {
-	color: #48c6ef;
-	text-decoration: underline;
-	display: flex;
-	align-items: center;
-}
-
 /* ================= FAQ ============================= */
-
 .faq-section {
-	background-color: #f0f4f8;
 	padding: 3rem 1rem;
 }
 
@@ -137,6 +118,14 @@
 }
 
 /* ================= FAQ ============================= */
+.faq-header {
+	font-size: 2.5rem; /* Adjust the font size */
+	color: #333; /* Text color */
+	margin-bottom: 2rem; /* Space below the header */
+	text-align: center; /* Center align the text */
+	font-weight: bold; /* Make the text bold */
+	text-transform: uppercase; /* Optional: make the text uppercase */
+}
 
 /* ================= FOOTER ============================= */
 .footer-container {
@@ -176,3 +165,19 @@
 	font-size: 0.75rem;
 }
 /* ================================================= */
+
+.hero-image {
+	transition: transform 0.3s ease;
+}
+
+.hero-title {
+	transition:
+		transform 0.3s ease,
+		opacity 0.3s ease;
+}
+
+.hero-description {
+	transition:
+		transform 0.3s ease,
+		opacity 0.3s ease;
+}
