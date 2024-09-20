@@ -1,88 +1,100 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { FaArrowRight } from "react-icons/fa";
 
 function Blog() {
-	const { t, i18n } = useTranslation();
-	const isFarsi = i18n.language === "fa"; // Check if the selected language is Farsi
+	const { t } = useTranslation();
 
-	const blogPosts = [
+	const articles = [
 		{
+			id: 1,
 			title: t("Blog.Resilience"),
 			description: t("Blog.ResilienceD"),
-			author: "Author Name 1",
-			readTime: "2 min read",
-			imgSrc: "https://via.placeholder.com/40", // Placeholder image
-			link: "/link-to-resilience"
+			link: "/blog/resilience"
 		},
 		{
+			id: 2,
 			title: t("Blog.Reliability"),
 			description: t("Blog.ReliabilityD"),
-			author: "Author Name 2",
-			readTime: "3 min read",
-			imgSrc: "https://via.placeholder.com/40", // Placeholder image
-			link: "/link-to-reliability"
+			link: "/blog/reliability"
 		},
 		{
+			id: 3,
 			title: t("Blog.IDHeader"),
 			description: t("Blog.IDD"),
-			author: "Author Name 3",
-			readTime: "4 min read",
-			imgSrc: "https://via.placeholder.com/40", // Placeholder image
-			link: "/link-to-id-registration"
+			link: "/blog/device-id-registration"
 		},
 		{
+			id: 4,
 			title: t("Blog.Rebrand"),
 			description: t("Blog.RebrandD"),
-			author: "Author Name 4",
-			readTime: "5 min read",
-			imgSrc: "https://via.placeholder.com/40", // Placeholder image
-			link: "/link-to-rebranding"
+			link: "/blog/rebranding"
 		}
 	];
 
 	return (
-		<Container fluid className="blog-section py-5" dir={isFarsi ? "rtl" : "ltr"}>
-			<h2 className="text-center mb-5">{t("Blog.Header")}</h2>
-			<Row className="text-center">
-				{blogPosts.map((post, index) => (
-					<Col lg={6} md={12} className="mb-4 d-flex justify-content-center" key={index}>
-						<Card className="w-100" style={{ padding: "20px", margin: "10px" }}>
-							<Card.Body>
-								<h4>{post.title}</h4>
-								<p>{post.description}</p>
-								<div className="d-flex align-items-center mb-3">
-									<img
-										src={post.imgSrc}
-										alt={post.author}
-										style={{
-											width: "40px",
-											height: "40px",
-											borderRadius: "50%",
-											marginRight: "10px"
-										}}
-									/>
-									<h6 className="mb-0">{post.author}</h6>
-								</div>
-								<div className="d-flex justify-content-between align-items-center">
-									<span className="read-time" style={{ fontSize: "10px" }}>
-										{post.readTime}
-									</span>
-									<a
-										href={post.link}
-										className="d-flex align-items-center"
-										style={{ color: "#48c6ef", textDecoration: "underline" }}
-									>
-										{t("Blog.ReadMore")} <span className="ms-1">&rarr;</span>
-									</a>
-								</div>
-							</Card.Body>
-						</Card>
+		<Container fluid className="blog-list-section py-5" style={styles.container}>
+			<h2 className="text-center mb-5" style={styles.header}>
+				{t("Blog.Header")}
+			</h2>
+
+			{/* Group articles into rows of two */}
+			<Row className="justify-content-center">
+				{articles.map((article) => (
+					<Col md={6} key={article.id} className="mb-4 d-flex">
+						<div className="blog-card flex-fill" style={styles.card}>
+							<h4 style={styles.title}>{article.title}</h4>
+							<p style={styles.text}>{article.description}</p>
+							<a href={article.link} style={styles.link}>
+								{t("Blog.ReadMore")} <FaArrowRight />
+							</a>
+						</div>
 					</Col>
 				))}
 			</Row>
 		</Container>
 	);
 }
+
+const styles = {
+	container: {
+		padding: "3rem 0"
+	},
+	header: {
+		fontSize: "2.5rem",
+		color: "black", // White text for the header
+		marginBottom: "2rem"
+	},
+	card: {
+		backgroundColor: "#e4edfc", // Section background color
+		padding: "2rem",
+		borderRadius: "8px",
+		boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Add subtle shadow
+		transition: "transform 0.3s"
+	},
+	title: {
+		fontSize: "1.5rem",
+		color: "#333",
+		fontWeight: "600",
+		margin: "1rem 0"
+	},
+	text: {
+		color: "#555",
+		lineHeight: "1.6",
+		marginBottom: "1rem"
+	},
+	link: {
+		color: "#041c94",
+		textDecoration: "none",
+		fontWeight: "600",
+		display: "inline-flex",
+		alignItems: "center",
+		border: "2px solid #041c94",
+		padding: "0.5rem 1rem",
+		borderRadius: "4px",
+		transition: "background-color 0.3s, color 0.3s"
+	}
+};
 
 export default Blog;
