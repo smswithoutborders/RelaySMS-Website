@@ -1,7 +1,8 @@
 import React from "react";
 import Hero from "../Components/Hero";
 import FAQs from "../Components/FAQs";
-function Home() {
+
+function Landing() {
 	return (
 		<>
 			<Hero />
@@ -10,4 +11,4 @@ function Home() {
 	);
 }
 
-export default Home;
+export default Landing;
