@@ -2,6 +2,8 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { FaGithub, FaTwitter, FaAndroid, FaApple, FaLinux } from "react-icons/fa";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { Link } from "react-router-dom";
 
 function Footer() {
 	const { t } = useTranslation();
@@ -12,14 +14,22 @@ function Footer() {
 				<Row className="py-2">
 					<Col lg={4} md={6} sm={12} className="mb-3 text-center text-md-start">
 						<h5 className="footer-title">{t("Footer.Header")}</h5>
-						<p className="footer-text">{t("Footer.body")}</p>
+						<a
+							href="https://smswithoutborders.com/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="footer-link footer-text"
+						>
+							{t("Footer.body")}
+						</a>
+						<LanguageSwitcher />
 					</Col>
 					<Col lg={2} md={3} sm={6} className="mb-3 text-center text-md-start">
 						<h5 className="footer-title">{t("Footer.Header1")}</h5>
 						<ul className="footer-links">
 							<li>
 								<a
-									href="https://github.com"
+									href="https://github.com/smswithoutborders"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="footer-link"
@@ -29,7 +39,7 @@ function Footer() {
 							</li>
 							<li>
 								<a
-									href="https://x.com"
+									href="https://x.com/RelaySMS"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="footer-link"
@@ -43,9 +53,9 @@ function Footer() {
 						<h5 className="footer-title">{t("Footer.Header2")}</h5>
 						<ul className="footer-links">
 							<li>
-								<a href="/contact" className="footer-link">
+								<Link as={Link} to="/Contact_Us" className="footer-link">
 									{t("Footer.help")}
-								</a>
+								</Link>
 							</li>
 						</ul>
 					</Col>
@@ -54,7 +64,7 @@ function Footer() {
 						<ul className="footer-links">
 							<li>
 								<a
-									href="https://play.google.com"
+									href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="footer-link"
@@ -64,7 +74,7 @@ function Footer() {
 							</li>
 							<li>
 								<a
-									href="https://www.apple.com/app-store/"
+									href="https://apps.apple.com/us/app/relaysms/id6630382970"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="footer-link"

@@ -61,13 +61,13 @@ const HeroSection = () => {
 									data-aos-delay="400"
 								>
 									<img src="/github.svg" alt="GitHub" className="hero-icon" />
-									<span className="button-title">{t("Landing.Github")}</span>
+									<span className="button-title github">{t("Landing.Github")}</span>
 								</Button>
 							</div>
 						</main>
 					</Col>
-					<Col lg={6} className="d-none d-lg-block position-relative" data-aos="fade-left">
-						<Image src="/Relaysms.png" alt="Cover" className="hero-image" />
+					<Col lg={6} className="d-lg-block position-relative" data-aos="fade-left">
+						<Image src="/Relaysms.png" alt="relay" className="hero-image" />
 					</Col>
 				</Row>
 			</Container>

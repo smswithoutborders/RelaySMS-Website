@@ -5,11 +5,11 @@ import { FaGlobe } from "react-icons/fa";
 
 const LanguageSwitcher = () => {
 	const { i18n } = useTranslation();
-	const [selectedLang, setSelectedLang] = useState(i18n.language);
+	const [selectedLang, setSelectedLang] = useState("en"); // Default to English
 
 	useEffect(() => {
-		setSelectedLang(i18n.language); // Set the initial language when the component mounts
-	}, [i18n.language]);
+		i18n.changeLanguage(selectedLang); // Change the language on initial render
+	}, []); // Empty dependency array ensures this runs only once
 
 	const handleLanguageChange = (lang) => {
 		i18n.changeLanguage(lang);

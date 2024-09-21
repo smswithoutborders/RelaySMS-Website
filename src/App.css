@@ -31,7 +31,7 @@
 }
 
 .hero-image {
-	max-height: 400px;
+	max-height: 500px;
 	object-fit: cover;
 	padding: 10px;
 }

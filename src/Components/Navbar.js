@@ -3,9 +3,10 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { FaTwitter, FaGithub } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { Link } from "react-router-dom";
 
 function NavigationBar() {
-	const { i18n } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
 
 	return (
@@ -17,32 +18,28 @@ function NavigationBar() {
 		>
 			<Container>
 				<Navbar.Brand href="#home" className={`me-auto ${isFarsi ? "me-0" : ""}`}>
-					<img
-						src="/logo.png"
-						alt="RelaySMS Logo"
-						style={{ height: "35px", width: "auto" }} /* Adjusted logo size */
-					/>
+					<img src="/logo.png" alt="RelaySMS Logo" style={{ height: "35px", width: "auto" }} />
 				</Navbar.Brand>
 
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className={`align-items-center ${isFarsi ? "me-auto" : "ms-auto"}`}>
-						<Nav.Link href="#home" className="mx-2">
-							Home
+						<Nav.Link href="/" className="mx-2">
+							{t("Nav.Home")}
 						</Nav.Link>
-						<Nav.Link href="#Blog" className="mx-2">
-							Blog
+						<Nav.Link href="https://blog.smswithoutborders.com/" className="mx-2">
+							{t("Nav.Blog")}
 						</Nav.Link>
-						<Nav.Link href="#help" className="mx-2">
-							Help
+						<Nav.Link href="https://docs.smswithoutborders.com/" className="mx-2">
+							{t("Nav.Help")}
 						</Nav.Link>
-						<Nav.Link to="/Contact" className="mx-2">
-							Contact Us
+						<Nav.Link as={Link} to="/Contact_Us">
+							{t("Nav.Contact")}
 						</Nav.Link>
-						<Nav.Link href="https://twitter.com" target="_blank" className="mx-2">
+						<Nav.Link href="https://x.com/RelaySMS" target="_blank" className="mx-2">
 							<FaTwitter />
 						</Nav.Link>
-						<Nav.Link href="https://github.com" target="_blank" className="mx-2">
+						<Nav.Link href="https://github.com/smswithoutborders" target="_blank" className="mx-2">
 							<FaGithub />
 						</Nav.Link>
 						<LanguageSwitcher className="mx-2" />
