@@ -9,17 +9,15 @@ import "./App.css";
 
 const App = () => {
 	return (
-		<>
-			<Router>
-				<Navbar />
-				<Routes>
-					<Route path="/" element={<Landing />} />
-					<Route path="/Contact_Us" element={<Contact_Us />} />
-					<Route path="*" element={<PageNotFound />} />
-				</Routes>
-				<Footer />
-			</Router>
-		</>
+		<Router>
+			<Navbar />
+			<Routes>
+				<Route path="/" element={<Landing />} />
+				<Route path="/Contact_Us" element={<Contact_Us />} />
+				<Route path="*" element={<PageNotFound />} />
+			</Routes>
+			<Footer />
+		</Router>
 	);
 };
 

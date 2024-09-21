@@ -70,5 +70,29 @@
 		"download3": "Linux",
 		"policy": "سیاست حفظ حریم خصوصی",
 		"copyright": "AFKANERD"
+	},
+	"ContactUs": {
+		"Title": "تماس با ما",
+		"Items": {
+			"Email": {
+				"Title": "ایمیل",
+				"ButtonText": "ارسال ایمیل",
+				"Link": "mailto:developers@smswithoutborders.com"
+			},
+			"IRC": {
+				"Title": "آی آر سی",
+				"ButtonText": "freenode/#afkanerd"
+			},
+			"Twitter": {
+				"Title": "توییتر",
+				"ButtonText": "دنبال کردن در توییتر",
+				"Link": "https://x.com/RelaySMS"
+			},
+			"GitHub": {
+				"Title": "گیت‌هاب",
+				"ButtonText": "مشاهده در گیت‌هاب",
+				"Link": "https://github.com/smswithoutborders"
+			}
+		}
 	}
 }
