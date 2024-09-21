@@ -8,10 +8,9 @@ function FAQ() {
 
 	return (
 		<Container fluid className="faq-section py-5" dir={isFarsi ? "rtl" : "ltr"}>
-			<header data-aos="fade-up">
-				<h3 className="text-lighter mb-3"> {t("FAQ.Header")}</h3>
-			</header>
-
+			<h2 className="faq-header" dir={isFarsi ? "rtl" : "ltr"}>
+				{t("FAQ.Header")}{" "}
+			</h2>
 			<Row className="justify-content-center">
 				<Col md={8} lg={6}>
 					{" "}

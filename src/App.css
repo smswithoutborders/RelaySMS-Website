@@ -1,5 +1,3 @@
-/* ================= HOW IT WORKS ============================= */
-
 * {
 	font-family: Inter, sans-serif;
 }
@@ -11,6 +9,7 @@
 	position: relative;
 	margin-top: 56px;
 	background-color: #f0f4f8;
+	padding: 20px; /* Added padding for overall spacing */
 }
 
 .hero-title {
@@ -19,6 +18,7 @@
 	font-size: 2.5rem;
 	text-align: center;
 	margin-bottom: 1.5rem;
+	margin-top: 3rem; /* Added margin to move the text downward on larger screens */
 }
 
 .hero-highlight {
@@ -28,12 +28,12 @@
 .hero-description {
 	margin-top: 1rem;
 	color: #6c757d;
+	padding: 0 20px; /* Added padding for better text spacing */
 }
 
 .hero-buttons {
 	display: flex;
 	flex-direction: column;
-	flex-md-direction: row;
 	justify-content: center;
 }
 
@@ -69,10 +69,25 @@
 .hero-image {
 	max-height: 400px;
 	object-fit: cover;
+	padding: 10px; /* Added padding for image spacing */
+}
+
+@media (min-width: 768px) {
+	/* On larger screens (tablet and desktop) */
+	.hero-buttons {
+		flex-direction: row; /* Buttons in a row */
+		justify-content: start; /* Align buttons to the left */
+	}
+}
+
+@media (max-width: 767px) {
+	/* On smaller devices (phones) */
+	.hero-buttons {
+		flex-direction: column; /* Buttons stack vertically */
+	}
 }
 
 /* ================= BLOG ============================= */
-
 .blog-section {
 	padding: 2rem 0;
 }
@@ -117,14 +132,14 @@
 	font-weight: 600;
 }
 
-/* ================= FAQ ============================= */
 .faq-header {
-	font-size: 2.5rem; /* Adjust the font size */
-	color: #333; /* Text color */
-	margin-bottom: 2rem; /* Space below the header */
-	text-align: center; /* Center align the text */
-	font-weight: bold; /* Make the text bold */
-	text-transform: uppercase; /* Optional: make the text uppercase */
+	font-size: 2rem;
+	color: #2c2f36;
+	margin-bottom: 1rem;
+	padding-top: 10px;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 /* ================= FOOTER ============================= */
@@ -165,19 +180,3 @@
 	font-size: 0.75rem;
 }
 /* ================================================= */
-
-.hero-image {
-	transition: transform 0.3s ease;
-}
-
-.hero-title {
-	transition:
-		transform 0.3s ease,
-		opacity 0.3s ease;
-}
-
-.hero-description {
-	transition:
-		transform 0.3s ease,
-		opacity 0.3s ease;
-}

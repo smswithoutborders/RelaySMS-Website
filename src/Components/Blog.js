@@ -5,7 +5,8 @@ import { FaArrowRight } from "react-icons/fa";
 import AOS from "aos";
 
 function Blog() {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const isFarsi = i18n.language === "fa";
 
 	const articles = [
 		{
@@ -47,17 +48,15 @@ function Blog() {
 
 	return (
 		<Container fluid className="blog-list-section py-5" style={styles.container}>
-			<h2 className="text-center mb-5" style={styles.header} data-aos="fade-up"></h2>
-			<header data-aos="fade-up">
-				<h3 className="text-lighter">{t("Blog.Header")}</h3>
-			</header>
-
+			<h2 className="faq-header" dir={isFarsi ? "rtl" : "ltr"}>
+				{t("Blog.Header")}{" "}
+			</h2>
 			<Row className="justify-content-center">
 				{articles.map((article, index) => (
 					<Col
 						md={6}
 						key={article.id}
-						className="mb-4 d-flex"
+						className="mb-4 d-flex justify-content-center"
 						data-aos="fade-up"
 						data-aos-delay={`${index * 100}`}
 					>
@@ -90,7 +89,7 @@ function Blog() {
 
 const styles = {
 	container: {
-		padding: "10px"
+		padding: "10px 20px"
 	},
 	header: {
 		fontSize: "2rem",
@@ -104,13 +103,16 @@ const styles = {
 		transition: "transform 0.3s",
 		display: "flex",
 		flexDirection: "column",
-		justifyContent: "space-between"
+		justifyContent: "space-between",
+		backgroundColor: "white",
+		maxWidth: "85%",
+		margin: "0 auto"
 	},
 	title: {
 		fontSize: "1.15rem",
-		color: "#333",
+		color: "#041c94",
 		fontWeight: "600",
-		margin: "8px 0"
+		margin: "8px 0 16px 0"
 	},
 	text: {
 		color: "#555",
@@ -151,7 +153,8 @@ const styles = {
 		width: "25px",
 		height: "25px",
 		borderRadius: "50%",
-		marginRight: "8px"
+		marginRight: "8px",
+		backgroundColor: "#ddd"
 	},
 	author: {
 		fontWeight: "bold",
