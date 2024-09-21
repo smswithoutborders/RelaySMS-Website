@@ -3,7 +3,7 @@ import { Container, Row, Col, Card } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "../Blog.css";
+import "../How.css";
 import { FaArrowRight } from "react-icons/fa";
 
 function How() {

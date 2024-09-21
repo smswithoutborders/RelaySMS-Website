@@ -10,11 +10,11 @@ function Footer() {
 		<footer className="footer-container">
 			<Container>
 				<Row className="py-2">
-					<Col lg={4} md={6} sm={12} className="mb-2">
+					<Col lg={4} md={6} sm={12} className="mb-3 text-center text-md-start">
 						<h5 className="footer-title">{t("Footer.Header")}</h5>
 						<p className="footer-text">{t("Footer.body")}</p>
 					</Col>
-					<Col lg={2} md={3} sm={6} className="mb-2">
+					<Col lg={2} md={3} sm={6} className="mb-3 text-center text-md-start">
 						<h5 className="footer-title">{t("Footer.Header1")}</h5>
 						<ul className="footer-links">
 							<li>
@@ -39,7 +39,7 @@ function Footer() {
 							</li>
 						</ul>
 					</Col>
-					<Col lg={2} md={3} sm={6} className="mb-2">
+					<Col lg={2} md={3} sm={6} className="mb-3 text-center text-md-start">
 						<h5 className="footer-title">{t("Footer.Header2")}</h5>
 						<ul className="footer-links">
 							<li>
@@ -49,7 +49,7 @@ function Footer() {
 							</li>
 						</ul>
 					</Col>
-					<Col lg={4} md={12} sm={12} className="text-center text-md-start">
+					<Col lg={4} md={12} sm={12} className="text-center">
 						<h5 className="footer-title">{t("Footer.Header3")}</h5>
 						<ul className="footer-links">
 							<li>

@@ -31,11 +31,11 @@ const HeroSection = () => {
 							</h1>
 
 							<p className="hero-description">{t("Landing.h2")}</p>
-							<div className="hero-buttons">
+							<div className="hero-buttons d-flex flex-column flex-md-row justify-content-md-start justify-content-center">
 								<Button
 									href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 									target="_blank"
-									className="hero-btn android-btn"
+									className="hero-btn android-btn mx-auto mx-md-0"
 									data-aos="fade-up"
 								>
 									<img src="/play.svg" alt="Android" className="hero-icon" />
@@ -45,7 +45,7 @@ const HeroSection = () => {
 								<Button
 									href="https://apps.apple.com/us/app/relaysms/id6630382970"
 									target="_blank"
-									className="hero-btn apple-btn"
+									className="hero-btn apple-btn mx-auto mx-md-0"
 									data-aos="fade-up"
 									data-aos-delay="200"
 								>
@@ -56,7 +56,7 @@ const HeroSection = () => {
 								<Button
 									href="https://github.com/"
 									target="_blank"
-									className="hero-btn github-btn"
+									className="hero-btn github-btn mx-auto mx-md-0"
 									data-aos="fade-up"
 									data-aos-delay="400"
 								>

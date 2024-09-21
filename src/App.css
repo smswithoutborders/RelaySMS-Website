@@ -1,15 +1,14 @@
 * {
 	font-family: Inter, sans-serif;
 }
-
-/* ================= Hero ============================= */
+/* =======================  hero section ========================== */
 .hero-container {
 	background-color: #edf3fd;
 	overflow: hidden;
 	position: relative;
 	margin-top: 56px;
 	background-color: #f0f4f8;
-	padding: 20px; /* Added padding for overall spacing */
+	padding: 20px;
 }
 
 .hero-title {
@@ -18,7 +17,7 @@
 	font-size: 2.5rem;
 	text-align: center;
 	margin-bottom: 1.5rem;
-	margin-top: 3rem; /* Added margin to move the text downward on larger screens */
+	margin-top: 3rem;
 }
 
 .hero-highlight {
@@ -28,66 +27,80 @@
 .hero-description {
 	margin-top: 1rem;
 	color: #6c757d;
-	padding: 0 20px; /* Added padding for better text spacing */
+	padding: 0 20px;
+}
+
+.hero-image {
+	max-height: 400px;
+	object-fit: cover;
+	padding: 10px;
+}
+
+@media (max-width: 767px) {
+	.hero-buttons {
+		flex-direction: column;
+	}
 }
 
 .hero-buttons {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+	.hero-buttons {
+		flex-direction: row;
+		justify-content: start;
+		gap: 1rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.hero-buttons {
+		gap: 1.5rem;
+	}
 }
 
 .hero-btn {
-	flex: 1;
-	max-width: 150px;
+	width: 160px;
+	height: 50px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 0.5rem;
+	border-radius: 8px;
+	font-weight: bold;
+}
+
+.button-title .github {
+	color: #020721;
+	font-weight: 400;
 }
 
 .android-btn {
-	background-color: #041c94;
+	background-color: #041c94 !important;
 	color: #fff;
 }
 
 .apple-btn {
-	background-color: #fff;
-	color: #1c222c;
+	background-color: #fff !important;
+	color: #1c222c !important;
+	border: 1px solid #05035a;
 }
 
 .github-btn {
-	background-color: #79c4f0;
+	background-color: #a09d9d !important;
 	color: #fff;
+	font-weight: 400 !important;
 }
 
 .hero-icon {
-	max-width: 25px;
+	max-width: 30px;
 	margin-right: 8px;
 }
 
-.hero-image {
-	max-height: 400px;
-	object-fit: cover;
-	padding: 10px; /* Added padding for image spacing */
-}
-
-@media (min-width: 768px) {
-	/* On larger screens (tablet and desktop) */
-	.hero-buttons {
-		flex-direction: row; /* Buttons in a row */
-		justify-content: start; /* Align buttons to the left */
-	}
-}
-
-@media (max-width: 767px) {
-	/* On smaller devices (phones) */
-	.hero-buttons {
-		flex-direction: column; /* Buttons stack vertically */
-	}
-}
-
-/* ================= BLOG ============================= */
+/* -------------- blog --------------------- */
 .blog-section {
 	padding: 2rem 0;
 }
@@ -101,7 +114,8 @@
 	transition: "background-color 0.3s, color 0.3s";
 	padding: "0.5rem 0";
 }
-/* ================= FAQ ============================= */
+/* ================ faq ===================== */
+
 .faq-section {
 	padding: 3rem 1rem;
 }
@@ -141,8 +155,7 @@
 	font-weight: bold;
 	text-transform: uppercase;
 }
-
-/* ================= FOOTER ============================= */
+/* ================= footer===================== */
 .footer-container {
 	background-color: #020721;
 	color: #fff;
@@ -179,4 +192,3 @@
 	margin-top: 0.5rem;
 	font-size: 0.75rem;
 }
-/* ================================================= */
