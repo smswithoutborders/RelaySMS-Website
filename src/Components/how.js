@@ -1,87 +1,103 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useEffect } from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import { FaArrowRight } from "react-icons/fa"; // Ensure you have react-icons installed
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "../Blog.css";
+import { FaArrowRight } from "react-icons/fa";
 
-function HowItWorks() {
-	const { t } = useTranslation();
+function How() {
+	const { t, i18n } = useTranslation();
+	const isFarsi = i18n.language === "fa";
 
-	const steps = [
-		{
-			id: 1,
-			title: t("Howitworks.titleA"),
-			description: t("Howitworks.A"),
-			imageUrl: "/11.png",
-			link: "https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms"
-		},
-		{
-			id: 2,
-			title: t("Howitworks.titleB"),
-			description: t("Howitworks.B"),
-			imageUrl: "/22.png",
-			link: "https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button"
-		},
-		{
-			id: 3,
-			title: t("Howitworks.titleC"),
-			description: t("Howitworks.C"),
-			imageUrl: "/33.png",
-			link: "https://docs.smswithoutborders.com/docs/contributing/introduction"
-		}
-	];
+	useEffect(() => {
+		AOS.init({
+			duration: 1000,
+			easing: "ease-in-out",
+			once: true
+		});
+	}, []);
 
 	return (
-		<Container fluid className="how-it-works-section py-5">
-			<h2 className="text-center mb-5" style={styles.header}>
-				{t("Howitworks.Header")}
+		<Container fluid className="blog-section py-5" dir={isFarsi ? "rtl" : "ltr"}>
+			<h2 className="faq-header" dir={isFarsi ? "rtl" : "ltr"}>
+				{t("Howitworks.Header")}{" "}
 			</h2>
-			<Row className="justify-content-center">
-				{steps.map((step, index) => (
-					<Col md={4} key={step.id} className="mb-4 d-flex">
-						<div className="how-it-works-card flex-fill">
-							<div className="step-number">{index + 1}</div>
-							<img src={step.imageUrl} alt={step.title} className="how-it-works-icon" />
-							<h4 style={styles.title}>{step.title}</h4>
-							<p style={styles.text}>{step.description}</p>
-							<a href={step.link} style={styles.link}>
-								{t("Howitworks.ReadMore")} <FaArrowRight />
-							</a>
+
+			<main className="main">
+				<Row className="mt-4 justify-content-center">
+					<Col md={4} className="mb-4" data-aos="fade-right">
+						<div className="section">
+							<Card className="card card-compose-send" style={{ borderTop: "3px solid #3c54b4" }}>
+								<div className="card-number">1</div>
+								<Card.Body>
+									<div className="card-title text-bold">{t("Howitworks.titleA")}</div>
+									<div className="card-text text-muted">{t("Howitworks.A")}</div>
+									<div className="card-text">
+										<a
+											href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms"
+											target="_blank"
+											rel="noopener noreferrer"
+											className="Readmore"
+										>
+											{t("Howitworks.ReadMore")} <FaArrowRight />
+										</a>
+									</div>
+								</Card.Body>
+							</Card>
 						</div>
 					</Col>
-				))}
-			</Row>
+
+					<Col md={4} className="mb-4" data-aos="fade-up" data-aos-delay="200">
+						<div className="section">
+							<Card className="card card-save-platforms" style={{ borderTop: "3px solid #a0b0e8" }}>
+								<div className="card-number">2</div>
+								<Card.Body>
+									<div className="card-title text-bold">{t("Howitworks.titleB")}</div>
+									<div className="card-text text-muted">{t("Howitworks.B")}</div>
+									<div className="card-text">
+										<a
+											href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button"
+											target="_blank"
+											rel="noopener noreferrer"
+											className="Readmore"
+										>
+											{t("Howitworks.ReadMore")} <FaArrowRight />
+										</a>
+									</div>
+								</Card.Body>
+							</Card>
+						</div>
+					</Col>
+
+					<Col md={4} className="mb-4" data-aos="fade-left" data-aos-delay="400">
+						<div className="section">
+							<Card
+								className="card card-receive-publish"
+								style={{ borderTop: "3px solid #041c94" }}
+							>
+								<div className="card-number">3</div>
+								<Card.Body>
+									<div className="card-title text-bold">{t("Howitworks.titleC")}</div>
+									<div className="card-text text-muted">{t("Howitworks.C")}</div>
+									<div className="card-text">
+										<a
+											href="https://docs.smswithoutborders.com/docs/contributing/introduction"
+											target="_blank"
+											className="Readmore"
+											rel="noopener noreferrer"
+										>
+											{t("Howitworks.ReadMore")} <FaArrowRight />
+										</a>
+									</div>
+								</Card.Body>
+							</Card>
+						</div>
+					</Col>
+				</Row>
+			</main>
 		</Container>
 	);
 }
 
-const styles = {
-	header: {
-		fontSize: "2.5rem",
-		color: "#333",
-		marginBottom: "2rem"
-	},
-	title: {
-		fontSize: "1.5rem",
-		color: "#333",
-		fontWeight: "600",
-		margin: "1rem 0"
-	},
-	text: {
-		color: "#555",
-		lineHeight: "1.6",
-		marginBottom: "1rem"
-	},
-	link: {
-		color: "#041c94",
-		textDecoration: "none",
-		fontWeight: "600",
-		display: "inline-flex",
-		alignItems: "center",
-		border: "2px solid #041c94",
-		padding: "0.5rem 1rem",
-		borderRadius: "4px",
-		transition: "background-color 0.3s"
-	}
-};
-
-export default HowItWorks;
+export default How;

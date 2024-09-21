@@ -1,78 +1,182 @@
-.how-it-works-section {
-	background-color: #f0f4f8; /* Light background for the section */
-	padding: 50px 0; /* Add some padding */
+* {
+	font-family: Inter, sans-serif;
 }
 
-.how-it-works-card {
-	background: white;
-	border-radius: 12px;
-	padding: 30px;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-	text-align: center; /* Center align text */
-	transition: transform 0.3s;
-	position: relative; /* Positioning for the step number */
+/* ================= Hero ============================= */
+.hero-container {
+	background-color: #edf3fd;
+	overflow: hidden;
+	position: relative;
+	margin-top: 56px;
+	background-color: #f0f4f8;
+	padding: 20px; /* Added padding for overall spacing */
 }
 
-.step-number {
-	position: absolute;
-	top: -20px;
-	left: 50%;
-	transform: translateX(-50%);
-	background: #041c94;
-	color: white;
-	border-radius: 50%;
-	width: 40px;
-	height: 40px;
+.hero-title {
+	font-weight: bold;
+	color: #333;
+	font-size: 2.5rem;
+	text-align: center;
+	margin-bottom: 1.5rem;
+	margin-top: 3rem; /* Added margin to move the text downward on larger screens */
+}
+
+.hero-highlight {
+	color: #041c94;
+}
+
+.hero-description {
+	margin-top: 1rem;
+	color: #6c757d;
+	padding: 0 20px; /* Added padding for better text spacing */
+}
+
+.hero-buttons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.hero-btn {
+	flex: 1;
+	max-width: 150px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 1.2rem;
+	margin: 0.5rem;
 }
 
-.how-it-works-icon {
-	width: 120px; /* Adjust size as needed */
-	margin-bottom: 10px;
-}
-
-.link:hover {
+.android-btn {
 	background-color: #041c94;
 	color: #fff;
 }
 
-/* ======================================================== */
-
-.faq-section {
-	background-color: #f0f4f8; /* Light background for the section */
-	padding: 3rem 1rem; /* Adjust padding */
+.apple-btn {
+	background-color: #fff;
+	color: #1c222c;
 }
 
-.accordion {
-	max-width: 800px; /* Set a maximum width for the accordion */
-	margin: 0 auto; /* Center the accordion */
+.github-btn {
+	background-color: #79c4f0;
+	color: #fff;
+}
+
+.hero-icon {
+	max-width: 25px;
+	margin-right: 8px;
+}
+
+.hero-image {
+	max-height: 400px;
+	object-fit: cover;
+	padding: 10px; /* Added padding for image spacing */
+}
+
+@media (min-width: 768px) {
+	/* On larger screens (tablet and desktop) */
+	.hero-buttons {
+		flex-direction: row; /* Buttons in a row */
+		justify-content: start; /* Align buttons to the left */
+	}
+}
+
+@media (max-width: 767px) {
+	/* On smaller devices (phones) */
+	.hero-buttons {
+		flex-direction: column; /* Buttons stack vertically */
+	}
+}
+
+/* ================= BLOG ============================= */
+.blog-section {
+	padding: 2rem 0;
+}
+
+.Readmore {
+	color: "#041c94";
+	text-decoration: none;
+	font-weight: "600";
+	display: "inline-flex";
+	align-items: "center";
+	transition: "background-color 0.3s, color 0.3s";
+	padding: "0.5rem 0";
+}
+/* ================= FAQ ============================= */
+.faq-section {
+	padding: 3rem 1rem;
 }
 
 .faq-item {
-	border: 1px solid #ccc; /* Light border around each FAQ item */
-	border-radius: 8px; /* Rounded corners */
-	margin-bottom: 1rem; /* Space between items */
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-	transition: box-shadow 0.3s; /* Smooth transition on hover */
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	margin-bottom: 1rem;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 0.3s;
 }
 
 .faq-item:hover {
-	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .faq-item .accordion-header {
-	background-color: #ffffff; /* Background for the header */
-	border: none; /* Remove border */
+	background-color: #ffffff;
+	border: none;
 }
 
 .faq-item .accordion-body {
-	background-color: #f9f9f9; /* Slightly different background for the body */
+	background-color: #f9f9f9;
 }
 
 .faq-item .accordion-button {
-	color: #333; /* Text color for the button */
-	font-weight: 600; /* Bold text */
+	color: #333;
+	font-weight: 600;
 }
+
+.faq-header {
+	font-size: 2rem;
+	color: #2c2f36;
+	margin-bottom: 1rem;
+	padding-top: 10px;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+/* ================= FOOTER ============================= */
+.footer-container {
+	background-color: #020721;
+	color: #fff;
+	padding: 1rem 0;
+	font-size: 0.85rem;
+}
+
+.footer-title {
+	font-size: 1.1rem;
+	font-weight: bold;
+	color: #fff;
+	margin-bottom: 0.5rem;
+}
+
+.footer-text {
+	color: #bbb;
+	line-height: 1.4;
+}
+
+.footer-links {
+	list-style-type: none;
+	padding: 0;
+}
+
+.footer-link {
+	color: #bbb;
+	text-decoration: none;
+	margin-bottom: 0.3rem;
+	display: block;
+}
+
+.footer-copyright {
+	color: #bbb;
+	margin-top: 0.5rem;
+	font-size: 0.75rem;
+}
+/* ================================================= */

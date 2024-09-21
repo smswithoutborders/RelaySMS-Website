@@ -1,27 +1,33 @@
 import React from "react";
-import { Container, Accordion } from "react-bootstrap";
+import { Container, Row, Col, Accordion } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 function FAQ() {
 	const { t, i18n } = useTranslation();
-	const isFarsi = i18n.language === "fa"; // Check if the selected language is Farsi
+	const isFarsi = i18n.language === "fa";
 
 	return (
 		<Container fluid className="faq-section py-5" dir={isFarsi ? "rtl" : "ltr"}>
-			<h2 className="text-center mb-5" style={faqStyles.header}>
-				{t("FAQ.Header")}
+			<h2 className="faq-header" dir={isFarsi ? "rtl" : "ltr"}>
+				{t("FAQ.Header")}{" "}
 			</h2>
-			<Accordion defaultActiveKey="0" flush>
-				{faqData.map((faq, idx) => (
-					<Accordion.Item eventKey={idx.toString()} key={idx} className="faq-item">
-						<Accordion.Header style={faqStyles.question}>{t(faq.question)}</Accordion.Header>
-						<Accordion.Body
-							style={faqStyles.answer}
-							dangerouslySetInnerHTML={{ __html: t(faq.answer) }}
-						/>
-					</Accordion.Item>
-				))}
-			</Accordion>
+			<Row className="justify-content-center">
+				<Col md={8} lg={6}>
+					{" "}
+					{/* Control the width of the Accordion */}
+					<Accordion defaultActiveKey="0" flush>
+						{faqData.map((faq, idx) => (
+							<Accordion.Item eventKey={idx.toString()} key={idx} className="faq-item">
+								<Accordion.Header style={faqStyles.question}>{t(faq.question)}</Accordion.Header>
+								<Accordion.Body
+									style={faqStyles.answer}
+									dangerouslySetInnerHTML={{ __html: t(faq.answer) }}
+								/>
+							</Accordion.Item>
+						))}
+					</Accordion>
+				</Col>
+			</Row>
 		</Container>
 	);
 }
@@ -38,6 +44,14 @@ const faqData = [
 	{
 		question: "FAQ.Q3",
 		answer: "FAQ.A3"
+	},
+	{
+		question: "FAQ.Q4",
+		answer: "FAQ.A4"
+	},
+	{
+		question: "FAQ.Q5",
+		answer: "FAQ.A5"
 	}
 ];
 
