@@ -13,9 +13,7 @@ function FAQ() {
 			</h2>
 			<Row className="justify-content-center">
 				<Col md={8} lg={6}>
-					{" "}
-					{/* Control the width of the Accordion */}
-					<Accordion defaultActiveKey="0" flush>
+					<Accordion defaultActiveKey="0" flush className="accordion">
 						{faqData.map((faq, idx) => (
 							<Accordion.Item eventKey={idx.toString()} key={idx} className="faq-item">
 								<Accordion.Header style={faqStyles.question}>{t(faq.question)}</Accordion.Header>

@@ -74,3 +74,54 @@ p {
 .card {
 	position: relative;
 }
+
+/* ========================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.main {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 20px;
+	}
+
+	.section {
+		width: 100%;
+		max-width: 350px;
+		margin: 0 auto;
+	}
+
+	.card {
+		width: 100%;
+		box-shadow: 0.5px 0.5px 12px 0px #80808042;
+		margin: 0;
+	}
+
+	.card-number {
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.main {
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	.section {
+		width: 100%;
+		max-width: 400px;
+		margin: 20px auto;
+	}
+
+	.card {
+		width: 100%;
+		box-shadow: 0.5px 0.5px 12px 0px #80808042;
+		margin: 0;
+	}
+
+	.card-number {
+		margin: 0 auto;
+	}
+}

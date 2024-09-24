@@ -38,7 +38,13 @@
 		"Rebrand": "Rebranding",
 		"RebrandD": "SMSWithoutBorders itself is becoming the umbrella project encompassing RelaySMS and other messaging tools. The core functionality remains the same, but users can expect a new name, enhanced security features, and a focus on future growth under the SMSWithoutBorders project.",
 		"ReadMore": "Read More",
-		"ReadOtherArticles": "Read Other Articles"
+		"ReadOtherArticles": "Read Other Articles",
+		"articles1": "Resilience Of Gateway Clients In SMSWithoutBorders",
+		"articles2": "Reliability Of Gateway Clients In Smswithoutborders",
+		"articles3": "New Alpha Release: Vault 0.1.0",
+		"tag": "Articles",
+		"tags": "Release",
+		"readTime": "2 mins read"
 	},
 	"FAQ": {
 		"Header": "Frequently Asked Questions",

@@ -83,7 +83,10 @@ function Footer() {
 								</a>
 							</li>
 							<li>
-								<a href="/linux" className="footer-link">
+								<a
+									href="https://github.com/smswithoutborders/relaysms-desktop/tags"
+									className="footer-link"
+								>
 									<FaLinux /> {t("Footer.download3")}
 								</a>
 							</li>
