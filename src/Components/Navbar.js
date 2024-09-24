@@ -18,7 +18,7 @@ function NavigationBar() {
 		>
 			<Container>
 				<Navbar.Brand href="#home" className={`me-auto ${isFarsi ? "me-0" : ""}`}>
-					<img src="/logo.png" alt="RelaySMS Logo" style={{ height: "35px", width: "auto" }} />
+					<img src="/logo.png" alt="RelaySMS" style={{ height: "35px", width: "auto" }} />
 				</Navbar.Brand>
 
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -1,23 +1,39 @@
 * {
 	font-family: Inter, sans-serif;
 }
-/* =======================  hero section ========================== */
+/* ======================= general header styling  ========================== */
+h2 {
+	position: relative;
+	margin: 0 auto 20px;
+	padding: 10px 30px;
+	text-align: center;
+}
+/* =========================== Hero section==================================== */
 .hero-container {
-	background-color: #edf3fd;
 	overflow: hidden;
 	position: relative;
 	margin-top: 56px;
-	background-color: #f0f4f8;
 	padding: 20px;
+}
+
+.hero-main {
+	margin-top: 4rem;
+	margin-bottom: 5.5rem;
 }
 
 .hero-title {
 	font-weight: bold;
 	color: #333;
 	font-size: 2.5rem;
-	text-align: center;
 	margin-bottom: 1.5rem;
-	margin-top: 3rem;
+	margin-top: 1.5rem;
+}
+
+.hero {
+	font-weight: bold;
+	color: #010b3d;
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
 }
 
 .hero-highlight {
@@ -25,20 +41,35 @@
 }
 
 .hero-description {
-	margin-top: 1rem;
 	color: #6c757d;
 	padding: 0 20px;
+	font-size: 1.1rem;
+	text-align: justify;
+	margin-top: 1.5rem;
+	margin-bottom: 2rem;
+	gap: 2;
 }
 
 .hero-image {
 	max-height: 500px;
 	object-fit: cover;
-	padding: 10px;
+	padding: 20px;
+	padding-left: 90px;
+	align-items: center;
 }
 
 @media (max-width: 767px) {
 	.hero-buttons {
 		flex-direction: column;
+	}
+	.hero-image {
+		max-height: 350px;
+		object-fit: cover;
+		padding: 10px;
+	}
+	.hero-main {
+		margin-top: 4rem;
+		height: 50vh;
 	}
 }
 
@@ -49,11 +80,31 @@
 	gap: 0.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
+	.hero-main {
+		margin-top: 4rem;
+		height: 50vh;
+	}
+	.hero-title {
+		font-size: 2.2rem;
+		gap: 1;
+	}
+	.hero-description {
+		font-size: 1.2rem;
+	}
 	.hero-buttons {
 		flex-direction: row;
-		justify-content: start;
+		justify-content: center;
 		gap: 1rem;
+		width: 100%;
+		padding-left: 20px;
+	}
+	.hero-image {
+		max-height: 450px;
+		display: block;
+		margin: 0 auto;
+		object-fit: cover;
+		padding: 10px;
 	}
 }
 
@@ -73,26 +124,30 @@
 	font-weight: bold;
 }
 
+/* Button styles */
 .button-title .github {
 	color: #020721;
 	font-weight: 400;
 }
 
 .android-btn {
-	background-color: #041c94 !important;
-	color: #fff;
+	background-color: #02167a !important;
+	color: #f7f8fd;
+	font-weight: 600 !important;
 }
 
 .apple-btn {
 	background-color: #fff !important;
-	color: #1c222c !important;
-	border: 1px solid #05035a;
+	color: #2d333f !important;
+	border: 1px solid #041c94;
+	font-weight: 600 !important;
 }
 
 .github-btn {
-	background-color: #a09d9d !important;
+	background-color: #041f2d !important;
 	color: #fff;
-	font-weight: 400 !important;
+	font-weight: 600 !important;
+	border: 1px solid #edeef6;
 }
 
 .hero-icon {
@@ -100,7 +155,25 @@
 	margin-right: 8px;
 }
 
-/* -------------- blog --------------------- */
+/* =========================== Hover Effects ========================== */
+.android-btn:hover {
+	background-color: #e9edf5 !important;
+	color: #021141 !important;
+}
+
+.apple-btn:hover {
+	background-color: #041f2d !important;
+	color: #f7f8fd !important;
+	border: 1px solid #041c94;
+}
+
+.github-btn:hover {
+	color: #f7f8fd;
+	border: 1px solid #d0d7e0;
+	background-color: #02167a !important;
+}
+
+/* ================================== blog ================================= */
 .blog-section {
 	padding: 2rem 0;
 }
@@ -114,15 +187,14 @@
 	transition: "background-color 0.3s, color 0.3s";
 	padding: "0.5rem 0";
 }
-/* ================ faq ===================== */
 
+/* ===================================== FAQ Section ================================== */
 .faq-section {
 	padding: 3rem 1rem;
 }
 
 .faq-item {
 	border: 1px solid #ccc;
-	border-radius: 8px;
 	margin-bottom: 1rem;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 	transition: box-shadow 0.3s;
@@ -155,7 +227,57 @@
 	font-weight: bold;
 	text-transform: uppercase;
 }
-/* ================= footer===================== */
+
+@media (max-width: 768px) {
+	.faq-section {
+		padding: 2rem 1rem;
+	}
+
+	.faq-header {
+		font-size: 1.75rem;
+	}
+
+	.faq-item {
+		margin-bottom: 1.5rem;
+	}
+
+	.faq-item .accordion-header {
+		font-size: 1.15rem;
+		border-radius: 40%;
+	}
+
+	.faq-item .accordion-body {
+		font-size: 0.95rem;
+		border-radius: 40%;
+	}
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+	.faq-section {
+		padding: 1.5rem 0.5rem;
+	}
+
+	.faq-header {
+		font-size: 1.5rem;
+	}
+
+	.faq-item {
+		margin-bottom: 1rem;
+	}
+
+	.faq-item .accordion-header {
+		font-size: 1rem;
+		border-radius: 40%;
+	}
+
+	.faq-item .accordion-body {
+		font-size: 0.85rem;
+		border-radius: 40%;
+	}
+}
+
+/* ===================================== footer================================== */
 .footer-container {
 	background-color: #020721;
 	color: #fff;

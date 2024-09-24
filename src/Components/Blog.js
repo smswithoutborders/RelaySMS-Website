@@ -1,168 +1,108 @@
-import React, { useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { FaArrowRight } from "react-icons/fa";
-import AOS from "aos";
+import "../Blog.css";
 
-function Blog() {
+const Blog = () => {
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
 
-	const articles = [
+	const blogPosts = [
 		{
-			id: 1,
-			title: t("Blog.Resilience"),
-			description: t("Blog.ResilienceD"),
-			link: "https://blog.smswithoutborders.com/posts/resilience",
-			author: "Aysha Musa",
-			readTime: "2 min read",
-			authorImage: "/.jpg"
-		},
-		{
-			id: 3,
-			title: t("Blog.IDHeader"),
-			description: t("Blog.IDD"),
-			link: "https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration",
-			author: "Aysha Musa",
-			readTime: "2 min read",
-			authorImage: "/.jpg"
-		},
-		{
-			id: 4,
 			title: t("Blog.Rebrand"),
-			description: t("Blog.RebrandD"),
-			link: "https://blog.smswithoutborders.com/posts/rebranding",
-			author: "Aysha Musa",
-			readTime: "2 min read",
-			authorImage: "/.jpg"
+			content: t("Blog.RebrandD"),
+			readTime: t("Blog.readTime", { time: "2 min" }),
+			tags: t("Blog.tag"),
+			link: "https://blog.smswithoutborders.com/posts/rebranding"
+		},
+		{
+			title: t("Blog.IDHeader"),
+			content: t("Blog.IDD"),
+			readTime: t("Blog.readTime", { time: "2 min" }),
+			tags: t("Blog.tag"),
+			link: "https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
 		}
 	];
 
-	useEffect(() => {
-		AOS.init({
-			duration: 1000,
-			easing: "ease-in-out",
-			once: true
-		});
-	}, []);
+	const otherArticles = [
+		{
+			title: t("Blog.articles1"),
+			url: "https://blog.smswithoutborders.com/posts/resilience-of-gateway-clients-in-smswithoutborders"
+		},
+		{
+			title: t("Blog.articles2"),
+			url: "https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders"
+		},
+		{
+			title: t("Blog.articles3"),
+			url: "https://blog.smswithoutborders.com/releases/vault-0-1-0"
+		}
+	];
 
 	return (
-		<Container fluid className="blog-list-section py-5" style={styles.container}>
-			<h2 className="faq-header" dir={isFarsi ? "rtl" : "ltr"}>
-				{t("Blog.Header")}{" "}
-			</h2>
-			<Row className="justify-content-center">
-				{articles.map((article, index) => (
-					<Col
-						md={6}
-						key={article.id}
-						className="mb-4 d-flex justify-content-center"
-						data-aos="fade-up"
-						data-aos-delay={`${index * 100}`}
-					>
-						<div className="blog-card flex-fill d-flex flex-column" style={styles.card}>
-							<h4 style={styles.title}>{article.title}</h4>
+		<Container className="my-5 blog-section">
+			<h2 className={`blog-header ${isFarsi ? "rtl" : "ltr"}`}>{t("Blog.Header")}</h2>
+			<Row>
+				{/* Content section */}
+				<Col xs={12} md={8}>
+					<Row>
+						{blogPosts.map((post, index) => (
+							<Col xs={12} sm={6} lg={6} key={index} className="mb-4">
+								<Card className="blog-card">
+									<Card.Body>
+										<Card.Title className={`h2 ${isFarsi ? "text-end" : "text-start"}`}>
+											{post.title}
+										</Card.Title>
+										<Card.Text>{post.content}</Card.Text>
+										<div className="tag-container">
+											{Array.isArray(post.tags) ? (
+												post.tags.map((tag, tagIndex) => (
+													<span key={tagIndex} className="badge me-1">
+														{tag}
+													</span>
+												))
+											) : (
+												<span className="badge me-1">{post.tags}</span>
+											)}
+										</div>
+										<div className="d-flex justify-content-between align-items-center mt-3">
+											<span className="text-muted">
+												{t("Blog.readTime", { time: post.readTime })}
+											</span>
+											<a
+												className="read-more-link"
+												href={post.link}
+												target="_blank"
+												rel="noreferrer"
+												aria-label={`Read more about ${post.title}`}
+											>
+												{t("Howitworks.ReadMore")} <FaArrowRight />
+											</a>
+										</div>
+									</Card.Body>
+								</Card>
+							</Col>
+						))}
+					</Row>
+				</Col>
 
-							<p style={styles.text}>{article.description}</p>
-
-							<div className="mt-auto" style={styles.readMoreContainer}>
-								<a href={article.link} style={styles.link}>
-									{t("Blog.ReadMore")}
-									<FaArrowRight />
+				{/* Sidebar */}
+				<Col xs={12} md={4}>
+					<h4>{t("Blog.ReadOtherArticles")}</h4>
+					<ul className="list-unstyled">
+						{otherArticles.map((article, index) => (
+							<li key={index} className="mb-2">
+								<a href={article.url} target="_blank" className="article-link" rel="noreferrer">
+									{article.title}
 								</a>
-							</div>
-
-							<div style={styles.metaContainer}>
-								<div style={styles.authorContainer}>
-									<img src={article.authorImage} style={styles.authorImage} alt="Author" />
-									<span style={styles.author}>{article.author}</span>
-								</div>
-								<span style={styles.readTime}>{article.readTime}</span>
-							</div>
-						</div>
-					</Col>
-				))}
+							</li>
+						))}
+					</ul>
+				</Col>
 			</Row>
 		</Container>
 	);
-}
-
-const styles = {
-	container: {
-		padding: "10px 20px"
-	},
-	header: {
-		fontSize: "2rem",
-		color: "black",
-		marginBottom: "2rem"
-	},
-	card: {
-		padding: "1.5rem",
-		borderRadius: "8px",
-		boxShadow: "0 3px 6px rgba(0, 0, 0, 0.1)",
-		transition: "transform 0.3s",
-		display: "flex",
-		flexDirection: "column",
-		justifyContent: "space-between",
-		backgroundColor: "white",
-		maxWidth: "85%",
-		margin: "0 auto"
-	},
-	title: {
-		fontSize: "1.15rem",
-		color: "#041c94",
-		fontWeight: "600",
-		margin: "8px 0 16px 0"
-	},
-	text: {
-		color: "#555",
-		lineHeight: "1.4",
-		marginBottom: "1rem",
-		fontSize: "0.9rem"
-	},
-	readMoreContainer: {
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "flex-end",
-		marginTop: "auto"
-	},
-	link: {
-		color: "#041c94",
-		textDecoration: "none",
-		fontWeight: "400",
-		display: "inline-flex",
-		alignItems: "center",
-		transition: "background-color 0.3s, color 0.3s",
-		padding: "0.5rem 0",
-		fontSize: "0.85rem"
-	},
-	metaContainer: {
-		borderTop: "1px solid #eaeaea",
-		paddingTop: "0.5rem",
-		marginTop: "1rem",
-		color: "#666",
-		display: "flex",
-		justifyContent: "space-between",
-		alignItems: "center"
-	},
-	authorContainer: {
-		display: "flex",
-		alignItems: "center"
-	},
-	authorImage: {
-		width: "25px",
-		height: "25px",
-		borderRadius: "50%",
-		marginRight: "8px",
-		backgroundColor: "#ddd"
-	},
-	author: {
-		fontWeight: "bold",
-		fontSize: "0.85rem"
-	},
-	readTime: {
-		color: "#888"
-	}
 };
 
 export default Blog;

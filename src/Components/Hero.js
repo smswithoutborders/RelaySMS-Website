@@ -3,7 +3,7 @@ import { Button, Container, Row, Col, Image } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useTranslation } from "react-i18next";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS styles
+import "aos/dist/aos.css";
 import How from "../Components/how";
 import Blog from "../Components/Blog";
 
@@ -24,10 +24,10 @@ const HeroSection = () => {
 			<Container fluid="xl">
 				<Row className="align-items-center">
 					<Col lg={6} className="position-relative z-index-10 pb-5 pt-5" data-aos="fade-right">
-						<main className="text-center text-lg-start">
-							<h1 className="hero-title">
-								{t("Landing.span")} <br />
-								<span className="hero-highlight">{t("Landing.h1")}</span>
+						<main className="text-center text-lg-start hero-main">
+							<span className="hero">{t("Landing.span")}</span>
+							<h1 className="hero-title hero-highlight">
+								{t("Landing.h1")} <br />
 							</h1>
 
 							<p className="hero-description">{t("Landing.h2")}</p>
@@ -38,7 +38,7 @@ const HeroSection = () => {
 									className="hero-btn android-btn mx-auto mx-md-0"
 									data-aos="fade-up"
 								>
-									<img src="/play.svg" alt="Android" className="hero-icon" />
+									<img src="/play.svg" alt="Android" className="hero-icon apple" />
 									<span className="button-title">{t("Landing.Android")}</span>
 								</Button>
 
