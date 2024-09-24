@@ -57,6 +57,11 @@ function Footer() {
 									{t("Footer.help")}
 								</Link>
 							</li>
+							<li>
+								<a href="/privacy" className="footer-link">
+									{t("Footer.policy")}
+								</a>
+							</li>
 						</ul>
 					</Col>
 					<Col lg={4} md={12} sm={12} className="text-center">
@@ -95,9 +100,6 @@ function Footer() {
 				</Row>
 				<Row className="pt-2 border-top">
 					<Col className="text-center">
-						<a href="/privacy" className="footer-link">
-							{t("Footer.policy")}
-						</a>
 						<p className="footer-copyright">
 							&copy; {new Date().getFullYear()} {t("Footer.copyright")}
 						</p>
