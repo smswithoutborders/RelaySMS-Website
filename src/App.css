@@ -1,215 +1,316 @@
-.loader-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	background-color: #d1e6e6;
+* {
+	font-family: Inter, sans-serif;
+}
+/* ======================= general header styling  ========================== */
+h2 {
+	position: relative;
+	margin: 0 auto 20px;
+	padding: 10px 30px;
+	text-align: center;
+}
+/* =========================== Hero section==================================== */
+.hero-container {
+	overflow: hidden;
+	position: relative;
+	margin-top: 56px;
+	padding: 20px;
 }
 
-.loader {
+.hero-main {
+	margin-top: 4rem;
+	margin-bottom: 5.5rem;
+}
+
+.hero-title {
+	font-weight: bold;
+	color: #333;
+	font-size: 2.5rem;
+	margin-bottom: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+.hero {
+	font-weight: bold;
+	color: #010b3d;
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+.hero-highlight {
+	color: #041c94;
+}
+
+.hero-description {
+	color: #6c757d;
+	padding: 0 20px;
+	font-size: 1.1rem;
+	text-align: justify;
+	margin-top: 1.5rem;
+	margin-bottom: 2rem;
+	gap: 2;
+}
+
+.hero-image {
+	max-height: 500px;
+	object-fit: cover;
+	padding: 20px;
+	padding-left: 90px;
+	align-items: center;
+}
+
+@media (max-width: 767px) {
+	.hero-buttons {
+		flex-direction: column;
+	}
+	.hero-image {
+		max-height: 350px;
+		object-fit: cover;
+		padding: 10px;
+	}
+	.hero-main {
+		margin-top: 4rem;
+		height: 50vh;
+	}
+}
+
+.hero-buttons {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-}
-
-.loader h2 {
-	font-size: 50px;
-	font-weight: 900;
-	margin-bottom: 20px;
-	color: #8bc0e3;
-}
-
-.loading02 {
-	display: flex;
-	gap: 5px;
-}
-
-.loading02 span {
-	display: inline-block;
-	font-size: 50px;
-	font-weight: bold;
-	color: #0c3e60;
-	animation: loading02 1.2s infinite alternate;
-}
-
-.loading02 span:nth-child(1) {
-	animation-delay: 0s;
-}
-.loading02 span:nth-child(2) {
-	animation-delay: 0.2s;
-}
-.loading02 span:nth-child(3) {
-	animation-delay: 0.4s;
-}
-.loading02 span:nth-child(4) {
-	animation-delay: 0.6s;
-}
-.loading02 span:nth-child(5) {
-	animation-delay: 0.8s;
-}
-.loading02 span:nth-child(6) {
-	animation-delay: 1s;
-}
-.loading02 span:nth-child(7) {
-	animation-delay: 1.2s;
-}
-
-@keyframes loading02 {
-	0% {
-		filter: blur(0);
-		opacity: 1;
-	}
-	100% {
-		filter: blur(5px);
-		opacity: 0.2;
-	}
-}
-/* ============================navbar========================= */
-.custom-navbar {
-	box-shadow: 0px 4px 10px rgba(1, 46, 129, 0.3);
-	height: 8%;
-	background-color: white;
-}
-
-.navbar-expand-lg .navbar-collapse {
-	background-color: white;
-}
-
-.MuiIconButton-root:hover,
-Nav.Link:hover {
-	color: #e79405;
-}
-
-.nav-link-custom {
-	font-size: 18px !important;
-	color: #091426;
-	margin: 0 15px;
-	transition: color 0.3s ease;
-	font-weight: 400 !important;
-}
-
-.nav-link-custom:hover {
-	color: #dc9909 !important;
-}
-
-/* -----------------===========-------------blog---------------------===========--------------------- */
-.custom-readmore-btn {
-	border: none;
-	border-bottom: #091426;
-	color: white;
-	font-size: 16px;
-	font-weight: bold;
-	padding: 12px 24px;
-	border-radius: 8px;
-	transition:
-		background-color 0.3s ease,
-		transform 0.3s ease;
-}
-
-.custom-readmore-btn:hover {
-	background-color: #0056b3;
-	transform: scale(1.05);
-}
-
-.custom-readmore-btn:focus {
-	outline: none;
-	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
-}
-
-/* ========================Contact us section =================================== */
-.section-contact {
-	background-color: #fff;
-	padding: 120px 0;
-}
-
-.header-section .title {
-	position: relative;
-	margin-bottom: 17px;
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 55px;
-}
-
-.header-section .description {
-	font-family: "Roboto", sans-serif;
-	color: #2a6287;
-}
-
-.header-section .big-title {
-	position: absolute;
-	bottom: 100%;
-	left: 50%;
-	transform: translate(-50%, 70%);
-	font-size: 120px;
-	font-weight: 700;
-	opacity: 0.15;
-}
-
-.contact-card {
-	border-radius: 10px;
-	border: none;
-	overflow: hidden;
-}
-
-.icon-btn {
-	border-radius: 50%;
-	width: 60px;
-	height: 60px;
-	display: flex;
-	align-items: center;
 	justify-content: center;
-	font-size: 24px;
+	gap: 0.5rem;
 }
 
-.icon-btn:hover {
-	background-color: #e0e0e0;
-}
-
-.contact-card a {
-	text-decoration: none;
-	color: inherit;
-}
-
-.contact-card a:hover {
-	text-decoration: underline;
-}
-
-.contact-card .text-muted {
-	color: #6c757d;
-}
-
-@media (max-width: 767.99px) {
-	.contact-card {
-		margin-bottom: 20px;
+@media (min-width: 768px) and (max-width: 991px) {
+	.hero-main {
+		margin-top: 4rem;
+		height: 50vh;
+	}
+	.hero-title {
+		font-size: 2.2rem;
+		gap: 1;
+	}
+	.hero-description {
+		font-size: 1.2rem;
+	}
+	.hero-buttons {
+		flex-direction: row;
+		justify-content: center;
+		gap: 1rem;
+		width: 100%;
+		padding-left: 20px;
+	}
+	.hero-image {
+		max-height: 450px;
+		display: block;
+		margin: 0 auto;
+		object-fit: cover;
+		padding: 10px;
 	}
 }
 
-/* ============ backto top ====================*/
-.back-to-top {
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	background-color: #007bff;
-	color: white;
-	border: none;
-	border-radius: 50%;
-	width: 50px;
+@media (min-width: 992px) {
+	.hero-buttons {
+		gap: 1.5rem;
+	}
+}
+
+.hero-btn {
+	width: 160px;
 	height: 50px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	cursor: pointer;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	transition:
-		background-color 0.3s,
-		transform 0.3s;
+	border-radius: 8px;
+	font-weight: bold;
 }
 
-.back-to-top:hover {
-	background-color: #0056b3;
-	transform: scale(1.1);
+/* Button styles */
+.button-title .github {
+	color: #020721;
+	font-weight: 400;
 }
 
-.back-to-top svg {
-	font-size: 24px;
+.android-btn {
+	background-color: #02167a !important;
+	color: #f7f8fd;
+	font-weight: 600 !important;
+}
+
+.apple-btn {
+	background-color: #fff !important;
+	color: #2d333f !important;
+	border: 1px solid #041c94;
+	font-weight: 600 !important;
+}
+
+.github-btn {
+	background-color: #041f2d !important;
+	color: #fff;
+	font-weight: 600 !important;
+	border: 1px solid #edeef6;
+}
+
+.hero-icon {
+	max-width: 30px;
+	margin-right: 8px;
+}
+
+/* =========================== Hover Effects ========================== */
+.android-btn:hover {
+	background-color: #e9edf5 !important;
+	color: #021141 !important;
+}
+
+.apple-btn:hover {
+	background-color: #041f2d !important;
+	color: #f7f8fd !important;
+	border: 1px solid #041c94;
+}
+
+.github-btn:hover {
+	color: #f7f8fd;
+	border: 1px solid #d0d7e0;
+	background-color: #02167a !important;
+}
+
+/* ================================== blog ================================= */
+.blog-section {
+	padding: 2rem 0;
+}
+
+.Readmore {
+	color: "#041c94";
+	text-decoration: none;
+	font-weight: "600";
+	display: "inline-flex";
+	align-items: "center";
+	transition: "background-color 0.3s, color 0.3s";
+	padding: "0.5rem 0";
+}
+
+/* ===================================== FAQ Section ================================== */
+.faq-section {
+	padding: 3rem 1rem;
+}
+
+.faq-item {
+	border: 1px solid #ccc;
+	margin-bottom: 1rem;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 0.3s;
+}
+
+.faq-item:hover {
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.faq-item .accordion-header {
+	background-color: #ffffff;
+	border: none;
+}
+
+.faq-item .accordion-body {
+	background-color: #f9f9f9;
+}
+
+.faq-item .accordion-button {
+	color: #333;
+	font-weight: 600;
+}
+
+.faq-header {
+	font-size: 2rem;
+	color: #2c2f36;
+	margin-bottom: 1rem;
+	padding-top: 10px;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+	.faq-section {
+		padding: 2rem 1rem;
+	}
+
+	.faq-header {
+		font-size: 1.75rem;
+	}
+
+	.faq-item {
+		margin-bottom: 1.5rem;
+	}
+
+	.faq-item .accordion-header {
+		font-size: 1.15rem;
+		border-radius: 40%;
+	}
+
+	.faq-item .accordion-body {
+		font-size: 0.95rem;
+		border-radius: 40%;
+	}
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+	.faq-section {
+		padding: 1.5rem 0.5rem;
+	}
+
+	.faq-header {
+		font-size: 1.5rem;
+	}
+
+	.faq-item {
+		margin-bottom: 1rem;
+	}
+
+	.faq-item .accordion-header {
+		font-size: 1rem;
+		border-radius: 40%;
+	}
+
+	.faq-item .accordion-body {
+		font-size: 0.85rem;
+		border-radius: 40%;
+	}
+}
+
+/* ===================================== footer================================== */
+.footer-container {
+	background-color: #020721;
+	color: #fff;
+	padding: 1rem 0;
+	font-size: 0.85rem;
+}
+
+.footer-title {
+	font-size: 1.1rem;
+	font-weight: bold;
+	color: #fff;
+	margin-bottom: 0.5rem;
+}
+
+.footer-text {
+	color: #bbb;
+	line-height: 1.4;
+}
+
+.footer-links {
+	list-style-type: none;
+	padding: 0;
+}
+
+.footer-link {
+	color: #bbb;
+	text-decoration: none;
+	margin-bottom: 0.3rem;
+	display: block;
+}
+
+.footer-copyright {
+	color: #bbb;
+	margin-top: 0.5rem;
+	font-size: 0.75rem;
 }

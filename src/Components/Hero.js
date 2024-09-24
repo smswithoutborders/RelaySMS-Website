@@ -1,93 +1,84 @@
 import React, { useEffect } from "react";
+import { Button, Container, Row, Col, Image } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useTranslation } from "react-i18next";
-import { Container, Col, Button } from "react-bootstrap";
-import "../index.css";
-import "../i18n.js";
 import AOS from "aos";
+import "aos/dist/aos.css";
+import How from "../Components/how";
+import Blog from "../Components/Blog";
 
-const Hero = () => {
+const HeroSection = () => {
 	const { t, i18n } = useTranslation();
-	const isRTL = i18n.dir() === "rtl";
+	const isFarsi = i18n.language === "fa";
 
 	useEffect(() => {
-		AOS.init({});
+		AOS.init({
+			duration: 1000,
+			easing: "ease-in-out",
+			once: true
+		});
 	}, []);
 
 	return (
-		<Container fluid id="hero" style={{ direction: isRTL ? "rtl" : "ltr" }} data-aos="fade-up">
-			<div className="hero-container" style={{ direction: isRTL ? "rtl" : "ltr" }}>
-				<Col xs={12} md={6} className="content hero-info" data-aos="fade-right">
-					<h6>{t("Landing.span")}</h6>
-					<h1>{t("Landing.landingh1")}</h1>
-					<hr className="hr" />
-					<p className="hero-p">{t("Landing.landingh2")}</p>
+		<div className="hero-container" dir={isFarsi ? "rtl" : "ltr"}>
+			<Container fluid="xl">
+				<Row className="align-items-center">
+					<Col lg={6} className="position-relative z-index-10 pb-5 pt-5" data-aos="fade-right">
+						<main className="text-center text-lg-start hero-main">
+							<span className="hero">{t("Landing.span")}</span>
+							<h1 className="hero-title hero-highlight">
+								{t("Landing.h1")} <br />
+							</h1>
 
-					<div className="d-block d-md-flex justify-content-center justify-content-md-start text-center text-md-start button-wrapper">
-						<Button
-							href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
-							target="_blank"
-							className="hero-btn mb-3 mb-md-0 d-flex align-items-center mx-auto mx-md-0"
-							size="lg"
-							style={{
-								backgroundColor: "#367ed0",
-								color: "#FFFFFF",
-								justifyContent: "center",
-								width: "100%",
-								maxWidth: "200px",
-								marginLeft: "5%"
-							}}
-						>
-							<div className="d-flex w-100">
-								<img
-									src="/playstore.svg"
-									alt="Android"
-									className="img-fluid logo"
-									style={{ maxWidth: "40px", marginRight: "10px" }}
-								/>
-								<div className="text-start">
-									<span className="button-subtitle fs-8">{t("Landing.AndroidSub")}</span>
-									<br />
-									<span className="button-title fs-4">{t("Landing.Android")}</span>
-								</div>
+							<p className="hero-description">{t("Landing.h2")}</p>
+							<div className="hero-buttons d-flex flex-column flex-md-row justify-content-md-start justify-content-center">
+								<Button
+									href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
+									target="_blank"
+									className="hero-btn android-btn mx-auto mx-md-0"
+									data-aos="fade-up"
+								>
+									<img src="/play.svg" alt="Android" className="hero-icon apple" />
+									<span className="button-title">{t("Landing.Android")}</span>
+								</Button>
+
+								<Button
+									href="https://apps.apple.com/us/app/relaysms/id6630382970"
+									target="_blank"
+									className="hero-btn apple-btn mx-auto mx-md-0"
+									data-aos="fade-up"
+									data-aos-delay="200"
+								>
+									<img src="/app.svg" alt="App" className="hero-icon" />
+									<span className="button-title">{t("Landing.Apple")}</span>
+								</Button>
+
+								<Button
+									href="https://github.com/"
+									target="_blank"
+									className="hero-btn github-btn mx-auto mx-md-0"
+									data-aos="fade-up"
+									data-aos-delay="400"
+								>
+									<img src="/github.svg" alt="GitHub" className="hero-icon" />
+									<span className="button-title github">{t("Landing.Github")}</span>
+								</Button>
 							</div>
-						</Button>
-
-						<Button
-							href="https://apps.apple.com/us/app/relaysms/id6630382970"
-							target="_blank"
-							className="hero-btn mb-3 mb-md-0 d-flex align-items-center mx-auto mx-md-0"
-							size="lg"
-							style={{
-								backgroundColor: "white",
-								color: "#1c222c",
-								justifyContent: "center",
-								width: "100%",
-								maxWidth: "225px"
-							}}
-						>
-							<div className="d-flex w-100">
-								<img
-									src="/app.png"
-									alt="app"
-									className="img-fluid logo"
-									style={{ maxWidth: "50px", maxHeight: "50px", marginRight: "6px" }}
-								/>
-								<div className="text-start">
-									<span className="button-subtitle fs-10">{t("Landing.DesktopSub")}</span>
-									<br />
-									<span className="button-title fs-4">{t("Landing.Desktop")}</span>
-								</div>
-							</div>
-						</Button>
-					</div>
-				</Col>
-
-				<Col md={6} className="text-center">
-					<img src="/one1.png" alt="Hero" className="hero-image" />
-				</Col>
+						</main>
+					</Col>
+					<Col lg={6} className="d-lg-block position-relative" data-aos="fade-left">
+						<Image src="/Relaysms.png" alt="relay" className="hero-image" />
+					</Col>
+				</Row>
+			</Container>
+			<div data-aos="fade-up">
+				<How />
 			</div>
-		</Container>
+			<div data-aos="fade-up" data-aos-delay="200">
+				<Blog />
+			</div>
+		</div>
 	);
 };
 
-export default Hero;
+export default HeroSection;

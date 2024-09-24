@@ -1,256 +1,113 @@
 import React from "react";
-import { Box, Typography, Grid, ListItem, List } from "@mui/material";
-import { FaEnvelope, FaGithub, FaXTwitter } from "react-icons/fa6";
+import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "../Components/LanguageSwitcher";
+import { FaGithub, FaTwitter, FaAndroid, FaApple, FaLinux } from "react-icons/fa";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { Link } from "react-router-dom";
 
-export default function Footer() {
-	const { t, i18n } = useTranslation();
-	const isRTL = i18n.dir() === "rtl";
+function Footer() {
+	const { t } = useTranslation();
 
 	return (
-		<Box
-			component="footer"
-			sx={{
-				backgroundColor: "#0e1116",
-				backgroundImage: "url('/world-map.png')",
-				backgroundSize: "cover",
-				backgroundPosition: "center",
-				backgroundRepeat: "no-repeat",
-				color: "#f5f5f5",
-				p: 3,
-				px: { xs: 3, md: 10 },
-				position: "relative",
-				bottom: 0,
-				direction: isRTL ? "rtl" : "ltr",
-				textAlign: "center"
-			}}
-		>
-			<Grid container spacing={3} justifyContent="space-between">
-				<Grid item md={4} xs={12}>
-					<Box sx={{ display: "flex", alignItems: "center", pt: 3 }}>
-						<Box
-							component="img"
-							src="/logo.png"
-							sx={{ width: "40px", mx: 2 }}
-							alt="smswithoutborders logo"
-						/>
-						<Typography variant="h5" sx={{ fontWeight: 600, color: "white" }}>
-							{t("Footer.RelaySMS")}
-						</Typography>
-					</Box>
-					<Typography variant="body2" sx={{ px: { md: 4, xs: 2 }, py: 2, color: "white" }}>
-						{t("Footer.footerbody2")}
-					</Typography>
-					<Box
-						style={{ backgroundColor: "white", padding: "10px", borderRadius: "5px", width: "30%" }}
-					>
-						<LanguageSwitcher style={{ color: "white" }} />
-					</Box>
-				</Grid>
-				<Grid item md={2} xs={12}>
-					<List>
-						<ListItem sx={{ fontWeight: 600, color: "#ffcc00" }}>
-							{t("Footer.footerHeader1")}
-						</ListItem>
-						<ListItem>
-							<Box
-								component="a"
-								href="https://blog.smswithoutborders.com/"
-								sx={{
-									color: "inherit",
-									textDecoration: "none",
-									"&:hover": {
-										color: "#ffcc00",
-										backgroundColor: "#444"
-									},
-									transition: "background-color 0.3s ease, color 0.3s ease"
-								}}
-							>
-								{t("Footer.footerquick1")}
-							</Box>
-						</ListItem>
-						<ListItem>
-							<Box
-								component="a"
-								href="https://docs.smswithoutborders.com/"
-								sx={{
-									color: "inherit",
-									textDecoration: "none",
-									"&:hover": {
-										color: "#ffcc00",
-										backgroundColor: "#444"
-									},
-									transition: "background-color 0.3s ease, color 0.3s ease"
-								}}
-							>
-								{t("Footer.footerquick3")}
-							</Box>
-						</ListItem>
-						<ListItem>
-							<Box
-								component="a"
-								href="https://smswithoutborders.com/privacy-policy/"
-								sx={{
-									color: "inherit",
-									textDecoration: "none",
-									"&:hover": {
-										color: "#ffcc00",
-										backgroundColor: "#444"
-									},
-									transition: "background-color 0.3s ease, color 0.3s ease"
-								}}
-							>
-								{t("Footer.footerquick4")}
-							</Box>
-						</ListItem>
-					</List>
-				</Grid>
-				<Grid item md={2} xs={12}>
-					<List>
-						<ListItem sx={{ fontWeight: 600, color: "#ffcc00" }}>
-							{t("Footer.footerHeader2")}
-						</ListItem>
-						<ListItem>
-							<FaGithub style={{ marginInlineEnd: 15 }} />
-							<Box
-								component="a"
-								href="https://github.com/smswithoutborders"
-								sx={{
-									color: "inherit",
-									textDecoration: "none",
-									"&:hover": {
-										color: "#ffcc00",
-										backgroundColor: "#444"
-									},
-									transition: "background-color 0.3s ease, color 0.3s ease"
-								}}
-							>
-								{t("Footer.footersocial1")}
-							</Box>
-						</ListItem>
-						<ListItem>
-							<FaXTwitter style={{ marginInlineEnd: 15 }} />
-							<Box
-								component="a"
-								href="https://x.com/RelaySMS"
-								sx={{
-									color: "inherit",
-									textDecoration: "none",
-									"&:hover": {
-										color: "#ffcc00",
-										backgroundColor: "#444"
-									},
-									transition: "background-color 0.3s ease, color 0.3s ease"
-								}}
-							>
-								{t("Footer.footersocial3")}
-							</Box>
-						</ListItem>
-						<ListItem>
-							<FaEnvelope style={{ marginInlineEnd: 15 }} />
-							<Box
-								component="a"
-								href="mailto:support@smswithoutborders.com"
-								sx={{
-									color: "inherit",
-									textDecoration: "none",
-									"&:hover": {
-										color: "#ffcc00",
-										backgroundColor: "#444"
-									},
-									transition: "background-color 0.3s ease, color 0.3s ease"
-								}}
-							>
-								{t("Footer.footersocial4")}
-							</Box>
-						</ListItem>
-					</List>
-				</Grid>
-				<Grid item md={2} xs={12}>
-					<List>
-						<ListItem sx={{ fontWeight: 800, color: "#ffcc00" }}>
-							{t("Footer.footerHeader3")}
-						</ListItem>
-						<ListItem>
-							<Box
-								component="a"
-								href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
-								sx={{
-									color: "inherit",
-									textDecoration: "none",
-									"&:hover": {
-										color: "#ffcc00",
-										backgroundColor: "#444"
-									},
-									transition: "background-color 0.3s ease, color 0.3s ease"
-								}}
-							>
-								{t("Footer.footerdownload1")}
-							</Box>
-						</ListItem>
-						<ListItem>
-							<Box
-								component="a"
-								href="https://apps.apple.com/us/app/relaysms/id6630382970"
-								sx={{
-									color: "inherit",
-									textDecoration: "none",
-									"&:hover": {
-										color: "#ffcc00",
-										backgroundColor: "#444"
-									},
-									transition: "background-color 0.3s ease, color 0.3s ease"
-								}}
-							>
-								{t("Footer.footerdownload2")}
-							</Box>
-						</ListItem>
-						{/* <ListItem>
-							<Box
-								component="a"
-								href="https://github.com/smswithoutborders/relaysms-desktop/tags"
-								sx={{
-									color: "inherit",
-									textDecoration: "none",
-									"&:hover": {
-										color: "#ffcc00",
-										backgroundColor: "#444"
-									},
-									transition: "background-color 0.3s ease, color 0.3s ease"
-								}}
-							>
-								{t("Footer.footerdownload4")}
-							</Box>
-						</ListItem> */}
-					</List>
-				</Grid>
-			</Grid>
-			<Box
-				component="footer"
-				sx={{
-					color: "#f5f5f5",
-					p: 3,
-					px: { xs: 3, md: 10 },
-					position: "relative",
-					width: "100%",
-					bottom: 0,
-					direction: isRTL ? "rtl" : "ltr",
-					textAlign: "center"
-				}}
-			>
-				<Typography
-					variant="body1"
-					sx={{
-						color: "white",
-						mt: 2,
-						textAlign: "center",
-						width: "100%"
-					}}
-				>
-					© 2024 SMSWithoutBorders
-				</Typography>
-			</Box>
-		</Box>
+		<footer className="footer-container">
+			<Container>
+				<Row className="py-2">
+					<Col lg={4} md={6} sm={12} className="mb-3 text-center text-md-start">
+						<h5 className="footer-title">{t("Footer.Header")}</h5>
+						<a
+							href="https://smswithoutborders.com/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="footer-link footer-text"
+						>
+							{t("Footer.body")}
+						</a>
+						<LanguageSwitcher />
+					</Col>
+					<Col lg={2} md={3} sm={6} className="mb-3 text-center text-md-start">
+						<h5 className="footer-title">{t("Footer.Header1")}</h5>
+						<ul className="footer-links">
+							<li>
+								<a
+									href="https://github.com/smswithoutborders"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="footer-link"
+								>
+									<FaGithub /> {t("Footer.social1")}
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://x.com/RelaySMS"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="footer-link"
+								>
+									<FaTwitter /> {t("Footer.social2")}
+								</a>
+							</li>
+						</ul>
+					</Col>
+					<Col lg={2} md={3} sm={6} className="mb-3 text-center text-md-start">
+						<h5 className="footer-title">{t("Footer.Header2")}</h5>
+						<ul className="footer-links">
+							<li>
+								<Link as={Link} to="/Contact_Us" className="footer-link">
+									{t("Footer.help")}
+								</Link>
+							</li>
+							<li>
+								<a href="/privacy" className="footer-link">
+									{t("Footer.policy")}
+								</a>
+							</li>
+						</ul>
+					</Col>
+					<Col lg={4} md={12} sm={12} className="text-center">
+						<h5 className="footer-title">{t("Footer.Header3")}</h5>
+						<ul className="footer-links">
+							<li>
+								<a
+									href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="footer-link"
+								>
+									<FaAndroid /> {t("Footer.download1")}
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://apps.apple.com/us/app/relaysms/id6630382970"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="footer-link"
+								>
+									<FaApple /> {t("Footer.download2")}
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://github.com/smswithoutborders/relaysms-desktop/tags"
+									className="footer-link"
+								>
+									<FaLinux /> {t("Footer.download3")}
+								</a>
+							</li>
+						</ul>
+					</Col>
+				</Row>
+				<Row className="pt-2 border-top">
+					<Col className="text-center">
+						<p className="footer-copyright">
+							&copy; {new Date().getFullYear()} {t("Footer.copyright")}
+						</p>
+					</Col>
+				</Row>
+			</Container>
+		</footer>
 	);
 }
+
+export default Footer;

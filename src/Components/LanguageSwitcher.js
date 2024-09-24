@@ -1,42 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FormControl, MenuItem, IconButton, Menu, Box } from "@mui/material";
-import LanguageIcon from "@mui/icons-material/Language";
+import { Dropdown, DropdownButton } from "react-bootstrap";
+import { FaGlobe } from "react-icons/fa";
 
 const LanguageSwitcher = () => {
 	const { i18n } = useTranslation();
-	const [anchorEl, setAnchorEl] = useState(null);
+	const [selectedLang, setSelectedLang] = useState("en");
 
-	const handleLanguageMenuClick = (event) => {
-		setAnchorEl(event.currentTarget);
-	};
-
-	const handleLanguageMenuClose = () => {
-		setAnchorEl(null);
-	};
+	useEffect(() => {
+		i18n.changeLanguage(selectedLang);
+	}, []);
 
 	const handleLanguageChange = (lang) => {
 		i18n.changeLanguage(lang);
-		setAnchorEl(null);
+		setSelectedLang(lang);
 	};
 
 	return (
-		<FormControl variant="outlined" size="small">
-			<Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-				<IconButton
-					color="blue"
-					onClick={handleLanguageMenuClick}
-					sx={{ display: { xs: "", md: "block" } }}
-				>
-					<LanguageIcon />
-				</IconButton>
-				<Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleLanguageMenuClose}>
-					<MenuItem onClick={() => handleLanguageChange("en")}>🇺🇸 English</MenuItem>
-					<MenuItem onClick={() => handleLanguageChange("fr")}>🇫🇷 Français</MenuItem>
-					<MenuItem onClick={() => handleLanguageChange("fa")}>🇮🇷 فارسی</MenuItem>
-				</Menu>
-			</Box>
-		</FormControl>
+		<DropdownButton
+			drop="start"
+			variant="outline-secondary"
+			title={
+				<>
+					<FaGlobe className="me-2" />
+					{selectedLang === "en" ? "English" : selectedLang === "fr" ? "Français" : "فارسی"}
+				</>
+			}
+			id="language-dropdown"
+			className="language-switcher"
+		>
+			<Dropdown.Item onClick={() => handleLanguageChange("en")}>🇺🇸 English</Dropdown.Item>
+			<Dropdown.Item onClick={() => handleLanguageChange("fr")}>🇫🇷 Français</Dropdown.Item>
+			<Dropdown.Item onClick={() => handleLanguageChange("fa")}>🇮🇷 فارسی</Dropdown.Item>
+		</DropdownButton>
 	);
 };
 

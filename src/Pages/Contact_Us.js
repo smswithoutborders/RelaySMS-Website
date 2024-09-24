@@ -2,17 +2,18 @@ import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { FiMail, FiMessageSquare } from "react-icons/fi";
 import { FaTwitter as FaXTwitter, FaGithub } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const ContactItem = ({ icon: Icon, title, link, buttonText, variant }) => (
-	<Card className="text-center mb-4 shadow-sm contact-card">
+	<Card className="text-center mb-4 shadow-sm">
 		<Card.Body className="d-flex flex-column align-items-center">
-			<Button variant={variant} className="icon-btn mb-3">
+			<Button variant={variant} className="icon-btn mb-3" style={{ width: "60px", height: "60px" }}>
 				<Icon className="h3 m-0" />
 			</Button>
 			<Card.Title>{title}</Card.Title>
 			{link ? (
-				<a href={link.href} target="_blank" rel="noreferrer" className="stretched-link">
+				<a href={link.href} target="_blank" rel="noreferrer" className="btn btn-link">
 					{buttonText}
 				</a>
 			) : (
@@ -22,74 +23,52 @@ const ContactItem = ({ icon: Icon, title, link, buttonText, variant }) => (
 	</Card>
 );
 
-const ContactHeader = () => {
+const Contact_Us = () => {
+	const { t } = useTranslation();
+
 	const contactItems = [
 		{
 			icon: FiMail,
-			title: "Email",
+			title: t("ContactUs.Items.Email.Title"),
 			link: {
-				href: "mailto:developers@smswithoutborders.com",
-				text: "developers@smswithoutborders.com"
+				href: t("ContactUs.Items.Email.Link")
 			},
-			buttonText: "Send Email",
+			buttonText: t("ContactUs.Items.Email.ButtonText"),
 			variant: "primary"
 		},
 		{
 			icon: FiMessageSquare,
-			title: "IRC",
-			buttonText: "freenode/#afkanerd",
+			title: t("ContactUs.Items.IRC.Title"),
+			buttonText: t("ContactUs.Items.IRC.ButtonText"),
 			variant: "success"
 		},
 		{
 			icon: FaXTwitter,
-			title: "Twitter",
-			link: { href: "https://x.com/RelaySMS", text: "https://x.com/RelaySMS" },
-			buttonText: "Follow on Twitter",
+			title: t("ContactUs.Items.Twitter.Title"),
+			link: { href: t("ContactUs.Items.Twitter.Link") },
+			buttonText: t("ContactUs.Items.Twitter.ButtonText"),
 			variant: "dark"
 		},
 		{
 			icon: FaGithub,
-			title: "GitHub",
-			link: {
-				href: "https://github.com/smswithoutborders",
-				text: "https://github.com/smswithoutborders"
-			},
-			buttonText: "View on GitHub",
+			title: t("ContactUs.Items.GitHub.Title"),
+			link: { href: t("ContactUs.Items.GitHub.Link") },
+			buttonText: t("ContactUs.Items.GitHub.ButtonText"),
 			variant: "secondary"
 		}
 	];
 
 	return (
-		<div className="section-contact" style={{ padding: "120px 0", backgroundColor: "#fff" }}>
+		<div className="section-contact" style={{ padding: "120px 0" }}>
 			<Container>
-				<Row className="justify-content-center">
+				<Row className="justify-content-center mb-4">
 					<Col xs={12} lg={10} xl={8}>
-						<div className="header-section text-center" style={{ marginBottom: "30px" }}>
+						<div className="text-center">
 							<h2
 								className="title"
-								style={{
-									position: "relative",
-									marginBottom: "17px",
-									textTransform: "uppercase",
-									fontWeight: "700",
-									fontSize: "55px"
-								}}
+								style={{ fontWeight: 700, fontSize: "55px", textTransform: "uppercase" }}
 							>
-								Get In Touch
-								<span
-									className="big-title"
-									style={{
-										position: "absolute",
-										bottom: "100%",
-										left: "50%",
-										transform: "translate(-50%,70%)",
-										fontSize: "120px",
-										fontWeight: "700",
-										opacity: "0.15"
-									}}
-								>
-									CONTACT
-								</span>
+								{t("ContactUs.Title")}
 							</h2>
 						</div>
 					</Col>
@@ -106,4 +85,4 @@ const ContactHeader = () => {
 	);
 };
 
-export default ContactHeader;
+export default Contact_Us;
