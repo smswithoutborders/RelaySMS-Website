@@ -1,0 +1,105 @@
+{
+	"Nav": {
+		"Home": "Inicio",
+		"Help": "Ayuda",
+		"github": "GitHub",
+		"Blog": "Blog",
+		"Contact": "Contactanos"
+	},
+	"Landing": {
+		"span": "¿Sin Datos? No te preocupes.",
+		"h1": "Mantente Conectado con RelaySMS",
+		"h2": "RelaySMS proporciona mensajería cifrada segura, con protocolos como Signal Double Ratchet para Perfect Forward Secrecy (PFS)",
+		"Android": "PlayStore",
+		"Apple": "Appstore",
+		"Github": "Github"
+	},
+	"Howitworks": {
+		"Header": "Cómo funciona",
+		"titleA": "Guarda tus plataformas online",
+		"A": "Puede almacenar tokens en sus plataformas en línea utilizando protocolos OAuth2 compatibles con la mayoría de las plataformas en línea. Esto garantiza que solo el acceso que usted proporcione estará disponible para su uso posterior.",
+		"Areadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms' target='_blank'>Leer Más</a>",
+		"titleB": "Redacta y Envia",
+		"B": "Redacte mensajes sin una conexión a internet para las plataformas que haya guardado desde su aplicación RelaySMS. Los mensajes pueden ser texto de cualquier tipo que se codificará y se transferirá a través de su aplicación de mensajería SMS predeterminada. Todos los mensajes enviados desde su aplicación RelaySMS están encriptados.",
+		"Breadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button' target='_blank'>Leer Más</a>",
+		"titleC": "Recive y Publica",
+		"C": "RelaySMS admite clientes SMS Gateway descentralizados que pueden recibir y reenviar mensajes SMS a servidores Vault en línea. Los mensajes permanecen cifrados durante todo el recorrido y solo los servidores Vault pueden descifrarlos para publicarlos en sus plataformas en línea.",
+		"Creadmore": "<a href='https://docs.smswithoutborders.com/docs/contributing/introduction' target='_blank'>Leer Más</a>",
+		"ReadMore": "Leer Más"
+	},
+	"Blog": {
+		"Header": "Nuestro Blog",
+		"Resilience": "Resilience Of Gateway Clients In Smswithoutborders",
+		"ResilienceD": "Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online platforms. The Gateway Client listens for messages and routes them to the Gateway server, which publishes ...",
+		"ReliabilityD": "Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online platforms. The Gateway Client listens for messages and routes them to the Gateway server, which publishes ...",
+		"Reliability": "Reliability Of Gateway Clients In Smswithoutborders",
+		"IDHeader": "RelaySMS Amplía el Control del Usuario con el Registro de ID de Dispositivo",
+		"IDD": "RelaySMS (aplicación swob) presenta una nueva y poderosa función: Registro de ID de dispositivo con RelaySMS Vault. Este enfoque innovador le brinda más control sobre su experiencia de mensajería sin conexión.",
+		"Rebrand": "Cambio de Marca",
+		"RebrandD": "SMSWithoutBorders se está convirtiendo en el proyecto paraguas que engloba a RelaySMS y otras herramientas de mensajería. La funcionalidad básica sigue siendo la misma, pero los usuarios pueden esperar un nuevo nombre, funciones de seguridad mejoradas y un enfoque en el crecimiento futuro en el marco del proyecto SMSWithoutBorders.",
+		"ReadMore": "Leer Más",
+		"ReadOtherArticles": "Leer Otros Artículos",
+		"articles1": "Resiliencia de los clientes de Gateway en SMSWithoutBorders",
+		"articles2": "Fiabilidad de los clientes de Gateway en Smswithoutborders",
+		"articles3": "Nueva Alpha Release: Vault 0.1.0",
+		"tag": "Articles",
+		"tags": "Release",
+		"readTime": "2 mins read"
+	},
+	"FAQ": {
+		"Header": "Preguntas Frecuentes",
+		"Q1": "¿RelaySMS esta disponible en mi dispositivo?",
+		"A1": "RelaySMS está actualmente disponible para <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank'>Android</a>. Estamos trabajando para ampliar la compatibilidad a otras plataformas.",
+		"Q2": "¿Cuánto cuesta RelaySMS?",
+		"A2": "RelaySMS es gratis.",
+		"Q3": "¿Cómo puedo enviar mensajes offline?",
+		"A3": "Elige la plataforma a la que quieres enviar el mensaje y redacta el mensaje dentro de la aplicación. O haz click en el botón <a href='https://smswithoutborders.github.io/docs/tutorials/getting-started/' class='help-link'>Ayuda</a>  para encontrar tutoriales completos sobre cómo enviar mensajes a través de la aplicación.",
+		"Q4": "¿Hay alguna limitación al enviar mensajes offline?",
+		"A4": "No hay límites en el tamaño y la cantidad de mensajes que puedes enviar con la aplicación.",
+		"Q5": "Tengo problemas para iniciar sesión en mi cuenta. ¿Qué debo hacer?",
+		"A5": "Haga click en el botón de <a href='https://smswithoutborders.github.io/docs/tutorials/getting-started/' class='help-link'>ayuda</a> para encontrar tutoriales completos sobre cómo iniciar sesión en su cuenta y, si no puede encontrar una solución, puede comunicarse con nuestro equipo de soporte en <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a>.",
+		"Q6": "I'm experiencing technical difficulties with the app. How can I get help?",
+		"A6": "You can reach out to our support team at <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a> or on social media at <a href='https://x.com/RelaySMS' target='_blank'>https://x.com/RelaySMS</a> or by visiting our website.",
+		"Q7": "How do I update the RelaySMS app?",
+		"A7": "The app will usually prompt you to update when a new version is available. You can also manually check for updates through your device's app store."
+	},
+	"Footer": {
+		"Header": "Proyectos",
+		"body": "SMSWithoutBorders",
+		"Header1": "Redes Sociales",
+		"social1": "Github",
+		"social2": " X",
+		"Header2": "Ayuda",
+		"help": "Contáctanos",
+		"Header3": "Descargas",
+		"download1": "Andriod",
+		"download2": "iOS",
+		"download3": "Linux",
+		"policy": "Política de Privacidad",
+		"copyright": "AFKANERD"
+	},
+	"ContactUs": {
+		"Title": "Contactanos",
+		"Items": {
+			"Email": {
+				"Title": "Email",
+				"ButtonText": "Enviar Email",
+				"Link": "mailto:developers@smswithoutborders.com"
+			},
+			"IRC": {
+				"Title": "IRC",
+				"ButtonText": "freenode/#afkanerd"
+			},
+			"Twitter": {
+				"Title": "Twitter",
+				"ButtonText": "Seguir en Twitter",
+				"Link": "https://x.com/RelaySMS"
+			},
+			"GitHub": {
+				"Title": "GitHub",
+				"ButtonText": "Ver en GitHub",
+				"Link": "https://github.com/smswithoutborders"
+			}
+		}
+	}
+}
