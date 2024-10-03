@@ -23,13 +23,20 @@ const LanguageSwitcher = () => {
 			title={
 				<>
 					<FaGlobe className="me-2" />
-					{selectedLang === "en" ? "English" : selectedLang === "fr" ? "Français" : "فارسی"}
+					{selectedLang === "en"
+						? "English"
+						: selectedLang === "es"
+							? "Español"
+							: selectedLang === "fr"
+								? "Français"
+								: "فارسی"}
 				</>
 			}
 			id="language-dropdown"
 			className="language-switcher"
 		>
 			<Dropdown.Item onClick={() => handleLanguageChange("en")}>🇺🇸 English</Dropdown.Item>
+			<Dropdown.Item onClick={() => handleLanguageChange("es")}>🇪🇸 Español</Dropdown.Item>
 			<Dropdown.Item onClick={() => handleLanguageChange("fr")}>🇫🇷 Français</Dropdown.Item>
 			<Dropdown.Item onClick={() => handleLanguageChange("fa")}>🇮🇷 فارسی</Dropdown.Item>
 		</DropdownButton>
