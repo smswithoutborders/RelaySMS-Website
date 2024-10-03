@@ -11,7 +11,7 @@ i18n
 		fallbackLng: "en",
 		debug: process.env.NODE_ENV !== "production" ? true : false,
 		load: "languageOnly",
-		supportedLngs: ["en", "fr", "fa"],
+		supportedLngs: ["en", "es", "fr", "fa"],
 		interpolation: {
 			escapeValue: false
 		},
