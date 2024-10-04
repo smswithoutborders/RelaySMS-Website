@@ -58,7 +58,7 @@ function Footer() {
 								</Link>
 							</li>
 							<li>
-								<a href="/privacy" className="footer-link">
+								<a href="https://smswithoutborders.com/privacy-policy" className="footer-link">
 									{t("Footer.policy")}
 								</a>
 							</li>
@@ -89,7 +89,7 @@ function Footer() {
 							</li>
 							<li>
 								<a
-									href="https://github.com/smswithoutborders/relaysms-desktop/tags"
+									href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android/releases"
 									className="footer-link"
 								>
 									<FaLinux /> {t("Footer.download3")}

@@ -54,7 +54,7 @@ const HeroSection = () => {
 								</Button>
 
 								<Button
-									href="https://github.com/"
+									href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android/releases"
 									target="_blank"
 									className="hero-btn github-btn mx-auto mx-md-0"
 									data-aos="fade-up"
