@@ -58,7 +58,7 @@ function Footer() {
 								</Link>
 							</li>
 							<li>
-								<a href="/privacy" className="footer-link">
+								<a href="https://smswithoutborders.com/privacy-policy" className="footer-link">
 									{t("Footer.policy")}
 								</a>
 							</li>
