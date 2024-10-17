@@ -53,6 +53,14 @@ function Footer() {
 						<h5 className="footer-title">{t("Footer.Header2")}</h5>
 						<ul className="footer-links">
 							<li>
+								<a
+									href="https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ"
+									className="footer-link"
+								>
+									{t("Footer.Support")}
+								</a>
+							</li>
+							<li>
 								<Link as={Link} to="/Contact_Us" className="footer-link">
 									{t("Footer.help")}
 								</Link>

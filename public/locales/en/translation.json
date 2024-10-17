@@ -4,7 +4,8 @@
 		"Help": "Help",
 		"github": "GitHub",
 		"Blog": "Blog",
-		"Contact": "Contact Us"
+		"Contact": "Contact Us",
+		"Support": "Support"
 	},
 	"Landing": {
 		"span": "No Data? No Worries.",
@@ -71,6 +72,7 @@
 		"social2": " X",
 		"Header2": "Help",
 		"help": "Contact us",
+		"Support": "Support",
 		"Header3": "Download",
 		"download1": "Andriod",
 		"download2": "iOS",
