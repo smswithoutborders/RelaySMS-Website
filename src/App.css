@@ -594,7 +594,11 @@ h2 {
 	}
 }
 /* ========================= downlaod section ======================= */
-
+.Download-section {
+	padding-bottom: 20px;
+	padding-top: 40px;
+	margin: 20px;
+}
 .download-cards {
 	border-radius: 50% !important;
 	padding: 20px;

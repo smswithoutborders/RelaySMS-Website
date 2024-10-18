@@ -46,7 +46,7 @@ const Download = () => {
 		<Container className="py-5">
 			<Row className="mb-5">
 				<Col>
-					<h2 className="text-center">{t("download.android")}</h2>
+					<h2 className=" Download-section text-center">{t("download.android")}</h2>
 				</Col>
 			</Row>
 			<Row className="justify-content-center">
