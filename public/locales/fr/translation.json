@@ -46,22 +46,36 @@
 		"tags": "Sortie",
 		"readTime": "2 minutes de lecture"
 	},
+
 	"FAQ": {
 		"Header": "Questions Fréquemment Posées",
-		"Q1": "RelaySMS est-il disponible sur mon appareil ?",
-		"A1": "RelaySMS est actuellement disponible pour <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank'>Android</a>. Nous travaillons à étendre la compatibilité à d'autres plateformes.",
-		"Q2": "Combien coûte RelaySMS ?",
-		"A2": "RelaySMS est gratuit.",
-		"Q3": "Comment envoyer un message hors ligne ?",
-		"A3": "Choisissez la plateforme à laquelle vous souhaitez envoyer le message et composez-le dans l'application. Ou cliquez sur le bouton <a href='https://smswithoutborders.github.io/docs/tutorials/getting-started/' class='help-link'>Aide</a> pour trouver des tutoriels complets sur l'envoi de messages via l'application.",
-		"Q4": "Y a-t-il des limitations sur les messages hors ligne ?",
-		"A4": "Il n'y a pas de limite de taille ni de nombre de messages que vous pouvez envoyer avec l'application.",
-		"Q5": "J'ai des difficultés à me connecter à mon compte. Que dois-je faire ?",
-		"A5": "Cliquez sur le bouton <a href='https://smswithoutborders.github.io/docs/tutorials/getting-started/' class='help-link'>aide</a> pour trouver des tutoriels complets sur la connexion à votre compte, et si vous ne trouvez pas de solution, contactez notre équipe de support à <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a>.",
+
+		"Q1": "Quand utiliser RelaySMS ?",
+		"A1": "Pendant les périodes d'instabilité (par exemple, les élections, les manifestations, etc.) et d'autres périodes sujettes à des coupures d'internet.",
+		"A12": "Lors de déplacements dans des zones avec une connectivité limitée. L'utilisateur peut se retrouver sans connexion internet et sans alternatives similaires, et avoir besoin d'envoyer des messages urgents en ligne.",
+
+		"Q2": "Comment fonctionne RelaySMS ?",
+		"A2": "RelaySMS fonctionne en utilisant des messages SMS envoyés depuis votre application vers des clients de passerelle SMS gérés par des volontaires à travers le monde qui peuvent recevoir ces messages SMS et les transmettre à internet.",
+
+		"Q3": "Ai-je besoin d'une connexion internet pour utiliser RelaySMS ?",
+		"A3": "Une fois que l'application est configurée, vous n'avez plus besoin d'accès à une connexion internet ; Les messages sont transmis par SMS depuis votre appareil.",
+
+		"Q4": "RelaySMS est-il disponible sur mon appareil ?",
+		"A4": "RelaySMS est actuellement disponible sur Android et iOS ; Linux arrive bientôt… Combien coûte RelaySMS ?",
+		"A41": "RelaySMS est gratuit mais il n'y a pas de limite sur la taille et le nombre de messages que vous pouvez envoyer avec l'application. Les tarifs SMS standards (déterminés par le fournisseur de services de l'utilisateur) s'appliquent.",
+		"A42": "Le SMS est facturé par segment du message - un segment unique de SMS contient environ 140 caractères ASCII standard. Cela signifie qu'un utilisateur de SMS peut envoyer un message unique qui contient plusieurs segments et sera facturé par segment envoyé. Les messages SMS de RelaySMS sont envoyés comme un message unique, mais la facturation dépend du nombre de segments dans le message.",
+		"A43": "Le nombre de segments pour les utilisateurs de RelaySMS est déterminé par la taille du message envoyé ; plus il y a de segments (plus le message est long), plus il coûtera cher d'envoyer le message.",
+		"A44": "Y a-t-il des limitations sur les messages hors ligne ?",
+		"A45": "Le SMS n'est pas aussi fiable qu'internet, donc la fiabilité est une limitation. Certains messages SMS n'atteignent pas les clients de passerelle et ne sont donc pas publiés en ligne.",
+
+		"Q5": "Je rencontre des difficultés techniques avec l'application. Comment obtenir de l'aide ?",
+		"A5": "RelaySMS utilise des pratiques sécurisées pour demander et stocker les accès des utilisateurs pour une utilisation ultérieure. Les demandes sont effectuées via des protocoles sécurisés tels que OAuth2.0. Les accès et les détails des utilisateurs associés sont cryptés et stockés dans le Vault, tandis que l'étendue de l'accès OAuth2.0 permet aux utilisateurs de voir les actions effectuées dans les comptes de la plateforme en ligne.",
+		"A51": "Les messages envoyés de l'application RelaySMS au Vault sont cryptés avec un secret partagé parfait (utilisant le protocole Signal Double Ratchet) et ne peuvent être décryptés qu'au niveau du Vault. Cela garantit la sécurité lors de la transmission du message.",
+
 		"Q6": "Je rencontre des difficultés techniques avec l'application. Comment obtenir de l'aide ?",
-		"A6": "Vous pouvez contacter notre équipe de support à <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a> ou sur les réseaux sociaux à <a href='https://x.com/RelaySMS' target='_blank'>https://x.com/RelaySMS</a> ou en visitant notre site web.",
-		"Q7": "Comment mettre à jour l'application RelaySMS ?",
-		"A7": "L'application vous invite généralement à la mettre à jour lorsqu'une nouvelle version est disponible. Vous pouvez également vérifier manuellement les mises à jour via l'app store de votre appareil."
+		"A6": "- Consultez un guide de dépannage détaillé.",
+		"A61": "- Contactez notre support à <a href='mailto:developers@smswithoutborders.com</a>",
+		"A62": "- Contactez-nous sur les réseaux sociaux @RelaySMS sur X (Twitter)."
 	},
 	"Footer": {
 		"Header": "Projets",
