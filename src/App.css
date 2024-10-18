@@ -8,6 +8,7 @@ h2 {
 	padding: 10px 30px;
 	text-align: center;
 }
+
 /* =========================== Hero section==================================== */
 .hero-container {
 	overflow: hidden;
@@ -17,15 +18,15 @@ h2 {
 }
 
 .hero-main {
-	margin-top: 4rem;
+	margin-top: 8rem;
 	margin-bottom: 5.5rem;
 }
 
 .hero-title {
 	font-weight: bold;
-	color: #333;
-	font-size: 2.5rem;
-	margin-bottom: 1.5rem;
+	color: #041331;
+	font-size: 2.2rem;
+	margin-bottom: 2rem;
 	margin-top: 1.5rem;
 }
 
@@ -36,22 +37,18 @@ h2 {
 	margin-top: 1.5rem;
 }
 
-.hero-highlight {
-	color: #041c94;
-}
-
 .hero-description {
 	color: #6c757d;
-	padding: 0 20px;
 	font-size: 1.1rem;
 	text-align: justify;
 	margin-top: 1.5rem;
 	margin-bottom: 2rem;
+	margin-right: 2rem;
 	gap: 2;
 }
 
 .hero-image {
-	max-height: 500px;
+	max-height: 550px;
 	object-fit: cover;
 	padding: 20px;
 	padding-left: 90px;
@@ -59,9 +56,6 @@ h2 {
 }
 
 @media (max-width: 767px) {
-	.hero-buttons {
-		flex-direction: column;
-	}
 	.hero-image {
 		max-height: 350px;
 		object-fit: cover;
@@ -71,13 +65,6 @@ h2 {
 		margin-top: 4rem;
 		height: 50vh;
 	}
-}
-
-.hero-buttons {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	gap: 0.5rem;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -92,13 +79,7 @@ h2 {
 	.hero-description {
 		font-size: 1.2rem;
 	}
-	.hero-buttons {
-		flex-direction: row;
-		justify-content: center;
-		gap: 1rem;
-		width: 100%;
-		padding-left: 20px;
-	}
+
 	.hero-image {
 		max-height: 450px;
 		display: block;
@@ -108,69 +89,33 @@ h2 {
 	}
 }
 
-@media (min-width: 992px) {
-	.hero-buttons {
-		gap: 1.5rem;
-	}
-}
-
-.hero-btn {
-	width: 160px;
-	height: 50px;
-	display: flex;
+.Download-btn {
 	align-items: center;
 	justify-content: center;
-	border-radius: 8px;
-	font-weight: bold;
-}
-
-/* Button styles */
-.button-title .github {
-	color: #020721;
-	font-weight: 400;
-}
-
-.android-btn {
-	background-color: #02167a !important;
-	color: #f7f8fd;
-	font-weight: 600 !important;
-}
-
-.apple-btn {
-	background-color: #fff !important;
-	color: #2d333f !important;
-	border: 1px solid #041c94;
-	font-weight: 600 !important;
-}
-
-.github-btn {
-	background-color: #041f2d !important;
-	color: #fff;
-	font-weight: 600 !important;
-	border: 1px solid #edeef6;
-}
-
-.hero-icon {
-	max-width: 30px;
-	margin-right: 8px;
-}
-
-/* =========================== Hover Effects ========================== */
-.android-btn:hover {
-	background-color: #e9edf5 !important;
-	color: #021141 !important;
-}
-
-.apple-btn:hover {
-	background-color: #041f2d !important;
+	width: 250px;
+	height: 50px;
+	background-color: #35658d !important;
 	color: #f7f8fd !important;
-	border: 1px solid #041c94;
+	font-weight: 600;
+	border-radius: 15px !important;
 }
 
-.github-btn:hover {
+.button-title {
+	font-size: 1rem;
+	font-weight: 300;
+	letter-spacing: 0.05rem;
 	color: #f7f8fd;
-	border: 1px solid #d0d7e0;
-	background-color: #02167a !important;
+	transition: color 0.3s ease;
+	margin-right: 0.5rem;
+}
+
+.hero-btn:hover .button-title {
+	color: #0b5a9b;
+}
+
+.Download-btn:hover {
+	background-color: #e9edf5 !important;
+	color: #0b5a9b !important;
 }
 
 /* ================================== blog ================================= */
@@ -196,26 +141,18 @@ h2 {
 .faq-item {
 	border: 1px solid #ccc;
 	margin-bottom: 1rem;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-	transition: box-shadow 0.3s;
-}
-
-.faq-item:hover {
-	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .faq-item .accordion-header {
 	background-color: #ffffff;
 	border: none;
+	font-weight: 600;
 }
 
 .faq-item .accordion-body {
 	background-color: #f9f9f9;
-}
-
-.faq-item .accordion-button {
-	color: #333;
-	font-weight: 600;
+	color: #555;
+	line-height: 1.6;
 }
 
 .faq-header {
@@ -243,12 +180,10 @@ h2 {
 
 	.faq-item .accordion-header {
 		font-size: 1.15rem;
-		border-radius: 40%;
 	}
 
 	.faq-item .accordion-body {
 		font-size: 0.95rem;
-		border-radius: 40%;
 	}
 }
 
@@ -268,12 +203,10 @@ h2 {
 
 	.faq-item .accordion-header {
 		font-size: 1rem;
-		border-radius: 40%;
 	}
 
 	.faq-item .accordion-body {
 		font-size: 0.85rem;
-		border-radius: 40%;
 	}
 }
 
@@ -313,4 +246,344 @@ h2 {
 	color: #bbb;
 	margin-top: 0.5rem;
 	font-size: 0.75rem;
+}
+
+.footer-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 1rem;
+}
+
+.footer-input {
+	padding: 0.5rem;
+	margin-top: 0.5rem;
+	border-radius: 5px;
+	border: none;
+	width: 80%;
+}
+
+.footer-button {
+	padding: 0.5rem 1rem;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.footer-button:hover {
+	background-color: #0056b3;
+}
+
+.footer-icon-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	margin-left: 0.5rem;
+}
+
+.send-icon {
+	color: #007bff;
+	font-size: 1.2rem;
+	transition: color 0.3s ease;
+}
+* {
+	font-family: Inter, sans-serif;
+}
+/* ======================= general header styling  ========================== */
+h2 {
+	position: relative;
+	margin: 0 auto 20px;
+	padding: 10px 30px;
+	text-align: center;
+}
+
+/* =========================== Hero section==================================== */
+.hero-container {
+	overflow: hidden;
+	position: relative;
+	margin-top: 56px;
+	padding: 20px;
+}
+
+.hero-main {
+	margin-top: 8rem;
+	margin-bottom: 5.5rem;
+}
+
+.hero-title {
+	font-weight: bold;
+	color: #041331;
+	font-size: 2.2rem;
+	margin-bottom: 2rem;
+	margin-top: 1.5rem;
+}
+
+.hero {
+	font-weight: bold;
+	color: #010b3d;
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+.hero-description {
+	color: #6c757d;
+	font-size: 1.1rem;
+	text-align: justify;
+	margin-top: 1.5rem;
+	margin-bottom: 2rem;
+	margin-right: 2rem;
+	gap: 2;
+}
+
+.hero-image {
+	max-height: 550px;
+	object-fit: cover;
+	padding: 20px;
+	padding-left: 90px;
+	align-items: center;
+}
+
+@media (max-width: 767px) {
+	.hero-image {
+		max-height: 350px;
+		object-fit: cover;
+		padding: 10px;
+	}
+	.hero-main {
+		margin-top: 4rem;
+		height: 50vh;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.hero-main {
+		margin-top: 4rem;
+		height: 50vh;
+	}
+	.hero-title {
+		font-size: 2.2rem;
+		gap: 1;
+	}
+	.hero-description {
+		font-size: 1.2rem;
+	}
+
+	.hero-image {
+		max-height: 450px;
+		display: block;
+		margin: 0 auto;
+		object-fit: cover;
+		padding: 10px;
+	}
+}
+
+.Download-btn {
+	align-items: center;
+	justify-content: center;
+	width: 250px;
+	height: 50px;
+	background-color: #35658d !important;
+	color: #f7f8fd !important;
+	font-weight: 600;
+	border-radius: 15px !important;
+}
+
+.button-title {
+	font-size: 1rem;
+	font-weight: 300;
+	letter-spacing: 0.05rem;
+	color: #f7f8fd;
+	transition: color 0.3s ease;
+	margin-right: 0.5rem;
+}
+
+.hero-btn:hover .button-title {
+	color: #0b5a9b;
+}
+
+.Download-btn:hover {
+	background-color: #e9edf5 !important;
+	color: #0b5a9b !important;
+}
+
+/* ================================== blog ================================= */
+.blog-section {
+	padding: 2rem 0;
+}
+
+.Readmore {
+	color: "#041c94";
+	text-decoration: none;
+	font-weight: "600";
+	display: "inline-flex";
+	align-items: "center";
+	transition: "background-color 0.3s, color 0.3s";
+	padding: "0.5rem 0";
+}
+
+/* ===================================== FAQ Section ================================== */
+.faq-section {
+	padding: 3rem 1rem;
+}
+
+.faq-item {
+	border: 1px solid #ccc;
+	margin-bottom: 1rem;
+}
+
+.faq-item .accordion-header {
+	background-color: #ffffff;
+	border: none;
+	font-weight: 600;
+}
+
+.faq-item .accordion-body {
+	background-color: #f9f9f9;
+	color: #555;
+	line-height: 1.6;
+}
+
+.faq-header {
+	font-size: 2rem;
+	color: #2c2f36;
+	margin-bottom: 1rem;
+	padding-top: 10px;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+	.faq-section {
+		padding: 2rem 1rem;
+	}
+
+	.faq-header {
+		font-size: 1.75rem;
+	}
+
+	.faq-item {
+		margin-bottom: 1.5rem;
+	}
+
+	.faq-item .accordion-header {
+		font-size: 1.15rem;
+	}
+
+	.faq-item .accordion-body {
+		font-size: 0.95rem;
+	}
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+	.faq-section {
+		padding: 1.5rem 0.5rem;
+	}
+
+	.faq-header {
+		font-size: 1.5rem;
+	}
+
+	.faq-item {
+		margin-bottom: 1rem;
+	}
+
+	.faq-item .accordion-header {
+		font-size: 1rem;
+	}
+
+	.faq-item .accordion-body {
+		font-size: 0.85rem;
+	}
+}
+
+/* ===================================== footer================================== */
+.footer-container {
+	background-color: #020721;
+	color: #fff;
+	padding: 1rem 0;
+	font-size: 0.85rem;
+}
+
+.footer-title {
+	font-size: 1.1rem;
+	font-weight: bold;
+	color: #fff;
+	margin-bottom: 0.5rem;
+}
+
+.footer-links {
+	list-style-type: none;
+	padding: 0;
+}
+
+.footer-link {
+	color: #bbb;
+	text-decoration: none;
+	margin-bottom: 0.3rem;
+	display: block;
+	padding: 0.3rem 0;
+}
+
+.footer-download-links a {
+	display: block;
+	color: #bbb;
+	text-decoration: none;
+	padding: 0.3rem 0;
+}
+
+.footer-copyright {
+	color: #bbb;
+	margin-top: 0.5rem;
+	font-size: 0.75rem;
+}
+
+.footer-input {
+	padding: 0.5rem;
+	border-radius: 5px;
+	border: none;
+	width: 80%;
+}
+
+.footer-icon-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	margin-left: 0.5rem;
+}
+
+.send-icon {
+	color: #007bff;
+	font-size: 1.2rem;
+	transition: color 0.3s ease;
+}
+
+.footer-icon-button:hover .send-icon {
+	color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.footer-title {
+		font-size: 1rem;
+	}
+
+	.footer-input {
+		width: 100%;
+	}
+}
+
+@media (max-width: 576px) {
+	.footer-title {
+		font-size: 0.9rem;
+	}
+
+	.footer-input {
+		width: 100%;
+	}
 }

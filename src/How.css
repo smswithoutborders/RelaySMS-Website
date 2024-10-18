@@ -20,7 +20,7 @@ p {
 .card {
 	position: relative;
 	width: 320px;
-	padding: 35px;
+	padding: 20px;
 	box-shadow: 0.5px 0.5px 12px 0px #80808042;
 	box-sizing: border-box;
 	border-radius: 5px;
@@ -32,6 +32,9 @@ p {
 
 .card .card-body .card-title {
 	font-size: 17px;
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: #293644;
 }
 
 .card .card-body .card-text {
@@ -48,9 +51,15 @@ p {
 	flex-direction: row-reverse;
 }
 
-.card .card-footer .card-img img {
-	width: 30px;
-	height: 30px;
+.Readmore {
+	text-decoration: none;
+	color: #343a40 !important;
+	font-size: 0.7rem;
+	font-weight: bold;
+	display: inline-flex;
+	align-items: center;
+	margin-top: 10px;
+	padding-top: 20px;
 }
 
 .card-number {
@@ -123,5 +132,121 @@ p {
 
 	.card-number {
 		margin: 0 auto;
+	}
+}
+
+.blog-section {
+	padding: 1.5rem;
+}
+.blog-card {
+	border: none;
+	border-radius: 0.5rem;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	transition:
+		transform 0.2s,
+		box-shadow 0.2s;
+	background-color: #fff;
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.blog-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.blog-header {
+	font-size: 2rem;
+	font-weight: bold;
+	margin-bottom: 1.5rem;
+	color: #343a40;
+	text-align: center;
+}
+
+.card-title {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: #007bff;
+}
+
+.card-text {
+	font-size: 1rem;
+	color: #495057;
+	margin-top: 0.8rem;
+}
+
+.read-more-link {
+	text-decoration: none;
+	color: #007bff;
+	font-size: 0.85rem;
+	font-weight: bold;
+	display: inline-flex;
+	align-items: center;
+}
+
+.read-more-link svg {
+	margin-left: 5px;
+}
+
+.text-muted {
+	font-size: 12px;
+	color: #6c757d;
+}
+
+.article-link {
+	color: #007bff;
+	text-decoration: none;
+	font-size: 1rem;
+}
+
+.article-link:hover {
+	text-decoration: none;
+	color: #15d3f9;
+}
+
+.list-unstyled {
+	color: gray !important;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+	.blog-header {
+		font-size: 1.75rem;
+	}
+
+	.card-title {
+		font-size: 1.1rem;
+	}
+
+	.card-text {
+		font-size: 0.9rem;
+	}
+
+	.read-more-link {
+		font-size: 0.85rem;
+	}
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+	.blog-section {
+		padding: 1.5rem;
+	}
+
+	.blog-header {
+		font-size: 1.5rem;
+	}
+
+	.card-title {
+		font-size: 1.1rem;
+	}
+
+	.card-text {
+		font-size: 0.9rem;
+	}
+
+	.read-more-link {
+		font-size: 0.85rem;
 	}
 }

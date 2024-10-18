@@ -8,12 +8,10 @@ function FAQ() {
 
 	return (
 		<Container fluid className="faq-section py-5" dir={isFarsi ? "rtl" : "ltr"}>
-			<h2 className="faq-header" dir={isFarsi ? "rtl" : "ltr"}>
-				{t("FAQ.Header")}{" "}
-			</h2>
+			<h2 className="faq-header">{t("FAQ.Header")}</h2>
 			<Row className="justify-content-center">
 				<Col md={8} lg={6}>
-					<Accordion defaultActiveKey="0" flush className="accordion">
+					<Accordion defaultActiveKey="0" flush>
 						{faqData.map((faq, idx) => (
 							<Accordion.Item eventKey={idx.toString()} key={idx} className="faq-item">
 								<Accordion.Header style={faqStyles.question}>{t(faq.question)}</Accordion.Header>
@@ -31,26 +29,11 @@ function FAQ() {
 }
 
 const faqData = [
-	{
-		question: "FAQ.Q1",
-		answer: "FAQ.A1"
-	},
-	{
-		question: "FAQ.Q2",
-		answer: "FAQ.A2"
-	},
-	{
-		question: "FAQ.Q3",
-		answer: "FAQ.A3"
-	},
-	{
-		question: "FAQ.Q4",
-		answer: "FAQ.A4"
-	},
-	{
-		question: "FAQ.Q5",
-		answer: "FAQ.A5"
-	}
+	{ question: "FAQ.Q1", answer: "FAQ.A1" },
+	{ question: "FAQ.Q2", answer: "FAQ.A2" },
+	{ question: "FAQ.Q3", answer: "FAQ.A3" },
+	{ question: "FAQ.Q4", answer: "FAQ.A4" },
+	{ question: "FAQ.Q5", answer: "FAQ.A5" }
 ];
 
 const faqStyles = {
