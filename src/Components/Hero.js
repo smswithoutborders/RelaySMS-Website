@@ -8,6 +8,7 @@ import How from "../Components/how";
 import Blog from "../Components/Blog";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const HeroSection = () => {
 	const { t, i18n } = useTranslation();
@@ -33,20 +34,23 @@ const HeroSection = () => {
 							<p className="hero-description">{t("Landing.h2")}</p>
 							<div className="hero-buttons d-flex flex-column flex-md-row justify-content-md-start justify-content-center">
 								<Button
-									href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
-									target="_blank"
+									as={Link} // Use Link for routing
+									to="/Download"
 									className="hero-btn Download-btn mx-auto mx-md-0"
 									data-aos="fade-up"
 								>
 									<span className="button-title">{t("Landing.Android")}</span>
-
 									<FontAwesomeIcon icon={faArrowDown} className="hero-icon apple" />
 								</Button>
 							</div>
 						</main>
 					</Col>
 					<Col lg={6} className="image-section d-lg-block position-relative" data-aos="fade-left">
-						<Image src="/Relaysms.png" alt="relay" className="hero-image" />
+						<Image
+							src="/Relaysms.png"
+							alt="RelaySMS application interface"
+							className="hero-image"
+						/>
 					</Col>
 				</Row>
 			</Container>

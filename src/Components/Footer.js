@@ -6,7 +6,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { Link } from "react-router-dom";
 
 function Footer() {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const [email, setEmail] = useState("");
 
 	const handleEmailChange = (e) => {
@@ -16,7 +16,7 @@ function Footer() {
 	const handleSubscribe = async (e) => {
 		e.preventDefault();
 
-		const endpointUrl = "https://yourapi.com/subscribe"; // Replace with your API endpoint
+		const endpointUrl = "https://yourapi.com/subscribe"; // Replace with your API endpoint when you take it from sasha
 
 		try {
 			const response = await fetch(endpointUrl, {
@@ -38,6 +38,8 @@ function Footer() {
 			alert("An error occurred. Please try again.");
 		}
 	};
+
+	const isRtl = i18n.language === "fa";
 
 	return (
 		<footer className="footer-container">
@@ -100,6 +102,10 @@ function Footer() {
 						<form
 							onSubmit={handleSubscribe}
 							className="d-flex justify-content-center align-items-center"
+							style={{
+								direction: isRtl ? "rtl" : "ltr",
+								textAlign: isRtl ? "right" : "left"
+							}}
 						>
 							<input
 								type="email"
@@ -116,8 +122,11 @@ function Footer() {
 					</Col>
 				</Row>
 				<Row className="pt-2 border-top">
-					<Col className="d-flex justify-content-between align-items-center">
-						<p className="footer-copyright">
+					<Col
+						className="d-flex justify-content-between align-items-center"
+						style={{ direction: isRtl ? "rtl" : "ltr" }}
+					>
+						<p className="footer-copyright" style={{ textAlign: isRtl ? "right" : "left" }}>
 							&copy; {new Date().getFullYear()} {t("Footer.copyright")}
 						</p>
 						<div className="d-flex align-items-center">

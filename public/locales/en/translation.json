@@ -76,7 +76,7 @@
 		"Blog": "Blog",
 		"policy": "Privacy Policy",
 		"Header3": " Join Our Mailing List",
-		"EnterEmail": "developers@afkanerd.com",
+		"EnterEmail": "developers@smswithoutborders.com",
 		"Subscribe": "Submit",
 		"Header2": "Downloads",
 		"download1": "Andriod",
@@ -108,6 +108,21 @@
 				"ButtonText": "View on GitHub",
 				"Link": "https://github.com/smswithoutborders"
 			}
+		}
+	},
+	"download": {
+		"android": "Download for Android",
+		"ios": "Download for iOS",
+		"desktop": "Download for Desktop",
+		"androidLinks": {
+			"apk": "Download the .apk file",
+			"playStore": "Download from Play Store",
+			"fDroid": "Download from F-Droid"
+		},
+		"iosLink": "Download the iOS App",
+		"desktopLinks": {
+			"linux": "Download for Linux",
+			"comingSoon": "Coming Soon"
 		}
 	}
 }

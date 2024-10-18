@@ -6,6 +6,7 @@ import Contact_Us from "./Pages/Contact_Us";
 import Navbar from "./Components/Navbar";
 import PageNotFound from "./Pages/PageNotFound";
 import "./App.css";
+import Download from "./Pages/Downlaod";
 
 const App = () => {
 	return (
@@ -14,6 +15,7 @@ const App = () => {
 			<Routes>
 				<Route path="/" element={<Landing />} />
 				<Route path="/Contact_Us" element={<Contact_Us />} />
+				<Route path="/Download" element={<Download />} />
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>
 			<Footer />
