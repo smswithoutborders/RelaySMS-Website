@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Accordion } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import "../App.css";
 
 function FAQ() {
 	const { t, i18n } = useTranslation();
@@ -10,15 +11,20 @@ function FAQ() {
 		<Container fluid className="faq-section py-5" dir={isFarsi ? "rtl" : "ltr"}>
 			<h2 className="faq-header">{t("FAQ.Header")}</h2>
 			<Row className="justify-content-center">
-				<Col md={8} lg={6}>
+				<Col md={10} lg={8}>
 					<Accordion defaultActiveKey="0" flush>
 						{faqData.map((faq, idx) => (
 							<Accordion.Item eventKey={idx.toString()} key={idx} className="faq-item">
-								<Accordion.Header style={faqStyles.question}>{t(faq.question)}</Accordion.Header>
-								<Accordion.Body
-									style={faqStyles.answer}
-									dangerouslySetInnerHTML={{ __html: t(faq.answer) }}
-								/>
+								<Accordion.Header className="faq-question">{t(faq.question)}</Accordion.Header>
+								<Accordion.Body className="faq-answer">
+									{faq.answers.map((answer, answerIdx) => (
+										<div
+											key={answerIdx}
+											className="faq-answer-item"
+											dangerouslySetInnerHTML={{ __html: t(answer) }}
+										/>
+									))}
+								</Accordion.Body>
 							</Accordion.Item>
 						))}
 					</Accordion>
@@ -29,28 +35,15 @@ function FAQ() {
 }
 
 const faqData = [
-	{ question: "FAQ.Q1", answer: "FAQ.A1" },
-	{ question: "FAQ.Q2", answer: "FAQ.A2" },
-	{ question: "FAQ.Q3", answer: "FAQ.A3" },
-	{ question: "FAQ.Q4", answer: "FAQ.A4" },
-	{ question: "FAQ.Q5", answer: "FAQ.A5" }
+	{ question: "FAQ.Q1", answers: ["FAQ.A1", "FAQ.A12"] },
+	{ question: "FAQ.Q2", answers: ["FAQ.A2"] },
+	{ question: "FAQ.Q3", answers: ["FAQ.A3"] },
+	{
+		question: "FAQ.Q4",
+		answers: ["FAQ.A4", "FAQ.A41", "FAQ.A42", "FAQ.A43", "FAQ.A44", "FAQ.A45"]
+	},
+	{ question: "FAQ.Q5", answers: ["FAQ.A5", "FAQ.A51"] },
+	{ question: "FAQ.Q6", answers: ["FAQ.A6", "FAQ.A61", "FAQ.A62"] }
 ];
-
-const faqStyles = {
-	header: {
-		fontSize: "2.5rem",
-		color: "#333",
-		marginBottom: "2rem"
-	},
-	question: {
-		fontSize: "1.25rem",
-		color: "#333",
-		fontWeight: "600"
-	},
-	answer: {
-		color: "#555",
-		lineHeight: "1.6"
-	}
-};
 
 export default FAQ;
