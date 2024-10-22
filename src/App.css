@@ -89,6 +89,55 @@ h2 {
 	color: #35658d;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+	.hero-title {
+		font-size: 2.4rem;
+	}
+	.hero-description {
+		font-size: 1.2rem;
+	}
+	.hero-image {
+		max-height: 400px;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+	.hero-title {
+		font-size: 2.2rem;
+	}
+	.hero-description {
+		font-size: 1.15rem;
+	}
+	.hero-image {
+		max-height: 350px;
+	}
+}
+
+@media (max-width: 575px) {
+	.hero-title {
+		font-size: 1.8rem;
+	}
+	.hero-description {
+		font-size: 1rem;
+		text-align: left;
+	}
+	.hero-image {
+		max-height: 300px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.hero-title {
+		font-size: 3rem;
+	}
+	.hero-description {
+		font-size: 1.4rem;
+	}
+	.hero-image {
+		max-height: 600px;
+	}
+}
+
 /* ============================ Footer Section ============================ */
 .footer-container {
 	background-color: #020721;
