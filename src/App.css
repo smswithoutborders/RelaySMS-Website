@@ -1,4 +1,5 @@
 * {
+	box-sizing: border-box;
 	font-family: Inter, sans-serif;
 }
 
@@ -10,13 +11,16 @@ h2 {
 }
 
 /* ============================ Hero Section ============================== */
+
 .hero-container {
-	margin-top: 50px;
-	padding: 10px;
+	overflow: hidden;
+	position: relative;
+	margin-top: 56px;
+	padding: 0 15px;
 }
 
 .hero-main {
-	margin-top: 8rem;
+	margin-top: 4rem;
 	margin-bottom: 5.5rem;
 }
 
@@ -31,24 +35,18 @@ h2 {
 	color: #6c757d;
 	font-size: 1.1rem;
 	text-align: justify;
-	gap: 2;
 	margin: 2rem 0;
 }
 
 .hero-image {
-	max-height: 550px;
+	max-height: 500px;
 	object-fit: cover;
-	padding-left: 90px;
 	align-items: center;
 }
 
 @media (max-width: 767px) {
 	.hero-image {
 		max-height: 350px;
-		padding: 5px;
-	}
-	.hero-main {
-		margin-top: 4rem;
 	}
 }
 
@@ -59,59 +57,22 @@ h2 {
 	.hero-description {
 		font-size: 1.2rem;
 	}
-	.hero-image {
-		max-height: 450px;
-		margin: 0 auto;
-		padding: 5px;
-	}
-}
-
-.btn-download {
-	background-color: #35658d !important;
-	color: white;
-}
-
-.btn-download:hover {
-	background-color: #f4f7fc !important;
-	color: #35658d !important;
-	font-weight: 400;
-}
-
-@keyframes arrowBounce {
-	0%,
-	100% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(-5px);
-	}
-}
-
-.btn-download .fa-arrow-down {
-	transition: color 0.3s ease;
-	animation: arrowBounce 2s infinite;
-}
-
-.btn-download:hover .fa-arrow-down {
-	animation: arrowBounce 0.4s infinite;
-	color: #35658d;
 }
 
 /* ============================ Blog Section ============================== */
 .blog-section {
-	padding: 2rem 0;
+	padding: 1.5rem;
+	max-width: 100%;
 }
 
-.Readmore {
-	color: #041c94;
-	text-decoration: none;
-	font-weight: 600;
-	display: inline-flex;
-	align-items: center;
-	transition:
-		background-color 0.3s,
-		color 0.3s;
-	padding: 0.5rem 0;
+.card {
+	position: relative;
+	width: 100%;
+	max-width: 500px;
+	padding: 20px;
+	box-shadow: 0.5px 0.5px 12px 0px #80808042;
+	border-radius: 5px;
+	margin: 15px auto;
 }
 
 /* ============================ Footer Section ============================ */
@@ -172,7 +133,6 @@ h2 {
 	color: #0056b3;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
 	.footer-title {
 		font-size: 1rem;
