@@ -11,7 +11,6 @@ h2 {
 }
 
 /* ============================ Hero Section ============================== */
-
 .hero-container {
 	overflow: hidden;
 	position: relative;
@@ -59,20 +58,35 @@ h2 {
 	}
 }
 
-/* ============================ Blog Section ============================== */
-.blog-section {
-	padding: 1.5rem;
-	max-width: 100%;
+.btn-download {
+	background-color: #35658d !important;
+	color: white;
 }
 
-.card {
-	position: relative;
-	width: 100%;
-	max-width: 500px;
-	padding: 20px;
-	box-shadow: 0.5px 0.5px 12px 0px #80808042;
-	border-radius: 5px;
-	margin: 15px auto;
+.btn-download:hover {
+	background-color: #f4f7fc !important;
+	color: #35658d !important;
+	font-weight: 300;
+}
+
+@keyframes arrowBounce {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-5px);
+	}
+}
+
+.btn-download .fa-arrow-down {
+	transition: color 0.3s ease;
+	animation: arrowBounce 2s infinite;
+}
+
+.btn-download:hover .fa-arrow-down {
+	animation: arrowBounce 0.4s infinite;
+	color: #35658d;
 }
 
 /* ============================ Footer Section ============================ */

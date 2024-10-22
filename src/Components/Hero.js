@@ -33,7 +33,7 @@ const HeroSection = () => {
 							</h1>
 
 							<p className="hero-description">{t("Landing.h2")}</p>
-							<Button as={Link} to="/Download" data-aos="fade-up" className="btn-download btn-lg">
+							<Button as={Link} to="/Download" data-aos="fade-up" className="btn-download">
 								{t("Landing.Android")}
 								<FontAwesomeIcon icon={faArrowDown} className="arrow-icon" />
 							</Button>
