@@ -36,6 +36,12 @@ function NavigationBar() {
 						<Nav.Link as={Link} to="/Contact_Us">
 							{t("Nav.Contact")}
 						</Nav.Link>
+						<Nav.Link
+							href="https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ"
+							className="mx-2"
+						>
+							{t("Nav.Support")}
+						</Nav.Link>
 						<Nav.Link href="https://x.com/RelaySMS" target="_blank" className="mx-2">
 							<FaTwitter />
 						</Nav.Link>

@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../How.css";
-import { FaArrowRight } from "react-icons/fa";
 
 function How() {
 	const { t, i18n } = useTranslation();
@@ -30,19 +29,19 @@ function How() {
 						<div className="section">
 							<Card className="card card-compose-send" style={{ borderTop: "3px solid #3c54b4" }}>
 								<div className="card-number">1</div>
-								<Card.Body>
-									<div className="card-title text-bold">{t("Howitworks.titleA")}</div>
-									<div className="card-text text-muted">{t("Howitworks.A")}</div>
-									<div className="card-text">
-										<a
-											href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms"
-											target="_blank"
-											rel="noopener noreferrer"
-											className="Readmore"
-										>
-											{t("Howitworks.ReadMore")} <FaArrowRight />
-										</a>
+								<Card.Body className="d-flex flex-column">
+									<div>
+										<div className="card-title text-bold">{t("Howitworks.titleA")}</div>
+										<div className="card-text text-muted">{t("Howitworks.A")}</div>
 									</div>
+									<a
+										href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="Readmore mt-auto"
+									>
+										{t("Howitworks.ReadMore")}
+									</a>
 								</Card.Body>
 							</Card>
 						</div>
@@ -52,19 +51,19 @@ function How() {
 						<div className="section">
 							<Card className="card card-save-platforms" style={{ borderTop: "3px solid #a0b0e8" }}>
 								<div className="card-number">2</div>
-								<Card.Body>
-									<div className="card-title text-bold">{t("Howitworks.titleB")}</div>
-									<div className="card-text text-muted">{t("Howitworks.B")}</div>
-									<div className="card-text">
-										<a
-											href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button"
-											target="_blank"
-											rel="noopener noreferrer"
-											className="Readmore"
-										>
-											{t("Howitworks.ReadMore")} <FaArrowRight />
-										</a>
+								<Card.Body className="d-flex flex-column">
+									<div>
+										<div className="card-title text-bold">{t("Howitworks.titleB")}</div>
+										<div className="card-text text-muted">{t("Howitworks.B")}</div>
 									</div>
+									<a
+										href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="Readmore mt-auto"
+									>
+										{t("Howitworks.ReadMore")}
+									</a>
 								</Card.Body>
 							</Card>
 						</div>
@@ -77,19 +76,19 @@ function How() {
 								style={{ borderTop: "3px solid #041c94" }}
 							>
 								<div className="card-number">3</div>
-								<Card.Body>
-									<div className="card-title text-bold">{t("Howitworks.titleC")}</div>
-									<div className="card-text text-muted">{t("Howitworks.C")}</div>
-									<div className="card-text">
-										<a
-											href="https://docs.smswithoutborders.com/docs/contributing/introduction"
-											target="_blank"
-											className="Readmore"
-											rel="noopener noreferrer"
-										>
-											{t("Howitworks.ReadMore")} <FaArrowRight />
-										</a>
+								<Card.Body className="d-flex flex-column">
+									<div>
+										<div className="card-title text-bold">{t("Howitworks.titleC")}</div>
+										<div className="card-text text-muted">{t("Howitworks.C")}</div>
 									</div>
+									<a
+										href="https://docs.smswithoutborders.com/docs/contributing/introduction"
+										target="_blank"
+										className="Readmore mt-auto" // Added mt-auto to push it down
+										rel="noopener noreferrer"
+									>
+										{t("Howitworks.ReadMore")}
+									</a>
 								</Card.Body>
 							</Card>
 						</div>
