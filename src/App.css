@@ -3,15 +3,88 @@
 	font-family: Inter, sans-serif;
 }
 
-h2 {
-	position: relative;
-	margin: 0 auto 20px;
-	padding: 10px 30px;
-	text-align: center;
+/* ============================ Navbar Section ============================== */
+.custom-navbar {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.navbar-logo {
+	margin-left: 10px;
+}
+
+.nav-links {
+	margin-right: 30px;
+}
+
+.social-icons {
+	margin-right: 10px;
 }
 
 /* ============================ Hero Section ============================== */
-.hero-container {
+.hero-section {
+	padding: 80px 50px;
+	background-color: #f0f2f5;
+}
+
+.hero-section .display-4 {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-bottom: 50px;
+	color: #333;
+}
+
+.hero-section .Description {
+	font-size: 1.25rem;
+	font-weight: 400;
+	margin-bottom: 30px;
+	color: #666;
+}
+
+.download-button {
+	font-size: 1.1rem;
+	padding: 20px 20px;
+	font-weight: 600;
+	border-color: #2267ac !important;
+	background-color: #2267ac !important;
+}
+
+.hero-image {
+	max-width: 80%;
+	height: auto;
+}
+
+@media (max-width: 768px) {
+	.hero-section {
+		text-align: center;
+	}
+
+	.hero-section .display-4 {
+		font-size: 2rem;
+	}
+
+	.hero-section .lead {
+		font-size: 1rem;
+	}
+
+	.download-button {
+		margin-top: 15px;
+	}
+
+	Container .navbar-logo {
+		margin-left: 5px;
+	}
+
+	.nav-links {
+		margin-right: 10px;
+	}
+
+	.social-icons {
+		margin-right: 5px;
+	}
+}
+
+/* .hero-container {
 	overflow: hidden;
 	position: relative;
 	margin-top: 56px;
@@ -27,7 +100,7 @@ h2 {
 	font-weight: bold;
 	color: #041331;
 	font-size: 2.2rem;
-	margin-bottom: 3rem;
+	margin-bottom: 4rem;
 }
 
 .hero-description {
@@ -137,6 +210,8 @@ h2 {
 		max-height: 600px;
 	}
 }
+
+ */
 
 /* ============================ Footer Section ============================ */
 .footer-container {
