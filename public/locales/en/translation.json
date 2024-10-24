@@ -10,20 +10,20 @@
 	"Landing": {
 		"span": "No Data? No Worries.",
 		"h1": "Stay Connected with RelaySMS",
-		"h2": "RelaySMS provides secure encrypted messaging, with protocols such as the Signal Double Ratchet for Perfect Forward Secrecy (PFS)",
-		"Android": "Download RelaySMS  "
+		"h2": "RelaySMS enables users to send messages to online platforms without the use of an active internet connection.",
+		"Android": "Download RelaySMS "
 	},
 	"Howitworks": {
 		"Header": "Using the App",
 		"titleA": "Save platforms(Gmail, X, Telegram)",
 		"A": "You can store tokens to your online platforms using OAuth2 protocols supported by most online platforms. This guarantees only the access you provide is made available for your use at a later time.",
-		"Areadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms' target='_blank'>Read More</a>",
+		"Areadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms' target='_blank' rel='noopener noreferrer'>Read More</a>",
 		"titleB": "Compose and Send",
 		"B": "Without an internet connection compose messages for platforms you have saved from within your RelaySMS app. The messages can be text of any nature which would be encoded and transferred through your default SMS messaging app. All messages sent from your RelaySMS app are encrypted.",
-		"Breadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button' target='_blank'>Read More</a>",
+		"Breadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button' target='_blank' rel='noopener noreferrer'>Read More</a>",
 		"titleC": "Receives and Publish",
 		"C": "RelaySMS supports decentralized SMS Gateway clients which can receive and forward SMS messages to online Vault servers. The messages remain encrypted throughout their journey and only the Vault servers can decrypt to publish to your online platforms.",
-		"Creadmore": "<a href='https://docs.smswithoutborders.com/docs/contributing/introduction' target='_blank'>Read More</a>",
+		"Creadmore": "<a href='https://docs.smswithoutborders.com/docs/contributing/introduction' target='_blank' rel='noopener noreferrer'>Read More</a>",
 		"ReadMore": "Read More..."
 	},
 	"Blog": {
@@ -44,29 +44,28 @@
 		"tags": "Release",
 		"readTime": "2 mins read"
 	},
-	"FAQ": {
-		"Header": "Frequently Asked Questions",
-		"Q1": "When do I use RelaySMS?",
-		"A1": "During times of instability (e.g elections, protests, etc) and other periods are prone to internet shutdowns",
-		"A12": "When moving to areas with limited connectivity. The user may find themselves without an internet connection and similar alternatives and the need to send urgent messages online.",
-		"Q2": "How does RelaySMS work?",
-		"A2": "RelaySMS works by using SMS messages sent from your app to SMS Gateway clients run by volunteers across the globe who can receive these SMS messages and forward them to the internet.",
-		"Q3": "Do I need an internet connection to use RelaySMS?",
-		"A3": "Once you have the app setup and configured you no longer require access to an internet connection; Messages are being transmitted by SMS from your device.",
-		"Q4": "Is RelaySMS available on my device?",
-		"A4": "RelaySMS is currently available on Android and iOS; Linux is coming soon…",
-		"A41": "RelaySMS is free but there are no limits on the size and number of messages you can send with the app. The standard SMS rates (as determined by the user’s service provider) do apply.",
-		"A42": "SMS is billed per segment of the message - a single segment of SMS is about 140 standard ASCII characters. This means an SMS user can send a single message that contains multiple segments and would be billed per segment of the message sent.",
-		"A43": "The amount of segments for RelaySMS users is determined by the size of the message being sent; the more segments (the longer the message) the more it will cost to send the message.",
-		"A44": "Are there any limitations on offline messages?",
-		"A45": "SMS is not as reliable as the internet, so reliability is a limitation. Usually, some SMS messages do not make it to the Gateway Clients and as such do not get published online.",
-		"Q5": "I'm experiencing technical difficulties with the app. How can I get help?",
-		"A5": "RelaySMS utilizes secure practices in requesting and storing access from users for their later use. The requests are done through secured protocols such as OAuth2.0.",
-		"A51": "The messages sent from the RelaySMS app to the Vault are encrypted with perfect forward secrecy (this utilizes the Signal Double Ratchet protocol).",
-		"Q6": "I'm experiencing technical difficulties with the app. How can I get help?",
-		"A6": "- Check out a detailed troubleshooting guide.",
-		"A61": "- Reach out to our support at <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a>",
-		"A62": "- Reach us on social media at @RelaySMS on X (Twitter)."
+	"footer": {
+		"faqTitle": "Frequently Asked Questions",
+		"faq1": {
+			"question": "When do I use RelaySMS?",
+			"answer": "During times of instability (e.g., elections, protests, etc.) and other periods prone to internet shutdowns or areas with limited connectivity."
+		},
+		"faq2": {
+			"question": "How does RelaySMS work?",
+			"answer": "RelaySMS works by using SMS messages sent from your app to SMS Gateway clients run by volunteers, who forward them to the internet."
+		},
+		"faq3": {
+			"question": "Do I need an internet connection to use RelaySMS?",
+			"answer": "Once set up, you no longer need an internet connection. Messages are sent via SMS from your device."
+		},
+		"faq4": {
+			"question": "Is RelaySMS available on my device?",
+			"answer": "RelaySMS is currently available on Android and iOS. Linux support is coming soon."
+		},
+		"faq5": {
+			"question": "I'm experiencing technical difficulties. How can I get help?",
+			"answer": "Check out our <a href='https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ' target='_blank' rel='noopener noreferrer'>Troubleshooting guide</a> or reach out to support at <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a>."
+		}
 	},
 	"Footer": {
 		"Header1": "Resources",
@@ -79,7 +78,7 @@
 		"EnterEmail": "developers@smswithoutborders.com",
 		"Subscribe": "Submit",
 		"Header2": "Downloads",
-		"download1": "Andriod",
+		"download1": "Android",
 		"download2": "iOS",
 		"download3": "Linux",
 		"copyright": "AFKANERD"

@@ -44,29 +44,28 @@
 		"tags": "Version",
 		"readTime": "2 minutes de lecture"
 	},
-	"FAQ": {
-		"Header": "Questions Fréquemment Posées",
-		"Q1": "Quand dois-je utiliser RelaySMS ?",
-		"A1": "Lors de périodes d'instabilité (par exemple, élections, manifestations, etc.) et d'autres périodes sujettes à des coupures d'Internet.",
-		"A12": "Lorsque vous vous déplacez vers des zones avec une connectivité limitée. L'utilisateur peut se retrouver sans connexion Internet et sans alternatives similaires et avoir besoin d'envoyer des messages urgents en ligne.",
-		"Q2": "Comment fonctionne RelaySMS ?",
-		"A2": "RelaySMS fonctionne en utilisant des messages SMS envoyés depuis votre application vers des clients de passerelle SMS gérés par des bénévoles à travers le monde qui peuvent recevoir ces messages SMS et les transmettre à Internet.",
-		"Q3": "Ai-je besoin d'une connexion Internet pour utiliser RelaySMS ?",
-		"A3": "Une fois que vous avez configuré l'application, vous n'avez plus besoin d'accès à une connexion Internet ; les messages sont transmis par SMS depuis votre appareil.",
-		"Q4": "RelaySMS est-il disponible sur mon appareil ?",
-		"A4": "RelaySMS est actuellement disponible sur Android et iOS ; Linux arrive bientôt...",
-		"A41": "RelaySMS est gratuit mais il n'y a pas de limites sur la taille et le nombre de messages que vous pouvez envoyer avec l'application. Les tarifs standards des SMS (tels que déterminés par le fournisseur de services de l'utilisateur) s'appliquent.",
-		"A42": "Les SMS sont facturés par segment de message - un seul segment de SMS est d'environ 140 caractères ASCII standards. Cela signifie qu'un utilisateur de SMS peut envoyer un seul message contenant plusieurs segments et serait facturé par segment de message envoyé.",
-		"A43": "Le nombre de segments pour les utilisateurs de RelaySMS est déterminé par la taille du message envoyé ; plus il y a de segments (plus le message est long), plus il en coûtera pour envoyer le message.",
-		"A44": "Y a-t-il des limitations sur les messages hors ligne ?",
-		"A45": "Les SMS ne sont pas aussi fiables que l'Internet, donc la fiabilité est une limitation. En général, certains messages SMS n'atteignent pas les clients de passerelle et ne sont donc pas publiés en ligne.",
-		"Q5": "Je rencontre des difficultés techniques avec l'application. Comment puis-je obtenir de l'aide ?",
-		"A5": "RelaySMS utilise des pratiques sécurisées pour demander et stocker l'accès des utilisateurs pour leur utilisation ultérieure. Les demandes sont faites via des protocoles sécurisés tels que OAuth2.0.",
-		"A51": "Les messages envoyés depuis l'application RelaySMS vers le Vault sont chiffrés avec une parfaite confidentialité de transmission (cela utilise le protocole Signal Double Ratchet).",
-		"Q6": "Je rencontre des difficultés techniques avec l'application. Comment puis-je obtenir de l'aide ?",
-		"A6": "- Consultez un guide de dépannage détaillé.",
-		"A61": "- Contactez notre support à <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a>",
-		"A62": "- Rejoignez-nous sur les réseaux sociaux à @RelaySMS sur X (Twitter)."
+	"footer": {
+		"faqTitle": "Questions Fréquemment Posées",
+		"faq1": {
+			"question": "Quand puis-je utiliser RelaySMS ?",
+			"answer": "Pendant les périodes d’instabilité (par exemple, élections, manifestations, etc.) et d'autres périodes susceptibles d'être sujettes à des coupures d'internet ou dans des zones avec une connectivité limitée."
+		},
+		"faq2": {
+			"question": "Comment fonctionne RelaySMS ?",
+			"answer": "RelaySMS fonctionne en utilisant des messages SMS envoyés depuis votre application vers des clients de passerelle SMS gérés par des bénévoles, qui les transmettent à Internet."
+		},
+		"faq3": {
+			"question": "Ai-je besoin d'une connexion Internet pour utiliser RelaySMS ?",
+			"answer": "Une fois configuré, vous n'avez plus besoin d'une connexion Internet. Les messages sont envoyés par SMS depuis votre appareil."
+		},
+		"faq4": {
+			"question": "RelaySMS est-il disponible sur mon appareil ?",
+			"answer": "RelaySMS est actuellement disponible sur Android et iOS. La prise en charge de Linux arrive bientôt."
+		},
+		"faq5": {
+			"question": "Je rencontre des difficultés techniques. Comment puis-je obtenir de l'aide ?",
+			"answer": "Consultez notre <a href='//docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ'> guide de dépannage</a> ou contactez le support à <a href=\"mailto:developers@smswithoutborders.com\">developers@smswithoutborders.com</a>."
+		}
 	},
 	"Footer": {
 		"Header1": "Ressources",
