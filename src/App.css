@@ -1,140 +1,86 @@
 * {
 	box-sizing: border-box;
-	font-family: Inter, sans-serif;
+	font-family: sans-serif;
 }
 
-h2 {
-	position: relative;
-	margin: 0 auto 20px;
-	padding: 10px 30px;
-	text-align: center;
+/* ============================ Navbar Section ============================== */
+.custom-navbar {
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #ffffff;
+}
+
+.navbar-logo {
+	margin-left: 15px;
+}
+
+.nav-links {
+	margin-right: 20px;
+}
+
+.social-icons {
+	margin-right: 30px;
 }
 
 /* ============================ Hero Section ============================== */
-.hero-container {
-	overflow: hidden;
-	position: relative;
-	margin-top: 56px;
-	padding: 0 15px;
+.hero-section {
+	padding: 80px 50px;
+	background-color: #ffffff;
 }
 
-.hero-main {
-	margin-top: 4rem;
-	margin-bottom: 5.5rem;
+.hero-section .display-4 {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-bottom: 50px;
+	color: #333;
 }
 
-.hero-title {
-	font-weight: bold;
-	color: #041331;
-	font-size: 2.2rem;
-	margin-bottom: 3rem;
+.hero-section .Description {
+	font-size: 1.25rem;
+	font-weight: 400;
+	margin-bottom: 30px;
+	color: #666;
 }
 
-.hero-description {
-	color: #6c757d;
-	font-size: 1.1rem;
-	text-align: justify;
-	margin: 2rem 0;
+.download-button {
+	font-size: 1rem !important;
+	padding: 10px 25px !important;
+	border-color: #2267ac !important;
+	background-color: #2267ac !important;
 }
 
 .hero-image {
-	max-height: 500px;
-	object-fit: cover;
-	align-items: center;
+	max-width: 80%;
+	height: auto;
 }
 
-@media (max-width: 767px) {
-	.hero-image {
-		max-height: 350px;
+@media (max-width: 768px) {
+	.hero-section {
+		text-align: center;
 	}
-}
 
-@media (min-width: 768px) and (max-width: 991px) {
-	.hero-title {
-		font-size: 2.2rem;
+	.hero-section .display-4 {
+		font-size: 2rem;
 	}
-	.hero-description {
-		font-size: 1.2rem;
-	}
-}
 
-.btn-download {
-	background-color: #35658d !important;
-	color: white;
-}
-
-.btn-download:hover {
-	background-color: #f4f7fc !important;
-	color: #35658d !important;
-	font-weight: 300;
-}
-
-@keyframes arrowBounce {
-	0%,
-	100% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(-5px);
-	}
-}
-
-.btn-download .fa-arrow-down {
-	transition: color 0.3s ease;
-	animation: arrowBounce 2s infinite;
-}
-
-.btn-download:hover .fa-arrow-down {
-	animation: arrowBounce 0.4s infinite;
-	color: #35658d;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-	.hero-title {
-		font-size: 2.4rem;
-	}
-	.hero-description {
-		font-size: 1.2rem;
-	}
-	.hero-image {
-		max-height: 400px;
-	}
-}
-
-@media (min-width: 576px) and (max-width: 767px) {
-	.hero-title {
-		font-size: 2.2rem;
-	}
-	.hero-description {
-		font-size: 1.15rem;
-	}
-	.hero-image {
-		max-height: 350px;
-	}
-}
-
-@media (max-width: 575px) {
-	.hero-title {
-		font-size: 1.8rem;
-	}
-	.hero-description {
+	.hero-section .lead {
 		font-size: 1rem;
-		text-align: left;
 	}
-	.hero-image {
-		max-height: 300px;
-	}
-}
 
-@media (min-width: 1200px) {
-	.hero-title {
-		font-size: 3rem;
+	.download-button {
+		margin-top: 15px;
 	}
-	.hero-description {
-		font-size: 1.4rem;
+
+	Container .navbar-logo {
+		margin-left: 5px;
 	}
-	.hero-image {
-		max-height: 600px;
+
+	.nav-links {
+		margin-right: 10px;
+	}
+
+	.social-icons {
+		margin-right: 5px;
 	}
 }
 
@@ -228,7 +174,7 @@ h2 {
 	margin-bottom: 2rem;
 	text-align: center;
 	font-weight: bold;
-	text-transform: uppercase;
+	text-transform: capitalize;
 }
 
 .faq-item {

@@ -27,7 +27,7 @@ function How() {
 				<Row className="mt-4 justify-content-center">
 					<Col md={4} className="mb-4" data-aos="fade-right">
 						<div className="section">
-							<Card className="card card-compose-send" style={{ borderTop: "3px solid #3c54b4" }}>
+							<Card className="card card-compose-send" style={{ borderTop: "5px solid #2267ac" }}>
 								<div className="card-number">1</div>
 								<Card.Body className="d-flex flex-column">
 									<div>
@@ -49,7 +49,7 @@ function How() {
 
 					<Col md={4} className="mb-4" data-aos="fade-up" data-aos-delay="200">
 						<div className="section">
-							<Card className="card card-save-platforms" style={{ borderTop: "3px solid #a0b0e8" }}>
+							<Card className="card card-save-platforms" style={{ borderTop: "5px solid #2267ac" }}>
 								<div className="card-number">2</div>
 								<Card.Body className="d-flex flex-column">
 									<div>
@@ -73,7 +73,7 @@ function How() {
 						<div className="section">
 							<Card
 								className="card card-receive-publish"
-								style={{ borderTop: "3px solid #041c94" }}
+								style={{ borderTop: "5px solid #2267ac" }}
 							>
 								<div className="card-number">3</div>
 								<Card.Body className="d-flex flex-column">
