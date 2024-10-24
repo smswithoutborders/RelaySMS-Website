@@ -1,4 +1,3 @@
-/* Universal settings to prevent overflow */
 html,
 body {
 	margin: 0;
@@ -10,7 +9,20 @@ body {
 
 * {
 	box-sizing: border-box;
-	font-family: sans-serif;
+	font-family: "Lexend", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+
+.faq-header {
+	font-size: 2rem;
+	color: #2c2f36;
+	margin-bottom: 1rem;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	font-weight: bold;
+	text-transform: capitalize;
 }
 
 /* ============================ Navbar Section ============================== */
@@ -33,29 +45,86 @@ body {
 
 /* ============================ Hero Section ============================== */
 .hero-section {
-	padding: 30px;
+	padding: 4rem;
 	background-color: #ffffff;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	text-align: relative;
+	margin-bottom: 100px;
 }
 
 .hero-section .display-4 {
 	font-size: 2.5rem;
-	font-weight: 700;
-	margin-bottom: 50px;
+	font-weight: bold;
+	margin-top: 100px;
 	color: #333;
+	font-family: "Lexend";
 }
 
 .hero-section .Description {
 	font-size: 1.25rem;
+	font-family: "Lexend";
 	font-weight: 400;
-	margin-bottom: 30px;
-	color: #666;
+	margin-top: 40px;
+	margin-bottom: 50px;
+	width: 460px;
+	max-width: 700px;
+	color: #3a3939;
+}
+
+@media (max-width: 768px) {
+	.hero-section {
+		padding-bottom: 1rem;
+		margin-top: 0 !important;
+		margin-bottom: 20px;
+		padding: 2rem;
+	}
+
+	.hero-section .display-4 {
+		font-size: 2rem;
+		margin-top: 70px;
+	}
+
+	.hero-section .Description {
+		width: 100%;
+		max-width: 100%;
+		margin-top: 20px;
+	}
+	.hero-image {
+		max-width: 70%;
+		height: auto;
+		padding-right: 20px;
+		margin: 20px;
+	}
+}
+
+@media (max-width: 576px) {
+	.hero-section {
+		padding: 2rem;
+	}
+
+	.hero-section .display-4 {
+		font-size: 1.75rem;
+		margin-top: 80px;
+	}
+
+	.hero-section .Description {
+		width: 100%;
+		font-size: 1rem;
+	}
+	.hero-image {
+		max-width: 70%;
+		height: auto;
+		padding-left: 20px;
+	}
 }
 
 .download-button {
 	font-size: 1rem !important;
 	padding: 10px 25px !important;
-	border-color: #2267ac !important;
-	background-color: #2267ac !important;
+	border-color: #2f3c79 !important;
+	background-color: #2f3c79 !important;
 }
 
 .hero-image {
@@ -87,158 +156,248 @@ body {
 		background-color: #ffffff;
 	}
 }
+/* ==================== how it works =================================== */
 
-/* ============================ Footer Section ============================ */
-.footer-container {
-	background-color: #020721;
-	color: #fff;
-	padding: 1rem 0;
-	font-size: 0.85rem;
-}
-
-.footer-title {
-	font-size: 1.1rem;
-	font-weight: bold;
-	color: #fff;
-	margin-bottom: 0.5rem;
-}
-
-.footer-links,
-.footer-link,
-.footer-download-links a {
-	list-style-type: none;
-	padding: 0;
-	color: #bbb;
-	text-decoration: none;
-	margin-bottom: 0.3rem;
-	display: block;
-	padding: 0.3rem 0;
-}
-
-.footer-copyright {
-	color: #bbb;
-	margin-top: 0.5rem;
-	font-size: 0.75rem;
-}
-
-.footer-input {
-	padding: 0.5rem;
-	border-radius: 5px;
-	border: none;
-	width: 80%;
-}
-
-.footer-icon-button {
-	background: none;
-	border: none;
-	cursor: pointer;
-	padding: 0;
-	margin-left: 0.5rem;
-}
-
-.send-icon {
-	color: #007bff;
-	font-size: 1.2rem;
-	transition: color 0.3s ease;
-}
-
-.footer-icon-button:hover .send-icon {
-	color: #0056b3;
-}
-
-@media (max-width: 768px) {
-	.footer-title {
-		font-size: 1rem;
-	}
-
-	.footer-input {
-		width: 100%;
-	}
-}
-
-@media (max-width: 576px) {
-	.footer-title {
-		font-size: 0.9rem;
-	}
-
-	.footer-input {
-		width: 100%;
-	}
-}
-
-/* ============================ FAQ Section =============================== */
-.faq-section {
-	background-color: #f8f9fa;
-	padding: 3rem 1rem;
-}
-
-.faq-header {
-	font-size: 2.5rem;
-	color: #343a40;
-	margin-bottom: 2rem;
+.how-header {
+	font-size: 2rem;
+	color: #2c2f36;
+	margin-bottom: 1rem;
+	padding-top: 90px;
+	padding-bottom: 15px;
 	text-align: center;
 	font-weight: bold;
 	text-transform: capitalize;
 }
 
-.faq-item {
-	margin-bottom: 1rem;
-	border-radius: 8px;
-	overflow: hidden;
+.how-main {
+	margin: 20px auto;
+	padding: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	column-gap: 25px;
+	min-height: 50vh;
 }
 
-.accordion-header {
-	background-color: #ffffff;
-	border: none;
-	font-weight: 600;
-	padding: 1rem;
-	cursor: pointer;
-	transition: background-color 0.3s;
+.section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
 }
 
-.accordion-header:hover {
-	background-color: #e9ecef;
+/* Card Styles */
+.card {
+	position: relative;
+	width: 380px;
+	padding: 30px;
+	box-shadow: 1px 0.5px 12px 0px #2f3c79;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin: 15px;
+	flex: 1;
+	display: flex;
+	gap: 20 !important;
+	flex-direction: column;
 }
 
-.faq-question {
+.card .card-body .card-title {
 	font-size: 1.25rem;
-	color: #495057;
+	font-weight: 600;
+	color: #293644;
 }
 
-.faq-answer {
-	background-color: #f1f3f5;
-	color: #212529;
-	line-height: 1.6;
-	padding: 1rem;
-	margin-bottom: 1rem;
+.card .card-body .card-text {
+	font-size: 12px;
+	margin-top: 8px;
+}
+
+.Readmore {
+	text-decoration: none;
+	color: #343a40 !important;
+	font-size: 0.7rem;
+	font-weight: bold;
+	display: inline-flex;
+	align-items: center;
+	margin-top: 10px;
+	padding-top: 20px;
+}
+
+.card-number {
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #2f3c79;
+	padding: 15px;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	position: absolute;
+	left: 20px;
+	top: -30px;
+}
+
+/* Media Query Merged for Tablet Screens */
+@media (min-width: 768px) and (max-width: 1024px) {
+	.main {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 20px;
+	}
+
+	.section {
+		width: 100%;
+		max-width: 350px;
+		margin: 0 auto;
+	}
+
+	.card {
+		width: 100%;
+		box-shadow: 0.5px 0.5px 12px 0px #80808042;
+		margin: 0;
+	}
+
+	.card-number {
+		margin: 0 auto;
+	}
+	.how-header {
+		padding-top: 20px;
+		padding-bottom: 15px;
+	}
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+	.main {
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	.section {
+		width: 100%;
+		max-width: 400px;
+		margin: 20px auto;
+	}
+
+	.card {
+		width: 100%;
+		box-shadow: 0.5px 0.5px 12px 0px #80808042;
+		margin: 0;
+	}
+
+	.card-number {
+		margin: 0 auto;
+	}
+}
+
+/* ========================= Blog section ================================= */
+.blog-section {
+	min-height: 50vh;
+}
+
+.blog-header {
+	font-size: 2rem;
+	font-weight: bold;
+	margin-bottom: 1.5rem;
+	color: #343a40;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.blog-card {
+	position: relative;
+	box-shadow: 0.5px 0.5px 12px 0px #80808042;
+	border-radius: 5px;
+	margin: 15px auto;
+	border-top: 5px solid #2f3c79;
+	width: 90%;
+	max-width: 500px;
+	padding: 30px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.card-title {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: #2f3c79;
+}
+
+.card-text {
+	font-size: 1rem;
+	color: #495057;
+	margin-top: 0.8rem;
+}
+
+.read-time {
+	font-size: 0.9rem;
+	color: #6c757d;
+	margin-top: 20px;
+}
+
+.read-more {
+	text-decoration: none;
+	color: #343a40 !important;
+	font-size: 0.9rem;
+	font-weight: bold;
+}
+
+.read-more:hover {
+	color: #2267ac !important;
+}
+
+.article-link {
+	color: #2267ac !important;
+	font-size: 1rem;
+	text-decoration: none;
+}
+
+.article-link:hover {
+	color: #3c54b4;
+	text-decoration: none;
 }
 
 @media (max-width: 768px) {
-	.faq-header {
-		font-size: 2rem;
+	.blog-header {
+		font-size: 1.75rem;
 	}
 
-	.faq-question {
-		font-size: 1.15rem;
+	.card-title {
+		font-size: 1.1rem;
 	}
 
-	.faq-answer {
-		font-size: 0.95rem;
+	.card-text {
+		font-size: 0.9rem;
+	}
+
+	.read-more {
+		font-size: 0.7rem;
 	}
 }
 
 @media (max-width: 576px) {
-	.faq-header {
+	.blog-header {
 		font-size: 1.5rem;
 	}
 
-	.faq-question {
+	.card-title {
 		font-size: 1rem;
 	}
 
-	.faq-answer {
+	.card-text {
 		font-size: 0.85rem;
 	}
 }
 
-/* Additional sections remain unchanged */
+/* ============================ Footer Section ============================ */
+
+/* ============================ FAQ Section =============================== */

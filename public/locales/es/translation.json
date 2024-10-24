@@ -43,29 +43,28 @@
 		"tags": "Lanzamiento",
 		"readTime": "2 minutos de lectura"
 	},
-	"FAQ": {
-		"Header": "Preguntas frecuentes",
-		"Q1": "¿Cuándo debo usar RelaySMS?",
-		"A1": "Durante tiempos de inestabilidad (por ejemplo, elecciones, protestas, etc.) y otros períodos propensos a cortes de Internet.",
-		"A12": "Cuando te mudas a áreas con conectividad limitada. El usuario puede encontrarse sin conexión a Internet y sin alternativas similares y necesitar enviar mensajes urgentes en línea.",
-		"Q2": "¿Cómo funciona RelaySMS?",
-		"A2": "RelaySMS funciona utilizando mensajes SMS enviados desde tu aplicación a clientes de puerta de enlace SMS operados por voluntarios en todo el mundo que pueden recibir estos mensajes SMS y reenviarlos a Internet.",
-		"Q3": "¿Necesito una conexión a Internet para usar RelaySMS?",
-		"A3": "Una vez que hayas configurado y configurado la aplicación, ya no necesitas acceso a una conexión a Internet; los mensajes se transmiten por SMS desde tu dispositivo.",
-		"Q4": "¿Está disponible RelaySMS en mi dispositivo?",
-		"A4": "RelaySMS está actualmente disponible en Android e iOS; Linux llegará pronto...",
-		"A41": "RelaySMS es gratuito, pero no hay límites en el tamaño y número de mensajes que puedes enviar con la aplicación. Las tarifas estándar de SMS (según lo determine el proveedor de servicios del usuario) se aplican.",
-		"A42": "Los SMS se facturan por segmento del mensaje: un solo segmento de SMS es de aproximadamente 140 caracteres ASCII estándar. Esto significa que un usuario de SMS puede enviar un solo mensaje que contenga múltiples segmentos y se facturará por cada segmento del mensaje enviado.",
-		"A43": "La cantidad de segmentos para los usuarios de RelaySMS se determina por el tamaño del mensaje enviado; cuántos más segmentos (más largo el mensaje), más costará enviar el mensaje.",
-		"A44": "¿Hay limitaciones en los mensajes fuera de línea?",
-		"A45": "SMS no es tan confiable como Internet, por lo que la confiabilidad es una limitación. Por lo general, algunos mensajes SMS no llegan a los clientes de puerta de enlace y, por lo tanto, no se publican en línea.",
-		"Q5": "Estoy experimentando dificultades técnicas con la aplicación. ¿Cómo puedo obtener ayuda?",
-		"A5": "RelaySMS utiliza prácticas seguras para solicitar y almacenar acceso de los usuarios para su uso posterior. Las solicitudes se realizan a través de protocolos seguros como OAuth2.0.",
-		"A51": "Los mensajes enviados desde la aplicación RelaySMS al Vault están cifrados con seguridad perfecta en el avance (esto utiliza el protocolo Signal Double Ratchet).",
-		"Q6": "Estoy experimentando dificultades técnicas con la aplicación. ¿Cómo puedo obtener ayuda?",
-		"A6": "- Consulta una guía de solución de problemas detallada.",
-		"A61": "- Comunícate con nuestro soporte en <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a>",
-		"A62": "- Encuéntranos en las redes sociales en @RelaySMS en X (Twitter)."
+	"Faq": {
+		"faqTitle": "Preguntas Frecuentes",
+		"faq1": {
+			"question": "¿Cuándo debo usar RelaySMS?",
+			"answer": "Durante momentos de inestabilidad (por ejemplo, elecciones, protestas, etc.) y otros períodos propensos a cortes de internet o áreas con conectividad limitada."
+		},
+		"faq2": {
+			"question": "¿Cómo funciona RelaySMS?",
+			"answer": "RelaySMS funciona utilizando mensajes SMS enviados desde su aplicación a clientes de puerta de enlace SMS administrados por voluntarios, quienes los reenvían a internet."
+		},
+		"faq3": {
+			"question": "¿Necesito una conexión a internet para usar RelaySMS?",
+			"answer": "Una vez configurado, ya no necesita una conexión a internet. Los mensajes se envían a través de SMS desde su dispositivo."
+		},
+		"faq4": {
+			"question": "¿Está RelaySMS disponible en mi dispositivo?",
+			"answer": "RelaySMS está actualmente disponible en Android e iOS. El soporte para Linux llegará pronto."
+		},
+		"faq5": {
+			"question": "Estoy experimentando dificultades técnicas. ¿Cómo puedo obtener ayuda?",
+			"answer": "Consulte nuestra <a href='//docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ'> guía de solución de problemas</a> o comuníquese con el soporte en <a href=\"mailto:developers@smswithoutborders.com\">developers@smswithoutborders.com</a>."
+		}
 	},
 	"Footer": {
 		"Header1": "Recursos",
