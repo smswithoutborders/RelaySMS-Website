@@ -8,6 +8,8 @@ import { useTranslation } from "react-i18next";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../App.css";
+import How from "../Components/how";
+import Blog from "../Components/Blog";
 
 const Hero = () => {
 	const { t, i18n } = useTranslation();
@@ -24,13 +26,7 @@ const Hero = () => {
 	return (
 		<>
 			{/* Responsive Navbar */}
-			<Navbar
-				expand="lg"
-				bg="light"
-				fixed="top"
-				dir={isFarsi ? "rtl" : "ltr"}
-				className="custom-navbar"
-			>
+			<Navbar expand="lg" fixed="top" dir={isFarsi ? "rtl" : "ltr"} className="custom-navbar">
 				{/* Logo aligned to the left */}
 				<Navbar.Brand href="#home" className="navbar-logo">
 					<img src="./logo.png" alt="Logo" height="40" className="logo" />
@@ -60,8 +56,8 @@ const Hero = () => {
 						<Nav.Link href="https://github.com/smswithoutborders" className="mx-2">
 							<FaGithub />
 						</Nav.Link>
+						<LanguageSwitcher className="mx-2" />
 					</Nav>
-					<LanguageSwitcher className="mx-2" />
 				</Navbar.Collapse>
 			</Navbar>
 
@@ -72,15 +68,27 @@ const Hero = () => {
 						<Col md={6} xs={12} className="text-md-left" data-aos="fade-up">
 							<h1 className="display-4">{t("Landing.h1")}</h1>
 							<p className="Description">{t("Landing.h2")}</p>
-							<Button variant="primary" size="lg" className="download-button">
+							<Button
+								variant="primary"
+								as={Link}
+								to="/Download"
+								size="lg"
+								className="download-button"
+							>
 								{t("Landing.Android")} <FaDownload />
 							</Button>
 						</Col>
 						<Col md={6} xs={12} className="text-center" data-aos="fade-up">
-							<img src="/Relaysms.png" alt="relay" className="hero-image img-fluid" />
+							<img src="/Relay.png" alt="relay" className="hero-image img-fluid" />
 						</Col>
 					</Row>
 				</Container>
+				<div data-aos="fade-up">
+					<How />
+				</div>
+				<div data-aos="fade-up" data-aos-delay="200">
+					<Blog />
+				</div>
 			</div>
 		</>
 	);

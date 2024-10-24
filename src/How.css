@@ -1,7 +1,4 @@
-p {
-	text-align: center;
-}
-
+/* Global Section and Card Styles */
 .main {
 	margin: 20px auto;
 	display: flex;
@@ -17,21 +14,22 @@ p {
 	height: 100%;
 }
 
+/* Card Styles */
 .card {
 	position: relative;
-	width: 320px;
-	padding: 20px;
-	box-shadow: 0.5px 0.5px 12px 0px #80808042;
+	width: 320px !important;
+	padding: 30px;
+	box-shadow: 1px 0.5px 12px 0px #2267ac;
 	box-sizing: border-box;
 	border-radius: 5px;
 	margin: 15px;
 	flex: 1;
 	display: flex;
+	gap: 20 !important;
 	flex-direction: column;
 }
 
 .card .card-body .card-title {
-	font-size: 17px;
 	font-size: 1.25rem;
 	font-weight: 600;
 	color: #293644;
@@ -40,15 +38,6 @@ p {
 .card .card-body .card-text {
 	font-size: 12px;
 	margin-top: 8px;
-}
-
-.card .card-footer {
-	margin-top: 20px;
-}
-
-.card .card-footer .card-img {
-	display: flex;
-	flex-direction: row-reverse;
 }
 
 .Readmore {
@@ -66,7 +55,7 @@ p {
 	font-size: 24px;
 	font-weight: bold;
 	color: #fff;
-	background-color: #041c94;
+	background-color: #2267ac;
 	padding: 15px;
 	border-radius: 50%;
 	width: 60px;
@@ -80,12 +69,7 @@ p {
 	top: -30px;
 }
 
-.card {
-	position: relative;
-}
-
-/* ========================= */
-
+/* Media Query Merged for Tablet Screens */
 @media (min-width: 768px) and (max-width: 1024px) {
 	.main {
 		display: flex;
@@ -111,7 +95,8 @@ p {
 	}
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+/* Mobile Styles */
+@media (max-width: 767px) {
 	.main {
 		display: block;
 		text-align: center;
@@ -134,6 +119,8 @@ p {
 		margin: 0 auto;
 	}
 }
+
+/* =========================================== */
 
 .blog-section {
 	padding: 1.5rem;
