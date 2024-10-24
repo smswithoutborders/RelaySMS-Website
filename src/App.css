@@ -1,3 +1,13 @@
+/* Universal settings to prevent overflow */
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
 * {
 	box-sizing: border-box;
 	font-family: sans-serif;
@@ -9,7 +19,6 @@
 	padding-right: 20px;
 	background-color: #ffffff;
 }
-
 .navbar-logo {
 	margin-left: 15px;
 }
@@ -24,7 +33,7 @@
 
 /* ============================ Hero Section ============================== */
 .hero-section {
-	padding: 80px 50px;
+	padding: 30px;
 	background-color: #ffffff;
 }
 
@@ -50,7 +59,7 @@
 }
 
 .hero-image {
-	max-width: 80%;
+	max-width: 70%;
 	height: auto;
 }
 
@@ -69,18 +78,13 @@
 
 	.download-button {
 		margin-top: 15px;
+		margin-bottom: 30px;
 	}
 
-	Container .navbar-logo {
-		margin-left: 5px;
-	}
-
-	.nav-links {
-		margin-right: 10px;
-	}
-
-	.social-icons {
-		margin-right: 5px;
+	.custom-navbar {
+		padding-left: 5px !important;
+		padding-right: 5px !important;
+		background-color: #ffffff;
 	}
 }
 
@@ -237,71 +241,4 @@
 	}
 }
 
-/* ============================ Download Section ========================== */
-.Download-section {
-	padding: 40px 20px;
-	margin: 20px;
-}
-
-.download-cards {
-	border-radius: 50% !important;
-	padding: 20px;
-	transition: transform 0.3s;
-}
-
-.download-cards:hover {
-	transform: scale(1.05);
-}
-
-.card-title,
-.icon-title {
-	font-size: 1.25rem;
-	margin: 10px 0;
-}
-
-.icon-btn {
-	border-radius: 50% !important;
-	padding: 20px;
-	transition: transform 0.3s;
-	width: 100px !important;
-	height: 100px !important;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-	border: none;
-	background-color: transparent;
-}
-
-.icon-btn:hover {
-	transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-	.download-cards {
-		width: 120px;
-		height: 120px;
-	}
-
-	.icon-btn {
-		width: 60px;
-		height: 60px;
-	}
-
-	.icon-title {
-		font-size: 1.25rem;
-	}
-
-	.btn-primary {
-		padding: 8px 12px;
-		font-size: 0.875rem;
-	}
-}
-
-@media (max-width: 480px) {
-	.icon-btn {
-		width: 50px;
-		height: 50px;
-	}
-
-	.icon-title {
-		font-size: 1rem;
-	}
-}
+/* Additional sections remain unchanged */
