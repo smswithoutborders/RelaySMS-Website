@@ -123,11 +123,36 @@ body {
 }
 
 .download-button {
-	font-size: 1rem !important;
-	padding: 10px 25px !important;
-	border-color: #2f3c79 !important;
 	background-color: #2f3c79 !important;
+	border: none;
+	color: #fff;
+	font-size: 1.2rem;
+	padding: 1rem 2rem !important;
+	min-width: 250px;
+	border-radius: 8px;
+	display: inline-flex;
+	align-items: center;
+	gap: 2rem;
+	transition:
+		background-color 0.3s ease,
+		transform 0.2s ease;
 }
+
+.download-button:hover {
+	background-color: #233061;
+	transform: scale(1.05);
+}
+
+.download-button:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(47, 60, 121, 0.5);
+}
+
+.download-button svg {
+	font-size: 1.4rem;
+}
+
+/* ====================================== */
 
 .hero-image {
 	max-width: 70%;

@@ -114,7 +114,8 @@ const Hero = () => {
 								xl={4}
 								xxl={4}
 								className="mb-4"
-								data-aos="fade-right"
+								data-aos="fade-up"
+								data-aos-delay="200"
 							>
 								<div className="section">
 									<Card
@@ -185,8 +186,8 @@ const Hero = () => {
 								xl={4}
 								xxl={4}
 								className="mb-4"
-								data-aos="fade-left"
-								data-aos-delay="400"
+								data-aos="fade-up"
+								data-aos-delay="200"
 							>
 								<div className="section">
 									<Card
