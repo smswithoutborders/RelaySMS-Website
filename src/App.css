@@ -157,7 +157,6 @@ body {
 	}
 }
 /* ==================== how it works =================================== */
-
 .how-header {
 	font-size: 2rem;
 	color: #2c2f36;
@@ -186,7 +185,6 @@ body {
 	height: 100%;
 }
 
-/* Card Styles */
 .card {
 	position: relative;
 	width: 380px;
@@ -241,7 +239,6 @@ body {
 	top: -30px;
 }
 
-/* Media Query Merged for Tablet Screens */
 @media (min-width: 768px) and (max-width: 1024px) {
 	.main {
 		display: flex;
@@ -257,7 +254,7 @@ body {
 	}
 
 	.card {
-		width: 100%;
+		width: 200px;
 		box-shadow: 0.5px 0.5px 12px 0px #80808042;
 		margin: 0;
 	}
@@ -271,7 +268,6 @@ body {
 	}
 }
 
-/* Mobile Styles */
 @media (max-width: 767px) {
 	.main {
 		display: block;
@@ -399,5 +395,80 @@ body {
 }
 
 /* ============================ Footer Section ============================ */
+.footer {
+	background-color: #04042c;
+	color: white;
+	padding: 2rem 0;
+}
 
-/* ============================ FAQ Section =============================== */
+.footer h5 {
+	color: white;
+	margin-bottom: 1rem;
+}
+
+.footer ul {
+	margin-top: 1rem;
+}
+
+.footer li {
+	padding: 0.3rem 0;
+}
+
+.footer a {
+	color: #d1e7ff;
+	text-decoration: none;
+}
+
+.footer a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.footer-link {
+	color: white;
+	font-size: 1.5rem;
+	margin: 0 10px;
+	transition: color 0.3s;
+}
+
+.footer-link:hover {
+	color: #d1e7ff;
+}
+
+.language-switcher {
+	margin-left: 15px;
+}
+
+.footer .form-control {
+	background-color: #1a1a2e;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 0.75rem;
+	margin-top: 1rem;
+}
+
+.footer .form-control::placeholder {
+	color: #d1e7ff;
+	opacity: 0.8;
+}
+
+.footer .form-control:focus {
+	outline: none;
+	box-shadow: 0 0 5px #007bff;
+}
+
+.footer .btn-primary {
+	background-color: #007bff;
+	border: none;
+	border-radius: 4px;
+	color: white;
+	margin-top: 0.5rem;
+	padding: 0.5rem 1rem;
+	transition: background-color 0.3s;
+}
+
+.footer .btn-primary:hover {
+	background-color: #0056b3;
+	color: white;
+}

@@ -1,7 +1,41 @@
-import React from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { FaAndroid, FaApple, FaLinux } from "react-icons/fa";
 
 const Footer = () => {
+	const [email, setEmail] = useState("");
+	const [status, setStatus] = useState(null);
+
+	// Handle form submission
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		if (!email || !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+			setStatus({ message: "Please enter a valid email.", type: "error" });
+			return;
+		}
+
+		try {
+			const response = await fetch("http://localhost:5000/subscribe", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({ email })
+			});
+
+			if (response.ok) {
+				setStatus({ message: "Subscription successful!", type: "success" });
+				setEmail("");
+			} else {
+				setStatus({ message: "Subscription failed. Please try again.", type: "error" });
+			}
+		} catch (error) {
+			setStatus({ message: "An error occurred. Please try again.", type: "error" });
+		}
+	};
+
 	return (
 		<footer className="footer py-4">
 			<Container>
@@ -44,22 +78,56 @@ const Footer = () => {
 					{/* Mailing List Section */}
 					<Col md={4}>
 						<h5>Join Our Mailing List</h5>
-						<Form>
+						<Form onSubmit={handleSubmit}>
 							<Form.Group controlId="formEmail">
 								<Form.Control
 									type="email"
 									placeholder="Enter your email"
-									defaultValue="developers@smswithoutborders.com"
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+									className="footer-input"
 								/>
 							</Form.Group>
 							<Button variant="primary" type="submit">
 								Submit
 							</Button>
 						</Form>
+						{status && (
+							<Alert variant={status.type === "error" ? "danger" : "success"} className="mt-3">
+								{status.message}
+							</Alert>
+						)}
 					</Col>
 				</Row>
 
-				{/* Copyright Section */}
+				<Row className="my-4 text-center d-flex justify-content-end">
+					<Col className="d-flex justify-content-end align-items-center">
+						<a
+							href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="footer-link"
+						>
+							<FaAndroid />
+						</a>
+						<a
+							href="https://apps.apple.com/us/app/relaysms/id6630382970"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="footer-link"
+						>
+							<FaApple />
+						</a>
+						<a
+							href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android/releases"
+							className="footer-link"
+						>
+							<FaLinux />
+						</a>
+						<LanguageSwitcher className="mx-2" />
+					</Col>
+				</Row>
+
 				<Row className="mt-4">
 					<Col className="text-center">
 						<p>&copy; 2024 AFKANERD</p>
