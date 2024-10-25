@@ -99,14 +99,23 @@ const Hero = () => {
 						</Col>
 					</Row>
 
-					{/* ======================================================== */}
-
+					{/* ========================== how it works ============================== */}
 					<h2 className="how-header" dir={isFarsi ? "rtl" : "ltr"}>
 						{t("Howitworks.Header")}{" "}
 					</h2>
 					<main className="how-main">
 						<Row className="mt-4 justify-content-center">
-							<Col md={4} className="mb-4" data-aos="fade-right">
+							{/* Card 1 */}
+							<Col
+								xs={12}
+								sm={12}
+								md={8}
+								lg={4}
+								xl={4}
+								xxl={4}
+								className="mb-4"
+								data-aos="fade-right"
+							>
 								<div className="section">
 									<Card
 										className="card card-compose-send"
@@ -131,7 +140,18 @@ const Hero = () => {
 								</div>
 							</Col>
 
-							<Col md={4} className="mb-4" data-aos="fade-up" data-aos-delay="200">
+							{/* Card 2 */}
+							<Col
+								xs={12}
+								sm={12}
+								md={8}
+								lg={4}
+								xl={4}
+								xxl={4}
+								className="mb-4"
+								data-aos="fade-up"
+								data-aos-delay="200"
+							>
 								<div className="section">
 									<Card
 										className="card card-save-platforms"
@@ -156,7 +176,18 @@ const Hero = () => {
 								</div>
 							</Col>
 
-							<Col md={4} className="mb-4" data-aos="fade-left" data-aos-delay="400">
+							{/* Card 3 */}
+							<Col
+								xs={12}
+								sm={12}
+								md={8}
+								lg={4}
+								xl={4}
+								xxl={4}
+								className="mb-4"
+								data-aos="fade-left"
+								data-aos-delay="400"
+							>
 								<div className="section">
 									<Card
 										className="card card-receive-publish"
@@ -171,7 +202,7 @@ const Hero = () => {
 											<a
 												href="https://docs.smswithoutborders.com/docs/contributing/introduction"
 												target="_blank"
-												className="Readmore mt-auto" // Added mt-auto to push it down
+												className="Readmore mt-auto"
 												rel="noopener noreferrer"
 											>
 												{t("Howitworks.ReadMore")}
@@ -182,7 +213,8 @@ const Hero = () => {
 							</Col>
 						</Row>
 					</main>
-					{/* ============= blog section ========= */}
+
+					{/* ==================================== blog section ==================================== */}
 
 					<h2 className="blog-header">{t("Blog.Header")}</h2>
 					<Row className="blog-section">

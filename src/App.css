@@ -160,6 +160,7 @@ body {
 	}
 }
 /* ==================== how it works =================================== */
+
 .how-header {
 	font-size: 2rem;
 	color: #2c2f36;
@@ -198,7 +199,7 @@ body {
 	margin: 15px;
 	flex: 1;
 	display: flex;
-	gap: 20 !important;
+	gap: 25;
 	flex-direction: column;
 }
 
@@ -301,6 +302,32 @@ body {
 	}
 }
 
+/* Tablet View - Display Block */
+@media (min-width: 720px) and (max-width: 1024px) {
+	.how-main {
+		text-align: center;
+	}
+
+	.section {
+		width: 100%;
+		max-width: 100%;
+		margin: 0 auto;
+	}
+
+	.card {
+		width: 350px; /* Full width with centered margin */
+		margin: 20px auto; /* Centers each card with space around it */
+		box-shadow: 0.5px 0.5px 12px 0px #80808042;
+	}
+
+	.card-number {
+		margin: 0 auto;
+	}
+
+	.Readmore {
+		font-size: 1rem;
+	}
+}
 /* ========================= Blog section ================================= */
 .blog-section {
 	min-height: 50vh;
