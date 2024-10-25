@@ -15,8 +15,11 @@
 		"@testing-library/react": "^13.0.0",
 		"@testing-library/user-event": "^13.2.1",
 		"aos": "^2.3.4",
+		"axios": "^1.7.7",
+		"body-parser": "^1.20.3",
 		"bootstrap": "^5.3.3",
 		"buffer": "^6.0.3",
+		"express": "^4.21.1",
 		"framer-motion": "^11.5.4",
 		"i18next": "^23.16.3",
 		"i18next-browser-languagedetector": "^8.0.0",
@@ -77,5 +80,8 @@
 	"lint-staged": {
 		"*.{js,jsx}": "eslint --cache --fix",
 		"*.{js,jsx,json,css,html}": "prettier --cache -w"
-	}
+	},
+	"main": "index.js",
+	"repository": "git@github.com:smswithoutborders/RelaySMS-Website.git",
+	"author": "mildrette <mildredfonka1@gmail.com>"
 }
