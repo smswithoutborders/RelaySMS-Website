@@ -57,8 +57,11 @@ const Hero = () => {
 						<Nav.Link href="https://blog.smswithoutborders.com/" className="mx-2">
 							{t("Nav.Blog")}
 						</Nav.Link>
-						<Nav.Link href="https://docs.smswithoutborders.com/" className="mx-2">
+						{/* <Nav.Link href="https://docs.smswithoutborders.com/" className="mx-2">
 							{t("Nav.Help")}
+						</Nav.Link> */}
+						<Nav.Link href="https://docs.smswithoutborders.com/" className="mx-2">
+							{t("Nav.Support")}
 						</Nav.Link>
 						<Nav.Link as={Link} to="/Contact_Us" className="mx-2">
 							{t("Nav.Contact")}
