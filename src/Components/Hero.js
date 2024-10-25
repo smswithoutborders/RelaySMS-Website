@@ -57,9 +57,6 @@ const Hero = () => {
 						<Nav.Link href="https://blog.smswithoutborders.com/" className="mx-2">
 							{t("Nav.Blog")}
 						</Nav.Link>
-						{/* <Nav.Link href="https://docs.smswithoutborders.com/" className="mx-2">
-							{t("Nav.Help")}
-						</Nav.Link> */}
 						<Nav.Link href="https://docs.smswithoutborders.com/" className="mx-2">
 							{t("Nav.Support")}
 						</Nav.Link>
@@ -97,7 +94,7 @@ const Hero = () => {
 								{t("Landing.Android")} <FaDownload />
 							</Button>
 						</Col>
-						<Col md={6} xs={12} className="text-center" data-aos="fade-up">
+						<Col md={6} xs={12} className="text-center image" data-aos="fade-up">
 							<img src="/Relay.png" alt="relay" className="hero-image img-fluid" />
 						</Col>
 					</Row>
