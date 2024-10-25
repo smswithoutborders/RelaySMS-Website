@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import { FaAndroid, FaApple, FaLinux, FaGithub } from "react-icons/fa";
@@ -7,44 +7,11 @@ import { FaAndroid, FaApple, FaLinux, FaGithub } from "react-icons/fa";
 const Footer = () => {
 	const { t } = useTranslation();
 
-	const [email, setEmail] = useState("");
-	const [status, setStatus] = useState(null);
-
-	// Handle form submission
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-
-		if (!email || !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-			setStatus({ message: "Please enter a valid email.", type: "error" });
-			return;
-		}
-
-		try {
-			const response = await fetch("http://localhost:5000/subscribe", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({ email })
-			});
-
-			if (response.ok) {
-				setStatus({ message: "Subscription successful!", type: "success" });
-				setEmail("");
-			} else {
-				setStatus({ message: "Subscription failed. Please try again.", type: "error" });
-			}
-		} catch (error) {
-			setStatus({ message: "An error occurred. Please try again.", type: "error" });
-		}
-	};
-
 	return (
 		<footer className="footer py-4">
 			<Container>
-				<Row>
-					{/* Resources Section */}
-					<Col md={4}>
+				<Row className="justify-content-center" style={{ gap: "20px" }}>
+					<Col sm={6} md={5} lg={4} className="footer-col">
 						<h5>Resources</h5>
 						<ul className="list-unstyled">
 							<li>
@@ -55,15 +22,13 @@ const Footer = () => {
 							<li>
 								<a href="https://docs.smswithoutborders.com/">{t("Nav.Support")}</a>
 							</li>
-
 							<li>
 								<a href="https://smswithoutborders.com/privacy-policy">Privacy Policy</a>
 							</li>
 						</ul>
 					</Col>
 
-					{/* Downloads Section */}
-					<Col md={4}>
+					<Col sm={6} md={5} lg={4} className="footer-col">
 						<h5>Downloads</h5>
 						<ul className="list-unstyled">
 							<li>
@@ -72,9 +37,7 @@ const Footer = () => {
 									target="_blank"
 									rel="noopener noreferrer"
 								>
-									{" "}
-									<FaAndroid />
-									Android
+									<FaAndroid /> Android
 								</a>
 							</li>
 							<li>
@@ -83,41 +46,15 @@ const Footer = () => {
 									target="_blank"
 									rel="noopener noreferrer"
 								>
-									{" "}
 									<FaApple /> iOS
 								</a>
 							</li>
 							<li>
 								<a href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android/releases">
-									{" "}
 									<FaLinux /> Linux
 								</a>
 							</li>
 						</ul>
-					</Col>
-
-					{/* Mailing List Section */}
-					<Col md={4}>
-						<h5>Join Our Mailing List</h5>
-						<Form onSubmit={handleSubmit}>
-							<Form.Group controlId="formEmail">
-								<Form.Control
-									type="email"
-									placeholder="Enter your email"
-									value={email}
-									onChange={(e) => setEmail(e.target.value)}
-									className="footer-input"
-								/>
-							</Form.Group>
-							<Button variant="primary" type="submit">
-								Submit
-							</Button>
-						</Form>
-						{status && (
-							<Alert variant={status.type === "error" ? "danger" : "success"} className="mt-3">
-								{status.message}
-							</Alert>
-						)}
 					</Col>
 				</Row>
 

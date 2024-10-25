@@ -500,11 +500,16 @@ body {
 	color: #d1e7ff;
 }
 
+.footer-col {
+	margin: 0 auto;
+	max-width: 350px; /* Controls column width */
+}
+
 .language-switcher {
 	margin-left: 15px;
 }
 
-.footer .form-control {
+/* .footer .form-control {
 	background-color: #1a1a2e;
 	color: white;
 	border: none;
@@ -536,4 +541,4 @@ body {
 .footer .btn-primary:hover {
 	background-color: #0056b3;
 	color: white;
-}
+} */
