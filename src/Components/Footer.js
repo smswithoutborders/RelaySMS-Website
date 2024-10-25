@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { FaAndroid, FaApple, FaLinux } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import { FaAndroid, FaApple, FaLinux, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
+	const { t } = useTranslation();
+
 	const [email, setEmail] = useState("");
 	const [status, setStatus] = useState(null);
 
@@ -45,16 +48,16 @@ const Footer = () => {
 						<h5>Resources</h5>
 						<ul className="list-unstyled">
 							<li>
-								<a href="#">Support</a>
+								<a href="https://blog.smswithoutborders.com/" className="mx-2">
+									{t("Nav.Blog")}
+								</a>
 							</li>
 							<li>
-								<a href="#">Documentation</a>
+								<a href="https://docs.smswithoutborders.com/">{t("Nav.Support")}</a>
 							</li>
+
 							<li>
-								<a href="#">Blog</a>
-							</li>
-							<li>
-								<a href="#">Privacy Policy</a>
+								<a href="https://smswithoutborders.com/privacy-policy">Privacy Policy</a>
 							</li>
 						</ul>
 					</Col>
@@ -64,13 +67,31 @@ const Footer = () => {
 						<h5>Downloads</h5>
 						<ul className="list-unstyled">
 							<li>
-								<a href="#">Android</a>
+								<a
+									href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									{" "}
+									<FaAndroid />
+									Android
+								</a>
 							</li>
 							<li>
-								<a href="#">iOS</a>
+								<a
+									href="https://apps.apple.com/us/app/relaysms/id6630382970"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									{" "}
+									<FaApple /> iOS
+								</a>
 							</li>
 							<li>
-								<a href="#">Linux</a>
+								<a href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android/releases">
+									{" "}
+									<FaLinux /> Linux
+								</a>
 							</li>
 						</ul>
 					</Col>
@@ -103,26 +124,20 @@ const Footer = () => {
 				<Row className="my-4 text-center d-flex justify-content-end">
 					<Col className="d-flex justify-content-end align-items-center">
 						<a
-							href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
+							href="https://x.com/RelaySMS"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="footer-link"
 						>
-							<FaAndroid />
+							<img src="./x-w.png" alt="X logo" height="20" />
 						</a>
 						<a
-							href="https://apps.apple.com/us/app/relaysms/id6630382970"
+							href="https://github.com/smswithoutborders"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="footer-link"
 						>
-							<FaApple />
-						</a>
-						<a
-							href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android/releases"
-							className="footer-link"
-						>
-							<FaLinux />
+							<FaGithub className="footer-link" />
 						</a>
 						<LanguageSwitcher className="mx-2" />
 					</Col>
@@ -130,7 +145,9 @@ const Footer = () => {
 
 				<Row className="mt-4">
 					<Col className="text-center">
-						<p>&copy; 2024 AFKANERD</p>
+						<p>
+							&copy; {new Date().getFullYear()} {t("Footer.copyright")}
+						</p>
 					</Col>
 				</Row>
 			</Container>

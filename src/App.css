@@ -96,6 +96,7 @@ body {
 		height: auto;
 		padding-right: 20px;
 		margin: 20px;
+		padding-top: 20px;
 	}
 }
 
@@ -117,6 +118,7 @@ body {
 		max-width: 70%;
 		height: auto;
 		padding-left: 20px;
+		padding-top: 20px;
 	}
 }
 
@@ -130,6 +132,7 @@ body {
 .hero-image {
 	max-width: 70%;
 	height: auto;
+	padding-top: 60px;
 }
 
 @media (max-width: 768px) {
@@ -206,7 +209,7 @@ body {
 }
 
 .card .card-body .card-text {
-	font-size: 12px;
+	font-size: 15px;
 	margin-top: 8px;
 }
 
@@ -247,6 +250,10 @@ body {
 		gap: 20px;
 	}
 
+	.Readmore {
+		font-size: 1rem;
+	}
+
 	.section {
 		width: 100%;
 		max-width: 350px;
@@ -254,7 +261,7 @@ body {
 	}
 
 	.card {
-		width: 200px;
+		width: 250px;
 		box-shadow: 0.5px 0.5px 12px 0px #80808042;
 		margin: 0;
 	}
@@ -274,7 +281,9 @@ body {
 		text-align: center;
 		margin: 0 auto;
 	}
-
+	.Readmore {
+		font-size: 0.9rem;
+	}
 	.section {
 		width: 100%;
 		max-width: 400px;
@@ -282,7 +291,7 @@ body {
 	}
 
 	.card {
-		width: 100%;
+		width: 350px;
 		box-shadow: 0.5px 0.5px 12px 0px #80808042;
 		margin: 0;
 	}
@@ -376,7 +385,11 @@ body {
 	}
 
 	.read-more {
-		font-size: 0.7rem;
+		font-size: 0.9rem;
+	}
+	.blog-card {
+		width: 350px;
+		margin: 0;
 	}
 }
 

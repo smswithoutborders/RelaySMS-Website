@@ -58,7 +58,7 @@ const Hero = () => {
 							{t("Nav.Blog")}
 						</Nav.Link>
 						<Nav.Link href="https://docs.smswithoutborders.com/" className="mx-2">
-							{t("Nav.Help")}
+							{t("Nav.Support")}
 						</Nav.Link>
 						<Nav.Link as={Link} to="/Contact_Us" className="mx-2">
 							{t("Nav.Contact")}
@@ -94,7 +94,7 @@ const Hero = () => {
 								{t("Landing.Android")} <FaDownload />
 							</Button>
 						</Col>
-						<Col md={6} xs={12} className="text-center" data-aos="fade-up">
+						<Col md={6} xs={12} className="text-center image" data-aos="fade-up">
 							<img src="/Relay.png" alt="relay" className="hero-image img-fluid" />
 						</Col>
 					</Row>
