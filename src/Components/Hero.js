@@ -168,8 +168,8 @@ const Hero = () => {
 							</Card>
 						</Col>
 					</Row>
-					{/* ==================================== blog section ==================================== */}
 
+					{/* ==================================== blog section ==================================== */}
 					<h2 className="blog-header">{t("Blog.Header")}</h2>
 					<Row className="blog-section">
 						<Col md={6} className="mb-4">

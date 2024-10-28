@@ -24,6 +24,14 @@ body {
 	font-weight: bold;
 	text-transform: capitalize;
 }
+/* ===============================downlaod section ======================================== */
+
+.full-screen-container {
+	min-height: 80vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 
 /* ============================ Navbar Section ============================== */
 .custom-navbar {
