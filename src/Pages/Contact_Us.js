@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Button, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
@@ -106,7 +107,7 @@ const Contact_Us = () => {
 							<img src="./x.svg" alt="X logo" height="20" />
 						</Nav.Link>
 						<Nav.Link href="https://github.com/smswithoutborders" className="mx-2">
-							<img src="/images/github-icon.png" alt="GitHub logo" height="20" />
+							<FaGithub />
 						</Nav.Link>
 						<LanguageSwitcher className="mx-2" />
 					</Nav>
@@ -115,11 +116,30 @@ const Contact_Us = () => {
 
 			<Container
 				className="py-5 mt-5 d-flex flex-column justify-content-center"
-				style={{ minHeight: "80vh" }}
+				style={{ minHeight: "90vh" }}
 			>
 				<Row className="mb-5">
 					<Col>
-						<h2 className="text-center">{t("ContactUs.Title")}</h2>
+						<h2
+							className="text-center"
+							style={{
+								fontSize: "2.5rem",
+								fontWeight: "bold",
+								color: "#333",
+								padding: window.innerWidth >= 768 ? "20px" : "20px",
+								transition: "color 0.3s ease, transform 0.3s ease"
+							}}
+							onMouseEnter={(e) => {
+								e.currentTarget.style.color = "#0056b3";
+								e.currentTarget.style.transform = "scale(1.05)";
+							}}
+							onMouseLeave={(e) => {
+								e.currentTarget.style.color = "#333";
+								e.currentTarget.style.transform = "scale(1)";
+							}}
+						>
+							{t("ContactUs.Title")}
+						</h2>
 					</Col>
 				</Row>
 				<Row className="justify-content-center">
