@@ -98,125 +98,78 @@ const Hero = () => {
 							<img src="/Relay.png" alt="relay" className="hero-image img-fluid" />
 						</Col>
 					</Row>
+					{/* ============================================================================================= */}
 
 					{/* ========================== how it works ============================== */}
 					<h2 className="how-header" dir={isFarsi ? "rtl" : "ltr"}>
-						{t("Howitworks.Header")}{" "}
+						{t("Howitworks.Header")}
 					</h2>
-					<main className="how-main">
-						<Row className="mt-4 justify-content-center">
-							{/* Card 1 */}
-							<Col
-								xs={12}
-								sm={12}
-								md={8}
-								lg={4}
-								xl={4}
-								xxl={4}
-								className="mb-4"
-								data-aos="fade-up"
-								data-aos-delay="200"
-							>
-								<div className="section">
-									<Card
-										className="card card-compose-send"
-										style={{ borderTop: "5px solid #2F3C79" }}
-									>
-										<div className="card-number">1</div>
-										<Card.Body className="d-flex flex-column">
-											<div>
-												<div className="card-title text-bold">{t("Howitworks.titleA")}</div>
-												<div className="card-text text-muted">{t("Howitworks.A")}</div>
-											</div>
-											<a
-												href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms"
-												target="_blank"
-												rel="noopener noreferrer"
-												className="Readmore mt-auto"
-											>
-												{t("Howitworks.ReadMore")}
-											</a>
-										</Card.Body>
-									</Card>
-								</div>
-							</Col>
+					<Row className="justify-content-center">
+						{/* Card 1 */}
+						<Col xs={12} sm={6} md={4} className="mb-4">
+							<Card className="fixed-card" style={{ borderTop: "5px solid #2F3C79" }}>
+								<div className="card-number">1</div>
+								<Card.Body>
+									<Card.Title>{t("Howitworks.titleA")}</Card.Title>
+									<Card.Text>{t("Howitworks.A")}</Card.Text>
+									<div className="mt-auto d-flex justify-content-between align-items-center">
+										<a
+											href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms"
+											target="_blank"
+											rel="noopener noreferrer"
+											className="Readmore mt-auto"
+										>
+											{t("Howitworks.ReadMore")}
+										</a>
+									</div>
+								</Card.Body>
+							</Card>
+						</Col>
 
-							{/* Card 2 */}
-							<Col
-								xs={12}
-								sm={12}
-								md={8}
-								lg={4}
-								xl={4}
-								xxl={4}
-								className="mb-4"
-								data-aos="fade-up"
-								data-aos-delay="200"
-							>
-								<div className="section">
-									<Card
-										className="card card-save-platforms"
-										style={{ borderTop: "5px solid #2F3C79" }}
-									>
-										<div className="card-number">2</div>
-										<Card.Body className="d-flex flex-column">
-											<div>
-												<div className="card-title text-bold">{t("Howitworks.titleB")}</div>
-												<div className="card-text text-muted">{t("Howitworks.B")}</div>
-											</div>
-											<a
-												href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button"
-												target="_blank"
-												rel="noopener noreferrer"
-												className="Readmore mt-auto"
-											>
-												{t("Howitworks.ReadMore")}
-											</a>
-										</Card.Body>
-									</Card>
-								</div>
-							</Col>
+						{/* Card 2 */}
+						<Col xs={12} sm={6} md={4} className="mb-4">
+							<Card className="fixed-card" style={{ borderTop: "5px solid #2F3C79" }}>
+								<div className="card-number">2</div>
+								<Card.Body>
+									<Card.Title>{t("Howitworks.titleB")}</Card.Title>
+									<Card.Text>{t("Howitworks.B")}</Card.Text>
+									<div className="mt-auto d-flex justify-content-between align-items-center">
+										<a
+											href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button"
+											target="_blank"
+											rel="noopener noreferrer"
+											className="Readmore mt-auto"
+										>
+											{t("Howitworks.ReadMore")}
+										</a>
+									</div>
+								</Card.Body>
+							</Card>
+						</Col>
 
-							{/* Card 3 */}
-							<Col
-								xs={12}
-								sm={12}
-								md={8}
-								lg={4}
-								xl={4}
-								xxl={4}
-								className="mb-4"
-								data-aos="fade-up"
-								data-aos-delay="200"
-							>
-								<div className="section">
-									<Card
-										className="card card-receive-publish"
-										style={{ borderTop: "5px solid #2F3C79" }}
-									>
-										<div className="card-number">3</div>
-										<Card.Body className="d-flex flex-column">
-											<div>
-												<div className="card-title text-bold">{t("Howitworks.titleC")}</div>
-												<div className="card-text text-muted">{t("Howitworks.C")}</div>
-											</div>
-											<a
-												href="https://docs.smswithoutborders.com/docs/contributing/introduction"
-												target="_blank"
-												className="Readmore mt-auto"
-												rel="noopener noreferrer"
-											>
-												{t("Howitworks.ReadMore")}
-											</a>
-										</Card.Body>
-									</Card>
-								</div>
-							</Col>
-						</Row>
-					</main>
+						{/* Card 3 */}
+						<Col xs={12} sm={6} md={4} className="mb-4">
+							<Card className="fixed-card" style={{ borderTop: "5px solid #2F3C79" }}>
+								<div className="card-number">3</div>
+								<Card.Body>
+									<Card.Title>{t("Howitworks.titleC")}</Card.Title>
+									<Card.Text>{t("Howitworks.C")}</Card.Text>
+									<div className="mt-auto d-flex justify-content-between align-items-center">
+										<a
+											href="https://docs.smswithoutborders.com/docs/contributing/introduction"
+											target="_blank"
+											rel="noopener noreferrer"
+											className="Readmore mt-auto"
+										>
+											{t("Howitworks.ReadMore")}
+										</a>
+									</div>
+								</Card.Body>
+							</Card>
+						</Col>
+					</Row>
 
 					{/* ==================================== blog section ==================================== */}
-
 					<h2 className="blog-header">{t("Blog.Header")}</h2>
 					<Row className="blog-section">
 						<Col md={6} className="mb-4">

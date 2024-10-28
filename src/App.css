@@ -24,6 +24,14 @@ body {
 	font-weight: bold;
 	text-transform: capitalize;
 }
+/* ===============================downlaod section ======================================== */
+
+.full-screen-container {
+	min-height: 80vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 
 /* ============================ Navbar Section ============================== */
 .custom-navbar {
@@ -188,66 +196,27 @@ body {
 
 .how-header {
 	font-size: 2rem;
-	color: #2c2f36;
-	margin-bottom: 1rem;
-	padding-top: 90px;
-	padding-bottom: 15px;
-	text-align: center;
 	font-weight: bold;
-	text-transform: capitalize;
-}
-
-.how-main {
-	margin: 20px auto;
-	padding: 30px;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	column-gap: 25px;
-	min-height: 50vh;
-}
-
-.section {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 100%;
+	margin-bottom: 1.5rem;
+	color: #343a40;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 20px;
 }
 
 .card {
 	position: relative;
-	width: 380px;
-	padding: 30px;
-	box-shadow: 1px 0.5px 12px 0px #2f3c79;
-	box-sizing: border-box;
+	box-shadow: 0.5px 0.5px 12px 0px #80808042;
 	border-radius: 5px;
-	margin: 15px;
-	flex: 1;
+	margin: 15px auto;
+	border-top: 5px solid #2f3c79;
+	width: 90%;
+	max-width: 500px;
+	padding: 30px;
+	box-sizing: border-box;
 	display: flex;
-	gap: 25;
 	flex-direction: column;
-}
-
-.card .card-body .card-title {
-	font-size: 1.25rem;
-	font-weight: 600;
-	color: #293644;
-}
-
-.card .card-body .card-text {
-	font-size: 15px;
-	margin-top: 8px;
-}
-
-.Readmore {
-	text-decoration: none;
-	color: #343a40 !important;
-	font-size: 0.7rem;
-	font-weight: bold;
-	display: inline-flex;
-	align-items: center;
-	margin-top: 10px;
-	padding-top: 20px;
+	height: 100%;
 }
 
 .card-number {
@@ -268,91 +237,27 @@ body {
 	top: -30px;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-	.main {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 20px;
-	}
-
-	.Readmore {
-		font-size: 1rem;
-	}
-
-	.section {
-		width: 100%;
-		max-width: 350px;
-		margin: 0 auto;
-	}
-
-	.card {
-		width: 250px;
-		box-shadow: 0.5px 0.5px 12px 0px #80808042;
-		margin: 0;
-	}
-
-	.card-number {
-		margin: 0 auto;
-	}
-	.how-header {
-		padding-top: 20px;
-		padding-bottom: 15px;
-	}
+.card .card-body .card-title {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: #293644;
 }
 
-@media (max-width: 767px) {
-	.main {
-		display: block;
-		text-align: center;
-		margin: 0 auto;
-	}
-	.Readmore {
-		font-size: 0.9rem;
-	}
-	.section {
-		width: 100%;
-		max-width: 400px;
-		margin: 20px auto;
-	}
-
-	.card {
-		width: 350px;
-		box-shadow: 0.5px 0.5px 12px 0px #80808042;
-		margin: 0;
-	}
-
-	.card-number {
-		margin: 0 auto;
-	}
+.card .card-body .card-text {
+	font-size: 15px;
+	margin-top: 8px;
 }
 
-/* Tablet View - Display Block */
-@media (min-width: 720px) and (max-width: 1024px) {
-	.how-main {
-		text-align: center;
-	}
-
-	.section {
-		width: 100%;
-		max-width: 100%;
-		margin: 0 auto;
-	}
-
-	.card {
-		width: 350px; /* Full width with centered margin */
-		margin: 20px auto; /* Centers each card with space around it */
-		box-shadow: 0.5px 0.5px 12px 0px #80808042;
-	}
-
-	.card-number {
-		margin: 0 auto;
-	}
-
-	.Readmore {
-		font-size: 1rem;
-	}
+.Readmore {
+	text-decoration: none;
+	color: #343a40 !important;
+	font-size: 0.7rem;
+	font-weight: bold;
+	display: inline-flex;
+	align-items: center;
+	margin-top: auto;
 }
+
 /* ========================= Blog section ================================= */
 .blog-section {
 	min-height: 50vh;

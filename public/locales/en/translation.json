@@ -90,21 +90,17 @@
 		"Items": {
 			"Email": {
 				"Title": "Email",
-				"ButtonText": "Send Email",
+				"ButtonText": "Email",
 				"Link": "mailto:developers@smswithoutborders.com"
-			},
-			"IRC": {
-				"Title": "IRC",
-				"ButtonText": "freenode/#afkanerd"
 			},
 			"Twitter": {
 				"Title": "Twitter",
-				"ButtonText": "Follow on Twitter",
+				"ButtonText": "X",
 				"Link": "https://x.com/RelaySMS"
 			},
 			"GitHub": {
 				"Title": "GitHub",
-				"ButtonText": "View on GitHub",
+				"ButtonText": "GitHub",
 				"Link": "https://github.com/smswithoutborders"
 			}
 		}
