@@ -1,27 +1,51 @@
 import React from "react";
 import { Container, Row, Col, Button, Nav, Navbar } from "react-bootstrap";
-import { FiMail, FiMessageSquare } from "react-icons/fi";
-import { FaTwitter as FaXTwitter, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LanguageSwitcher from "../Components/LanguageSwitcher";
 
-// Individual contact item component
-const ContactItem = ({ icon: Icon, title, link, buttonText, variant }) => (
+const ContactItem = ({ imageSrc, title, link, buttonText, variant }) => (
 	<Col md={4} sm={6} xs={12} className="mb-4 text-center">
 		<a href={link?.href || "#"} target="_blank" rel="noopener noreferrer">
 			<Button
 				variant={variant}
 				className="icon-btn mb-3"
-				style={{ width: "100px", height: "100px" }}
+				style={{
+					width: "120px",
+					height: "120px",
+					borderRadius: "50%",
+					backgroundColor: "#F0F1F3",
+					borderColor: "#F0F1F3",
+					color: "black",
+					boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)"
+				}}
 			>
-				<Icon className="h3 m-0" />
+				<img src={imageSrc} alt={title} style={{ width: "50%", height: "50%" }} />
 			</Button>
 		</a>
-		<div>{title}</div>
+		<a
+			href={link?.href || "#"}
+			target="_blank"
+			rel="noopener noreferrer"
+			style={{ color: "inherit", textDecoration: "none" }}
+		>
+			<div>{title}</div>
+		</a>
 		{link ? (
-			<a href={link.href} target="_blank" rel="noreferrer" className="btn btn-link mt-2">
+			<a
+				href={link.href}
+				target="_blank"
+				rel="noreferrer"
+				className="btn btn-link mt-2"
+				style={{
+					color: "black",
+					textDecoration: "none",
+					transition: "color 0.3s ease" // Smooth color transition
+				}}
+				onMouseEnter={(e) => (e.currentTarget.style.color = "#0056b3")}
+				onMouseLeave={(e) => (e.currentTarget.style.color = "black")}
+			>
 				{buttonText}
 			</a>
 		) : (
@@ -36,28 +60,19 @@ const Contact_Us = () => {
 
 	const contactItems = [
 		{
-			icon: FiMail,
-			title: t("ContactUs.Items.Email.Title"),
+			imageSrc: "./gmail.svg",
 			link: { href: t("ContactUs.Items.Email.Link") },
 			buttonText: t("ContactUs.Items.Email.ButtonText"),
 			variant: "outline-primary"
 		},
 		{
-			icon: FiMessageSquare,
-			title: t("ContactUs.Items.IRC.Title"),
-			buttonText: t("ContactUs.Items.IRC.ButtonText"),
-			variant: "outline-success"
-		},
-		{
-			icon: FaXTwitter,
-			title: t("ContactUs.Items.Twitter.Title"),
+			imageSrc: "./x.svg",
 			link: { href: t("ContactUs.Items.Twitter.Link") },
 			buttonText: t("ContactUs.Items.Twitter.ButtonText"),
 			variant: "outline-dark"
 		},
 		{
-			icon: FaGithub,
-			title: t("ContactUs.Items.GitHub.Title"),
+			imageSrc: "./github.svg",
 			link: { href: t("ContactUs.Items.GitHub.Link") },
 			buttonText: t("ContactUs.Items.GitHub.ButtonText"),
 			variant: "outline-secondary"
@@ -91,7 +106,7 @@ const Contact_Us = () => {
 							<img src="./x.svg" alt="X logo" height="20" />
 						</Nav.Link>
 						<Nav.Link href="https://github.com/smswithoutborders" className="mx-2">
-							<FaGithub />
+							<img src="/images/github-icon.png" alt="GitHub logo" height="20" />
 						</Nav.Link>
 						<LanguageSwitcher className="mx-2" />
 					</Nav>
