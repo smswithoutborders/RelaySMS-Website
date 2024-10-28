@@ -5,7 +5,8 @@ import LanguageSwitcher from "../Components/LanguageSwitcher";
 import { Link } from "react-router-dom";
 
 const Download = () => {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const isFarsi = i18n.language === "fa";
 
 	const androidLinks = [
 		{
@@ -28,8 +29,8 @@ const Download = () => {
 	return (
 		<Container className="full-screen-container py-5">
 			{/* Responsive Navbar */}
-			<Navbar expand="lg" fixed="top" className="custom-navbar">
-				<Navbar.Brand href="/" className="navbar-logo">
+			<Navbar expand="lg" fixed="top" dir={isFarsi ? "rtl" : "ltr"} className="custom-navbar">
+				<Navbar.Brand href="#home" className="navbar-logo">
 					<img src="./logo.png" alt="Logo" height="40" className="logo" />
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="navbar-nav" />
@@ -42,7 +43,7 @@ const Download = () => {
 							{t("Nav.Blog")}
 						</Nav.Link>
 						<Nav.Link href="https://docs.smswithoutborders.com/" className="mx-2">
-							{t("Nav.Support")}
+							{t("Nav.Help")}
 						</Nav.Link>
 						<Nav.Link as={Link} to="/Contact_Us" className="mx-2">
 							{t("Nav.Contact")}
@@ -62,7 +63,26 @@ const Download = () => {
 
 			<Row className="mb-5">
 				<Col>
-					<h2 className="download-section text-center">{t("download.android")}</h2>
+					<h2
+						className="text-center"
+						style={{
+							fontSize: "2.5rem",
+							fontWeight: "bold",
+							color: "#333",
+							padding: window.innerWidth >= 768 ? "20px" : "20px",
+							transition: "color 0.3s ease, transform 0.3s ease"
+						}}
+						onMouseEnter={(e) => {
+							e.currentTarget.style.color = "#0056b3";
+							e.currentTarget.style.transform = "scale(1.05)";
+						}}
+						onMouseLeave={(e) => {
+							e.currentTarget.style.color = "#333";
+							e.currentTarget.style.transform = "scale(1)";
+						}}
+					>
+						{t("download.android")}
+					</h2>
 				</Col>
 			</Row>
 			<Row className="justify-content-center">
