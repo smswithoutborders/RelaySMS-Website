@@ -125,9 +125,9 @@ const Hero = () => {
 							fontSize: "2rem",
 							fontWeight: "bold",
 							color: "#333",
-							marginBottom: "2rem",
+							margin: "25px",
 							transition: "color 0.3s ease, transform 0.3s ease",
-							padding: "0 15px"
+							padding: "50px"
 						}}
 						onMouseEnter={(e) => {
 							e.currentTarget.style.color = "#0056b3";
@@ -333,7 +333,7 @@ const Hero = () => {
 									fontSize: "2rem",
 									fontWeight: "bold",
 									color: "#333",
-									marginBottom: "2rem",
+									marginBottom: "5rem",
 									transition: "color 0.3s ease, transform 0.3s ease",
 									padding: "0 15px"
 								}}
