@@ -347,16 +347,16 @@ const Hero = () => {
 									e.currentTarget.style.transform = "scale(1)";
 								}}
 							>
-								{t("footer.faqTitle")}
+								{t("Faq.faqTitle")}
 							</h2>
 							<Accordion defaultActiveKey="0" className="w-100">
 								{Array.from({ length: 5 }).map((_, idx) => (
 									<Accordion.Item eventKey={`${idx}`} key={idx}>
 										<Accordion.Header aria-controls={`faq-${idx}`} aria-expanded={idx === 0}>
-											{t(`footer.faq${idx + 1}.question`)}
+											{t(`Faq.faq${idx + 1}.question`)}
 										</Accordion.Header>
 										<Accordion.Body>
-											{ReactHtmlParser(t(`footer.faq${idx + 1}.answer`))}
+											{ReactHtmlParser(t(`Faq.faq${idx + 1}.answer`))}
 										</Accordion.Body>
 									</Accordion.Item>
 								))}

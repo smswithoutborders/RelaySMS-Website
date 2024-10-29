@@ -4,67 +4,66 @@
 		"Help": "Documentation",
 		"github": "GitHub",
 		"Blog": "Blog",
-		"Contact": "Nous Contacter",
+		"Contact": "Contactez-nous",
 		"Support": "Support"
 	},
 	"Landing": {
-		"span": "Pas de données ? Pas de soucis.",
-		"h1": "Restez Connecté avec RelaySMS",
-		"h2": "RelaySMS fournit des messages sécurisés et chiffrés, avec des protocoles tels que le Signal Double Ratchet pour la Sécurité Parfaitement Avancée (PFS)",
-		"Android": "Téléchargez RelaySMS"
+		"span": "Pas de données ? Pas de souci.",
+		"h1": "Restez connecté avec RelaySMS",
+		"h2": "RelaySMS permet aux utilisateurs d'envoyer des messages vers des plateformes en ligne sans connexion Internet active.",
+		"Android": "Télécharger RelaySMS"
 	},
 	"Howitworks": {
-		"Header": "Utilisation de l'Application",
-		"titleA": "Sauvegarder les plateformes (Gmail, X, Telegram)",
-		"A": "Vous pouvez stocker des jetons sur vos plateformes en ligne en utilisant des protocoles OAuth2 pris en charge par la plupart des plateformes en ligne. Cela garantit que seul l'accès que vous fournissez est mis à votre disposition pour une utilisation ultérieure.",
-		"Areadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms' target='_blank'>Lire la suite</a>",
-		"titleB": "Composer et Envoyer",
-		"B": "Sans connexion Internet, composez des messages pour les plateformes que vous avez sauvegardées depuis votre application RelaySMS. Les messages peuvent être de tout type de texte qui seront encodés et transférés via votre application de messagerie SMS par défaut. Tous les messages envoyés depuis votre application RelaySMS sont chiffrés.",
-		"Breadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button' target='_blank'>Lire la suite</a>",
-		"titleC": "Recevoir et Publier",
-		"C": "RelaySMS prend en charge des clients de passerelle SMS décentralisés qui peuvent recevoir et transférer des messages SMS vers des serveurs Vault en ligne. Les messages restent chiffrés tout au long de leur parcours et seuls les serveurs Vault peuvent les déchiffrer pour les publier sur vos plateformes en ligne.",
-		"Creadmore": "<a href='https://docs.smswithoutborders.com/docs/contributing/introduction' target='_blank'>Lire la suite</a>",
-		"ReadMore": "Lire la suite..."
+		"Header": "Utiliser l'application",
+		"titleA": "Enregistrer les plateformes (Gmail, X, Telegram)",
+		"A": "Vous pouvez stocker des tokens pour vos plateformes en ligne en utilisant les protocoles OAuth2 pris en charge par la plupart des plateformes. Cela garantit que seul l'accès que vous fournissez est disponible pour une utilisation ultérieure.",
+		"Areadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms' target='_blank' rel='noopener noreferrer'>En savoir plus</a>",
+		"titleB": "Composer et envoyer",
+		"B": "Sans connexion Internet, composez des messages pour les plateformes enregistrées dans votre application RelaySMS. Les messages peuvent être de tout type, codés et transmis via votre application de messagerie SMS par défaut. Tous les messages sont cryptés.",
+		"Breadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button' target='_blank' rel='noopener noreferrer'>En savoir plus</a>",
+		"titleC": "Recevoir et publier",
+		"C": "RelaySMS prend en charge des clients passerelle SMS décentralisés qui peuvent recevoir et transférer des messages SMS vers des serveurs Vault en ligne. Les messages restent cryptés tout au long de leur trajet.",
+		"Creadmore": "<a href='https://docs.smswithoutborders.com/docs/contributing/introduction' target='_blank' rel='noopener noreferrer'>En savoir plus</a>",
+		"ReadMore": "En savoir plus..."
 	},
 	"Blog": {
 		"Header": "Articles de Blog",
-		"Resilience": "Résilience des Clients de Passerelle dans SMSWithoutBorders",
-		"ResilienceD": "Le Client de Passerelle dans SMSWithoutBorders est clé pour acheminer les messages des SMS vers les plateformes en ligne. Le Client de Passerelle écoute les messages et les achemine vers le serveur de passerelle, qui publie ...",
-
-		"IDHeader": "RelaySMS Élargit le Contrôle des Utilisateurs avec l'Inscription de l'ID de l'Appareil",
-		"IDD": "RelaySMS (application swob) introduit une nouvelle fonctionnalité puissante : Inscription de l'ID de l'Appareil avec RelaySMS Vault ! Cette approche innovante vous donne plus de contrôle sur votre expérience de messagerie hors ligne.",
+		"Resilience": "Résilience des clients passerelle dans Smswithoutborders",
+		"ResilienceD": "Le client passerelle dans SMSWithoutBorders est essentiel pour acheminer les messages des SMS vers les plateformes en ligne...",
+		"IDHeader": "RelaySMS élargit le contrôle utilisateur avec l'inscription ID",
+		"IDD": "RelaySMS introduit l'inscription ID avec Vault RelaySMS...",
 		"Rebrand": "Rebranding",
-		"RebrandD": "SMSWithoutBorders devient le projet umbrella englobant RelaySMS et d'autres outils de messagerie. La fonctionnalité principale reste la même, mais les utilisateurs peuvent s'attendre à un nouveau nom, à des fonctionnalités de sécurité améliorées et à un accent sur la croissance future dans le cadre du projet SMSWithoutBorders.",
-		"ReadMore": "Lire la suite",
+		"RebrandD": "SMSWithoutBorders devient un projet global intégrant RelaySMS...",
+		"ReadMore": "En savoir plus",
 		"ReadOtherArticles": "Lire d'autres articles",
-		"articles1": "Résilience des Clients de Passerelle dans SMSWithoutBorders",
-		"articles2": "Fiabilité des Clients de Passerelle dans SMSWithoutBorders",
-		"articles3": "Nouvelle Version Alpha : Vault 0.1.0",
+		"articles1": "Résilience des clients passerelle",
+		"articles2": "Fiabilité des clients passerelle",
+		"articles3": "Nouvelle version Alpha : Vault 0.1.0",
 		"tag": "Articles",
 		"tags": "Version",
 		"readTime": "2 minutes de lecture"
 	},
-	"footer": {
+	"Faq": {
 		"faqTitle": "Questions Fréquemment Posées",
 		"faq1": {
-			"question": "Quand puis-je utiliser RelaySMS ?",
-			"answer": "Pendant les périodes d’instabilité (par exemple, élections, manifestations, etc.) et d'autres périodes susceptibles d'être sujettes à des coupures d'internet ou dans des zones avec une connectivité limitée."
+			"question": "Quand utiliser RelaySMS?",
+			"answer": "Pendant des périodes d'instabilité (élections, manifestations, etc.)..."
 		},
 		"faq2": {
-			"question": "Comment fonctionne RelaySMS ?",
-			"answer": "RelaySMS fonctionne en utilisant des messages SMS envoyés depuis votre application vers des clients de passerelle SMS gérés par des bénévoles, qui les transmettent à Internet."
+			"question": "Comment fonctionne RelaySMS?",
+			"answer": "RelaySMS utilise des messages SMS envoyés de votre application..."
 		},
 		"faq3": {
-			"question": "Ai-je besoin d'une connexion Internet pour utiliser RelaySMS ?",
-			"answer": "Une fois configuré, vous n'avez plus besoin d'une connexion Internet. Les messages sont envoyés par SMS depuis votre appareil."
+			"question": "Ai-je besoin d'une connexion Internet?",
+			"answer": "Une fois configuré, vous n'avez plus besoin de connexion Internet."
 		},
 		"faq4": {
-			"question": "RelaySMS est-il disponible sur mon appareil ?",
-			"answer": "RelaySMS est actuellement disponible sur Android et iOS. La prise en charge de Linux arrive bientôt."
+			"question": "RelaySMS est-il disponible sur mon appareil?",
+			"answer": "RelaySMS est actuellement disponible sur Android et iOS."
 		},
 		"faq5": {
-			"question": "Je rencontre des difficultés techniques. Comment puis-je obtenir de l'aide ?",
-			"answer": "Consultez notre <a href='//docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ'> guide de dépannage</a> ou contactez le support à <a href=\"mailto:developers@smswithoutborders.com\">developers@smswithoutborders.com</a>."
+			"question": "J'ai des problèmes techniques. Comment obtenir de l'aide?",
+			"answer": "Consultez notre guide de <a href='https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ' target='_blank' rel='noopener noreferrer'>dépannage</a>."
 		}
 	},
 	"Footer": {
@@ -73,8 +72,8 @@
 		"Support": "Support",
 		"help": "Documentation",
 		"Blog": "Blog",
-		"policy": "Politique de Confidentialité",
-		"Header3": "Rejoignez Notre Liste de Diffusion",
+		"policy": "Politique de confidentialité",
+		"Header3": "Rejoignez notre liste de diffusion",
 		"EnterEmail": "developers@smswithoutborders.com",
 		"Subscribe": "Soumettre",
 		"Header2": "Téléchargements",
@@ -83,27 +82,23 @@
 		"download3": "Linux",
 		"copyright": "AFKANERD"
 	},
-	"policy": "Politique de Confidentialité",
+	"policy": "Politique de confidentialité",
 	"ContactUs": {
 		"Title": "Contactez-nous",
 		"Items": {
 			"Email": {
 				"Title": "Email",
-				"ButtonText": "Envoyer un Email",
+				"ButtonText": "Email",
 				"Link": "mailto:developers@smswithoutborders.com"
-			},
-			"IRC": {
-				"Title": "IRC",
-				"ButtonText": "freenode/#afkanerd"
 			},
 			"Twitter": {
 				"Title": "Twitter",
-				"ButtonText": "Suivre sur Twitter",
+				"ButtonText": "X",
 				"Link": "https://x.com/RelaySMS"
 			},
 			"GitHub": {
 				"Title": "GitHub",
-				"ButtonText": "Voir sur GitHub",
+				"ButtonText": "GitHub",
 				"Link": "https://github.com/smswithoutborders"
 			}
 		}
@@ -111,10 +106,10 @@
 	"download": {
 		"android": "Télécharger pour Android",
 		"ios": "Télécharger pour iOS",
-		"desktop": "Télécharger pour Bureau",
+		"desktop": "Télécharger pour le bureau",
 		"androidLinks": {
 			"apk": "Télécharger le fichier .apk",
-			"playStore": "Télécharger depuis Play Store",
+			"playStore": "Télécharger sur le Play Store",
 			"fDroid": "Télécharger depuis F-Droid"
 		},
 		"iosLink": "Télécharger l'application iOS",

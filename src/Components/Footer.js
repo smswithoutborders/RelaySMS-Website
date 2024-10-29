@@ -13,21 +13,21 @@ const Footer = () => {
 				<Row className="justify-content-center text-center text-md-start" style={{ gap: "20px" }}>
 					{/* Resources Column */}
 					<Col sm={6} md={4} lg={3} className="footer-col mb-4">
-						<h5 className="mb-3">Resources</h5>
+						<h5 className="mb-3">{t("Footer.Header1")}</h5>
 						<ul className="list-unstyled">
 							<li>
 								<a href="https://blog.smswithoutborders.com/" className="footer-link">
-									{t("Nav.Blog")}
+									{t("Footer.Blog")}
 								</a>
 							</li>
 							<li>
 								<a href="https://docs.smswithoutborders.com/" className="footer-link">
-									{t("Nav.Support")}
+									{t("Footer.Support")}
 								</a>
 							</li>
 							<li>
 								<a href="https://smswithoutborders.com/privacy-policy" className="footer-link">
-									Privacy Policy
+									{t("Footer.policy")}
 								</a>
 							</li>
 						</ul>
@@ -35,7 +35,7 @@ const Footer = () => {
 
 					{/* Downloads Column */}
 					<Col sm={6} md={4} lg={3} className="footer-col mb-4">
-						<h5 className="mb-3">Downloads</h5>
+						<h5 className="mb-3">{t("Footer.Header2")}</h5>
 						<ul className="list-unstyled">
 							<li>
 								<a
@@ -44,7 +44,7 @@ const Footer = () => {
 									rel="noopener noreferrer"
 									className="footer-link"
 								>
-									<FaAndroid className="me-2" /> Android
+									<FaAndroid className="me-2" /> {t("Footer.download1")}
 								</a>
 							</li>
 							<li>
@@ -54,7 +54,7 @@ const Footer = () => {
 									rel="noopener noreferrer"
 									className="footer-link"
 								>
-									<FaApple className="me-2" /> iOS
+									<FaApple className="me-2" /> {t("Footer.download2")}
 								</a>
 							</li>
 							<li>
@@ -62,7 +62,8 @@ const Footer = () => {
 									href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android/releases"
 									className="footer-link"
 								>
-									<FaLinux className="me-2" /> Linux
+									<FaLinux className="me-2" />
+									{t("Footer.download3")}
 								</a>
 							</li>
 						</ul>
