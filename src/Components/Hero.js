@@ -77,100 +77,214 @@ const Hero = () => {
 				</Navbar.Collapse>
 			</Navbar>
 
-			{/* ========== Hero Section =============*/}
 			<div className="hero-section" style={{ marginTop: "50px" }} dir={isFarsi ? "rtl" : "ltr"}>
 				<Container fluid>
-					<Row className="align-items-center">
-						<Col md={6} xs={12} className="text-md-left" data-aos="fade-up">
-							<h1 className="display-4">{t("Landing.h1")}</h1>
-							<p className="Description">{t("Landing.h2")}</p>
+					{/* ======================== Hero Section =============================*/}
+					<Row className="align-items-center my-5">
+						<Col
+							md={6}
+							xs={12}
+							className="text-center text-md-start mb-4 mb-md-0"
+							data-aos="fade-up"
+						>
+							<h1 className="display-4" style={{ fontSize: "2.5rem", fontWeight: "bold" }}>
+								{t("Landing.h1")}
+							</h1>
+
+							<p className="Description" style={{ fontSize: "1.25rem", color: "#555" }}>
+								{t("Landing.h2")}
+							</p>
 							<Button
 								variant="primary"
 								as={Link}
 								to="/Download"
 								size="lg"
-								className="download-button"
+								className="download-button mt-3"
+								style={{ fontSize: "1rem", padding: "10px 20px" }}
 							>
 								{t("Landing.Android")} <FaDownload />
 							</Button>
 						</Col>
-						<Col md={6} xs={12} className="text-center image" data-aos="fade-up">
-							<img src="/Relay.png" alt="relay" className="hero-image img-fluid" />
+						<Col md={6} xs={12} className="text-center" data-aos="fade-up">
+							<img
+								src="/Relay.png"
+								alt="relay"
+								className="hero-image img-fluid"
+								style={{ maxWidth: "100%", height: "auto" }}
+							/>
 						</Col>
 					</Row>
+
 					{/* ============================================================================================= */}
 
 					{/* ========================== how it works ============================== */}
-					<h2 className="how-header" dir={isFarsi ? "rtl" : "ltr"}>
+					<h2
+						className="text-center mt-5"
+						dir={isFarsi ? "rtl" : "ltr"}
+						style={{
+							fontSize: "2rem",
+							fontWeight: "bold",
+							color: "#333",
+							marginBottom: "2rem",
+							transition: "color 0.3s ease, transform 0.3s ease",
+							padding: "0 15px"
+						}}
+						onMouseEnter={(e) => {
+							e.currentTarget.style.color = "#0056b3";
+							e.currentTarget.style.transform = "scale(1.05)";
+						}}
+						onMouseLeave={(e) => {
+							e.currentTarget.style.color = "#333";
+							e.currentTarget.style.transform = "scale(1)";
+						}}
+					>
 						{t("Howitworks.Header")}
 					</h2>
-					<Row className="justify-content-center">
+
+					<Row className="justify-content-center mx-2">
 						{/* Card 1 */}
-						<Col xs={12} sm={6} md={4} className="mb-4">
-							<Card className="fixed-card" style={{ borderTop: "5px solid #2F3C79" }}>
-								<div className="card-number">1</div>
-								<Card.Body>
+						<Col xs={12} sm={6} md={4} className="mb-4 d-flex">
+							<Card
+								className="flex-fill shadow-sm border-top-primary"
+								style={{ borderTop: "5px solid #2F3C79", minHeight: "250px" }}
+							>
+								<div
+									className="card-number"
+									style={{
+										position: "absolute",
+										top: "-10px",
+										left: "-10px",
+										background: "#2F3C79",
+										color: "#fff",
+										width: "30px",
+										height: "30px",
+										borderRadius: "50%",
+										display: "flex",
+										justifyContent: "center",
+										alignItems: "center"
+									}}
+								>
+									1
+								</div>
+								<Card.Body className="d-flex flex-column">
 									<Card.Title>{t("Howitworks.titleA")}</Card.Title>
 									<Card.Text>{t("Howitworks.A")}</Card.Text>
-									<div className="mt-auto d-flex justify-content-between align-items-center">
-										<a
-											href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms"
-											target="_blank"
-											rel="noopener noreferrer"
-											className="Readmore mt-auto"
-										>
-											{t("Howitworks.ReadMore")}
-										</a>
-									</div>
+									<a
+										href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="Readmore mt-auto"
+										style={{ color: "#0056b3", textDecoration: "none" }}
+									>
+										{t("Howitworks.ReadMore")}
+									</a>
 								</Card.Body>
 							</Card>
 						</Col>
 
 						{/* Card 2 */}
-						<Col xs={12} sm={6} md={4} className="mb-4">
-							<Card className="fixed-card" style={{ borderTop: "5px solid #2F3C79" }}>
-								<div className="card-number">2</div>
-								<Card.Body>
+						<Col xs={12} sm={6} md={4} className="mb-4 d-flex">
+							<Card
+								className="flex-fill shadow-sm border-top-primary"
+								style={{ borderTop: "5px solid #2F3C79", minHeight: "250px" }}
+							>
+								<div
+									className="card-number"
+									style={{
+										position: "absolute",
+										top: "-10px",
+										left: "-10px",
+										background: "#2F3C79",
+										color: "#fff",
+										width: "30px",
+										height: "30px",
+										borderRadius: "50%",
+										display: "flex",
+										justifyContent: "center",
+										alignItems: "center"
+									}}
+								>
+									2
+								</div>
+								<Card.Body className="d-flex flex-column">
 									<Card.Title>{t("Howitworks.titleB")}</Card.Title>
 									<Card.Text>{t("Howitworks.B")}</Card.Text>
-									<div className="mt-auto d-flex justify-content-between align-items-center">
-										<a
-											href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button"
-											target="_blank"
-											rel="noopener noreferrer"
-											className="Readmore mt-auto"
-										>
-											{t("Howitworks.ReadMore")}
-										</a>
-									</div>
+									<a
+										href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="Readmore mt-auto"
+										style={{ color: "#0056b3", textDecoration: "none" }}
+									>
+										{t("Howitworks.ReadMore")}
+									</a>
 								</Card.Body>
 							</Card>
 						</Col>
 
 						{/* Card 3 */}
-						<Col xs={12} sm={6} md={4} className="mb-4">
-							<Card className="fixed-card" style={{ borderTop: "5px solid #2F3C79" }}>
-								<div className="card-number">3</div>
-								<Card.Body>
+						<Col xs={12} sm={6} md={4} className="mb-4 d-flex">
+							<Card
+								className="flex-fill shadow-sm border-top-primary"
+								style={{ borderTop: "5px solid #2F3C79", minHeight: "250px" }}
+							>
+								<div
+									className="card-number"
+									style={{
+										position: "absolute",
+										top: "-10px",
+										left: "-10px",
+										background: "#2F3C79",
+										color: "#fff",
+										width: "30px",
+										height: "30px",
+										borderRadius: "50%",
+										display: "flex",
+										justifyContent: "center",
+										alignItems: "center"
+									}}
+								>
+									3
+								</div>
+								<Card.Body className="d-flex flex-column">
 									<Card.Title>{t("Howitworks.titleC")}</Card.Title>
 									<Card.Text>{t("Howitworks.C")}</Card.Text>
-									<div className="mt-auto d-flex justify-content-between align-items-center">
-										<a
-											href="https://docs.smswithoutborders.com/docs/contributing/introduction"
-											target="_blank"
-											rel="noopener noreferrer"
-											className="Readmore mt-auto"
-										>
-											{t("Howitworks.ReadMore")}
-										</a>
-									</div>
+									<a
+										href="https://docs.smswithoutborders.com/docs/contributing/introduction"
+										target="_blank"
+										rel="noopener noreferrer"
+										className="Readmore mt-auto"
+										style={{ color: "#0056b3", textDecoration: "none" }}
+									>
+										{t("Howitworks.ReadMore")}
+									</a>
 								</Card.Body>
 							</Card>
 						</Col>
 					</Row>
 
 					{/* ==================================== blog section ==================================== */}
-					<h2 className="blog-header">{t("Blog.Header")}</h2>
+					<h2
+						className="text-center"
+						dir={isFarsi ? "rtl" : "ltr"}
+						style={{
+							fontSize: "2rem",
+							fontWeight: "bold",
+							color: "#333",
+							margin: "100px",
+							transition: "color 0.3s ease, transform 0.3s ease"
+						}}
+						onMouseEnter={(e) => {
+							e.currentTarget.style.color = "#0056b3";
+							e.currentTarget.style.transform = "scale(1.05)";
+						}}
+						onMouseLeave={(e) => {
+							e.currentTarget.style.color = "#333";
+							e.currentTarget.style.transform = "scale(1)";
+						}}
+					>
+						{t("Blog.Header")}
+					</h2>
 					<Row className="blog-section">
 						<Col md={6} className="mb-4">
 							<Card className="blog-card" style={{ borderTop: "5px solid #2267ac" }}>
@@ -179,7 +293,6 @@ const Hero = () => {
 										<Card.Title className="card-title">{t("Blog.IDHeader")}</Card.Title>
 										<Card.Text className="card-text">{articleText}</Card.Text>
 									</div>
-									{/* Move this section downward */}
 									<div className="mt-auto d-flex justify-content-between align-items-center">
 										<a
 											href="https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
@@ -211,45 +324,41 @@ const Hero = () => {
 						</Col>
 					</Row>
 					{/* =============== faq section ================== */}
-					{/* FAQ Section */}
-					<Row className="mt-4">
+					<Row className="mt-5">
 						<Col>
-							<h5 className="faq-header mb-3">{t("footer.faqTitle")}</h5>
-							<Accordion defaultActiveKey="0">
-								<Accordion.Item eventKey="0">
-									<Accordion.Header aria-controls="faq-0" aria-expanded="true">
-										{t("footer.faq1.question")}
-									</Accordion.Header>
-									<Accordion.Body>{ReactHtmlParser(t("footer.faq1.answer"))}</Accordion.Body>
-								</Accordion.Item>
-
-								<Accordion.Item eventKey="1">
-									<Accordion.Header aria-controls="faq-1" aria-expanded="false">
-										{t("footer.faq2.question")}
-									</Accordion.Header>
-									<Accordion.Body>{ReactHtmlParser(t("footer.faq2.answer"))}</Accordion.Body>
-								</Accordion.Item>
-
-								<Accordion.Item eventKey="2">
-									<Accordion.Header aria-controls="faq-2" aria-expanded="false">
-										{t("footer.faq3.question")}
-									</Accordion.Header>
-									<Accordion.Body>{ReactHtmlParser(t("footer.faq3.answer"))}</Accordion.Body>
-								</Accordion.Item>
-
-								<Accordion.Item eventKey="3">
-									<Accordion.Header aria-controls="faq-3" aria-expanded="false">
-										{t("footer.faq4.question")}
-									</Accordion.Header>
-									<Accordion.Body>{ReactHtmlParser(t("footer.faq4.answer"))}</Accordion.Body>
-								</Accordion.Item>
-
-								<Accordion.Item eventKey="4">
-									<Accordion.Header aria-controls="faq-4" aria-expanded="false">
-										{t("footer.faq5.question")}
-									</Accordion.Header>
-									<Accordion.Body>{ReactHtmlParser(t("footer.faq5.answer"))}</Accordion.Body>
-								</Accordion.Item>
+							<h2
+								className="text-center mt-5"
+								dir={isFarsi ? "rtl" : "ltr"}
+								style={{
+									fontSize: "2rem",
+									fontWeight: "bold",
+									color: "#333",
+									marginBottom: "2rem",
+									transition: "color 0.3s ease, transform 0.3s ease",
+									padding: "0 15px"
+								}}
+								onMouseEnter={(e) => {
+									e.currentTarget.style.color = "#0056b3";
+									e.currentTarget.style.transform = "scale(1.05)";
+								}}
+								onMouseLeave={(e) => {
+									e.currentTarget.style.color = "#333";
+									e.currentTarget.style.transform = "scale(1)";
+								}}
+							>
+								{t("footer.faqTitle")}
+							</h2>
+							<Accordion defaultActiveKey="0" className="w-100">
+								{Array.from({ length: 5 }).map((_, idx) => (
+									<Accordion.Item eventKey={`${idx}`} key={idx}>
+										<Accordion.Header aria-controls={`faq-${idx}`} aria-expanded={idx === 0}>
+											{t(`footer.faq${idx + 1}.question`)}
+										</Accordion.Header>
+										<Accordion.Body>
+											{ReactHtmlParser(t(`footer.faq${idx + 1}.answer`))}
+										</Accordion.Body>
+									</Accordion.Item>
+								))}
 							</Accordion>
 						</Col>
 					</Row>
