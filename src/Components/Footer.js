@@ -8,36 +8,43 @@ const Footer = () => {
 	const { t } = useTranslation();
 
 	return (
-		<footer className="footer py-4">
+		<footer className="footer py-5" style={{ backgroundColor: "#04042c", color: "#ffff" }}>
 			<Container>
-				<Row className="justify-content-center" style={{ gap: "20px" }}>
-					<Col sm={6} md={5} lg={4} className="footer-col">
-						<h5>Resources</h5>
+				<Row className="justify-content-center text-center text-md-start" style={{ gap: "20px" }}>
+					{/* Resources Column */}
+					<Col sm={6} md={4} lg={3} className="footer-col mb-4">
+						<h5 className="mb-3">{t("Footer.Header1")}</h5>
 						<ul className="list-unstyled">
 							<li>
-								<a href="https://blog.smswithoutborders.com/" className="mx-2">
-									{t("Nav.Blog")}
+								<a href="https://blog.smswithoutborders.com/" className="footer-link">
+									{t("Footer.Blog")}
 								</a>
 							</li>
 							<li>
-								<a href="https://docs.smswithoutborders.com/">{t("Nav.Support")}</a>
+								<a href="https://docs.smswithoutborders.com/" className="footer-link">
+									{t("Footer.Support")}
+								</a>
 							</li>
 							<li>
-								<a href="https://smswithoutborders.com/privacy-policy">Privacy Policy</a>
+								<a href="https://smswithoutborders.com/privacy-policy" className="footer-link">
+									{t("Footer.policy")}
+								</a>
 							</li>
 						</ul>
 					</Col>
 
-					<Col sm={6} md={5} lg={4} className="footer-col">
-						<h5>Downloads</h5>
+					{/* Downloads Column */}
+					<Col sm={6} md={4} lg={3} className="footer-col mb-4">
+						<h5 className="mb-3">{t("Footer.Header2")}</h5>
 						<ul className="list-unstyled">
 							<li>
 								<a
 									href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 									target="_blank"
 									rel="noopener noreferrer"
+									className="footer-link"
 								>
-									<FaAndroid /> Android
+									<FaAndroid className="me-2" /> {t("Footer.download1")}
 								</a>
 							</li>
 							<li>
@@ -45,26 +52,32 @@ const Footer = () => {
 									href="https://apps.apple.com/us/app/relaysms/id6630382970"
 									target="_blank"
 									rel="noopener noreferrer"
+									className="footer-link"
 								>
-									<FaApple /> iOS
+									<FaApple className="me-2" /> {t("Footer.download2")}
 								</a>
 							</li>
 							<li>
-								<a href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android/releases">
-									<FaLinux /> Linux
+								<a
+									href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android/releases"
+									className="footer-link"
+								>
+									<FaLinux className="me-2" />
+									{t("Footer.download3")}
 								</a>
 							</li>
 						</ul>
 					</Col>
 				</Row>
 
-				<Row className="my-4 text-center d-flex justify-content-end">
-					<Col className="d-flex justify-content-end align-items-center">
+				{/* Social Media and Language Switcher Row */}
+				<Row className="mt-4 d-flex justify-content-center justify-content-md-end">
+					<Col className="d-flex justify-content-center justify-content-md-end align-items-center">
 						<a
 							href="https://x.com/RelaySMS"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="footer-link"
+							className="footer-link mx-2"
 						>
 							<img src="./x-w.png" alt="X logo" height="20" />
 						</a>
@@ -72,17 +85,18 @@ const Footer = () => {
 							href="https://github.com/smswithoutborders"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="footer-link"
+							className="footer-link mx-2"
 						>
-							<FaGithub className="footer-link" />
+							<FaGithub />
 						</a>
 						<LanguageSwitcher className="mx-2" />
 					</Col>
 				</Row>
 
+				{/* Copyright Row */}
 				<Row className="mt-4">
 					<Col className="text-center">
-						<p>
+						<p style={{ fontSize: "0.875rem", color: "#6c757d" }}>
 							&copy; {new Date().getFullYear()} {t("Footer.copyright")}
 						</p>
 					</Col>

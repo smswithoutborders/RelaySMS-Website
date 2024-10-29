@@ -44,7 +44,8 @@
 		"tags": "Release",
 		"readTime": "2 mins read"
 	},
-	"footer": {
+
+	"Faq": {
 		"faqTitle": "Frequently Asked Questions",
 		"faq1": {
 			"question": "When do I use RelaySMS?",
@@ -74,13 +75,14 @@
 		"help": "Documentation",
 		"Blog": "Blog",
 		"policy": "Privacy Policy",
-		"Header3": " Join Our Mailing List",
-		"EnterEmail": "developers@smswithoutborders.com",
-		"Subscribe": "Submit",
 		"Header2": "Downloads",
 		"download1": "Android",
 		"download2": "iOS",
 		"download3": "Linux",
+
+		"Header3": " Join Our Mailing List",
+		"EnterEmail": "developers@smswithoutborders.com",
+		"Subscribe": "Submit",
 		"copyright": "AFKANERD"
 	},
 	"policy": "Privacy Policy",

@@ -102,7 +102,8 @@ const Hero = () => {
 								className="download-button mt-3"
 								style={{ fontSize: "1rem", padding: "10px 20px" }}
 							>
-								{t("Landing.Android")} <FaDownload />
+								{t("Landing.Android")}
+								<FaDownload style={{ marginLeft: "20px" }} className="icon-animated" />
 							</Button>
 						</Col>
 						<Col md={6} xs={12} className="text-center" data-aos="fade-up">
@@ -125,9 +126,9 @@ const Hero = () => {
 							fontSize: "2rem",
 							fontWeight: "bold",
 							color: "#333",
-							marginBottom: "2rem",
+							margin: "25px",
 							transition: "color 0.3s ease, transform 0.3s ease",
-							padding: "0 15px"
+							padding: "50px"
 						}}
 						onMouseEnter={(e) => {
 							e.currentTarget.style.color = "#0056b3";
@@ -333,7 +334,7 @@ const Hero = () => {
 									fontSize: "2rem",
 									fontWeight: "bold",
 									color: "#333",
-									marginBottom: "2rem",
+									marginBottom: "5rem",
 									transition: "color 0.3s ease, transform 0.3s ease",
 									padding: "0 15px"
 								}}
@@ -346,16 +347,16 @@ const Hero = () => {
 									e.currentTarget.style.transform = "scale(1)";
 								}}
 							>
-								{t("footer.faqTitle")}
+								{t("Faq.faqTitle")}
 							</h2>
 							<Accordion defaultActiveKey="0" className="w-100">
 								{Array.from({ length: 5 }).map((_, idx) => (
 									<Accordion.Item eventKey={`${idx}`} key={idx}>
 										<Accordion.Header aria-controls={`faq-${idx}`} aria-expanded={idx === 0}>
-											{t(`footer.faq${idx + 1}.question`)}
+											{t(`Faq.faq${idx + 1}.question`)}
 										</Accordion.Header>
 										<Accordion.Body>
-											{ReactHtmlParser(t(`footer.faq${idx + 1}.answer`))}
+											{ReactHtmlParser(t(`Faq.faq${idx + 1}.answer`))}
 										</Accordion.Body>
 									</Accordion.Item>
 								))}
