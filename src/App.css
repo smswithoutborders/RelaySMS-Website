@@ -160,6 +160,20 @@ body {
 	font-size: 1.4rem;
 }
 
+@keyframes iconBounce {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-3px);
+	}
+}
+
+.download-button:hover .icon-animated {
+	animation: iconBounce 0.6s ease-in-out;
+}
+
 /* ====================================== */
 
 .hero-image {

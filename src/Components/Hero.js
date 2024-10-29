@@ -102,7 +102,8 @@ const Hero = () => {
 								className="download-button mt-3"
 								style={{ fontSize: "1rem", padding: "10px 20px" }}
 							>
-								{t("Landing.Android")} <FaDownload />
+								{t("Landing.Android")}
+								<FaDownload style={{ marginLeft: "20px" }} className="icon-animated" />
 							</Button>
 						</Col>
 						<Col md={6} xs={12} className="text-center" data-aos="fade-up">
