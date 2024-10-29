@@ -77,12 +77,13 @@ const Hero = () => {
 				</Navbar.Collapse>
 			</Navbar>
 
-			{/* ========== Hero Section =============*/}
 			<div className="hero-section" style={{ marginTop: "50px" }} dir={isFarsi ? "rtl" : "ltr"}>
 				<Container fluid>
+					{/* ========== Hero Section =============*/}
 					<Row className="align-items-center">
 						<Col md={6} xs={12} className="text-md-left" data-aos="fade-up">
 							<h1 className="display-4">{t("Landing.h1")}</h1>
+
 							<p className="Description">{t("Landing.h2")}</p>
 							<Button
 								variant="primary"
@@ -101,7 +102,25 @@ const Hero = () => {
 					{/* ============================================================================================= */}
 
 					{/* ========================== how it works ============================== */}
-					<h2 className="how-header" dir={isFarsi ? "rtl" : "ltr"}>
+					<h2
+						className="text-center"
+						dir={isFarsi ? "rtl" : "ltr"}
+						style={{
+							fontSize: "2.5rem",
+							fontWeight: "bold",
+							color: "#333",
+							margin: "100px",
+							transition: "color 0.3s ease, transform 0.3s ease"
+						}}
+						onMouseEnter={(e) => {
+							e.currentTarget.style.color = "#0056b3";
+							e.currentTarget.style.transform = "scale(1.05)";
+						}}
+						onMouseLeave={(e) => {
+							e.currentTarget.style.color = "#333";
+							e.currentTarget.style.transform = "scale(1)";
+						}}
+					>
 						{t("Howitworks.Header")}
 					</h2>
 					<Row className="justify-content-center">
@@ -170,7 +189,27 @@ const Hero = () => {
 					</Row>
 
 					{/* ==================================== blog section ==================================== */}
-					<h2 className="blog-header">{t("Blog.Header")}</h2>
+					<h2
+						className="text-center"
+						dir={isFarsi ? "rtl" : "ltr"}
+						style={{
+							fontSize: "2.5rem",
+							fontWeight: "bold",
+							color: "#333",
+							margin: "100px",
+							transition: "color 0.3s ease, transform 0.3s ease"
+						}}
+						onMouseEnter={(e) => {
+							e.currentTarget.style.color = "#0056b3";
+							e.currentTarget.style.transform = "scale(1.05)";
+						}}
+						onMouseLeave={(e) => {
+							e.currentTarget.style.color = "#333";
+							e.currentTarget.style.transform = "scale(1)";
+						}}
+					>
+						{t("Blog.Header")}
+					</h2>
 					<Row className="blog-section">
 						<Col md={6} className="mb-4">
 							<Card className="blog-card" style={{ borderTop: "5px solid #2267ac" }}>
@@ -211,45 +250,41 @@ const Hero = () => {
 						</Col>
 					</Row>
 					{/* =============== faq section ================== */}
+
 					{/* FAQ Section */}
-					<Row className="mt-4">
+					<Row className="mt-5">
 						<Col>
-							<h5 className="faq-header mb-3">{t("footer.faqTitle")}</h5>
-							<Accordion defaultActiveKey="0">
-								<Accordion.Item eventKey="0">
-									<Accordion.Header aria-controls="faq-0" aria-expanded="true">
-										{t("footer.faq1.question")}
-									</Accordion.Header>
-									<Accordion.Body>{ReactHtmlParser(t("footer.faq1.answer"))}</Accordion.Body>
-								</Accordion.Item>
-
-								<Accordion.Item eventKey="1">
-									<Accordion.Header aria-controls="faq-1" aria-expanded="false">
-										{t("footer.faq2.question")}
-									</Accordion.Header>
-									<Accordion.Body>{ReactHtmlParser(t("footer.faq2.answer"))}</Accordion.Body>
-								</Accordion.Item>
-
-								<Accordion.Item eventKey="2">
-									<Accordion.Header aria-controls="faq-2" aria-expanded="false">
-										{t("footer.faq3.question")}
-									</Accordion.Header>
-									<Accordion.Body>{ReactHtmlParser(t("footer.faq3.answer"))}</Accordion.Body>
-								</Accordion.Item>
-
-								<Accordion.Item eventKey="3">
-									<Accordion.Header aria-controls="faq-3" aria-expanded="false">
-										{t("footer.faq4.question")}
-									</Accordion.Header>
-									<Accordion.Body>{ReactHtmlParser(t("footer.faq4.answer"))}</Accordion.Body>
-								</Accordion.Item>
-
-								<Accordion.Item eventKey="4">
-									<Accordion.Header aria-controls="faq-4" aria-expanded="false">
-										{t("footer.faq5.question")}
-									</Accordion.Header>
-									<Accordion.Body>{ReactHtmlParser(t("footer.faq5.answer"))}</Accordion.Body>
-								</Accordion.Item>
+							<h2
+								className="text-center my-4"
+								dir={isFarsi ? "rtl" : "ltr"}
+								style={{
+									fontSize: "2rem",
+									fontWeight: "bold",
+									color: "#333",
+									transition: "color 0.3s ease, transform 0.3s ease"
+								}}
+								onMouseEnter={(e) => {
+									e.currentTarget.style.color = "#0056b3";
+									e.currentTarget.style.transform = "scale(1.05)";
+								}}
+								onMouseLeave={(e) => {
+									e.currentTarget.style.color = "#333";
+									e.currentTarget.style.transform = "scale(1)";
+								}}
+							>
+								{t("footer.faqTitle")}
+							</h2>
+							<Accordion defaultActiveKey="0" className="w-100">
+								{Array.from({ length: 5 }).map((_, idx) => (
+									<Accordion.Item eventKey={`${idx}`} key={idx}>
+										<Accordion.Header aria-controls={`faq-${idx}`} aria-expanded={idx === 0}>
+											{t(`footer.faq${idx + 1}.question`)}
+										</Accordion.Header>
+										<Accordion.Body>
+											{ReactHtmlParser(t(`footer.faq${idx + 1}.answer`))}
+										</Accordion.Body>
+									</Accordion.Item>
+								))}
 							</Accordion>
 						</Col>
 					</Row>
