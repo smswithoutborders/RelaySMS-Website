@@ -8,9 +8,27 @@ const LanguageSwitcher = () => {
 	const [selectedLang, setSelectedLang] = useState(i18n.language || "en");
 
 	useEffect(() => {
-		// Set language on mount and update language on change
-		i18n.changeLanguage(selectedLang);
-	}, [i18n, selectedLang]);
+		const detectLanguage = () => {
+			const userLang = navigator.language || navigator.languages[0];
+			let initialLang = "en";
+
+			if (userLang.startsWith("fr")) {
+				initialLang = "fr";
+			} else if (userLang.startsWith("es")) {
+				initialLang = "es";
+			} else if (userLang.startsWith("fa")) {
+				initialLang = "fa";
+			}
+
+			setSelectedLang(initialLang);
+			i18n.changeLanguage(initialLang);
+		};
+
+		// Call detectLanguage only if no language is manually selected (first load)
+		if (!i18n.language || i18n.language === "en") {
+			detectLanguage();
+		}
+	}, [i18n]);
 
 	const handleLanguageChange = (lang) => {
 		i18n.changeLanguage(lang);
@@ -37,8 +55,8 @@ const LanguageSwitcher = () => {
 			className="language-switcher"
 		>
 			<Dropdown.Item onClick={() => handleLanguageChange("en")}>🇺🇸 English</Dropdown.Item>
-			<Dropdown.Item onClick={() => handleLanguageChange("es")}>🇪🇸 Español</Dropdown.Item>
 			<Dropdown.Item onClick={() => handleLanguageChange("fr")}>🇫🇷 Français</Dropdown.Item>
+			<Dropdown.Item onClick={() => handleLanguageChange("es")}>🇪🇸 Español</Dropdown.Item>
 			<Dropdown.Item onClick={() => handleLanguageChange("fa")}>🇮🇷 فارسی</Dropdown.Item>
 		</DropdownButton>
 	);
