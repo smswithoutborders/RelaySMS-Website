@@ -149,24 +149,7 @@ const Hero = () => {
 								className="flex-fill shadow-sm border-top-primary"
 								style={{ borderTop: "5px solid #2F3C79", minHeight: "250px" }}
 							>
-								<div
-									className="card-number"
-									style={{
-										position: "absolute",
-										top: "-10px",
-										left: "-10px",
-										background: "#2F3C79",
-										color: "#fff",
-										width: "30px",
-										height: "30px",
-										borderRadius: "50%",
-										display: "flex",
-										justifyContent: "center",
-										alignItems: "center"
-									}}
-								>
-									1
-								</div>
+								<div className="card-number">1</div>
 								<Card.Body className="d-flex flex-column">
 									<Card.Title>{t("Howitworks.titleA")}</Card.Title>
 									<Card.Text>{t("Howitworks.A")}</Card.Text>
@@ -189,24 +172,7 @@ const Hero = () => {
 								className="flex-fill shadow-sm border-top-primary"
 								style={{ borderTop: "5px solid #2F3C79", minHeight: "250px" }}
 							>
-								<div
-									className="card-number"
-									style={{
-										position: "absolute",
-										top: "-10px",
-										left: "-10px",
-										background: "#2F3C79",
-										color: "#fff",
-										width: "30px",
-										height: "30px",
-										borderRadius: "50%",
-										display: "flex",
-										justifyContent: "center",
-										alignItems: "center"
-									}}
-								>
-									2
-								</div>
+								<div className="card-number">2</div>
 								<Card.Body className="d-flex flex-column">
 									<Card.Title>{t("Howitworks.titleB")}</Card.Title>
 									<Card.Text>{t("Howitworks.B")}</Card.Text>
@@ -229,24 +195,7 @@ const Hero = () => {
 								className="flex-fill shadow-sm border-top-primary"
 								style={{ borderTop: "5px solid #2F3C79", minHeight: "250px" }}
 							>
-								<div
-									className="card-number"
-									style={{
-										position: "absolute",
-										top: "-10px",
-										left: "-10px",
-										background: "#2F3C79",
-										color: "#fff",
-										width: "30px",
-										height: "30px",
-										borderRadius: "50%",
-										display: "flex",
-										justifyContent: "center",
-										alignItems: "center"
-									}}
-								>
-									3
-								</div>
+								<div className="card-number">3</div>
 								<Card.Body className="d-flex flex-column">
 									<Card.Title>{t("Howitworks.titleC")}</Card.Title>
 									<Card.Text>{t("Howitworks.C")}</Card.Text>
