@@ -17,13 +17,13 @@
 		"Header": "Using the App",
 		"titleA": "Save platforms(Gmail, X, Telegram)",
 		"A": "You can store tokens to your online platforms using OAuth2 protocols supported by most online platforms. This guarantees only the access you provide is made available for your use at a later time.",
-		"Areadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms' target='_blank' rel='noopener noreferrer'>Read More</a>",
+		"Areadmore": "<a href='https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-5-save-access-to-platforms' target='_blank' rel='noopener noreferrer'>Read More</a>",
 		"titleB": "Compose and Send",
 		"B": "Without an internet connection compose messages for platforms you have saved from within your RelaySMS app. The messages can be text of any nature which would be encoded and transferred through your default SMS messaging app. All messages sent from your RelaySMS app are encrypted.",
-		"Breadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button' target='_blank' rel='noopener noreferrer'>Read More</a>",
+		"Breadmore": "<a href='https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-1-click-the-compose-button' target='_blank' rel='noopener noreferrer'>Read More</a>",
 		"titleC": "Receives and Publish",
 		"C": "RelaySMS supports decentralized SMS Gateway clients which can receive and forward SMS messages to online Vault servers. The messages remain encrypted throughout their journey and only the Vault servers can decrypt to publish to your online platforms.",
-		"Creadmore": "<a href='https://docs.smswithoutborders.com/docs/contributing/introduction' target='_blank' rel='noopener noreferrer'>Read More</a>",
+		"Creadmore": "<a href='https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-4-sms-sent' target='_blank' rel='noopener noreferrer'>Read More</a>",
 		"ReadMore": "Read More..."
 	},
 	"Blog": {
