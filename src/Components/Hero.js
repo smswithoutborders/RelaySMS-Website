@@ -312,7 +312,7 @@ const Hero = () => {
 								style={{
 									marginLeft: isMobile ? "0%" : "15%",
 									marginRight: isMobile ? "0%" : "15%",
-									width: isMobile ? "100%" : "auto" // Ensures the accordion takes the full width on mobile
+									width: isMobile ? "100%" : "auto"
 								}}
 							>
 								{Array.from({ length: 5 }).map((_, idx) => (
