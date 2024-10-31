@@ -68,11 +68,8 @@ const Footer = () => {
 							</li>
 						</ul>
 					</Col>
-				</Row>
-
-				{/* Social Media and Language Switcher Row */}
-				<Row className="mt-4 d-flex justify-content-center justify-content-md-end">
-					<Col className="d-flex justify-content-center justify-content-md-end align-items-center">
+					{/* Social Media and Language Switcher Row */}
+					<Col className="d-flex justify-content-center align-items-center">
 						<a
 							href="https://x.com/RelaySMS"
 							target="_blank"
@@ -92,6 +89,8 @@ const Footer = () => {
 						<LanguageSwitcher className="mx-2" />
 					</Col>
 				</Row>
+
+				{/* <Row className="mt-4 d-flex justify-content-center justify-content-md-end"></Row> */}
 
 				{/* Copyright Row */}
 				<Row className="mt-4">
