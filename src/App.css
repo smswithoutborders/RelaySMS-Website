@@ -307,20 +307,8 @@ body {
 }
 
 /* ========================= Blog section ================================= */
-.blog-section {
-	min-height: 50vh;
-}
 
-.blog-header {
-	font-size: 2rem;
-	font-weight: bold;
-	margin-bottom: 1.5rem;
-	color: #343a40;
-	text-align: center;
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
-
+/* ========================= Blog section ================================= */
 .blog-card {
 	position: relative;
 	box-shadow: 0.5px 0.5px 12px 0px #80808042;
@@ -409,6 +397,26 @@ body {
 
 	.card-text {
 		font-size: 0.85rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.blog-card {
+		width: 100%;
+	}
+
+	.col-md-6 {
+		padding: 5px;
+	}
+}
+
+@media (max-width: 576px) {
+	.blog-card {
+		width: 100%;
+	}
+
+	.col-md-6 {
+		padding: 5px;
 	}
 }
 
