@@ -14,6 +14,7 @@ import ReactHtmlParser from "react-html-parser";
 const Hero = () => {
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
+	const isMobile = window.innerWidth <= 768;
 
 	useEffect(() => {
 		AOS.init({
@@ -306,7 +307,14 @@ const Hero = () => {
 								{t("Faq.faqTitle")}
 							</h2>
 
-							<Accordion defaultActiveKey="0" style={{ marginLeft: "15%", marginRight: "15%" }}>
+							<Accordion
+								defaultActiveKey="0"
+								style={{
+									marginLeft: isMobile ? "0%" : "15%",
+									marginRight: isMobile ? "0%" : "15%",
+									width: isMobile ? "100%" : "auto"
+								}}
+							>
 								{Array.from({ length: 5 }).map((_, idx) => (
 									<Accordion.Item eventKey={`${idx}`} key={idx} style={{ border: "none" }}>
 										<Accordion.Header
