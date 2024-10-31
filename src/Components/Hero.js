@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Navbar, Nav, Button, Card, Accordion } from "react-bootstrap";
-import { FaDownload, FaGithub } from "react-icons/fa";
+import { FaArrowDown, FaGithub } from "react-icons/fa";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -95,15 +95,21 @@ const Hero = () => {
 								{t("Landing.h2")}
 							</p>
 							<Button
-								variant="primary"
+								style={{
+									background: "#2f3c79",
+									border: "none",
+									borderRadius: "12px",
+									fontSize: "18px",
+									marginTop: "10px",
+									paddingTop: "2.5%",
+									paddingBottom: "2.5%"
+								}}
 								as={Link}
 								to="/Download"
 								size="lg"
-								className="download-button mt-3"
-								style={{ fontSize: "1rem", padding: "10px 20px" }}
+								className="mt-3 download-button"
 							>
-								{t("Landing.Android")}
-								<FaDownload style={{ marginLeft: "20px" }} className="icon-animated" />
+								{t("Landing.Android")} <FaArrowDown className="ms-2 icon-animated" />{" "}
 							</Button>
 						</Col>
 						<Col md={6} xs={12} className="text-center" data-aos="fade-up">
@@ -214,30 +220,31 @@ const Hero = () => {
 					</Row>
 
 					{/* ==================================== blog section ==================================== */}
-					<h2
-						className="text-center"
-						dir={isFarsi ? "rtl" : "ltr"}
-						style={{
-							fontSize: "2rem",
-							fontWeight: "bold",
-							color: "#333",
-							margin: "100px",
-							transition: "color 0.3s ease, transform 0.3s ease"
-						}}
-						onMouseEnter={(e) => {
-							e.currentTarget.style.color = "#0056b3";
-							e.currentTarget.style.transform = "scale(1.05)";
-						}}
-						onMouseLeave={(e) => {
-							e.currentTarget.style.color = "#333";
-							e.currentTarget.style.transform = "scale(1)";
-						}}
-					>
-						{t("Blog.Header")}
-					</h2>
-					<Row className="blog-section">
+					<Row className="mt-4 mx-0 px-3">
+						<h2
+							className="text-center mt-5 blog-header"
+							dir={isFarsi ? "rtl" : "ltr"}
+							style={{
+								fontSize: "2rem",
+								fontWeight: "bold",
+								color: "#333",
+								marginBottom: "5rem",
+								transition: "color 0.3s ease, transform 0.3s ease",
+								padding: "0 15px"
+							}}
+							onMouseEnter={(e) => {
+								e.currentTarget.style.color = "#0056b3";
+								e.currentTarget.style.transform = "scale(1.05)";
+							}}
+							onMouseLeave={(e) => {
+								e.currentTarget.style.color = "#333";
+								e.currentTarget.style.transform = "scale(1)";
+							}}
+						>
+							{t("Blog.Header")}
+						</h2>
 						<Col md={6} className="mb-4">
-							<Card className="blog-card" style={{ borderTop: "5px solid #2267ac" }}>
+							<Card className="blog-card" style={{ borderTop: "5px solid #2F3C79" }}>
 								<Card.Body className="d-flex flex-column">
 									<div>
 										<Card.Title className="card-title">{t("Blog.IDHeader")}</Card.Title>
@@ -252,7 +259,6 @@ const Hero = () => {
 										>
 											{t("Howitworks.ReadMore")}
 										</a>
-
 										<span className="read-time">{t("Blog.readTime")}</span>
 									</div>
 								</Card.Body>
@@ -273,8 +279,9 @@ const Hero = () => {
 							</ul>
 						</Col>
 					</Row>
+
 					{/* =============== faq section ================== */}
-					<Row className="mt-5">
+					<Row className="my-5">
 						<Col>
 							<h2
 								className="text-center mt-5"
@@ -298,13 +305,26 @@ const Hero = () => {
 							>
 								{t("Faq.faqTitle")}
 							</h2>
-							<Accordion defaultActiveKey="0" className="w-100">
+
+							<Accordion defaultActiveKey="0" style={{ marginLeft: "15%", marginRight: "15%" }}>
 								{Array.from({ length: 5 }).map((_, idx) => (
-									<Accordion.Item eventKey={`${idx}`} key={idx}>
-										<Accordion.Header aria-controls={`faq-${idx}`} aria-expanded={idx === 0}>
+									<Accordion.Item eventKey={`${idx}`} key={idx} style={{ border: "none" }}>
+										<Accordion.Header
+											aria-controls={`faq-${idx}`}
+											aria-expanded={idx === 0}
+											style={{
+												borderBottom: "1px solid #ddd",
+												paddingBottom: "10px"
+											}}
+										>
 											{t(`Faq.faq${idx + 1}.question`)}
 										</Accordion.Header>
-										<Accordion.Body>
+										<Accordion.Body
+											style={{
+												borderBottom: "1px solid #ddd",
+												paddingBottom: "15px"
+											}}
+										>
 											{ReactHtmlParser(t(`Faq.faq${idx + 1}.answer`))}
 										</Accordion.Body>
 									</Accordion.Item>
