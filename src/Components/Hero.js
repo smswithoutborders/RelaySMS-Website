@@ -114,48 +114,47 @@ const Hero = () => {
 
 			<div className="hero-section" style={{ marginTop: "50px" }} dir={isFarsi ? "rtl" : "ltr"}>
 				<Container fluid>
-					{/* ======================== Hero Section =============================*/}
-					<Row className="align-items-center my-5">
-						<Col
-							md={6}
-							xs={12}
-							className="text-center text-md-start mb-4 mb-md-0"
-							data-aos="fade-up"
-						>
-							<h1 className="display-4" style={{ fontSize: "2.5rem", fontWeight: "bold" }}>
+					{/* ======================== */}
+
+					<Row className="hero align-items-center justify-content-center">
+						{/* Hero Text Column */}
+						<Col xs={12} md={6} className="text-center text-md-start p-4">
+							<h1 className="hero-title" style={{ fontWeight: "bold", fontSize: "2.5rem" }}>
 								{t("Landing.h1")}
 							</h1>
-
-							<p className="Description" style={{ fontSize: "1.25rem", color: "#555" }}>
+							<p className="hero-description mt-3" style={{ fontSize: "1.25rem", color: "#555" }}>
 								{t("Landing.h2")}
 							</p>
 							<Button
+								as={Link}
+								to="/Download"
+								className="mt-4 px-5 py-3 download-button"
 								style={{
 									background: "#2f3c79",
 									border: "none",
 									borderRadius: "12px",
-									fontSize: "18px",
+									fontSize: "1rem",
 									marginTop: "10px",
 									paddingTop: "2.5%",
 									paddingBottom: "2.5%"
 								}}
-								as={Link}
-								to="/Download"
-								size="lg"
-								className="mt-3 download-button"
 							>
-								{t("Landing.Android")} <FaArrowDown className="ms-2 icon-animated" />{" "}
+								{t("Landing.Android")} <FaArrowDown className="ms-2 icon-animated" />
 							</Button>
 						</Col>
-						<Col md={6} xs={12} className="text-center" data-aos="fade-up">
+
+						{/* Image Column */}
+						<Col xs={12} md={6} className="text-center p-4">
 							<img
 								src="/Relay.png"
-								alt="relay"
-								className="hero-image img-fluid"
-								style={{ maxWidth: "100%", height: "auto" }}
+								alt="App preview"
+								className="img-fluid"
+								style={{ borderRadius: "15px", maxWidth: "100%", height: "auto" }}
 							/>
 						</Col>
 					</Row>
+
+					{/* ======================== Hero Section =============================*/}
 
 					{/* ============================================================================================= */}
 
