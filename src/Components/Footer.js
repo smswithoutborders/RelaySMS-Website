@@ -59,7 +59,7 @@ const Footer = () => {
 							</li>
 							<li>
 								<a
-									href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android/releases"
+									href="https://github.com/smswithoutborders/RelaySMS-Android/releases"
 									className="footer-link"
 								>
 									<FaLinux className="me-2" />

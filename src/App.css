@@ -14,16 +14,6 @@ body {
 	font-style: normal;
 }
 
-.faq-header {
-	font-size: 2rem;
-	color: #2c2f36;
-	margin-bottom: 1rem;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	text-align: center;
-	font-weight: bold;
-	text-transform: capitalize;
-}
 /* ===============================downlaod section ======================================== */
 
 .full-screen-container {
@@ -38,6 +28,7 @@ body {
 	padding-left: 20px;
 	padding-right: 20px;
 	background-color: #ffffff;
+	box-shadow: 0.5px 0.5px 5px 0px #094fda42;
 }
 .navbar-logo {
 	margin-left: 15px;
@@ -50,7 +41,6 @@ body {
 .social-icons {
 	margin-right: 30px;
 }
-
 /* ============================ Hero Section ============================== */
 .hero-section {
 	padding: 4rem;
@@ -241,183 +231,59 @@ body {
 	}
 }
 /* ==================== how it works =================================== */
-
-.how-header {
-	font-size: 2rem;
-	font-weight: bold;
-	margin-bottom: 1.5rem;
-	color: #343a40;
-	text-align: center;
-	padding-top: 50px;
-	padding-bottom: 20px;
-}
-
-.card {
-	position: relative;
-	box-shadow: 0.5px 0.5px 12px 0px #80808042;
-	border-radius: 5px;
-	margin: 15px auto;
-	border-top: 5px solid #2f3c79;
-	width: 90%;
-	max-width: 500px;
-	padding: 30px;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-}
-
 .card-number {
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: bold;
 	color: #fff;
 	background-color: #2f3c79;
 	padding: 15px;
 	border-radius: 50%;
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 8px rgba(56, 56, 56, 0.2);
 	position: absolute;
 	left: 20px;
 	top: -30px;
 }
 
-.card .card-body .card-title {
-	font-size: 1.25rem;
-	font-weight: 600;
-	color: #293644;
-}
-
-.card .card-body .card-text {
-	font-size: 15px;
-	margin-top: 8px;
-}
-
-.Readmore {
-	text-decoration: none;
-	color: #343a40 !important;
-	font-size: 0.7rem;
-	font-weight: bold;
-	display: inline-flex;
-	align-items: center;
-	margin-top: auto;
-}
-
-/* ========================= Blog section ================================= */
-
-/* ========================= Blog section ================================= */
-.blog-card {
+.card {
 	position: relative;
+	padding: 10px;
 	box-shadow: 0.5px 0.5px 12px 0px #80808042;
-	border-radius: 5px;
-	margin: 15px auto;
-	border-top: 5px solid #2f3c79;
-	width: 90%;
-	max-width: 500px;
-	padding: 30px;
 	box-sizing: border-box;
+	border-radius: 5px;
+	margin: 5px;
+	flex: 1;
 	display: flex;
 	flex-direction: column;
-	height: 100%;
+}
+.card .card-body .card-title {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.card .card-body .card-text {
+	margin-top: 8px;
+}
+.Readmore {
+	font-size: 0.9rem;
+	font-weight: bold;
+	color: #021d3a !important;
+	text-decoration: none !important;
 }
 
-.card-title {
-	font-size: 1.25rem;
-	font-weight: 600;
-	color: #2f3c79;
-}
-
-.card-text {
-	font-size: 1rem;
-	color: #495057;
-	margin-top: 0.8rem;
+.Readmore:hover {
+	color: #003f7d !important;
+	text-decoration: none;
 }
 
 .read-time {
-	font-size: 0.9rem;
+	font-size: 0.85rem;
 	color: #6c757d;
-	margin-top: 20px;
-}
-
-.read-more {
-	text-decoration: none;
-	color: #343a40 !important;
-	font-size: 0.9rem;
-	font-weight: bold;
-}
-
-.read-more:hover {
-	color: #2267ac !important;
-}
-
-.article-link {
-	color: #2267ac !important;
-	font-size: 1rem;
-	text-decoration: none;
-}
-
-.article-link:hover {
-	color: #3c54b4;
-	text-decoration: none;
-}
-
-@media (max-width: 768px) {
-	.blog-header {
-		font-size: 1.75rem;
-	}
-
-	.card-title {
-		font-size: 1.1rem;
-	}
-
-	.card-text {
-		font-size: 0.9rem;
-	}
-
-	.read-more {
-		font-size: 0.9rem;
-	}
-	.blog-card {
-		width: 350px;
-		margin: 0;
-	}
-}
-
-@media (max-width: 576px) {
-	.blog-header {
-		font-size: 1.5rem;
-	}
-
-	.card-title {
-		font-size: 1rem;
-	}
-
-	.card-text {
-		font-size: 0.85rem;
-	}
-}
-
-@media (max-width: 768px) {
-	.blog-card {
-		width: 100%;
-	}
-
-	.col-md-6 {
-		padding: 5px;
-	}
-}
-
-@media (max-width: 576px) {
-	.blog-card {
-		width: 100%;
-	}
-
-	.col-md-6 {
-		padding: 5px;
-	}
 }
 
 /* ============================ Footer Section ============================ */
