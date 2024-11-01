@@ -24,7 +24,6 @@ const Hero = () => {
 		});
 	}, []);
 
-	const articleText = t("Blog.IDD");
 	const otherArticles = [
 		{
 			title: t("Blog.articles1"),
@@ -40,10 +39,45 @@ const Hero = () => {
 		}
 	];
 
+	const cards = [
+		{
+			title: t("Howitworks.titleA"),
+			description: t("Howitworks.A"),
+			link: "https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms",
+			linkText: t("Howitworks.ReadMore")
+		},
+		{
+			title: t("Howitworks.titleB"),
+			description: t("Howitworks.B"),
+			link: "https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button",
+			linkText: t("Howitworks.ReadMore")
+		},
+		{
+			title: t("Howitworks.titleC"),
+			description: t("Howitworks.C"),
+			link: "https://docs.smswithoutborders.com/docs/contributing/introduction",
+			linkText: t("Howitworks.ReadMore")
+		}
+	];
+
+	const blogs = [
+		{
+			title: t("Blog.IDHeader"),
+			description: t("Blog.IDD"),
+			link: "https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
+		}
+	];
+
 	return (
 		<>
 			{/* Responsive Navbar */}
-			<Navbar expand="lg" fixed="top" dir={isFarsi ? "rtl" : "ltr"} className="custom-navbar">
+			<Navbar
+				variant="light"
+				expand="lg"
+				fixed="top"
+				dir={isFarsi ? "rtl" : "ltr"}
+				className="custom-navbar"
+			>
 				{/* Logo aligned to the left */}
 				<Navbar.Brand href="#home" className="navbar-logo">
 					<img src="./logo.png" alt="Logo" height="40" className="logo" />
@@ -126,112 +160,59 @@ const Hero = () => {
 					{/* ============================================================================================= */}
 
 					{/* ========================== how it works ============================== */}
-					<h2
-						className="text-center mt-5"
-						dir={isFarsi ? "rtl" : "ltr"}
-						style={{
-							fontSize: "2rem",
-							fontWeight: "bold",
-							color: "#333",
-							margin: "25px",
-							transition: "color 0.3s ease, transform 0.3s ease",
-							padding: "50px"
-						}}
-						onMouseEnter={(e) => {
-							e.currentTarget.style.color = "#0056b3";
-							e.currentTarget.style.transform = "scale(1.05)";
-						}}
-						onMouseLeave={(e) => {
-							e.currentTarget.style.color = "#333";
-							e.currentTarget.style.transform = "scale(1)";
-						}}
-					>
-						{t("Howitworks.Header")}
-					</h2>
 
-					<Row className="justify-content-center mx-2">
-						{/* Card 1 */}
-						<Col xs={12} sm={6} md={4} className="mb-4 d-flex">
-							<Card
-								className="flex-fill shadow-sm border-top-primary"
-								style={{ borderTop: "5px solid #2F3C79", minHeight: "250px" }}
-							>
-								<div className="card-number">1</div>
-								<Card.Body className="d-flex flex-column">
-									<Card.Title>{t("Howitworks.titleA")}</Card.Title>
-									<Card.Text>{t("Howitworks.A")}</Card.Text>
-									<a
-										href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms"
-										target="_blank"
-										rel="noopener noreferrer"
-										className="Readmore mt-auto"
-										style={{ color: "#0056b3", textDecoration: "none" }}
-									>
-										{t("Howitworks.ReadMore")}
-									</a>
-								</Card.Body>
-							</Card>
-						</Col>
-
-						{/* Card 2 */}
-						<Col xs={12} sm={6} md={4} className="mb-4 d-flex">
-							<Card
-								className="flex-fill shadow-sm border-top-primary"
-								style={{ borderTop: "5px solid #2F3C79", minHeight: "250px" }}
-							>
-								<div className="card-number">2</div>
-								<Card.Body className="d-flex flex-column">
-									<Card.Title>{t("Howitworks.titleB")}</Card.Title>
-									<Card.Text>{t("Howitworks.B")}</Card.Text>
-									<a
-										href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button"
-										target="_blank"
-										rel="noopener noreferrer"
-										className="Readmore mt-auto"
-										style={{ color: "#0056b3", textDecoration: "none" }}
-									>
-										{t("Howitworks.ReadMore")}
-									</a>
-								</Card.Body>
-							</Card>
-						</Col>
-
-						{/* Card 3 */}
-						<Col xs={12} sm={6} md={4} className="mb-4 d-flex">
-							<Card
-								className="flex-fill shadow-sm border-top-primary"
-								style={{ borderTop: "5px solid #2F3C79", minHeight: "250px" }}
-							>
-								<div className="card-number">3</div>
-								<Card.Body className="d-flex flex-column">
-									<Card.Title>{t("Howitworks.titleC")}</Card.Title>
-									<Card.Text>{t("Howitworks.C")}</Card.Text>
-									<a
-										href="https://docs.smswithoutborders.com/docs/contributing/introduction"
-										target="_blank"
-										rel="noopener noreferrer"
-										className="Readmore mt-auto"
-										style={{ color: "#0056b3", textDecoration: "none" }}
-									>
-										{t("Howitworks.ReadMore")}
-									</a>
-								</Card.Body>
-							</Card>
-						</Col>
-					</Row>
-
-					{/* ==================================== blog section ==================================== */}
-					<Row className="mt-4 mx-0 px-3">
+					<Row className="justify-content-center">
 						<h2
-							className="text-center mt-5 blog-header"
+							className="text-center"
 							dir={isFarsi ? "rtl" : "ltr"}
 							style={{
 								fontSize: "2rem",
 								fontWeight: "bold",
 								color: "#333",
-								marginBottom: "5rem",
-								transition: "color 0.3s ease, transform 0.3s ease",
-								padding: "0 15px"
+								margin: "100px",
+								transition: "color 0.3s ease, transform 0.3s ease"
+							}}
+							onMouseEnter={(e) => {
+								e.currentTarget.style.color = "#0056b3";
+								e.currentTarget.style.transform = "scale(1.05)";
+							}}
+							onMouseLeave={(e) => {
+								e.currentTarget.style.color = "#333";
+								e.currentTarget.style.transform = "scale(1)";
+							}}
+						>
+							{t("Howitworks.Header")}
+						</h2>
+
+						{cards.map((card, idx) => (
+							<Col xs={12} sm={8} md={6} lg={4} key={idx} className="mb-4">
+								<Card className="h-100 shadow-sm" style={{ borderTop: "5px solid #2F3C79" }}>
+									<div className="card-number">{idx + 1}</div>
+									<Card.Body className="d-flex flex-column">
+										<Card.Title>{card.title}</Card.Title>
+										<Card.Text>{card.description}</Card.Text>
+										<div className="mt-auto d-flex justify-content-between align-items-center w-100">
+											<Button className="Readmore" variant="link" href={card.link}>
+												{card.linkText}
+											</Button>
+										</div>
+									</Card.Body>
+								</Card>
+							</Col>
+						))}
+					</Row>
+
+					{/* ========================== blog section ============================== */}
+					<Row className="justify-content-center" id="blog">
+						<h2
+							className="text-center"
+							dir={isFarsi ? "rtl" : "ltr"}
+							style={{
+								fontSize: "2rem",
+								fontWeight: "bold",
+								color: "#333",
+								margin: "100px",
+								transition: "color 0.3s ease, transform 0.3s ease"
 							}}
 							onMouseEnter={(e) => {
 								e.currentTarget.style.color = "#0056b3";
@@ -244,35 +225,35 @@ const Hero = () => {
 						>
 							{t("Blog.Header")}
 						</h2>
-						<Col md={6} className="mb-4">
-							<Card className="blog-card" style={{ borderTop: "5px solid #2F3C79" }}>
-								<Card.Body className="d-flex flex-column">
-									<div>
-										<Card.Title className="card-title">{t("Blog.IDHeader")}</Card.Title>
-										<Card.Text className="card-text">{articleText}</Card.Text>
-									</div>
-									<div className="mt-auto d-flex justify-content-between align-items-center">
-										<a
-											href="https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
-											target="_blank"
-											rel="noopener noreferrer"
-											className="read-more"
-										>
-											{t("Howitworks.ReadMore")}
-										</a>
-										<span className="read-time">{t("Blog.readTime")}</span>
-									</div>
-								</Card.Body>
-							</Card>
-						</Col>
-
+						{blogs.map((blog, index) => (
+							<Col md={4} sm={12} key={index} className="mb-4">
+								<Card className="h-100" style={{ borderTop: "5px solid #2F3C79" }}>
+									<Card.Body>
+										<Card.Title>{blog.title}</Card.Title>
+										<Card.Text>{blog.description}</Card.Text>
+										<div className="mt-auto d-flex justify-content-between align-items-center w-100">
+											<span className="read-time">{t("Blog.readTime")}</span>
+											<Button className="Readmore mt-auto" variant="link" href={blog.link}>
+												{t("Howitworks.ReadMore")}
+											</Button>
+										</div>
+									</Card.Body>
+								</Card>
+							</Col>
+						))}
 						<Col md={6}>
 							<h4>{t("Blog.ReadOtherArticles")}</h4>
 							<ul className="list-unstyled">
 								{otherArticles.map((article, index) => (
 									<li key={index} className="mb-2">
 										<FaFileAlt className="me-2" />
-										<a href={article.url} target="_blank" className="article-link" rel="noreferrer">
+										<a
+											href={article.url}
+											style={{ color: "#2F3C79" }}
+											target="_blank"
+											className="article-link"
+											rel="noreferrer"
+										>
 											{article.title}
 										</a>
 									</li>
