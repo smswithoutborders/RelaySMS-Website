@@ -1,61 +1,29 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { useTranslation } from "react-i18next";
-import { FaGithub, FaTwitter, FaAndroid, FaApple, FaLinux } from "react-icons/fa";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { FaAndroid, FaApple, FaLinux, FaGithub } from "react-icons/fa";
 
-function Footer() {
+const Footer = () => {
 	const { t } = useTranslation();
 
 	return (
-		<footer className="footer-container">
+		<footer className="footer py-5" style={{ backgroundColor: "#04042c", color: "#ffff" }}>
 			<Container>
-				<Row className="py-2">
-					<Col lg={4} md={6} sm={12} className="mb-3 text-center text-md-start">
-						<h5 className="footer-title">{t("Footer.Header")}</h5>
-						<a
-							href="https://smswithoutborders.com/"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="footer-link footer-text"
-						>
-							{t("Footer.body")}
-						</a>
-						<LanguageSwitcher />
-					</Col>
-					<Col lg={2} md={3} sm={6} className="mb-3 text-center text-md-start">
-						<h5 className="footer-title">{t("Footer.Header1")}</h5>
-						<ul className="footer-links">
+				<Row className="justify-content-center text-center text-md-start" style={{ gap: "20px" }}>
+					{/* Resources Column */}
+					<Col sm={6} md={4} lg={3} className="footer-col mb-4">
+						<h5 className="mb-3">{t("Footer.Header1")}</h5>
+						<ul className="list-unstyled">
 							<li>
-								<a
-									href="https://github.com/smswithoutborders"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="footer-link"
-								>
-									<FaGithub /> {t("Footer.social1")}
+								<a href="https://blog.smswithoutborders.com/" className="footer-link">
+									{t("Footer.Blog")}
 								</a>
 							</li>
 							<li>
-								<a
-									href="https://x.com/RelaySMS"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="footer-link"
-								>
-									<FaTwitter /> {t("Footer.social2")}
+								<a href="https://docs.smswithoutborders.com/" className="footer-link">
+									{t("Footer.Support")}
 								</a>
-							</li>
-						</ul>
-					</Col>
-					<Col lg={2} md={3} sm={6} className="mb-3 text-center text-md-start">
-						<h5 className="footer-title">{t("Footer.Header2")}</h5>
-						<ul className="footer-links">
-							<li>
-								<Link as={Link} to="/Contact_Us" className="footer-link">
-									{t("Footer.help")}
-								</Link>
 							</li>
 							<li>
 								<a href="https://smswithoutborders.com/privacy-policy" className="footer-link">
@@ -64,9 +32,11 @@ function Footer() {
 							</li>
 						</ul>
 					</Col>
-					<Col lg={4} md={12} sm={12} className="text-center">
-						<h5 className="footer-title">{t("Footer.Header3")}</h5>
-						<ul className="footer-links">
+
+					{/* Downloads Column */}
+					<Col sm={6} md={4} lg={3} className="footer-col mb-4">
+						<h5 className="mb-3">{t("Footer.Header2")}</h5>
+						<ul className="list-unstyled">
 							<li>
 								<a
 									href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
@@ -74,7 +44,7 @@ function Footer() {
 									rel="noopener noreferrer"
 									className="footer-link"
 								>
-									<FaAndroid /> {t("Footer.download1")}
+									<FaAndroid className="me-2" /> {t("Footer.download1")}
 								</a>
 							</li>
 							<li>
@@ -84,23 +54,48 @@ function Footer() {
 									rel="noopener noreferrer"
 									className="footer-link"
 								>
-									<FaApple /> {t("Footer.download2")}
+									<FaApple className="me-2" /> {t("Footer.download2")}
 								</a>
 							</li>
 							<li>
 								<a
-									href="https://github.com/smswithoutborders/SMSWithoutBorders-App-Android/releases"
+									href="https://github.com/smswithoutborders/RelaySMS-Android/releases"
 									className="footer-link"
 								>
-									<FaLinux /> {t("Footer.download3")}
+									<FaLinux className="me-2" />
+									{t("Footer.download3")}
 								</a>
 							</li>
 						</ul>
 					</Col>
+					{/* Social Media and Language Switcher Row */}
+					<Col className="d-flex justify-content-center align-items-center">
+						<a
+							href="https://x.com/RelaySMS"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="footer-link mx-2"
+						>
+							<img src="./x-w.png" alt="X logo" height="20" />
+						</a>
+						<a
+							href="https://github.com/smswithoutborders"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="footer-link mx-2"
+						>
+							<FaGithub />
+						</a>
+						<LanguageSwitcher className="mx-2" />
+					</Col>
 				</Row>
-				<Row className="pt-2 border-top">
+
+				{/* <Row className="mt-4 d-flex justify-content-center justify-content-md-end"></Row> */}
+
+				{/* Copyright Row */}
+				<Row className="mt-4">
 					<Col className="text-center">
-						<p className="footer-copyright">
+						<p style={{ fontSize: "0.875rem", color: "#6c757d" }}>
 							&copy; {new Date().getFullYear()} {t("Footer.copyright")}
 						</p>
 					</Col>
@@ -108,6 +103,6 @@ function Footer() {
 			</Container>
 		</footer>
 	);
-}
+};
 
 export default Footer;

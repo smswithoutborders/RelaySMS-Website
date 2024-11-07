@@ -1,316 +1,173 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
 * {
-	font-family: Inter, sans-serif;
-}
-/* ======================= general header styling  ========================== */
-h2 {
-	position: relative;
-	margin: 0 auto 20px;
-	padding: 10px 30px;
-	text-align: center;
-}
-/* =========================== Hero section==================================== */
-.hero-container {
-	overflow: hidden;
-	position: relative;
-	margin-top: 56px;
-	padding: 20px;
+	box-sizing: border-box;
+	font-family: "Lexend", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
 }
 
-.hero-main {
-	margin-top: 4rem;
-	margin-bottom: 5.5rem;
-}
+/* ===============================downlaod section ======================================== */
 
-.hero-title {
-	font-weight: bold;
-	color: #333;
-	font-size: 2.5rem;
-	margin-bottom: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-.hero {
-	font-weight: bold;
-	color: #010b3d;
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-.hero-highlight {
-	color: #041c94;
-}
-
-.hero-description {
-	color: #6c757d;
-	padding: 0 20px;
-	font-size: 1.1rem;
-	text-align: justify;
-	margin-top: 1.5rem;
-	margin-bottom: 2rem;
-	gap: 2;
-}
-
-.hero-image {
-	max-height: 500px;
-	object-fit: cover;
-	padding: 20px;
-	padding-left: 90px;
-	align-items: center;
-}
-
-@media (max-width: 767px) {
-	.hero-buttons {
-		flex-direction: column;
-	}
-	.hero-image {
-		max-height: 350px;
-		object-fit: cover;
-		padding: 10px;
-	}
-	.hero-main {
-		margin-top: 4rem;
-		height: 50vh;
-	}
-}
-
-.hero-buttons {
+.full-screen-container {
+	min-height: 80vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: 0.5rem;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-	.hero-main {
-		margin-top: 4rem;
-		height: 50vh;
-	}
-	.hero-title {
-		font-size: 2.2rem;
-		gap: 1;
-	}
-	.hero-description {
-		font-size: 1.2rem;
-	}
-	.hero-buttons {
-		flex-direction: row;
-		justify-content: center;
-		gap: 1rem;
-		width: 100%;
-		padding-left: 20px;
-	}
-	.hero-image {
-		max-height: 450px;
-		display: block;
-		margin: 0 auto;
-		object-fit: cover;
-		padding: 10px;
-	}
-}
-
-@media (min-width: 992px) {
-	.hero-buttons {
-		gap: 1.5rem;
-	}
-}
-
-.hero-btn {
-	width: 160px;
-	height: 50px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 8px;
-	font-weight: bold;
-}
-
-/* Button styles */
-.button-title .github {
-	color: #020721;
-	font-weight: 400;
-}
-
-.android-btn {
-	background-color: #02167a !important;
-	color: #f7f8fd;
-	font-weight: 600 !important;
-}
-
-.apple-btn {
-	background-color: #fff !important;
-	color: #2d333f !important;
-	border: 1px solid #041c94;
-	font-weight: 600 !important;
-}
-
-.github-btn {
-	background-color: #041f2d !important;
-	color: #fff;
-	font-weight: 600 !important;
-	border: 1px solid #edeef6;
-}
-
-.hero-icon {
-	max-width: 30px;
-	margin-right: 8px;
-}
-
-/* =========================== Hover Effects ========================== */
-.android-btn:hover {
-	background-color: #e9edf5 !important;
-	color: #021141 !important;
-}
-
-.apple-btn:hover {
-	background-color: #041f2d !important;
-	color: #f7f8fd !important;
-	border: 1px solid #041c94;
-}
-
-.github-btn:hover {
-	color: #f7f8fd;
-	border: 1px solid #d0d7e0;
-	background-color: #02167a !important;
-}
-
-/* ================================== blog ================================= */
-.blog-section {
-	padding: 2rem 0;
-}
-
-.Readmore {
-	color: "#041c94";
-	text-decoration: none;
-	font-weight: "600";
-	display: "inline-flex";
-	align-items: "center";
-	transition: "background-color 0.3s, color 0.3s";
-	padding: "0.5rem 0";
-}
-
-/* ===================================== FAQ Section ================================== */
-.faq-section {
-	padding: 3rem 1rem;
-}
-
-.faq-item {
-	border: 1px solid #ccc;
-	margin-bottom: 1rem;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-	transition: box-shadow 0.3s;
-}
-
-.faq-item:hover {
-	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-.faq-item .accordion-header {
+/* ============================ Navbar Section ============================== */
+.custom-navbar {
+	padding-left: 20px;
+	padding-right: 20px;
 	background-color: #ffffff;
+	box-shadow: 0.5px 0.5px 5px 0px #e2e8f342;
+}
+.navbar-logo {
+	margin-left: 15px;
+}
+
+.nav-links {
+	margin-right: 20px;
+}
+
+.social-icons {
+	margin-right: 30px;
+}
+
+/* ============================ Hero Section ============================== */
+.hero {
+	max-height: 100vh;
+	height: 100vh;
+}
+.hero-title {
+	color: #333;
+}
+
+.hero-description {
+	line-height: 1.6;
+}
+
+.download-button {
+	background-color: #007bff;
 	border: none;
 }
 
-.faq-item .accordion-body {
-	background-color: #f9f9f9;
-}
-
-.faq-item .accordion-button {
-	color: #333;
-	font-weight: 600;
-}
-
-.faq-header {
-	font-size: 2rem;
-	color: #2c2f36;
-	margin-bottom: 1rem;
-	padding-top: 10px;
-	text-align: center;
-	font-weight: bold;
-	text-transform: uppercase;
+.download-button:hover {
+	background-color: #0056b3;
 }
 
 @media (max-width: 768px) {
-	.faq-section {
-		padding: 2rem 1rem;
+	.hero {
+		max-height: 100vh;
+		padding-top: 10%;
+	}
+	.hero-title {
+		font-size: 2rem;
 	}
 
-	.faq-header {
-		font-size: 1.75rem;
+	.hero-description {
+		font-size: 1.1rem;
 	}
 
-	.faq-item {
-		margin-bottom: 1.5rem;
+	.download-button {
+		font-size: 0.9rem;
+		padding: 10px 20px;
 	}
 
-	.faq-item .accordion-header {
-		font-size: 1.15rem;
-		border-radius: 40%;
-	}
-
-	.faq-item .accordion-body {
-		font-size: 0.95rem;
-		border-radius: 40%;
-	}
-}
-
-/* Mobile */
-@media (max-width: 576px) {
-	.faq-section {
-		padding: 1.5rem 0.5rem;
-	}
-
-	.faq-header {
-		font-size: 1.5rem;
-	}
-
-	.faq-item {
-		margin-bottom: 1rem;
-	}
-
-	.faq-item .accordion-header {
-		font-size: 1rem;
-		border-radius: 40%;
-	}
-
-	.faq-item .accordion-body {
-		font-size: 0.85rem;
-		border-radius: 40%;
+	.landing-page {
+		padding: 30px 20px;
 	}
 }
 
-/* ===================================== footer================================== */
-.footer-container {
-	background-color: #020721;
-	color: #fff;
-	padding: 1rem 0;
-	font-size: 0.85rem;
+@media (min-width: 768px) and (max-width: 991px) {
+	.hero {
+		max-height: 50vh;
+		padding-top: 10%;
+	}
 }
 
-.footer-title {
-	font-size: 1.1rem;
+/* ==================== how it works =================================== */
+.card-number {
+	font-size: 20px;
 	font-weight: bold;
 	color: #fff;
-	margin-bottom: 0.5rem;
+	background-color: #2f3c79;
+	padding: 15px;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 4px 8px rgba(56, 56, 56, 0.2);
+	position: absolute;
+	left: 20px;
+	top: -30px;
 }
 
-.footer-text {
-	color: #bbb;
-	line-height: 1.4;
+.card {
+	position: relative;
+	padding: 10px;
+	box-shadow: 0.5px 0.5px 12px 0px #80808042;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin: 5px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+.card .card-body .card-title {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.card .card-body .card-text {
+	margin-top: 8px;
+}
+.Readmore {
+	font-size: 0.9rem;
+	font-weight: bold;
+	color: #021d3a !important;
+	text-decoration: none !important;
 }
 
-.footer-links {
-	list-style-type: none;
-	padding: 0;
+.Readmore:hover {
+	color: #003f7d !important;
+	text-decoration: none;
+}
+
+.read-time {
+	font-size: 0.85rem;
+	color: #6c757d;
+}
+
+/* ============================ Footer Section ============================ */
+.footer {
+	padding: 2rem 0;
+	color: #b3b6b7;
 }
 
 .footer-link {
-	color: #bbb;
+	color: #b3b6b7;
 	text-decoration: none;
-	margin-bottom: 0.3rem;
-	display: block;
+	transition: color 0.3s ease;
 }
 
-.footer-copyright {
-	color: #bbb;
-	margin-top: 0.5rem;
-	font-size: 0.75rem;
+.footer-link:hover {
+	color: #59a5bf;
+	text-decoration: none;
+}
+
+.footer-col h5 {
+	font-weight: bold;
+	color: #b3b6b7;
 }
