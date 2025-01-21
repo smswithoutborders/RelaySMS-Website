@@ -8,12 +8,8 @@ const Download = () => {
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
 
+	// Android links
 	const androidLinks = [
-		{
-			imgSrc: "./android.svg",
-			title: t("download.androidLinks.apk"),
-			link: "https://github.com/smswithoutborders/RelaySMS-Android"
-		},
 		{
 			imgSrc: "./play.svg",
 			title: t("download.androidLinks.playStore"),
@@ -23,6 +19,20 @@ const Download = () => {
 			imgSrc: "./fdroid.png",
 			title: t("download.androidLinks.fDroid"),
 			link: "https://apt.izzysoft.de/fdroid/index/apk/com.afkanerd.sw0b"
+		},
+		{
+			imgSrc: "./android.svg",
+			title: t("download.androidLinks.apk"),
+			link: "https://github.com/smswithoutborders/RelaySMS-Android"
+		}
+	];
+
+	// iOS links
+	const iosLinks = [
+		{
+			imgSrc: "./ios.png",
+			title: t("download.ios"),
+			link: "https://apps.apple.com/us/app/relaysms/id6630382970"
 		}
 	];
 
@@ -61,6 +71,7 @@ const Download = () => {
 				</Navbar.Collapse>
 			</Navbar>
 
+			{/* Android Section */}
 			<Row className="mb-5">
 				<Col>
 					<h2
@@ -98,13 +109,76 @@ const Download = () => {
 									borderRadius: "50%",
 									backgroundColor: "#F0F1F3",
 									borderColor: "#F0F1F3",
-									boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)" // Adds a soft shadow
+									boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)"
 								}}
 							>
 								<img
-									src={item.imgSrc} // Dynamic image source
+									src={item.imgSrc}
 									alt="Icon"
-									style={{ width: "50%", height: "50%", objectFit: "contain" }} // Adjust image size to fit within button
+									style={{ width: "50%", height: "50%", objectFit: "contain" }}
+								/>
+							</Button>
+						</a>
+						{/* Link title text */}
+						<div>
+							<a
+								href={item.link}
+								target="_blank"
+								rel="noopener noreferrer"
+								style={{ color: "inherit", textDecoration: "none" }}
+							>
+								{item.title}
+							</a>
+						</div>
+					</Col>
+				))}
+			</Row>
+
+			{/* iOS Section */}
+			<Row className="mb-5">
+				<Col>
+					<h2
+						className="text-center"
+						style={{
+							fontSize: "2.5rem",
+							fontWeight: "bold",
+							color: "#333",
+							padding: window.innerWidth >= 768 ? "20px" : "20px",
+							transition: "color 0.3s ease, transform 0.3s ease"
+						}}
+						onMouseEnter={(e) => {
+							e.currentTarget.style.color = "#0056b3";
+							e.currentTarget.style.transform = "scale(1.05)";
+						}}
+						onMouseLeave={(e) => {
+							e.currentTarget.style.color = "#333";
+							e.currentTarget.style.transform = "scale(1)";
+						}}
+					>
+						{t("download.ios")}
+					</h2>
+				</Col>
+			</Row>
+			<Row className="justify-content-center">
+				{iosLinks.map((item, index) => (
+					<Col md={4} sm={6} xs={12} key={index} className="mb-4 text-center">
+						<a href={item.link} target="_blank" rel="noopener noreferrer">
+							<Button
+								variant="outline-primary"
+								className="icon-btn mb-3"
+								style={{
+									width: "110px",
+									height: "110px",
+									borderRadius: "50%",
+									backgroundColor: "#F0F1F3",
+									borderColor: "#F0F1F3",
+									boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)"
+								}}
+							>
+								<img
+									src={item.imgSrc}
+									alt="Icon"
+									style={{ width: "50%", height: "50%", objectFit: "contain" }}
 								/>
 							</Button>
 						</a>
