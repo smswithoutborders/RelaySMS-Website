@@ -1,4 +1,40 @@
-html,
+.hero {
+	padding: 2rem 1rem;
+}
+
+.hero-title {
+	font-size: 2rem;
+}
+
+.hero-description {
+	font-size: 1rem;
+	color: #777;
+}
+
+.download-button {
+	transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+	background-color: #1e2b5c;
+}
+
+@media (max-width: 768px) {
+	.hero-title {
+		font-size: 1.75rem;
+	}
+
+	.hero-description {
+		font-size: 0.9rem;
+	}
+
+	.download-button {
+		font-size: 0.9rem;
+		padding: 0.75rem 1.5rem;
+	}
+}
+
+/* html,
 body {
 	margin: 0;
 	padding: 0;
@@ -14,7 +50,7 @@ body {
 	font-style: normal;
 }
 
-/* ===============================downlaod section ======================================== */
+/* ===============================downlaod section ======================================== 
 
 .full-screen-container {
 	min-height: 80vh;
@@ -23,7 +59,7 @@ body {
 	justify-content: center;
 }
 
-/* ============================ Navbar Section ============================== */
+/* ============================ Navbar Section ============================== 
 .custom-navbar {
 	padding-left: 20px;
 	padding-right: 20px;
@@ -42,7 +78,7 @@ body {
 	margin-right: 30px;
 }
 
-/* ============================ Hero Section ============================== */
+/* ============================ Hero Section ============================== 
 .hero {
 	max-height: 100vh;
 	height: 100vh;
@@ -94,7 +130,7 @@ body {
 	}
 }
 
-/* ==================== how it works =================================== */
+/* ==================== how it works =================================== 
 .card-number {
 	font-size: 20px;
 	font-weight: bold;
@@ -150,7 +186,7 @@ body {
 	color: #6c757d;
 }
 
-/* ============================ Footer Section ============================ */
+/* ============================ Footer Section ============================ 
 .footer {
 	padding: 2rem 0;
 	color: #b3b6b7;
@@ -170,4 +206,4 @@ body {
 .footer-col h5 {
 	font-weight: bold;
 	color: #b3b6b7;
-}
+} */

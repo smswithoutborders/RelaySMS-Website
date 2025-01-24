@@ -1,0 +1,30 @@
+.custom-navbar {
+	padding: 0.5rem 1rem;
+	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+	z-index: 1000;
+}
+
+.navbar-logo {
+	display: flex;
+	align-items: center;
+}
+
+.nav-links .nav-item {
+	font-size: 14px;
+	padding: 0.25rem 0.5rem;
+}
+
+.social-icons .social-link {
+	margin-left: 0.5rem;
+	display: flex;
+	align-items: center;
+}
+
+.rtl {
+	direction: rtl;
+}
+
+.ltr {
+	direction: ltr;
+}
