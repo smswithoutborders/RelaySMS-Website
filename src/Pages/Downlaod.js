@@ -37,38 +37,45 @@ const Download = () => {
 	];
 
 	return (
-		<Container className="full-screen-container py-5">
+		<div>
 			{/* Responsive Navbar */}
-			<Navbar expand="lg" fixed="top" dir={isFarsi ? "rtl" : "ltr"} className="custom-navbar">
-				<Navbar.Brand href="#home" className="navbar-logo">
-					<img src="./logo.png" alt="Logo" height="40" className="logo" />
-				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="navbar-nav" />
-				<Navbar.Collapse id="navbar-nav" className="justify-content-end">
-					<Nav className="nav-links">
-						<Nav.Link href="/" className="mx-2">
-							{t("Nav.Home")}
-						</Nav.Link>
-						<Nav.Link href="https://blog.smswithoutborders.com/" className="mx-2">
-							{t("Nav.Blog")}
-						</Nav.Link>
-						<Nav.Link href="https://docs.smswithoutborders.com/" className="mx-2">
-							{t("Nav.Help")}
-						</Nav.Link>
-						<Nav.Link as={Link} to="/Contact_Us" className="mx-2">
-							{t("Nav.Contact")}
-						</Nav.Link>
-					</Nav>
-					<Nav className="social-icons">
-						<Nav.Link href="https://x.com/RelaySMS" className="mx-2">
-							<img src="./x.svg" alt="X logo" height="20" />
-						</Nav.Link>
-						<Nav.Link href="https://github.com/smswithoutborders" className="mx-2">
-							<FaGithub />
-						</Nav.Link>
-						<LanguageSwitcher className="mx-2" />
-					</Nav>
-				</Navbar.Collapse>
+			<Navbar
+				style={{ background: "#FAF2E4" }}
+				dir={isFarsi ? "rtl" : "ltr"}
+				expand="lg"
+				sticky="top"
+			>
+				<Container>
+					<Navbar.Brand href="#">
+						<img
+							src="/logo.png"
+							alt="My Website Logo"
+							className="d-inline-block align-top"
+							style={{ height: "35px" }}
+						/>
+					</Navbar.Brand>
+					<Navbar.Toggle aria-controls="basic-navbar-nav" />
+					<Navbar.Collapse id="basic-navbar-nav">
+						<Nav className="ms-auto">
+							<Nav.Link href="/">{t("Nav.Home")}</Nav.Link>
+							<Nav.Link href="https://blog.smswithoutborders.com/">{t("Nav.Blog")}</Nav.Link>
+							<Nav.Link href="https://docs.smswithoutborders.com/">{t("Nav.Support")}</Nav.Link>
+							<Nav.Link as={Link} to="/Contact_Us">
+								{t("Nav.Contact")}
+							</Nav.Link>
+							<Nav.Link href="https://x.com/RelaySMS" className="mx-2">
+								<img src="./x.svg" alt="X logo" height="20" />
+							</Nav.Link>
+							<Nav.Link href="https://github.com/smswithoutborders" className="mx-2">
+								<FaGithub />
+							</Nav.Link>
+							<Nav.Link>
+								{" "}
+								<LanguageSwitcher className="mx-2" />
+							</Nav.Link>
+						</Nav>
+					</Navbar.Collapse>
+				</Container>
 			</Navbar>
 
 			{/* Android Section */}
@@ -79,7 +86,7 @@ const Download = () => {
 						style={{
 							fontSize: "2.5rem",
 							fontWeight: "bold",
-							color: "#333",
+							color: "#2D2A5A",
 							padding: window.innerWidth >= 768 ? "20px" : "20px",
 							transition: "color 0.3s ease, transform 0.3s ease"
 						}}
@@ -142,7 +149,7 @@ const Download = () => {
 						style={{
 							fontSize: "2.5rem",
 							fontWeight: "bold",
-							color: "#333",
+							color: "#2D2A5A",
 							padding: window.innerWidth >= 768 ? "20px" : "20px",
 							transition: "color 0.3s ease, transform 0.3s ease"
 						}}
@@ -196,7 +203,7 @@ const Download = () => {
 					</Col>
 				))}
 			</Row>
-		</Container>
+		</div>
 	);
 };
 

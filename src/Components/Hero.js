@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Container, Row, Col, Navbar, Nav, Carousel, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useTranslation } from "react-i18next";
@@ -13,6 +15,15 @@ import { Link } from "react-router-dom";
 const App = () => {
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
+
+	useEffect(() => {
+		AOS.init({
+			duration: 1200,
+			easing: "ease-in-out-back",
+			once: true,
+			anchorPlacement: "top-bottom"
+		});
+	}, []);
 
 	const blogs = [
 		{
@@ -40,7 +51,12 @@ const App = () => {
 	return (
 		<div>
 			{/* Navbar */}
-			<Navbar style={{ background: "#FAF2E4" }} expand="lg" sticky="top">
+			<Navbar
+				style={{ background: "#FAF2E4" }}
+				dir={isFarsi ? "rtl" : "ltr"}
+				expand="lg"
+				sticky="top"
+			>
 				<Container>
 					<Navbar.Brand href="#">
 						<img
@@ -54,7 +70,6 @@ const App = () => {
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="ms-auto">
 							<Nav.Link href="/">{t("Nav.Home")}</Nav.Link>
-							<Nav.Link href="#how-it-works">{t("Nav.Home")}</Nav.Link>
 							<Nav.Link href="https://blog.smswithoutborders.com/">{t("Nav.Blog")}</Nav.Link>
 							<Nav.Link href="https://docs.smswithoutborders.com/">{t("Nav.Support")}</Nav.Link>
 							<Nav.Link as={Link} to="/Contact_Us">
@@ -82,6 +97,7 @@ const App = () => {
 					py: { xs: 6, md: 12 },
 					px: { xs: 3, md: 6 }
 				}}
+				data-aos="fade-up"
 			>
 				<Container maxWidth="lg">
 					<Grid container spacing={6} alignItems="center" justifyContent="center">
@@ -95,6 +111,7 @@ const App = () => {
 									fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
 									color: "#2D2A5A"
 								}}
+								data-aos="zoom-in"
 							>
 								{t("Landing.h1")}
 							</Typography>
@@ -105,6 +122,7 @@ const App = () => {
 									fontSize: { xs: "1rem", sm: "1.2rem" },
 									color: "#323252"
 								}}
+								data-aos="fade-right"
 							>
 								{t("Landing.h2")}
 							</Typography>
@@ -197,14 +215,18 @@ const App = () => {
 					>
 						{/* Carousel 1*/}
 						<Carousel.Item>
-							<Row className="align-items-center">
+							<Row className="align-items-center" data-aos="zoom-in">
 								<Col lg={6} md={12} sm={12} className="text-center">
 									<img src="/Relay.png" alt="Step 1" className="img-fluid" />
 								</Col>
 								<Col lg={6} md={12} sm={12} className="text-center text-lg-start">
-									<h1 className="circle-number">1</h1>
-									<h2 style={{ color: "#000158" }}>{t("Howitworks.title")}</h2>
-									<p>{t("Howitworks.Aa")}</p>
+									<h1 className="circle-number" data-aos="flip-left">
+										1
+									</h1>
+									<h2 style={{ color: "#000158" }} data-aos="fade-right">
+										{t("Howitworks.title")}
+									</h2>
+									<p data-aos="fade-left">{t("Howitworks.Aa")}</p>
 									<Box sx={{ display: "flex", gap: 2 }}></Box>
 								</Col>
 							</Row>
@@ -265,10 +287,14 @@ const App = () => {
 					px: { xs: 3, md: 6 }
 				}}
 				id="Blog"
+				data-aos="fade-up"
 			>
 				{/* Section Header */}
 				<div className="text-center mb-5">
-					<h1 style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#2D2A5A", margin: "30px" }}>
+					<h1
+						style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#2D2A5A", margin: "30px" }}
+						data-aos="fade-down"
+					>
 						{t("Blog.Header")}
 					</h1>
 				</div>
@@ -276,7 +302,7 @@ const App = () => {
 				<Container>
 					<Row className="justify-content-center" id="blog">
 						{blogs.map((blog, index) => (
-							<Col md={4} sm={12} key={index} className="mb-4">
+							<Col md={4} sm={12} key={index} className="mb-4" data-aos="zoom-in">
 								<Card className="h-100" style={{ borderTop: "5px solid #2F3C79" }}>
 									<div className="card-number">
 										<span className="card-number2"></span>
