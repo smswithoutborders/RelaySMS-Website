@@ -203,32 +203,9 @@ const App = () => {
 								</Col>
 								<Col lg={6} md={12} sm={12} className="text-center text-lg-start">
 									<h1 className="circle-number">1</h1>
-									<h2 style={{ color: "#000158" }}>Download The App</h2>
-									<p>
-										RelaySMS is available for Android, iOS, and Linux. Download from Play Store,
-										F-Droid, App Store, or GitHub.
-									</p>
-									<Box sx={{ display: "flex", gap: 2 }}>
-										<Button
-											variant="contained"
-											color="#2D2A5A"
-											sx={{
-												px: 5,
-												py: 1,
-												backgroundColor: "#FF9E43",
-												textTransform: "none",
-												fontSize: "1rem",
-												borderRadius: 3,
-												border: "1px solid #000158",
-												"&:hover": {
-													backgroundColor: "#FF9E43"
-												}
-											}}
-											endIcon={<ArrowDownwardIcon />}
-										>
-											Download RelaySMS
-										</Button>
-									</Box>
+									<h2 style={{ color: "#000158" }}>{t("Howitworks.title")}</h2>
+									<p>{t("Howitworks.Aa")}</p>
+									<Box sx={{ display: "flex", gap: 2 }}></Box>
 								</Col>
 							</Row>
 						</Carousel.Item>
@@ -239,28 +216,7 @@ const App = () => {
 									<h1 className="circle-number">2</h1>
 									<h2 style={{ color: "#000158" }}>{t("Howitworks.titleA")}</h2>
 									<p>{t("Howitworks.A")}</p>
-									<Box sx={{ display: "flex", gap: 2 }}>
-										<Button
-											variant="contained"
-											color="#2D2A5A"
-											href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms"
-											sx={{
-												px: 5,
-												py: 1,
-												backgroundColor: "#FF9E43",
-												textTransform: "none",
-												fontSize: "1rem",
-												borderRadius: 3,
-												border: "1px solid #000158",
-												"&:hover": {
-													backgroundColor: "#FF9E43"
-												}
-											}}
-											endIcon={<ArrowDownwardIcon />}
-										>
-											Download RelaySMS
-										</Button>
-									</Box>
+									<Box sx={{ display: "flex", gap: 2 }}></Box>
 								</Col>
 								<Col lg={6} md={12} sm={12} className="text-center">
 									<img src="/Relay.png" alt="Step 2" className="img-fluid" />
@@ -278,27 +234,7 @@ const App = () => {
 									<h2 style={{ color: "#000158" }}>{t("Howitworks.titleB")}</h2>
 									<p>{t("Howitworks.B")}</p>
 
-									<Box sx={{ display: "flex", gap: 2 }}>
-										<Button
-											variant="contained"
-											color="#2D2A5A"
-											sx={{
-												px: 5,
-												py: 1,
-												backgroundColor: "#FF9E43",
-												textTransform: "none",
-												fontSize: "1rem",
-												borderRadius: 3,
-												border: "1px solid #000158",
-												"&:hover": {
-													backgroundColor: "#FF9E43"
-												}
-											}}
-											endIcon={<ArrowDownwardIcon />}
-										>
-											Download RelaySMS
-										</Button>
-									</Box>
+									<Box sx={{ display: "flex", gap: 2 }}></Box>
 								</Col>
 							</Row>
 						</Carousel.Item>
@@ -307,35 +243,10 @@ const App = () => {
 							<Row className="align-items-center">
 								<Col lg={6} md={12} sm={12} className="text-center text-lg-start">
 									<h1 className="circle-number">4</h1>
-									<h2 style={{ color: "#000158" }}>Receives and Publish</h2>
-									<p>
-										RelaySMS supports decentralized SMS Gateway clients which can receive and
-										forward SMS messages to online Vault servers. The messages remain encrypted
-										throughout their journey and only the Vault servers can decrypt to publish to
-										your online platforms.
-									</p>
+									<h2 style={{ color: "#000158" }}>{t("Howitworks.titleC")}</h2>
+									<p>{t("Howitworks.C")}</p>
 
-									<Box sx={{ display: "flex", gap: 2 }}>
-										<Button
-											variant="contained"
-											color="#2D2A5A"
-											sx={{
-												px: 5,
-												py: 1,
-												backgroundColor: "#FF9E43",
-												textTransform: "none",
-												fontSize: "1rem",
-												borderRadius: 3,
-												border: "1px solid #000158",
-												"&:hover": {
-													backgroundColor: "#FF9E43"
-												}
-											}}
-											endIcon={<ArrowDownwardIcon />}
-										>
-											Download RelaySMS
-										</Button>
-									</Box>
+									<Box sx={{ display: "flex", gap: 2 }}></Box>
 								</Col>
 								<Col lg={6} md={12} sm={12} className="text-center">
 									<img src="/Relay.png" alt="Step 1" className="img-fluid" />
@@ -345,8 +256,6 @@ const App = () => {
 					</Carousel>
 				</Container>
 			</Box>
-
-			{/* ============================================================================================ */}
 
 			{/* ========================== blog section ============================== */}
 			<Box

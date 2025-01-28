@@ -14,7 +14,10 @@
 		"Android": "دانلود RelaySMS"
 	},
 	"Howitworks": {
-		"Header": "نحوه استفاده از برنامه",
+		"Header": "استفاده از اپلیکیشن",
+		"SubHeader": "مراحل بهره‌گیری حداکثری از امکانات RelaySMS را بیاموزید.",
+		"title": "دانلود اپلیکیشن",
+		"Aa": "RelaySMS برای اندروید، iOS و لینوکس در دسترس است. از Play Store، F-Droid، App Store یا GitHub دانلود کنید.",
 		"titleA": "ذخیره پلتفرم‌ها (Gmail، X، Telegram)",
 		"A": "می‌توانید توکن‌ها را برای پلتفرم‌های آنلاین خود با استفاده از پروتکل‌های OAuth2 ذخیره کنید. این روش فقط دسترسی مجاز را فراهم می‌کند.",
 		"Areadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms' target='_blank' rel='noopener noreferrer'>بیشتر بخوانید</a>",
