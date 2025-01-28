@@ -15,6 +15,7 @@
 	},
 	"Howitworks": {
 		"Header": "Using the App",
+		"SubHeader": "Learn the steps to maximize the features of RelaySMS.",
 		"titleA": "Save platforms(Gmail, X, Telegram)",
 		"A": "You can store tokens to your online platforms using OAuth2 protocols supported by most online platforms. This guarantees only the access you provide is made available for your use at a later time.",
 		"Areadmore": "<a href='https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-5-save-access-to-platforms' target='_blank' rel='noopener noreferrer'>Read More</a>",

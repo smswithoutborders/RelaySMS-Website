@@ -174,9 +174,7 @@ const App = () => {
 						<h1 style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#2D2A5A" }}>
 							{t("Howitworks.Header")}
 						</h1>
-						<p style={{ fontSize: "1.2rem", color: "#555555" }}>
-							Learn the steps to maximize the features of RelaySMS.
-						</p>
+						<p style={{ fontSize: "1.2rem", color: "#555555" }}>{t("Howitworks.SubHeader")}</p>
 					</div>
 
 					{/* Carousel Section */}
@@ -239,16 +237,13 @@ const App = () => {
 							<Row className="align-items-center">
 								<Col lg={6} md={12} sm={12} className="text-center text-lg-start">
 									<h1 className="circle-number">2</h1>
-									<h2 style={{ color: "#000158" }}>Save Platforms (Gmail, X, Telegram)</h2>
-									<p>
-										You can store tokens to your online platforms using OAuth2 protocols supported
-										by most online platforms. This guarantees only the access you provide is made
-										available for your use at a later time.
-									</p>
+									<h2 style={{ color: "#000158" }}>{t("Howitworks.titleA")}</h2>
+									<p>{t("Howitworks.A")}</p>
 									<Box sx={{ display: "flex", gap: 2 }}>
 										<Button
 											variant="contained"
 											color="#2D2A5A"
+											href="https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms"
 											sx={{
 												px: 5,
 												py: 1,
@@ -280,13 +275,8 @@ const App = () => {
 								</Col>
 								<Col lg={6} md={12} sm={12} className="text-center text-lg-start">
 									<h1 className="circle-number">3</h1>
-									<h2 style={{ color: "#000158" }}>Compose and Send</h2>
-									<p>
-										Without an internet connection compose messages for platforms you have saved
-										from within your RelaySMS app. The messages can be text of any nature which
-										would be encoded and transferred through your default SMS messaging app. All
-										messages sent from your RelaySMS app are encrypted.
-									</p>
+									<h2 style={{ color: "#000158" }}>{t("Howitworks.titleB")}</h2>
+									<p>{t("Howitworks.B")}</p>
 
 									<Box sx={{ display: "flex", gap: 2 }}>
 										<Button
