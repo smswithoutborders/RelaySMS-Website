@@ -1,38 +1,12 @@
-.hero {
-	padding: 2rem 1rem;
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400&family=Unbounded:wght@400&display=swap");
+
+body {
+	font-family: "Ubuntu";
 }
 
-.hero-title {
-	font-size: 2rem;
-}
-
-.hero-description {
-	font-size: 1rem;
-	color: #777;
-}
-
-.download-button {
-	transition: background-color 0.3s ease;
-}
-
-.download-button:hover {
-	background-color: #1e2b5c;
-}
-
-@media (max-width: 768px) {
-	.hero-title {
-		font-size: 1.75rem;
-	}
-
-	.hero-description {
-		font-size: 0.9rem;
-	}
-
-	.download-button {
-		font-size: 0.9rem;
-		padding: 0.75rem 1.5rem;
-	}
-}
+/* h1, h2, h3 {
+	font-family: 'Unbounded', 'Ubuntu';
+  } */
 
 .circle-number {
 	display: inline-flex;
