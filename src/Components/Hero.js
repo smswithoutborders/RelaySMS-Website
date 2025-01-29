@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Container, Row, Col, Navbar, Nav, Carousel, Card } from "react-bootstrap";
@@ -13,16 +13,31 @@ import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const App = () => {
+	const [scrollDirection, setScrollDirection] = useState(null);
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
 
 	useEffect(() => {
 		AOS.init({
-			duration: 1200,
-			easing: "ease-in-out-back",
-			once: true,
+			duration: 1000,
+			easing: "ease-out-back",
+			once: false,
 			anchorPlacement: "top-bottom"
 		});
+
+		let lastScrollY = window.scrollY;
+
+		const updateScrollDirection = () => {
+			const currentScrollY = window.scrollY;
+			if (currentScrollY > lastScrollY) {
+				setScrollDirection("down");
+			} else if (currentScrollY < lastScrollY) {
+				setScrollDirection("up");
+			}
+			lastScrollY = currentScrollY;
+		};
+
+		window.addEventListener("scroll", updateScrollDirection);
 	}, []);
 
 	const blogs = [
@@ -48,11 +63,54 @@ const App = () => {
 		}
 	];
 
+	const carouselItems = [
+		{
+			number: 1,
+			title: t("Howitworks.Step1Title"),
+			description: t("Howitworks.Step1Desc"),
+			image: "/Download.png",
+			buttonText: t("Howitworks.Step1Button", "Get Started"),
+			link: "https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
+		},
+		{
+			number: 2,
+			title: t("Howitworks.Step2Title"),
+			description: t("Howitworks.Step2Desc"),
+			image: "/Login.png",
+			buttonText: t("Howitworks.Step2Button", "Learn More"),
+			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-2-create-an-account"
+		},
+		{
+			number: 3,
+			title: t("Howitworks.Step3Title"),
+			description: t("Howitworks.Step3Desc"),
+			image: "/saveplatform.png",
+			buttonText: t("Howitworks.Step3Button", "Set Up Now"),
+			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-5-save-access-to-platforms"
+		},
+		{
+			number: 4,
+			title: t("Howitworks.Step4Title"),
+			description: t("Howitworks.Step4Desc"),
+			image: "/Gateway.png",
+			buttonText: t("Howitworks.Step4Button", "Configure Gateway"),
+			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-6-choose-a-gateway-client"
+		},
+		{
+			number: 5,
+			title: t("Howitworks.Step5Title"),
+			description: t("Howitworks.Step5Desc"),
+			image: "/text.png",
+			buttonText: t("Howitworks.Step5Button", "Start Messaging"),
+			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-3-compose-your-message-and-send-as-sms"
+		}
+	];
+
 	return (
 		<div>
 			{/* Navbar */}
 			<Navbar
-				style={{ background: "#FAF2E4" }}
+				style={{ background: "#FAF2E4", fontFamily: "'Mona Sans', ubuntu" }}
 				dir={isFarsi ? "rtl" : "ltr"}
 				expand="lg"
 				sticky="top"
@@ -82,28 +140,28 @@ const App = () => {
 								<FaGithub />
 							</Nav.Link>
 							<Nav.Link>
-								{" "}
 								<LanguageSwitcher className="mx-2" />
 							</Nav.Link>
 						</Nav>
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>
-			{/* Hero Section */}
 
+			{/* ================= Hero Section=========================== */}
 			<Box
 				sx={{
 					backgroundColor: "#FAF2E4",
 					py: { xs: 6, md: 12 },
 					px: { xs: 3, md: 6 }
 				}}
-				data-aos="fade-up"
+				data-aos={scrollDirection === "down" ? "fade-up" : "fade-down"}
 			>
 				<Container maxWidth="lg">
 					<Grid container spacing={6} alignItems="center" justifyContent="center">
 						<Grid item xs={12} md={6}>
 							<Typography
 								variant="h3"
+								style={{ fontFamily: "'Unbounded', ubuntu" }}
 								sx={{
 									fontWeight: "bold",
 									lineHeight: 1.2,
@@ -111,18 +169,19 @@ const App = () => {
 									fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
 									color: "#2D2A5A"
 								}}
-								data-aos="zoom-in"
+								data-aos={scrollDirection === "down" ? "fade-up" : "fade-down"}
 							>
 								{t("Landing.h1")}
 							</Typography>
 							<Typography
 								variant="body1"
+								style={{ fontFamily: "'Mona Sans', ubuntu" }}
 								sx={{
 									mb: 4,
 									fontSize: { xs: "1rem", sm: "1.2rem" },
 									color: "#323252"
 								}}
-								data-aos="fade-right"
+								data-aos={scrollDirection === "down" ? "zoom-in" : "zoom-out"}
 							>
 								{t("Landing.h2")}
 							</Typography>
@@ -132,6 +191,7 @@ const App = () => {
 									to="/Download"
 									variant="contained"
 									color="#2D2A5A"
+									style={{ fontFamily: "'Mona Sans', ubuntu" }}
 									sx={{
 										px: 5,
 										py: 1,
@@ -145,6 +205,7 @@ const App = () => {
 										},
 										textDecoration: "none"
 									}}
+									data-aos={scrollDirection === "down" ? "fade-left" : "fade-right"}
 									endIcon={<ArrowDownwardIcon />}
 								>
 									{t("Landing.Android")}
@@ -185,96 +246,111 @@ const App = () => {
 					py: { xs: 6, md: 12 },
 					px: { xs: 3, md: 6 }
 				}}
+				data-aos={scrollDirection === "down" ? "fade-left" : "fade-right"}
 			>
 				<Container>
 					{/* Section Header */}
 					<div className="text-center mb-5">
-						<h1 style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#2D2A5A" }}>
-							{t("Howitworks.Header")}
+						<h1
+							style={{
+								fontSize: "2.5rem",
+								fontWeight: "bold",
+								color: "#2D2A5A",
+								fontFamily: "'Unbounded', ubuntu"
+							}}
+						>
+							{t("Howitworks.Header", "Getting Started with RelaySMS")}
 						</h1>
-						<p style={{ fontSize: "1.2rem", color: "#555555" }}>{t("Howitworks.SubHeader")}</p>
+						<p
+							data-aos={scrollDirection === "down" ? "zoom-in" : "zoom-out"}
+							style={{ fontSize: "1.2rem", color: "#555555", fontFamily: "'Mona Sans', ubuntu" }}
+						>
+							{t(
+								"Howitworks.SubHeader",
+								"Learn how to set up and use RelaySMS for seamless offline communication."
+							)}
+						</p>
 					</div>
 
-					{/* Carousel Section */}
-					<Carousel
-						nextIcon={
-							<span
-								className="carousel-control-next-icon"
-								aria-hidden="true"
-								style={{ color: "#FF9E43" }}
-							/>
-						}
-						prevIcon={
-							<span
-								className="carousel-control-prev-icon"
-								aria-hidden="true"
-								style={{ color: "#FF9E43" }}
-							/>
-						}
-						indicators
-					>
-						{/* Carousel 1*/}
-						<Carousel.Item>
-							<Row className="align-items-center" data-aos="zoom-in">
-								<Col lg={6} md={12} sm={12} className="text-center">
-									<img src="/Relay.png" alt="Step 1" className="img-fluid" />
-								</Col>
-								<Col lg={6} md={12} sm={12} className="text-center text-lg-start">
-									<h1 className="circle-number" data-aos="flip-left">
-										1
-									</h1>
-									<h2 style={{ color: "#000158" }} data-aos="fade-right">
-										{t("Howitworks.title")}
-									</h2>
-									<p data-aos="fade-left">{t("Howitworks.Aa")}</p>
-									<Box sx={{ display: "flex", gap: 2 }}></Box>
-								</Col>
-							</Row>
-						</Carousel.Item>
-						{/* Carousel 2*/}
-						<Carousel.Item>
-							<Row className="align-items-center">
-								<Col lg={6} md={12} sm={12} className="text-center text-lg-start">
-									<h1 className="circle-number">2</h1>
-									<h2 style={{ color: "#000158" }}>{t("Howitworks.titleA")}</h2>
-									<p>{t("Howitworks.A")}</p>
-									<Box sx={{ display: "flex", gap: 2 }}></Box>
-								</Col>
-								<Col lg={6} md={12} sm={12} className="text-center">
-									<img src="/Relay.png" alt="Step 2" className="img-fluid" />
-								</Col>
-							</Row>
-						</Carousel.Item>
-						{/* Carousel 3*/}
-						<Carousel.Item>
-							<Row className="align-items-center">
-								<Col lg={6} md={12} sm={12} className="text-center">
-									<img src="/Relay.png" alt="Step 1" className="img-fluid" />
-								</Col>
-								<Col lg={6} md={12} sm={12} className="text-center text-lg-start">
-									<h1 className="circle-number">3</h1>
-									<h2 style={{ color: "#000158" }}>{t("Howitworks.titleB")}</h2>
-									<p>{t("Howitworks.B")}</p>
+					<Carousel>
+						{carouselItems.map((item, index) => (
+							<Carousel.Item key={index}>
+								<Grid container spacing={4} alignItems="center">
+									{/* Content Section */}
+									<Grid
+										item
+										xs={12}
+										md={6}
+										sx={{
+											order: { xs: 0, md: 1 },
+											textAlign: "left",
+											p: { xs: 2, md: 4 }
+										}}
+										data-aos="fade-left"
+									>
+										<h1 className="circle-number"> {item.number}</h1>
+										<Typography
+											variant="h3"
+											sx={{
+												fontWeight: "bold",
+												color: "#2D2A5A",
+												mb: 2,
+												fontFamily: "'Unbounded', ubuntu"
+											}}
+										>
+											{item.title}
+										</Typography>
+										<Typography
+											style={{ fontFamily: "'Mona Sans', ubuntu", textDecoration: "none" }}
+											variant="body1"
+											sx={{ mb: 4, color: "#555555" }}
+											dangerouslySetInnerHTML={{
+												__html: item.description.replace(
+													/<a /g,
+													"<a style='text-decoration: none; color: #007bff;' " // Removes underline and keeps link color
+												)
+											}}
+										/>
 
-									<Box sx={{ display: "flex", gap: 2 }}></Box>
-								</Col>
-							</Row>
-						</Carousel.Item>
-						{/* Carousel 4*/}
-						<Carousel.Item>
-							<Row className="align-items-center">
-								<Col lg={6} md={12} sm={12} className="text-center text-lg-start">
-									<h1 className="circle-number">4</h1>
-									<h2 style={{ color: "#000158" }}>{t("Howitworks.titleC")}</h2>
-									<p>{t("Howitworks.C")}</p>
+										<Button
+											variant="contained"
+											color="primary"
+											style={{
+												fontFamily: "'Mona Sans', ubuntu",
+												textDecoration: "none"
+											}}
+											href={item.link} // Dynamic link based on the carousel item
+											sx={{
+												backgroundColor: "#2D2A5A",
+												":hover": { backgroundColor: "#1F1B3E" },
+												textDecoration: "none"
+											}}
+										>
+											{item.buttonText}
+										</Button>
+									</Grid>
 
-									<Box sx={{ display: "flex", gap: 2 }}></Box>
-								</Col>
-								<Col lg={6} md={12} sm={12} className="text-center">
-									<img src="/Relay.png" alt="Step 1" className="img-fluid" />
-								</Col>
-							</Row>
-						</Carousel.Item>
+									{/* Image Section */}
+									<Grid
+										item
+										xs={12}
+										md={6}
+										sx={{ order: { xs: 1, md: 0 }, textAlign: "center" }}
+										data-aos="fade-right"
+									>
+										<img
+											src={item.image}
+											alt={item.title}
+											style={{
+												maxWidth: "80%",
+												borderRadius: "12px",
+												height: "auto"
+											}}
+										/>
+									</Grid>
+								</Grid>
+							</Carousel.Item>
+						))}
 					</Carousel>
 				</Container>
 			</Box>
@@ -287,12 +363,18 @@ const App = () => {
 					px: { xs: 3, md: 6 }
 				}}
 				id="Blog"
-				data-aos="fade-up"
+				data-aos={scrollDirection === "down" ? "zoom-in" : "zoom-out"}
 			>
 				{/* Section Header */}
 				<div className="text-center mb-5">
 					<h1
-						style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#2D2A5A", margin: "30px" }}
+						style={{
+							fontSize: "2.5rem",
+							fontWeight: "bold",
+							color: "#2D2A5A",
+							margin: "30px",
+							fontFamily: "'Unbounded', ubuntu"
+						}}
 						data-aos="fade-down"
 					>
 						{t("Blog.Header")}
@@ -300,7 +382,11 @@ const App = () => {
 				</div>
 
 				<Container>
-					<Row className="justify-content-center" id="blog">
+					<Row
+						className="justify-content-center"
+						id="blog"
+						data-aos={scrollDirection === "down" ? "zoom-in" : "zoom-out"}
+					>
 						{blogs.map((blog, index) => (
 							<Col md={4} sm={12} key={index} className="mb-4" data-aos="zoom-in">
 								<Card className="h-100" style={{ borderTop: "5px solid #2F3C79" }}>
@@ -308,11 +394,29 @@ const App = () => {
 										<span className="card-number2"></span>
 									</div>
 									<Card.Body>
-										<Card.Title>{blog.title}</Card.Title>
+										<Card.Title style={{ fontFamily: "'Unbounded', ubuntu" }}>
+											<a
+												href="https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
+												style={{
+													color: "#2F3C79",
+													textDecoration: "none",
+													fontWeight: "500"
+												}}
+												target="_blank"
+												rel="noreferrer"
+											>
+												{blog.title}
+											</a>
+										</Card.Title>
+
 										<Card.Text>{blog.description}</Card.Text>
 										<div className="mt-auto d-flex justify-content-between align-items-center w-100">
 											<span className="read-time">{t("Blog.readTime")}</span>
-											<Button className="Readmore mt-auto" variant="link" href={blog.link}>
+											<Button
+												className="Readmore mt-auto"
+												variant="link"
+												href="https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
+											>
 												{t("Howitworks.ReadMore")}
 											</Button>
 										</div>
@@ -321,14 +425,27 @@ const App = () => {
 							</Col>
 						))}
 						<Col md={6}>
-							<h4 className="mt-4">{t("Blog.ReadOtherArticles")}</h4>
-							<ul className="list-unstyled">
+							<h4
+								className="mt-4"
+								style={{ fontFamily: "'Unbounded', ubuntu", marginBottom: "3rem" }}
+							>
+								{t("Blog.ReadOtherArticles")}
+							</h4>
+							<ul style={{ fontFamily: "'Mona Sans', ubuntu" }} className="list-unstyled">
 								{otherArticles.map((article, index) => (
-									<li key={index} className="mb-2">
-										<FaFileAlt className="me-2" />
+									<li
+										key={index}
+										className="d-flex align-items-center"
+										style={{ marginBottom: "2rem" }}
+									>
+										<FaFileAlt className="me-2" style={{ color: "#2F3C79", fontSize: "1.2rem" }} />
 										<a
 											href={article.url}
-											style={{ color: "#2F3C79" }}
+											style={{
+												color: "#2F3C79",
+												textDecoration: "none",
+												fontWeight: "500"
+											}}
 											target="_blank"
 											className="article-link"
 											rel="noreferrer"
@@ -360,8 +477,10 @@ const App = () => {
 							margin: "60px",
 							transition: "color 0.3s ease, transform 0.3s ease",
 							fontSize: "2.5rem",
-							color: "#2D2A5A"
+							color: "#2D2A5A",
+							fontFamily: "'Unbounded', ubuntu"
 						}}
+						data-aos={scrollDirection === "down" ? "fade-left" : "fade-right"}
 					>
 						{t("Faq.faqTitle")}
 					</h1>
@@ -371,79 +490,147 @@ const App = () => {
 					<Row className="g-5">
 						{/* First row with three cards */}
 						<Col lg={4} md={6} sm={12}>
-							<Card className="h-100" style={{ borderTop: "5px solid #FF9E43" }}>
+							<Card
+								data-aos={scrollDirection === "down" ? "fade-left" : "fade-right"}
+								className="h-100"
+								style={{ borderTop: "5px solid #FF9E43" }}
+							>
 								<div className="faq-number" style={{ background: " #FF9E43" }}>
 									1
 								</div>
 								<Card.Body>
-									<Card.Title style={{ color: "#2F3C79", fontWeight: "bold" }}>
+									<Card.Title
+										style={{
+											color: "#2F3C79",
+											fontWeight: "bold",
+											fontFamily: "'Unbounded', ubuntu"
+										}}
+									>
 										{t("Faq.faq1.question")}
 									</Card.Title>
-									<Card.Text>{ReactHtmlParser(t("Faq.faq1.answer"))}</Card.Text>
+									<Card.Text style={{ fontFamily: "'Mona Sans', ubuntu" }}>
+										{ReactHtmlParser(t("Faq.faq1.answer"))}
+									</Card.Text>
 								</Card.Body>
 							</Card>
 						</Col>
 						{/* Card 2 */}
 						<Col lg={4} md={6} sm={12}>
-							<Card className="h-100" style={{ borderTop: "5px solid #2D2A5A" }}>
+							<Card
+								data-aos={scrollDirection === "down" ? "fade-right" : "fade-left"}
+								className="h-100"
+								style={{ borderTop: "5px solid #2D2A5A" }}
+							>
 								<div className="faq-number" style={{ background: " #2D2A5A" }}>
 									2
 								</div>
 								<Card.Body>
-									<Card.Title style={{ color: "#2F3C79", fontWeight: "bold" }}>
+									<Card.Title
+										style={{
+											color: "#2F3C79",
+											fontWeight: "bold",
+											fontFamily: "'Unbounded', ubuntu"
+										}}
+									>
 										{t("Faq.faq2.question")}
 									</Card.Title>
-									<Card.Text>{ReactHtmlParser(t("Faq.faq2.answer"))}</Card.Text>
+									<Card.Text style={{ fontFamily: "'Mona Sans', ubuntu" }}>
+										{ReactHtmlParser(t("Faq.faq2.answer"))}
+									</Card.Text>
 								</Card.Body>
 							</Card>
 						</Col>
 						{/* Card 3 */}
 						<Col lg={4} md={6} sm={12}>
-							<Card className="h-100" style={{ borderTop: "5px solid #0E9384" }}>
+							<Card
+								data-aos={scrollDirection === "down" ? "fade-up" : "fade-down"}
+								className="h-100"
+								style={{ borderTop: "5px solid #0E9384" }}
+							>
 								<div className="faq-number" style={{ background: " #0E9384" }}>
 									3
 								</div>
 								<Card.Body>
-									<Card.Title style={{ color: "#2F3C79", fontWeight: "bold" }}>
+									<Card.Title
+										style={{
+											color: "#2F3C79",
+											fontWeight: "bold",
+											fontFamily: "'Unbounded', ubuntu"
+										}}
+									>
 										{t("Faq.faq3.question")}
 									</Card.Title>
-									<Card.Text>{ReactHtmlParser(t("Faq.faq3.answer"))}</Card.Text>
+									<Card.Text style={{ fontFamily: "'Mona Sans', ubuntu" }}>
+										{ReactHtmlParser(t("Faq.faq3.answer"))}
+									</Card.Text>
 								</Card.Body>
 							</Card>
 						</Col>
 
 						{/* Second row with two cards */}
 						<Col lg={{ span: 4, offset: 2 }} md={6} sm={12}>
-							<Card className="h-100" style={{ borderTop: "5px solid #A0A0AB" }}>
+							<Card
+								data-aos={scrollDirection === "down" ? "fade-right" : "fade-left"}
+								className="h-100"
+								style={{ borderTop: "5px solid #A0A0AB" }}
+							>
 								<div className="faq-number" style={{ background: " #A0A0AB" }}>
 									4
 								</div>
 								<Card.Body>
-									<Card.Title style={{ color: "#2F3C79", fontWeight: "bold" }}>
+									<Card.Title
+										style={{
+											color: "#2F3C79",
+											fontWeight: "bold",
+											fontFamily: "'Unbounded', ubuntu"
+										}}
+									>
 										{t("Faq.faq4.question")}
 									</Card.Title>
-									<Card.Text>{ReactHtmlParser(t("Faq.faq4.answer"))}</Card.Text>
+									<Card.Text style={{ fontFamily: "'Mona Sans', ubuntu" }}>
+										{ReactHtmlParser(t("Faq.faq4.answer"))}
+									</Card.Text>
 								</Card.Body>
 							</Card>
 						</Col>
 						<Col lg={4} md={6} sm={12}>
-							<Card className="h-100" style={{ borderTop: "5px solid #8FA7FF" }}>
+							<Card
+								data-aos={scrollDirection === "down" ? "fade-left" : "fade-right"}
+								className="h-100"
+								style={{ borderTop: "5px solid #8FA7FF", textDecoration: "none" }}
+							>
 								<div className="faq-number" style={{ background: " #8FA7FF" }}>
 									5
 								</div>
 								<Card.Body>
-									<Card.Title style={{ color: "#2F3C79", fontWeight: "bold" }}>
+									<Card.Title
+										style={{
+											color: "#2F3C79",
+											fontWeight: "bold",
+											fontFamily: "'Unbounded', ubuntu"
+										}}
+									>
 										{t("Faq.faq5.question")}
 									</Card.Title>
-									<Card.Text>{ReactHtmlParser(t("Faq.faq5.answer"))}</Card.Text>
+									<Card.Text
+										style={{
+											fontFamily: "'Mona Sans', ubuntu",
+											textDecoration: "none"
+										}}
+									>
+										{ReactHtmlParser(
+											t("Faq.faq5.answer").replace(
+												/<a /g,
+												"<a style='text-decoration: none; color: blue;' "
+											)
+										)}
+									</Card.Text>
 								</Card.Body>
 							</Card>
 						</Col>
 					</Row>
 				</Container>
 			</Box>
-
-			{/* Footer Section */}
 		</div>
 	);
 };
