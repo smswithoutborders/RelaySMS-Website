@@ -53,6 +53,7 @@ const Footer = () => {
 							rel="noopener noreferrer"
 							className="footer-link mx-2"
 							aria-label="Visit our Twitter"
+							title={t("social.x")}
 							style={{
 								textDecoration: "none",
 								color: "#000158",
@@ -61,12 +62,14 @@ const Footer = () => {
 						>
 							<img src="./x-w.png" alt="X logo" height="20" />
 						</a>
+
 						<a
 							href="https://github.com/smswithoutborders"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="footer-link mx-2"
 							aria-label="Visit our GitHub"
+							title={t("social.github")}
 							style={{
 								textDecoration: "none",
 								color: "#000158",
@@ -76,6 +79,24 @@ const Footer = () => {
 						>
 							<FaGithub />
 						</a>
+
+						<a
+							href="https://bsky.app/profile/relaysms.bsky.social"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="footer-link mx-2"
+							aria-label="Visit our Bluesky"
+							title={t("social.bluesky")}
+							style={{
+								textDecoration: "none",
+								color: "#000158",
+								fontSize: "1.5rem",
+								transition: "transform 0.3s ease"
+							}}
+						>
+							<img src="./bluesky.svg" alt="Bluesky logo" height="24" />
+						</a>
+
 						<LanguageSwitcher className="mx-2" />
 					</Col>
 				</Row>
