@@ -7,6 +7,11 @@
 		"Contact": "Contact Us",
 		"Support": "Support"
 	},
+	"social": {
+		"x": "Follow us on X",
+		"bluesky": "Check us out on Bluesky",
+		"github": "View our GitHub"
+	},
 	"Landing": {
 		"span": "No Data? No Worries.",
 		"h1": "Stay Connected with RelaySMS",

@@ -133,12 +133,27 @@ const App = () => {
 							<Nav.Link as={Link} to="/Contact_Us">
 								{t("Nav.Contact")}
 							</Nav.Link>
-							<Nav.Link href="https://x.com/RelaySMS" className="mx-2">
+
+							<Nav.Link href="https://x.com/RelaySMS" className="mx-2" title={t("social.x")}>
 								<img src="./x.svg" alt="X logo" height="20" />
 							</Nav.Link>
-							<Nav.Link href="https://github.com/smswithoutborders" className="mx-2">
-								<FaGithub />
+
+							<Nav.Link
+								href="https://bsky.app/profile/relaysms.bsky.social"
+								className="mx-2"
+								title={t("social.bluesky")}
+							>
+								<img src="./bluesky.svg" alt="Bluesky logo" height="20" />
 							</Nav.Link>
+
+							<Nav.Link
+								href="https://github.com/smswithoutborders"
+								className="mx-2"
+								title={t("social.github")}
+							>
+								<FaGithub size={20} />
+							</Nav.Link>
+
 							<Nav.Link>
 								<LanguageSwitcher className="mx-2" />
 							</Nav.Link>

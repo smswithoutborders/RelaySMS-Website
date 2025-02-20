@@ -37,10 +37,18 @@ const Download = () => {
 	];
 
 	return (
-		<div>
-			{/* Responsive Navbar */}
+		<div
+			style={{
+				backgroundColor: "#FAF2E4",
+				paddingBottom: "6rem",
+				paddingLeft: "3rem",
+				paddingRight: "3rem",
+				boxShadow: "10px 4px 10px rgba(2, 27, 95, 0.1)"
+			}}
+		>
+			{/* Navbar */}
 			<Navbar
-				style={{ background: "#FAF2E4" }}
+				style={{ background: "#FAF2E4", fontFamily: "'Mona Sans', ubuntu" }}
 				dir={isFarsi ? "rtl" : "ltr"}
 				expand="lg"
 				sticky="top"
@@ -63,14 +71,28 @@ const Download = () => {
 							<Nav.Link as={Link} to="/Contact_Us">
 								{t("Nav.Contact")}
 							</Nav.Link>
-							<Nav.Link href="https://x.com/RelaySMS" className="mx-2">
+
+							<Nav.Link href="https://x.com/RelaySMS" className="mx-2" title={t("social.x")}>
 								<img src="./x.svg" alt="X logo" height="20" />
 							</Nav.Link>
-							<Nav.Link href="https://github.com/smswithoutborders" className="mx-2">
-								<FaGithub />
+
+							<Nav.Link
+								href="https://bsky.app/profile/relaysms.bsky.social"
+								className="mx-2"
+								title={t("social.bluesky")}
+							>
+								<img src="./bluesky.svg" alt="Bluesky logo" height="20" />
 							</Nav.Link>
+
+							<Nav.Link
+								href="https://github.com/smswithoutborders"
+								className="mx-2"
+								title={t("social.github")}
+							>
+								<FaGithub size={20} />
+							</Nav.Link>
+
 							<Nav.Link>
-								{" "}
 								<LanguageSwitcher className="mx-2" />
 							</Nav.Link>
 						</Nav>
