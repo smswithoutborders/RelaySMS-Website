@@ -7,24 +7,37 @@
 		"Contact": "Contact Us",
 		"Support": "Support"
 	},
+	"social": {
+		"x": "Follow us on X",
+		"bluesky": "Check us out on Bluesky",
+		"github": "View our GitHub"
+	},
 	"Landing": {
 		"span": "No Data? No Worries.",
 		"h1": "Stay Connected with RelaySMS",
 		"h2": "RelaySMS enables users to send messages to online platforms without the use of an active internet connection.",
 		"Android": "Download RelaySMS "
 	},
+
 	"Howitworks": {
-		"Header": "Using the App",
-		"titleA": "Save platforms(Gmail, X, Telegram)",
-		"A": "You can store tokens to your online platforms using OAuth2 protocols supported by most online platforms. This guarantees only the access you provide is made available for your use at a later time.",
-		"Areadmore": "<a href='https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-5-save-access-to-platforms' target='_blank' rel='noopener noreferrer'>Read More</a>",
-		"titleB": "Compose and Send",
-		"B": "Without an internet connection compose messages for platforms you have saved from within your RelaySMS app. The messages can be text of any nature which would be encoded and transferred through your default SMS messaging app. All messages sent from your RelaySMS app are encrypted.",
-		"Breadmore": "<a href='https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-1-click-the-compose-button' target='_blank' rel='noopener noreferrer'>Read More</a>",
-		"titleC": "Receives and Publish",
-		"C": "RelaySMS supports decentralized SMS Gateway clients which can receive and forward SMS messages to online Vault servers. The messages remain encrypted throughout their journey and only the Vault servers can decrypt to publish to your online platforms.",
-		"Creadmore": "<a href='https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-4-sms-sent' target='_blank' rel='noopener noreferrer'>Read More</a>",
-		"ReadMore": "Read More..."
+		"ReadMore": "Read More",
+		"Header": "Getting Started with RelaySMS",
+		"SubHeader": "Learn how to set up and use RelaySMS for seamless offline communication.",
+		"Step1Title": "Download the App",
+		"Step1Desc": "Download the RelaySMS App from <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>Google PlayStore</a>, <a href='https://github.com/smswithoutborders/RelaySMS-Android' target='_blank' rel='noopener noreferrer'>GitHub</a>, or <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>build it from source</a>. Ensure your Android device meets the technical requirements (Android 6.0+ with SMS capability).",
+		"Step1Button": "Get Started",
+		"Step2Title": "Create an Account",
+		"Step2Desc": "Create an account by clicking 'Add Account,' and filling in the required details. An authentication PIN will be sent to your phone for verification.",
+		"Step2Button": "Learn More",
+		"Step3Title": "Save Platforms",
+		"Step3Desc": "Save access to platforms while connected to the internet. Add your credentials to platforms supported by RelaySMS and prepare them for offline use.",
+		"Step3Button": "Set Up Now",
+		"Step4Title": "Configure a Gateway",
+		"Step4Desc": "Choose a Gateway Client for sending SMS. You can select from pre-configured clients or set up a custom client by adding the gateway number to your contacts.",
+		"Step4Button": "Configure Gateway",
+		"Step5Title": "Send Messages",
+		"Step5Desc": "Compose messages for supported platforms without internet. Send these as SMS to a pre-saved gateway number, ensuring encrypted communication.",
+		"Step5Button": "Start Messaging"
 	},
 	"Blog": {
 		"Header": "Blog Posts",

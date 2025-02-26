@@ -7,6 +7,11 @@
 		"Contact": "Contactez-nous",
 		"Support": "Support"
 	},
+	"social": {
+		"x": "Suivez-nous sur X",
+		"bluesky": "Découvrez-nous sur Bluesky",
+		"github": "Voir notre GitHub"
+	},
 	"Landing": {
 		"span": "Pas de données ? Pas de souci.",
 		"h1": "Restez connecté avec RelaySMS",
@@ -14,17 +19,23 @@
 		"Android": "Télécharger RelaySMS"
 	},
 	"Howitworks": {
-		"Header": "Utiliser l'application",
-		"titleA": "Enregistrer les plateformes (Gmail, X, Telegram)",
-		"A": "Vous pouvez stocker des tokens pour vos plateformes en ligne en utilisant les protocoles OAuth2 pris en charge par la plupart des plateformes. Cela garantit que seul l'accès que vous fournissez est disponible pour une utilisation ultérieure.",
-		"Areadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms' target='_blank' rel='noopener noreferrer'>En savoir plus</a>",
-		"titleB": "Composer et envoyer",
-		"B": "Sans connexion Internet, composez des messages pour les plateformes enregistrées dans votre application RelaySMS. Les messages peuvent être de tout type, codés et transmis via votre application de messagerie SMS par défaut. Tous les messages sont cryptés.",
-		"Breadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button' target='_blank' rel='noopener noreferrer'>En savoir plus</a>",
-		"titleC": "Recevoir et publier",
-		"C": "RelaySMS prend en charge des clients passerelle SMS décentralisés qui peuvent recevoir et transférer des messages SMS vers des serveurs Vault en ligne. Les messages restent cryptés tout au long de leur trajet.",
-		"Creadmore": "<a href='https://docs.smswithoutborders.com/docs/contributing/introduction' target='_blank' rel='noopener noreferrer'>En savoir plus</a>",
-		"ReadMore": "En savoir plus..."
+		"Header": "Commencer avec RelaySMS",
+		"SubHeader": "Apprenez à configurer et utiliser RelaySMS pour une communication hors ligne fluide.",
+		"Step1Title": "Étape 1 : Téléchargez l'application",
+		"Step1Desc": "Téléchargez l'application RelaySMS depuis Google Play Store, GitHub ou construisez-la à partir du code source. Assurez-vous que votre appareil Android répond aux exigences techniques (Android 6.0+ avec capacité SMS).",
+		"Step1Button": "Commencer",
+		"Step2Title": "Étape 2 : Créez un compte",
+		"Step2Desc": "Créez un compte en cliquant sur 'Ajouter un compte', en sélectionnant 'Créer un nouveau' et en remplissant les informations requises. Un code PIN d'authentification sera envoyé sur votre téléphone pour vérification.",
+		"Step2Button": "En savoir plus",
+		"Step3Title": "Étape 3 : Enregistrez les plateformes",
+		"Step3Desc": "Enregistrez l'accès aux plateformes lorsque vous êtes connecté à Internet. Ajoutez vos identifiants aux plateformes prises en charge par RelaySMS et préparez-les pour une utilisation hors ligne.",
+		"Step3Button": "Configurer maintenant",
+		"Step4Title": "Étape 4 : Configurez une passerelle",
+		"Step4Desc": "Choisissez un client passerelle pour envoyer des SMS. Vous pouvez sélectionner parmi les clients préconfigurés ou configurer un client personnalisé en ajoutant le numéro de passerelle à vos contacts.",
+		"Step4Button": "Configurer la passerelle",
+		"Step5Title": "Étape 5 : Envoyez des messages",
+		"Step5Desc": "Rédigez des messages pour les plateformes prises en charge sans Internet. Envoyez-les sous forme de SMS à un numéro de passerelle préenregistré, garantissant une communication cryptée.",
+		"Step5Button": "Commencer à envoyer"
 	},
 	"Blog": {
 		"Header": "Articles de Blog",

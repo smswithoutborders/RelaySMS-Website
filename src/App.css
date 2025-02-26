@@ -1,118 +1,81 @@
-html,
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400&family=Unbounded:wght@400&display=swap");
+
 body {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	max-width: 100%;
-	overflow-x: hidden;
+	font-family: "Ubuntu";
 }
 
-* {
-	box-sizing: border-box;
-	font-family: "Lexend", sans-serif;
-	font-optical-sizing: auto;
-	font-style: normal;
-}
+/* h1, h2, h3 {
+	font-family: 'Unbounded', 'Ubuntu';
+  } */
 
-/* ===============================downlaod section ======================================== */
-
-.full-screen-container {
-	min-height: 80vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-/* ============================ Navbar Section ============================== */
-.custom-navbar {
-	padding-left: 20px;
-	padding-right: 20px;
-	background-color: #ffffff;
-	box-shadow: 0.5px 0.5px 5px 0px #e2e8f342;
-}
-.navbar-logo {
-	margin-left: 15px;
-}
-
-.nav-links {
-	margin-right: 20px;
-}
-
-.social-icons {
-	margin-right: 30px;
-}
-
-/* ============================ Hero Section ============================== */
-.hero {
-	max-height: 100vh;
-	height: 100vh;
-}
-.hero-title {
-	color: #333;
-}
-
-.hero-description {
-	line-height: 1.6;
-}
-
-.download-button {
-	background-color: #007bff;
-	border: none;
-}
-
-.download-button:hover {
-	background-color: #0056b3;
-}
-
-@media (max-width: 768px) {
-	.hero {
-		max-height: 100vh;
-		padding-top: 10%;
-	}
-	.hero-title {
-		font-size: 2rem;
-	}
-
-	.hero-description {
-		font-size: 1.1rem;
-	}
-
-	.download-button {
-		font-size: 0.9rem;
-		padding: 10px 20px;
-	}
-
-	.landing-page {
-		padding: 30px 20px;
-	}
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-	.hero {
-		max-height: 50vh;
-		padding-top: 10%;
-	}
-}
-
-/* ==================== how it works =================================== */
-.card-number {
-	font-size: 20px;
-	font-weight: bold;
-	color: #fff;
-	background-color: #2f3c79;
-	padding: 15px;
-	border-radius: 50%;
-	width: 50px;
-	height: 50px;
-	display: flex;
+.circle-number {
+	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	box-shadow: 0 4px 8px rgba(56, 56, 56, 0.2);
-	position: absolute;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: #ff9e43;
+	color: #000158;
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+	filter: invert(0) sepia(1) saturate(1000%) hue-rotate(200deg);
+}
+
+.carousel-indicators [data-bs-target] {
+	background-color: #ff9e43;
+}
+
+.carousel-indicators [data-bs-target].active {
+	background-color: #ff9e43;
+}
+.faq-number {
+	width: 50px;
+	height: 50px;
+	background-color: #000158;
+	color: aliceblue;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
 	left: 20px;
 	top: -30px;
 }
 
+.card-number {
+	width: 50px;
+	height: 50px;
+	background-color: #000158;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	left: 20px;
+	top: -30px;
+}
+
+.card-number2 {
+	width: 30px;
+	height: 30px;
+	background-color: #ff9e43;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+	color: #000;
+	position: absolute;
+}
+
+/* 
 .card {
 	position: relative;
 	padding: 10px;
@@ -150,24 +113,4 @@ body {
 	color: #6c757d;
 }
 
-/* ============================ Footer Section ============================ */
-.footer {
-	padding: 2rem 0;
-	color: #b3b6b7;
-}
-
-.footer-link {
-	color: #b3b6b7;
-	text-decoration: none;
-	transition: color 0.3s ease;
-}
-
-.footer-link:hover {
-	color: #59a5bf;
-	text-decoration: none;
-}
-
-.footer-col h5 {
-	font-weight: bold;
-	color: #b3b6b7;
-}
+ */

@@ -7,6 +7,11 @@
 		"Contact": "Contáctanos",
 		"Support": "Soporte"
 	},
+	"social": {
+		"x": "Síguenos en X",
+		"bluesky": "Échale un vistazo a Bluesky",
+		"github": "Ver nuestro GitHub"
+	},
 	"Landing": {
 		"span": "¿Sin datos? No hay problema.",
 		"h1": "Mantente conectado con RelaySMS",
@@ -14,17 +19,23 @@
 		"Android": "Descargar RelaySMS"
 	},
 	"Howitworks": {
-		"Header": "Usando la aplicación",
-		"titleA": "Guardar plataformas (Gmail, X, Telegram)",
-		"A": "Puedes almacenar tokens de tus plataformas en línea usando los protocolos OAuth2, que son compatibles con la mayoría de las plataformas. Esto asegura que sólo el acceso autorizado esté disponible.",
-		"Areadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-5-save-access-to-platforms' target='_blank' rel='noopener noreferrer'>Leer más</a>",
-		"titleB": "Componer y enviar",
-		"B": "Sin conexión a internet, escribe mensajes para plataformas guardadas en tu app RelaySMS. Los mensajes pueden ser de cualquier tipo y se envían de manera cifrada a través de tu app de mensajería SMS.",
-		"Breadmore": "<a href='https://docs.smswithoutborders.com/docs/App%20Tutorial/New-Tutorial#step-1-click-the-compose-button' target='_blank' rel='noopener noreferrer'>Leer más</a>",
-		"titleC": "Recibir y publicar",
-		"C": "RelaySMS admite clientes descentralizados de Gateway de SMS que pueden recibir y reenviar mensajes cifrados a servidores Vault en línea.",
-		"Creadmore": "<a href='https://docs.smswithoutborders.com/docs/contributing/introduction' target='_blank' rel='noopener noreferrer'>Leer más</a>",
-		"ReadMore": "Leer más..."
+		"Header": "Cómo empezar con RelaySMS",
+		"SubHeader": "Aprende cómo configurar y usar RelaySMS para una comunicación sin conexión fluida.",
+		"Step1Title": "Paso 1: Descarga la aplicación",
+		"Step1Desc": "Descarga la aplicación RelaySMS desde Google Play Store, GitHub o compílala desde el código fuente. Asegúrate de que tu dispositivo Android cumpla con los requisitos técnicos (Android 6.0+ con capacidad SMS).",
+		"Step1Button": "Comenzar",
+		"Step2Title": "Paso 2: Crea una cuenta",
+		"Step2Desc": "Crea una cuenta haciendo clic en 'Agregar cuenta', seleccionando 'Crear nueva' y completando los datos requeridos. Se enviará un PIN de autenticación a tu teléfono para verificación.",
+		"Step2Button": "Aprender más",
+		"Step3Title": "Paso 3: Guarda plataformas",
+		"Step3Desc": "Guarda el acceso a las plataformas mientras estés conectado a Internet. Agrega tus credenciales a las plataformas compatibles con RelaySMS y prepáralas para usarlas sin conexión.",
+		"Step3Button": "Configurar ahora",
+		"Step4Title": "Paso 4: Configura una pasarela",
+		"Step4Desc": "Elige un cliente de pasarela para enviar SMS. Puedes seleccionar entre clientes preconfigurados o configurar un cliente personalizado agregando el número de pasarela a tus contactos.",
+		"Step4Button": "Configurar pasarela",
+		"Step5Title": "Paso 5: Envía mensajes",
+		"Step5Desc": "Escribe mensajes para las plataformas compatibles sin Internet. Envíalos como SMS a un número de pasarela preguardado, garantizando una comunicación cifrada.",
+		"Step5Button": "Comenzar a enviar"
 	},
 	"Blog": {
 		"Header": "Publicaciones del Blog",
