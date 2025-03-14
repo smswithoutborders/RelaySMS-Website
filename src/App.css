@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400&family=Unbounded:wght@400&display=swap");
 
+html,
 body {
-	font-family: "Ubuntu";
+	overflow-x: hidden;
+	width: 100%;
+	font-family: "Mona Sans";
 }
 
-/* h1, h2, h3 {
-	font-family: 'Unbounded', 'Ubuntu';
-  } */
+* {
+	box-sizing: border-box;
+}
 
 .circle-number {
 	display: inline-flex;
@@ -74,43 +77,3 @@ body {
 	color: #000;
 	position: absolute;
 }
-
-/* 
-.card {
-	position: relative;
-	padding: 10px;
-	box-shadow: 0.5px 0.5px 12px 0px #80808042;
-	box-sizing: border-box;
-	border-radius: 5px;
-	margin: 5px;
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-}
-.card .card-body .card-title {
-	font-size: 20px;
-	font-weight: bold;
-	margin-top: 10px;
-	margin-bottom: 20px;
-}
-.card .card-body .card-text {
-	margin-top: 8px;
-}
-.Readmore {
-	font-size: 0.9rem;
-	font-weight: bold;
-	color: #021d3a !important;
-	text-decoration: none !important;
-}
-
-.Readmore:hover {
-	color: #003f7d !important;
-	text-decoration: none;
-}
-
-.read-time {
-	font-size: 0.85rem;
-	color: #6c757d;
-}
-
- */
