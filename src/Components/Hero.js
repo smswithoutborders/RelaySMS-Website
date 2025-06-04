@@ -207,16 +207,16 @@ const Hero = () => {
 										color: "#323252"
 									}}
 								>
-									RelaySMS is committed to security and transparency. Read our{" "}
+									{t("Landing.auditMessage.part1")}
 									<a
 										href="https://www.opentech.fund/security-safety-audits/smswithoutborders-penetration-testt/"
 										target="_blank"
 										rel="noopener noreferrer"
 										style={{ color: "#000158", textDecoration: "none" }}
 									>
-										<strong>security audit report </strong>
+										<strong>{t("Landing.auditMessage.link")}</strong>
 									</a>
-									.
+									{t("Landing.auditMessage.part2")}
 								</Typography>
 							</Box>
 						</Grid>
