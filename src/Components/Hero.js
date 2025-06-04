@@ -1,21 +1,29 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Container, Row, Col, Navbar, Nav, Carousel, Card } from "react-bootstrap";
+import { Container, Row, Col, Carousel, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useTranslation } from "react-i18next";
 import { FaFileAlt } from "react-icons/fa";
-import { Grid, Typography, Box, Button } from "@mui/material";
+import { Grid, Typography, Box, Button, AppBar } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import LanguageSwitcher from "./LanguageSwitcher";
 import ReactHtmlParser from "react-html-parser";
-import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
-const App = () => {
+const Hero = () => {
 	const [scrollDirection, setScrollDirection] = useState(null);
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setScrolled(window.scrollY > 50);
+		};
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 
 	useEffect(() => {
 		AOS.init({
@@ -39,29 +47,6 @@ const App = () => {
 
 		window.addEventListener("scroll", updateScrollDirection);
 	}, []);
-
-	const blogs = [
-		{
-			title: t("Blog.IDHeader"),
-			description: t("Blog.IDD"),
-			link: "https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
-		}
-	];
-
-	const otherArticles = [
-		{
-			title: t("Blog.articles1"),
-			url: "https://blog.smswithoutborders.com/posts/resilience-of-gateway-clients-in-smswithoutborders"
-		},
-		{
-			title: t("Blog.articles2"),
-			url: "https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders"
-		},
-		{
-			title: t("Blog.articles3"),
-			url: "https://blog.smswithoutborders.com/releases/vault-0-1-0"
-		}
-	];
 
 	const carouselItems = [
 		{
@@ -106,77 +91,62 @@ const App = () => {
 		}
 	];
 
+	const blogs = [
+		{
+			title: t("Blog.IDHeader"),
+			description: t("Blog.IDD"),
+			link: "https://blog.smswithoutborders.com/posts/relaysms-expands-user-control-with-device-id-registration"
+		}
+	];
+
+	const otherArticles = [
+		{
+			title: t("Blog.articles1"),
+			url: "https://blog.smswithoutborders.com/posts/resilience-of-gateway-clients-in-smswithoutborders"
+		},
+		{
+			title: t("Blog.articles2"),
+			url: "https://blog.smswithoutborders.com/posts/reliability-of-gateway-clients-in-smswithoutborders"
+		},
+		{
+			title: t("Blog.articles3"),
+			url: "https://blog.smswithoutborders.com/releases/vault-0-1-0"
+		}
+	];
+
 	return (
 		<div>
-			{/* Navbar */}
-			<Navbar
-				style={{ background: "#FAF2E4", fontFamily: "'Mona Sans', ubuntu" }}
+			{/*==================== Navbar==================== */}
+			<AppBar
+				position="fixed"
 				dir={isFarsi ? "rtl" : "ltr"}
-				expand="lg"
-				sticky="top"
+				sx={{
+					padding: { xs: "5px 10px", md: scrolled ? "10px 50px" : "10px 100px" },
+					boxShadow: "none",
+					zIndex: 9999
+				}}
 			>
-				<Container>
-					<Navbar.Brand href="#">
-						<img
-							src="/logo.png"
-							alt="My Website Logo"
-							className="d-inline-block align-top"
-							style={{ height: "35px" }}
-						/>
-					</Navbar.Brand>
-					<Navbar.Toggle aria-controls="basic-navbar-nav" />
-					<Navbar.Collapse id="basic-navbar-nav">
-						<Nav className="ms-auto">
-							<Nav.Link href="/">{t("Nav.Home")}</Nav.Link>
-							<Nav.Link href="https://blog.smswithoutborders.com/">{t("Nav.Blog")}</Nav.Link>
-							<Nav.Link href="https://docs.smswithoutborders.com/">{t("Nav.Support")}</Nav.Link>
-							<Nav.Link as={Link} to="/Contact_Us">
-								{t("Nav.Contact")}
-							</Nav.Link>
-
-							<Nav.Link href="https://x.com/RelaySMS" className="mx-2" title={t("social.x")}>
-								<img src="./x.svg" alt="X logo" height="20" />
-							</Nav.Link>
-
-							<Nav.Link
-								href="https://bsky.app/profile/relaysms.bsky.social"
-								className="mx-2"
-								title={t("social.bluesky")}
-							>
-								<img src="./bluesky.svg" alt="Bluesky logo" height="20" />
-							</Nav.Link>
-
-							<Nav.Link
-								href="https://github.com/smswithoutborders"
-								className="mx-2"
-								title={t("social.github")}
-							>
-								<FaGithub size={20} />
-							</Nav.Link>
-
-							<Nav.Link>
-								<LanguageSwitcher className="mx-2" />
-							</Nav.Link>
-						</Nav>
-					</Navbar.Collapse>
-				</Container>
-			</Navbar>
+				<Navbar />
+			</AppBar>
 
 			{/* ================= Hero Section=========================== */}
 			<Box
 				sx={{
 					backgroundColor: "#FAF2E4",
 					py: { xs: 6, md: 12 },
-					px: { xs: 3, md: 6 }
+					px: { xs: 3, md: 6 },
+					minHeight: "100vh",
+					display: "flex",
+					alignItems: "center"
 				}}
 				data-aos={scrollDirection === "down" ? "fade-up" : "fade-down"}
 			>
-				<Container maxWidth="lg">
+				<Container maxWidth="lg" dir={i18n.dir()}>
 					<Grid container spacing={6} alignItems="center" justifyContent="center">
 						<Grid item xs={12} md={6}>
 							<Typography
 								variant="h3"
-								style={{ fontFamily: "'Unbounded', ubuntu" }}
+								style={{ fontFamily: "'Unbounded', 'Ubuntu', sans-serif" }}
 								sx={{
 									fontWeight: "bold",
 									lineHeight: 1.2,
@@ -190,7 +160,7 @@ const App = () => {
 							</Typography>
 							<Typography
 								variant="body1"
-								style={{ fontFamily: "'Mona Sans', ubuntu" }}
+								style={{ fontFamily: "'Mona Sans', 'Ubuntu', sans-serif" }}
 								sx={{
 									mb: 4,
 									fontSize: { xs: "1rem", sm: "1.2rem" },
@@ -202,11 +172,13 @@ const App = () => {
 							</Typography>
 							<Box>
 								<Button
-									as={Link}
+									component={Link}
 									to="/Download"
 									variant="contained"
-									color="#2D2A5A"
-									style={{ fontFamily: "'Mona Sans', ubuntu" }}
+									style={{
+										fontFamily: "'Mona Sans', 'Ubuntu', sans-serif",
+										color: "#2D2A5A"
+									}}
 									sx={{
 										px: 5,
 										py: 1,
@@ -226,6 +198,27 @@ const App = () => {
 									{t("Landing.Android")}
 								</Button>
 							</Box>
+							<Box sx={{ py: 3 }}>
+								<Typography
+									variant="body3"
+									sx={{
+										mb: 4,
+										fontSize: { xs: "1rem", sm: "1.2rem" },
+										color: "#323252"
+									}}
+								>
+									RelaySMS is committed to security and transparency. Read our{" "}
+									<a
+										href="https://www.opentech.fund/security-safety-audits/smswithoutborders-penetration-testt/"
+										target="_blank"
+										rel="noopener noreferrer"
+										style={{ color: "#000158", textDecoration: "none" }}
+									>
+										<strong>security audit report </strong>
+									</a>
+									.
+								</Typography>
+							</Box>
 						</Grid>
 
 						<Grid item xs={12} md={6}>
@@ -240,12 +233,13 @@ const App = () => {
 							>
 								<img
 									src="/Relay.png"
-									alt="Meet the Best Doctors"
+									alt="Relay App Screenshot"
 									style={{
 										width: "100%",
 										height: "auto",
 										display: "block",
-										objectFit: "cover"
+										objectFit: "cover",
+										borderRadius: "16px"
 									}}
 								/>
 							</Box>
@@ -254,7 +248,7 @@ const App = () => {
 				</Container>
 			</Box>
 
-			{/* ================================ How It Works Section ============================== */}
+			{/* =========================== How It Works Section ========================= */}
 			<Box
 				sx={{
 					backgroundColor: "#EBE4D8",
@@ -264,7 +258,6 @@ const App = () => {
 				data-aos={scrollDirection === "down" ? "fade-left" : "fade-right"}
 			>
 				<Container>
-					{/* Section Header */}
 					<div className="text-center mb-5">
 						<h1
 							style={{
@@ -291,7 +284,6 @@ const App = () => {
 						{carouselItems.map((item, index) => (
 							<Carousel.Item key={index}>
 								<Grid container spacing={4} alignItems="center">
-									{/* Content Section */}
 									<Grid
 										item
 										xs={12}
@@ -322,7 +314,7 @@ const App = () => {
 											dangerouslySetInnerHTML={{
 												__html: item.description.replace(
 													/<a /g,
-													"<a style='text-decoration: none; color: #007bff;' " // Removes underline and keeps link color
+													"<a style='text-decoration: none; color: #007bff;' "
 												)
 											}}
 										/>
@@ -334,7 +326,7 @@ const App = () => {
 												fontFamily: "'Mona Sans', ubuntu",
 												textDecoration: "none"
 											}}
-											href={item.link} // Dynamic link based on the carousel item
+											href={item.link}
 											sx={{
 												backgroundColor: "#2D2A5A",
 												":hover": { backgroundColor: "#1F1B3E" },
@@ -345,7 +337,6 @@ const App = () => {
 										</Button>
 									</Grid>
 
-									{/* Image Section */}
 									<Grid
 										item
 										xs={12}
@@ -380,7 +371,6 @@ const App = () => {
 				id="Blog"
 				data-aos={scrollDirection === "down" ? "zoom-in" : "zoom-out"}
 			>
-				{/* Section Header */}
 				<div className="text-center mb-5">
 					<h1
 						style={{
@@ -475,7 +465,7 @@ const App = () => {
 				</Container>
 			</Box>
 
-			{/* -------------------------------FAQ Section ======================================*/}
+			{/* ========================= FAQ Section ====================*/}
 			<Box
 				sx={{
 					backgroundColor: "#EBE4D8",
@@ -501,9 +491,7 @@ const App = () => {
 					</h1>
 				</div>
 				<Container>
-					{/* Increase gap between cards using g-5 */}
 					<Row className="g-5">
-						{/* First row with three cards */}
 						<Col lg={4} md={6} sm={12}>
 							<Card
 								data-aos={scrollDirection === "down" ? "fade-left" : "fade-right"}
@@ -529,7 +517,7 @@ const App = () => {
 								</Card.Body>
 							</Card>
 						</Col>
-						{/* Card 2 */}
+
 						<Col lg={4} md={6} sm={12}>
 							<Card
 								data-aos={scrollDirection === "down" ? "fade-right" : "fade-left"}
@@ -555,7 +543,7 @@ const App = () => {
 								</Card.Body>
 							</Card>
 						</Col>
-						{/* Card 3 */}
+
 						<Col lg={4} md={6} sm={12}>
 							<Card
 								data-aos={scrollDirection === "down" ? "fade-up" : "fade-down"}
@@ -582,7 +570,6 @@ const App = () => {
 							</Card>
 						</Col>
 
-						{/* Second row with two cards */}
 						<Col lg={{ span: 4, offset: 2 }} md={6} sm={12}>
 							<Card
 								data-aos={scrollDirection === "down" ? "fade-right" : "fade-left"}
@@ -650,4 +637,4 @@ const App = () => {
 	);
 };
 
-export default App;
+export default Hero;
