@@ -16,7 +16,12 @@
 		"span": "¿Sin datos? No hay problema.",
 		"h1": "Mantente conectado con RelaySMS",
 		"h2": "RelaySMS permite a los usuarios enviar mensajes a plataformas en línea sin necesidad de una conexión a internet activa.",
-		"Android": "Descargar RelaySMS"
+		"Android": "Descargar RelaySMS",
+		"auditMessage": {
+			"part1": "RelaySMS está comprometido con la seguridad y la transparencia. Lea nuestro",
+			"link": "informe de auditoría de seguridad",
+			"part2": "."
+		}
 	},
 	"Howitworks": {
 		"Header": "Cómo empezar con RelaySMS",
