@@ -232,7 +232,7 @@ const Hero = () => {
 								}}
 							>
 								<img
-									src="/Relay.png"
+									src="/RelayHome.png"
 									alt="Relay App Screenshot"
 									style={{
 										width: "100%",
