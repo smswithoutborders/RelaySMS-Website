@@ -101,6 +101,7 @@ const Navbar = () => {
 								<MenuIcon sx={{ color: scrolled ? "#fff" : "#262626" }} />
 							)}
 						</IconButton>
+
 						<Drawer
 							anchor={isFarsi ? "right" : "left"}
 							open={openDrawer}
@@ -145,7 +146,6 @@ const Navbar = () => {
 										</ListItem>
 									)
 								)}
-
 								{socialLinks.map((item, index) => (
 									<ListItem
 										button
