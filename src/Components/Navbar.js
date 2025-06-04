@@ -88,7 +88,7 @@ const Navbar = () => {
 					<img
 						src={scrolled ? "/LogoDark.png" : "/logo.png"}
 						alt="Logo"
-						style={{ height: 35, transition: "0.5s" }}
+						style={{ height: 30, transition: "0.5s" }}
 					/>
 				</Box>
 
