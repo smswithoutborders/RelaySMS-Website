@@ -297,7 +297,7 @@ const Hero = () => {
 									>
 										<h1 className="circle-number"> {item.number}</h1>
 										<Typography
-											variant="h3"
+											variant="h5"
 											sx={{
 												fontWeight: "bold",
 												color: "#2D2A5A",
