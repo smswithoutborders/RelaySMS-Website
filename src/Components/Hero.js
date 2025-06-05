@@ -348,7 +348,7 @@ const Hero = () => {
 											src={item.image}
 											alt={item.title}
 											style={{
-												maxWidth: "80%",
+												maxWidth: "40%",
 												borderRadius: "12px",
 												height: "auto"
 											}}
