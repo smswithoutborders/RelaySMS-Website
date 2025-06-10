@@ -1,10 +1,8 @@
 import React from "react";
-import { Container, Row, Col, Button, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { FaGithub } from "react-icons/fa";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LanguageSwitcher from "../Components/LanguageSwitcher";
+import { FaArrowLeft } from "react-icons/fa6";
 
 const ContactItem = ({ imageSrc, title, link, buttonText, variant }) => (
 	<Col md={4} sm={6} xs={12} className="mb-4 text-center">
@@ -42,7 +40,7 @@ const ContactItem = ({ imageSrc, title, link, buttonText, variant }) => (
 				style={{
 					color: "black",
 					textDecoration: "none",
-					transition: "color 0.3s ease" // Smooth color transition
+					transition: "color 0.3s ease"
 				}}
 				onMouseEnter={(e) => (e.currentTarget.style.color = "#0056b3")}
 				onMouseLeave={(e) => (e.currentTarget.style.color = "black")}
@@ -56,8 +54,7 @@ const ContactItem = ({ imageSrc, title, link, buttonText, variant }) => (
 );
 
 const Contact_Us = () => {
-	const { t, i18n } = useTranslation();
-	const isFarsi = i18n.language === "fa";
+	const { t } = useTranslation();
 
 	const contactItems = [
 		{
@@ -81,43 +78,18 @@ const Contact_Us = () => {
 	];
 
 	return (
-		<>
-			<Navbar expand="lg" fixed="top" dir={isFarsi ? "rtl" : "ltr"} className="custom-navbar">
-				<Navbar.Brand href="#home" className="navbar-logo">
-					<img src="./logo.png" alt="Logo" height="40" className="logo" />
-				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="navbar-nav" />
-				<Navbar.Collapse id="navbar-nav" className="justify-content-end">
-					<Nav className="nav-links">
-						<Nav.Link href="/" className="mx-2">
-							{t("Nav.Home")}
-						</Nav.Link>
-						<Nav.Link href="https://blog.smswithoutborders.com/" className="mx-2">
-							{t("Nav.Blog")}
-						</Nav.Link>
-						<Nav.Link href="https://docs.smswithoutborders.com/" className="mx-2">
-							{t("Nav.Help")}
-						</Nav.Link>
-						<Nav.Link as={Link} to="/Contact_Us" className="mx-2">
-							{t("Nav.Contact")}
-						</Nav.Link>
-					</Nav>
-					<Nav className="social-icons">
-						<Nav.Link href="https://x.com/RelaySMS" className="mx-2">
-							<img src="./x.svg" alt="X logo" height="20" />
-						</Nav.Link>
-						<Nav.Link href="https://github.com/smswithoutborders" className="mx-2">
-							<FaGithub />
-						</Nav.Link>
-						<LanguageSwitcher className="mx-2" />
-					</Nav>
-				</Navbar.Collapse>
-			</Navbar>
-
-			<Container
-				className="py-5 mt-5 d-flex flex-column justify-content-center"
-				style={{ minHeight: "90vh" }}
-			>
+		<div
+			style={{
+				backgroundColor: "#FAF2E4",
+				minHeight: "80vh",
+				width: "100%",
+				paddingTop: "120px"
+			}}
+		>
+			<Button as="a" href="/" variant="light" className="mb-4 ms-3">
+				<FaArrowLeft className="me-2" /> {t("Back", "Back")}
+			</Button>
+			<Container className="d-flex flex-column justify-content-center">
 				<Row className="mb-5">
 					<Col>
 						<h2
@@ -148,7 +120,7 @@ const Contact_Us = () => {
 					))}
 				</Row>
 			</Container>
-		</>
+		</div>
 	);
 };
 

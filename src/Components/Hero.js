@@ -137,7 +137,8 @@ const Hero = () => {
 					px: { xs: 3, md: 6 },
 					minHeight: "100vh",
 					display: "flex",
-					alignItems: "center"
+					alignItems: "center",
+					paddingTop: { xs: "120px", md: "0" }
 				}}
 				data-aos={scrollDirection === "down" ? "fade-up" : "fade-down"}
 			>
