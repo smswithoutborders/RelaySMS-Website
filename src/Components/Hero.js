@@ -260,16 +260,16 @@ const Hero = () => {
 			>
 				<Container>
 					<div className="text-center mb-5">
-						<h1
+						<h3
 							style={{
-								fontSize: "2.5rem",
+								fontSize: "1.8rem",
 								fontWeight: "bold",
 								color: "#2D2A5A",
 								fontFamily: "'Unbounded', ubuntu"
 							}}
 						>
 							{t("Howitworks.Header", "Getting Started with RelaySMS")}
-						</h1>
+						</h3>
 						<p
 							data-aos={scrollDirection === "down" ? "zoom-in" : "zoom-out"}
 							style={{ fontSize: "1.2rem", color: "#555555", fontFamily: "'Mona Sans', ubuntu" }}
@@ -373,9 +373,9 @@ const Hero = () => {
 				data-aos={scrollDirection === "down" ? "zoom-in" : "zoom-out"}
 			>
 				<div className="text-center mb-5">
-					<h1
+					<h3
 						style={{
-							fontSize: "2.5rem",
+							fontSize: "1.8rem",
 							fontWeight: "bold",
 							color: "#2D2A5A",
 							margin: "30px",
@@ -384,7 +384,7 @@ const Hero = () => {
 						data-aos="fade-down"
 					>
 						{t("Blog.Header")}
-					</h1>
+					</h3>
 				</div>
 
 				<Container>
@@ -476,20 +476,20 @@ const Hero = () => {
 				id="Blog"
 			>
 				<div className="text-center mb-5">
-					<h1
+					<h3
 						dir={isFarsi ? "rtl" : "ltr"}
 						style={{
 							fontWeight: "bold",
 							margin: "60px",
 							transition: "color 0.3s ease, transform 0.3s ease",
-							fontSize: "2.5rem",
+							fontSize: "1.8rem",
 							color: "#2D2A5A",
 							fontFamily: "'Unbounded', ubuntu"
 						}}
 						data-aos={scrollDirection === "down" ? "fade-left" : "fade-right"}
 					>
 						{t("Faq.faqTitle")}
-					</h1>
+					</h3>
 				</div>
 				<Container>
 					<Row className="g-5">
@@ -506,8 +506,8 @@ const Hero = () => {
 									<Card.Title
 										style={{
 											color: "#2F3C79",
-											fontWeight: "bold",
-											fontFamily: "'Unbounded', ubuntu"
+											fontFamily: "'Unbounded', ubuntu",
+											fontSize: "18px"
 										}}
 									>
 										{t("Faq.faq1.question")}
@@ -532,7 +532,7 @@ const Hero = () => {
 									<Card.Title
 										style={{
 											color: "#2F3C79",
-											fontWeight: "bold",
+											fontSize: "18px",
 											fontFamily: "'Unbounded', ubuntu"
 										}}
 									>
@@ -558,8 +558,8 @@ const Hero = () => {
 									<Card.Title
 										style={{
 											color: "#2F3C79",
-											fontWeight: "bold",
-											fontFamily: "'Unbounded', ubuntu"
+											fontFamily: "'Unbounded', ubuntu",
+											fontSize: "18px"
 										}}
 									>
 										{t("Faq.faq3.question")}
@@ -584,8 +584,8 @@ const Hero = () => {
 									<Card.Title
 										style={{
 											color: "#2F3C79",
-											fontWeight: "bold",
-											fontFamily: "'Unbounded', ubuntu"
+											fontFamily: "'Unbounded', ubuntu",
+											fontSize: "18px"
 										}}
 									>
 										{t("Faq.faq4.question")}
@@ -609,8 +609,8 @@ const Hero = () => {
 									<Card.Title
 										style={{
 											color: "#2F3C79",
-											fontWeight: "bold",
-											fontFamily: "'Unbounded', ubuntu"
+											fontFamily: "'Unbounded', ubuntu",
+											fontSize: "18px"
 										}}
 									>
 										{t("Faq.faq5.question")}
