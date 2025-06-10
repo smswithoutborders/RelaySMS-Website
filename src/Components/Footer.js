@@ -1,115 +1,115 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Row, Col } from "react-bootstrap";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import { FaGithub } from "react-icons/fa";
-import { Box } from "@mui/material";
 
 const Footer = () => {
 	const { t } = useTranslation();
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setScrolled(window.scrollY > 50);
+		};
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	const iconStyle = {
+		filter: "brightness(0) invert(1)",
+		height: "24px",
+		transition: "transform 0.3s"
+	};
+
+	const iconHover = (e, scale) => {
+		e.currentTarget.style.transform = `scale(${scale})`;
+	};
 
 	return (
 		<footer
-			className="footer py-5"
 			style={{
-				backgroundImage: "url('/foot.png')",
-				backgroundSize: "cover",
-				backgroundPosition: "center",
-				backgroundRepeat: "no-repeat",
-				color: "#000158"
+				backgroundColor: "#000158",
+				color: "#ffffff",
+				padding: "2rem 0"
 			}}
 		>
-			<Container>
-				<Row className="justify-content-center text-center text-md-start" style={{ gap: "20px" }}>
-					{/* Logo Column */}
-					<Col sm={6} md={4} lg={3} className="footer-col mb-4">
-						<Box
-							sx={{
-								width: "100%",
-								maxWidth: 500,
-								margin: "0 auto",
-								borderRadius: 4,
-								overflow: "hidden"
-							}}
-						>
-							<img
-								src="/logo.png"
-								alt={t("Footer.logoAlt", "Meet the Best Doctors")}
-								style={{
-									width: "100%",
-									height: "auto",
-									display: "block",
-									objectFit: "cover"
-								}}
-							/>
-						</Box>
-					</Col>
+			<Row className="align-items-center mb-4 px-5">
+				<Col
+					xs={12}
+					md={4}
+					className="d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
+				>
+					<img
+						src={scrolled ? "/RelaySMSDark.png" : "/logo.png"}
+						alt="Logo"
+						style={{ height: 35, transition: "0.5s" }}
+					/>
+				</Col>
 
-					{/* Social Media and Language Switcher Row */}
-					<Col className="d-flex justify-content-center align-items-center">
+				<Col xs={12} md={4} className="d-flex justify-content-center mb-3 mb-md-0">
+					<div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
 						<a
 							href="https://x.com/RelaySMS"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="footer-link mx-2"
-							aria-label="Visit our Twitter"
-							title={t("social.x")}
-							style={{
-								textDecoration: "none",
-								color: "#000158",
-								transition: "transform 0.3s ease"
-							}}
+							aria-label="RelaySMS on X"
 						>
-							<img src="./x-w.png" alt="X logo" height="20" />
+							<img
+								src="./x-w.png"
+								alt="X logo"
+								style={iconStyle}
+								onMouseEnter={(e) => iconHover(e, 1.1)}
+								onMouseLeave={(e) => iconHover(e, 1)}
+							/>
 						</a>
 
 						<a
 							href="https://github.com/smswithoutborders"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="footer-link mx-2"
-							aria-label="Visit our GitHub"
-							title={t("social.github")}
+							aria-label="RelaySMS on GitHub"
 							style={{
-								textDecoration: "none",
-								color: "#000158",
+								color: "#ffffff",
 								fontSize: "1.5rem",
-								transition: "transform 0.3s ease"
+								transition: "transform 0.3s"
 							}}
 						>
-							<FaGithub />
+							<FaGithub
+								onMouseEnter={(e) => iconHover(e, 1.1)}
+								onMouseLeave={(e) => iconHover(e, 1)}
+							/>
 						</a>
 
 						<a
 							href="https://bsky.app/profile/relaysms.bsky.social"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="footer-link mx-2"
-							aria-label="Visit our Bluesky"
-							title={t("social.bluesky")}
-							style={{
-								textDecoration: "none",
-								color: "#000158",
-								fontSize: "1.5rem",
-								transition: "transform 0.3s ease"
-							}}
+							aria-label="RelaySMS on Bluesky"
 						>
-							<img src="./bluesky.svg" alt="Bluesky logo" height="24" />
+							<img
+								src="./bluesky.svg"
+								alt="Bluesky logo"
+								style={iconStyle}
+								onMouseEnter={(e) => iconHover(e, 1.1)}
+								onMouseLeave={(e) => iconHover(e, 1)}
+							/>
 						</a>
+					</div>
+				</Col>
 
-						<LanguageSwitcher className="mx-2" />
-					</Col>
-				</Row>
+				<Col xs={12} md={4} className="d-flex justify-content-center justify-content-md-end">
+					<LanguageSwitcher />
+				</Col>
+			</Row>
 
-				{/* Copyright Row */}
-				<Row className="mt-4">
-					<Col className="text-center">
-						<p style={{ fontSize: "0.875rem", color: "#6c757d" }}>
-							&copy; {new Date().getFullYear()} {t("Footer.copyright")}
-						</p>
-					</Col>
-				</Row>
-			</Container>
+			<Row>
+				<Col className="text-center">
+					<p style={{ fontSize: "0.875rem", color: "#cccccc" }}>
+						&copy; {new Date().getFullYear()} {t("Footer.copyright")}
+					</p>
+				</Col>
+			</Row>
 		</footer>
 	);
 };

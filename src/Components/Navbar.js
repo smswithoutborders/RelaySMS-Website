@@ -38,7 +38,8 @@ const Navbar = () => {
 		{ label: t("Nav.Home"), href: "/" },
 		{ label: t("Nav.Blog"), href: "https://blog.smswithoutborders.com/", external: true },
 		{ label: t("Nav.Support"), href: "https://docs.smswithoutborders.com/", external: true },
-		{ label: t("Nav.Contact"), to: "/Contact_Us", isRouterLink: true }
+		{ label: t("Nav.Contact"), to: "/Contact_Us", isRouterLink: true },
+		{ label: t("Nav.Download"), to: "/Download", isRouterLink: true }
 	];
 
 	const socialLinks = [
@@ -182,14 +183,21 @@ const Navbar = () => {
 									component={Link}
 									to={item.to}
 									sx={{
-										textDecoration: "none",
+										position: "relative",
 										color: scrolled ? "#fff" : "#000158",
-										lineHeight: scrolled ? "60px" : "80px",
+										textDecoration: "none",
+										fontWeight: 500,
+										fontSize: scrolled ? "1rem" : "1.1rem",
+										padding: scrolled ? "4px 12px" : "5px 9px",
+										lineHeight: scrolled ? "40px" : "60px",
+										borderRadius: "8px",
+										transition: "color 0.3s ease",
+										borderBottom: "2px solid transparent",
+
 										"&:hover": {
-											background: "#000158",
-											color: "#fff",
-											px: 2,
-											borderRadius: 1
+											color: "#007BFF",
+											borderBottom: "2px solid #007BFF",
+											transition: "border-color 0.3s ease"
 										}
 									}}
 								>
@@ -202,14 +210,21 @@ const Navbar = () => {
 									href={item.href}
 									target={item.external ? "_blank" : undefined}
 									sx={{
-										textDecoration: "none",
+										position: "relative",
 										color: scrolled ? "#fff" : "#000158",
+										textDecoration: "none",
+										fontWeight: 500,
+										fontSize: scrolled ? "1rem" : "1.1rem",
+										padding: scrolled ? "8px 12px" : "10px 16px",
 										lineHeight: scrolled ? "60px" : "80px",
+										borderRadius: "8px",
+										transition: "color 0.3s ease",
+										borderBottom: "2px solid transparent",
+
 										"&:hover": {
-											background: "#000158",
-											color: "#fff",
-											px: 2,
-											borderRadius: 1
+											color: "#007BFF",
+											borderBottom: "2px solid #007BFF",
+											transition: "border-color 0.3s ease"
 										}
 									}}
 								>

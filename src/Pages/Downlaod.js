@@ -1,14 +1,10 @@
-import { Container, Row, Col, Button, Navbar, Nav } from "react-bootstrap";
-import { FaGithub } from "react-icons/fa";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "../Components/LanguageSwitcher";
-import { Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa6";
 
 const Download = () => {
-	const { t, i18n } = useTranslation();
-	const isFarsi = i18n.language === "fa";
+	const { t } = useTranslation();
 
-	// Android links
 	const androidLinks = [
 		{
 			imgSrc: "./play.svg",
@@ -27,7 +23,6 @@ const Download = () => {
 		}
 	];
 
-	// iOS links
 	const iosLinks = [
 		{
 			imgSrc: "./ios.png",
@@ -40,191 +35,142 @@ const Download = () => {
 		<div
 			style={{
 				backgroundColor: "#FAF2E4",
-				paddingBottom: "6rem",
-				paddingLeft: "3rem",
-				paddingRight: "3rem",
-				boxShadow: "10px 4px 10px rgba(2, 27, 95, 0.1)"
+				minHeight: "100vh",
+				width: "100%",
+				paddingTop: "120px",
+				paddingBottom: "60px"
 			}}
 		>
-			{/* Navbar */}
-			<Navbar
-				style={{ background: "#FAF2E4", fontFamily: "'Mona Sans', ubuntu" }}
-				dir={isFarsi ? "rtl" : "ltr"}
-				expand="lg"
-				sticky="top"
-			>
-				<Container>
-					<Navbar.Brand href="#">
-						<img
-							src="/logo.png"
-							alt="My Website Logo"
-							className="d-inline-block align-top"
-							style={{ height: "35px" }}
-						/>
-					</Navbar.Brand>
-					<Navbar.Toggle aria-controls="basic-navbar-nav" />
-					<Navbar.Collapse id="basic-navbar-nav">
-						<Nav className="ms-auto">
-							<Nav.Link href="/">{t("Nav.Home")}</Nav.Link>
-							<Nav.Link href="https://blog.smswithoutborders.com/">{t("Nav.Blog")}</Nav.Link>
-							<Nav.Link href="https://docs.smswithoutborders.com/">{t("Nav.Support")}</Nav.Link>
-							<Nav.Link as={Link} to="/Contact_Us">
-								{t("Nav.Contact")}
-							</Nav.Link>
-
-							<Nav.Link href="https://x.com/RelaySMS" className="mx-2" title={t("social.x")}>
-								<img src="./x.svg" alt="X logo" height="20" />
-							</Nav.Link>
-
-							<Nav.Link
-								href="https://bsky.app/profile/relaysms.bsky.social"
-								className="mx-2"
-								title={t("social.bluesky")}
-							>
-								<img src="./bluesky.svg" alt="Bluesky logo" height="20" />
-							</Nav.Link>
-
-							<Nav.Link
-								href="https://github.com/smswithoutborders"
-								className="mx-2"
-								title={t("social.github")}
-							>
-								<FaGithub size={20} />
-							</Nav.Link>
-
-							<Nav.Link>
-								<LanguageSwitcher className="mx-2" />
-							</Nav.Link>
-						</Nav>
-					</Navbar.Collapse>
-				</Container>
-			</Navbar>
-
-			{/* Android Section */}
-			<Row className="mb-5">
-				<Col>
-					<h2
-						className="text-center"
-						style={{
-							fontSize: "2.5rem",
-							fontWeight: "bold",
-							color: "#2D2A5A",
-							padding: window.innerWidth >= 768 ? "20px" : "20px",
-							transition: "color 0.3s ease, transform 0.3s ease"
-						}}
-						onMouseEnter={(e) => {
-							e.currentTarget.style.color = "#0056b3";
-							e.currentTarget.style.transform = "scale(1.05)";
-						}}
-						onMouseLeave={(e) => {
-							e.currentTarget.style.color = "#333";
-							e.currentTarget.style.transform = "scale(1)";
-						}}
-					>
-						{t("download.android")}
-					</h2>
-				</Col>
-			</Row>
-			<Row className="justify-content-center">
-				{androidLinks.map((item, index) => (
-					<Col md={4} sm={6} xs={12} key={index} className="mb-4 text-center">
-						<a href={item.link} target="_blank" rel="noopener noreferrer">
-							<Button
-								variant="outline-primary"
-								className="icon-btn mb-3"
-								style={{
-									width: "110px",
-									height: "110px",
-									borderRadius: "50%",
-									backgroundColor: "#F0F1F3",
-									borderColor: "#F0F1F3",
-									boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)"
-								}}
-							>
-								<img
-									src={item.imgSrc}
-									alt="Icon"
-									style={{ width: "50%", height: "50%", objectFit: "contain" }}
-								/>
-							</Button>
-						</a>
-						{/* Link title text */}
-						<div>
-							<a
-								href={item.link}
-								target="_blank"
-								rel="noopener noreferrer"
-								style={{ color: "inherit", textDecoration: "none" }}
-							>
-								{item.title}
-							</a>
-						</div>
+			<Button as="a" href="/" variant="light" className="mb-4 ms-3">
+				<FaArrowLeft className="me-2" /> {t("Nav.Back")}
+			</Button>
+			<Container className="d-flex flex-column justify-content-center">
+				<Row className="mb-5">
+					<Col>
+						<h2
+							className="text-center"
+							style={{
+								fontSize: "2.5rem",
+								fontWeight: "bold",
+								color: "#2D2A5A",
+								padding: window.innerWidth >= 768 ? "20px" : "20px",
+								transition: "color 0.3s ease, transform 0.3s ease"
+							}}
+							onMouseEnter={(e) => {
+								e.currentTarget.style.color = "#0056b3";
+								e.currentTarget.style.transform = "scale(1.05)";
+							}}
+							onMouseLeave={(e) => {
+								e.currentTarget.style.color = "#333";
+								e.currentTarget.style.transform = "scale(1)";
+							}}
+						>
+							{t("download.android")}
+						</h2>
 					</Col>
-				))}
-			</Row>
+				</Row>
 
-			{/* iOS Section */}
-			<Row className="mb-5">
-				<Col>
-					<h2
-						className="text-center"
-						style={{
-							fontSize: "2.5rem",
-							fontWeight: "bold",
-							color: "#2D2A5A",
-							padding: window.innerWidth >= 768 ? "20px" : "20px",
-							transition: "color 0.3s ease, transform 0.3s ease"
-						}}
-						onMouseEnter={(e) => {
-							e.currentTarget.style.color = "#0056b3";
-							e.currentTarget.style.transform = "scale(1.05)";
-						}}
-						onMouseLeave={(e) => {
-							e.currentTarget.style.color = "#333";
-							e.currentTarget.style.transform = "scale(1)";
-						}}
-					>
-						{t("download.ios")}
-					</h2>
-				</Col>
-			</Row>
-			<Row className="justify-content-center">
-				{iosLinks.map((item, index) => (
-					<Col md={4} sm={6} xs={12} key={index} className="mb-4 text-center">
-						<a href={item.link} target="_blank" rel="noopener noreferrer">
-							<Button
-								variant="outline-primary"
-								className="icon-btn mb-3"
-								style={{
-									width: "110px",
-									height: "110px",
-									borderRadius: "50%",
-									backgroundColor: "#F0F1F3",
-									borderColor: "#F0F1F3",
-									boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)"
-								}}
-							>
-								<img
-									src={item.imgSrc}
-									alt="Icon"
-									style={{ width: "50%", height: "50%", objectFit: "contain" }}
-								/>
-							</Button>
-						</a>
-						{/* Link title text */}
-						<div>
-							<a
-								href={item.link}
-								target="_blank"
-								rel="noopener noreferrer"
-								style={{ color: "inherit", textDecoration: "none" }}
-							>
-								{item.title}
+				<Row className="justify-content-center">
+					{androidLinks.map((item, index) => (
+						<Col md={4} sm={6} xs={12} key={index} className="mb-4 text-center">
+							<a href={item.link} target="_blank" rel="noopener noreferrer">
+								<Button
+									variant="outline-primary"
+									className="icon-btn mb-3"
+									style={{
+										width: "110px",
+										height: "110px",
+										borderRadius: "50%",
+										backgroundColor: "#F0F1F3",
+										borderColor: "#F0F1F3",
+										boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)"
+									}}
+								>
+									<img
+										src={item.imgSrc}
+										alt="Icon"
+										style={{ width: "50%", height: "50%", objectFit: "contain" }}
+									/>
+								</Button>
 							</a>
-						</div>
+							{/* Link title text */}
+							<div>
+								<a
+									href={item.link}
+									target="_blank"
+									rel="noopener noreferrer"
+									style={{ color: "inherit", textDecoration: "none" }}
+								>
+									{item.title}
+								</a>
+							</div>
+						</Col>
+					))}
+				</Row>
+
+				{/* iOS Section */}
+				<Row className="mb-5">
+					<Col>
+						<h2
+							className="text-center"
+							style={{
+								fontSize: "2.5rem",
+								fontWeight: "bold",
+								color: "#2D2A5A",
+								padding: window.innerWidth >= 768 ? "20px" : "20px",
+								transition: "color 0.3s ease, transform 0.3s ease"
+							}}
+							onMouseEnter={(e) => {
+								e.currentTarget.style.color = "#0056b3";
+								e.currentTarget.style.transform = "scale(1.05)";
+							}}
+							onMouseLeave={(e) => {
+								e.currentTarget.style.color = "#333";
+								e.currentTarget.style.transform = "scale(1)";
+							}}
+						>
+							{t("download.ios")}
+						</h2>
 					</Col>
-				))}
-			</Row>
+				</Row>
+				<Row className="justify-content-center">
+					{iosLinks.map((item, index) => (
+						<Col md={4} sm={6} xs={12} key={index} className="mb-4 text-center">
+							<a href={item.link} target="_blank" rel="noopener noreferrer">
+								<Button
+									variant="outline-primary"
+									className="icon-btn mb-3"
+									style={{
+										width: "110px",
+										height: "110px",
+										borderRadius: "50%",
+										backgroundColor: "#F0F1F3",
+										borderColor: "#F0F1F3",
+										boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)"
+									}}
+								>
+									<img
+										src={item.imgSrc}
+										alt="Icon"
+										style={{ width: "50%", height: "50%", objectFit: "contain" }}
+									/>
+								</Button>
+							</a>
+							{/* Link title text */}
+							<div>
+								<a
+									href={item.link}
+									target="_blank"
+									rel="noopener noreferrer"
+									style={{ color: "inherit", textDecoration: "none" }}
+								>
+									{item.title}
+								</a>
+							</div>
+						</Col>
+					))}
+				</Row>
+			</Container>
 		</div>
 	);
 };

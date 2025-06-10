@@ -5,7 +5,9 @@
 		"github": "GitHub",
 		"Blog": "Blog",
 		"Contact": "Contáctanos",
-		"Support": "Soporte"
+		"Support": "Soporte",
+		"Back": "Volver",
+		"Download": "Descargar"
 	},
 	"social": {
 		"x": "Síguenos en X",
@@ -132,6 +134,9 @@
 		"desktopLinks": {
 			"linux": "Descargar para Linux",
 			"comingSoon": "Próximamente"
+		},
+		"Back": {
+			"Back": "Volver"
 		}
 	}
 }
