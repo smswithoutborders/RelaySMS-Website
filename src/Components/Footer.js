@@ -1,12 +1,30 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Row, Col } from "react-bootstrap";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import { FaGithub } from "react-icons/fa";
-import { Box } from "@mui/material";
 
 const Footer = () => {
 	const { t } = useTranslation();
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setScrolled(window.scrollY > 50);
+		};
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	const iconStyle = {
+		filter: "brightness(0) invert(1)",
+		height: "24px",
+		transition: "transform 0.3s"
+	};
+
+	const iconHover = (e, scale) => {
+		e.currentTarget.style.transform = `scale(${scale})`;
+	};
 
 	return (
 		<footer
@@ -16,103 +34,82 @@ const Footer = () => {
 				padding: "2rem 0"
 			}}
 		>
-			<Container>
-				<Row className="align-items-center text-center text-md-start mb-4">
-					<Col xs={12} md={4} className="mb-4 mb-md-0 d-flex justify-content-center">
-						<Box
-							sx={{
-								maxWidth: 160,
-								width: "100%",
-								borderRadius: 2,
-								overflow: "hidden"
-							}}
+			<Row className="align-items-center mb-4 px-5">
+				<Col
+					xs={12}
+					md={4}
+					className="d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
+				>
+					<img
+						src={scrolled ? "/RelaySMSDark.png" : "/logo.png"}
+						alt="Logo"
+						style={{ height: 35, transition: "0.5s" }}
+					/>
+				</Col>
+
+				<Col xs={12} md={4} className="d-flex justify-content-center mb-3 mb-md-0">
+					<div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
+						<a
+							href="https://x.com/RelaySMS"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="RelaySMS on X"
 						>
 							<img
-								src="/RelaySMSDark.png"
-								alt={t("Footer.logoAlt", "Meet the Best Doctors")}
-								style={{
-									width: "100%",
-									height: "auto",
-									objectFit: "contain"
-								}}
+								src="./x-w.png"
+								alt="X logo"
+								style={iconStyle}
+								onMouseEnter={(e) => iconHover(e, 1.1)}
+								onMouseLeave={(e) => iconHover(e, 1)}
 							/>
-						</Box>
-					</Col>
+						</a>
 
-					<Col xs={12} md={4} className="d-flex justify-content-center">
-						<div
+						<a
+							href="https://github.com/smswithoutborders"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="RelaySMS on GitHub"
 							style={{
-								display: "flex",
-								gap: "24px",
-								alignItems: "center"
+								color: "#ffffff",
+								fontSize: "1.5rem",
+								transition: "transform 0.3s"
 							}}
 						>
-							<a
-								href="https://x.com/RelaySMS"
-								target="_blank"
-								rel="noopener noreferrer"
-								title={t("social.x")}
-								style={{ display: "flex", alignItems: "center" }}
-							>
-								<img
-									src="./x-w.png"
-									alt="X logo"
-									height="24"
-									style={{ filter: "brightness(0) invert(1)", transition: "transform 0.3s" }}
-									onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-									onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-								/>
-							</a>
+							<FaGithub
+								onMouseEnter={(e) => iconHover(e, 1.1)}
+								onMouseLeave={(e) => iconHover(e, 1)}
+							/>
+						</a>
 
-							<a
-								href="https://github.com/smswithoutborders"
-								target="_blank"
-								rel="noopener noreferrer"
-								title={t("social.github")}
-								style={{
-									color: "#ffffff",
-									fontSize: "1.5rem",
-									transition: "transform 0.3s"
-								}}
-							>
-								<FaGithub
-									onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-									onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-								/>
-							</a>
+						<a
+							href="https://bsky.app/profile/relaysms.bsky.social"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="RelaySMS on Bluesky"
+						>
+							<img
+								src="./bluesky.svg"
+								alt="Bluesky logo"
+								style={iconStyle}
+								onMouseEnter={(e) => iconHover(e, 1.1)}
+								onMouseLeave={(e) => iconHover(e, 1)}
+							/>
+						</a>
+					</div>
+				</Col>
 
-							<a
-								href="https://bsky.app/profile/relaysms.bsky.social"
-								target="_blank"
-								rel="noopener noreferrer"
-								title={t("social.bluesky")}
-								style={{ display: "flex", alignItems: "center" }}
-							>
-								<img
-									src="./bluesky.svg"
-									alt="Bluesky logo"
-									height="24"
-									style={{ filter: "brightness(0) invert(1)", transition: "transform 0.3s" }}
-									onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-									onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-								/>
-							</a>
-						</div>
-					</Col>
+				<Col xs={12} md={4} className="d-flex justify-content-center justify-content-md-end">
+					<LanguageSwitcher />
+				</Col>
+			</Row>
 
-					<Col xs={12} md={4} className="d-flex justify-content-center justify-content-md-end">
-						<LanguageSwitcher />
-					</Col>
-				</Row>
-
-				<Row>
-					<Col className="text-center">
-						<p style={{ fontSize: "0.875rem", color: "#cccccc" }}>
-							&copy; {new Date().getFullYear()} {t("Footer.copyright")}
-						</p>
-					</Col>
-				</Row>
-			</Container>
+			<Row>
+				<Col className="text-center">
+					<p style={{ fontSize: "0.875rem", color: "#cccccc" }}>
+						&copy; {new Date().getFullYear()} {t("Footer.copyright")}
+					</p>
+				</Col>
+			</Row>
 		</footer>
 	);
 };
