@@ -101,22 +101,27 @@
 		"copyright": "AFKANERD"
 	},
 	"policy": "Politique de confidentialité",
+
 	"ContactUs": {
 		"Title": "Contactez-nous",
+		"Subtitle": "Nous sommes là pour vous aider. Contactez-nous via l’un de ces canaux.",
 		"Items": {
 			"Email": {
 				"Title": "Email",
 				"ButtonText": "Email",
-				"Link": "mailto:developers@smswithoutborders.com"
+				"Link": "mailto:developers@smswithoutborders.com",
+				"EmailDescription": "Envoyez-nous un email à tout moment"
 			},
 			"Twitter": {
 				"Title": "Twitter",
 				"ButtonText": "X",
-				"Link": "https://x.com/RelaySMS"
+				"Link": "https://x.com/RelaySMS",
+				"TwitterDescription": "Suivez-nous sur Twitter"
 			},
 			"GitHub": {
 				"Title": "GitHub",
 				"ButtonText": "GitHub",
+				"GitHubDescription": "Consultez notre code sur GitHub",
 				"Link": "https://github.com/smswithoutborders"
 			}
 		}

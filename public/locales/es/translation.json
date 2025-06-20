@@ -103,20 +103,24 @@
 	"policy": "Política de Privacidad",
 	"ContactUs": {
 		"Title": "Contáctanos",
+		"Subtitle": "Estamos aquí para ayudarte. Contáctanos a través de cualquiera de estos canales.",
 		"Items": {
 			"Email": {
 				"Title": "Correo electrónico",
 				"ButtonText": "Correo",
-				"Link": "mailto:developers@smswithoutborders.com"
+				"Link": "mailto:developers@smswithoutborders.com",
+				"EmailDescription": "Envíanos un correo en cualquier momento"
 			},
 			"Twitter": {
 				"Title": "Twitter",
 				"ButtonText": "X",
-				"Link": "https://x.com/RelaySMS"
+				"Link": "https://x.com/RelaySMS",
+				"TwitterDescription": "Síguenos en Twitter"
 			},
 			"GitHub": {
 				"Title": "GitHub",
 				"ButtonText": "GitHub",
+				"GitHubDescription": "Consulta nuestro código en GitHub",
 				"Link": "https://github.com/smswithoutborders"
 			}
 		}

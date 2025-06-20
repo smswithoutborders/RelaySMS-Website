@@ -109,20 +109,24 @@
 
 	"ContactUs": {
 		"Title": "Contact Us",
+		"Subtitle": " We’re here to help. Reach out to us through any of these channels.",
 		"Items": {
 			"Email": {
 				"Title": "Email",
 				"ButtonText": "Email",
-				"Link": "mailto:developers@smswithoutborders.com"
+				"Link": "mailto:developers@smswithoutborders.com",
+				"EmailDescription": "Send us an email anytime"
 			},
 			"Twitter": {
 				"Title": "Twitter",
 				"ButtonText": "X",
-				"Link": "https://x.com/RelaySMS"
+				"Link": "https://x.com/RelaySMS",
+				"TwitterDescription": "Follow us on Twitter"
 			},
 			"GitHub": {
 				"Title": "GitHub",
 				"ButtonText": "GitHub",
+				"GitHubDescription": "Check our code on GitHub",
 				"Link": "https://github.com/smswithoutborders"
 			}
 		}

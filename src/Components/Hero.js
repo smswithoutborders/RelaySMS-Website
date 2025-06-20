@@ -5,25 +5,15 @@ import { Container, Row, Col, Carousel, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useTranslation } from "react-i18next";
 import { FaFileAlt } from "react-icons/fa";
-import { Grid, Typography, Box, Button, AppBar } from "@mui/material";
+import { Grid, Typography, Box, Button } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import ReactHtmlParser from "react-html-parser";
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
 
 const Hero = () => {
 	const [scrollDirection, setScrollDirection] = useState(null);
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
-	const [scrolled, setScrolled] = useState(false);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			setScrolled(window.scrollY > 50);
-		};
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
 
 	useEffect(() => {
 		AOS.init({
@@ -116,19 +106,6 @@ const Hero = () => {
 
 	return (
 		<div>
-			{/*==================== Navbar==================== */}
-			<AppBar
-				position="fixed"
-				dir={isFarsi ? "rtl" : "ltr"}
-				sx={{
-					padding: { xs: "5px 10px", md: scrolled ? "10px 50px" : "10px 100px" },
-					boxShadow: "none",
-					zIndex: 9999
-				}}
-			>
-				<Navbar />
-			</AppBar>
-
 			{/* ================= Hero Section=========================== */}
 			<Box
 				sx={{

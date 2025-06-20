@@ -1,265 +1,162 @@
-import React, { useState, useEffect } from "react";
-import {
-	Toolbar,
-	IconButton,
-	Drawer,
-	List,
-	ListItem,
-	ListItemText,
-	useMediaQuery,
-	Box,
-	Typography,
-	AppBar
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import { useTheme } from "@mui/material/styles";
-import { Link } from "react-router-dom";
+import React, { useState, useRef, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaGithub } from "react-icons/fa";
-import LanguageSwitcher from "./LanguageSwitcher";
+import { faGlobe, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
+import i18n from "../i18n";
+import { Link } from "react-router-dom";
+import "../index.css";
 
-const Navbar = () => {
-	const [scrolled, setScrolled] = useState(false);
-	const [openDrawer, setOpenDrawer] = useState(false);
-	const theme = useTheme();
-	const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-	const { t, i18n } = useTranslation();
-	const isFarsi = i18n.language === "fa";
+const languages = [
+	{ code: "en", label: "English", flag: "🇬🇧" },
+	{ code: "fr", label: "Français", flag: "🇫🇷" },
+	{ code: "fa", label: "فارسی", flag: "🇮🇷" },
+	{ code: "es", label: "Español", flag: "🇪🇸" }
+];
+
+export default function Navigation() {
+	const { t } = useTranslation();
+	const [isMenuOpen, setMenuOpen] = useState(false);
+	const [showLangMenu, setShowLangMenu] = useState(false);
+	const langRef = useRef(null);
 
 	useEffect(() => {
-		const handleScroll = () => {
-			setScrolled(window.scrollY > 50);
+		const handleClickOutside = (e) => {
+			if (langRef.current && !langRef.current.contains(e.target)) {
+				setShowLangMenu(false);
+			}
 		};
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
+		document.addEventListener("mousedown", handleClickOutside);
+		return () => document.removeEventListener("mousedown", handleClickOutside);
 	}, []);
 
+	const changeLanguage = (code) => {
+		i18n.changeLanguage(code);
+		setShowLangMenu(false);
+		setMenuOpen(false);
+	};
+
 	const navLinks = [
-		{ label: t("Nav.Home"), href: "/" },
+		{ label: t("Nav.Home"), to: "/" },
 		{ label: t("Nav.Blog"), href: "https://blog.smswithoutborders.com/", external: true },
 		{ label: t("Nav.Support"), href: "https://docs.smswithoutborders.com/", external: true },
-		{ label: t("Nav.Contact"), to: "/Contact_Us", isRouterLink: true },
-		{ label: t("Nav.Download"), to: "/Download", isRouterLink: true }
+		{ label: t("Nav.Contact"), to: "/Contact_Us", isRouterLink: true }
 	];
 
-	const socialLinks = [
-		{
-			icon: <img src="./x.svg" alt="X" height="20" />,
-			href: "https://x.com/RelaySMS",
-			title: t("social.x")
-		},
-		{
-			icon: <img src="./bluesky.svg" alt="Bluesky" height="20" />,
-			href: "https://bsky.app/profile/relaysms.bsky.social",
-			title: t("social.bluesky")
-		},
-		{
-			icon: <FaGithub size={20} />,
-			href: "https://github.com/smswithoutborders",
-			title: t("social.github")
-		}
-	];
+	const iconStyle = {
+		filter: "#2d2a5a",
+		height: "24px",
+		transition: "transform 0.3s, filter 0.3s"
+	};
+
+	const handleIconHover = (e, isHovering) => {
+		e.currentTarget.style.transform = isHovering ? "scale(1.2)" : "scale(1)";
+		e.currentTarget.style.filter = isHovering
+			? "invert(84%) sepia(37%) saturate(696%) hue-rotate(2deg) brightness(100%) contrast(101%)"
+			: iconStyle.filter;
+	};
 
 	return (
-		<AppBar
-			position="fixed"
-			dir={isFarsi ? "rtl" : "ltr"}
-			sx={{
-				background: scrolled ? "#000158" : "#FAF2E4",
-				transition: "0.5s",
-				padding: {
-					xs: "5px 10px",
-					md: scrolled ? "10px 50px" : "10px 100px"
-				},
-				boxShadow: "none",
-				zIndex: 9999
-			}}
-		>
-			<Toolbar
-				disableGutters
-				sx={{
-					width: "100%",
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "space-between"
-				}}
+		<nav className="navbar-container" role="navigation" aria-label="Main Navigation">
+			<Link to="/" className="navbar-logo" onClick={() => setMenuOpen(false)}>
+				<img src="/logo.png" alt="Logo" />
+			</Link>
+
+			<button
+				className="burger"
+				onClick={() => setMenuOpen((prev) => !prev)}
+				aria-label="Toggle menu"
 			>
-				<Box component="a" href="/" sx={{ display: "flex", alignItems: "center" }}>
-					<img
-						src={scrolled ? "/RelaySMSDark.png" : "/logo.png"}
-						alt="Logo"
-						style={{ height: 35, transition: "0.5s" }}
-					/>
-				</Box>
+				<FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
+			</button>
 
-				{isMobile ? (
-					<>
-						<IconButton edge="end" color="inherit" onClick={() => setOpenDrawer(!openDrawer)}>
-							<MenuIcon sx={{ color: scrolled ? "#fff" : "#262626" }} />
-						</IconButton>
-
-						<Drawer
-							anchor={isFarsi ? "right" : "left"}
-							open={openDrawer}
-							onClose={() => setOpenDrawer(false)}
-							PaperProps={{
-								sx: {
-									height: "auto",
-									maxHeight: "80vh",
-									mt: 8,
-									borderRadius: 2
-								}
-							}}
-						>
-							<List sx={{ width: 200, bgcolor: "#000158", pt: 2, pb: 2 }}>
-								{navLinks.map((item, index) =>
-									item.isRouterLink ? (
-										<ListItem
-											button
-											key={index}
-											component={Link}
-											to={item.to}
-											onClick={() => setOpenDrawer(false)}
-										>
-											<ListItemText
-												primary={item.label}
-												sx={{ color: "#fff", textAlign: "center" }}
-											/>
-										</ListItem>
-									) : (
-										<ListItem
-											button
-											key={index}
-											component="a"
-											href={item.href}
-											target={item.external ? "_blank" : undefined}
-											onClick={() => setOpenDrawer(false)}
-										>
-											<ListItemText
-												primary={item.label}
-												sx={{ color: "#fff", textAlign: "center" }}
-											/>
-										</ListItem>
-									)
-								)}
-
-								{socialLinks.map((item, index) => (
-									<ListItem
-										button
-										key={`social-${index}`}
-										component="a"
-										href={item.href}
-										target="_blank"
-										title={item.title}
-										sx={{
-											justifyContent: "center",
-											color: "#fff",
-											"& svg": {
-												color: "#fff"
-											},
-											"& img": {
-												filter: "brightness(0) invert(1)"
-											}
-										}}
-									>
-										{item.icon}
-									</ListItem>
-								))}
-
-								<ListItem>
-									<Box sx={{ margin: "auto" }}>
-										<LanguageSwitcher />
-									</Box>
-								</ListItem>
-							</List>
-						</Drawer>
-					</>
-				) : (
-					<Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-						{navLinks.map((item, index) =>
-							item.isRouterLink ? (
-								<Typography
-									key={index}
-									component={Link}
-									to={item.to}
-									sx={{
-										position: "relative",
-										color: scrolled ? "#fff" : "#000158",
-										textDecoration: "none",
-										fontWeight: 500,
-										fontSize: scrolled ? "1rem" : "1.1rem",
-										padding: scrolled ? "4px 12px" : "5px 9px",
-										lineHeight: scrolled ? "40px" : "60px",
-										borderRadius: "8px",
-										transition: "color 0.3s ease",
-										borderBottom: "2px solid transparent",
-
-										"&:hover": {
-											color: "#007BFF",
-											borderBottom: "2px solid #007BFF",
-											transition: "border-color 0.3s ease"
-										}
-									}}
+			<div className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
+				<ul className="nav-list">
+					{navLinks.map((link, i) => (
+						<li key={i}>
+							{link.external ? (
+								<a
+									href={link.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									onClick={() => setMenuOpen(false)}
 								>
-									{item.label}
-								</Typography>
+									{link.label}
+								</a>
 							) : (
-								<Typography
-									key={index}
-									component="a"
-									href={item.href}
-									target={item.external ? "_blank" : undefined}
-									sx={{
-										position: "relative",
-										color: scrolled ? "#fff" : "#000158",
-										textDecoration: "none",
-										fontWeight: 500,
-										fontSize: scrolled ? "1rem" : "1.1rem",
-										padding: scrolled ? "8px 12px" : "10px 16px",
-										lineHeight: scrolled ? "60px" : "80px",
-										borderRadius: "8px",
-										transition: "color 0.3s ease",
-										borderBottom: "2px solid transparent",
+								<Link to={link.to} onClick={() => setMenuOpen(false)}>
+									{link.label}
+								</Link>
+							)}
+						</li>
+					))}
 
-										"&:hover": {
-											color: "#007BFF",
-											borderBottom: "2px solid #007BFF",
-											transition: "border-color 0.3s ease"
-										}
-									}}
-								>
-									{item.label}
-								</Typography>
-							)
+					<li>
+						<a
+							href="https://x.com/RelaySMS"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="RelaySMS on X"
+						>
+							<img
+								src="./x-w.png"
+								alt="X logo"
+								style={iconStyle}
+								onMouseEnter={(e) => handleIconHover(e, true)}
+								onMouseLeave={(e) => handleIconHover(e, false)}
+							/>
+						</a>
+					</li>
+
+					<li>
+						<a
+							href="https://github.com/smswithoutborders"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="RelaySMS on GitHub"
+						>
+							<FaGithub
+								style={iconStyle}
+								onMouseEnter={(e) => handleIconHover(e, true)}
+								onMouseLeave={(e) => handleIconHover(e, false)}
+							/>
+						</a>
+					</li>
+
+					<li>
+						<a
+							href="https://bsky.app/profile/relaysms.bsky.social"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="RelaySMS on Bluesky"
+						>
+							<img
+								src="./bluesky.svg"
+								alt="Bluesky logo"
+								style={iconStyle}
+								onMouseEnter={(e) => handleIconHover(e, true)}
+								onMouseLeave={(e) => handleIconHover(e, false)}
+							/>
+						</a>
+					</li>
+
+					<li ref={langRef} className="lang-wrapper">
+						<button className="lang-button" onClick={() => setShowLangMenu((s) => !s)}>
+							<FontAwesomeIcon icon={faGlobe} />
+							<span className="flag">{languages.find((l) => l.code === i18n.language)?.flag}</span>
+						</button>
+						{showLangMenu && (
+							<ul className="lang-dropdown">
+								{languages.map((lang) => (
+									<li key={lang.code} onClick={() => changeLanguage(lang.code)}>
+										{lang.flag} {lang.label}
+									</li>
+								))}
+							</ul>
 						)}
-
-						{socialLinks.map((item, index) => (
-							<IconButton
-								key={index}
-								href={item.href}
-								target="_blank"
-								title={item.title}
-								sx={{
-									mx: 1,
-									color: scrolled ? "#fff" : "#000158",
-									"& svg": {
-										color: scrolled ? "#fff" : "#000158"
-									},
-									"& img": {
-										filter: scrolled ? "brightness(0) invert(1)" : "none"
-									}
-								}}
-							>
-								{item.icon}
-							</IconButton>
-						))}
-
-						<LanguageSwitcher />
-					</Box>
-				)}
-			</Toolbar>
-		</AppBar>
+					</li>
+				</ul>
+			</div>
+		</nav>
 	);
-};
-
-export default Navbar;
+}

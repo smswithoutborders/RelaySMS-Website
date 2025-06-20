@@ -103,20 +103,24 @@
 	"policy": "سیاست حفظ حریم خصوصی",
 	"ContactUs": {
 		"Title": "تماس با ما",
+		"Subtitle": "ما اینجا هستیم تا به شما کمک کنیم. از طریق هر یک از این کانال‌ها با ما در تماس باشید.",
 		"Items": {
 			"Email": {
 				"Title": "ایمیل",
 				"ButtonText": "ایمیل",
-				"Link": "mailto:developers@smswithoutborders.com"
+				"Link": "mailto:developers@smswithoutborders.com",
+				"EmailDescription": "هر زمان که خواستید برای ما ایمیل بفرستید"
 			},
 			"Twitter": {
 				"Title": "توییتر",
 				"ButtonText": "X",
-				"Link": "https://x.com/RelaySMS"
+				"Link": "https://x.com/RelaySMS",
+				"TwitterDescription": "ما را در توییتر دنبال کنید"
 			},
 			"GitHub": {
 				"Title": "گیت‌هاب",
 				"ButtonText": "گیت‌هاب",
+				"GitHubDescription": "کدهای ما را در گیت‌هاب ببینید",
 				"Link": "https://github.com/smswithoutborders"
 			}
 		}
