@@ -118,12 +118,25 @@ const Hero = () => {
 				sx={{
 					minHeight: {
 						xs: "80vh",
-						sm: "85vh",
-						md: "90vh",
-						lg: "100vh"
+						sm: "70vh",
+						md: "78vh",
+						lg: "92vh",
+						xl: "100vh"
 					},
-					px: { xs: 2, sm: 4, md: 10 },
-					py: { xs: 6, sm: 8 },
+					px: {
+						xs: 2,
+						sm: 3,
+						md: 5,
+						lg: 8,
+						xl: 10
+					},
+					py: {
+						xs: 6,
+						sm: 2,
+						md: 2,
+						lg: 5,
+						xl: 6
+					},
 					display: "flex",
 					alignItems: "center",
 					backgroundColor: "#FAF2E4"
@@ -134,8 +147,8 @@ const Hero = () => {
 						<Typography
 							sx={{
 								mt: {
-									xs: 6,
-									sm: 5,
+									xs: 8,
+									sm: 8,
 									md: 0,
 									lg: 4,
 									xl: 5
@@ -151,7 +164,7 @@ const Hero = () => {
 									xs: "center",
 									md: "left"
 								},
-								fontWeight: 500,
+								fontWeight: 600,
 								lineHeight: 1.2,
 								color: "#000158",
 								whiteSpace: "pre-wrap",
@@ -177,51 +190,71 @@ const Hero = () => {
 							paragraph
 							sx={{
 								fontSize: { xs: "18px", sm: "20px", md: "25px" },
-								mt: { xs: 4, sm: 5, md: 0 }
+								mt: { xs: 4, sm: 5, md: 0 },
+								textAlign: {
+									xs: "center",
+									md: "left"
+								}
 							}}
 						>
 							{t("Landing.h2")}
 						</Typography>
 
-						<Button
-							variant="contained"
-							size="large"
+						{/* Button */}
+						<Box
 							sx={{
-								mt: 2,
-								backgroundColor: "#FF9E43",
-								color: "rgba(1, 64, 136, 0.86)",
-								textTransform: "none",
-								fontWeight: 600,
-								py: 1.2,
-								display: "flex",
-								alignItems: "center",
-								gap: 1,
-								px: 5,
-								fontSize: { xs: "15px", sm: "18px", md: "20px" },
-								borderRadius: 3,
-								border: "1px solid rgba(240, 135, 37, 0.41)",
-								boxShadow: "0 2px 6px rgba(39, 44, 48, 0.55)",
-								transition: "all 0.3s ease-in-out",
-								"&:hover": {
-									backgroundColor: "#FF9E43",
-									boxShadow: "0 6px 18px rgba(0, 0, 0, 0.46)"
+								display: {
+									xs: "flex",
+									sm: "flex",
+									md: "block"
 								},
-								textDecoration: "none"
+								justifyContent: {
+									xs: "center",
+									sm: "center"
+								},
+								mt: 2
 							}}
 						>
-							{t("Landing.Android")}
-							<Box
-								component="img"
-								src="/download.gif"
-								alt="Play Store"
+							<Button
+								variant="contained"
+								size="large"
 								sx={{
-									width: 24,
-									height: 24,
-									animation: `${bounce} 1.4s infinite`
+									backgroundColor: "#FF9E43",
+									color: "rgba(1, 64, 136, 0.86)",
+									textTransform: "none",
+									fontWeight: 600,
+									py: 1.2,
+									display: "flex",
+									alignItems: "center",
+									gap: 1,
+									px: 5,
+									fontSize: { xs: "15px", sm: "18px", md: "20px" },
+									borderRadius: 3,
+									border: "1px solid rgba(240, 135, 37, 0.41)",
+									boxShadow: "0 2px 6px rgba(39, 44, 48, 0.55)",
+									transition: "all 0.3s ease-in-out",
+									"&:hover": {
+										backgroundColor: "#FF9E43",
+										boxShadow: "0 6px 18px rgba(0, 0, 0, 0.46)"
+									},
+									textDecoration: "none"
 								}}
-							/>
-						</Button>
+							>
+								{t("Landing.Android")}
+								<Box
+									component="img"
+									src="/download.gif"
+									alt="Play Store"
+									sx={{
+										width: 24,
+										height: 24,
+										animation: `${bounce} 1.4s infinite`
+									}}
+								/>
+							</Button>
+						</Box>
 
+						{/* Recognition Text */}
 						<Box
 							display="flex"
 							alignItems="flex-start"
@@ -257,6 +290,7 @@ const Hero = () => {
 						</Box>
 					</Grid>
 
+					{/* Image Section */}
 					<Grid item xs={12} md={6}>
 						<Box
 							component="img"
@@ -264,23 +298,23 @@ const Hero = () => {
 							alt="Relay Home"
 							sx={{
 								width: {
-									xs: "90%",
-									sm: "85%",
-									md: "80%",
+									xs: "100%",
+									sm: "95%",
+									md: "85%",
 									lg: "70%",
 									xl: "60%"
 								},
 								height: {
-									xs: 240,
-									sm: 320,
-									md: 420,
+									xs: 340,
+									sm: 420,
+									md: 520,
 									lg: 520,
 									xl: 600
 								},
 								objectFit: "contain",
 								mx: "auto",
 								display: "block",
-								mt: { xs: 2, sm: 3, md: 6 }
+								mt: { xs: 2, sm: 3, md: 2, lg: 6, xl: 0 }
 							}}
 						/>
 					</Grid>

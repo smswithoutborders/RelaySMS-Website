@@ -1,11 +1,17 @@
-import React, { useState, useRef, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaGithub } from "react-icons/fa";
-import { faGlobe, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { useTranslation } from "react-i18next";
-import i18n from "../i18n";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../index.css";
+import { useTranslation } from "react-i18next";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import MenuIcon from "@mui/icons-material/Menu";
+import LanguageIcon from "@mui/icons-material/Language";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { FaGithub } from "react-icons/fa";
 
 const languages = [
 	{ code: "en", label: "English", flag: "🇬🇧" },
@@ -15,148 +21,230 @@ const languages = [
 ];
 
 export default function Navigation() {
-	const { t } = useTranslation();
-	const [isMenuOpen, setMenuOpen] = useState(false);
-	const [showLangMenu, setShowLangMenu] = useState(false);
-	const langRef = useRef(null);
+	const { t, i18n } = useTranslation();
 
-	useEffect(() => {
-		const handleClickOutside = (e) => {
-			if (langRef.current && !langRef.current.contains(e.target)) {
-				setShowLangMenu(false);
-			}
-		};
-		document.addEventListener("mousedown", handleClickOutside);
-		return () => document.removeEventListener("mousedown", handleClickOutside);
-	}, []);
+	const [anchorElNav, setAnchorElNav] = useState(null);
+	const [anchorElLang, setAnchorElLang] = useState(null);
 
-	const changeLanguage = (code) => {
-		i18n.changeLanguage(code);
-		setShowLangMenu(false);
-		setMenuOpen(false);
-	};
+	const iconColor = "#004080"; // consistent blue
 
 	const navLinks = [
 		{ label: t("Nav.Home"), to: "/" },
-		{ label: t("Nav.Blog"), href: "https://blog.smswithoutborders.com/", external: true },
-		{ label: t("Nav.Support"), href: "https://docs.smswithoutborders.com/", external: true },
-		{ label: t("Nav.Contact"), to: "/Contact_Us", isRouterLink: true }
+		{
+			label: t("Nav.Blog"),
+			href: "https://blog.smswithoutborders.com/",
+			external: true
+		},
+		{
+			label: t("Nav.Support"),
+			href: "https://docs.smswithoutborders.com/",
+			external: true
+		},
+		{ label: t("Nav.Contact"), to: "/Contact_Us" }
 	];
 
-	const iconStyle = {
-		filter: "#2d2a5a",
-		height: "24px",
-		transition: "transform 0.3s, filter 0.3s"
+	const handleOpenNavMenu = (event) => {
+		setAnchorElNav(event.currentTarget);
+	};
+	const handleCloseNavMenu = () => {
+		setAnchorElNav(null);
 	};
 
-	const handleIconHover = (e, isHovering) => {
-		e.currentTarget.style.transform = isHovering ? "scale(1.2)" : "scale(1)";
-		e.currentTarget.style.filter = isHovering
-			? "invert(84%) sepia(37%) saturate(696%) hue-rotate(2deg) brightness(100%) contrast(101%)"
-			: iconStyle.filter;
+	const handleOpenLangMenu = (event) => {
+		setAnchorElLang(event.currentTarget);
+	};
+	const handleCloseLangMenu = () => {
+		setAnchorElLang(null);
+	};
+
+	const changeLanguage = (code) => {
+		i18n.changeLanguage(code);
+		handleCloseLangMenu();
 	};
 
 	return (
-		<nav className="navbar-container" role="navigation" aria-label="Main Navigation">
-			<Link to="/" className="navbar-logo" onClick={() => setMenuOpen(false)}>
-				<img src="/logo.png" alt="Logo" />
-			</Link>
-
-			<button
-				className="burger"
-				onClick={() => setMenuOpen((prev) => !prev)}
-				aria-label="Toggle menu"
+		<AppBar position="sticky" sx={{ backgroundColor: "#faf2e4", boxShadow: 1 }}>
+			<Toolbar
+				sx={{
+					maxWidth: 1950,
+					mx: "auto",
+					width: "100%",
+					display: "flex",
+					justifyContent: "space-between",
+					alignItems: "center",
+					px: { xs: 1, sm: 2 },
+					minHeight: { xs: 64, sm: 72 }
+				}}
 			>
-				<FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
-			</button>
+				<Link to="/" style={{ textDecoration: "none" }} aria-label="Home">
+					<Box
+						component="img"
+						src="/logo.png"
+						alt="Logo"
+						sx={{
+							height: { xs: 20, sm: 30, md: 40 },
+							mr: 1
+						}}
+					/>
+				</Link>
 
-			<div className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
-				<ul className="nav-list">
-					{navLinks.map((link, i) => (
-						<li key={i}>
-							{link.external ? (
-								<a
+				{/* Desktop links */}
+				<Box
+					sx={{
+						display: { xs: "none", md: "flex" },
+						alignItems: "center",
+						gap: 3,
+						flexGrow: 1,
+						justifyContent: "center"
+					}}
+				>
+					{navLinks.map((link, index) =>
+						link.external ? (
+							<Button
+								key={index}
+								component="a"
+								href={link.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								sx={{ color: iconColor, textTransform: "none", fontWeight: 600 }}
+							>
+								{link.label}
+							</Button>
+						) : (
+							<Button
+								key={index}
+								component={Link}
+								to={link.to}
+								onClick={handleCloseNavMenu}
+								sx={{ color: iconColor, textTransform: "none", fontWeight: 600 }}
+							>
+								{link.label}
+							</Button>
+						)
+					)}
+				</Box>
+
+				{/* Language selector desktop */}
+				<Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
+					<LanguageSwitcher />
+				</Box>
+
+				{/* Social icons desktop */}
+				<Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center", ml: 2, gap: 1 }}>
+					<IconButton
+						component="a"
+						href="https://github.com/smswithoutborders"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="GitHub"
+						sx={{ color: iconColor }}
+					>
+						<FaGithub size={22} />
+					</IconButton>
+					<IconButton
+						component="a"
+						href="https://x.com/RelaySMS"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="RelaySMS on X"
+						sx={{ color: iconColor }}
+					>
+						{/* If you have an SVG or image for X logo, use <Box component="img" /> */}
+						<img src="/x-w.png" alt="X logo" style={{ height: 22, width: 22 }} />
+					</IconButton>
+					<IconButton
+						component="a"
+						href="https://bsky.app/profile/relaysms.bsky.social"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="RelaySMS on Bluesky"
+						sx={{ color: iconColor }}
+					>
+						<img src="/bluesky.svg" alt="Bluesky logo" style={{ height: 22, width: 22 }} />
+					</IconButton>
+				</Box>
+
+				{/* Mobile menu icon */}
+				<Box sx={{ display: { xs: "flex", md: "none" } }}>
+					<IconButton
+						size="large"
+						aria-label="open navigation menu"
+						aria-controls="menu-appbar"
+						aria-haspopup="true"
+						onClick={handleOpenNavMenu}
+						sx={{ color: iconColor }}
+					>
+						<MenuIcon />
+					</IconButton>
+					<Menu
+						id="menu-appbar"
+						anchorEl={anchorElNav}
+						open={Boolean(anchorElNav)}
+						onClose={handleCloseNavMenu}
+						keepMounted
+						anchorOrigin={{
+							vertical: "bottom",
+							horizontal: "right"
+						}}
+						transformOrigin={{
+							vertical: "top",
+							horizontal: "right"
+						}}
+					>
+						{navLinks.map((link, index) =>
+							link.external ? (
+								<MenuItem
+									key={index}
+									component="a"
 									href={link.href}
 									target="_blank"
 									rel="noopener noreferrer"
-									onClick={() => setMenuOpen(false)}
+									onClick={handleCloseNavMenu}
 								>
 									{link.label}
-								</a>
+								</MenuItem>
 							) : (
-								<Link to={link.to} onClick={() => setMenuOpen(false)}>
+								<MenuItem key={index} component={Link} to={link.to} onClick={handleCloseNavMenu}>
 									{link.label}
-								</Link>
-							)}
-						</li>
-					))}
-
-					<li>
-						<a
-							href="https://x.com/RelaySMS"
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="RelaySMS on X"
-						>
-							<img
-								src="./x-w.png"
-								alt="X logo"
-								style={iconStyle}
-								onMouseEnter={(e) => handleIconHover(e, true)}
-								onMouseLeave={(e) => handleIconHover(e, false)}
-							/>
-						</a>
-					</li>
-
-					<li>
-						<a
-							href="https://github.com/smswithoutborders"
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="RelaySMS on GitHub"
-						>
-							<FaGithub
-								style={iconStyle}
-								onMouseEnter={(e) => handleIconHover(e, true)}
-								onMouseLeave={(e) => handleIconHover(e, false)}
-							/>
-						</a>
-					</li>
-
-					<li>
-						<a
-							href="https://bsky.app/profile/relaysms.bsky.social"
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="RelaySMS on Bluesky"
-						>
-							<img
-								src="./bluesky.svg"
-								alt="Bluesky logo"
-								style={iconStyle}
-								onMouseEnter={(e) => handleIconHover(e, true)}
-								onMouseLeave={(e) => handleIconHover(e, false)}
-							/>
-						</a>
-					</li>
-
-					<li ref={langRef} className="lang-wrapper">
-						<button className="lang-button" onClick={() => setShowLangMenu((s) => !s)}>
-							<FontAwesomeIcon icon={faGlobe} />
-							<span className="flag">{languages.find((l) => l.code === i18n.language)?.flag}</span>
-						</button>
-						{showLangMenu && (
-							<ul className="lang-dropdown">
-								{languages.map((lang) => (
-									<li key={lang.code} onClick={() => changeLanguage(lang.code)}>
-										{lang.flag} {lang.label}
-									</li>
-								))}
-							</ul>
+								</MenuItem>
+							)
 						)}
-					</li>
-				</ul>
-			</div>
-		</nav>
+
+						{/* Language menu in mobile */}
+						<MenuItem onClick={handleOpenLangMenu} sx={{ cursor: "pointer" }}>
+							<LanguageIcon sx={{ mr: 1, color: iconColor }} />
+							{languages.find((l) => l.code === i18n.language)?.flag || "🌐"}
+						</MenuItem>
+						<Menu
+							anchorEl={anchorElLang}
+							open={Boolean(anchorElLang)}
+							onClose={handleCloseLangMenu}
+							keepMounted
+							anchorOrigin={{
+								vertical: "top",
+								horizontal: "right"
+							}}
+							transformOrigin={{
+								vertical: "top",
+								horizontal: "right"
+							}}
+						>
+							{languages.map((lang) => (
+								<MenuItem
+									key={lang.code}
+									onClick={() => {
+										changeLanguage(lang.code);
+										handleCloseNavMenu();
+									}}
+									selected={lang.code === i18n.language}
+								>
+									{lang.flag} {lang.label}
+								</MenuItem>
+							))}
+						</Menu>
+					</Menu>
+				</Box>
+			</Toolbar>
+		</AppBar>
 	);
 }
