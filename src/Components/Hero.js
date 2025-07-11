@@ -6,14 +6,21 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useTranslation } from "react-i18next";
 import { FaFileAlt } from "react-icons/fa";
 import { Grid, Typography, Box, Button } from "@mui/material";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import ReactHtmlParser from "react-html-parser";
-import { Link } from "react-router-dom";
+import { keyframes } from "@mui/material";
+import VerifiedIcon from "@mui/icons-material/Verified";
+
+import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
 	const [scrollDirection, setScrollDirection] = useState(null);
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
+
+	const bounce = keyframes`
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+`;
 
 	useEffect(() => {
 		AOS.init({
@@ -109,124 +116,178 @@ const Hero = () => {
 			{/* ================= Hero Section=========================== */}
 			<Box
 				sx={{
-					backgroundColor: "#FAF2E4",
-					py: { xs: 6, md: 12 },
-					px: { xs: 3, md: 6 },
-					minHeight: "100vh",
+					minHeight: {
+						xs: "80vh",
+						sm: "85vh",
+						md: "90vh",
+						lg: "100vh"
+					},
+					px: { xs: 2, sm: 4, md: 10 },
+					py: { xs: 6, sm: 8 },
 					display: "flex",
 					alignItems: "center",
-					paddingTop: { xs: "120px", md: "0" }
+					backgroundColor: "#FAF2E4"
 				}}
-				data-aos={scrollDirection === "down" ? "fade-up" : "fade-down"}
 			>
-				<Container maxWidth="lg" dir={i18n.dir()}>
-					<Grid container spacing={6} alignItems="center" justifyContent="center">
-						<Grid item xs={12} md={6}>
-							<Typography
-								variant="h3"
-								style={{ fontFamily: "'Unbounded', 'Ubuntu', sans-serif" }}
+				<Grid container spacing={4} alignItems="center" justifyContent="center">
+					<Grid item xs={12} md={6}>
+						<Typography
+							sx={{
+								mt: {
+									xs: 6,
+									sm: 5,
+									md: 0,
+									lg: 4,
+									xl: 5
+								},
+								fontSize: {
+									xs: "1.75rem",
+									sm: "2.25rem",
+									md: "2.75rem",
+									lg: "3.5rem",
+									xl: "5rem"
+								},
+								textAlign: {
+									xs: "center",
+									md: "left"
+								},
+								fontWeight: 500,
+								lineHeight: 1.2,
+								color: "#000158",
+								whiteSpace: "pre-wrap",
+								wordBreak: "break-word",
+								minHeight: "80px"
+							}}
+							gutterBottom
+						>
+							<Typewriter
+								words={[t("Landing.h1")]}
+								loop={1}
+								cursor
+								cursorStyle="_"
+								typeSpeed={70}
+								deleteSpeed={50}
+								delaySpeed={1000}
+							/>
+						</Typography>
+
+						<Typography
+							variant="body1"
+							color="text.secondary"
+							paragraph
+							sx={{
+								fontSize: { xs: "18px", sm: "20px", md: "25px" },
+								mt: { xs: 4, sm: 5, md: 0 }
+							}}
+						>
+							{t("Landing.h2")}
+						</Typography>
+
+						<Button
+							variant="contained"
+							size="large"
+							sx={{
+								mt: 2,
+								backgroundColor: "#FF9E43",
+								color: "rgba(1, 64, 136, 0.86)",
+								textTransform: "none",
+								fontWeight: 600,
+								py: 1.2,
+								display: "flex",
+								alignItems: "center",
+								gap: 1,
+								px: 5,
+								fontSize: { xs: "15px", sm: "18px", md: "20px" },
+								borderRadius: 3,
+								border: "1px solid rgba(240, 135, 37, 0.41)",
+								boxShadow: "0 2px 6px rgba(39, 44, 48, 0.55)",
+								transition: "all 0.3s ease-in-out",
+								"&:hover": {
+									backgroundColor: "#FF9E43",
+									boxShadow: "0 6px 18px rgba(0, 0, 0, 0.46)"
+								},
+								textDecoration: "none"
+							}}
+						>
+							{t("Landing.Android")}
+							<Box
+								component="img"
+								src="/download.gif"
+								alt="Play Store"
 								sx={{
-									fontWeight: "bold",
-									lineHeight: 1.2,
-									mb: 3,
-									fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
-									color: "#2D2A5A"
+									width: 24,
+									height: 24,
+									animation: `${bounce} 1.4s infinite`
 								}}
-								data-aos={scrollDirection === "down" ? "fade-up" : "fade-down"}
-							>
-								{t("Landing.h1")}
-							</Typography>
+							/>
+						</Button>
+
+						<Box
+							display="flex"
+							alignItems="flex-start"
+							mt={3}
+							sx={{ py: 3, flexDirection: "row", gap: 1 }}
+						>
+							<VerifiedIcon sx={{ color: "rgba(240, 135, 37, 0.96)", mt: 0.5 }} />
+
 							<Typography
 								variant="body1"
-								style={{ fontFamily: "'Mona Sans', 'Ubuntu', sans-serif" }}
 								sx={{
-									mb: 4,
-									fontSize: { xs: "1rem", sm: "1.2rem" },
-									color: "#323252"
+									fontSize: { xs: "15px", sm: "18px", md: "20px" },
+									lineHeight: 1.6
 								}}
-								data-aos={scrollDirection === "down" ? "zoom-in" : "zoom-out"}
+								color="text.secondary"
 							>
-								{t("Landing.h2")}
+								{t("Landing.auditMessage.part1")}&nbsp;
+								<a
+									href="https://www.opentech.fund/security-safety-audits/smswithoutborders-penetration-testt/"
+									target="_blank"
+									rel="noopener noreferrer"
+									style={{
+										color: "rgba(0, 1, 88, 0.85)",
+										textDecoration: "none",
+										fontWeight: 600
+									}}
+								>
+									{t("Landing.auditMessage.link")}
+								</a>
+								&nbsp;
+								{t("Landing.auditMessage.part2")}
 							</Typography>
-							<Box>
-								<Button
-									component={Link}
-									to="/Download"
-									variant="contained"
-									style={{
-										fontFamily: "'Mona Sans', 'Ubuntu', sans-serif",
-										color: "#2D2A5A"
-									}}
-									sx={{
-										px: 5,
-										py: 1,
-										backgroundColor: "#FF9E43",
-										textTransform: "none",
-										fontSize: "1rem",
-										borderRadius: 3,
-										border: "1px solid #000158",
-										"&:hover": {
-											backgroundColor: "#FF9E43"
-										},
-										textDecoration: "none"
-									}}
-									data-aos={scrollDirection === "down" ? "fade-left" : "fade-right"}
-									endIcon={<ArrowDownwardIcon />}
-								>
-									{t("Landing.Android")}
-								</Button>
-							</Box>
-							<Box sx={{ py: 3 }}>
-								<Typography
-									variant="body3"
-									sx={{
-										mb: 4,
-										fontSize: { xs: "1rem", sm: "1.2rem" },
-										color: "#323252"
-									}}
-								>
-									{t("Landing.auditMessage.part1")}
-									<a
-										href="https://www.opentech.fund/security-safety-audits/smswithoutborders-penetration-testt/"
-										target="_blank"
-										rel="noopener noreferrer"
-										style={{ color: "#000158", textDecoration: "none" }}
-									>
-										<strong>{t("Landing.auditMessage.link")}</strong>
-									</a>
-									{t("Landing.auditMessage.part2")}
-								</Typography>
-							</Box>
-						</Grid>
-
-						<Grid item xs={12} md={6}>
-							<Box
-								sx={{
-									width: "100%",
-									maxWidth: 500,
-									margin: "0 auto",
-									borderRadius: 4,
-									overflow: "hidden"
-								}}
-							>
-								<img
-									src="/RelayHome.png"
-									alt="Relay App Screenshot"
-									style={{
-										width: "100%",
-										height: "auto",
-										display: "block",
-										objectFit: "cover",
-										borderRadius: "16px"
-									}}
-								/>
-							</Box>
-						</Grid>
+						</Box>
 					</Grid>
-				</Container>
+
+					<Grid item xs={12} md={6}>
+						<Box
+							component="img"
+							src="/RelayHome.png"
+							alt="Relay Home"
+							sx={{
+								width: {
+									xs: "90%",
+									sm: "85%",
+									md: "80%",
+									lg: "70%",
+									xl: "60%"
+								},
+								height: {
+									xs: 240,
+									sm: 320,
+									md: 420,
+									lg: 520,
+									xl: 600
+								},
+								objectFit: "contain",
+								mx: "auto",
+								display: "block",
+								mt: { xs: 2, sm: 3, md: 6 }
+							}}
+						/>
+					</Grid>
+				</Grid>
 			</Box>
 
-			{/* =========================== How It Works Section ========================= */}
+			{/* =================================================== How It Works Section ================================================== */}
 			<Box
 				sx={{
 					backgroundColor: "#EBE4D8",
