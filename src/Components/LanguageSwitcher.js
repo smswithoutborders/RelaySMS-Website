@@ -62,27 +62,3 @@ const LanguageSwitcher = () => {
 };
 
 export default LanguageSwitcher;
-
-// <Button
-// 						startIcon={<LanguageIcon sx={{ color: iconColor }} />}
-// 						onClick={handleOpenLangMenu}
-// 						sx={{ color: iconColor, textTransform: "none", fontWeight: 600 }}
-// 					>
-// 						{languages.find((l) => l.code === i18n.language)?.flag || "🌐"}
-// 					</Button>
-// 					<Menu
-// 						anchorEl={anchorElLang}
-// 						open={Boolean(anchorElLang)}
-// 						onClose={handleCloseLangMenu}
-// 						keepMounted
-// 					>
-// 						{languages.map((lang) => (
-// 							<MenuItem
-// 								key={lang.code}
-// 								onClick={() => changeLanguage(lang.code)}
-// 								selected={lang.code === i18n.language}
-// 							>
-// 								{lang.flag} {lang.label}
-// 							</MenuItem>
-// 						))}
-// 					</Menu>

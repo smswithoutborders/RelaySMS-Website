@@ -9,24 +9,15 @@ import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import MenuIcon from "@mui/icons-material/Menu";
-import LanguageIcon from "@mui/icons-material/Language";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { FaGithub } from "react-icons/fa";
-
-const languages = [
-	{ code: "en", label: "English", flag: "🇬🇧" },
-	{ code: "fr", label: "Français", flag: "🇫🇷" },
-	{ code: "fa", label: "فارسی", flag: "🇮🇷" },
-	{ code: "es", label: "Español", flag: "🇪🇸" }
-];
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBluesky, faXTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Navigation() {
-	const { t, i18n } = useTranslation();
-
+	const { t } = useTranslation();
 	const [anchorElNav, setAnchorElNav] = useState(null);
-	const [anchorElLang, setAnchorElLang] = useState(null);
 
-	const iconColor = "#004080"; // consistent blue
+	const iconColor = "#004080";
 
 	const navLinks = [
 		{ label: t("Nav.Home"), to: "/" },
@@ -46,20 +37,9 @@ export default function Navigation() {
 	const handleOpenNavMenu = (event) => {
 		setAnchorElNav(event.currentTarget);
 	};
+
 	const handleCloseNavMenu = () => {
 		setAnchorElNav(null);
-	};
-
-	const handleOpenLangMenu = (event) => {
-		setAnchorElLang(event.currentTarget);
-	};
-	const handleCloseLangMenu = () => {
-		setAnchorElLang(null);
-	};
-
-	const changeLanguage = (code) => {
-		i18n.changeLanguage(code);
-		handleCloseLangMenu();
 	};
 
 	return (
@@ -76,6 +56,7 @@ export default function Navigation() {
 					minHeight: { xs: 64, sm: 72 }
 				}}
 			>
+				{/* Logo */}
 				<Link to="/" style={{ textDecoration: "none" }} aria-label="Home">
 					<Box
 						component="img"
@@ -88,7 +69,7 @@ export default function Navigation() {
 					/>
 				</Link>
 
-				{/* Desktop links */}
+				{/* Desktop Nav Links */}
 				<Box
 					sx={{
 						display: { xs: "none", md: "flex" },
@@ -106,7 +87,21 @@ export default function Navigation() {
 								href={link.href}
 								target="_blank"
 								rel="noopener noreferrer"
-								sx={{ color: iconColor, textTransform: "none", fontWeight: 600 }}
+								sx={{
+									color: iconColor,
+									textTransform: "none",
+									fontWeight: 500,
+									fontSize: { md: "15px", lg: "16px", xl: "18px" },
+									backgroundImage: "linear-gradient(to right,rgb(23, 114, 184),rgb(5, 105, 155))",
+									backgroundSize: "0% 2px",
+									backgroundRepeat: "no-repeat",
+									backgroundPosition: "left bottom",
+									transition: "all 0.3s ease-in-out",
+									"&:hover": {
+										backgroundSize: "100% 2px",
+										color: "#E66F00"
+									}
+								}}
 							>
 								{link.label}
 							</Button>
@@ -116,7 +111,21 @@ export default function Navigation() {
 								component={Link}
 								to={link.to}
 								onClick={handleCloseNavMenu}
-								sx={{ color: iconColor, textTransform: "none", fontWeight: 600 }}
+								sx={{
+									color: iconColor,
+									textTransform: "none",
+									fontWeight: 500,
+									fontSize: { md: "15px", lg: "16px", xl: "18px" },
+									backgroundImage: "linear-gradient(to right,rgb(23, 114, 184),rgb(5, 105, 155))",
+									backgroundSize: "0% 2px",
+									backgroundRepeat: "no-repeat",
+									backgroundPosition: "left bottom",
+									transition: "all 0.3s ease-in-out",
+									"&:hover": {
+										backgroundSize: "100% 2px",
+										color: "#E66F00"
+									}
+								}}
 							>
 								{link.label}
 							</Button>
@@ -124,12 +133,12 @@ export default function Navigation() {
 					)}
 				</Box>
 
-				{/* Language selector desktop */}
-				<Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
+				{/* Desktop Language Switcher */}
+				<Box sx={{ display: { xs: "none", md: "flex" } }}>
 					<LanguageSwitcher />
 				</Box>
 
-				{/* Social icons desktop */}
+				{/* Desktop Social Icons */}
 				<Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center", ml: 2, gap: 1 }}>
 					<IconButton
 						component="a"
@@ -139,7 +148,7 @@ export default function Navigation() {
 						aria-label="GitHub"
 						sx={{ color: iconColor }}
 					>
-						<FaGithub size={22} />
+						<FontAwesomeIcon icon={faGithub} size="md" />
 					</IconButton>
 					<IconButton
 						component="a"
@@ -149,8 +158,7 @@ export default function Navigation() {
 						aria-label="RelaySMS on X"
 						sx={{ color: iconColor }}
 					>
-						{/* If you have an SVG or image for X logo, use <Box component="img" /> */}
-						<img src="/x-w.png" alt="X logo" style={{ height: 22, width: 22 }} />
+						<FontAwesomeIcon icon={faXTwitter} size="md" />
 					</IconButton>
 					<IconButton
 						component="a"
@@ -160,11 +168,12 @@ export default function Navigation() {
 						aria-label="RelaySMS on Bluesky"
 						sx={{ color: iconColor }}
 					>
-						<img src="/bluesky.svg" alt="Bluesky logo" style={{ height: 22, width: 22 }} />
+						<FontAwesomeIcon icon={faBluesky} size="md" />
 					</IconButton>
 				</Box>
 
-				{/* Mobile menu icon */}
+				{/* Mobile Menu Icon */}
+				{/* Mobile Menu Icon */}
 				<Box sx={{ display: { xs: "flex", md: "none" } }}>
 					<IconButton
 						size="large"
@@ -210,38 +219,46 @@ export default function Navigation() {
 							)
 						)}
 
-						{/* Language menu in mobile */}
-						<MenuItem onClick={handleOpenLangMenu} sx={{ cursor: "pointer" }}>
-							<LanguageIcon sx={{ mr: 1, color: iconColor }} />
-							{languages.find((l) => l.code === i18n.language)?.flag || "🌐"}
+						{/* Language Switcher in Mobile */}
+						<MenuItem disableRipple>
+							<LanguageSwitcher />
 						</MenuItem>
-						<Menu
-							anchorEl={anchorElLang}
-							open={Boolean(anchorElLang)}
-							onClose={handleCloseLangMenu}
-							keepMounted
-							anchorOrigin={{
-								vertical: "top",
-								horizontal: "right"
-							}}
-							transformOrigin={{
-								vertical: "top",
-								horizontal: "right"
-							}}
-						>
-							{languages.map((lang) => (
-								<MenuItem
-									key={lang.code}
-									onClick={() => {
-										changeLanguage(lang.code);
-										handleCloseNavMenu();
-									}}
-									selected={lang.code === i18n.language}
+
+						{/* Social Media Icons in Mobile */}
+						<MenuItem disableRipple>
+							<Box sx={{ display: "flex", gap: 1, pl: 1 }}>
+								<IconButton
+									component="a"
+									href="https://github.com/smswithoutborders"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="GitHub"
+									sx={{ color: iconColor }}
 								>
-									{lang.flag} {lang.label}
-								</MenuItem>
-							))}
-						</Menu>
+									<FontAwesomeIcon icon={faGithub} />
+								</IconButton>
+								<IconButton
+									component="a"
+									href="https://x.com/RelaySMS"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="RelaySMS on X"
+									sx={{ color: iconColor }}
+								>
+									<FontAwesomeIcon icon={faXTwitter} />
+								</IconButton>
+								<IconButton
+									component="a"
+									href="https://bsky.app/profile/relaysms.bsky.social"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label="RelaySMS on Bluesky"
+									sx={{ color: iconColor }}
+								>
+									<FontAwesomeIcon icon={faBluesky} />
+								</IconButton>
+							</Box>
+						</MenuItem>
 					</Menu>
 				</Box>
 			</Toolbar>

@@ -9,7 +9,7 @@ import { Grid, Typography, Box, Button } from "@mui/material";
 import ReactHtmlParser from "react-html-parser";
 import { keyframes } from "@mui/material";
 import VerifiedIcon from "@mui/icons-material/Verified";
-
+import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
@@ -203,19 +203,19 @@ const Hero = () => {
 						{/* Button */}
 						<Box
 							sx={{
-								display: {
-									xs: "flex",
-									sm: "flex",
-									md: "block"
-								},
+								display: "flex",
 								justifyContent: {
 									xs: "center",
-									sm: "center"
+									sm: "center",
+									md: "flex-start"
 								},
-								mt: 2
+								mt: { xs: 3, sm: 3, md: 4 },
+								width: "100%"
 							}}
 						>
 							<Button
+								component={Link}
+								to="/Download"
 								variant="contained"
 								size="large"
 								sx={{
