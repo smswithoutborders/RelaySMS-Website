@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Container, Row, Col, Carousel, Card } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useTranslation } from "react-i18next";
 import { FaFileAlt } from "react-icons/fa";
@@ -11,11 +11,19 @@ import { keyframes } from "@mui/material";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
+import Howitworks from "./Howitworks";
 
 const Hero = () => {
 	const [scrollDirection, setScrollDirection] = useState(null);
 	const { t, i18n } = useTranslation();
 	const isFarsi = i18n.language === "fa";
+
+	const [showCursor, setShowCursor] = useState(true);
+
+	useEffect(() => {
+		const timer = setTimeout(() => setShowCursor(false), 3000); // adjust time
+		return () => clearTimeout(timer);
+	}, []);
 
 	const bounce = keyframes`
   0%, 100% { transform: translateY(0); }
@@ -44,49 +52,6 @@ const Hero = () => {
 
 		window.addEventListener("scroll", updateScrollDirection);
 	}, []);
-
-	const carouselItems = [
-		{
-			number: 1,
-			title: t("Howitworks.Step1Title"),
-			description: t("Howitworks.Step1Desc"),
-			image: "/Download.png",
-			buttonText: t("Howitworks.Step1Button", "Get Started"),
-			link: "https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
-		},
-		{
-			number: 2,
-			title: t("Howitworks.Step2Title"),
-			description: t("Howitworks.Step2Desc"),
-			image: "/Login.png",
-			buttonText: t("Howitworks.Step2Button", "Learn More"),
-			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-2-create-an-account"
-		},
-		{
-			number: 3,
-			title: t("Howitworks.Step3Title"),
-			description: t("Howitworks.Step3Desc"),
-			image: "/saveplatform.png",
-			buttonText: t("Howitworks.Step3Button", "Set Up Now"),
-			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-5-save-access-to-platforms"
-		},
-		{
-			number: 4,
-			title: t("Howitworks.Step4Title"),
-			description: t("Howitworks.Step4Desc"),
-			image: "/Gateway.png",
-			buttonText: t("Howitworks.Step4Button", "Configure Gateway"),
-			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-6-choose-a-gateway-client"
-		},
-		{
-			number: 5,
-			title: t("Howitworks.Step5Title"),
-			description: t("Howitworks.Step5Desc"),
-			image: "/text.png",
-			buttonText: t("Howitworks.Step5Button", "Start Messaging"),
-			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-3-compose-your-message-and-send-as-sms"
-		}
-	];
 
 	const blogs = [
 		{
@@ -176,7 +141,7 @@ const Hero = () => {
 							<Typewriter
 								words={[t("Landing.h1")]}
 								loop={1}
-								cursor
+								cursor={showCursor}
 								cursorStyle="_"
 								typeSpeed={70}
 								deleteSpeed={50}
@@ -200,7 +165,6 @@ const Hero = () => {
 							{t("Landing.h2")}
 						</Typography>
 
-						{/* Button */}
 						<Box
 							sx={{
 								display: "flex",
@@ -254,7 +218,6 @@ const Hero = () => {
 							</Button>
 						</Box>
 
-						{/* Recognition Text */}
 						<Box
 							display="flex"
 							alignItems="flex-start"
@@ -290,7 +253,6 @@ const Hero = () => {
 						</Box>
 					</Grid>
 
-					{/* Image Section */}
 					<Grid item xs={12} md={6}>
 						<Box
 							component="img"
@@ -322,117 +284,8 @@ const Hero = () => {
 			</Box>
 
 			{/* =================================================== How It Works Section ================================================== */}
-			<Box
-				sx={{
-					backgroundColor: "#EBE4D8",
-					py: { xs: 6, md: 12 },
-					px: { xs: 3, md: 6 }
-				}}
-				data-aos={scrollDirection === "down" ? "fade-left" : "fade-right"}
-			>
-				<Container>
-					<div className="text-center mb-5">
-						<h3
-							style={{
-								fontSize: "1.8rem",
-								fontWeight: "bold",
-								color: "#2D2A5A",
-								fontFamily: "'Unbounded', ubuntu"
-							}}
-						>
-							{t("Howitworks.Header", "Getting Started with RelaySMS")}
-						</h3>
-						<p
-							data-aos={scrollDirection === "down" ? "zoom-in" : "zoom-out"}
-							style={{ fontSize: "1.2rem", color: "#555555", fontFamily: "'Mona Sans', ubuntu" }}
-						>
-							{t(
-								"Howitworks.SubHeader",
-								"Learn how to set up and use RelaySMS for seamless offline communication."
-							)}
-						</p>
-					</div>
 
-					<Carousel>
-						{carouselItems.map((item, index) => (
-							<Carousel.Item key={index}>
-								<Grid container spacing={4} alignItems="center">
-									<Grid
-										item
-										xs={12}
-										md={6}
-										sx={{
-											order: { xs: 0, md: 1 },
-											textAlign: "left",
-											p: { xs: 2, md: 4 }
-										}}
-										data-aos="fade-left"
-									>
-										<h1 className="circle-number"> {item.number}</h1>
-										<Typography
-											variant="h5"
-											sx={{
-												fontWeight: "bold",
-												color: "#2D2A5A",
-												mb: 2,
-												fontFamily: "'Unbounded', ubuntu"
-											}}
-										>
-											{item.title}
-										</Typography>
-										<Typography
-											style={{ fontFamily: "'Mona Sans', ubuntu", textDecoration: "none" }}
-											variant="body1"
-											sx={{ mb: 4, color: "#555555" }}
-											dangerouslySetInnerHTML={{
-												__html: item.description.replace(
-													/<a /g,
-													"<a style='text-decoration: none; color: #007bff;' "
-												)
-											}}
-										/>
-
-										<Button
-											variant="contained"
-											color="primary"
-											style={{
-												fontFamily: "'Mona Sans', ubuntu",
-												textDecoration: "none"
-											}}
-											href={item.link}
-											sx={{
-												backgroundColor: "#2D2A5A",
-												":hover": { backgroundColor: "#1F1B3E" },
-												textDecoration: "none"
-											}}
-										>
-											{item.buttonText}
-										</Button>
-									</Grid>
-
-									<Grid
-										item
-										xs={12}
-										md={6}
-										sx={{ order: { xs: 1, md: 0 }, textAlign: "center" }}
-										data-aos="fade-right"
-									>
-										<img
-											src={item.image}
-											alt={item.title}
-											style={{
-												maxWidth: "40%",
-												borderRadius: "12px",
-												height: "auto"
-											}}
-										/>
-									</Grid>
-								</Grid>
-							</Carousel.Item>
-						))}
-					</Carousel>
-				</Container>
-			</Box>
+			<Howitworks />
 
 			{/* ========================== blog section ============================== */}
 			<Box
