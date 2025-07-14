@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Grid, Typography, Button, Link, useTheme, useMediaQuery } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const steps = [
 	{
@@ -73,139 +74,180 @@ const steps = [
 ];
 
 export default function StepsDesign() {
+	const { t } = useTranslation();
 	const theme = useTheme();
 	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
 	return (
-		<Box sx={{ width: "100%", mx: "auto", mt: 4, px: 2 }}>
-			<Typography variant="h4" align="center" sx={{ mb: 2, fontWeight: "bold", color: "#1e2a78" }}>
-				Getting Started with RelaySMS
-			</Typography>
-			<Typography variant="subtitle1" align="center" sx={{ mb: 6, color: "#555" }}>
-				Learn how to set up and use RelaySMS for seamless offline communication.
-			</Typography>
-
-			{steps.map((step) => (
-				<Grid
-					container
-					spacing={3}
-					alignItems="center"
-					key={step.number}
-					sx={{
-						mb: 6,
-						flexDirection: isMobile ? "column" : "row",
-						textAlign: isMobile ? "center" : "left",
-						justifyContent: isMobile ? "center" : "flex-start"
-					}}
+		<Box sx={{ width: "100%", backgroundColor: "#EBE4D8", py: 4 }}>
+			<Box sx={{ maxWidth: 1300, mx: "auto", px: 2 }}>
+				<Typography
+					variant="h4"
+					align="center"
+					sx={{ mb: 2, fontWeight: "bold", color: "#1e2a78" }}
 				>
-					{/* Left side: vertical word, vertical line, number */}
-					{!isMobile && (
-						<Grid
-							item
-							xs={2}
-							sx={{
-								display: "flex",
-								flexDirection: "row",
-								alignItems: "center",
-								justifyContent: "flex-start",
-								gap: 1,
-								pr: 2
-							}}
-						>
-							{/* Vertical Word */}
-							<Typography
-								variant="caption"
-								sx={{
-									writingMode: "vertical-rl",
-									textOrientation: "upright",
-									color: "#555",
-									letterSpacing: 1.5,
-									userSelect: "none",
-									fontWeight: "bold",
-									fontSize: "0.75rem",
-									whiteSpace: "nowrap"
-								}}
-							>
-								{step.title.toUpperCase()}
-							</Typography>
-
-							{/* Vertical Line */}
-							<Box
-								sx={{
-									width: 2,
-									height: 60,
-									bgcolor: "#bbb"
-								}}
-							/>
-
-							{/* Number */}
-							<Typography variant="h4" sx={{ fontWeight: "bold", color: "#1e2a78", minWidth: 40 }}>
-								{step.number}
-							</Typography>
-						</Grid>
+					{t("Howitworks.Header", "Getting Started with RelaySMS")}
+				</Typography>
+				<Typography variant="subtitle1" align="center" sx={{ mb: 6, color: "#555" }}>
+					{t(
+						"Howitworks.SubHeader",
+						"Learn how to set up and use RelaySMS for seamless offline communication."
 					)}
+				</Typography>
 
-					{/* Text content - Title, Description, Button (before image) */}
-					<Grid
-						item
-						xs={12}
-						sm={isMobile ? 12 : 6}
-						sx={{
-							mt: isMobile ? 2 : 0,
-							textAlign: isMobile ? "center" : "left"
-						}}
-					>
-						<Typography variant="h6" gutterBottom sx={{ fontWeight: 600, color: "#1e2a78" }}>
-							{step.title}
-						</Typography>
-						<Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.5, mb: 2 }}>
-							{step.description}
-						</Typography>
-						<Button
-							variant="contained"
-							color="primary"
-							size="small"
-							sx={{ mx: isMobile ? "auto" : 0, display: "block" }}
-						>
-							{step.buttonText}
-						</Button>
-					</Grid>
+				{steps.map((step, index) => {
+					const isEven = index % 2 === 0;
 
-					{/* Image */}
-					<Grid
-						item
-						xs={12}
-						sm={isMobile ? 12 : 4}
-						sx={{
-							width: "100%",
-							height: isMobile ? 250 : 250,
-							overflow: "hidden",
-							mx: "auto",
-							display: "flex",
-							justifyContent: "center"
-						}}
-					>
-						<Box
+					return (
+						<Grid
+							container
+							key={step.number}
+							spacing={4}
+							alignItems="center"
 							sx={{
-								width: isMobile ? 300 : "100%",
-								height: isMobile ? 250 : "100%",
-								overflow: "hidden",
-								borderRadius: 1
+								flexDirection: isMobile ? "column" : isEven ? "row" : "row-reverse",
+								textAlign: isMobile ? "center" : "left",
+								mb: 8
 							}}
 						>
-							<img
-								src={step.imgSrc}
-								alt={step.title}
-								style={{
-									width: "100%",
-									height: "100%",
-									objectFit: "contain"
-								}}
-							/>
-						</Box>
-					</Grid>
-				</Grid>
-			))}
+							<Grid item xs={12} sm={6} sx={{ display: "flex", justifyContent: "center" }}>
+								<Box
+									sx={{
+										width: isMobile ? 300 : "100%",
+										height: 250,
+										overflow: "hidden",
+										borderRadius: 1
+									}}
+								>
+									<img
+										src={step.imgSrc}
+										alt={step.title}
+										style={{ width: "100%", height: "100%", objectFit: "contain" }}
+									/>
+								</Box>
+							</Grid>
+
+							<Grid
+								item
+								xs={12}
+								sm={6}
+								sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}
+							>
+								{!isMobile && (
+									<Box
+										sx={{
+											display: "flex",
+											flexDirection: "row",
+											alignItems: "flex-start",
+											gap: 2
+										}}
+									>
+										<Box sx={{ display: "flex", alignItems: "center" }}>
+											<Typography
+												variant="caption"
+												sx={{
+													writingMode: "vertical-rl",
+													textOrientation: "upright",
+													color: "#555",
+													letterSpacing: 1.5,
+													fontWeight: "bold",
+													fontSize: "0.75rem",
+													whiteSpace: "nowrap",
+													mr: 2
+												}}
+											>
+												{step.title.toUpperCase()}
+											</Typography>
+
+											<Box
+												sx={{
+													width: 2,
+													bgcolor: "#bbb",
+													mr: 2,
+													flexGrow: 1,
+													alignSelf: "stretch",
+													minHeight: 0
+												}}
+											/>
+
+											<Typography
+												variant="h4"
+												sx={{
+													fontWeight: "bold",
+													color: "#1e2a78",
+													minWidth: 20,
+													alignSelf: "flex-start",
+													mt: -1
+												}}
+											>
+												{step.number}
+											</Typography>
+										</Box>
+
+										<Box sx={{ pl: 2, mt: 14, maxWidth: 400 }}>
+											<Typography variant="h6" sx={{ fontWeight: 600, color: "#1e2a78", mb: 1 }}>
+												{step.title}
+											</Typography>
+
+											<Typography
+												variant="body2"
+												color="text.secondary"
+												sx={{ mb: 2, lineHeight: 1.5 }}
+											>
+												{step.description}
+											</Typography>
+
+											<Button
+												variant="contained"
+												color="primary"
+												size="small"
+												sx={{
+													px: 2,
+													py: 0.5,
+													fontSize: "0.75rem",
+													minWidth: 120,
+													textTransform: "none"
+												}}
+											>
+												{step.buttonText}
+											</Button>
+										</Box>
+									</Box>
+								)}
+
+								{isMobile && (
+									<Box sx={{ mt: 2 }}>
+										<Typography variant="h6" sx={{ fontWeight: 600, color: "#1e2a78", mb: 1 }}>
+											{step.title}
+										</Typography>
+										<Typography
+											variant="body2"
+											color="text.secondary"
+											sx={{ mb: 2, lineHeight: 1.5 }}
+										>
+											{step.description}
+										</Typography>
+										<Button
+											variant="contained"
+											color="primary"
+											size="small"
+											sx={{
+												px: 2,
+												py: 0.5,
+												fontSize: "0.75rem",
+												minWidth: 120,
+												textTransform: "none"
+											}}
+										>
+											{step.buttonText}
+										</Button>
+									</Box>
+								)}
+							</Grid>
+						</Grid>
+					);
+				})}
+			</Box>
 		</Box>
 	);
 }
