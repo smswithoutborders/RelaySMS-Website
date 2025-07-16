@@ -1,101 +1,108 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Row, Col } from "react-bootstrap";
-import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
-import { FaGithub } from "react-icons/fa";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faXTwitter, faBluesky } from "@fortawesome/free-brands-svg-icons";
+import LanguageSwitcher from "./LanguageSwitcher";
+import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
 
 const Footer = () => {
 	const { t } = useTranslation();
 	const [scrolled, setScrolled] = useState(false);
 
 	useEffect(() => {
-		const handleScroll = () => {
-			setScrolled(window.scrollY > 50);
-		};
+		const handleScroll = () => setScrolled(window.scrollY > 50);
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
-	const iconStyle = {
-		filter: "brightness(0) invert(1)",
-		height: "24px",
-		transition: "transform 0.3s"
-	};
-
-	const iconHover = (e, scale) => {
-		e.currentTarget.style.transform = `scale(${scale})`;
-	};
+	const logoSrc = useMemo(() => (scrolled ? "/RelaySMSDark.png" : "/logo.png"), [scrolled]);
 
 	return (
 		<footer
 			style={{
 				backgroundColor: "#000158",
 				color: "#ffffff",
-				padding: "2rem 0"
+				padding: "2.5rem 0"
 			}}
 		>
-			<Row className="align-items-center mb-4 px-5">
+			<Row className="align-items-center px-4 px-md-5 mb-4">
 				<Col
 					xs={12}
 					md={4}
 					className="d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
 				>
 					<img
-						src={scrolled ? "/RelaySMSDark.png" : "/logo.png"}
-						alt="Logo"
-						style={{ height: 35, transition: "0.5s" }}
+						src={logoSrc}
+						alt="RelaySMS Logo"
+						style={{ height: 36, transition: "0.5s ease-in-out" }}
 					/>
 				</Col>
 
 				<Col xs={12} md={4} className="d-flex justify-content-center mb-3 mb-md-0">
-					<div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
-						<a
-							href="https://x.com/RelaySMS"
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="RelaySMS on X"
-						>
-							<img
-								src="./x-w.png"
-								alt="X logo"
-								style={iconStyle}
-								onMouseEnter={(e) => iconHover(e, 1.1)}
-								onMouseLeave={(e) => iconHover(e, 1)}
-							/>
-						</a>
-
-						<a
+					<Box
+						sx={{
+							display: "flex",
+							justifyContent: "center",
+							gap: 2,
+							alignItems: "center"
+						}}
+					>
+						<IconButton
+							component="a"
 							href="https://github.com/smswithoutborders"
 							target="_blank"
 							rel="noopener noreferrer"
-							aria-label="RelaySMS on GitHub"
-							style={{
+							aria-label="GitHub"
+							sx={{
 								color: "#ffffff",
-								fontSize: "1.5rem",
-								transition: "transform 0.3s"
+								transition: "transform 0.3s, color 0.3s",
+								"&:hover": {
+									color: "#9999ff",
+									transform: "scale(1.15)"
+								}
 							}}
 						>
-							<FaGithub
-								onMouseEnter={(e) => iconHover(e, 1.1)}
-								onMouseLeave={(e) => iconHover(e, 1)}
-							/>
-						</a>
+							<FontAwesomeIcon icon={faGithub} size="lg" />
+						</IconButton>
 
-						<a
+						<IconButton
+							component="a"
+							href="https://x.com/RelaySMS"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="X"
+							sx={{
+								color: "#ffffff",
+								transition: "transform 0.3s, color 0.3s",
+								"&:hover": {
+									color: "#9999ff",
+									transform: "scale(1.15)"
+								}
+							}}
+						>
+							<FontAwesomeIcon icon={faXTwitter} size="lg" />
+						</IconButton>
+
+						<IconButton
+							component="a"
 							href="https://bsky.app/profile/relaysms.bsky.social"
 							target="_blank"
 							rel="noopener noreferrer"
-							aria-label="RelaySMS on Bluesky"
+							aria-label="Bluesky"
+							sx={{
+								color: "#ffffff",
+								transition: "transform 0.3s, color 0.3s",
+								"&:hover": {
+									color: "#9999ff",
+									transform: "scale(1.15)"
+								}
+							}}
 						>
-							<img
-								src="./bluesky.svg"
-								alt="Bluesky logo"
-								style={iconStyle}
-								onMouseEnter={(e) => iconHover(e, 1.1)}
-								onMouseLeave={(e) => iconHover(e, 1)}
-							/>
-						</a>
-					</div>
+							<FontAwesomeIcon icon={faBluesky} size="lg" />
+						</IconButton>
+					</Box>
 				</Col>
 
 				<Col xs={12} md={4} className="d-flex justify-content-center justify-content-md-end">
@@ -103,9 +110,9 @@ const Footer = () => {
 				</Col>
 			</Row>
 
-			<Row>
+			<Row className="px-4 px-md-5">
 				<Col className="text-center">
-					<p style={{ fontSize: "0.875rem", color: "#cccccc" }}>
+					<p style={{ fontSize: "0.85rem", color: "#cccccc", marginBottom: 0 }}>
 						&copy; {new Date().getFullYear()} {t("Footer.copyright")}
 					</p>
 				</Col>

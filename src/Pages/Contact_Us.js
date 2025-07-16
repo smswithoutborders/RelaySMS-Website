@@ -1,259 +1,201 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import { useTranslation } from "react-i18next";
+import React from "react";
+import { Box, Typography, Button, keyframes } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { useTranslation } from "react-i18next";
 
-const NAVBAR_HEIGHT = 70;
+const ContactUs = () => {
+	const { t } = useTranslation();
 
-const ContactCard = ({ title, description, Icon, link, buttonLabel }) => {
-	const [hovered, setHovered] = useState(false);
-
-	return (
-		<Col xs={12} md={4} className="mb-4 d-flex justify-content-center">
-			<div
-				style={{ ...styles.card, ...(hovered ? styles.cardHover : {}) }}
-				onMouseEnter={() => setHovered(true)}
-				onMouseLeave={() => setHovered(false)}
-				tabIndex={0}
-				role="group"
-				aria-labelledby={`${title}-label`}
-			>
-				<div>{Icon}</div>
-				<h3 id={`${title}-label`} style={styles.cardTitle}>
-					{title}
-				</h3>
-				<p style={styles.cardDesc}>{description}</p>
-				{link ? (
-					<a
-						href={link}
-						target="_blank"
-						rel="noopener noreferrer"
-						style={{ textDecoration: "none" }}
-						aria-label={`Open ${title} link in a new tab`}
-					>
-						<Button className="btn-primary w-100 mt-2" style={styles.contactButton}>
-							{buttonLabel}
-						</Button>
-					</a>
-				) : (
-					<Button disabled className="w-100 mt-2" style={styles.contactButtonDisabled}>
-						{buttonLabel}
-					</Button>
-				)}
-			</div>
-		</Col>
-	);
-};
-
-const Contact_Us = () => {
-	const { t, i18n } = useTranslation();
-	const isFarsi = i18n.language === "fa";
-
-	const contactItems = [
+	const socialLinks = [
 		{
-			title: t("ContactUs.Items.Email.Title") || "Email",
-			description: t("ContactUs.Items.Email.EmailDescription") || "Send us an email anytime",
-			Icon: <FontAwesomeIcon icon={faEnvelope} size="3x" style={styles.icon} aria-hidden="true" />,
-			link: `mailto:${t("ContactUs.Items.Email.EmailAddress")}`,
-			buttonLabel: t("ContactUs.Items.Email.ButtonText"),
-			variant: "outline-primary"
+			icon: faGithub,
+			url: "https://github.com/smswithoutborders",
+			label: t("ContactUs.Items.GitHub.Label", "GitHub"),
+			description: t(
+				"ContactUs.Items.GitHub.Description",
+				"Explore our open-source projects and repositories."
+			),
+			ButtonText: t("ContactUs.Items.GitHub.ButtonText", "View GitHub")
 		},
 		{
-			title: t("ContactUs.Items.Twitter.Title") || "Twitter",
-			Icon: <FontAwesomeIcon icon={faTwitter} size="3x" style={styles.icon} aria-hidden="true" />,
-			link: t("ContactUs.Items.Twitter.Link"),
-			description: t("ContactUs.Items.Twitter.TwitterDescription") || "Follow us on Twitter",
-			buttonLabel: t("ContactUs.Items.Twitter.ButtonText"),
-			variant: "outline-dark"
+			icon: faTwitter,
+			url: "https://x.com/RelaySMS",
+			label: t("ContactUs.Items.Twitter.Label", "Twitter"),
+			description: t(
+				"ContactUs.Items.Twitter.Description",
+				"Follow us for updates, tips, and dev thoughts."
+			),
+			ButtonText: t("ContactUs.Items.Twitter.ButtonText", "Follow on Twitter")
 		},
 		{
-			title: t("ContactUs.Items.GitHub.Title") || "Github",
-			Icon: <FontAwesomeIcon icon={faGithub} size="3x" style={styles.icon} aria-hidden="true" />,
-			link: t("ContactUs.Items.GitHub.Link"),
-			description: t("ContactUs.Items.GitHub.GitHubDescription") || "Check our code on GitHub",
-			buttonLabel: t("ContactUs.Items.GitHub.ButtonText"),
-			variant: "outline-secondary"
+			icon: faEnvelope,
+			url: "mailto:developers@smswithoutborders.com",
+			label: t("ContactUs.Items.Email.Label", "Email"),
+			description: t(
+				"ContactUs.Items.Email.Description",
+				"Reach out directly via email for collaboration and questions."
+			),
+			ButtonText: t("ContactUs.Items.Email.ButtonText", "Send Email")
 		}
 	];
 
+	const rotateWave = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
 	return (
-		<div
-			style={{
-				...styles.page,
-				direction: isFarsi ? "rtl" : "ltr",
-				paddingTop: NAVBAR_HEIGHT + 20
+		<Box
+			sx={{
+				minHeight: "100vh",
+				position: "relative",
+				backgroundColor: "#FAF2E4",
+				overflow: "hidden",
+				fontFamily: "Montserrat, sans-serif",
+				textAlign: "center",
+				px: 2
 			}}
 		>
-			<Container style={styles.container}>
-				<div style={styles.titleWrapper}>
-					<div style={styles.textLine}>
-						<span style={{ ...styles.textDecor, marginRight: 10 }}>
-							<span style={{ ...styles.spanLine, left: 0 }} />
-							<span style={{ ...styles.dot, right: 0 }} />
-							<span style={{ ...styles.dot, right: 10 }} />
-						</span>
-						<p
-							style={{
-								...styles.title,
-								fontSize: "calc(1.4rem + 1vw)",
-								lineHeight: "1.2"
+			<Box
+				sx={{
+					position: "absolute",
+					width: "100%",
+					height: "100%",
+					top: 0,
+					left: 0,
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					zIndex: 0,
+					pointerEvents: "none"
+				}}
+			>
+				{[1050, 950, 820, 720, 620, 560, 460].map((size, index) => (
+					<Box
+						key={index}
+						sx={{
+							position: "absolute",
+							width: size,
+							height: size - 30,
+							borderRadius: "43%",
+							backgroundColor: "#99c6c6",
+							opacity: 0.18,
+							animation: `${rotateWave} ${5 + index * 2}s linear infinite`
+						}}
+					/>
+				))}
+			</Box>
+
+			<Box
+				sx={{
+					zIndex: 2,
+					position: "relative",
+					minHeight: "100vh",
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "center",
+					alignItems: "center",
+					color: "#000",
+					maxWidth: "1200px",
+					mx: "auto",
+					pt: 8,
+					pb: 10
+				}}
+			>
+				<Typography
+					variant="h2"
+					sx={{
+						fontWeight: 100,
+						mb: 6,
+						color: "#1e283a",
+						textShadow: "1px 1px 2px rgba(255,255,255,0.5)",
+						fontSize: "clamp(2rem, 5vw, 3.5rem)",
+						padding: window.innerWidth >= 768 ? "20px" : "20px",
+						transition: "color 0.3s ease, transform 0.3s ease"
+					}}
+				>
+					{t("ContactUs.Title")}
+				</Typography>
+
+				<Box
+					sx={{
+						display: "grid",
+						gridTemplateColumns: {
+							xs: "1fr",
+							sm: "repeat(2, 1fr)",
+							md: "repeat(3, 1fr)"
+						},
+						gap: 4,
+						width: "100%",
+						px: { xs: 2, sm: 4 }
+					}}
+				>
+					{socialLinks.map(({ icon, url, label, description, ButtonText }, index) => (
+						<Box
+							key={index}
+							sx={{
+								bgcolor: "#ffffff",
+								borderRadius: "16px",
+								boxShadow: "0px 6px 16px rgba(0,0,0,0.1)",
+								padding: 4,
+								textAlign: "center",
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
+								transition: "transform 0.3s ease, box-shadow 0.3s ease",
+								"&:hover": {
+									transform: "translateY(-6px)",
+									boxShadow: "0px 12px 24px rgba(0,0,0,0.15)"
+								}
 							}}
 						>
-							{t("ContactUs.Title") || "Contact Us"}
-						</p>
-						<span style={{ ...styles.textDecor, marginLeft: 10 }}>
-							<span style={{ ...styles.spanLine, right: 0 }} />
-							<span style={{ ...styles.dot, left: 0 }} />
-							<span style={{ ...styles.dot, left: 10 }} />
-						</span>
-					</div>
-
-					<div
-						style={{
-							...styles.bottomText,
-							fontSize: "calc(0.9rem + 0.2vw)",
-							paddingTop: 20,
-							maxWidth: 500,
-							margin: "20px auto 0"
-						}}
-					>
-						{t("ContactUs.Subtitle") ||
-							"We’re here to help. Reach out to us through any of these channels."}
-					</div>
-				</div>
-
-				<Row className="justify-content-center">
-					{contactItems.map((item, index) => (
-						<ContactCard key={index} {...item} />
+							<FontAwesomeIcon
+								icon={icon}
+								style={{
+									fontSize: "3.2rem",
+									color: "#FF9E43",
+									marginBottom: "1rem"
+								}}
+							/>
+							<Typography variant="h6" sx={{ fontWeight: 600, mb: 1, color: "#1e283a" }}>
+								{label}
+							</Typography>
+							<Typography variant="body2" sx={{ mb: 2, color: "#555", lineHeight: 1.6 }}>
+								{description}
+							</Typography>
+							<Button
+								variant="contained"
+								href={url || "#"}
+								target={url.startsWith("mailto:") ? undefined : "_blank"}
+								rel={url.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+								sx={{
+									backgroundColor: "#FF9E43",
+									color: "rgba(1, 64, 136, 0.86)",
+									textTransform: "none",
+									fontWeight: 500,
+									py: 1.2,
+									px: 5,
+									fontSize: { xs: "12px", md: "15px" },
+									borderRadius: 3,
+									border: "1px solid rgba(240, 135, 37, 0.41)",
+									boxShadow: "0 2px 6px rgba(1, 64, 136, 0.86)",
+									transition: "all 0.3s ease-in-out",
+									"&:hover": {
+										backgroundColor: "rgba(1, 64, 136, 0.86)",
+										color: "white",
+										boxShadow: "0 6px 18px #FF9E43"
+									}
+								}}
+							>
+								{ButtonText}
+							</Button>
+						</Box>
 					))}
-				</Row>
-			</Container>
-		</div>
+				</Box>
+			</Box>
+		</Box>
 	);
 };
 
-const styles = {
-	page: {
-		minHeight: "calc(100vh - 70px - 70px)",
-		background: "#FAF2E4",
-		color: "#2d2a5a",
-		display: "flex",
-		flexDirection: "column",
-		alignItems: "center",
-		overflowX: "hidden"
-	},
-	container: {
-		maxWidth: "960px",
-		width: "100%"
-	},
-	header: {
-		textAlign: "center",
-		marginBottom: "3rem"
-	},
-
-	icon: {
-		color: "#2d2a5a",
-		marginBottom: "10px"
-	},
-	card: {
-		background: "rgba(17, 4, 128, 0.05)",
-		backdropFilter: "blur(12px)",
-		borderRadius: "20px",
-		padding: "30px",
-		textAlign: "center",
-		width: "100%",
-		maxWidth: "320px",
-		transition: "transform 0.3s ease, box-shadow 0.3s ease",
-		cursor: "pointer",
-		userSelect: "none",
-		margin: "20px"
-	},
-
-	cardHover: {
-		transform: "scale(1.05)",
-		boxShadow: "0 10px 20px #2d2a5a"
-	},
-
-	cardTitle: {
-		fontSize: "1.5rem",
-		marginTop: "20px",
-		marginBottom: "10px"
-	},
-	cardDesc: {
-		fontSize: "1rem",
-		color: "gray",
-		marginBottom: "20px"
-	},
-	contactButton: {
-		backgroundColor: "#2d2a5a",
-		border: "none",
-		padding: "10px 25px",
-		fontWeight: "600",
-		borderRadius: "10px",
-		color: "#fff"
-	},
-	contactButtonDisabled: {
-		backgroundColor: "#555",
-		border: "none",
-		padding: "10px 25px",
-		fontWeight: "600",
-		borderRadius: "10px",
-		color: "#ccc",
-		cursor: "not-allowed"
-	},
-
-	titleWrapper: {
-		textAlign: "center",
-		margin: "0 auto",
-		paddingBottom: 72
-	},
-	title: {
-		fontSize: 30,
-		lineHeight: "40px",
-		fontWeight: 600,
-		textTransform: "uppercase"
-	},
-	textLine: {
-		marginTop: 10,
-		Width: 100
-	},
-
-	textDecor: {
-		display: "inline-block",
-		height: 5,
-		position: "relative",
-		top: -2,
-		width: 70
-	},
-
-	spanLine: {
-		position: "absolute",
-		top: 0,
-		bottom: 0,
-		width: 50,
-		height: 1,
-		background: "#FFA500"
-	},
-
-	dot: {
-		position: "absolute",
-		top: 0,
-		bottom: 0,
-		width: 5,
-		height: 5,
-		background: "#FFA500",
-		borderRadius: "50%"
-	},
-
-	bottomText: {
-		paddingTop: 16,
-		color: "#848484",
-		fontSize: 16,
-		lineHeight: "26px",
-		fontWeight: 400
-	}
-};
-
-export default Contact_Us;
+export default ContactUs;

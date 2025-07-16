@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import AppBar from "@mui/material/AppBar";
@@ -16,8 +16,22 @@ import { faBluesky, faXTwitter, faGithub } from "@fortawesome/free-brands-svg-ic
 export default function Navigation() {
 	const { t } = useTranslation();
 	const [anchorElNav, setAnchorElNav] = useState(null);
-
 	const iconColor = "#004080";
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 50) {
+				setScrolled(true);
+			} else {
+				setScrolled(false);
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll);
+
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 
 	const navLinks = [
 		{ label: t("Nav.Home"), to: "/" },
@@ -43,7 +57,20 @@ export default function Navigation() {
 	};
 
 	return (
-		<AppBar position="sticky" sx={{ backgroundColor: "#faf2e4", boxShadow: 1 }}>
+		<AppBar
+			position="fixed"
+			sx={{
+				backgroundColor: scrolled ? "#e0d7c3" : "#faf2e4",
+				boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.3)" : 1,
+				top: 0,
+				left: 0,
+				right: 0,
+				zIndex: (theme) => theme.zIndex.drawer + 1,
+				backdropFilter: "blur(6px)",
+				transition: "all 0.3s ease",
+				height: scrolled ? 70 : 72
+			}}
+		>
 			<Toolbar
 				sx={{
 					maxWidth: 1950,
@@ -53,10 +80,11 @@ export default function Navigation() {
 					justifyContent: "space-between",
 					alignItems: "center",
 					px: { xs: 1, sm: 2 },
-					minHeight: { xs: 64, sm: 72 }
+					minHeight: { xs: 64, sm: 72 },
+					height: "100%",
+					transition: "all 0.3s ease"
 				}}
 			>
-				{/* Logo */}
 				<Link to="/" style={{ textDecoration: "none" }} aria-label="Home">
 					<Box
 						component="img"
@@ -69,7 +97,6 @@ export default function Navigation() {
 					/>
 				</Link>
 
-				{/* Desktop Nav Links */}
 				<Box
 					sx={{
 						display: { xs: "none", md: "flex" },
@@ -133,12 +160,10 @@ export default function Navigation() {
 					)}
 				</Box>
 
-				{/* Desktop Language Switcher */}
 				<Box sx={{ display: { xs: "none", md: "flex" } }}>
 					<LanguageSwitcher />
 				</Box>
 
-				{/* Desktop Social Icons */}
 				<Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center", ml: 2, gap: 1 }}>
 					<IconButton
 						component="a"
@@ -172,8 +197,6 @@ export default function Navigation() {
 					</IconButton>
 				</Box>
 
-				{/* Mobile Menu Icon */}
-				{/* Mobile Menu Icon */}
 				<Box sx={{ display: { xs: "flex", md: "none" } }}>
 					<IconButton
 						size="large"
@@ -219,12 +242,10 @@ export default function Navigation() {
 							)
 						)}
 
-						{/* Language Switcher in Mobile */}
 						<MenuItem disableRipple>
 							<LanguageSwitcher />
 						</MenuItem>
 
-						{/* Social Media Icons in Mobile */}
 						<MenuItem disableRipple>
 							<Box sx={{ display: "flex", gap: 1, pl: 1 }}>
 								<IconButton

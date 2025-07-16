@@ -106,23 +106,23 @@
 		"Title": "Contactez-nous",
 		"Subtitle": "Nous sommes là pour vous aider. Contactez-nous via l’un de ces canaux.",
 		"Items": {
-			"Email": {
-				"Title": "Email",
-				"ButtonText": "Email",
-				"Link": "mailto:developers@smswithoutborders.com",
-				"EmailDescription": "Envoyez-nous un email à tout moment"
+			"GitHub": {
+				"Link": "https://github.com/yourusername",
+				"Label": "GitHub",
+				"Description": "Découvrez nos projets open-source et dépôts.",
+				"ButtonText": "Voir GitHub"
 			},
 			"Twitter": {
-				"Title": "Twitter",
-				"ButtonText": "X",
-				"Link": "https://x.com/RelaySMS",
-				"TwitterDescription": "Suivez-nous sur Twitter"
+				"Link": "https://twitter.com/yourhandle",
+				"Label": "Twitter",
+				"Description": "Suivez-nous pour des mises à jour, conseils et idées de développement.",
+				"ButtonText": "Suivre sur Twitter"
 			},
-			"GitHub": {
-				"Title": "GitHub",
-				"ButtonText": "GitHub",
-				"GitHubDescription": "Consultez notre code sur GitHub",
-				"Link": "https://github.com/smswithoutborders"
+			"Email": {
+				"Link": "mailto:youremail@example.com",
+				"Label": "E-mail",
+				"Description": "Contactez-nous directement par e-mail pour collaborer ou poser vos questions.",
+				"ButtonText": "Envoyer un e-mail"
 			}
 		}
 	},

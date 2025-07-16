@@ -1,253 +1,233 @@
 import React from "react";
-import { Box, Grid, Typography, Button, Link, useTheme, useMediaQuery } from "@mui/material";
+import Slider from "react-slick";
+import { Box, Typography, Button, Container, Grid } from "@mui/material";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { useTranslation } from "react-i18next";
 
-const steps = [
-	{
-		number: "01",
-		title: "Download the App",
-		description: (
-			<>
-				Download the RelaySMS App from{" "}
-				<Link
-					href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Google PlayStore
-				</Link>
-				,{" "}
-				<Link
-					href="https://github.com/smswithoutborders/RelaySMS-Android"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					GitHub
-				</Link>
-				, or{" "}
-				<Link
-					href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					build it from source
-				</Link>
-				. Ensure your Android device meets the technical requirements (Android 6.0+ with SMS
-				capability).
-			</>
-		),
-		buttonText: "Get Started",
-		imgSrc: "/Download.png"
-	},
-	{
-		number: "02",
-		title: "Create an Account",
-		description:
-			"Create an account by clicking 'Add Account,' and filling in the required details. An authentication PIN will be sent to your phone for verification.",
-		buttonText: "Learn More",
-		imgSrc: "/Login.png"
-	},
-	{
-		number: "03",
-		title: "Save Platforms",
-		description:
-			"Save access to platforms while connected to the internet. Add your credentials to platforms supported by RelaySMS and prepare them for offline use.",
-		buttonText: "Set Up Now",
-		imgSrc: "/saveplatform.png"
-	},
-	{
-		number: "04",
-		title: "Configure a Gateway",
-		description:
-			"Choose a Gateway Client for sending SMS. You can select from pre-configured clients or set up a custom client by adding the gateway number to your contacts.",
-		buttonText: "Configure Gateway",
-		imgSrc: "/Gateway.png"
-	},
-	{
-		number: "05",
-		title: "Send Messages",
-		description:
-			"Compose messages for supported platforms without internet. Send these as SMS to a pre-saved gateway number, ensuring encrypted communication.",
-		buttonText: "Start Messaging",
-		imgSrc: "/text.png"
-	}
-];
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
 
-export default function StepsDesign() {
+const HowItWorks = () => {
 	const { t } = useTranslation();
-	const theme = useTheme();
-	const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+	const settings = {
+		dots: true,
+		infinite: true,
+		speed: 600,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 5000,
+		arrows: true
+	};
+
+	const Item = styled(Paper)(({ theme }) => ({
+		padding: theme.spacing(1),
+		textAlign: "center",
+		backgroundColor: "transparent",
+		boxShadow: "none"
+	}));
+
+	const slides = [
+		{
+			number: 1,
+			title: t("Howitworks.Step1Title"),
+			description: t("Howitworks.Step1Desc"),
+			image: "/Download.png",
+			buttonText: t("Howitworks.Step1Button", "Get Started"),
+			link: "https://play.google.com/store/apps/details?id=com.afkanerd.sw0b",
+			bgColor: "#EBF5FB"
+		},
+		{
+			number: 2,
+			title: t("Howitworks.Step2Title"),
+			description: t("Howitworks.Step2Desc"),
+			image: "/Login.png",
+			buttonText: t("Howitworks.Step2Button", "Learn More"),
+			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-2-create-an-account",
+			bgColor: "#E8DAEF"
+		},
+		{
+			number: 3,
+			title: t("Howitworks.Step3Title"),
+			description: t("Howitworks.Step3Desc"),
+			image: "/saveplatform.png",
+			buttonText: t("Howitworks.Step3Button", "Set Up Now"),
+			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-5-save-access-to-platforms",
+			bgColor: "#FEF9E7"
+		},
+		{
+			number: 4,
+			title: t("Howitworks.Step4Title"),
+			description: t("Howitworks.Step4Desc"),
+			image: "/Gateway.png",
+			buttonText: t("Howitworks.Step4Button", "Configure Gateway"),
+			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-6-choose-a-gateway-client",
+			bgColor: "#E8F8F5"
+		},
+		{
+			number: 5,
+			title: t("Howitworks.Step5Title"),
+			description: t("Howitworks.Step5Desc"),
+			image: "/text.png",
+			buttonText: t("Howitworks.Step5Button", "Start Messaging"),
+			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-3-compose-your-message-and-send-as-sms",
+			bgColor: "#FDEDEC"
+		}
+	];
 
 	return (
-		<Box sx={{ width: "100%", backgroundColor: "#EBE4D8", py: 4 }}>
-			<Box sx={{ maxWidth: 1300, mx: "auto", px: 2 }}>
-				<Typography
-					variant="h4"
-					align="center"
-					sx={{ mb: 2, fontWeight: "bold", color: "#1e2a78" }}
+		<Box
+			sx={{
+				backgroundColor: "#EBE4D8",
+				py: { xs: 6, md: 12 },
+				px: { xs: 3, md: 6 }
+			}}
+		>
+			<div className="text-center mb-5">
+				<h1
+					style={{
+						fontSize: "2.5rem",
+						fontWeight: "bold",
+						color: "#2D2A5A",
+						fontFamily: "'Unbounded', ubuntu"
+					}}
 				>
 					{t("Howitworks.Header", "Getting Started with RelaySMS")}
-				</Typography>
-				<Typography variant="subtitle1" align="center" sx={{ mb: 6, color: "#555" }}>
+				</h1>
+				<p style={{ fontSize: "1.2rem", color: "#555555", fontFamily: "'Mona Sans', ubuntu" }}>
 					{t(
 						"Howitworks.SubHeader",
 						"Learn how to set up and use RelaySMS for seamless offline communication."
 					)}
-				</Typography>
-
-				{steps.map((step, index) => {
-					const isEven = index % 2 === 0;
-
-					return (
-						<Grid
-							container
-							key={step.number}
-							spacing={4}
-							alignItems="center"
+				</p>
+			</div>
+			<Container sx={{ py: 4, backgroundColor: "#EBE4D8" }}>
+				<Slider {...settings}>
+					{slides.map((slide, index) => (
+						<Box
+							key={index}
 							sx={{
-								flexDirection: isMobile ? "column" : isEven ? "row" : "row-reverse",
-								textAlign: isMobile ? "center" : "left",
-								mb: 8
+								flexGrow: 1,
+								width: { xs: "100%", sm: "90%", md: "80%", lg: "70%", xl: "65%" },
+								maxWidth: 1200,
+								marginX: "auto",
+								background: `linear-gradient(135deg, ${slide.bgColor} 0%, #ffffff 100%)`,
+								p: { xs: 4, sm: 5, md: 6, lg: 8 },
+								borderRadius: 4,
+								minHeight: 360,
+								display: "flex",
+								flexDirection: { xs: "column", md: "row" },
+								alignItems: "center",
+								justifyContent: "space-between",
+								gap: { xs: 3, md: 4 },
+								transition: "transform 0.3s ease, box-shadow 0.3s ease"
 							}}
 						>
-							<Grid item xs={12} sm={6} sx={{ display: "flex", justifyContent: "center" }}>
-								<Box
-									sx={{
-										width: isMobile ? 300 : "100%",
-										height: 250,
-										overflow: "hidden",
-										borderRadius: 1
-									}}
-								>
-									<img
-										src={step.imgSrc}
-										alt={step.title}
-										style={{ width: "100%", height: "100%", objectFit: "contain" }}
-									/>
-								</Box>
-							</Grid>
-
-							<Grid
-								item
-								xs={12}
-								sm={6}
-								sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}
-							>
-								{!isMobile && (
-									<Box
+							<Grid container spacing={2}>
+								<Grid item xs={12} md={6}>
+									<Item
 										sx={{
-											display: "flex",
-											flexDirection: "row",
-											alignItems: "flex-start",
-											gap: 2
+											textAlign: { xs: "center", md: "left" },
+											px: { xs: 2, sm: 4, md: 6 },
+											py: { xs: 2, md: 4 }
 										}}
 									>
-										<Box sx={{ display: "flex", alignItems: "center" }}>
-											<Typography
-												variant="caption"
-												sx={{
-													writingMode: "vertical-rl",
-													textOrientation: "upright",
-													color: "#555",
-													letterSpacing: 1.5,
-													fontWeight: "bold",
-													fontSize: "0.75rem",
-													whiteSpace: "nowrap",
-													mr: 2
-												}}
-											>
-												{step.title.toUpperCase()}
-											</Typography>
-
-											<Box
-												sx={{
-													width: 2,
-													bgcolor: "#bbb",
-													mr: 2,
-													flexGrow: 1,
-													alignSelf: "stretch",
-													minHeight: 0
-												}}
-											/>
-
-											<Typography
-												variant="h4"
-												sx={{
-													fontWeight: "bold",
-													color: "#1e2a78",
-													minWidth: 20,
-													alignSelf: "flex-start",
-													mt: -1
-												}}
-											>
-												{step.number}
-											</Typography>
-										</Box>
-
-										<Box sx={{ pl: 2, mt: 14, maxWidth: 400 }}>
-											<Typography variant="h6" sx={{ fontWeight: 600, color: "#1e2a78", mb: 1 }}>
-												{step.title}
-											</Typography>
-
-											<Typography
-												variant="body2"
-												color="text.secondary"
-												sx={{ mb: 2, lineHeight: 1.5 }}
-											>
-												{step.description}
-											</Typography>
-
-											<Button
-												variant="contained"
-												color="primary"
-												size="small"
-												sx={{
-													px: 2,
-													py: 0.5,
-													fontSize: "0.75rem",
-													minWidth: 120,
-													textTransform: "none"
-												}}
-											>
-												{step.buttonText}
-											</Button>
-										</Box>
-									</Box>
-								)}
-
-								{isMobile && (
-									<Box sx={{ mt: 2 }}>
-										<Typography variant="h6" sx={{ fontWeight: 600, color: "#1e2a78", mb: 1 }}>
-											{step.title}
-										</Typography>
 										<Typography
-											variant="body2"
-											color="text.secondary"
-											sx={{ mb: 2, lineHeight: 1.5 }}
-										>
-											{step.description}
-										</Typography>
-										<Button
-											variant="contained"
-											color="primary"
-											size="small"
+											variant="h4"
+											fontWeight="700"
+											color="#2D2A5A"
 											sx={{
-												px: 2,
-												py: 0.5,
-												fontSize: "0.75rem",
-												minWidth: 120,
-												textTransform: "none"
+												fontFamily: "'Unbounded', Ubuntu",
+												letterSpacing: "0.05em",
+												mb: 2,
+												textShadow: "1px 1px 3px rgba(45, 42, 90, 0.2)",
+												fontSize: { xs: "1.75rem", md: "2rem" }
 											}}
 										>
-											{step.buttonText}
+											{slide.title}
+										</Typography>
+
+										<Typography
+											variant="body1"
+											color="#555"
+											sx={{
+												fontFamily: "'Mona Sans', Ubuntu",
+												maxWidth: 500,
+												fontSize: { xs: "1rem", md: "1.125rem" },
+												lineHeight: 1.7,
+												mb: 4,
+												mx: { xs: "auto", md: 0 }
+											}}
+											dangerouslySetInnerHTML={{
+												__html: slide.description.replace(
+													/<a /g,
+													"<a style='text-decoration: none; color: #007bff;' "
+												)
+											}}
+										/>
+
+										<Button
+											variant="contained"
+											href={slide.link}
+											target="_blank"
+											rel="noopener noreferrer"
+											sx={{
+												backgroundColor: "#FF9E43",
+												color: "rgba(1, 64, 136, 0.86)",
+												textTransform: "none",
+												fontWeight: 500,
+												py: 1.2,
+												px: 5,
+												fontSize: { xs: "12px", md: "15px" },
+												borderRadius: 3,
+												border: "1px solid rgba(240, 135, 37, 0.41)",
+												boxShadow: "0 2px 6px rgba(1, 64, 136, 0.86)",
+												transition: "all 0.3s ease-in-out",
+												"&:hover": {
+													backgroundColor: "rgba(1, 64, 136, 0.86)",
+													color: "white",
+													boxShadow: "0 6px 18px #FF9E43"
+												}
+											}}
+										>
+											{slide.buttonText}
 										</Button>
-									</Box>
-								)}
+									</Item>
+								</Grid>
+
+								<Grid item xs={12} md={6}>
+									<Item
+										sx={{
+											display: "flex",
+											justifyContent: { xs: "center", md: "flex-end" },
+											alignItems: "center",
+											px: { xs: 2, sm: 4, md: 6 },
+											py: { xs: 2, md: 4 }
+										}}
+									>
+										<Box
+											component="img"
+											src={slide.image}
+											alt={slide.title}
+											sx={{
+												width: { xs: "80%", sm: "70%", md: "100%" },
+												maxWidth: 350,
+												height: "auto",
+												maxHeight: 280,
+												objectFit: "contain"
+											}}
+										/>
+									</Item>
+								</Grid>
 							</Grid>
-						</Grid>
-					);
-				})}
-			</Box>
+						</Box>
+					))}
+				</Slider>
+			</Container>
 		</Box>
 	);
-}
+};
+
+export default HowItWorks;
