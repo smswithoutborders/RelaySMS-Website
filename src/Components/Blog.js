@@ -6,7 +6,8 @@ import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import LaunchIcon from "@mui/icons-material/Launch";
 
 const BlogSectionNew = () => {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 
 	const featured = {
 		title: t("Blog.IDHeader"),
@@ -32,6 +33,7 @@ const BlogSectionNew = () => {
 
 	return (
 		<Box
+			dir={isRtl ? "rtl" : "ltr"}
 			id="Blog"
 			sx={{
 				py: { xs: 8, md: 12 },
@@ -41,19 +43,38 @@ const BlogSectionNew = () => {
 				color: "#23315f"
 			}}
 		>
-			<Typography
-				variant="h3"
-				align="center"
+			<Box
 				sx={{
-					fontWeight: 700,
-					mb: 8,
-					letterSpacing: 1,
-					maxWidth: 600,
-					mx: "auto"
+					textAlign: "center",
+					mb: 8
 				}}
 			>
-				{t("Blog.Header")}
-			</Typography>
+				<Typography
+					variant="h3"
+					sx={{
+						fontSize: "2rem",
+						color: "#2D2A5A",
+						fontFamily: "'Unbounded', Ubuntu"
+					}}
+				>
+					{t("Blog.Header", "Blog Posts")}
+				</Typography>
+				<Typography
+					variant="body1"
+					sx={{
+						fontSize: "1.2rem",
+						color: "#555555",
+						fontFamily: "'Mona Sans', Ubuntu",
+						fontStyle: "italic",
+						mt: 1
+					}}
+				>
+					{t(
+						"Blog.SubHeader",
+						"Stay informed with the latest updates, tips, and stories from the RelaySMS blog."
+					)}
+				</Typography>
+			</Box>
 
 			<Grid container spacing={6} justifyContent="center">
 				<Grid item xs={12} md={6}>

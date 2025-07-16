@@ -48,6 +48,7 @@
 	},
 	"Blog": {
 		"Header": "Blog Posts",
+		"SubHeader": " Stay informed with the latest updates, tips, and stories from the RelaySMS blog.",
 		"Resilience": "New Features on RelaySMS",
 		"ResilienceD": "At SMSWithoutBorders, we're constantly working to improve how users stay connected even without internet access....",
 
@@ -67,6 +68,7 @@
 
 	"Faq": {
 		"faqTitle": "Frequently Asked Questions",
+		"SubHeader": "Find answers to the most common questions about RelaySMS and how it works.",
 		"faq1": {
 			"question": "When do I use RelaySMS?",
 			"answer": "During times of instability (e.g., elections, protests, etc.) and other periods prone to internet shutdowns or areas with limited connectivity."

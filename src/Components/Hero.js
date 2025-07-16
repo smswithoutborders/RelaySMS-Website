@@ -18,8 +18,9 @@ const bounce = keyframes`
 `;
 
 const Hero = () => {
-	const { t } = useTranslation();
 	const [showCursor, setShowCursor] = useState(true);
+	const { t, i18n } = useTranslation();
+	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 
 	useEffect(() => {
 		const timer = setTimeout(() => setShowCursor(false), 3000);
@@ -38,13 +39,14 @@ const Hero = () => {
 	return (
 		<div>
 			<Box
+				dir={isRtl ? "rtl" : "ltr"}
 				sx={{
 					minHeight: { xs: "80vh", lg: "92vh", xl: "100vh" },
 					px: { xs: 2, md: 5, lg: 8, xl: 10 },
 					py: { xs: 6, md: 2, lg: 5 },
 					display: "flex",
 					alignItems: "center",
-					backgroundColor: " #FAF2E4"
+					backgroundColor: "#FAF2E4"
 				}}
 			>
 				<Grid container spacing={4} alignItems="center" justifyContent="center">
@@ -56,7 +58,7 @@ const Hero = () => {
 								textAlign: { xs: "center", md: "left" },
 								fontWeight: 600,
 								lineHeight: 1.2,
-								color: " #000158",
+								color: "#000158",
 								whiteSpace: "pre-wrap",
 								wordBreak: "break-word",
 								minHeight: "80px"
@@ -64,7 +66,8 @@ const Hero = () => {
 							gutterBottom
 						>
 							<Typewriter
-								words={[t("Landing.h1")]}
+								key={i18n.language}
+								words={[t("Landing.h1", "Stay Connected with RelaySMS")]}
 								loop={1}
 								cursor={showCursor}
 								cursorStyle="_"
@@ -186,7 +189,7 @@ const Hero = () => {
 				</Grid>
 			</Box>
 
-			{/* ======================= SECTIONS ====================== */}
+			{/* ========== OTHER SECTIONS ========== */}
 			<Howitworks />
 			<Blog />
 			<FAQ />

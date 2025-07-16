@@ -9,7 +9,8 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
 const HowItWorks = () => {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 
 	const settings = {
 		dots: true,
@@ -79,30 +80,45 @@ const HowItWorks = () => {
 
 	return (
 		<Box
+			dir={isRtl ? "rtl" : "ltr"}
 			sx={{
 				backgroundColor: "#EBE4D8",
 				py: { xs: 6, md: 12 },
 				px: { xs: 3, md: 6 }
 			}}
 		>
-			<div className="text-center mb-5">
-				<h1
-					style={{
-						fontSize: "2.5rem",
-						fontWeight: "bold",
+			<Box
+				sx={{
+					textAlign: "center",
+					mb: 5
+				}}
+			>
+				<Typography
+					variant="h3"
+					sx={{
+						fontSize: "2rem",
 						color: "#2D2A5A",
-						fontFamily: "'Unbounded', ubuntu"
+						fontFamily: "'Unbounded', Ubuntu"
 					}}
 				>
 					{t("Howitworks.Header", "Getting Started with RelaySMS")}
-				</h1>
-				<p style={{ fontSize: "1.2rem", color: "#555555", fontFamily: "'Mona Sans', ubuntu" }}>
+				</Typography>
+				<Typography
+					variant="body1"
+					sx={{
+						fontSize: "1.2rem",
+						color: "#555555",
+						fontFamily: "'Mona Sans', Ubuntu",
+						fontStyle: "italic",
+						mt: 1
+					}}
+				>
 					{t(
 						"Howitworks.SubHeader",
 						"Learn how to set up and use RelaySMS for seamless offline communication."
 					)}
-				</p>
-			</div>
+				</Typography>
+			</Box>
 			<Container sx={{ py: 4, backgroundColor: "#EBE4D8" }}>
 				<Box
 					sx={{
@@ -149,15 +165,15 @@ const HowItWorks = () => {
 											}}
 										>
 											<Typography
-												variant="h4"
-												fontWeight="700"
+												variant="h5"
+												fontWeight="600"
 												color="#2D2A5A"
 												sx={{
 													fontFamily: "'Unbounded', Ubuntu",
 													letterSpacing: "0.05em",
 													mb: 2,
 													textShadow: "1px 1px 3px rgba(45, 42, 90, 0.2)",
-													fontSize: { xs: "1.75rem", md: "2rem" }
+													fontSize: { xs: "1rem", md: "1.5rem" }
 												}}
 											>
 												{slide.title}
@@ -191,7 +207,7 @@ const HowItWorks = () => {
 													backgroundColor: "#FF9E43",
 													color: "rgba(1, 64, 136, 0.86)",
 													textTransform: "none",
-													fontWeight: 500,
+													fontWeight: 600,
 													py: 1.2,
 													px: 5,
 													fontSize: { xs: "12px", md: "15px" },

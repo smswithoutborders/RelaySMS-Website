@@ -14,7 +14,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBluesky, faXTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Navigation() {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 	const [anchorElNav, setAnchorElNav] = useState(null);
 	const iconColor = "#004080";
 	const [scrolled, setScrolled] = useState(false);
@@ -58,6 +59,7 @@ export default function Navigation() {
 
 	return (
 		<AppBar
+			dir={isRtl ? "rtl" : "ltr"}
 			position="fixed"
 			sx={{
 				backgroundColor: scrolled ? "#e0d7c3" : "#faf2e4",

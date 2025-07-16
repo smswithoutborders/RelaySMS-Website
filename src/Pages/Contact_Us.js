@@ -6,7 +6,8 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 
 const ContactUs = () => {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 
 	const socialLinks = [
 		{
@@ -47,6 +48,7 @@ const ContactUs = () => {
 `;
 	return (
 		<Box
+			dir={isRtl ? "rtl" : "ltr"}
 			sx={{
 				minHeight: "100vh",
 				position: "relative",

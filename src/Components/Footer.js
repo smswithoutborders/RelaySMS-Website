@@ -8,7 +8,8 @@ import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 
 const Footer = () => {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 	const [scrolled, setScrolled] = useState(false);
 
 	useEffect(() => {
@@ -21,6 +22,7 @@ const Footer = () => {
 
 	return (
 		<footer
+			dir={isRtl ? "rtl" : "ltr"}
 			style={{
 				backgroundColor: "#000158",
 				color: "#ffffff",

@@ -1,21 +1,12 @@
 import React from "react";
-import {
-	Box,
-	Typography,
-	useTheme,
-	useMediaQuery,
-	Accordion,
-	AccordionSummary,
-	AccordionDetails
-} from "@mui/material";
+import { Box, Typography, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useTranslation } from "react-i18next";
 import ReactHtmlParser from "react-html-parser";
 
 const FAQSection = ({ isFarsi }) => {
-	const { t } = useTranslation();
-	const theme = useTheme();
-	const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
+	const { t, i18n } = useTranslation();
+	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 
 	const faqs = [
 		{
@@ -47,6 +38,7 @@ const FAQSection = ({ isFarsi }) => {
 
 	return (
 		<Box
+			dir={isRtl ? "rtl" : "ltr"}
 			id="faq"
 			sx={{
 				py: { xs: 10, md: 14 },
@@ -56,18 +48,38 @@ const FAQSection = ({ isFarsi }) => {
 				direction: isFarsi ? "rtl" : "ltr"
 			}}
 		>
-			<Typography
-				variant={isMdUp ? "h3" : "h4"}
-				align="center"
+			<Box
 				sx={{
-					fontWeight: 700,
-					color: "#1e2a78",
-					mb: 6,
-					letterSpacing: 1
+					textAlign: "center",
+					mb: 8
 				}}
 			>
-				{t("Faq.faqTitle")}
-			</Typography>
+				<Typography
+					variant="h3"
+					sx={{
+						fontSize: "2rem",
+						color: "#2D2A5A",
+						fontFamily: "'Unbounded', Ubuntu"
+					}}
+				>
+					{t("Faq.faqTitle", "Frequently Asked Questions")}
+				</Typography>
+				<Typography
+					variant="body1"
+					sx={{
+						fontSize: "1.2rem",
+						color: "#555555",
+						fontFamily: "'Mona Sans', Ubuntu",
+						fontStyle: "italic",
+						mt: 1
+					}}
+				>
+					{t(
+						"Faq.SubHeader",
+						"Find answers to the most common questions about RelaySMS and how it works."
+					)}
+				</Typography>
+			</Box>
 
 			<Box maxWidth="1200px" mx="auto">
 				{faqs.map(({ question, answer }, idx) => (
