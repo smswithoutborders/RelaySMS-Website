@@ -139,21 +139,22 @@
 		}
 	},
 	"download": {
-		"android": "Download for Android",
-		"ios": "Download for iOS",
-		"desktop": "Download for Desktop",
-		"androidLinks": {
-			"apk": "Download the .apk file",
-			"playStore": "Download from Play Store",
-			"fDroid": "Download from F-Droid"
+		"Header": "Secure & Verified Downloads",
+		"Description": "Access RelaySMS from trusted and verified sources to ensure your security and privacy.",
+		"android": "Android Option",
+		"ios": "iOS Option",
+		"Titles": {
+			"Github": "Github",
+			"PlayStore": "PlayStore",
+			"Gmail": "Gmail",
+			"fDroid": "FDroid",
+			"ios": "AppStore"
 		},
-		"iosLink": "Download the iOS App",
-		"desktopLinks": {
-			"linux": "Download for Linux",
-			"comingSoon": "Coming Soon"
+		"androidDescription": {
+			"apk": "Download the APK file directly from GitHub.",
+			"playStore": "Get RelaySMS from the official Google Play Store.",
+			"fDroid": "Install via F-Droid for open source lovers."
 		},
-		"Back": {
-			"Back": "Back"
-		}
+		"iosDescription": "Available now on the Apple App Store."
 	}
 }

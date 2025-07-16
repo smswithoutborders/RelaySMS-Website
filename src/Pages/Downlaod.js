@@ -9,20 +9,29 @@ const Download = () => {
 	const androidLinks = [
 		{
 			imgSrc: "/play.svg",
-			title: t("download.androidLinks.playStore"),
-			description: "Get RelaySMS from the official Google Play Store.",
+			title: t("download.Titles.PlayStore"),
+			description: t(
+				"download.androidDescription.playstore",
+				"Get RelaySMS from the official Google Play Store."
+			),
 			link: "https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
 		},
 		{
 			imgSrc: "/fdroid.png",
-			title: t("download.androidLinks.fDroid"),
-			description: "Install via F-Droid for open source lovers.",
+			title: t("download.Titles.fDroid"),
+			description: t(
+				"download.androidDescription.fDroid",
+				"Install via F-Droid for open source lovers."
+			),
 			link: "https://apt.izzysoft.de/fdroid/index/apk/com.afkanerd.sw0b"
 		},
 		{
 			imgSrc: "/android.svg",
-			title: t("download.androidLinks.apk"),
-			description: "Download the APK file directly from GitHub.",
+			title: t("download.Titles.Github"),
+			description: t(
+				"download.androidDescription.apk",
+				"Download the APK file directly from GitHub."
+			),
 			link: "https://github.com/smswithoutborders/RelaySMS-Android"
 		}
 	];
@@ -30,8 +39,8 @@ const Download = () => {
 	const iosLinks = [
 		{
 			imgSrc: "/ios.png",
-			title: t("download.ios"),
-			description: "Available now on the Apple App Store.",
+			title: t("download.Titles.ios"),
+			description: t("download.iosDescription", "Available now on the Apple App Store."),
 			link: "https://apps.apple.com/us/app/relaysms/id6630382970"
 		}
 	];
@@ -42,50 +51,48 @@ const Download = () => {
 			sx={{
 				pt: "100px",
 				minHeight: "100vh",
-				bgcolor: "#fefcf9",
+				backgroundColor: "#FAF2E4",
 				pb: 8,
 				px: { xs: 2, md: 6 }
 			}}
 		>
 			<Container maxWidth="lg">
-				<Grid container spacing={6} alignItems="center">
-					{/* Left Promo Image */}
-					<Grid
-						item
-						xs={12}
-						md={6}
+				<Box
+					sx={{
+						textAlign: "center",
+						mb: 5
+					}}
+				>
+					<Typography
+						variant="h3"
 						sx={{
-							display: "flex",
-							justifyContent: "center",
-							mb: { xs: 6, md: 0 }
+							fontSize: "2rem",
+							color: "#2D2A5A",
+							fontFamily: "'Unbounded', Ubuntu"
 						}}
 					>
-						<Box
-							component="img"
-							src="/relayplaystore.png"
-							alt="Download RelaySMS"
-							sx={{
-								width: "100%",
-								maxWidth: 450,
-								borderRadius: 3,
-								boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
-							}}
-						/>
-					</Grid>
-
-					{/* Right Side Download Cards */}
+						{t("download.Header", "Secure & Verified Downloads")}
+					</Typography>
+					<Typography
+						variant="body1"
+						sx={{
+							fontSize: "1.2rem",
+							color: "#555555",
+							fontFamily: "'Mona Sans', Ubuntu",
+							fontStyle: "italic",
+							mt: 1
+						}}
+					>
+						{t(
+							"download.Description",
+							"Access RelaySMS from trusted and verified sources to ensure your security and privacy."
+						)}
+					</Typography>
+				</Box>
+				<Grid container spacing={6} alignItems="center">
 					<Grid item xs={12} md={6}>
-						<Typography
-							variant="h3"
-							sx={{ mb: 5, fontWeight: "bold", color: "#3b3a64" }}
-							align="center"
-						>
-							Download RelaySMS
-						</Typography>
-
-						{/* Android Links */}
-						<Typography variant="h5" sx={{ mb: 3, color: "#666" }} align="center">
-							Android Options
+						<Typography variant="h5" sx={{ mb: 3, color: " #666" }} align="start">
+							{t("download.android")}
 						</Typography>
 						{androidLinks.map((item, idx) => (
 							<Paper
@@ -149,8 +156,8 @@ const Download = () => {
 						))}
 
 						{/* iOS Links */}
-						<Typography variant="h5" sx={{ mt: 6, mb: 3, color: "#666" }} align="center">
-							iOS Options
+						<Typography variant="h5" sx={{ mt: 6, mb: 3, color: "#666" }} align="start">
+							{t("download.ios")}
 						</Typography>
 						{iosLinks.map((item, idx) => (
 							<Paper
@@ -212,6 +219,29 @@ const Download = () => {
 								</Button>
 							</Paper>
 						))}
+					</Grid>
+					{/* Right Side Download Cards */}
+					<Grid
+						item
+						xs={12}
+						md={6}
+						sx={{
+							display: "flex",
+							justifyContent: "center",
+							mb: { xs: 6, md: 0 }
+						}}
+					>
+						<Box
+							component="img"
+							src="/relayplaystore.png"
+							alt="Download RelaySMS"
+							sx={{
+								width: "100%",
+								maxWidth: 450,
+								borderRadius: 3,
+								boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+							}}
+						/>
 					</Grid>
 				</Grid>
 			</Container>

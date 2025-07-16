@@ -133,19 +133,22 @@
 		}
 	},
 	"download": {
-		"android": "دانلود برای Android",
-		"ios": "دانلود برای iOS",
-		"desktop": "دانلود برای دسکتاپ",
-		"androidLinks": {
-			"apk": "دانلود فایل .apk",
-			"playStore": "دانلود از Play Store",
-			"fDroid": "دانلود از F‑Droid"
+		"Header": "دانلودهای امن و تأییدشده",
+		"Description": "از طریق منابع معتبر و تأییدشده به RelaySMS دسترسی پیدا کنید تا امنیت و حریم خصوصی شما حفظ شود.",
+		"android": "گزینه اندروید",
+		"ios": "گزینه iOS",
+		"Titles": {
+			"Github": "گیت‌هاب",
+			"PlayStore": "فروشگاه پلی",
+			"Gmail": "جیمیل",
+			"fDroid": "اف-دروید",
+			"ios": "اپ‌استور"
 		},
-		"iosLink": "دانلود اپ iOS",
-		"desktopLinks": {
-			"linux": "دانلود برای Linux",
-			"comingSoon": "به‌زودی منتشر خواهد شد"
+		"androidDescription": {
+			"apk": "فایل APK را مستقیماً از گیت‌هاب دانلود کنید.",
+			"playStore": "RelaySMS را از فروشگاه رسمی گوگل پلی دریافت کنید.",
+			"fDroid": "از طریق F-Droid برای علاقه‌مندان به متن‌باز نصب کنید."
 		},
-		"Back": { "Back": "بازگشت" }
+		"iosDescription": "اکنون در فروشگاه اپل در دسترس است."
 	}
 }
