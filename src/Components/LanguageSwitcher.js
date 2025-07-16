@@ -24,7 +24,6 @@ const LanguageSwitcher = () => {
 			i18n.changeLanguage(initialLang);
 		};
 
-		// Call detectLanguage only if no language is manually selected (first load)
 		if (!i18n.language || i18n.language === "en") {
 			detectLanguage();
 		}

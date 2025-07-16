@@ -12,76 +12,83 @@
 	"social": {
 		"x": "ما را در X دنبال کنید",
 		"bluesky": "ما را در Bluesky ببینید",
-		"github": "مشاهده گیت‌هاب ما"
+		"github": "گیت‌هاب ما را مشاهده کنید"
 	},
 	"Landing": {
-		"span": "بدون اینترنت؟ مشکلی نیست.",
-		"h1": "با RelaySMS متصل بمانید",
-		"h2": "RelaySMS به کاربران امکان ارسال پیام به پلتفرم‌های آنلاین بدون اتصال به اینترنت را می‌دهد.",
+		"span": "بدون داده؟ نگران نباشید.",
+		"h1": "با RelaySMS در ارتباط باشید",
+		"h2": "RelaySMS به کاربران امکان ارسال پیام به پلتفرم‌های آنلاین بدون داشتن اینترنت فعال را می‌دهد.",
 		"Android": "دانلود RelaySMS",
 		"auditMessage": {
-			"part1": "RelaySMS به امنیت و شفافیت متعهد است. گزارش",
+			"part1": "RelaySMS متعهد به امنیت و شفافیت است. گزارش ",
 			"link": "ممیزی امنیتی",
-			"part2": "ما را بخوانید."
+			"part2": " را بخوانید."
 		}
 	},
 	"Howitworks": {
-		"Header": "شروع به کار با RelaySMS",
-		"SubHeader": "یاد بگیرید چگونه RelaySMS را برای ارتباط آفلاین بی‌وقفه تنظیم و استفاده کنید.",
-		"Step1Title": "مرحله ۱: برنامه را دانلود کنید",
-		"Step1Desc": "برنامه RelaySMS را از Google Play Store، GitHub دانلود کنید یا آن را از کد منبع بسازید. اطمینان حاصل کنید که دستگاه اندروید شما با الزامات فنی (اندروید 6.0+ با قابلیت پیامک) مطابقت دارد.",
-		"Step1Button": "شروع کنید",
-		"Step2Title": "مرحله ۲: حساب کاربری بسازید",
-		"Step2Desc": "با کلیک بر روی 'افزودن حساب'، انتخاب 'ایجاد جدید' و تکمیل اطلاعات لازم، حساب کاربری ایجاد کنید. یک کد تایید به گوشی شما ارسال خواهد شد.",
-		"Step2Button": "اطلاعات بیشتر",
-		"Step3Title": "مرحله ۳: پلتفرم‌ها را ذخیره کنید",
-		"Step3Desc": "دسترسی به پلتفرم‌ها را هنگام اتصال به اینترنت ذخیره کنید. اعتبار خود را به پلتفرم‌های پشتیبانی شده توسط RelaySMS اضافه کنید و برای استفاده آفلاین آماده شوید.",
-		"Step3Button": "اکنون تنظیم کنید",
-		"Step4Title": "مرحله ۴: یک گیت‌وی تنظیم کنید",
-		"Step4Desc": "برای ارسال پیامک یک گیت‌وی کلاینت انتخاب کنید. می‌توانید از میان کلاینت‌های پیش‌فرض انتخاب کنید یا یک کلاینت سفارشی با افزودن شماره گیت‌وی به مخاطبین خود تنظیم کنید.",
-		"Step4Button": "گیت‌وی را تنظیم کنید",
-		"Step5Title": "مرحله ۵: پیام ارسال کنید",
-		"Step5Desc": "پیام‌هایی برای پلتفرم‌های پشتیبانی شده بدون اینترنت بنویسید. این پیام‌ها را به صورت پیامک به شماره گیت‌وی از پیش ذخیره شده ارسال کنید، تضمین ارتباط رمزگذاری شده.",
-		"Step5Button": "ارسال پیام را شروع کنید"
+		"ReadMore": "بیشتر بخوانید",
+		"Header": "شروع با RelaySMS",
+		"SubHeader": "یاد بگیرید چگونه RelaySMS را برای ارتباط بی‌وقفهٔ آفلاین تنظیم و استفاده کنید.",
+		"Step1Title": "اپ را دانلود کنید",
+		"Step1Desc": "اپ RelaySMS را از <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>Google PlayStore</a>، <a href='https://github.com/smswithoutborders/RelaySMS-Android' target='_blank' rel='noopener noreferrer'>گیت‌هاب</a> یا با ساخت آن دانلود کنید. دستگاه Android شما باید Android 6.0+ با قابلیت SMS باشد.",
+		"Step1Button": "شروع",
+		"Step2Title": "یک حساب بسازید",
+		"Step2Desc": "روی “افزودن حساب” کلیک کنید و اطلاعات را پر کنید. یک کد تأییدی برای تلفن شما ارسال خواهد شد.",
+		"Step2Button": "بیشتر بدانید",
+		"Step3Title": "پلتفرم‌ها را ذخیره کنید",
+		"Step3Desc": "هنگام اتصال به اینترنت، دسترسی به پلتفرم‌ها را ذخیره کنید تا آمادهٔ استفادهٔ آفلاین شوند.",
+		"Step3Button": "همین حالا راه‌اندازی کنید",
+		"Step4Title": "گیت‌وی را پیکربندی کنید",
+		"Step4Desc": "یک کلاینت گیت‌وی SMS برای ارسال پیام انتخاب کنید. می‌توانید از کلاینت‌های پیش‌ساخته یا شمارهٔ گیت‌وی را در مخاطبین ذخیره کنید.",
+		"Step4Button": "راه‌اندازی گیت‌وی",
+		"Step5Title": "ارسال پیام‌ها",
+		"Step5Desc": "پیام‌ها را آفلاین بنویسید و به صورت SMS به شماره گیت‌وی ارسال کنید؛ ارتباط کاملاً رمزگذاری‌شده.",
+		"Step5Button": "شروع پیام‌رسانی"
 	},
 	"Blog": {
-		"Header": "مقالات وبلاگ",
-		"Resilience": "تاب‌آوری مشتری‌های دروازه در Smswithoutborders",
-		"ResilienceD": "مشتری دروازه در SMSWithoutBorders کلید اصلی انتقال پیام‌ها به پلتفرم‌های آنلاین است...",
-		"IDHeader": "ثبت شناسه دستگاه در RelaySMS",
-		"IDD": "RelaySMS ویژگی ثبت شناسه دستگاه در Vault را معرفی می‌کند...",
-		"Rebrand": "تغییر برند",
-		"RebrandD": "SMSWithoutBorders اکنون پروژه‌ای گسترده‌تر خواهد شد که RelaySMS و ابزارهای دیگر را در بر می‌گیرد...",
+		"Header": "مطالب وبلاگ",
+		"SubHeader": "با آخرین به‌روزرسانی‌ها، نکات و داستان‌ها در وبلاگ RelaySMS همراه باشید.",
+		"Resilience": "ویژگی‌های جدید RelaySMS",
+		"ResilienceD": "در SMSWithoutBorders همیشه در حال بهبود اتصال بدون اینترنت هستیم…",
+		"IDHeader": "ویژگی‌های جدید RelaySMS",
+		"IDD": "یکی از بزرگ‌ترین چالش‌ها این است که بدانید گیرنده پاسخی داده یا خیر.…",
+		"Rebrand": "بازطرح‌سازی برند",
+		"RebrandD": "SMSWithoutBorders به پروژهٔ اصلی تبدیل می‌شود…",
 		"ReadMore": "بیشتر بخوانید",
 		"ReadOtherArticles": "مطالب دیگر",
-		"articles1": "تاب‌آوری مشتری‌های دروازه در SMSWithoutBorders",
-		"articles2": "قابلیت اطمینان مشتری‌های دروازه در Smswithoutborders",
-		"articles3": "نسخه جدید: Vault 0.1.0",
+		"articles1": "مقاومت کلاینت‌های گیت‌وی در SMSWithoutBorders",
+		"articles2": "قابلیت اطمینان کلاینت‌های گیت‌وی",
+		"articles3": "نسخه آلفای جدید: Vault 0.1.0",
 		"tag": "مقالات",
-		"tags": "نسخه",
+		"tags": "انتشار",
 		"readTime": "۲ دقیقه مطالعه"
 	},
 	"Faq": {
 		"faqTitle": "سؤالات متداول",
+		"SubHeader": "پاسخ سؤالات رایج دربارهٔ RelaySMS و عملکرد آن را پیدا کنید.",
 		"faq1": {
-			"question": "کی از RelaySMS استفاده کنم؟",
-			"answer": "در مواقع بی‌ثباتی (انتخابات، اعتراضات و ...) یا مناطقی که دسترسی به اینترنت محدود است."
+			"question": "کی از RelaySMS استفاده می‌کنم؟",
+			"answer": "در زمان بی‌ثباتی (انتخابات، اعتراضات…) یا مناطق بدون اینترنت."
 		},
 		"faq2": {
 			"question": "RelaySMS چگونه کار می‌کند؟",
-			"answer": "RelaySMS پیام‌ها را از برنامه شما به مشتری‌های دروازه پیامک ارسال می‌کند."
+			"answer": "با ارسال SMS به گیت‌وی‌های داوطلب که آن را به اینترنت منتقل می‌کنند."
 		},
 		"faq3": {
-			"question": "آیا به اتصال اینترنت نیاز دارم؟",
-			"answer": "پس از تنظیم، دیگر نیازی به اینترنت نیست. پیام‌ها از طریق پیامک ارسال می‌شوند."
+			"question": "نیاز به اینترنت دارم؟",
+			"answer": "پس از راه‌اندازی، پیام‌ها از طریق SMS ارسال می‌شوند."
 		},
 		"faq4": {
-			"question": "آیا RelaySMS در دسترس دستگاه من است؟",
-			"answer": "RelaySMS در حال حاضر در اندروید و iOS موجود است."
+			"question": "آیا برای دستگاه من در دسترس است؟",
+			"answer": "فعلاً برای Android و iOS. پشتیبانی Linux به زودی اضافه خواهد شد."
 		},
 		"faq5": {
-			"question": "مشکلات فنی دارم. چگونه کمک بگیرم؟",
-			"answer": "راهنمای <a href='https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ' target='_blank' rel='noopener noreferrer'>رفع اشکال</a> ما را بررسی کنید."
+			"question": "مشکل فنی دارم، چه کنم؟",
+			"answer": "راهنمای <a href='https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ' target='_blank' rel='noopener noreferrer'>عیب‌یابی</a> را بررسی کنید یا با developers@smswithoutborders.com تماس بگیرید."
+		},
+		"contact": {
+			"didn't": "پاسخی نیافتید؟",
+			"Contant Us": "تماس با ما"
 		}
 	},
 	"Footer": {
@@ -91,52 +98,57 @@
 		"help": "مستندات",
 		"Blog": "وبلاگ",
 		"policy": "سیاست حفظ حریم خصوصی",
-		"Header3": "به لیست پستی ما بپیوندید",
-		"EnterEmail": "developers@smswithoutborders.com",
-		"Subscribe": "ثبت‌نام",
 		"Header2": "دانلودها",
-		"download1": "اندروید",
+		"download1": "Android",
 		"download2": "iOS",
-		"download3": "لینوکس",
+		"download3": "Linux",
+		"Header3": "به لیست ایمیل ما بپیوندید",
+		"EnterEmail": "developers@smswithoutborders.com",
+		"Subscribe": "ارسال",
 		"copyright": "AFKANERD"
 	},
 	"policy": "سیاست حفظ حریم خصوصی",
 	"ContactUs": {
-		"Title": "تماس با ما",
+		"Title": "راه‌های تماس",
+		"Subtitle": "ما برای کمک از طریق این کانال‌ها در خدمتیم.",
 		"Items": {
-			"Email": {
-				"Title": "ایمیل",
-				"ButtonText": "ایمیل",
-				"Link": "mailto:developers@smswithoutborders.com"
+			"GitHub": {
+				"Link": "https://github.com/smswithoutborders",
+				"Label": "GitHub",
+				"Description": "پروژه‌های متن‌باز ما را ببینید.",
+				"ButtonText": "مشاهده GitHub"
 			},
 			"Twitter": {
-				"Title": "توییتر",
-				"ButtonText": "X",
-				"Link": "https://x.com/RelaySMS"
+				"Link": "https://x.com/RelaySMS",
+				"Label": "Twitter",
+				"Description": "برای به‌روز رسانی‌ها ما را دنبال کنید.",
+				"ButtonText": "دنبال در Twitter"
 			},
-			"GitHub": {
-				"Title": "گیت‌هاب",
-				"ButtonText": "گیت‌هاب",
-				"Link": "https://github.com/smswithoutborders"
+			"Email": {
+				"Link": "mailto:developers@smswithoutborders.com",
+				"Label": "ایمیل",
+				"Description": "برای همکاری و سوالات، ایمیل بفرستید.",
+				"ButtonText": "ارسال ایمیل"
 			}
 		}
 	},
 	"download": {
-		"android": "دانلود برای اندروید",
-		"ios": "دانلود برای iOS",
-		"desktop": "دانلود برای دسکتاپ",
-		"androidLinks": {
-			"apk": "دانلود فایل .apk",
-			"playStore": "دانلود از پلی استور",
-			"fDroid": "دانلود از F-Droid"
+		"Header": "دانلودهای امن و تأییدشده",
+		"Description": "از طریق منابع معتبر و تأییدشده به RelaySMS دسترسی پیدا کنید تا امنیت و حریم خصوصی شما حفظ شود.",
+		"android": "گزینه اندروید",
+		"ios": "گزینه iOS",
+		"Titles": {
+			"Github": "گیت‌هاب",
+			"PlayStore": "فروشگاه پلی",
+			"Gmail": "جیمیل",
+			"fDroid": "اف-دروید",
+			"ios": "اپ‌استور"
 		},
-		"iosLink": "دانلود اپلیکیشن iOS",
-		"desktopLinks": {
-			"linux": "دانلود برای لینوکس",
-			"comingSoon": "به زودی"
+		"androidDescription": {
+			"apk": "فایل APK را مستقیماً از گیت‌هاب دانلود کنید.",
+			"playStore": "RelaySMS را از فروشگاه رسمی گوگل پلی دریافت کنید.",
+			"fDroid": "از طریق F-Droid برای علاقه‌مندان به متن‌باز نصب کنید."
 		},
-		"Back": {
-			"Back": "بازگشت"
-		}
+		"iosDescription": "اکنون در فروشگاه اپل در دسترس است."
 	}
 }

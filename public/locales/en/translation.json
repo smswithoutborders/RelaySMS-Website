@@ -48,11 +48,12 @@
 	},
 	"Blog": {
 		"Header": "Blog Posts",
-		"Resilience": "Resilience Of Gateway Clients In Smswithoutborders",
-		"ResilienceD": "Gateway Client in SMSWithoutBorders is key in routing messages from SMS to online platforms. The Gateway Client listens for messages and routes them to the Gateway server, which publishes ...",
+		"SubHeader": " Stay informed with the latest updates, tips, and stories from the RelaySMS blog.",
+		"Resilience": "New Features on RelaySMS",
+		"ResilienceD": "At SMSWithoutBorders, we're constantly working to improve how users stay connected even without internet access....",
 
-		"IDHeader": "RelaySMS Expands User Control with Device ID Registration",
-		"IDD": "RelaySMS (swob app) introduces a powerful new feature: Device ID Registration with RelaySMS Vault! This innovative approach gives you more control over your offline messaging experience.",
+		"IDHeader": "New Features on RelaySMS",
+		"IDD": "One of the greatest challenges of offline communication is knowing if the recipient has responded. We introduced the Bridge feature in a previous update, which enables users to communicate without saving their accounts, but are given primary aliases which act as their default RelaySMS accounts. The new feature, Replies for Bridges, enables users who send messages through Bridges to now receive replies directly via SMS.",
 		"Rebrand": "Rebranding",
 		"RebrandD": "SMSWithoutBorders itself is becoming the umbrella project encompassing RelaySMS and other messaging tools. The core functionality remains the same, but users can expect a new name, enhanced security features, and a focus on future growth under the SMSWithoutBorders project.",
 		"ReadMore": "Read More",
@@ -67,6 +68,7 @@
 
 	"Faq": {
 		"faqTitle": "Frequently Asked Questions",
+		"SubHeader": "Find answers to the most common questions about RelaySMS and how it works.",
 		"faq1": {
 			"question": "When do I use RelaySMS?",
 			"answer": "During times of instability (e.g., elections, protests, etc.) and other periods prone to internet shutdowns or areas with limited connectivity."
@@ -86,6 +88,10 @@
 		"faq5": {
 			"question": "I'm experiencing technical difficulties. How can I get help?",
 			"answer": "Check out our <a href='https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ' target='_blank' rel='noopener noreferrer'>Troubleshooting guide</a> or reach out to support at <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a>."
+		},
+		"contact": {
+			"didn't": "Didnot find your answer?",
+			"Contant Us": "Contact Us"
 		}
 	},
 	"Footer": {
@@ -108,41 +114,47 @@
 	"policy": "Privacy Policy",
 
 	"ContactUs": {
-		"Title": "Contact Us",
+		"Title": "Reach Us Through",
+		"Subtitle": " We’re here to help. Reach out to us through any of these channels.",
+
 		"Items": {
-			"Email": {
-				"Title": "Email",
-				"ButtonText": "Email",
-				"Link": "mailto:developers@smswithoutborders.com"
+			"GitHub": {
+				"Link": "https://github.com/smswithoutborders",
+				"Label": "GitHub",
+				"Description": "Explore our open-source projects and repositories.",
+				"ButtonText": "View GitHub"
 			},
 			"Twitter": {
-				"Title": "Twitter",
-				"ButtonText": "X",
-				"Link": "https://x.com/RelaySMS"
+				"Link": "https://x.com/RelaySMS",
+				"Label": "Twitter",
+				"Description": "Follow Us for updates, tips, and dev thoughts.",
+				"ButtonText": "Follow on Twitter"
 			},
-			"GitHub": {
-				"Title": "GitHub",
-				"ButtonText": "GitHub",
-				"Link": "https://github.com/smswithoutborders"
+			"Email": {
+				"Link": "mailto:developers@smswithoutborders.com",
+				"Label": "Email",
+				"Description": "Reach out directly via email for Questions and collaboration.",
+				"ButtonText": "Send Email"
 			}
 		}
 	},
 	"download": {
-		"android": "Download for Android",
-		"ios": "Download for iOS",
-		"desktop": "Download for Desktop",
-		"androidLinks": {
-			"apk": "Download the .apk file",
-			"playStore": "Download from Play Store",
-			"fDroid": "Download from F-Droid"
+		"Header": "Secure & Verified Downloads",
+		"Description": "Access RelaySMS from trusted and verified sources to ensure your security and privacy.",
+		"android": "Android Option",
+		"ios": "iOS Option",
+		"Titles": {
+			"Github": "Github",
+			"PlayStore": "PlayStore",
+			"Gmail": "Gmail",
+			"fDroid": "FDroid",
+			"ios": "AppStore"
 		},
-		"iosLink": "Download the iOS App",
-		"desktopLinks": {
-			"linux": "Download for Linux",
-			"comingSoon": "Coming Soon"
+		"androidDescription": {
+			"apk": "Download the APK file directly from GitHub.",
+			"playStore": "Get RelaySMS from the official Google Play Store.",
+			"fDroid": "Install via F-Droid for open source lovers."
 		},
-		"Back": {
-			"Back": "Back"
-		}
+		"iosDescription": "Available now on the Apple App Store."
 	}
 }
