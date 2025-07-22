@@ -1,0 +1,160 @@
+{
+	"Nav": {
+		"Home": "Home",
+		"Help": "Documentation",
+		"github": "GitHub",
+		"Blog": "Blog",
+		"Contact": "Contact Us",
+		"Support": "Support",
+		"Back": "Back",
+		"Download": "Download"
+	},
+	"social": {
+		"x": "Follow us on X",
+		"bluesky": "Check us out on Bluesky",
+		"github": "View our GitHub"
+	},
+	"Landing": {
+		"span": "No Data? No Worries.",
+		"h1": "Stay Connected with RelaySMS",
+		"h2": "RelaySMS enables users to send messages to online platforms without the use of an active internet connection.",
+		"Android": "Download RelaySMS ",
+		"auditMessage": {
+			"part1": "RelaySMS is committed to security and transparency. Read our ",
+			"link": "security audit report",
+			"part2": "."
+		}
+	},
+
+	"Howitworks": {
+		"ReadMore": "Read More",
+		"Header": "Getting Started with RelaySMS",
+		"SubHeader": "Learn how to set up and use RelaySMS for seamless offline communication.",
+		"Step1Title": "Download the App",
+		"Step1Desc": "Download the RelaySMS App from <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>Google PlayStore</a>, <a href='https://github.com/smswithoutborders/RelaySMS-Android' target='_blank' rel='noopener noreferrer'>GitHub</a>, or <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>build it from source</a>. Ensure your Android device meets the technical requirements (Android 6.0+ with SMS capability).",
+		"Step1Button": "Get Started",
+		"Step2Title": "Create an Account",
+		"Step2Desc": "Create an account by clicking 'Add Account,' and filling in the required details. An authentication PIN will be sent to your phone for verification.",
+		"Step2Button": "Learn More",
+		"Step3Title": "Save Platforms",
+		"Step3Desc": "Save access to platforms while connected to the internet. Add your credentials to platforms supported by RelaySMS and prepare them for offline use.",
+		"Step3Button": "Set Up Now",
+		"Step4Title": "Configure a Gateway",
+		"Step4Desc": "Choose a Gateway Client for sending SMS. You can select from pre-configured clients or set up a custom client by adding the gateway number to your contacts.",
+		"Step4Button": "Configure Gateway",
+		"Step5Title": "Send Messages",
+		"Step5Desc": "Compose messages for supported platforms without internet. Send these as SMS to a pre-saved gateway number, ensuring encrypted communication.",
+		"Step5Button": "Start Messaging"
+	},
+	"Blog": {
+		"Header": "Blog Posts",
+		"SubHeader": " Stay informed with the latest updates, tips, and stories from the RelaySMS blog.",
+		"Resilience": "New Features on RelaySMS",
+		"ResilienceD": "At SMSWithoutBorders, we're constantly working to improve how users stay connected even without internet access....",
+
+		"IDHeader": "New Features on RelaySMS",
+		"IDD": "One of the greatest challenges of offline communication is knowing if the recipient has responded. We introduced the Bridge feature in a previous update, which enables users to communicate without saving their accounts, but are given primary aliases which act as their default RelaySMS accounts. The new feature, Replies for Bridges, enables users who send messages through Bridges to now receive replies directly via SMS.",
+		"Rebrand": "Rebranding",
+		"RebrandD": "SMSWithoutBorders itself is becoming the umbrella project encompassing RelaySMS and other messaging tools. The core functionality remains the same, but users can expect a new name, enhanced security features, and a focus on future growth under the SMSWithoutBorders project.",
+		"ReadMore": "Read More",
+		"ReadOtherArticles": "Read Other Articles",
+		"articles1": "Resilience Of Gateway Clients In SMSWithoutBorders",
+		"articles2": "Reliability Of Gateway Clients In Smswithoutborders",
+		"articles3": "New Alpha Release: Vault 0.1.0",
+		"tag": "Articles",
+		"tags": "Release",
+		"readTime": "2 mins read"
+	},
+
+	"Faq": {
+		"faqTitle": "Frequently Asked Questions",
+		"SubHeader": "Find answers to the most common questions about RelaySMS and how it works.",
+		"faq1": {
+			"question": "When do I use RelaySMS?",
+			"answer": "During times of instability (e.g., elections, protests, etc.) and other periods prone to internet shutdowns or areas with limited connectivity."
+		},
+		"faq2": {
+			"question": "How does RelaySMS work?",
+			"answer": "RelaySMS works by using SMS messages sent from your app to SMS Gateway clients run by volunteers, who forward them to the internet."
+		},
+		"faq3": {
+			"question": "Do I need an internet connection to use RelaySMS?",
+			"answer": "Once set up, you no longer need an internet connection. Messages are sent via SMS from your device."
+		},
+		"faq4": {
+			"question": "Is RelaySMS available on my device?",
+			"answer": "RelaySMS is currently available on Android and iOS. Linux support is coming soon."
+		},
+		"faq5": {
+			"question": "I'm experiencing technical difficulties. How can I get help?",
+			"answer": "Check out our <a href='https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ' target='_blank' rel='noopener noreferrer'>Troubleshooting guide</a> or reach out to support at <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a>."
+		},
+		"contact": {
+			"didn't": "Didnot find your answer?",
+			"Contant Us": "Contact Us"
+		}
+	},
+	"Footer": {
+		"Header1": "Resources",
+		"body": "SMSWithoutBorders",
+		"Support": "Support",
+		"help": "Documentation",
+		"Blog": "Blog",
+		"policy": "Privacy Policy",
+		"Header2": "Downloads",
+		"download1": "Android",
+		"download2": "iOS",
+		"download3": "Linux",
+
+		"Header3": " Join Our Mailing List",
+		"EnterEmail": "developers@smswithoutborders.com",
+		"Subscribe": "Submit",
+		"copyright": "AFKANERD"
+	},
+	"policy": "Privacy Policy",
+
+	"ContactUs": {
+		"Title": "Reach Us Through",
+		"Subtitle": " We’re here to help. Reach out to us through any of these channels.",
+
+		"Items": {
+			"GitHub": {
+				"Link": "https://github.com/smswithoutborders",
+				"Label": "GitHub",
+				"Description": "Explore our open-source projects and repositories.",
+				"ButtonText": "View GitHub"
+			},
+			"Twitter": {
+				"Link": "https://x.com/RelaySMS",
+				"Label": "Twitter",
+				"Description": "Follow Us for updates, tips, and dev thoughts.",
+				"ButtonText": "Follow on Twitter"
+			},
+			"Email": {
+				"Link": "mailto:developers@smswithoutborders.com",
+				"Label": "Email",
+				"Description": "Reach out directly via email for Questions and collaboration.",
+				"ButtonText": "Send Email"
+			}
+		}
+	},
+	"download": {
+		"Header": "Secure & Verified Downloads",
+		"Description": "Access RelaySMS from trusted and verified sources to ensure your security and privacy.",
+		"android": "Android Option",
+		"ios": "iOS Option",
+		"Titles": {
+			"Github": "Github",
+			"PlayStore": "PlayStore",
+			"Gmail": "Gmail",
+			"fDroid": "FDroid",
+			"ios": "AppStore"
+		},
+		"androidDescription": {
+			"apk": "Download the APK file directly from GitHub.",
+			"playStore": "Get RelaySMS from the official Google Play Store.",
+			"fDroid": "Install via F-Droid for open source lovers."
+		},
+		"iosDescription": "Available now on the Apple App Store."
+	}
+}
