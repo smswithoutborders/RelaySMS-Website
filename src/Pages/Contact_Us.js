@@ -1,155 +1,203 @@
 import React from "react";
-import { Container, Row, Col, Button, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { FaGithub } from "react-icons/fa";
+import { Box, Typography, Button, keyframes } from "@mui/material";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
-import "bootstrap/dist/css/bootstrap.min.css";
-import LanguageSwitcher from "../Components/LanguageSwitcher";
 
-const ContactItem = ({ imageSrc, title, link, buttonText, variant }) => (
-	<Col md={4} sm={6} xs={12} className="mb-4 text-center">
-		<a href={link?.href || "#"} target="_blank" rel="noopener noreferrer">
-			<Button
-				variant={variant}
-				className="icon-btn mb-3"
-				style={{
-					width: "120px",
-					height: "120px",
-					borderRadius: "50%",
-					backgroundColor: "#F0F1F3",
-					borderColor: "#F0F1F3",
-					color: "black",
-					boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)"
-				}}
-			>
-				<img src={imageSrc} alt={title} style={{ width: "50%", height: "50%" }} />
-			</Button>
-		</a>
-		<a
-			href={link?.href || "#"}
-			target="_blank"
-			rel="noopener noreferrer"
-			style={{ color: "inherit", textDecoration: "none" }}
-		>
-			<div>{title}</div>
-		</a>
-		{link ? (
-			<a
-				href={link.href}
-				target="_blank"
-				rel="noreferrer"
-				className="btn btn-link mt-2"
-				style={{
-					color: "black",
-					textDecoration: "none",
-					transition: "color 0.3s ease" // Smooth color transition
-				}}
-				onMouseEnter={(e) => (e.currentTarget.style.color = "#0056b3")}
-				onMouseLeave={(e) => (e.currentTarget.style.color = "black")}
-			>
-				{buttonText}
-			</a>
-		) : (
-			<span className="text-muted mt-2">{buttonText}</span>
-		)}
-	</Col>
-);
-
-const Contact_Us = () => {
+const ContactUs = () => {
 	const { t, i18n } = useTranslation();
-	const isFarsi = i18n.language === "fa";
+	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 
-	const contactItems = [
+	const socialLinks = [
 		{
-			imageSrc: "./gmail.svg",
-			link: { href: t("ContactUs.Items.Email.Link") },
-			buttonText: t("ContactUs.Items.Email.ButtonText"),
-			variant: "outline-primary"
+			icon: faGithub,
+			url: "https://github.com/smswithoutborders",
+			label: t("ContactUs.Items.GitHub.Label", "GitHub"),
+			description: t(
+				"ContactUs.Items.GitHub.Description",
+				"Explore our open-source projects and repositories."
+			),
+			ButtonText: t("ContactUs.Items.GitHub.ButtonText", "View GitHub")
 		},
 		{
-			imageSrc: "./x.svg",
-			link: { href: t("ContactUs.Items.Twitter.Link") },
-			buttonText: t("ContactUs.Items.Twitter.ButtonText"),
-			variant: "outline-dark"
+			icon: faTwitter,
+			url: "https://x.com/RelaySMS",
+			label: t("ContactUs.Items.Twitter.Label", "Twitter"),
+			description: t(
+				"ContactUs.Items.Twitter.Description",
+				"Follow us for updates, tips, and dev thoughts."
+			),
+			ButtonText: t("ContactUs.Items.Twitter.ButtonText", "Follow on Twitter")
 		},
 		{
-			imageSrc: "./github.svg",
-			link: { href: t("ContactUs.Items.GitHub.Link") },
-			buttonText: t("ContactUs.Items.GitHub.ButtonText"),
-			variant: "outline-secondary"
+			icon: faEnvelope,
+			url: "mailto:developers@smswithoutborders.com",
+			label: t("ContactUs.Items.Email.Label", "Email"),
+			description: t(
+				"ContactUs.Items.Email.Description",
+				"Reach out directly via email for collaboration and questions."
+			),
+			ButtonText: t("ContactUs.Items.Email.ButtonText", "Send Email")
 		}
 	];
 
+	const rotateWave = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
 	return (
-		<>
-			<Navbar expand="lg" fixed="top" dir={isFarsi ? "rtl" : "ltr"} className="custom-navbar">
-				<Navbar.Brand href="#home" className="navbar-logo">
-					<img src="./logo.png" alt="Logo" height="40" className="logo" />
-				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="navbar-nav" />
-				<Navbar.Collapse id="navbar-nav" className="justify-content-end">
-					<Nav className="nav-links">
-						<Nav.Link href="/" className="mx-2">
-							{t("Nav.Home")}
-						</Nav.Link>
-						<Nav.Link href="https://blog.smswithoutborders.com/" className="mx-2">
-							{t("Nav.Blog")}
-						</Nav.Link>
-						<Nav.Link href="https://docs.smswithoutborders.com/" className="mx-2">
-							{t("Nav.Help")}
-						</Nav.Link>
-						<Nav.Link as={Link} to="/Contact_Us" className="mx-2">
-							{t("Nav.Contact")}
-						</Nav.Link>
-					</Nav>
-					<Nav className="social-icons">
-						<Nav.Link href="https://x.com/RelaySMS" className="mx-2">
-							<img src="./x.svg" alt="X logo" height="20" />
-						</Nav.Link>
-						<Nav.Link href="https://github.com/smswithoutborders" className="mx-2">
-							<FaGithub />
-						</Nav.Link>
-						<LanguageSwitcher className="mx-2" />
-					</Nav>
-				</Navbar.Collapse>
-			</Navbar>
-
-			<Container
-				className="py-5 mt-5 d-flex flex-column justify-content-center"
-				style={{ minHeight: "90vh" }}
+		<Box
+			dir={isRtl ? "rtl" : "ltr"}
+			sx={{
+				minHeight: "100vh",
+				position: "relative",
+				backgroundColor: "#FAF2E4",
+				overflow: "hidden",
+				fontFamily: "Montserrat, sans-serif",
+				textAlign: "center",
+				px: 2
+			}}
+		>
+			<Box
+				sx={{
+					position: "absolute",
+					width: "100%",
+					height: "100%",
+					top: 0,
+					left: 0,
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
+					zIndex: 0,
+					pointerEvents: "none"
+				}}
 			>
-				<Row className="mb-5">
-					<Col>
-						<h2
-							className="text-center"
-							style={{
-								fontSize: "2.5rem",
-								fontWeight: "bold",
-								color: "#333",
-								padding: window.innerWidth >= 768 ? "20px" : "20px",
-								transition: "color 0.3s ease, transform 0.3s ease"
-							}}
-							onMouseEnter={(e) => {
-								e.currentTarget.style.color = "#0056b3";
-								e.currentTarget.style.transform = "scale(1.05)";
-							}}
-							onMouseLeave={(e) => {
-								e.currentTarget.style.color = "#333";
-								e.currentTarget.style.transform = "scale(1)";
+				{[1050, 950, 820, 720, 620, 560, 460].map((size, index) => (
+					<Box
+						key={index}
+						sx={{
+							position: "absolute",
+							width: size,
+							height: size - 30,
+							borderRadius: "43%",
+							backgroundColor: "#99c6c6",
+							opacity: 0.18,
+							animation: `${rotateWave} ${5 + index * 2}s linear infinite`
+						}}
+					/>
+				))}
+			</Box>
+
+			<Box
+				sx={{
+					zIndex: 2,
+					position: "relative",
+					minHeight: "100vh",
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "center",
+					alignItems: "center",
+					color: "#000",
+					maxWidth: "1200px",
+					mx: "auto",
+					pt: 8,
+					pb: 10
+				}}
+			>
+				<Typography
+					variant="h2"
+					sx={{
+						fontWeight: 100,
+						mb: 6,
+						color: "#1e283a",
+						textShadow: "1px 1px 2px rgba(255,255,255,0.5)",
+						fontSize: "clamp(2rem, 5vw, 3.5rem)",
+						padding: window.innerWidth >= 768 ? "20px" : "20px",
+						transition: "color 0.3s ease, transform 0.3s ease"
+					}}
+				>
+					{t("ContactUs.Title")}
+				</Typography>
+
+				<Box
+					sx={{
+						display: "grid",
+						gridTemplateColumns: {
+							xs: "1fr",
+							sm: "repeat(2, 1fr)",
+							md: "repeat(3, 1fr)"
+						},
+						gap: 4,
+						width: "100%",
+						px: { xs: 2, sm: 4 }
+					}}
+				>
+					{socialLinks.map(({ icon, url, label, description, ButtonText }, index) => (
+						<Box
+							key={index}
+							sx={{
+								bgcolor: "#ffffff",
+								borderRadius: "16px",
+								boxShadow: "0px 6px 16px rgba(0,0,0,0.1)",
+								padding: 4,
+								textAlign: "center",
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
+								transition: "transform 0.3s ease, box-shadow 0.3s ease",
+								"&:hover": {
+									transform: "translateY(-6px)",
+									boxShadow: "0px 12px 24px rgba(0,0,0,0.15)"
+								}
 							}}
 						>
-							{t("ContactUs.Title")}
-						</h2>
-					</Col>
-				</Row>
-				<Row className="justify-content-center">
-					{contactItems.map((item, index) => (
-						<ContactItem key={index} {...item} />
+							<FontAwesomeIcon
+								icon={icon}
+								style={{
+									fontSize: "3.2rem",
+									color: "#FF9E43",
+									marginBottom: "1rem"
+								}}
+							/>
+							<Typography variant="h6" sx={{ fontWeight: 600, mb: 1, color: "#1e283a" }}>
+								{label}
+							</Typography>
+							<Typography variant="body2" sx={{ mb: 2, color: "#555", lineHeight: 1.6 }}>
+								{description}
+							</Typography>
+							<Button
+								variant="contained"
+								href={url || "#"}
+								target={url.startsWith("mailto:") ? undefined : "_blank"}
+								rel={url.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+								sx={{
+									backgroundColor: "#FF9E43",
+									color: "rgba(1, 64, 136, 0.86)",
+									textTransform: "none",
+									fontWeight: 500,
+									py: 1.2,
+									px: 5,
+									fontSize: { xs: "12px", md: "15px" },
+									borderRadius: 3,
+									border: "1px solid rgba(240, 135, 37, 0.41)",
+									boxShadow: "0 2px 6px rgba(1, 64, 136, 0.86)",
+									transition: "all 0.3s ease-in-out",
+									"&:hover": {
+										backgroundColor: "rgba(1, 64, 136, 0.86)",
+										color: "white",
+										boxShadow: "0 6px 18px #FF9E43"
+									}
+								}}
+							>
+								{ButtonText}
+							</Button>
+						</Box>
 					))}
-				</Row>
-			</Container>
-		</>
+				</Box>
+			</Box>
+		</Box>
 	);
 };
 
-export default Contact_Us;
+export default ContactUs;

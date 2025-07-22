@@ -1,115 +1,124 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import LanguageSwitcher from "./LanguageSwitcher";
+import React, { useEffect, useState, useMemo } from "react";
+import { Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import { FaGithub } from "react-icons/fa";
-import { Box } from "@mui/material";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faXTwitter, faBluesky } from "@fortawesome/free-brands-svg-icons";
+import LanguageSwitcher from "./LanguageSwitcher";
+import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
 
 const Footer = () => {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => setScrolled(window.scrollY > 50);
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	const logoSrc = useMemo(() => (scrolled ? "/RelaySMSDark.png" : "/logo.png"), [scrolled]);
 
 	return (
 		<footer
-			className="footer py-5"
+			dir={isRtl ? "rtl" : "ltr"}
 			style={{
-				backgroundImage: "url('/foot.png')",
-				backgroundSize: "cover",
-				backgroundPosition: "center",
-				backgroundRepeat: "no-repeat",
-				color: "#000158"
+				backgroundColor: "#000158",
+				color: "#ffffff",
+				padding: "2.5rem 0"
 			}}
 		>
-			<Container>
-				<Row className="justify-content-center text-center text-md-start" style={{ gap: "20px" }}>
-					{/* Logo Column */}
-					<Col sm={6} md={4} lg={3} className="footer-col mb-4">
-						<Box
-							sx={{
-								width: "100%",
-								maxWidth: 500,
-								margin: "0 auto",
-								borderRadius: 4,
-								overflow: "hidden"
-							}}
-						>
-							<img
-								src="/logo.png"
-								alt={t("Footer.logoAlt", "Meet the Best Doctors")}
-								style={{
-									width: "100%",
-									height: "auto",
-									display: "block",
-									objectFit: "cover"
-								}}
-							/>
-						</Box>
-					</Col>
+			<Row className="align-items-center px-4 px-md-5 mb-4">
+				<Col
+					xs={12}
+					md={4}
+					className="d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
+				>
+					<img
+						src={logoSrc}
+						alt="RelaySMS Logo"
+						style={{ height: 36, transition: "0.5s ease-in-out" }}
+					/>
+				</Col>
 
-					{/* Social Media and Language Switcher Row */}
-					<Col className="d-flex justify-content-center align-items-center">
-						<a
-							href="https://x.com/RelaySMS"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="footer-link mx-2"
-							aria-label="Visit our Twitter"
-							title={t("social.x")}
-							style={{
-								textDecoration: "none",
-								color: "#000158",
-								transition: "transform 0.3s ease"
-							}}
-						>
-							<img src="./x-w.png" alt="X logo" height="20" />
-						</a>
-
-						<a
+				<Col xs={12} md={4} className="d-flex justify-content-center mb-3 mb-md-0">
+					<Box
+						sx={{
+							display: "flex",
+							justifyContent: "center",
+							gap: 2,
+							alignItems: "center"
+						}}
+					>
+						<IconButton
+							component="a"
 							href="https://github.com/smswithoutborders"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="footer-link mx-2"
-							aria-label="Visit our GitHub"
-							title={t("social.github")}
-							style={{
-								textDecoration: "none",
-								color: "#000158",
-								fontSize: "1.5rem",
-								transition: "transform 0.3s ease"
+							aria-label="GitHub"
+							sx={{
+								color: "#ffffff",
+								transition: "transform 0.3s, color 0.3s",
+								"&:hover": {
+									color: "#9999ff",
+									transform: "scale(1.15)"
+								}
 							}}
 						>
-							<FaGithub />
-						</a>
+							<FontAwesomeIcon icon={faGithub} size="lg" />
+						</IconButton>
 
-						<a
+						<IconButton
+							component="a"
+							href="https://x.com/RelaySMS"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="X"
+							sx={{
+								color: "#ffffff",
+								transition: "transform 0.3s, color 0.3s",
+								"&:hover": {
+									color: "#9999ff",
+									transform: "scale(1.15)"
+								}
+							}}
+						>
+							<FontAwesomeIcon icon={faXTwitter} size="lg" />
+						</IconButton>
+
+						<IconButton
+							component="a"
 							href="https://bsky.app/profile/relaysms.bsky.social"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="footer-link mx-2"
-							aria-label="Visit our Bluesky"
-							title={t("social.bluesky")}
-							style={{
-								textDecoration: "none",
-								color: "#000158",
-								fontSize: "1.5rem",
-								transition: "transform 0.3s ease"
+							aria-label="Bluesky"
+							sx={{
+								color: "#ffffff",
+								transition: "transform 0.3s, color 0.3s",
+								"&:hover": {
+									color: "#9999ff",
+									transform: "scale(1.15)"
+								}
 							}}
 						>
-							<img src="./bluesky.svg" alt="Bluesky logo" height="24" />
-						</a>
+							<FontAwesomeIcon icon={faBluesky} size="lg" />
+						</IconButton>
+					</Box>
+				</Col>
 
-						<LanguageSwitcher className="mx-2" />
-					</Col>
-				</Row>
+				<Col xs={12} md={4} className="d-flex justify-content-center justify-content-md-end">
+					<LanguageSwitcher />
+				</Col>
+			</Row>
 
-				{/* Copyright Row */}
-				<Row className="mt-4">
-					<Col className="text-center">
-						<p style={{ fontSize: "0.875rem", color: "#6c757d" }}>
-							&copy; {new Date().getFullYear()} {t("Footer.copyright")}
-						</p>
-					</Col>
-				</Row>
-			</Container>
+			<Row className="px-4 px-md-5">
+				<Col className="text-center">
+					<p style={{ fontSize: "0.85rem", color: "#cccccc", marginBottom: 0 }}>
+						&copy; {new Date().getFullYear()} {t("Footer.copyright")}
+					</p>
+				</Col>
+			</Row>
 		</footer>
 	);
 };
