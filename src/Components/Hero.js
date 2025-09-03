@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useTranslation } from "react-i18next";
-import { Grid, Typography, Box, Button, keyframes } from "@mui/material";
+import { Grid, Typography, Box, Button } from "@mui/material";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
@@ -11,11 +11,10 @@ import { Typewriter } from "react-simple-typewriter";
 import Howitworks from "./Howitworks";
 import Blog from "./Blog";
 import FAQ from "./FAQ";
-
-const bounce = keyframes`
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-`;
+import WhoShouldUse from "./WhoShouldUse";
+import HowRelaySMSWorks from "./HowRelaySMSWorks";
+import SupportedPlatforms from "./SupportedPlatforms";
+import { Download } from "@mui/icons-material";
 
 const Hero = () => {
 	const [showCursor, setShowCursor] = useState(true);
@@ -42,26 +41,27 @@ const Hero = () => {
 				dir={isRtl ? "rtl" : "ltr"}
 				sx={{
 					minHeight: { xs: "80vh", lg: "92vh", xl: "100vh" },
-					px: { xs: 2, md: 5, lg: 8, xl: 10 },
+					px: { xs: 2, md: 5, lg: 8, xl: 20 },
 					py: { xs: 6, md: 2, lg: 5 },
 					display: "flex",
 					alignItems: "center",
-					backgroundColor: "#FAF2E4"
+					backgroundColor: "#FFF6EE"
 				}}
 			>
 				<Grid container spacing={4} alignItems="center" justifyContent="center">
 					<Grid item xs={12} md={6}>
 						<Typography
 							sx={{
-								mt: { xs: 8, md: 0, lg: 4 },
-								fontSize: { xs: "1.75rem", md: "2.75rem", lg: "3.5rem", xl: "5rem" },
+								mt: { xs: 8, md: 0, lg: 4, xl: 12 },
+								fontSize: { xs: "1.75rem", md: "2.75rem", lg: "3.5rem", xl: "4rem" },
 								textAlign: { xs: "center", md: "left" },
-								fontWeight: 600,
-								lineHeight: 1.2,
+								fontWeight: 900,
+								lineHeight: 1.3,
 								color: "#000158",
 								whiteSpace: "pre-wrap",
 								wordBreak: "break-word",
-								minHeight: "80px"
+								minHeight: "80px",
+								fontFamily: "'Unbounded', Ubuntu"
 							}}
 							gutterBottom
 						>
@@ -82,7 +82,7 @@ const Hero = () => {
 							color="text.secondary"
 							paragraph
 							sx={{
-								fontSize: { xs: "18px", md: "25px" },
+								fontSize: { xs: "18px", md: "22px" },
 								mt: { xs: 4, md: 0 },
 								textAlign: { xs: "center", md: "left" }
 							}}
@@ -105,22 +105,23 @@ const Hero = () => {
 								size="large"
 								sx={{
 									backgroundColor: "#FF9E43",
-									color: "rgba(1, 64, 136, 0.86)",
+									color: "#1a1a2cff",
 									textTransform: "none",
-									fontWeight: 600,
 									py: 1.2,
 									px: 5,
-									fontSize: { xs: "15px", md: "20px" },
-									borderRadius: 3,
-									border: "1px solid rgba(240, 135, 37, 0.41)",
-									boxShadow: "0 2px 6px rgba(1, 64, 136, 0.86)",
+									fontSize: { xs: "15px", md: "18px" },
 									transition: "all 0.3s ease-in-out",
 									display: "flex",
 									alignItems: "center",
+									border: "1.5px solid #001871",
+									borderRadius: "12px",
+									boxShadow: "0 4px 15px rgba(0, 24, 113, 0.2)",
 									"&:hover": {
-										backgroundColor: "rgba(1, 64, 136, 0.86)",
+										backgroundColor: "#001871",
 										color: "white",
-										boxShadow: "0 6px 18px #FF9E43",
+										borderColor: "#FFB366",
+										transform: "translateY(-3px)",
+										boxShadow: "0 12px 30px rgba(0, 24, 113, 0.4)",
 										"& img": {
 											filter: "brightness(0) invert(1)"
 										}
@@ -128,22 +129,12 @@ const Hero = () => {
 								}}
 							>
 								{t("Landing.Android")}
-								<Box
-									component="img"
-									src="/download.gif"
-									alt="Play Store"
-									sx={{
-										width: 24,
-										height: 24,
-										ml: 1,
-										animation: `${bounce} 1.4s infinite`
-									}}
-								/>
+								<Download fontSize="10px" sx={{ ml: 1 }} />
 							</Button>
 						</Box>
 
 						<Box display="flex" alignItems="flex-start" mt={3} sx={{ py: 3, gap: 1 }}>
-							<VerifiedIcon sx={{ color: "rgba(240, 135, 37, 0.96)", mt: 0.5 }} />
+							<VerifiedIcon sx={{ color: "rgba(31, 75, 22, 0.96)", mt: 0.5 }} />
 							<Typography
 								variant="body1"
 								sx={{
@@ -173,24 +164,84 @@ const Hero = () => {
 
 					<Grid item xs={12} md={6}>
 						<Box
-							component="img"
-							src="/RelayHome.png"
-							alt="Relay Home"
 							sx={{
-								width: { xs: "100%", md: "85%", lg: "70%", xl: "60%" },
-								height: { xs: 340, md: 520, xl: 600 },
-								objectFit: "contain",
-								mx: "auto",
-								display: "block",
-								mt: { xs: 2, lg: 6, xl: 0 }
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+								position: "relative",
+								height: { xs: 350, sm: 380, md: 400, lg: 450 },
+								mt: { xs: 2, sm: 3, md: 4, lg: 6, xl: 0 },
+								mb: { xs: 4, sm: 5, md: 0 },
+								overflow: "visible",
+								width: "100%",
+								px: { xs: 2, sm: 3, md: 0 }
 							}}
-						/>
+						>
+							{/* Background image (2.png) - tilted behind */}
+							<Box
+								component="img"
+								src="/2.png"
+								alt="RelaySMS Background"
+								sx={{
+									position: "absolute",
+									width: { 
+										xs: "45%", 
+										sm: "50%", 
+										md: "60%", 
+										lg: "65%", 
+										xl: "70%" 
+									},
+									maxWidth: { xs: 200, sm: 220, md: 220, lg: 300, xl: 360 },
+									height: "auto",
+									objectFit: "contain",
+									transform: { 
+										xs: "rotate(5deg) translate(15px, 0px)",
+										sm: "rotate(6deg) translate(18px, -2px)",
+										md: "rotate(12deg) translate(60px, -8px)",
+										lg: "rotate(12deg) translate(70px, -8px)",
+										xl: "rotate(12deg) translate(150px, -8px)"
+									},
+									opacity: { xs: 0.8, md: 1 },
+									zIndex: 1
+								}}
+							/>
+							{/* Foreground image (1.png) */}
+							<Box
+								component="img"
+								src="/1.png"
+								alt="RelaySMS Main"
+								sx={{
+									position: "relative",
+									width: { 
+										xs: "55%", 
+										sm: "60%", 
+										md: "70%", 
+										lg: "75%", 
+										xl: "80%" 
+									},
+									maxWidth: { xs: 220, sm: 250, md: 250, lg: 350, xl: 400 },
+									height: "auto",
+									objectFit: "contain",
+									zIndex: 2,
+									transform: { 
+										xs: "translate(-8px, 0px)",
+										sm: "translate(-10px, 0px)",
+										md: "translate(-30px, -2px)",
+										lg: "translate(-40px, -3px)",
+										xl: "translate(-50px, -4px)"
+									}
+								}}
+							/>
+						</Box>
 					</Grid>
 				</Grid>
 			</Box>
 
 			{/* ========== OTHER SECTIONS ========== */}
 			<Howitworks />
+			<WhoShouldUse />
+			<HowRelaySMSWorks />
+			<SupportedPlatforms />
 			<Blog />
 			<FAQ />
 		</div>

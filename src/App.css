@@ -3,7 +3,7 @@
 html,
 body {
 	overflow-x: hidden;
-	font-family: "Mona Sans", "ubuntu";
+	font-family: "ubuntu";
 }
 
 * {
@@ -17,7 +17,7 @@ body {
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
-	background-color: #ff9e43;
+	background-color: #FF9E43;
 	color: #000158;
 	font-size: 2rem;
 	font-weight: bold;
@@ -31,11 +31,11 @@ body {
 }
 
 .carousel-indicators [data-bs-target] {
-	background-color: #ff9e43;
+	background-color: #FF9E43;
 }
 
 .carousel-indicators [data-bs-target].active {
-	background-color: #ff9e43;
+	background-color: #FF9E43;
 }
 .faq-number {
 	width: 50px;
@@ -67,7 +67,7 @@ body {
 .card-number2 {
 	width: 30px;
 	height: 30px;
-	background-color: #ff9e43;
+	background-color: #FF9E43;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;

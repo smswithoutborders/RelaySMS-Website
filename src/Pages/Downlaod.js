@@ -49,7 +49,7 @@ const Download = () => {
 		<Box
 			dir={isRtl ? "rtl" : "ltr"}
 			sx={{
-				pt: "100px",
+				py: { xs: 6, md: 22 },
 				minHeight: "100vh",
 				backgroundColor: "#FAF2E4",
 				pb: 8,
@@ -78,8 +78,7 @@ const Download = () => {
 						sx={{
 							fontSize: "1.2rem",
 							color: "#555555",
-							fontFamily: "'Mona Sans', Ubuntu",
-							fontStyle: "italic",
+							fontFamily: "Ubuntu",
 							mt: 1
 						}}
 					>
@@ -107,13 +106,10 @@ const Download = () => {
 									alignItems: "center",
 									p: 3,
 									mb: 3,
-									borderRadius: 4,
 									transition: "all 0.3s ease",
 									textDecoration: "none",
 									color: "inherit",
-									boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
 									"&:hover": {
-										boxShadow: "0 12px 24px rgba(255, 158, 67, 0.4)",
 										transform: "scale(1.03)"
 									},
 									"& img": {
@@ -147,7 +143,7 @@ const Download = () => {
 										textTransform: "none",
 										ml: 3,
 										px: 4,
-										"&:hover": { bgcolor: "#e88b27" }
+										"&:hover": { bgcolor: "#d65500" }
 									}}
 								>
 									Download
@@ -172,13 +168,10 @@ const Download = () => {
 									alignItems: "center",
 									p: 3,
 									mb: 3,
-									borderRadius: 4,
 									transition: "all 0.3s ease",
 									textDecoration: "none",
 									color: "inherit",
-									boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
 									"&:hover": {
-										boxShadow: "0 12px 24px rgba(0, 86, 179, 0.4)",
 										transform: "scale(1.03)"
 									},
 									"& img": {
@@ -238,8 +231,7 @@ const Download = () => {
 							sx={{
 								width: "100%",
 								maxWidth: 450,
-								borderRadius: 3,
-								boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+								borderRadius: 3
 							}}
 						/>
 					</Grid>

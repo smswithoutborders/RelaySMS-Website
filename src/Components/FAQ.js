@@ -43,7 +43,6 @@ const FAQSection = ({ isFarsi }) => {
 			sx={{
 				py: { xs: 10, md: 14 },
 				px: { xs: 3, md: 8 },
-				backgroundColor: "rgb(241, 241, 234)",
 				fontFamily: "'Unbounded', 'Ubuntu', sans-serif",
 				direction: isFarsi ? "rtl" : "ltr"
 			}}
@@ -69,8 +68,7 @@ const FAQSection = ({ isFarsi }) => {
 					sx={{
 						fontSize: "1.2rem",
 						color: "#555555",
-						fontFamily: "'Mona Sans', Ubuntu",
-						fontStyle: "italic",
+						fontFamily: "Ubuntu",
 						mt: 1
 					}}
 				>
@@ -88,8 +86,7 @@ const FAQSection = ({ isFarsi }) => {
 						sx={{
 							mb: 2,
 							borderRadius: 2,
-							boxShadow: "0 8px 24px rgba(0,0,0,0.04)",
-							bgcolor: "#fff",
+							bgcolor: "#f9f9f9",
 							overflow: "hidden",
 							"&:before": {
 								display: "none"

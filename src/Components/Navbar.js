@@ -17,12 +17,12 @@ export default function Navigation() {
 	const { t, i18n } = useTranslation();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 	const [anchorElNav, setAnchorElNav] = useState(null);
-	const iconColor = "#004080";
+	const iconColor = "#2d2e2eff";
 	const [scrolled, setScrolled] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => {
-			if (window.scrollY > 50) {
+			if (window.scrollY > 60) {
 				setScrolled(true);
 			} else {
 				setScrolled(false);
@@ -61,16 +61,15 @@ export default function Navigation() {
 		<AppBar
 			dir={isRtl ? "rtl" : "ltr"}
 			position="fixed"
+			elevation={scrolled ? 4 : 0}
 			sx={{
-				backgroundColor: scrolled ? "#e0d7c3" : "#faf2e4",
-				boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.3)" : 1,
+				backgroundColor: scrolled ? "#FFF6EE" : "#ffffff02",
 				top: 0,
 				left: 0,
 				right: 0,
 				zIndex: (theme) => theme.zIndex.drawer + 1,
-				backdropFilter: "blur(6px)",
 				transition: "all 0.3s ease",
-				height: scrolled ? 70 : 72
+				height: scrolled ? 70 : 70
 			}}
 		>
 			<Toolbar
@@ -93,7 +92,7 @@ export default function Navigation() {
 						src="/logo.png"
 						alt="Logo"
 						sx={{
-							height: { xs: 20, sm: 30, md: 40 },
+							height: { xs: 20, sm: 30, md: 32 },
 							mr: 1
 						}}
 					/>
@@ -105,7 +104,7 @@ export default function Navigation() {
 						alignItems: "center",
 						gap: 3,
 						flexGrow: 1,
-						justifyContent: "center"
+						justifyContent: "flex-end"
 					}}
 				>
 					{navLinks.map((link, index) =>
@@ -120,7 +119,7 @@ export default function Navigation() {
 									color: iconColor,
 									textTransform: "none",
 									fontWeight: 500,
-									fontSize: { md: "15px", lg: "16px", xl: "18px" },
+									fontSize: { md: "15px", lg: "16px", xl: "16px" },
 									backgroundImage: "linear-gradient(to right,rgb(23, 114, 184),rgb(5, 105, 155))",
 									backgroundSize: "0% 2px",
 									backgroundRepeat: "no-repeat",
@@ -128,7 +127,7 @@ export default function Navigation() {
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
 										backgroundSize: "100% 2px",
-										color: "#E66F00"
+										color: "#FF9E43"
 									}
 								}}
 							>
@@ -152,7 +151,7 @@ export default function Navigation() {
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
 										backgroundSize: "100% 2px",
-										color: "#E66F00"
+										color: "#FF9E43"
 									}
 								}}
 							>
@@ -160,10 +159,6 @@ export default function Navigation() {
 							</Button>
 						)
 					)}
-				</Box>
-
-				<Box sx={{ display: { xs: "none", md: "flex" } }}>
-					<LanguageSwitcher />
 				</Box>
 
 				<Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center", ml: 2, gap: 1 }}>
@@ -175,7 +170,7 @@ export default function Navigation() {
 						aria-label="GitHub"
 						sx={{ color: iconColor }}
 					>
-						<FontAwesomeIcon icon={faGithub} size="md" />
+						<FontAwesomeIcon icon={faGithub} size="sm" />
 					</IconButton>
 					<IconButton
 						component="a"
@@ -185,7 +180,7 @@ export default function Navigation() {
 						aria-label="RelaySMS on X"
 						sx={{ color: iconColor }}
 					>
-						<FontAwesomeIcon icon={faXTwitter} size="md" />
+						<FontAwesomeIcon icon={faXTwitter} size="sm" />
 					</IconButton>
 					<IconButton
 						component="a"
@@ -195,8 +190,12 @@ export default function Navigation() {
 						aria-label="RelaySMS on Bluesky"
 						sx={{ color: iconColor }}
 					>
-						<FontAwesomeIcon icon={faBluesky} size="md" />
+						<FontAwesomeIcon icon={faBluesky} size="sm" />
 					</IconButton>
+				</Box>
+
+				<Box sx={{ display: { xs: "none", md: "flex" }, ml: 2 }}>
+					<LanguageSwitcher />
 				</Box>
 
 				<Box sx={{ display: { xs: "flex", md: "none" } }}>

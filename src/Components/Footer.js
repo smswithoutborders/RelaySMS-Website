@@ -6,6 +6,7 @@ import { faGithub, faXTwitter, faBluesky } from "@fortawesome/free-brands-svg-ic
 import LanguageSwitcher from "./LanguageSwitcher";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
+import { Divider } from "@mui/material";
 
 const Footer = () => {
 	const { t, i18n } = useTranslation();
@@ -38,7 +39,7 @@ const Footer = () => {
 					<img
 						src={logoSrc}
 						alt="RelaySMS Logo"
-						style={{ height: 36, transition: "0.5s ease-in-out" }}
+						style={{ height: 32, transition: "0.5s ease-in-out" }}
 					/>
 				</Col>
 
@@ -66,7 +67,7 @@ const Footer = () => {
 								}
 							}}
 						>
-							<FontAwesomeIcon icon={faGithub} size="lg" />
+							<FontAwesomeIcon icon={faGithub} size="md" />
 						</IconButton>
 
 						<IconButton
@@ -84,7 +85,7 @@ const Footer = () => {
 								}
 							}}
 						>
-							<FontAwesomeIcon icon={faXTwitter} size="lg" />
+							<FontAwesomeIcon icon={faXTwitter} size="md" />
 						</IconButton>
 
 						<IconButton
@@ -102,7 +103,7 @@ const Footer = () => {
 								}
 							}}
 						>
-							<FontAwesomeIcon icon={faBluesky} size="lg" />
+							<FontAwesomeIcon icon={faBluesky} size="md" />
 						</IconButton>
 					</Box>
 				</Col>
@@ -112,7 +113,8 @@ const Footer = () => {
 				</Col>
 			</Row>
 
-			<Row className="px-4 px-md-5">
+			<Row className="px-4 px-md-5 pt-2">
+				<Divider orientation="horizontal" sx={{ borderColor: "#cccccc67", my: 2 }} />
 				<Col className="text-center">
 					<p style={{ fontSize: "0.85rem", color: "#cccccc", marginBottom: 0 }}>
 						&copy; {new Date().getFullYear()} {t("Footer.copyright")}
