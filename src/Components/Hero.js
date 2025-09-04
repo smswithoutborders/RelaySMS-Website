@@ -40,27 +40,31 @@ const Hero = () => {
 			<Box
 				dir={isRtl ? "rtl" : "ltr"}
 				sx={{
-					minHeight: { xs: "80vh", lg: "92vh", xl: "100vh" },
+					minHeight: { xs: "80vh", md: "85vh", lg: "95vh", xl: "100vh" },
 					px: { xs: 2, md: 5, lg: 8, xl: 20 },
-					py: { xs: 6, md: 2, lg: 5 },
+					py: { xs: 6, md: 8, lg: 10, xl: 12 },
+					pt: { xs: 6, md: 12, lg: 16, xl: 20 }, // Added top padding to push content below nav
 					display: "flex",
 					alignItems: "center",
-					backgroundColor: "#FFF6EE"
+					backgroundColor: "#FFF6EE",
+					position: "relative",
+					overflow: "hidden" // Prevent phone images from overlapping nav
 				}}
 			>
-				<Grid container spacing={4} alignItems="center" justifyContent="center">
-					<Grid item xs={12} md={6}>
+				<Grid container spacing={4} alignItems="center" justifyContent="center" sx={{ height: "100%" }}>
+					<Grid item xs={12} md={6} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
 						<Typography
 							sx={{
-								mt: { xs: 8, md: 0, lg: 4, xl: 12 },
-								fontSize: { xs: "1.75rem", md: "2.75rem", lg: "3.5rem", xl: "4rem" },
+								mt: { xs: 4, md: 0, lg: 2, xl: 4 },
+								mb: { xs: 2, md: 3, lg: 3 },
+								fontSize: { xs: "1.75rem", md: "2.5rem", lg: "3.2rem", xl: "3.9rem" },
 								textAlign: { xs: "center", md: "left" },
 								fontWeight: 900,
-								lineHeight: 1.3,
+								lineHeight: 1.2,
 								color: "#000158",
 								whiteSpace: "pre-wrap",
 								wordBreak: "break-word",
-								minHeight: "80px",
+								minHeight: { xs: "60px", md: "80px", lg: "100px" },
 								fontFamily: "'Unbounded', Ubuntu"
 							}}
 							gutterBottom
@@ -82,9 +86,11 @@ const Hero = () => {
 							color="text.secondary"
 							paragraph
 							sx={{
-								fontSize: { xs: "18px", md: "22px" },
-								mt: { xs: 4, md: 0 },
-								textAlign: { xs: "center", md: "left" }
+								fontSize: { xs: "18px", md: "20px", lg: "22px" },
+								mt: { xs: 2, md: 3 },
+								mb: { xs: 3, md: 4 },
+								textAlign: { xs: "center", md: "left" },
+								lineHeight: 1.6
 							}}
 						>
 							{t("Landing.h2")}
@@ -95,6 +101,7 @@ const Hero = () => {
 								display: "flex",
 								justifyContent: { xs: "center", md: "flex-start" },
 								mt: { xs: 3, md: 4 },
+								mb: { xs: 2, md: 3 },
 								width: "100%"
 							}}
 						>
@@ -162,18 +169,19 @@ const Hero = () => {
 						</Box>
 					</Grid>
 
-					<Grid item xs={12} md={6}>
+					<Grid item xs={12} md={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
 						<Box
 							sx={{
 								display: "flex",
 								justifyContent: "center",
 								alignItems: "center",
 								position: "relative",
-								height: { xs: 350, sm: 380, md: 400, lg: 450 },
-								mt: { xs: 2, sm: 3, md: 4, lg: 6, xl: 0 },
+								height: { xs: 350, sm: 380, md: 400, lg: 450, xl: 500 },
+								mt: { xs: 2, sm: 3, md: 0 },
 								mb: { xs: 4, sm: 5, md: 0 },
 								overflow: "visible",
 								width: "100%",
+								maxWidth: { xs: "100%", md: "90%", lg: "85%", xl: "80%" },
 								px: { xs: 2, sm: 3, md: 0 }
 							}}
 						>
@@ -187,19 +195,19 @@ const Hero = () => {
 									width: { 
 										xs: "45%", 
 										sm: "50%", 
-										md: "60%", 
-										lg: "65%", 
-										xl: "70%" 
+										md: "55%", 
+										lg: "60%", 
+										xl: "65%" 
 									},
-									maxWidth: { xs: 200, sm: 220, md: 220, lg: 300, xl: 360 },
+									maxWidth: { xs: 200, sm: 220, md: 200, lg: 280, xl: 320 },
 									height: "auto",
 									objectFit: "contain",
 									transform: { 
 										xs: "rotate(5deg) translate(15px, 0px)",
 										sm: "rotate(6deg) translate(18px, -2px)",
-										md: "rotate(12deg) translate(60px, -8px)",
-										lg: "rotate(12deg) translate(70px, -8px)",
-										xl: "rotate(12deg) translate(150px, -8px)"
+										md: "rotate(10deg) translate(40px, -5px)",
+										lg: "rotate(10deg) translate(50px, -5px)",
+										xl: "rotate(10deg) translate(60px, -5px)"
 									},
 									opacity: { xs: 0.8, md: 1 },
 									zIndex: 1
@@ -215,20 +223,20 @@ const Hero = () => {
 									width: { 
 										xs: "55%", 
 										sm: "60%", 
-										md: "70%", 
-										lg: "75%", 
-										xl: "80%" 
+										md: "65%", 
+										lg: "70%", 
+										xl: "75%" 
 									},
-									maxWidth: { xs: 220, sm: 250, md: 250, lg: 350, xl: 400 },
+									maxWidth: { xs: 220, sm: 250, md: 230, lg: 320, xl: 360 },
 									height: "auto",
 									objectFit: "contain",
 									zIndex: 2,
 									transform: { 
 										xs: "translate(-8px, 0px)",
 										sm: "translate(-10px, 0px)",
-										md: "translate(-30px, -2px)",
-										lg: "translate(-40px, -3px)",
-										xl: "translate(-50px, -4px)"
+										md: "translate(-20px, -2px)",
+										lg: "translate(-25px, -3px)",
+										xl: "translate(-30px, -4px)"
 									}
 								}}
 							/>
