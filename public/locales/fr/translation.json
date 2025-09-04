@@ -150,5 +150,27 @@
 			"fDroid": "Installez via F-Droid pour les amateurs de logiciels libres."
 		},
 		"iosDescription": "Disponible dès maintenant sur l'App Store d'Apple."
+	},
+	"WhoShouldUse": {
+		"Header": "Qui devrait utiliser RelaySMS ?",
+		"Description": "Toute personne confrontée à une connectivité Internet médiocre ou vivant dans une région sujette aux coupures d'Internet devrait utiliser RelaySMS pour contourner les coupures et rester connectée. La majorité des utilisateurs de RelaySMS vivent actuellement en Afrique et en Inde—mais l'application est disponible dans le monde entier.",
+		"AndroidButton": "Télécharger pour Android",
+		"iOSButton": "Télécharger pour iOS"
+	},
+	"HowRelaySMSWorks": {
+		"Header": "Comment fonctionne RelaySMS ?",
+		"Description1": "RelaySMS utilise la messagerie SMS (aussi appelée \"messagerie texte\") pour rediriger les messages hors ligne vers en ligne.",
+		"Description2": "Après avoir configuré RelaySMS sur votre téléphone, vous pouvez vous connecter et envoyer des messages sur vos plateformes de messagerie en ligne préférées sans utiliser de données (tarifs SMS standard applicables).",
+		"Description3": "La clé de RelaySMS réside dans son utilisation de clients passerelles. Ces appareils fonctionnent dans des zones avec une connexion Internet active, leur permettant de recevoir un message SMS d'un utilisateur RelaySMS hors ligne et de le transmettre à un serveur en ligne où l'utilisateur a déjà enregistré ses autorisations de plateforme.",
+		"TrainingTitle": "Télécharger les guides de formation",
+		"EnglishPDF": "Guide anglais (PDF)",
+		"FrenchPDF": "Guide français (PDF)",
+		"SeeSpecification": "Lire la suite"
+	},
+	"SupportedPlatforms": {
+		"Header": "Plateformes prises en charge",
+		"Description": "Envoyez des messages vers ces plateformes en ligne par SMS en utilisant RelaySMS, même lorsque vous n'avez pas accès à Internet.",
+		"Error": "Impossible de charger les plateformes prises en charge. Veuillez réessayer plus tard.",
+		"Note": "D'autres plateformes sont continuellement ajoutées. Restez à l'écoute pour les mises à jour !"
 	}
 }

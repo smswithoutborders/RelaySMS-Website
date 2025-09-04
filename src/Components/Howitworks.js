@@ -36,8 +36,8 @@ const HowItWorks = () => {
 			title: t("Howitworks.Step1Title"),
 			description: t("Howitworks.Step1Desc"),
 			image: "/Download.png",
-			buttonText: t("Howitworks.Step1Button", "Get Started"),
-			link: "https://play.google.com/store/apps/details?id=com.afkanerd.sw0b",
+			buttonText: t("Howitworks.Step1Button", "Download"),
+			link: "/Download",
 			bgColor: " #EBF5FB"
 		},
 		{
@@ -82,15 +82,14 @@ const HowItWorks = () => {
 		<Box
 			dir={isRtl ? "rtl" : "ltr"}
 			sx={{
-				backgroundColor: "#EBE4D8",
 				py: { xs: 6, md: 12 },
 				px: { xs: 3, md: 6 }
+				// bgcolor: "#FFF6EE"
 			}}
 		>
 			<Box
 				sx={{
-					textAlign: "center",
-					mb: 5
+					textAlign: "center"
 				}}
 			>
 				<Typography
@@ -98,6 +97,7 @@ const HowItWorks = () => {
 					sx={{
 						fontSize: "2rem",
 						color: "#2D2A5A",
+						fontWeight: 700,
 						fontFamily: "'Unbounded', Ubuntu"
 					}}
 				>
@@ -108,8 +108,7 @@ const HowItWorks = () => {
 					sx={{
 						fontSize: "1.2rem",
 						color: "#555555",
-						fontFamily: "'Mona Sans', Ubuntu",
-						fontStyle: "italic",
+						fontFamily: "Ubuntu",
 						mt: 1
 					}}
 				>
@@ -119,11 +118,11 @@ const HowItWorks = () => {
 					)}
 				</Typography>
 			</Box>
-			<Container sx={{ py: 4, backgroundColor: "#EBE4D8" }}>
+			<Container sx={{ py: 4 }}>
 				<Box
 					sx={{
 						".slick-prev:before, .slick-next:before": {
-							color: " #014088",
+							color: " #FF9E43",
 							fontSize: "28px"
 						},
 						".slick-dots li button:before": {
@@ -143,8 +142,7 @@ const HowItWorks = () => {
 									width: { xs: "100%", sm: "90%", md: "80%", lg: "70%", xl: "65%" },
 									maxWidth: 1200,
 									marginX: "auto",
-									background: `linear-gradient(135deg, ${slide.bgColor} 0%, #ffffff 100%)`,
-									p: { xs: 4, sm: 5, md: 6, lg: 8 },
+									p: { xs: 4, sm: 5, md: 6, lg: 4 },
 									borderRadius: 4,
 									minHeight: 360,
 									display: "flex",
@@ -159,11 +157,42 @@ const HowItWorks = () => {
 									<Grid item xs={12} md={6}>
 										<Item
 											sx={{
-												textAlign: { xs: "center", md: "left" },
+												textAlign: "center",
 												px: { xs: 2, sm: 4, md: 6 },
-												py: { xs: 2, md: 4 }
+												py: { xs: 2, md: 4 },
+												display: "flex",
+												flexDirection: "column",
+												alignItems: "center",
+												justifyContent: "center",
+												height: "100%"
 											}}
 										>
+											{/* Step Number Badge */}
+											<Box
+												sx={{
+													width: 60,
+													height: 60,
+													borderRadius: "50%",
+													backgroundColor: "#000158",
+													color: "rgba(210, 210, 211, 0.86)",
+													display: "flex",
+													alignItems: "center",
+													justifyContent: "center",
+													fontSize: "1.5rem",
+													fontWeight: "bold",
+													fontFamily: "'Unbounded', Ubuntu",
+													mb: 3,
+													border: "3px solid #223250ff",
+													transition: "all 0.3s ease",
+													"&:hover": {
+														transform: "scale(1.1)",
+														boxShadow: "0 6px 15px rgba(255, 158, 67, 0.4)"
+													}
+												}}
+											>
+												{slide.number}
+											</Box>
+
 											<Typography
 												variant="h5"
 												fontWeight="600"
@@ -172,7 +201,6 @@ const HowItWorks = () => {
 													fontFamily: "'Unbounded', Ubuntu",
 													letterSpacing: "0.05em",
 													mb: 2,
-													textShadow: "1px 1px 3px rgba(45, 42, 90, 0.2)",
 													fontSize: { xs: "1rem", md: "1.5rem" }
 												}}
 											>
@@ -188,12 +216,12 @@ const HowItWorks = () => {
 													fontSize: { xs: "1rem", md: "1.125rem" },
 													lineHeight: 1.7,
 													mb: 4,
-													mx: { xs: "auto", md: 0 }
+													mx: "auto"
 												}}
 												dangerouslySetInnerHTML={{
 													__html: slide.description.replace(
 														/<a /g,
-														"<a style='text-decoration: none; color: #007bff;' "
+														"<a style='text-decoration: none; color: #000158;' "
 													)
 												}}
 											/>
@@ -204,21 +232,20 @@ const HowItWorks = () => {
 												target="_blank"
 												rel="noopener noreferrer"
 												sx={{
-													backgroundColor: "#FF9E43",
-													color: "rgba(1, 64, 136, 0.86)",
+													backgroundColor: "#000158",
+													color: "#ffffff",
 													textTransform: "none",
 													fontWeight: 600,
 													py: 1.2,
 													px: 5,
 													fontSize: { xs: "12px", md: "15px" },
-													borderRadius: 3,
-													border: "1px solid rgba(240, 135, 37, 0.41)",
-													boxShadow: "0 2px 6px rgba(1, 64, 136, 0.86)",
 													transition: "all 0.3s ease-in-out",
+													borderRadius: "8px",
 													"&:hover": {
-														backgroundColor: "rgba(1, 64, 136, 0.86)",
+														backgroundColor: "#00013bff",
 														color: "white",
-														boxShadow: "0 6px 18px #FF9E43"
+														transform: "translateY(-2px)",
+														boxShadow: "0 8px 20px rgba(0, 1, 59, 0.3)"
 													}
 												}}
 											>
@@ -243,9 +270,9 @@ const HowItWorks = () => {
 												alt={slide.title}
 												sx={{
 													width: { xs: "80%", sm: "70%", md: "100%" },
-													maxWidth: 350,
+													//maxWidth: 350,
 													height: "auto",
-													maxHeight: 280,
+													maxHeight: 480,
 													objectFit: "contain"
 												}}
 											/>

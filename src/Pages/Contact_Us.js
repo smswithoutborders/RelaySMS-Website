@@ -81,7 +81,7 @@ const ContactUs = () => {
 							width: size,
 							height: size - 30,
 							borderRadius: "43%",
-							backgroundColor: "#99c6c6",
+							backgroundColor: "#99a9c6ff",
 							opacity: 0.18,
 							animation: `${rotateWave} ${5 + index * 2}s linear infinite`
 						}}
@@ -111,7 +111,6 @@ const ContactUs = () => {
 						fontWeight: 100,
 						mb: 6,
 						color: "#1e283a",
-						textShadow: "1px 1px 2px rgba(255,255,255,0.5)",
 						fontSize: "clamp(2rem, 5vw, 3.5rem)",
 						padding: window.innerWidth >= 768 ? "20px" : "20px",
 						transition: "color 0.3s ease, transform 0.3s ease"
@@ -139,16 +138,14 @@ const ContactUs = () => {
 							sx={{
 								bgcolor: "#ffffff",
 								borderRadius: "16px",
-								boxShadow: "0px 6px 16px rgba(0,0,0,0.1)",
 								padding: 4,
 								textAlign: "center",
 								display: "flex",
 								flexDirection: "column",
 								alignItems: "center",
-								transition: "transform 0.3s ease, box-shadow 0.3s ease",
+								transition: "transform 0.3s ease",
 								"&:hover": {
-									transform: "translateY(-6px)",
-									boxShadow: "0px 12px 24px rgba(0,0,0,0.15)"
+									transform: "translateY(-6px)"
 								}
 							}}
 						>
@@ -180,13 +177,14 @@ const ContactUs = () => {
 									px: 5,
 									fontSize: { xs: "12px", md: "15px" },
 									borderRadius: 3,
-									border: "1px solid rgba(240, 135, 37, 0.41)",
-									boxShadow: "0 2px 6px rgba(1, 64, 136, 0.86)",
+									border: "1px solid rgba(1, 64, 136, 0.86)",
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
 										backgroundColor: "rgba(1, 64, 136, 0.86)",
 										color: "white",
-										boxShadow: "0 6px 18px #FF9E43"
+										borderColor: "#FF9E43",
+										transform: "translateY(-2px)",
+										boxShadow: "0 8px 20px rgba(1, 64, 136, 0.3)"
 									}
 								}}
 							>

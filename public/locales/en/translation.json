@@ -32,7 +32,7 @@
 		"SubHeader": "Learn how to set up and use RelaySMS for seamless offline communication.",
 		"Step1Title": "Download the App",
 		"Step1Desc": "Download the RelaySMS App from <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>Google PlayStore</a>, <a href='https://github.com/smswithoutborders/RelaySMS-Android' target='_blank' rel='noopener noreferrer'>GitHub</a>, or <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>build it from source</a>. Ensure your Android device meets the technical requirements (Android 6.0+ with SMS capability).",
-		"Step1Button": "Get Started",
+		"Step1Button": "Download",
 		"Step2Title": "Create an Account",
 		"Step2Desc": "Create an account by clicking 'Add Account,' and filling in the required details. An authentication PIN will be sent to your phone for verification.",
 		"Step2Button": "Learn More",
@@ -45,6 +45,28 @@
 		"Step5Title": "Send Messages",
 		"Step5Desc": "Compose messages for supported platforms without internet. Send these as SMS to a pre-saved gateway number, ensuring encrypted communication.",
 		"Step5Button": "Start Messaging"
+	},
+	"WhoShouldUse": {
+		"Header": "Who should use RelaySMS?",
+		"Description": "Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns should use RelaySMS to circumvent shutdowns and stay connected. The majority of RelaySMS users currently live in Africa and India—but the app is available for use all around the world.",
+		"AndroidButton": "Download for Android",
+		"iOSButton": "Download for iOS"
+	},
+	"HowRelaySMSWorks": {
+		"Header": "How does RelaySMS work?",
+		"Description1": "RelaySMS utilizes SMS messaging (aka \"text messaging\") to route offline messages back online.",
+		"Description2": "After setting up RelaySMS on your phone, you can seamlessly connect and send messages on your preferred online messaging platforms without using any data at all (standard SMS rates will apply).",
+		"Description3": "The key to RelaySMS lies in its use of Gateway Clients. These devices operate in areas with an active internet connection, allowing them to receive an SMS message from an offline RelaySMS user and then forward it to an online server where the user has already saved their platform permissions.",
+		"TrainingTitle": "Download Training Guides",
+		"EnglishPDF": "English Guide (PDF)",
+		"FrenchPDF": "French Guide (PDF)",
+		"SeeSpecification": "Read more"
+	},
+	"SupportedPlatforms": {
+		"Header": "Supported Platforms",
+		"Description": "Send messages to these online platforms through SMS using RelaySMS, even when you don't have internet access.",
+		"Error": "Unable to load supported platforms. Please try again later.",
+		"Note": "More platforms are continuously being added. Stay tuned for updates!"
 	},
 	"Blog": {
 		"Header": "Blog Posts",
@@ -90,7 +112,7 @@
 			"answer": "Check out our <a href='https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ' target='_blank' rel='noopener noreferrer'>Troubleshooting guide</a> or reach out to support at <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a>."
 		},
 		"contact": {
-			"didn't": "Didnot find your answer?",
+			"didn't": "Did not find your answer?",
 			"Contant Us": "Contact Us"
 		}
 	},
@@ -141,8 +163,8 @@
 	"download": {
 		"Header": "Secure & Verified Downloads",
 		"Description": "Access RelaySMS from trusted and verified sources to ensure your security and privacy.",
-		"android": "Android Option",
-		"ios": "iOS Option",
+		"android": "Android",
+		"ios": "iOS",
 		"Titles": {
 			"Github": "Github",
 			"PlayStore": "PlayStore",

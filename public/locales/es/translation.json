@@ -150,5 +150,27 @@
 			"fDroid": "Instala desde F-Droid para los amantes del código abierto."
 		},
 		"iosDescription": "Disponible ahora en la App Store de Apple."
+	},
+	"WhoShouldUse": {
+		"Header": "¿Quién debería usar RelaySMS?",
+		"Description": "Cualquier persona que experimente mala conectividad a Internet o viva en una región propensa a cortes de Internet debería usar RelaySMS para eludir los cortes y mantenerse conectado. La mayoría de los usuarios de RelaySMS viven actualmente en África e India, pero la aplicación está disponible para uso en todo el mundo.",
+		"AndroidButton": "Descargar para Android",
+		"iOSButton": "Descargar para iOS"
+	},
+	"HowRelaySMSWorks": {
+		"Header": "¿Cómo funciona RelaySMS?",
+		"Description1": "RelaySMS utiliza mensajería SMS (también conocida como \"mensajes de texto\") para enrutar mensajes fuera de línea de vuelta en línea.",
+		"Description2": "Después de configurar RelaySMS en tu teléfono, puedes conectarte sin problemas y enviar mensajes en tus plataformas de mensajería en línea preferidas sin usar datos en absoluto (se aplicarán tarifas SMS estándar).",
+		"Description3": "La clave de RelaySMS radica en su uso de Clientes Gateway. Estos dispositivos operan en áreas con una conexión activa a Internet, lo que les permite recibir un mensaje SMS de un usuario RelaySMS fuera de línea y luego enviarlo a un servidor en línea donde el usuario ya ha guardado sus permisos de plataforma.",
+		"TrainingTitle": "Descargar Guías de Entrenamiento",
+		"EnglishPDF": "Guía en Inglés (PDF)",
+		"FrenchPDF": "Guía en Francés (PDF)",
+		"SeeSpecification": "Leer más"
+	},
+	"SupportedPlatforms": {
+		"Header": "Plataformas Compatibles",
+		"Description": "Envía mensajes a estas plataformas en línea a través de SMS usando RelaySMS, incluso cuando no tengas acceso a Internet.",
+		"Error": "No se pudieron cargar las plataformas compatibles. Por favor, inténtalo de nuevo más tarde.",
+		"Note": "¡Se están añadiendo continuamente más plataformas. ¡Mantente atento a las actualizaciones!"
 	}
 }
