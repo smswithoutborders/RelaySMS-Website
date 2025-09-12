@@ -1,0 +1,12 @@
+[
+	{
+		"relation": ["delegate_permission/common.handle_all_urls"],
+		"target": {
+			"namespace": "android_app",
+			"package_name": "com.afkanerd.sw0b",
+			"sha256_cert_fingerprints": [
+				"DE:E0:52:2C:2F:17:D7:11:E6:B4:68:BF:21:2A:BF:D1:0D:34:63:50:C8:DF:41:C4:D4:74:D3:4C:33:FC:01:FC"
+			]
+		}
+	}
+]
