@@ -7,7 +7,8 @@
 		"Contact": "Contactez-nous",
 		"Support": "Assistance",
 		"Back": "Retour",
-		"Download": "Télécharger"
+		"Download": "Télécharger",
+		"Branding": "Identité de marque"
 	},
 	"social": {
 		"x": "Suivez-nous sur X",
@@ -130,6 +131,82 @@
 				"Description": "Contactez-nous pour questions et collaboration.",
 				"ButtonText": "Envoyer un email"
 			}
+		}
+	},
+	"Branding": {
+		"title": "Ressources de Marque RelaySMS",
+		"description": "Téléchargez les logos officiels RelaySMS, icônes et matériaux de marque pour vos projets, présentations et supports marketing.",
+		"tabs": {
+			"fullLogos": "Logos Complets",
+			"logoIcons": "Icônes de Logo",
+			"socialMedia": "Réseaux Sociaux"
+		},
+		"categories": {
+			"fullLogos": {
+				"title": "Logos Complets",
+				"description": "Logos RelaySMS complets avec texte pour usage officiel"
+			},
+			"logoIcons": {
+				"title": "Icônes de Logo",
+				"description": "Versions icône uniquement pour espaces compacts et icônes d'applications"
+			},
+			"socialMedia": {
+				"title": "Ressources Réseaux Sociaux",
+				"description": "Ressources prêtes à utiliser pour plateformes de réseaux sociaux"
+			}
+		},
+		"assets": {
+			"default": "Par Défaut",
+			"defaultShaped": "Par Défaut (Avec Forme)",
+			"black": "Noir",
+			"blackShaped": "Noir (Avec Forme)",
+			"blue": "Bleu",
+			"blueShaped": "Bleu (Avec Forme)",
+			"white": "Blanc",
+			"whiteShaped": "Blanc (Avec Forme)",
+			"darkTheme": "Thème Sombre",
+			"avatar1": "Avatar 1",
+			"avatar2": "Avatar 2",
+			"cover1": "Couverture 1",
+			"cover2": "Couverture 2",
+			"cover3": "Couverture 3"
+		},
+		"usage": {
+			"primaryLight": "Logo principal pour arrière-plans clairs",
+			"shapedSocial": "Version avec forme pour profils de réseaux sociaux",
+			"monochromePrint": "Version monochrome pour matériaux imprimés",
+			"shapedMonochrome": "Monochrome avec forme pour avatars",
+			"blueTech": "Variante bleue pour contenu technologique",
+			"shapedBlue": "Version bleue avec forme",
+			"darkBackgrounds": "Pour arrière-plans sombres et superpositions",
+			"shapedWhite": "Version blanche avec forme pour thèmes sombres",
+			"darkMode": "Optimisé pour interfaces de mode sombre",
+			"primaryIcon": "Icône principale pour arrière-plans clairs",
+			"shapedApp": "Icône avec forme pour magasins d'applications",
+			"monochromeIcon": "Icône monochrome pour impression",
+			"shapedMonochromeIcon": "Icône monochrome avec forme",
+			"blueIcon": "Variante d'icône bleue",
+			"shapedBlueIcon": "Icône bleue avec forme",
+			"iconDark": "Pour arrière-plans sombres",
+			"shapedIconDark": "Icône blanche avec forme pour thèmes sombres",
+			"socialAvatar": "Avatar principal pour profils sociaux",
+			"altAvatar": "Design d'avatar alternatif",
+			"facebookCover": "Image de couverture de page Facebook",
+			"eventPromo": "Graphiques promotionnels d'événements",
+			"socialPost": "Graphiques pour publications sur réseaux sociaux"
+		},
+		"buttons": {
+			"preview": "Aperçu",
+			"download": "Télécharger"
+		},
+		"guidelines": {
+			"title": "Directives d'Utilisation",
+			"logoUsage": "Utilisation du Logo :",
+			"logoUsageText": "Maintenez toujours un espace libre autour du logo égal à la hauteur du \"R\" dans RelaySMS. Ne modifiez pas, n'étirez pas ou n'altérez pas les proportions du logo.",
+			"colorVariations": "Variations de Couleur :",
+			"colorVariationsText": "Utilisez la variante appropriée du logo selon la couleur d'arrière-plan. Logos blancs pour arrière-plans sombres, logos sombres pour arrière-plans clairs.",
+			"attribution": "Attribution :",
+			"attributionText": "Lors de l'utilisation des ressources de marque RelaySMS, maintenez l'attribution à SMS Without Borders et créez un lien vers notre site web officiel quand approprié."
 		}
 	},
 	"download": {

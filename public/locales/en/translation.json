@@ -7,7 +7,8 @@
 		"Contact": "Contact Us",
 		"Support": "Support",
 		"Back": "Back",
-		"Download": "Download"
+		"Download": "Download",
+		"Branding": "Branding"
 	},
 	"social": {
 		"x": "Follow us on X",
@@ -158,6 +159,82 @@
 				"Description": "Reach out directly via email for Questions and collaboration.",
 				"ButtonText": "Send Email"
 			}
+		}
+	},
+	"Branding": {
+		"title": "RelaySMS Brand Assets",
+		"description": "Download official RelaySMS logos, icons, and brand materials for your projects, presentations, and marketing materials.",
+		"tabs": {
+			"fullLogos": "Full Logos",
+			"logoIcons": "Logo Icons",
+			"socialMedia": "Social Media"
+		},
+		"categories": {
+			"fullLogos": {
+				"title": "Full Logos",
+				"description": "Complete RelaySMS logos with text for official use"
+			},
+			"logoIcons": {
+				"title": "Logo Icons", 
+				"description": "Icon-only versions for compact spaces and app icons"
+			},
+			"socialMedia": {
+				"title": "Social Media Assets",
+				"description": "Ready-to-use assets for social media platforms"
+			}
+		},
+		"assets": {
+			"default": "Default",
+			"defaultShaped": "Default (Shaped)",
+			"black": "Black",
+			"blackShaped": "Black (Shaped)", 
+			"blue": "Blue",
+			"blueShaped": "Blue (Shaped)",
+			"white": "White",
+			"whiteShaped": "White (Shaped)",
+			"darkTheme": "Dark Theme",
+			"avatar1": "Avatar 1",
+			"avatar2": "Avatar 2", 
+			"cover1": "Cover 1",
+			"cover2": "Cover 2",
+			"cover3": "Cover 3"
+		},
+		"usage": {
+			"primaryLight": "Primary logo for light backgrounds",
+			"shapedSocial": "Shaped version for social media profiles",
+			"monochromePrint": "Monochrome version for print materials",
+			"shapedMonochrome": "Shaped monochrome for avatars",
+			"blueTech": "Blue variant for tech-focused content",
+			"shapedBlue": "Shaped blue version",
+			"darkBackgrounds": "For dark backgrounds and overlays",
+			"shapedWhite": "Shaped white version for dark themes",
+			"darkMode": "Optimized for dark mode interfaces",
+			"primaryIcon": "Primary icon for light backgrounds",
+			"shapedApp": "Shaped icon for app stores",
+			"monochromeIcon": "Monochrome icon for print",
+			"shapedMonochromeIcon": "Shaped monochrome icon",
+			"blueIcon": "Blue icon variant",
+			"shapedBlueIcon": "Shaped blue icon",
+			"iconDark": "For dark backgrounds",
+			"shapedIconDark": "Shaped white icon for dark themes",
+			"socialAvatar": "Primary avatar for social profiles",
+			"altAvatar": "Alternative avatar design",
+			"facebookCover": "Facebook page cover image",
+			"eventPromo": "Event promotion graphics",
+			"socialPost": "Social media post graphics"
+		},
+		"buttons": {
+			"preview": "Preview",
+			"download": "Download"
+		},
+		"guidelines": {
+			"title": "Usage Guidelines",
+			"logoUsage": "Logo Usage:",
+			"logoUsageText": "Always maintain clear space around the logo equal to the height of the \"R\" in RelaySMS. Do not modify, stretch, or alter the logo proportions.",
+			"colorVariations": "Color Variations:",
+			"colorVariationsText": "Use the appropriate logo variant based on background color. White logos for dark backgrounds, dark logos for light backgrounds.",
+			"attribution": "Attribution:",
+			"attributionText": "When using RelaySMS brand assets, please maintain attribution to SMS Without Borders and link back to our official website where appropriate."
 		}
 	},
 	"download": {
