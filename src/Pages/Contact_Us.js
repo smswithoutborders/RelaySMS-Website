@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Button, keyframes } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -42,15 +42,10 @@ const ContactUs = () => {
 		}
 	];
 
-	const rotateWave = keyframes`
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-`;
 	return (
 		<Box
 			dir={isRtl ? "rtl" : "ltr"}
 			sx={{
-				minHeight: "100vh",
 				position: "relative",
 				backgroundColor: "#FAF2E4",
 				overflow: "hidden",
@@ -61,39 +56,9 @@ const ContactUs = () => {
 		>
 			<Box
 				sx={{
-					position: "absolute",
-					width: "100%",
-					height: "100%",
-					top: 0,
-					left: 0,
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-					zIndex: 0,
-					pointerEvents: "none"
-				}}
-			>
-				{[1050, 950, 820, 720, 620, 560, 460].map((size, index) => (
-					<Box
-						key={index}
-						sx={{
-							position: "absolute",
-							width: size,
-							height: size - 30,
-							borderRadius: "43%",
-							backgroundColor: "#99a9c6ff",
-							opacity: 0.18,
-							animation: `${rotateWave} ${5 + index * 2}s linear infinite`
-						}}
-					/>
-				))}
-			</Box>
-
-			<Box
-				sx={{
 					zIndex: 2,
 					position: "relative",
-					minHeight: "100vh",
+					minHeight: "85vh",
 					display: "flex",
 					flexDirection: "column",
 					justifyContent: "center",
@@ -108,15 +73,15 @@ const ContactUs = () => {
 				<Typography
 					variant="h2"
 					sx={{
-						fontWeight: 100,
-						mb: 6,
-						color: "#1e283a",
-						fontSize: "clamp(2rem, 5vw, 3.5rem)",
-						padding: window.innerWidth >= 768 ? "20px" : "20px",
-						transition: "color 0.3s ease, transform 0.3s ease"
+						mb: { xs: 6, md: 8 },
+						fontSize: { md: "2rem", xs: "1.5rem" },
+						color: "#2D2A5A",
+						fontWeight: 700,
+						fontFamily: "'Unbounded', Ubuntu",
+						mt: { xs: 6, md: 0 }
 					}}
 				>
-					{t("ContactUs.Title")}
+					{t("ContactUs.Title", "Contact RelaySMS Team")}
 				</Typography>
 
 				<Box
@@ -136,55 +101,53 @@ const ContactUs = () => {
 						<Box
 							key={index}
 							sx={{
-								bgcolor: "#ffffff",
-								borderRadius: "16px",
-								padding: 4,
-								textAlign: "center",
+								// bgcolor: "#ffffff",
+								borderRadius: "6px",
+								padding: 3,
 								display: "flex",
 								flexDirection: "column",
-								alignItems: "center",
-								transition: "transform 0.3s ease",
+								alignItems: "flex-start",
+								textAlign: "left",
+								transition: "transform 0.3s ease, box-shadow 0.3s ease",
+								border: "1px solid #c9c9c9ff",
 								"&:hover": {
-									transform: "translateY(-6px)"
+									transform: "translateY(-4px)",
+									boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)"
 								}
 							}}
 						>
 							<FontAwesomeIcon
 								icon={icon}
 								style={{
-									fontSize: "3.2rem",
-									color: "#FF9E43",
-									marginBottom: "1rem"
+									fontSize: "1.6rem",
+									color: "#202020ff",
+									marginBottom: "2.5rem"
 								}}
 							/>
-							<Typography variant="h6" sx={{ fontWeight: 600, mb: 1, color: "#1e283a" }}>
+							<Typography variant="body1" sx={{ fontWeight: 600, mb: 1.5, color: "#1e283a" }}>
 								{label}
 							</Typography>
-							<Typography variant="body2" sx={{ mb: 2, color: "#555", lineHeight: 1.6 }}>
+							<Typography variant="body2" sx={{ mb: 3, color: "#666", lineHeight: 1.6, flex: 1 }}>
 								{description}
 							</Typography>
 							<Button
-								variant="contained"
 								href={url || "#"}
 								target={url.startsWith("mailto:") ? undefined : "_blank"}
 								rel={url.startsWith("mailto:") ? undefined : "noopener noreferrer"}
 								sx={{
-									backgroundColor: "#FF9E43",
-									color: "rgba(1, 64, 136, 0.86)",
+									color: "#2D2A5A",
 									textTransform: "none",
-									fontWeight: 500,
-									py: 1.2,
-									px: 5,
-									fontSize: { xs: "12px", md: "15px" },
-									borderRadius: 3,
-									border: "1px solid rgba(1, 64, 136, 0.86)",
-									transition: "all 0.3s ease-in-out",
+									fontWeight: 400,
+									fontSize: "15px",
+									padding: 0,
+									textDecoration: "underline",
+									textUnderlineOffset: "4px",
+									textDecorationThickness: "2px",
+									transition: "all 0.3s ease",
 									"&:hover": {
-										backgroundColor: "rgba(1, 64, 136, 0.86)",
-										color: "white",
-										borderColor: "#FF9E43",
-										transform: "translateY(-2px)",
-										boxShadow: "0 8px 20px rgba(1, 64, 136, 0.3)"
+										color: "#1e283a",
+										textDecorationColor: "#1e283a",
+										backgroundColor: "transparent"
 									}
 								}}
 							>
