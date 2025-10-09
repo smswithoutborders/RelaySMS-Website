@@ -66,9 +66,10 @@ const Download = () => {
 					<Typography
 						variant="h3"
 						sx={{
-							fontSize: "2rem",
+							fontSize: { md: "2rem", xs: "1.5rem" },
 							color: "#2D2A5A",
-							fontFamily: "'Unbounded', Ubuntu"
+							fontFamily: "'Unbounded', Ubuntu",
+							mt: { xs: 6, md: 0 }
 						}}
 					>
 						{t("download.Header", "Secure & Verified Downloads")}
@@ -90,7 +91,7 @@ const Download = () => {
 				</Box>
 				<Grid container spacing={6} alignItems="center">
 					<Grid item xs={12} md={6}>
-						<Typography variant="h5" sx={{ mb: 3, color: " #666" }} align="start">
+						<Typography variant="h6" sx={{ mb: 3, color: " #666" }} align="start">
 							{t("download.android")}
 						</Typography>
 						{androidLinks.map((item, idx) => (
@@ -152,7 +153,7 @@ const Download = () => {
 						))}
 
 						{/* iOS Links */}
-						<Typography variant="h5" sx={{ mt: 6, mb: 3, color: "#666" }} align="start">
+						<Typography variant="h6" sx={{ mt: 6, mb: 3, color: "#666" }} align="start">
 							{t("download.ios")}
 						</Typography>
 						{iosLinks.map((item, idx) => (

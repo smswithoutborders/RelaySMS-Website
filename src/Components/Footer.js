@@ -19,7 +19,7 @@ const Footer = () => {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
-	const logoSrc = useMemo(() => (scrolled ? "/RelaySMSDark.png" : "/logo.png"), [scrolled]);
+	const logoSrc = "/RelaySMSDark.png";
 
 	return (
 		<footer

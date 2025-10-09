@@ -20,6 +20,7 @@
 		"h1": "Stay Connected with RelaySMS",
 		"h2": "RelaySMS enables users to send messages to online platforms without the use of an active internet connection.",
 		"Android": "Download RelaySMS ",
+		"supportedPlatforms": "Supported Platforms:",
 		"auditMessage": {
 			"part1": "RelaySMS is committed to security and transparency. Read our ",
 			"link": "security audit report",
@@ -137,7 +138,7 @@
 	"policy": "Privacy Policy",
 
 	"ContactUs": {
-		"Title": "Reach Us Through",
+		"Title": "Contact RelaySMS Team",
 		"Subtitle": " We’re here to help. Reach out to us through any of these channels.",
 
 		"Items": {
