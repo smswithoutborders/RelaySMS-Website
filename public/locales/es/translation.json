@@ -8,7 +8,8 @@
 		"Support": "Soporte",
 		"Back": "Atrás",
 		"Download": "Descargar",
-		"Branding": "Marca"
+		"Branding": "Marca",
+		"Overview": "Descripción del Sistema"
 	},
 	"social": {
 		"x": "Síguenos en X",
@@ -250,5 +251,41 @@
 		"Description": "Envía mensajes a estas plataformas en línea a través de SMS usando RelaySMS, incluso cuando no tengas acceso a Internet.",
 		"Error": "No se pudieron cargar las plataformas compatibles. Por favor, inténtalo de nuevo más tarde.",
 		"Note": "¡Se están añadiendo continuamente más plataformas. ¡Mantente atento a las actualizaciones!"
+	},
+	"Overview": {
+		"title": "Descripción General del Sistema RelaySMS",
+		"description": "El diagrama a continuación ilustra el flujo de mensajes y datos entre los componentes principales de RelaySMS, desde aplicaciones cliente a través de pasarelas, servidores y servicios externos.",
+		"tip": "Consejo: Haz clic en un nodo del diagrama para ver más información sobre ese componente.",
+		"details": "Detalles",
+		"loading": "Cargando documentación...",
+		"components": {
+			"Client": "Cliente",
+			"Vault": "Bóveda",
+			"Publisher": "Publicador",
+			"GatewayClient": "Cliente Pasarela",
+			"GatewayServer": "Servidor Pasarela",
+			"BridgeServer": "Servidor Puente",
+			"Platforms": "Plataformas",
+			"EmailBridge": "Puente de Correo"
+		},
+		"nodes": {
+			"Client": "Cliente (Apps)",
+			"GatewayClient": "Cliente Pasarela",
+			"GatewayServer": "Servidor Pasarela",
+			"Publisher": "Publicador",
+			"BridgeServer": "Servidor Puente",
+			"Vault": "Bóveda",
+			"Platforms": "Plataformas",
+			"EmailBridge": "Puente de Correo"
+		},
+		"edges": {
+			"encryptedSMS": "SMS Cifrado",
+			"httpsSmtpFtp": "HTTPS / SMTP / FTP",
+			"platformPayload": "Carga de Plataforma",
+			"bridgePayload": "Carga del Puente",
+			"decryptAuth": "Descifrar y Autenticar",
+			"content": "Contenido"
+		},
+		"documentationError": "Error al cargar la documentación. Por favor, inténtalo de nuevo."
 	}
 }

@@ -8,7 +8,6 @@ import {
 	CardContent,
 	CardActions,
 	Chip,
-	keyframes,
 	Tab,
 	Tabs,
 	IconButton,

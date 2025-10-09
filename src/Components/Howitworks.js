@@ -37,7 +37,7 @@ const HowItWorks = () => {
 			description: t("Howitworks.Step1Desc"),
 			image: "/Download.png",
 			buttonText: t("Howitworks.Step1Button", "Download"),
-			link: "/Download",
+			link: "/download",
 			bgColor: " #EBF5FB"
 		},
 		{

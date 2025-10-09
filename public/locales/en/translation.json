@@ -8,7 +8,8 @@
 		"Support": "Support",
 		"Back": "Back",
 		"Download": "Download",
-		"Branding": "Branding"
+		"Branding": "Branding",
+		"Overview": "System Overview"
 	},
 	"social": {
 		"x": "Follow us on X",
@@ -256,5 +257,41 @@
 			"fDroid": "Install via F-Droid for open source lovers."
 		},
 		"iosDescription": "Available now on the Apple App Store."
+	},
+	"Overview": {
+		"title": "RelaySMS System Overview",
+		"description": "The diagram below illustrates the flow of messages and data between the main components of the RelaySMS, from client apps through gateways, servers, and external services.",
+		"tip": "Tip: Click on a node in the diagram to view more information about that component.",
+		"details": "Details",
+		"loading": "Loading documentation...",
+		"components": {
+			"Client": "Client",
+			"Vault": "Vault",
+			"Publisher": "Publisher",
+			"GatewayClient": "Gateway Client",
+			"GatewayServer": "Gateway Server",
+			"BridgeServer": "Bridge Server",
+			"Platforms": "Platforms",
+			"EmailBridge": "Email Bridge"
+		},
+		"nodes": {
+			"Client": "Client (Apps)",
+			"GatewayClient": "Gateway Client",
+			"GatewayServer": "Gateway Server",
+			"Publisher": "Publisher",
+			"BridgeServer": "Bridge Server",
+			"Vault": "Vault",
+			"Platforms": "Platforms",
+			"EmailBridge": "Email Bridge"
+		},
+		"edges": {
+			"encryptedSMS": "Encrypted SMS",
+			"httpsSmtpFtp": "HTTPS / SMTP / FTP",
+			"platformPayload": "Platform Payload",
+			"bridgePayload": "Bridge Payload",
+			"decryptAuth": "Decrypt & Auth",
+			"content": "Content"
+		},
+		"documentationError": "Error loading documentation. Please try again."
 	}
 }
