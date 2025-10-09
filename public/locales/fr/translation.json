@@ -8,7 +8,8 @@
 		"Support": "Assistance",
 		"Back": "Retour",
 		"Download": "Télécharger",
-		"Branding": "Identité de marque"
+		"Branding": "Identité de marque",
+		"Overview": "Vue d'Ensemble du Système"
 	},
 	"social": {
 		"x": "Suivez-nous sur X",
@@ -250,5 +251,41 @@
 		"Description": "Envoyez des messages vers ces plateformes en ligne par SMS en utilisant RelaySMS, même lorsque vous n'avez pas accès à Internet.",
 		"Error": "Impossible de charger les plateformes prises en charge. Veuillez réessayer plus tard.",
 		"Note": "D'autres plateformes sont continuellement ajoutées. Restez à l'écoute pour les mises à jour !"
+	},
+	"Overview": {
+		"title": "Vue d'Ensemble du Système RelaySMS",
+		"description": "Le diagramme ci-dessous illustre le flux de messages et de données entre les composants principaux de RelaySMS, des applications client via les passerelles, serveurs et services externes.",
+		"tip": "Astuce : Cliquez sur un nœud du diagramme pour voir plus d'informations sur ce composant.",
+		"details": "Détails",
+		"loading": "Chargement de la documentation...",
+		"components": {
+			"Client": "Client",
+			"Vault": "Coffre-fort",
+			"Publisher": "Éditeur",
+			"GatewayClient": "Client Passerelle",
+			"GatewayServer": "Serveur Passerelle",
+			"BridgeServer": "Serveur Pont",
+			"Platforms": "Plateformes",
+			"EmailBridge": "Pont Email"
+		},
+		"nodes": {
+			"Client": "Client (Apps)",
+			"GatewayClient": "Client Passerelle",
+			"GatewayServer": "Serveur Passerelle",
+			"Publisher": "Éditeur",
+			"BridgeServer": "Serveur Pont",
+			"Vault": "Coffre-fort",
+			"Platforms": "Plateformes",
+			"EmailBridge": "Pont Email"
+		},
+		"edges": {
+			"encryptedSMS": "SMS Chiffré",
+			"httpsSmtpFtp": "HTTPS / SMTP / FTP",
+			"platformPayload": "Charge Plateforme",
+			"bridgePayload": "Charge du Pont",
+			"decryptAuth": "Décrypter et Auth",
+			"content": "Contenu"
+		},
+		"documentationError": "Erreur lors du chargement de la documentation. Veuillez réessayer."
 	}
 }
