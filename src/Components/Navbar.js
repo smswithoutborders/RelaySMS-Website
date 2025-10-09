@@ -46,7 +46,8 @@ export default function Navigation() {
 			href: "https://docs.smswithoutborders.com/",
 			external: true
 		},
-		{ label: t("Nav.Contact"), to: "/Contact_Us" }
+		{ label: t("Nav.Contact"), to: "/contact" },
+		{ label: t("Nav.Overview"), to: "/system-overview" }
 	];
 
 	const handleOpenNavMenu = (event) => {
@@ -63,7 +64,7 @@ export default function Navigation() {
 			position="fixed"
 			elevation={scrolled ? 4 : 0}
 			sx={{
-				backgroundColor: scrolled ? "#FFF6EE" : "#ffffff02",
+				backgroundColor: scrolled ? "#fce9d8ff" : "#ffffff02",
 				top: 0,
 				left: 0,
 				right: 0,
@@ -205,7 +206,13 @@ export default function Navigation() {
 						aria-controls="menu-appbar"
 						aria-haspopup="true"
 						onClick={handleOpenNavMenu}
-						sx={{ color: iconColor }}
+						sx={{ 
+							color: iconColor,
+							transition: "transform 0.2s ease",
+							"&:hover": {
+								transform: "scale(1.1)"
+							}
+						}}
 					>
 						<MenuIcon />
 					</IconButton>
@@ -222,6 +229,59 @@ export default function Navigation() {
 						transformOrigin={{
 							vertical: "top",
 							horizontal: "right"
+						}}
+						sx={{
+							"& .MuiPaper-root": {
+								borderRadius: "12px",
+								boxShadow: "0 8px 32px rgba(0, 0, 0, 0.12)",
+								border: "1px solid rgba(255, 255, 255, 0.2)",
+								backdropFilter: "blur(20px)",
+								background: "rgba(255, 255, 255, 0.95)",
+								minWidth: "280px",
+								mt: 1,
+								overflow: "visible",
+								"&::before": {
+									content: '""',
+									display: "block",
+									position: "absolute",
+									top: 0,
+									right: 14,
+									width: 10,
+									height: 10,
+									backgroundColor: "rgba(255, 255, 255, 0.95)",
+									transform: "translateY(-50%) rotate(45deg)",
+									zIndex: 0,
+								},
+							},
+							"& .MuiList-root": {
+								padding: "12px 0",
+							},
+							"& .MuiMenuItem-root": {
+								padding: "12px 24px",
+								fontSize: "16px",
+								fontWeight: 500,
+								borderRadius: "8px",
+								margin: "4px 12px",
+								transition: "all 0.2s ease",
+								"&:hover": {
+									backgroundColor: "rgba(255, 158, 67, 0.1)",
+									transform: "translateX(4px)",
+								},
+								"&.language-switcher-item": {
+									padding: "8px 24px",
+									"&:hover": {
+										backgroundColor: "transparent",
+										transform: "none",
+									}
+								},
+								"&.social-icons-item": {
+									padding: "8px 24px",
+									"&:hover": {
+										backgroundColor: "transparent",
+										transform: "none",
+									}
+								}
+							}
 						}}
 					>
 						{navLinks.map((link, index) =>
@@ -243,19 +303,28 @@ export default function Navigation() {
 							)
 						)}
 
-						<MenuItem disableRipple>
-							<LanguageSwitcher />
+						<MenuItem disableRipple className="language-switcher-item">
+							<Box sx={{ width: "100%" }}>
+								<LanguageSwitcher />
+							</Box>
 						</MenuItem>
 
-						<MenuItem disableRipple>
-							<Box sx={{ display: "flex", gap: 1, pl: 1 }}>
+						<MenuItem disableRipple className="social-icons-item">
+							<Box sx={{ display: "flex", gap: 1, justifyContent: "center", width: "100%" }}>
 								<IconButton
 									component="a"
 									href="https://github.com/smswithoutborders"
 									target="_blank"
 									rel="noopener noreferrer"
 									aria-label="GitHub"
-									sx={{ color: iconColor }}
+									sx={{ 
+										color: iconColor,
+										transition: "transform 0.2s ease",
+										"&:hover": {
+											transform: "scale(1.2)",
+											color: "#FF9E43"
+										}
+									}}
 								>
 									<FontAwesomeIcon icon={faGithub} />
 								</IconButton>
@@ -265,7 +334,14 @@ export default function Navigation() {
 									target="_blank"
 									rel="noopener noreferrer"
 									aria-label="RelaySMS on X"
-									sx={{ color: iconColor }}
+									sx={{ 
+										color: iconColor,
+										transition: "transform 0.2s ease",
+										"&:hover": {
+											transform: "scale(1.2)",
+											color: "#FF9E43"
+										}
+									}}
 								>
 									<FontAwesomeIcon icon={faXTwitter} />
 								</IconButton>
@@ -275,7 +351,14 @@ export default function Navigation() {
 									target="_blank"
 									rel="noopener noreferrer"
 									aria-label="RelaySMS on Bluesky"
-									sx={{ color: iconColor }}
+									sx={{ 
+										color: iconColor,
+										transition: "transform 0.2s ease",
+										"&:hover": {
+											transform: "scale(1.2)",
+											color: "#FF9E43"
+										}
+									}}
 								>
 									<FontAwesomeIcon icon={faBluesky} />
 								</IconButton>

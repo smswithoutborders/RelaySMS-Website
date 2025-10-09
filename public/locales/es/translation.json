@@ -7,7 +7,9 @@
 		"Contact": "Contáctanos",
 		"Support": "Soporte",
 		"Back": "Atrás",
-		"Download": "Descargar"
+		"Download": "Descargar",
+		"Branding": "Marca",
+		"Overview": "Descripción del Sistema"
 	},
 	"social": {
 		"x": "Síguenos en X",
@@ -19,6 +21,7 @@
 		"h1": "Mantente conectado con RelaySMS",
 		"h2": "RelaySMS permite a los usuarios enviar mensajes a plataformas en línea sin una conexión activa a Internet.",
 		"Android": "Descargar RelaySMS",
+		"supportedPlatforms": "Plataformas compatibles:",
 		"auditMessage": {
 			"part1": "RelaySMS está comprometido con la seguridad y la transparencia. Lee nuestro ",
 			"link": "informe de auditoría de seguridad",
@@ -109,7 +112,7 @@
 	},
 	"policy": "Política de privacidad",
 	"ContactUs": {
-		"Title": "Contáctanos",
+		"Title": "Contactar al equipo RelaySMS",
 		"Subtitle": "Estamos aquí para ayudarte a través de estos canales.",
 		"Items": {
 			"GitHub": {
@@ -130,6 +133,82 @@
 				"Description": "Envíanos un email para colaboración o dudas.",
 				"ButtonText": "Enviar correo"
 			}
+		}
+	},
+	"Branding": {
+		"title": "Recursos de Marca RelaySMS",
+		"description": "Descarga logotipos oficiales de RelaySMS, iconos y materiales de marca para tus proyectos, presentaciones y materiales de marketing.",
+		"tabs": {
+			"fullLogos": "Logotipos Completos",
+			"logoIcons": "Iconos de Logo",
+			"socialMedia": "Redes Sociales"
+		},
+		"categories": {
+			"fullLogos": {
+				"title": "Logotipos Completos",
+				"description": "Logotipos completos de RelaySMS con texto para uso oficial"
+			},
+			"logoIcons": {
+				"title": "Iconos de Logo",
+				"description": "Versiones solo de icono para espacios compactos e iconos de aplicaciones"
+			},
+			"socialMedia": {
+				"title": "Recursos de Redes Sociales",
+				"description": "Recursos listos para usar en plataformas de redes sociales"
+			}
+		},
+		"assets": {
+			"default": "Predeterminado",
+			"defaultShaped": "Predeterminado (Con Forma)",
+			"black": "Negro",
+			"blackShaped": "Negro (Con Forma)",
+			"blue": "Azul",
+			"blueShaped": "Azul (Con Forma)",
+			"white": "Blanco",
+			"whiteShaped": "Blanco (Con Forma)",
+			"darkTheme": "Tema Oscuro",
+			"avatar1": "Avatar 1",
+			"avatar2": "Avatar 2",
+			"cover1": "Portada 1",
+			"cover2": "Portada 2",
+			"cover3": "Portada 3"
+		},
+		"usage": {
+			"primaryLight": "Logo principal para fondos claros",
+			"shapedSocial": "Versión con forma para perfiles de redes sociales",
+			"monochromePrint": "Versión monocromática para materiales impresos",
+			"shapedMonochrome": "Monocromático con forma para avatares",
+			"blueTech": "Variante azul para contenido tecnológico",
+			"shapedBlue": "Versión azul con forma",
+			"darkBackgrounds": "Para fondos oscuros y superposiciones",
+			"shapedWhite": "Versión blanca con forma para temas oscuros",
+			"darkMode": "Optimizado para interfaces de modo oscuro",
+			"primaryIcon": "Icono principal para fondos claros",
+			"shapedApp": "Icono con forma para tiendas de aplicaciones",
+			"monochromeIcon": "Icono monocromático para impresión",
+			"shapedMonochromeIcon": "Icono monocromático con forma",
+			"blueIcon": "Variante de icono azul",
+			"shapedBlueIcon": "Icono azul con forma",
+			"iconDark": "Para fondos oscuros",
+			"shapedIconDark": "Icono blanco con forma para temas oscuros",
+			"socialAvatar": "Avatar principal para perfiles sociales",
+			"altAvatar": "Diseño de avatar alternativo",
+			"facebookCover": "Imagen de portada de página de Facebook",
+			"eventPromo": "Gráficos promocionales de eventos",
+			"socialPost": "Gráficos para publicaciones en redes sociales"
+		},
+		"buttons": {
+			"preview": "Vista Previa",
+			"download": "Descargar"
+		},
+		"guidelines": {
+			"title": "Pautas de Uso",
+			"logoUsage": "Uso del Logo:",
+			"logoUsageText": "Mantén siempre un espacio libre alrededor del logo igual a la altura de la \"R\" en RelaySMS. No modifiques, estires o alteres las proporciones del logo.",
+			"colorVariations": "Variaciones de Color:",
+			"colorVariationsText": "Usa la variante apropiada del logo basada en el color de fondo. Logos blancos para fondos oscuros, logos oscuros para fondos claros.",
+			"attribution": "Atribución:",
+			"attributionText": "Al usar los recursos de marca de RelaySMS, mantén la atribución a SMS Without Borders y enlaza a nuestro sitio web oficial cuando sea apropiado."
 		}
 	},
 	"download": {
@@ -172,5 +251,41 @@
 		"Description": "Envía mensajes a estas plataformas en línea a través de SMS usando RelaySMS, incluso cuando no tengas acceso a Internet.",
 		"Error": "No se pudieron cargar las plataformas compatibles. Por favor, inténtalo de nuevo más tarde.",
 		"Note": "¡Se están añadiendo continuamente más plataformas. ¡Mantente atento a las actualizaciones!"
+	},
+	"Overview": {
+		"title": "Descripción General del Sistema RelaySMS",
+		"description": "El diagrama a continuación ilustra el flujo de mensajes y datos entre los componentes principales de RelaySMS, desde aplicaciones cliente a través de pasarelas, servidores y servicios externos.",
+		"tip": "Consejo: Haz clic en un nodo del diagrama para ver más información sobre ese componente.",
+		"details": "Detalles",
+		"loading": "Cargando documentación...",
+		"components": {
+			"Client": "Cliente",
+			"Vault": "Bóveda",
+			"Publisher": "Publicador",
+			"GatewayClient": "Cliente Pasarela",
+			"GatewayServer": "Servidor Pasarela",
+			"BridgeServer": "Servidor Puente",
+			"Platforms": "Plataformas",
+			"EmailBridge": "Puente de Correo"
+		},
+		"nodes": {
+			"Client": "Cliente (Apps)",
+			"GatewayClient": "Cliente Pasarela",
+			"GatewayServer": "Servidor Pasarela",
+			"Publisher": "Publicador",
+			"BridgeServer": "Servidor Puente",
+			"Vault": "Bóveda",
+			"Platforms": "Plataformas",
+			"EmailBridge": "Puente de Correo"
+		},
+		"edges": {
+			"encryptedSMS": "SMS Cifrado",
+			"httpsSmtpFtp": "HTTPS / SMTP / FTP",
+			"platformPayload": "Carga de Plataforma",
+			"bridgePayload": "Carga del Puente",
+			"decryptAuth": "Descifrar y Autenticar",
+			"content": "Contenido"
+		},
+		"documentationError": "Error al cargar la documentación. Por favor, inténtalo de nuevo."
 	}
 }

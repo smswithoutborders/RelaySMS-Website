@@ -1,11 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Dropdown, DropdownButton } from "react-bootstrap";
-import { FaGlobe } from "react-icons/fa";
 
 const LanguageSwitcher = () => {
 	const { i18n } = useTranslation();
-	const [selectedLang, setSelectedLang] = useState(i18n.language || "en");
+	const [selectedLang, setSelectedLang] = useState("en"); // Start with default
+
+	// Language configuration with flags and names
+	const languages = {
+		en: { flag: "🇺🇸", name: "English" },
+		fr: { flag: "🇫🇷", name: "Français" },
+		es: { flag: "🇪🇸", name: "Español" },
+		fa: { flag: "🇮🇷", name: "فارسی" }
+	};
+
+	// Sync with i18n language changes
+	useEffect(() => {
+		const currentLang = i18n.language || "en";
+		setSelectedLang(currentLang);
+	}, [i18n.language]);
 
 	useEffect(() => {
 		const detectLanguage = () => {
@@ -24,8 +37,12 @@ const LanguageSwitcher = () => {
 			i18n.changeLanguage(initialLang);
 		};
 
+		// Only detect language if no language is set or it's the default
 		if (!i18n.language || i18n.language === "en") {
 			detectLanguage();
+		} else {
+			// Use the already set language
+			setSelectedLang(i18n.language);
 		}
 	}, [i18n]);
 
@@ -36,27 +53,28 @@ const LanguageSwitcher = () => {
 
 	return (
 		<DropdownButton
-			drop="start"
-			variant="outline-secondary"
+			drop="down"
+			variant="outline-primary"
+			style={{ borderColor: "#d45703ff", color: "#ffffff" }}
 			title={
-				<>
-					<FaGlobe className="me-2" />
-					{selectedLang === "en"
-						? "English"
-						: selectedLang === "es"
-							? "Español"
-							: selectedLang === "fr"
-								? "Français"
-								: "فارسی"}
-				</>
+				<span className="language-title">
+					<span className="flag-emoji">{languages[selectedLang]?.flag}</span>
+					<span className="language-name">{languages[selectedLang]?.name}</span>
+				</span>
 			}
 			id="language-dropdown"
 			className="language-switcher"
 		>
-			<Dropdown.Item onClick={() => handleLanguageChange("en")}>🇺🇸 English</Dropdown.Item>
-			<Dropdown.Item onClick={() => handleLanguageChange("fr")}>🇫🇷 Français</Dropdown.Item>
-			<Dropdown.Item onClick={() => handleLanguageChange("es")}>🇪🇸 Español</Dropdown.Item>
-			<Dropdown.Item onClick={() => handleLanguageChange("fa")}>🇮🇷 فارسی</Dropdown.Item>
+			{Object.entries(languages).map(([code, { flag, name }]) => (
+				<Dropdown.Item 
+					key={code}
+					onClick={() => handleLanguageChange(code)}
+					className={`language-option ${selectedLang === code ? 'active' : ''}`}
+				>
+					<span className="flag-emoji">{flag}</span>
+					<span className="language-name">{name}</span>
+				</Dropdown.Item>
+			))}
 		</DropdownButton>
 	);
 };

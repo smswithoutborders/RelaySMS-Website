@@ -7,7 +7,9 @@
 		"Contact": "Contact Us",
 		"Support": "Support",
 		"Back": "Back",
-		"Download": "Download"
+		"Download": "Download",
+		"Branding": "Branding",
+		"Overview": "System Overview"
 	},
 	"social": {
 		"x": "Follow us on X",
@@ -19,6 +21,7 @@
 		"h1": "Stay Connected with RelaySMS",
 		"h2": "RelaySMS enables users to send messages to online platforms without the use of an active internet connection.",
 		"Android": "Download RelaySMS ",
+		"supportedPlatforms": "Supported Platforms:",
 		"auditMessage": {
 			"part1": "RelaySMS is committed to security and transparency. Read our ",
 			"link": "security audit report",
@@ -136,7 +139,7 @@
 	"policy": "Privacy Policy",
 
 	"ContactUs": {
-		"Title": "Reach Us Through",
+		"Title": "Contact RelaySMS Team",
 		"Subtitle": " We’re here to help. Reach out to us through any of these channels.",
 
 		"Items": {
@@ -160,6 +163,82 @@
 			}
 		}
 	},
+	"Branding": {
+		"title": "RelaySMS Brand Assets",
+		"description": "Download official RelaySMS logos, icons, and brand materials for your projects, presentations, and marketing materials.",
+		"tabs": {
+			"fullLogos": "Full Logos",
+			"logoIcons": "Logo Icons",
+			"socialMedia": "Social Media"
+		},
+		"categories": {
+			"fullLogos": {
+				"title": "Full Logos",
+				"description": "Complete RelaySMS logos with text for official use"
+			},
+			"logoIcons": {
+				"title": "Logo Icons", 
+				"description": "Icon-only versions for compact spaces and app icons"
+			},
+			"socialMedia": {
+				"title": "Social Media Assets",
+				"description": "Ready-to-use assets for social media platforms"
+			}
+		},
+		"assets": {
+			"default": "Default",
+			"defaultShaped": "Default (Shaped)",
+			"black": "Black",
+			"blackShaped": "Black (Shaped)", 
+			"blue": "Blue",
+			"blueShaped": "Blue (Shaped)",
+			"white": "White",
+			"whiteShaped": "White (Shaped)",
+			"darkTheme": "Dark Theme",
+			"avatar1": "Avatar 1",
+			"avatar2": "Avatar 2", 
+			"cover1": "Cover 1",
+			"cover2": "Cover 2",
+			"cover3": "Cover 3"
+		},
+		"usage": {
+			"primaryLight": "Primary logo for light backgrounds",
+			"shapedSocial": "Shaped version for social media profiles",
+			"monochromePrint": "Monochrome version for print materials",
+			"shapedMonochrome": "Shaped monochrome for avatars",
+			"blueTech": "Blue variant for tech-focused content",
+			"shapedBlue": "Shaped blue version",
+			"darkBackgrounds": "For dark backgrounds and overlays",
+			"shapedWhite": "Shaped white version for dark themes",
+			"darkMode": "Optimized for dark mode interfaces",
+			"primaryIcon": "Primary icon for light backgrounds",
+			"shapedApp": "Shaped icon for app stores",
+			"monochromeIcon": "Monochrome icon for print",
+			"shapedMonochromeIcon": "Shaped monochrome icon",
+			"blueIcon": "Blue icon variant",
+			"shapedBlueIcon": "Shaped blue icon",
+			"iconDark": "For dark backgrounds",
+			"shapedIconDark": "Shaped white icon for dark themes",
+			"socialAvatar": "Primary avatar for social profiles",
+			"altAvatar": "Alternative avatar design",
+			"facebookCover": "Facebook page cover image",
+			"eventPromo": "Event promotion graphics",
+			"socialPost": "Social media post graphics"
+		},
+		"buttons": {
+			"preview": "Preview",
+			"download": "Download"
+		},
+		"guidelines": {
+			"title": "Usage Guidelines",
+			"logoUsage": "Logo Usage:",
+			"logoUsageText": "Always maintain clear space around the logo equal to the height of the \"R\" in RelaySMS. Do not modify, stretch, or alter the logo proportions.",
+			"colorVariations": "Color Variations:",
+			"colorVariationsText": "Use the appropriate logo variant based on background color. White logos for dark backgrounds, dark logos for light backgrounds.",
+			"attribution": "Attribution:",
+			"attributionText": "When using RelaySMS brand assets, please maintain attribution to SMS Without Borders and link back to our official website where appropriate."
+		}
+	},
 	"download": {
 		"Header": "Secure & Verified Downloads",
 		"Description": "Access RelaySMS from trusted and verified sources to ensure your security and privacy.",
@@ -178,5 +257,41 @@
 			"fDroid": "Install via F-Droid for open source lovers."
 		},
 		"iosDescription": "Available now on the Apple App Store."
+	},
+	"Overview": {
+		"title": "RelaySMS System Overview",
+		"description": "The diagram below illustrates the flow of messages and data between the main components of the RelaySMS, from client apps through gateways, servers, and external services.",
+		"tip": "Tip: Click on a node in the diagram to view more information about that component.",
+		"details": "Details",
+		"loading": "Loading documentation...",
+		"components": {
+			"Client": "Client",
+			"Vault": "Vault",
+			"Publisher": "Publisher",
+			"GatewayClient": "Gateway Client",
+			"GatewayServer": "Gateway Server",
+			"BridgeServer": "Bridge Server",
+			"Platforms": "Platforms",
+			"EmailBridge": "Email Bridge"
+		},
+		"nodes": {
+			"Client": "Client (Apps)",
+			"GatewayClient": "Gateway Client",
+			"GatewayServer": "Gateway Server",
+			"Publisher": "Publisher",
+			"BridgeServer": "Bridge Server",
+			"Vault": "Vault",
+			"Platforms": "Platforms",
+			"EmailBridge": "Email Bridge"
+		},
+		"edges": {
+			"encryptedSMS": "Encrypted SMS",
+			"httpsSmtpFtp": "HTTPS / SMTP / FTP",
+			"platformPayload": "Platform Payload",
+			"bridgePayload": "Bridge Payload",
+			"decryptAuth": "Decrypt & Auth",
+			"content": "Content"
+		},
+		"documentationError": "Error loading documentation. Please try again."
 	}
 }

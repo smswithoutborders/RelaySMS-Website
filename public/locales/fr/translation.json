@@ -7,7 +7,9 @@
 		"Contact": "Contactez-nous",
 		"Support": "Assistance",
 		"Back": "Retour",
-		"Download": "Télécharger"
+		"Download": "Télécharger",
+		"Branding": "Identité de marque",
+		"Overview": "Vue d'Ensemble du Système"
 	},
 	"social": {
 		"x": "Suivez-nous sur X",
@@ -19,6 +21,7 @@
 		"h1": "Restez connecté avec RelaySMS",
 		"h2": "RelaySMS permet aux utilisateurs d'envoyer des messages vers des plateformes en ligne sans connexion Internet active.",
 		"Android": "Télécharger RelaySMS",
+		"supportedPlatforms": "Plateformes supportées :",
 		"auditMessage": {
 			"part1": "RelaySMS s'engage pour la sécurité et la transparence. Lisez notre ",
 			"link": "rapport d’audit de sécurité",
@@ -109,7 +112,7 @@
 	},
 	"policy": "Politique de confidentialité",
 	"ContactUs": {
-		"Title": "Contactez-nous",
+		"Title": "Contacter l'équipe RelaySMS",
 		"Subtitle": "Nous sommes là pour vous aider via ces canaux.",
 		"Items": {
 			"GitHub": {
@@ -130,6 +133,82 @@
 				"Description": "Contactez-nous pour questions et collaboration.",
 				"ButtonText": "Envoyer un email"
 			}
+		}
+	},
+	"Branding": {
+		"title": "Ressources de Marque RelaySMS",
+		"description": "Téléchargez les logos officiels RelaySMS, icônes et matériaux de marque pour vos projets, présentations et supports marketing.",
+		"tabs": {
+			"fullLogos": "Logos Complets",
+			"logoIcons": "Icônes de Logo",
+			"socialMedia": "Réseaux Sociaux"
+		},
+		"categories": {
+			"fullLogos": {
+				"title": "Logos Complets",
+				"description": "Logos RelaySMS complets avec texte pour usage officiel"
+			},
+			"logoIcons": {
+				"title": "Icônes de Logo",
+				"description": "Versions icône uniquement pour espaces compacts et icônes d'applications"
+			},
+			"socialMedia": {
+				"title": "Ressources Réseaux Sociaux",
+				"description": "Ressources prêtes à utiliser pour plateformes de réseaux sociaux"
+			}
+		},
+		"assets": {
+			"default": "Par Défaut",
+			"defaultShaped": "Par Défaut (Avec Forme)",
+			"black": "Noir",
+			"blackShaped": "Noir (Avec Forme)",
+			"blue": "Bleu",
+			"blueShaped": "Bleu (Avec Forme)",
+			"white": "Blanc",
+			"whiteShaped": "Blanc (Avec Forme)",
+			"darkTheme": "Thème Sombre",
+			"avatar1": "Avatar 1",
+			"avatar2": "Avatar 2",
+			"cover1": "Couverture 1",
+			"cover2": "Couverture 2",
+			"cover3": "Couverture 3"
+		},
+		"usage": {
+			"primaryLight": "Logo principal pour arrière-plans clairs",
+			"shapedSocial": "Version avec forme pour profils de réseaux sociaux",
+			"monochromePrint": "Version monochrome pour matériaux imprimés",
+			"shapedMonochrome": "Monochrome avec forme pour avatars",
+			"blueTech": "Variante bleue pour contenu technologique",
+			"shapedBlue": "Version bleue avec forme",
+			"darkBackgrounds": "Pour arrière-plans sombres et superpositions",
+			"shapedWhite": "Version blanche avec forme pour thèmes sombres",
+			"darkMode": "Optimisé pour interfaces de mode sombre",
+			"primaryIcon": "Icône principale pour arrière-plans clairs",
+			"shapedApp": "Icône avec forme pour magasins d'applications",
+			"monochromeIcon": "Icône monochrome pour impression",
+			"shapedMonochromeIcon": "Icône monochrome avec forme",
+			"blueIcon": "Variante d'icône bleue",
+			"shapedBlueIcon": "Icône bleue avec forme",
+			"iconDark": "Pour arrière-plans sombres",
+			"shapedIconDark": "Icône blanche avec forme pour thèmes sombres",
+			"socialAvatar": "Avatar principal pour profils sociaux",
+			"altAvatar": "Design d'avatar alternatif",
+			"facebookCover": "Image de couverture de page Facebook",
+			"eventPromo": "Graphiques promotionnels d'événements",
+			"socialPost": "Graphiques pour publications sur réseaux sociaux"
+		},
+		"buttons": {
+			"preview": "Aperçu",
+			"download": "Télécharger"
+		},
+		"guidelines": {
+			"title": "Directives d'Utilisation",
+			"logoUsage": "Utilisation du Logo :",
+			"logoUsageText": "Maintenez toujours un espace libre autour du logo égal à la hauteur du \"R\" dans RelaySMS. Ne modifiez pas, n'étirez pas ou n'altérez pas les proportions du logo.",
+			"colorVariations": "Variations de Couleur :",
+			"colorVariationsText": "Utilisez la variante appropriée du logo selon la couleur d'arrière-plan. Logos blancs pour arrière-plans sombres, logos sombres pour arrière-plans clairs.",
+			"attribution": "Attribution :",
+			"attributionText": "Lors de l'utilisation des ressources de marque RelaySMS, maintenez l'attribution à SMS Without Borders et créez un lien vers notre site web officiel quand approprié."
 		}
 	},
 	"download": {
@@ -172,5 +251,41 @@
 		"Description": "Envoyez des messages vers ces plateformes en ligne par SMS en utilisant RelaySMS, même lorsque vous n'avez pas accès à Internet.",
 		"Error": "Impossible de charger les plateformes prises en charge. Veuillez réessayer plus tard.",
 		"Note": "D'autres plateformes sont continuellement ajoutées. Restez à l'écoute pour les mises à jour !"
+	},
+	"Overview": {
+		"title": "Vue d'Ensemble du Système RelaySMS",
+		"description": "Le diagramme ci-dessous illustre le flux de messages et de données entre les composants principaux de RelaySMS, des applications client via les passerelles, serveurs et services externes.",
+		"tip": "Astuce : Cliquez sur un nœud du diagramme pour voir plus d'informations sur ce composant.",
+		"details": "Détails",
+		"loading": "Chargement de la documentation...",
+		"components": {
+			"Client": "Client",
+			"Vault": "Coffre-fort",
+			"Publisher": "Éditeur",
+			"GatewayClient": "Client Passerelle",
+			"GatewayServer": "Serveur Passerelle",
+			"BridgeServer": "Serveur Pont",
+			"Platforms": "Plateformes",
+			"EmailBridge": "Pont Email"
+		},
+		"nodes": {
+			"Client": "Client (Apps)",
+			"GatewayClient": "Client Passerelle",
+			"GatewayServer": "Serveur Passerelle",
+			"Publisher": "Éditeur",
+			"BridgeServer": "Serveur Pont",
+			"Vault": "Coffre-fort",
+			"Platforms": "Plateformes",
+			"EmailBridge": "Pont Email"
+		},
+		"edges": {
+			"encryptedSMS": "SMS Chiffré",
+			"httpsSmtpFtp": "HTTPS / SMTP / FTP",
+			"platformPayload": "Charge Plateforme",
+			"bridgePayload": "Charge du Pont",
+			"decryptAuth": "Décrypter et Auth",
+			"content": "Contenu"
+		},
+		"documentationError": "Erreur lors du chargement de la documentation. Veuillez réessayer."
 	}
 }

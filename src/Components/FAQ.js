@@ -56,7 +56,7 @@ const FAQSection = ({ isFarsi }) => {
 				<Typography
 					variant="h3"
 					sx={{
-						fontSize: "2rem",
+						fontSize: {md: "2rem", xs: "1.5rem"},
 						color: "#2D2A5A",
 						fontFamily: "'Unbounded', Ubuntu"
 					}}
@@ -86,7 +86,6 @@ const FAQSection = ({ isFarsi }) => {
 						sx={{
 							mb: 2,
 							borderRadius: 2,
-							bgcolor: "#f9f9f9",
 							overflow: "hidden",
 							"&:before": {
 								display: "none"
@@ -149,7 +148,7 @@ const FAQSection = ({ isFarsi }) => {
 				</Typography>
 				<Typography
 					component="a"
-					href="/Contact_Us"
+					href="/contact"
 					sx={{
 						color: "#FF9E43",
 						fontWeight: "bold",

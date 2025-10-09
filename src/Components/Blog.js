@@ -51,7 +51,7 @@ const BlogSectionNew = () => {
 				<Typography
 					variant="h3"
 					sx={{
-						fontSize: "2rem",
+						fontSize: {md: "2rem", xs: "1.5rem"},
 						color: "#2D2A5A",
 						fontWeight: 700,
 						fontFamily: "'Unbounded', Ubuntu"
@@ -129,8 +129,7 @@ const BlogSectionNew = () => {
 									}}
 								>
 									<Typography
-										variant="h5"
-										component="h2"
+										variant="h6"
 										sx={{
 											fontWeight: "bold",
 											fontFamily: "Unbounded",

@@ -37,7 +37,7 @@ const HowItWorks = () => {
 			description: t("Howitworks.Step1Desc"),
 			image: "/Download.png",
 			buttonText: t("Howitworks.Step1Button", "Download"),
-			link: "/Download",
+			link: "/download",
 			bgColor: " #EBF5FB"
 		},
 		{
@@ -95,7 +95,7 @@ const HowItWorks = () => {
 				<Typography
 					variant="h3"
 					sx={{
-						fontSize: "2rem",
+						fontSize: {md: "2rem", xs: "1.5rem"},
 						color: "#2D2A5A",
 						fontWeight: 700,
 						fontFamily: "'Unbounded', Ubuntu"
@@ -261,7 +261,7 @@ const HowItWorks = () => {
 												justifyContent: { xs: "center", md: "flex-end" },
 												alignItems: "center",
 												px: { xs: 2, sm: 4, md: 6 },
-												py: { xs: 2, md: 4 }
+												py: { xs: 2, md: 1 }
 											}}
 										>
 											<Box
@@ -272,7 +272,7 @@ const HowItWorks = () => {
 													width: { xs: "80%", sm: "70%", md: "100%" },
 													//maxWidth: 350,
 													height: "auto",
-													maxHeight: 480,
+													maxHeight: 500,
 													objectFit: "contain"
 												}}
 											/>

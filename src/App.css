@@ -10,6 +10,78 @@ body {
 	box-sizing: border-box;
 }
 
+h1,h2,h3,h4,h5 {
+	font-family: "Unbounded", ubuntu;
+	color: #000158;
+}
+
+/* Language Switcher Styles */
+.language-switcher .btn {
+	background: #000158;
+	border: 1px solid #fdf9f6;
+	color: #fcfdfd;
+	font-weight: 500;
+	border-radius: 4px;
+	padding: 6px 12px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: all 0.2s ease;
+	font-size: 14px;
+	width: 100%;
+}
+
+
+
+/* Mobile specific styles for language switcher */
+@media (max-width: 768px) {
+	.language-switcher {
+		width: 100%;
+		position: relative;
+	}
+	
+	.language-switcher .dropdown-menu {
+		position: fixed !important;
+		top: auto !important;
+		left: 50% !important;
+		transform: translateX(-50%) !important;
+		width: 200px;
+		margin-top: 8px;
+		z-index: 10000 !important;
+	}
+	
+	/* Ensure dropdown appears above other elements */
+	.language-switcher .dropdown-toggle::after {
+		margin-left: auto;
+	}
+}
+
+.language-option {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 12px;
+	transition: all 0.2s ease;
+	color: #495057;
+	font-weight: 500;
+	font-size: 13px;
+}
+
+.language-option:hover {
+	background: #f8f9fa;
+	color: #000158;
+}
+
+.language-option.active {
+	background: #000158;
+	color: white;
+	font-weight: 600;
+}
+
+.language-option.active:hover {
+	background: #000158;
+	opacity: 0.9;
+}
+
+
 .circle-number {
 	display: inline-flex;
 	justify-content: center;
