@@ -12,5 +12,4 @@ The Email Bridge receives content from the Bridge Server and generates email ali
 - Recipient receives email from the phone number-based alias
 - Email Client returns delivery confirmation to Bridge Server
 
-
-[![GitHub Repository](https://img.shields.io/badge/📧_Email-Repository-blue?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Bridge-EmailClient)
+[Email Bridge Repository](https://github.com/smswithoutborders/RelaySMS-Bridge-EmailClient)

@@ -11,10 +11,10 @@
 - کلاینت گیت‌وی پیام را با استفاده از پروتکل‌های HTTP، SMTP یا FTP به سرور گیت‌وی ارسال می‌کند
 - سرور گیت‌وی پیام را پردازش می‌کند
 
-[![مخزن GitHub](https://img.shields.io/badge/GitHub-Source_Code-black?logo=github)](https://github.com/dekusms/DekuSMS-Android)
+[مخزن DekuSMS Android](https://github.com/dekusms/DekuSMS-Android)
 
-[![راه‌اندازی کلاینت گیت‌وی](https://img.shields.io/badge/📚_Docs-Setup_Guide-blue?style=for-the-badge)](https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide)
+[راهنمای راه‌اندازی کلاینت گیت‌وی](https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide)
 
 ---
 
-برای فهرست کاملی از کلاینت‌های گیت‌وی موجود، [![کلاینت‌های موجود JSON](https://img.shields.io/badge/_کلاینت‌های_موجود-JSON-blue?style=for-the-badge)](https://gatewayserver.smswithoutborders.com/v3/clients) را مشاهده کنید.
+برای فهرست کاملی از کلاینت‌های گیت‌وی موجود، [کلاینت‌های موجود JSON](https://gatewayserver.smswithoutborders.com/v3/clients) را مشاهده کنید.

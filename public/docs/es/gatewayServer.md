@@ -10,6 +10,6 @@ El Servidor Gateway actúa como el hub de enrutamiento central que recibe mensaj
 - El Servidor Gateway recibe y decodifica el mensaje para determinar su tipo
 - El Servidor Gateway enruta el mensaje al componente apropiado (Publicador o Servidor Puente)
 
-[![Repositorio GitHub](https://img.shields.io/badge/🖥️_Server-Repository-darkblue?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Gateway-Server)
+[Repositorio Gateway Server](https://github.com/smswithoutborders/RelaySMS-Gateway-Server)
 
 ---

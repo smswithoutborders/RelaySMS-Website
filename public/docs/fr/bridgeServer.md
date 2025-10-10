@@ -16,4 +16,4 @@ Le Serveur Pont route les messages vers les clients pont et gère la communicati
 
 ---
 
-[![Dépôt Bridge Server](https://img.shields.io/badge/🌉_Bridge-Repository-orange?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Bridge-Server)
+[Dépôt Bridge Server](https://github.com/smswithoutborders/RelaySMS-Bridge-Server)

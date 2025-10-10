@@ -15,4 +15,4 @@ L'Éditeur agit comme le moteur d'exécution qui se connecte à diverses platefo
 - L'Éditeur livre le message à la plateforme déterminée
 - L'Éditeur renvoie le statut de livraison à l'utilisateur via SMS
 
-[![Dépôt Publisher](https://img.shields.io/badge/🚀_Publisher-Repository-green?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Publisher)
+[Dépôt Publisher](https://github.com/smswithoutborders/RelaySMS-Publisher)

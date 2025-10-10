@@ -15,5 +15,4 @@ The Publisher acts as the execution engine that connects to various social media
 - Publisher delivers the message to the determined platform
 - Publisher sends back the delivery status to the user via SMS
 
-
-[![Publisher Repo](https://img.shields.io/badge/🚀_Publisher-Repository-green?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Publisher)
+[Publisher Repository](https://github.com/smswithoutborders/RelaySMS-Publisher)

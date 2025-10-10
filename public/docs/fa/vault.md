@@ -14,4 +14,4 @@ Vault ذخیره‌سازی توکن و رمزگذاری/رمزگشایی پیا
 
 ---
 
-[![مخزن GitHub](https://img.shields.io/badge/🚀_Publisher-Repository-green?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Vault)
+[مخزن Vault](https://github.com/smswithoutborders/RelaySMS-Vault)

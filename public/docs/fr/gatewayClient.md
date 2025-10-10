@@ -11,10 +11,10 @@ Les clients passerelle servent d'intermédiaires entre les utilisateurs et le sy
 - Le client passerelle transmet le message au Serveur Passerelle en utilisant les protocoles HTTP, SMTP ou FTP
 - Le Serveur Passerelle traite le message
 
-[![Dépôt GitHub](https://img.shields.io/badge/GitHub-Source_Code-black?logo=github)](https://github.com/dekusms/DekuSMS-Android)
+[Dépôt DekuSMS Android](https://github.com/dekusms/DekuSMS-Android)
 
-[![Configuration d'un Client Passerelle](https://img.shields.io/badge/📚_Docs-Setup_Guide-blue?style=for-the-badge)](https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide)
+[Guide de Configuration Client Passerelle](https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide)
 
 ---
 
-Pour une liste complète des clients passerelle disponibles, consultez le [![clients disponibles JSON](https://img.shields.io/badge/_Clients_Disponibles-JSON-blue?style=for-the-badge)](https://gatewayserver.smswithoutborders.com/v3/clients)
+Pour une liste complète des clients passerelle disponibles, consultez le [Clients Disponibles JSON](https://gatewayserver.smswithoutborders.com/v3/clients)

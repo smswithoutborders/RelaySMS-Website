@@ -16,4 +16,4 @@
 
 ---
 
-[![مخزن Bridge Server](https://img.shields.io/badge/🌉_Bridge-Repository-orange?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Bridge-Server)
+[مخزن Bridge Server](https://github.com/smswithoutborders/RelaySMS-Bridge-Server)

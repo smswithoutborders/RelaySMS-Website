@@ -10,6 +10,6 @@ The Gateway Server acts as the central routing hub that receives messages from g
 - Gateway Server receives and decodes the message to determine its type
 - Gateway Server routes message to appropriate component (Publisher or Bridge Server)
 
-[![GitHub Repository](https://img.shields.io/badge/🖥️_Server-Repository-darkblue?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Gateway-Server)
+[Gateway Server Repository](https://github.com/smswithoutborders/RelaySMS-Gateway-Server)
 
 ---
