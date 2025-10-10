@@ -12,4 +12,4 @@ Le Pont Email reçoit du contenu du Serveur Pont et génère des alias email à 
 - Le destinataire reçoit l'email de l'alias basé sur le numéro de téléphone
 - Le Client Email retourne une confirmation de livraison au Serveur Pont
 
-[![Dépôt GitHub](https://img.shields.io/badge/📧_Email-Repository-blue?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Bridge-EmailClient)
+[Dépôt Email Bridge](https://github.com/smswithoutborders/RelaySMS-Bridge-EmailClient)

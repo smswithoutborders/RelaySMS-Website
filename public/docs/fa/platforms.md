@@ -15,14 +15,14 @@
 
 ##### پلتفرم‌های پشتیبانی شده
 
-[![آداپتر Gmail](https://img.shields.io/badge/🔌_Platforms-Repository-purple?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/gmail-oauth2-adapter)
+[آداپتر Gmail](https://github.com/smswithoutborders/gmail-oauth2-adapter)
 
-[![آداپتر Twitter](https://img.shields.io/badge/🔌_Platforms-Repository-purple?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/twitter-oauth2-adapter)
+[آداپتر Twitter](https://github.com/smswithoutborders/twitter-oauth2-adapter)
 
-[![آداپتر Mastodon](https://img.shields.io/badge/🔌_Platforms-Repository-purple?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/mastodon-oauth2-adapter)
+[آداپتر Mastodon](https://github.com/smswithoutborders/mastodon-oauth2-adapter)
 
-[![آداپتر Bluesky](https://img.shields.io/badge/🔌_Platforms-Repository-purple?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/bluesky-oauth2-adapter)
+[آداپتر Bluesky](https://github.com/smswithoutborders/bluesky-oauth2-adapter)
 
-[![آداپتر Telegram](https://img.shields.io/badge/🔌_Platforms-Repository-purple?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/telegram-pnba-adapter)
+[آداپتر Telegram](https://github.com/smswithoutborders/telegram-pnba-adapter)
 
-برای فهرست کاملی از پلتفرم‌های پشتیبانی شده، <a href="https://publisher.smswithoutborders.com/v1/platforms" target="_blank">JSON پلتفرم‌های پشتیبانی شده</a> را مشاهده کنید.
+برای فهرست کاملی از پلتفرم‌های پشتیبانی شده، [پلتفرم‌های پشتیبانی شده JSON](https://publisher.smswithoutborders.com/v1/platforms) را مشاهده کنید.

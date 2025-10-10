@@ -15,6 +15,6 @@ Les applications client chiffrent les messages utilisateur et les envoient via S
 - Pour les messages du pont : Lorsque les réponses sont envoyées à l'alias, le Serveur Pont les transmet via SMS
 - L'application déchiffre et affiche les réponses du pont à l'utilisateur
 
-[![Dépôt Android](https://img.shields.io/badge/GitHub-Source_Code-black?logo=github)](https://github.com/smswithoutborders/RelaySMS-Android)
+[Dépôt Android](https://github.com/smswithoutborders/RelaySMS-Android)
 
-[![Dépôt iOS](https://img.shields.io/badge/GitHub-Source_Code-black?logo=github)](https://github.com/smswithoutborders/RelaySMS-iOS)
+[Dépôt iOS](https://github.com/smswithoutborders/RelaySMS-iOS)

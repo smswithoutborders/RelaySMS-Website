@@ -10,6 +10,6 @@ Le Serveur Passerelle agit comme le hub de routage central qui reçoit les messa
 - Le Serveur Passerelle reçoit et décode le message pour déterminer son type
 - Le Serveur Passerelle route le message vers le composant approprié (Éditeur ou Serveur Pont)
 
-[![Dépôt GitHub](https://img.shields.io/badge/🖥️_Server-Repository-darkblue?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Gateway-Server)
+[Dépôt Gateway Server](https://github.com/smswithoutborders/RelaySMS-Gateway-Server)
 
 ---

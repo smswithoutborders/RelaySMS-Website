@@ -15,4 +15,4 @@ El Publicador actúa como el motor de ejecución que se conecta a varias platafo
 - El Publicador entrega el mensaje a la plataforma determinada
 - El Publicador envía de vuelta el estado de entrega al usuario por SMS
 
-[![Repositorio Publisher](https://img.shields.io/badge/🚀_Publisher-Repository-green?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Publisher)
+[Repositorio Publisher](https://github.com/smswithoutborders/RelaySMS-Publisher)

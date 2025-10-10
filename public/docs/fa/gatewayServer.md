@@ -10,6 +10,6 @@
 - سرور گیت‌وی پیام را دریافت و رمزگشایی کرده تا نوع آن را تعیین کند
 - سرور گیت‌وی پیام را به جزء مناسب (ناشر یا سرور پل) مسیریابی می‌کند
 
-[![مخزن GitHub](https://img.shields.io/badge/🖥️_Server-Repository-darkblue?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Gateway-Server)
+[مخزن Gateway Server](https://github.com/smswithoutborders/RelaySMS-Gateway-Server)
 
 ---

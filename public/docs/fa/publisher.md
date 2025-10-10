@@ -15,4 +15,4 @@
 - ناشر پیام را به پلتفرم تعیین شده تحویل می‌دهد
 - ناشر وضعیت تحویل را از طریق SMS به کاربر بازمی‌گرداند
 
-[![مخزن Publisher](https://img.shields.io/badge/🚀_Publisher-Repository-green?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Publisher)
+[مخزن Publisher](https://github.com/smswithoutborders/RelaySMS-Publisher)

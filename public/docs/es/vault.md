@@ -14,4 +14,4 @@ El Vault gestiona el almacenamiento de tokens y el cifrado/descifrado de mensaje
 
 ---
 
-[![GitHub Repository](https://img.shields.io/badge/🚀_Publisher-Repository-green?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Vault)
+[Repositorio Vault](https://github.com/smswithoutborders/RelaySMS-Vault)

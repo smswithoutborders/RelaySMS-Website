@@ -15,6 +15,6 @@
 - برای پیام‌های پل: هنگامی که پاسخ‌ها به نام مستعار ارسال می‌شوند، سرور پل آن‌ها را از طریق SMS ارسال می‌کند
 - اپ پاسخ‌های پل را رمزگشایی کرده و به کاربر نمایش می‌دهد
 
-[![مخزن Android](https://img.shields.io/badge/GitHub-Source_Code-black?logo=github)](https://github.com/smswithoutborders/RelaySMS-Android)
+[مخزن Android](https://github.com/smswithoutborders/RelaySMS-Android)
 
-[![مخزن iOS](https://img.shields.io/badge/GitHub-Source_Code-black?logo=github)](https://github.com/smswithoutborders/RelaySMS-iOS)
+[مخزن iOS](https://github.com/smswithoutborders/RelaySMS-iOS)

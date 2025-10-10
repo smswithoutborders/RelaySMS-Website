@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, Grid, Typography, IconButton, Drawer, Alert } from "@mui/material";
+import { Box, Typography, IconButton, Drawer, Alert } from "@mui/material";
 import ReactMarkdown from "react-markdown";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 import Map from "../Components/Map";
+import ButtonContained from "../Components/ButtonContained";
 
 const Overview = () => {
 	const { t } = useTranslation();
@@ -30,32 +31,29 @@ const Overview = () => {
 
 		try {
 			const fileName = documentationMap[key];
-			const currentLanguage = i18n.language || 'en';
-			
-			// Try to load localized documentation first, fallback to English
+			const currentLanguage = i18n.language || "en";
+
 			let response;
 			let markdown;
-			
+
 			try {
 				response = await fetch(`/docs/${currentLanguage}/${fileName}`);
 				if (response.ok) {
 					markdown = await response.text();
-					// Check if we got HTML instead of markdown (happens when file doesn't exist)
-					if (markdown.includes('<!doctype html>') || markdown.includes('<html')) {
-						throw new Error('Got HTML instead of markdown');
+					if (markdown.includes("<!doctype html>") || markdown.includes("<html")) {
+						throw new Error("Got HTML instead of markdown");
 					}
 				} else {
-					throw new Error('Localized file not found');
+					throw new Error("Localized file not found");
 				}
 			} catch (error) {
-				// Fallback to English documentation
 				response = await fetch(`/docs/${fileName}`);
 				if (!response.ok) {
-					throw new Error('Documentation file not found');
+					throw new Error("Documentation file not found");
 				}
 				markdown = await response.text();
 			}
-			
+
 			setDrawerContent(markdown);
 		} catch (error) {
 			console.error("Error loading documentation:", error);
@@ -101,9 +99,7 @@ const Overview = () => {
 					<Typography variant="body1" sx={{ mb: 2, fontSize: "1.2rem", mx: { md: 6, xs: 2 } }}>
 						{t("Overview.description")}
 					</Typography>
-					<Alert severity="info">
-						{t("Overview.tip")}
-					</Alert>
+					<Alert severity="info">{t("Overview.tip")}</Alert>
 					<Map handleDrawerOpen={handleDrawerOpen} />
 				</Box>
 			</Box>
@@ -115,24 +111,26 @@ const Overview = () => {
 					sx: {
 						width: { xs: "100%", sm: 400, lg: 600 },
 						p: 3,
-						mt: { xs: 8, sm: 8, md: 10 }, // Add margin-top to avoid navbar
+						mt: { xs: 8, sm: 8, md: 10 },
 						height: {
 							xs: "calc(100vh - 64px)",
 							sm: "calc(100vh - 64px)",
 							md: "calc(100vh - 80px)"
-						}, // Adjust height
-						zIndex: 1200 // Ensure it's above most elements but below modal backdrop
+						},
+						zIndex: 1200
 					}
 				}}
 				ModalProps={{
 					sx: {
-						zIndex: 1300 // Ensure the backdrop is above everything
+						zIndex: 1300
 					}
 				}}
 			>
 				<Box display="flex" justifyContent="space-between" alignItems="center">
-					<Typography variant="h5" fontWeight="bold">
-						{drawerTitle ? t(`Overview.components.${drawerTitle}`, drawerTitle) : t("Overview.details")}
+					<Typography variant="h5" fontWeight="bold" sx={{ fontFamily: "'Unbounded', Ubuntu" }}>
+						{drawerTitle
+							? t(`Overview.components.${drawerTitle}`, drawerTitle)
+							: t("Overview.details")}
 					</Typography>
 					<IconButton onClick={handleDrawerClose}>
 						<span style={{ fontSize: 24 }}>&times;</span>
@@ -144,9 +142,16 @@ const Overview = () => {
 					) : (
 						<ReactMarkdown
 							components={{
-								a: ({ node, ...props }) => (
-									<a {...props} target="_blank" rel="noopener noreferrer" />
-								)
+								a: ({ node, href, children, ...props }) => {
+									if (href && href.includes("github.com")) {
+										return <ButtonContained text={children} linkTo={href} />;
+									}
+									return (
+										<a {...props} href={href} target="_blank" rel="noopener noreferrer">
+											{children}
+										</a>
+									);
+								}
 							}}
 						>
 							{drawerContent}
