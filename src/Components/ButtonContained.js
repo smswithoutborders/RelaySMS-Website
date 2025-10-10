@@ -9,7 +9,7 @@ const ButtonContained = ({ text, linkTo, onClick, fontSize }) => {
 			variant="contained"
 			size="small"
 			className="header"
-			sx={{ textTransform: "none", fontSize: { fontSize } }}
+			sx={{ textTransform: "none", fontSize: fontSize }}
 		>
 			{text}
 		</Button>
