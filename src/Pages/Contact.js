@@ -5,7 +5,7 @@ import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 
-const ContactUs = () => {
+const Contact = () => {
 	const { t, i18n } = useTranslation();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 
@@ -47,7 +47,7 @@ const ContactUs = () => {
 			dir={isRtl ? "rtl" : "ltr"}
 			sx={{
 				position: "relative",
-				backgroundColor: "#FAF2E4",
+				backgroundColor: "#fce9d8ff",
 				overflow: "hidden",
 				fontFamily: "Montserrat, sans-serif",
 				textAlign: "center",
@@ -161,4 +161,4 @@ const ContactUs = () => {
 	);
 };
 
-export default ContactUs;
+export default Contact;

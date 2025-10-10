@@ -10,6 +10,11 @@ body {
 	box-sizing: border-box;
 }
 
+h1,h2,h3,h4,h5 {
+	font-family: "Unbounded", ubuntu;
+	color: #000158;
+}
+
 /* Language Switcher Styles */
 .language-switcher .btn {
 	background: #000158;

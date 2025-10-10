@@ -46,7 +46,8 @@ export default function Navigation() {
 			href: "https://docs.smswithoutborders.com/",
 			external: true
 		},
-		{ label: t("Nav.Contact"), to: "/Contact_Us" }
+		{ label: t("Nav.Contact"), to: "/contact" },
+		{ label: t("Nav.Overview"), to: "/system-overview" }
 	];
 
 	const handleOpenNavMenu = (event) => {

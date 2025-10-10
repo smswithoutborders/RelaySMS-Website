@@ -192,7 +192,7 @@ const Hero = () => {
 						>
 							<Button
 								component={Link}
-								to="/Download"
+								to="/download"
 								variant="contained"
 								size="large"
 								sx={{

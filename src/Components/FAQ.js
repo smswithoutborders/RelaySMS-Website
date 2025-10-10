@@ -148,7 +148,7 @@ const FAQSection = ({ isFarsi }) => {
 				</Typography>
 				<Typography
 					component="a"
-					href="/Contact_Us"
+					href="/contact"
 					sx={{
 						color: "#FF9E43",
 						fontWeight: "bold",
