@@ -1,6 +1,6 @@
 {
-	"short_name": "React App",
-	"name": "Create React App Sample",
+	"short_name": "RelaySMS",
+	"name": "Communicate offline with online platforms using RelaySMS",
 	"icons": [
 		{
 			"src": "favico.ico",

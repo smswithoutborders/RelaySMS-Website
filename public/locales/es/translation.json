@@ -287,5 +287,11 @@
 			"content": "Contenido"
 		},
 		"documentationError": "Error al cargar la documentación. Por favor, inténtalo de nuevo."
+	},
+	"404": {
+		"title": "¡Ups! Página No Encontrada",
+		"description": "La página que buscas no existe. Puede que haya sido movida, eliminada, o ingresaste una URL incorrecta.",
+		"homeButton": "Volver al Inicio",
+		"backButton": "Regresar"
 	}
 }
