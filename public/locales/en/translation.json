@@ -293,5 +293,11 @@
 			"content": "Content"
 		},
 		"documentationError": "Error loading documentation. Please try again."
+	},
+	"404": {
+		"title": "Oops! Page Not Found",
+		"description": "The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.",
+		"homeButton": "Go Back Home",
+		"backButton": "Go Back"
 	}
 }
