@@ -26,7 +26,6 @@ const Branding = () => {
 		setActiveTab(newValue);
 	};
 
-	// Define branding assets categories
 	const brandingAssets = {
 		fullLogos: {
 			title: t("Branding.categories.fullLogos.title"),
@@ -190,6 +189,7 @@ const Branding = () => {
 
 	const AssetCard = ({ asset, showSvg = false }) => (
 		<Card
+			elevation={1}
 			sx={{
 				height: "100%",
 				display: "flex",
@@ -223,16 +223,20 @@ const Branding = () => {
 			</Box>
 			<CardContent sx={{ flexGrow: 1 }}>
 				<Typography
-					variant="h6"
-					sx={{ fontWeight: 500, mb: 1, fontFamily: "Montserrat, sans-serif" }}
+					variant="body1"
+					sx={{ fontWeight: "bold", mb: 1, fontFamily: "Unbounded, sans-serif" }}
 				>
 					{asset.name}
 				</Typography>
-				<Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+				<Typography
+					variant="body2"
+					color="text.secondary"
+					sx={{ mb: 2, fontFamily: "Montserrat, sans-serif" }}
+				>
 					{asset.usage}
 				</Typography>
 				<Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
-					{asset.png && <Chip label="PNG" size="small" color="primary" variant="outlined" />}
+					{asset.png && <Chip label="PNG" size="small" color="#000158" variant="outlined" />}
 					{asset.svg && <Chip label="SVG" size="small" color="secondary" variant="outlined" />}
 					{asset.file && <Chip label="IMG" size="small" color="info" variant="outlined" />}
 				</Box>
@@ -245,7 +249,7 @@ const Branding = () => {
 							onClick={() =>
 								previewAsset(showSvg && asset.svg ? asset.svg : asset.png || asset.file)
 							}
-							sx={{ color: "#1772B8" }}
+							sx={{ color: "#000158" }}
 						>
 							<FontAwesomeIcon icon={faEye} />
 						</IconButton>
@@ -255,7 +259,7 @@ const Branding = () => {
 							size="small"
 							startIcon={<FontAwesomeIcon icon={faDownload} />}
 							onClick={() => downloadAsset(asset.png, `${asset.name}-PNG.png`)}
-							sx={{ flex: 1, fontSize: "12px" }}
+							sx={{ flex: 1, fontSize: "12px", color: "#000158" }}
 						>
 							PNG
 						</Button>
@@ -265,8 +269,7 @@ const Branding = () => {
 							size="small"
 							startIcon={<FontAwesomeIcon icon={faDownload} />}
 							onClick={() => downloadAsset(asset.svg, `${asset.name}-SVG.svg`)}
-							variant="outlined"
-							sx={{ flex: 1, fontSize: "12px" }}
+							sx={{ flex: 1, fontSize: "12px", color: "#000158" }}
 						>
 							SVG
 						</Button>
@@ -305,12 +308,10 @@ const Branding = () => {
 			sx={{
 				minHeight: "100vh",
 				position: "relative",
-				backgroundColor: "#FAF2E4",
 				overflow: "hidden",
 				fontFamily: "Montserrat, sans-serif"
 			}}
 		>
-			{/* Main Content */}
 			<Box
 				sx={{
 					zIndex: 2,
@@ -318,12 +319,11 @@ const Branding = () => {
 					minHeight: "100vh",
 					maxWidth: "1400px",
 					mx: "auto",
-					pt: 12,
+					pt: 20,
 					pb: 8,
 					px: { xs: 2, sm: 4 }
 				}}
 			>
-				{/* Header Section */}
 				<Box sx={{ textAlign: "center", mb: 8 }}>
 					<Typography
 						variant="h4"
@@ -338,7 +338,6 @@ const Branding = () => {
 					</Typography>
 				</Box>
 
-				{/* Navigation Tabs */}
 				<Box sx={{ mb: 6 }}>
 					<Tabs
 						value={activeTab}
@@ -349,6 +348,7 @@ const Branding = () => {
 								textTransform: "none",
 								fontWeight: 500,
 								fontSize: "16px",
+								fontFamily: "Montserrat, sans-serif",
 								color: "#1E283A"
 							},
 							"& .Mui-selected": {
@@ -365,7 +365,6 @@ const Branding = () => {
 					</Tabs>
 				</Box>
 
-				{/* Content based on active tab */}
 				<Box>
 					<Grid container spacing={3}>
 						{getCurrentAssets().assets.map((asset, index) => (
@@ -376,24 +375,19 @@ const Branding = () => {
 					</Grid>
 				</Box>
 
-				{/* Usage Guidelines */}
 				<Box sx={{ mb: 8, mt: 10 }}>
-					<Card elevation={0} sx={{ backgroundColor: "#ffffffd2" }}>
-						<CardContent>
-							<Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
-								<strong>{t("Branding.guidelines.logoUsage")}</strong>{" "}
-								{t("Branding.guidelines.logoUsageText")}
-							</Typography>
-							<Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
-								<strong>{t("Branding.guidelines.colorVariations")}</strong>{" "}
-								{t("Branding.guidelines.colorVariationsText")}
-							</Typography>
-							<Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-								<strong>{t("Branding.guidelines.attribution")}</strong>{" "}
-								{t("Branding.guidelines.attributionText")}
-							</Typography>
-						</CardContent>
-					</Card>
+					<Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
+						<strong>{t("Branding.guidelines.logoUsage")}</strong>{" "}
+						{t("Branding.guidelines.logoUsageText")}
+					</Typography>
+					<Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
+						<strong>{t("Branding.guidelines.colorVariations")}</strong>{" "}
+						{t("Branding.guidelines.colorVariationsText")}
+					</Typography>
+					<Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+						<strong>{t("Branding.guidelines.attribution")}</strong>{" "}
+						{t("Branding.guidelines.attributionText")}
+					</Typography>
 				</Box>
 			</Box>
 		</Box>

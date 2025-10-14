@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useLanguageLink } from "../hooks/useLanguageLink";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -15,6 +16,7 @@ import { faBluesky, faXTwitter, faGithub } from "@fortawesome/free-brands-svg-ic
 
 export default function Navigation() {
 	const { t, i18n } = useTranslation();
+	const { getLanguageLink } = useLanguageLink();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 	const [anchorElNav, setAnchorElNav] = useState(null);
 	const iconColor = "#2d2e2eff";
@@ -35,7 +37,7 @@ export default function Navigation() {
 	}, []);
 
 	const navLinks = [
-		{ label: t("Nav.Home"), to: "/" },
+		{ label: t("Nav.Home"), to: getLanguageLink("/") },
 		{
 			label: t("Nav.Blog"),
 			href: "https://blog.smswithoutborders.com/",
@@ -46,8 +48,8 @@ export default function Navigation() {
 			href: "https://docs.smswithoutborders.com/",
 			external: true
 		},
-		{ label: t("Nav.Contact"), to: "/contact" },
-		{ label: t("Nav.Overview"), to: "/system-overview" }
+		{ label: t("Nav.Contact"), to: getLanguageLink("/contact") },
+		{ label: t("Nav.Overview"), to: getLanguageLink("/system-overview") }
 	];
 
 	const handleOpenNavMenu = (event) => {
@@ -87,7 +89,7 @@ export default function Navigation() {
 					transition: "all 0.3s ease"
 				}}
 			>
-				<Link to="/" style={{ textDecoration: "none" }} aria-label="Home">
+				<Link to={getLanguageLink("/")} style={{ textDecoration: "none" }} aria-label="Home">
 					<Box
 						component="img"
 						src="/logo.png"
@@ -144,7 +146,7 @@ export default function Navigation() {
 									color: iconColor,
 									textTransform: "none",
 									fontWeight: 500,
-									fontSize: { md: "15px", lg: "16px", xl: "18px" },
+									fontSize: { md: "15px", lg: "16px", xl: "16px" },
 									backgroundImage: "linear-gradient(to right,rgb(23, 114, 184),rgb(5, 105, 155))",
 									backgroundSize: "0% 2px",
 									backgroundRepeat: "no-repeat",

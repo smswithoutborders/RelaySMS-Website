@@ -3,7 +3,6 @@
 html,
 body {
 	overflow-x: hidden;
-	font-family: "ubuntu";
 }
 
 * {
@@ -11,11 +10,10 @@ body {
 }
 
 h1,h2,h3,h4,h5 {
-	font-family: "Unbounded", ubuntu;
+	font-family: "Unbounded", sans-serif;
 	color: #000158;
 }
 
-/* Language Switcher Styles */
 .language-switcher .btn {
 	background: #000158;
 	border: 1px solid #fdf9f6;
@@ -31,7 +29,6 @@ h1,h2,h3,h4,h5 {
 
 
 
-/* Mobile specific styles for language switcher */
 @media (max-width: 768px) {
 	.language-switcher {
 		width: 100%;
@@ -48,7 +45,6 @@ h1,h2,h3,h4,h5 {
 		z-index: 10000 !important;
 	}
 	
-	/* Ensure dropdown appears above other elements */
 	.language-switcher .dropdown-toggle::after {
 		margin-left: auto;
 	}
