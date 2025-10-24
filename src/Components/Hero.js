@@ -185,7 +185,7 @@ const Hero = () => {
 								src="/new-phones.png"
 								alt="RelaySMS Background"
 								sx={{
-									width: { md: "650px", xs: "100%" }
+									width: { lg: "650px", xs: "100%", md: "100%", sm: "80%" },
 								}}
 							/>
 						</Box>

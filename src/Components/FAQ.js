@@ -70,9 +70,17 @@ const FAQSection = ({ isFarsi }) => {
 				</Typography>
 			</Box>
 
-			<Grid container spacing={4} sx={{ maxWidth: "1200px", mx: "auto", width: "100%" }}>
-				<Grid item xs={12} md={8}>
-					<Box sx={{ width: "100%", overflow: "hidden" }}>
+			<Grid
+				container
+				spacing={4}
+				sx={{
+					maxWidth: "1200px",
+					mx: { md: "auto", xs: -2 },
+					width: "100%",
+				}}
+			>
+				<Grid item xs={12} md={8} sx={{ display: "flex", justifyContent: "center" }}>
+					<Box sx={{ width: "100%", overflow: "hidden", maxWidth: { xs: "600px", md: "100%" } }}>
 						{faqs.map(({ question, answer }, idx) => (
 							<Box key={idx}>
 								<Typography
@@ -129,14 +137,11 @@ const FAQSection = ({ isFarsi }) => {
 					<Paper
 						elevation={0}
 						sx={{
-							px: { xs: 3, md: 4 },
+							px: { xs: 1.5, md: 4 },
 							py: { xs: 4, md: 10 },
 							backgroundColor: "#f8f9fa",
 							border: "1px solid #e9ecef",
-							height: "fit-content",
-							position: { xs: "static", md: "sticky" },
-							width: "100%",
-							boxSizing: "border-box"
+							width: "100%"
 						}}
 					>
 						<Typography
@@ -200,11 +205,11 @@ const FAQSection = ({ isFarsi }) => {
 								component="a"
 								href="mailto:developers@smswithoutborders.com"
 								sx={{
-									display: "flex",
-									justifyContent: "flex-start",
 									alignItems: "center",
 									color: "#555555",
 									textTransform: "none",
+									overflowWrap: "break-word",
+									wordBreak: "break-word",
 									fontSize: "1rem",
 									fontFamily: "Ubuntu",
 									p: 0,
