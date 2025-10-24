@@ -69,7 +69,7 @@ const Overview = () => {
 		setDrawerTitle("");
 	};
 	return (
-		<Box sx={{ backgroundColor: "#fce9d8ff" }}>
+		<Box>
 			<Box
 				sx={{
 					pt: { xs: 15, sm: 20, md: 25 },
@@ -104,6 +104,7 @@ const Overview = () => {
 				</Box>
 			</Box>
 			<Drawer
+			className="markdown-drawer"
 				anchor="right"
 				open={drawerOpen}
 				onClose={handleDrawerClose}

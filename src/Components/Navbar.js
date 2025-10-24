@@ -11,8 +11,8 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import MenuIcon from "@mui/icons-material/Menu";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBluesky, faXTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FaGithub, FaXTwitter } from "react-icons/fa6";
+import { SiBluesky } from "react-icons/si";
 
 export default function Navigation() {
 	const { t, i18n } = useTranslation();
@@ -37,19 +37,18 @@ export default function Navigation() {
 	}, []);
 
 	const navLinks = [
-		{ label: t("Nav.Home"), to: getLanguageLink("/") },
 		{
 			label: t("Nav.Blog"),
 			href: "https://blog.smswithoutborders.com/",
 			external: true
 		},
 		{
-			label: t("Nav.Support"),
+			label: t("Nav.Help"),
 			href: "https://docs.smswithoutborders.com/",
 			external: true
 		},
-		{ label: t("Nav.Contact"), to: getLanguageLink("/contact") },
-		{ label: t("Nav.Overview"), to: getLanguageLink("/system-overview") }
+		{ label: t("Nav.Contact"), to: "/contact" },
+		{ label: t("Nav.Overview"), to: "/system-overview" }
 	];
 
 	const handleOpenNavMenu = (event) => {
@@ -64,9 +63,9 @@ export default function Navigation() {
 		<AppBar
 			dir={isRtl ? "rtl" : "ltr"}
 			position="fixed"
-			elevation={scrolled ? 4 : 0}
+			elevation={scrolled ? 2 : 0}
 			sx={{
-				backgroundColor: scrolled ? "#fce9d8ff" : "#ffffff02",
+				backgroundColor: scrolled ? "#ffffffff" : "#ffffff02",
 				top: 0,
 				left: 0,
 				right: 0,
@@ -89,7 +88,7 @@ export default function Navigation() {
 					transition: "all 0.3s ease"
 				}}
 			>
-				<Link to={getLanguageLink("/")} style={{ textDecoration: "none" }} aria-label="Home">
+				<Link to="/" style={{ textDecoration: "none" }} aria-label="Home">
 					<Box
 						component="img"
 						src="/logo.png"
@@ -129,8 +128,7 @@ export default function Navigation() {
 									backgroundPosition: "left bottom",
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
-										backgroundSize: "100% 2px",
-										color: "#FF9E43"
+										backgroundSize: "100% 2px"
 									}
 								}}
 							>
@@ -173,7 +171,7 @@ export default function Navigation() {
 						aria-label="GitHub"
 						sx={{ color: iconColor }}
 					>
-						<FontAwesomeIcon icon={faGithub} size="sm" />
+						<FaGithub size={16} />
 					</IconButton>
 					<IconButton
 						component="a"
@@ -183,7 +181,7 @@ export default function Navigation() {
 						aria-label="RelaySMS on X"
 						sx={{ color: iconColor }}
 					>
-						<FontAwesomeIcon icon={faXTwitter} size="sm" />
+						<FaXTwitter size={16} />
 					</IconButton>
 					<IconButton
 						component="a"
@@ -193,7 +191,7 @@ export default function Navigation() {
 						aria-label="RelaySMS on Bluesky"
 						sx={{ color: iconColor }}
 					>
-						<FontAwesomeIcon icon={faBluesky} size="sm" />
+						<SiBluesky size={16} color="#4f9bd9"/>
 					</IconButton>
 				</Box>
 
@@ -208,7 +206,7 @@ export default function Navigation() {
 						aria-controls="menu-appbar"
 						aria-haspopup="true"
 						onClick={handleOpenNavMenu}
-						sx={{ 
+						sx={{
 							color: iconColor,
 							transition: "transform 0.2s ease",
 							"&:hover": {
@@ -252,11 +250,11 @@ export default function Navigation() {
 									height: 10,
 									backgroundColor: "rgba(255, 255, 255, 0.95)",
 									transform: "translateY(-50%) rotate(45deg)",
-									zIndex: 0,
-								},
+									zIndex: 0
+								}
 							},
 							"& .MuiList-root": {
-								padding: "12px 0",
+								padding: "12px 0"
 							},
 							"& .MuiMenuItem-root": {
 								padding: "12px 24px",
@@ -267,20 +265,20 @@ export default function Navigation() {
 								transition: "all 0.2s ease",
 								"&:hover": {
 									backgroundColor: "rgba(255, 158, 67, 0.1)",
-									transform: "translateX(4px)",
+									transform: "translateX(4px)"
 								},
 								"&.language-switcher-item": {
 									padding: "8px 24px",
 									"&:hover": {
 										backgroundColor: "transparent",
-										transform: "none",
+										transform: "none"
 									}
 								},
 								"&.social-icons-item": {
 									padding: "8px 24px",
 									"&:hover": {
 										backgroundColor: "transparent",
-										transform: "none",
+										transform: "none"
 									}
 								}
 							}
@@ -319,7 +317,7 @@ export default function Navigation() {
 									target="_blank"
 									rel="noopener noreferrer"
 									aria-label="GitHub"
-									sx={{ 
+									sx={{
 										color: iconColor,
 										transition: "transform 0.2s ease",
 										"&:hover": {
@@ -328,7 +326,7 @@ export default function Navigation() {
 										}
 									}}
 								>
-									<FontAwesomeIcon icon={faGithub} />
+									<FaGithub />
 								</IconButton>
 								<IconButton
 									component="a"
@@ -336,7 +334,7 @@ export default function Navigation() {
 									target="_blank"
 									rel="noopener noreferrer"
 									aria-label="RelaySMS on X"
-									sx={{ 
+									sx={{
 										color: iconColor,
 										transition: "transform 0.2s ease",
 										"&:hover": {
@@ -345,7 +343,7 @@ export default function Navigation() {
 										}
 									}}
 								>
-									<FontAwesomeIcon icon={faXTwitter} />
+									<FaXTwitter />
 								</IconButton>
 								<IconButton
 									component="a"
@@ -353,7 +351,7 @@ export default function Navigation() {
 									target="_blank"
 									rel="noopener noreferrer"
 									aria-label="RelaySMS on Bluesky"
-									sx={{ 
+									sx={{
 										color: iconColor,
 										transition: "transform 0.2s ease",
 										"&:hover": {
@@ -362,7 +360,7 @@ export default function Navigation() {
 										}
 									}}
 								>
-									<FontAwesomeIcon icon={faBluesky} />
+									<SiBluesky />
 								</IconButton>
 							</Box>
 						</MenuItem>

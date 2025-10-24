@@ -1,8 +1,6 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FaGithub, FaXTwitter, FaEnvelope } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 
 const Contact = () => {
@@ -11,7 +9,7 @@ const Contact = () => {
 
 	const socialLinks = [
 		{
-			icon: faGithub,
+			icon: FaGithub,
 			url: "https://github.com/smswithoutborders",
 			label: t("ContactUs.Items.GitHub.Label", "GitHub"),
 			description: t(
@@ -21,7 +19,7 @@ const Contact = () => {
 			ButtonText: t("ContactUs.Items.GitHub.ButtonText", "View GitHub")
 		},
 		{
-			icon: faTwitter,
+			icon: FaXTwitter,
 			url: "https://x.com/RelaySMS",
 			label: t("ContactUs.Items.Twitter.Label", "Twitter"),
 			description: t(
@@ -31,7 +29,7 @@ const Contact = () => {
 			ButtonText: t("ContactUs.Items.Twitter.ButtonText", "Follow on Twitter")
 		},
 		{
-			icon: faEnvelope,
+			icon: FaEnvelope,
 			url: "mailto:developers@smswithoutborders.com",
 			label: t("ContactUs.Items.Email.Label", "Email"),
 			description: t(
@@ -47,7 +45,6 @@ const Contact = () => {
 			dir={isRtl ? "rtl" : "ltr"}
 			sx={{
 				position: "relative",
-				backgroundColor: "#fce9d8ff",
 				overflow: "hidden",
 				fontFamily: "Montserrat, sans-serif",
 				textAlign: "center",
@@ -116,14 +113,13 @@ const Contact = () => {
 								}
 							}}
 						>
-							<FontAwesomeIcon
-								icon={icon}
-								style={{
+							{React.createElement(icon, {
+								style: {
 									fontSize: "1.6rem",
 									color: "#202020ff",
 									marginBottom: "2.5rem"
-								}}
-							/>
+								}
+							})}
 							<Typography variant="body1" sx={{ fontWeight: 600, mb: 1.5, color: "#1e283a" }}>
 								{label}
 							</Typography>

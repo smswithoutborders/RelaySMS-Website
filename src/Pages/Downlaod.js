@@ -11,7 +11,7 @@ const Download = () => {
 			imgSrc: "/play.svg",
 			title: t("download.Titles.PlayStore"),
 			description: t(
-				"download.androidDescription.playstore",
+				"download.androidDescription.playStore",
 				"Get RelaySMS from the official Google Play Store."
 			),
 			link: "https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
@@ -51,7 +51,6 @@ const Download = () => {
 			sx={{
 				py: { xs: 6, md: 22 },
 				minHeight: "100vh",
-				backgroundColor: "#FAF2E4",
 				pb: 8,
 				px: { xs: 2, md: 6 }
 			}}
@@ -91,19 +90,25 @@ const Download = () => {
 				</Box>
 				<Grid container spacing={6} alignItems="center">
 					<Grid item xs={12} md={6}>
-						<Typography variant="h6" sx={{ mb: 3, color: " #666" }} align="start">
+						<Typography
+							variant="body1"
+							sx={{ mb: 3, color: " #666", fontFamily: "Unbounded", fontWeight: 400, fontSize: "1rem" }}
+							align="start"
+						>
 							{t("download.android")}
 						</Typography>
 						{androidLinks.map((item, idx) => (
 							<Paper
 								key={idx}
-								elevation={3}
+								elevation={0}
 								component="a"
 								href={item.link}
 								target="_blank"
 								rel="noopener noreferrer"
 								sx={{
 									display: "flex",
+									backgroundColor: "#f8f9fa",
+									border: "1px solid #e9ecef",
 									alignItems: "center",
 									p: 3,
 									mb: 3,
@@ -125,47 +130,57 @@ const Download = () => {
 									component="img"
 									src={item.imgSrc}
 									alt={item.title}
-									sx={{ width: 60, height: 60, mr: 3, flexShrink: 0 }}
+									sx={{ width: 50, height: 50, mr: 3, flexShrink: 0 }}
 								/>
 								<Box sx={{ flexGrow: 1 }}>
-									<Typography variant="h6" sx={{ fontWeight: 600, color: "#2d2a5a", mb: 0.5 }}>
+									<Typography
+										variant="h6"
+										sx={{ fontWeight: 400, color: "#2d2a5a", mb: 0.5, fontFamily: "Unbounded" }}
+									>
 										{item.title}
 									</Typography>
-									<Typography variant="body2" color="text.secondary">
+									<Typography variant="body2" color="text.secondary" sx={{ fontFamily: "Ubuntu" }}>
 										{item.description}
 									</Typography>
 								</Box>
 								<Button
 									variant="contained"
 									sx={{
-										bgcolor: "#FF9E43",
+										fontSize: "0.9rem",
+										fontFamily: "Ubuntu",
+										bgcolor: "#e9903dff",
 										color: "#000158",
-										fontWeight: 700,
+										fontWeight: 400,
 										textTransform: "none",
 										ml: 3,
 										px: 4,
 										"&:hover": { bgcolor: "#d65500" }
 									}}
 								>
-									Download
+									{t("download.downloadButton")}
 								</Button>
 							</Paper>
 						))}
 
-						{/* iOS Links */}
-						<Typography variant="h6" sx={{ mt: 6, mb: 3, color: "#666" }} align="start">
+						<Typography
+							variant="body1"
+							sx={{ mt: 6, mb: 3, color: "#666", fontFamily: "Unbounded", fontWeight: 400, fontSize: "1rem" }}
+							align="start"
+						>
 							{t("download.ios")}
 						</Typography>
 						{iosLinks.map((item, idx) => (
 							<Paper
 								key={idx}
-								elevation={3}
+								elevation={0}
 								component="a"
 								href={item.link}
 								target="_blank"
 								rel="noopener noreferrer"
 								sx={{
 									display: "flex",
+									backgroundColor: "#f8f9fa",
+									border: "1px solid #e9ecef",
 									alignItems: "center",
 									p: 3,
 									mb: 3,
@@ -187,34 +202,38 @@ const Download = () => {
 									component="img"
 									src={item.imgSrc}
 									alt={item.title}
-									sx={{ width: 60, height: 60, mr: 3, flexShrink: 0 }}
+									sx={{ width: 50, height: 50, mr: 3, flexShrink: 0 }}
 								/>
 								<Box sx={{ flexGrow: 1 }}>
-									<Typography variant="h6" sx={{ fontWeight: 600, color: "#2d2a5a", mb: 0.5 }}>
+									<Typography
+										variant="h6"
+										sx={{ fontWeight: 400, color: "#2d2a5a", mb: 0.5, fontFamily: "Unbounded" }}
+									>
 										{item.title}
 									</Typography>
-									<Typography variant="body2" color="text.secondary">
+									<Typography variant="body2" color="text.secondary" sx={{ fontFamily: "Ubuntu" }}>
 										{item.description}
 									</Typography>
 								</Box>
 								<Button
 									variant="contained"
 									sx={{
-										bgcolor: "#0056b3",
+										bgcolor: "#000158",
+										fontSize: "0.9rem",
+										fontFamily: "Ubuntu",
 										color: "#fff",
-										fontWeight: 700,
+										fontWeight: 400,
 										textTransform: "none",
 										ml: 3,
 										px: 4,
 										"&:hover": { bgcolor: "#003f8a" }
 									}}
 								>
-									Download
+									{t("download.downloadButton")}
 								</Button>
 							</Paper>
 						))}
 					</Grid>
-					{/* Right Side Download Cards */}
 					<Grid
 						item
 						xs={12}
@@ -232,6 +251,7 @@ const Download = () => {
 							sx={{
 								width: "100%",
 								maxWidth: 450,
+								border: "1px solid #e9ecef",
 								borderRadius: 3
 							}}
 						/>

@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useLocation, useParams } from "react-router-dom";
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import { FormControl, Select, MenuItem, Button, Box } from "@mui/material";
+import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
 
-const LanguageSwitcher = () => {
+const LanguageSwitcher = ({ theme = "light" }) => {
 	const { i18n } = useTranslation();
-	const navigate = useNavigate();
-	const location = useLocation();
-	const { lang } = useParams();
 	const [selectedLang, setSelectedLang] = useState("en");
 
 	const languages = {
@@ -18,88 +15,95 @@ const LanguageSwitcher = () => {
 	};
 
 	useEffect(() => {
-		const currentLang = lang || "en";
-		setSelectedLang(currentLang);
-	}, [lang]);
-
-	useEffect(() => {
-		if (lang) {
-			setSelectedLang(lang);
-			if (i18n.language !== lang) {
-				i18n.changeLanguage(lang);
-			}
+		const savedLang = localStorage.getItem("i18nextLng");
+		if (savedLang && languages[savedLang]) {
+			setSelectedLang(savedLang);
+			i18n.changeLanguage(savedLang);
 		} else {
-			const detectLanguage = () => {
-				const userLang = navigator.language || navigator.languages[0];
-				let initialLang = "en";
+			const userLang = navigator.language || navigator.languages[0];
+			let initialLang = "en";
 
-				if (userLang.startsWith("fr")) {
-					initialLang = "fr";
-				} else if (userLang.startsWith("es")) {
-					initialLang = "es";
-				} else if (userLang.startsWith("fa")) {
-					initialLang = "fa";
-				}
-
-				setSelectedLang(initialLang);
-				i18n.changeLanguage(initialLang);
-			};
-
-			if (!i18n.language || i18n.language === "en") {
-				detectLanguage();
-			} else {
-				setSelectedLang(i18n.language);
+			if (userLang.startsWith("fr")) {
+				initialLang = "fr";
+			} else if (userLang.startsWith("es")) {
+				initialLang = "es";
+			} else if (userLang.startsWith("fa")) {
+				initialLang = "fa";
 			}
+
+			setSelectedLang(initialLang);
+			i18n.changeLanguage(initialLang);
 		}
-	}, [i18n, lang]);
+	}, [i18n]);
 
 	const handleLanguageChange = (newLang) => {
 		localStorage.setItem("i18nextLng", newLang);
-
 		i18n.changeLanguage(newLang);
 		setSelectedLang(newLang);
-
-		const currentPath = location.pathname;
-		let newPath;
-
-		const langPattern = /^\/([a-z]{2})(\/.*|$)/;
-		const match = currentPath.match(langPattern);
-
-		if (match) {
-			const pathWithoutLang = match[2] || "/";
-			newPath = `/${newLang}${pathWithoutLang}`;
-		} else {
-			newPath = `/${newLang}${currentPath === "/" ? "" : currentPath}`;
-		}
-
-		navigate(newPath);
 	};
 
+	const getThemeStyles = () => ({
+		color: theme === "dark" ? "#ffffff" : "#2d2e2eff",
+		"& .MuiSelect-icon": {
+			color: theme === "dark" ? "#ffffff" : "#2d2e2eff",
+		},
+		"& .MuiInput-underline": {
+			borderBottomColor: theme === "dark" ? "#ffffff" : "#2d2e2eff",
+		},
+		
+	});
+
 	return (
-		<DropdownButton
-			drop="down"
-			variant="outline-primary"
-			style={{ borderColor: "#d45703ff", color: "#ffffff" }}
-			title={
-				<span className="language-title">
-					<span className="flag-emoji">{languages[selectedLang]?.flag}</span>
-					<span className="language-name">{languages[selectedLang]?.name}</span>
-				</span>
-			}
-			id="language-dropdown"
-			className="language-switcher"
-		>
-			{Object.entries(languages).map(([code, { flag, name }]) => (
-				<Dropdown.Item
-					key={code}
-					onClick={() => handleLanguageChange(code)}
-					className={`language-option ${selectedLang === code ? "active" : ""}`}
-				>
-					<span className="flag-emoji">{flag}</span>
-					<span className="language-name">{name}</span>
-				</Dropdown.Item>
-			))}
-		</DropdownButton>
+		<FormControl variant="standard" size="small">
+			<Select
+				value={selectedLang}
+				onChange={(e) => handleLanguageChange(e.target.value)}
+				sx={getThemeStyles()}
+				IconComponent={theme === "dark" ? KeyboardArrowUp : KeyboardArrowDown}
+				renderValue={(value) => (
+					<Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+						<span>{languages[value]?.flag}</span>
+						<span>{languages[value]?.name}</span>
+					</Box>
+				)}
+				MenuProps={{
+					anchorOrigin: theme === "dark" ? {
+						vertical: 'top',
+						horizontal: 'left',
+					} : {
+						vertical: 'bottom',
+						horizontal: 'left',
+					},
+					transformOrigin: theme === "dark" ? {
+						vertical: 'bottom',
+						horizontal: 'left',
+					} : {
+						vertical: 'top',
+						horizontal: 'left',
+					},
+					PaperProps: {
+						sx: {
+							bgcolor: theme === "dark" ? "#2d2d2d" : "#ffffff",
+							color: theme === "dark" ? "#ffffff" : "#2d2e2eff",
+							"& .MuiMenuItem-root": {
+								"&:hover": {
+									backgroundColor: theme === "dark" ? "#404040" : "#f5f5f5",
+								}
+							}
+						}
+					}
+				}}
+			>
+				{Object.entries(languages).map(([code, { flag, name }]) => (
+					<MenuItem key={code} value={code}>
+						<Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+							<span>{flag}</span>
+							<span>{name}</span>
+						</Box>
+					</MenuItem>
+				))}
+			</Select>
+		</FormControl>
 	);
 };
 

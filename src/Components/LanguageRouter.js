@@ -13,9 +13,10 @@ const LanguageRouter = ({ children }) => {
 	useEffect(() => {
 		const pathLang = lang || 'en';
 		
+		// If the language is not supported, redirect to whatever was intended ()without lang prefix) (WIP)
 		if (!supportedLanguages.includes(pathLang)) {
-			const newPath = location.pathname.replace(/^\/[a-z]{2}/, '/en');
-			navigate(newPath, { replace: true });
+			// Navigate to 404 without the invalid lang prefix
+			navigate('/', { replace: true });
 			return;
 		}
 
@@ -23,6 +24,11 @@ const LanguageRouter = ({ children }) => {
 			i18n.changeLanguage(pathLang);
 		}
 	}, [lang, i18n, navigate, location.pathname]);
+
+	// Don't render children if language is invalid
+	if (lang && !supportedLanguages.includes(lang)) {
+		return null;
+	}
 
 	return children;
 };

@@ -13,8 +13,7 @@ import {
 	IconButton,
 	Tooltip
 } from "@mui/material";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload, faEye } from "@fortawesome/free-solid-svg-icons";
+import { FaDownload, FaEye } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
 const Branding = () => {
@@ -189,9 +188,11 @@ const Branding = () => {
 
 	const AssetCard = ({ asset, showSvg = false }) => (
 		<Card
-			elevation={1}
+			elevation={0}
 			sx={{
 				height: "100%",
+				backgroundColor: "#f8f9fa",
+				border: "1px solid #e9ecef",
 				display: "flex",
 				flexDirection: "column",
 				transition: "transform 0.3s ease, box-shadow 0.3s ease",
@@ -207,7 +208,7 @@ const Branding = () => {
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
-					backgroundColor: asset.name.includes("White") ? "#1E283A" : "#f5f5f5",
+					backgroundColor: asset.name.includes("White") ? "#1E283A" : "#e4e4e4ff",
 					p: 2
 				}}
 			>
@@ -251,13 +252,13 @@ const Branding = () => {
 							}
 							sx={{ color: "#000158" }}
 						>
-							<FontAwesomeIcon icon={faEye} />
+							<FaEye />
 						</IconButton>
 					</Tooltip>
 					{asset.png && (
 						<Button
 							size="small"
-							startIcon={<FontAwesomeIcon icon={faDownload} />}
+							startIcon={<FaDownload />}
 							onClick={() => downloadAsset(asset.png, `${asset.name}-PNG.png`)}
 							sx={{ flex: 1, fontSize: "12px", color: "#000158" }}
 						>
@@ -267,7 +268,7 @@ const Branding = () => {
 					{asset.svg && (
 						<Button
 							size="small"
-							startIcon={<FontAwesomeIcon icon={faDownload} />}
+							startIcon={<FaDownload />}
 							onClick={() => downloadAsset(asset.svg, `${asset.name}-SVG.svg`)}
 							sx={{ flex: 1, fontSize: "12px", color: "#000158" }}
 						>
@@ -277,7 +278,7 @@ const Branding = () => {
 					{asset.file && (
 						<Button
 							size="small"
-							startIcon={<FontAwesomeIcon icon={faDownload} />}
+							startIcon={<FaDownload />}
 							onClick={() => downloadAsset(asset.file, asset.name)}
 							sx={{ flex: 1, fontSize: "12px" }}
 						>
@@ -376,16 +377,16 @@ const Branding = () => {
 				</Box>
 
 				<Box sx={{ mb: 8, mt: 10 }}>
-					<Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
-						<strong>{t("Branding.guidelines.logoUsage")}</strong>{" "}
+					<Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8, fontFamily: "Ubuntu" }}>
+						<strong style={{fontFamily: "Unbounded"}}>{t("Branding.guidelines.logoUsage")}</strong>{" "}
 						{t("Branding.guidelines.logoUsageText")}
 					</Typography>
 					<Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
-						<strong>{t("Branding.guidelines.colorVariations")}</strong>{" "}
+						<strong style={{fontFamily: "Unbounded"}}>{t("Branding.guidelines.colorVariations")}</strong>{" "}
 						{t("Branding.guidelines.colorVariationsText")}
 					</Typography>
 					<Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-						<strong>{t("Branding.guidelines.attribution")}</strong>{" "}
+						<strong style={{fontFamily: "Unbounded"}}>{t("Branding.guidelines.attribution")}</strong>{" "}
 						{t("Branding.guidelines.attributionText")}
 					</Typography>
 				</Box>

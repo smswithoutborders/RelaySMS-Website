@@ -63,7 +63,7 @@ export default function PageNotFound() {
 
 					<Button
 						component="a"
-						href={getLanguageLink("/")}
+						href="/"
 						variant="contained"
 						size="large"
 						startIcon={<FaHouse />}

@@ -10,6 +10,11 @@ const LanguageRedirect = () => {
 	useEffect(() => {
 		const path = location.pathname;
 		
+		// Skip language redirect for /android and /ios routes (WIP)
+		if (path === '/android' || path === '/ios') {
+			return;
+		}
+		
 		const hasLangPrefix = supportedLanguages.some(lang => 
 			path.startsWith(`/${lang}/`) || path === `/${lang}`
 		);
