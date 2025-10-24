@@ -238,15 +238,15 @@ const GettingStarted = () => {
 										>
 											<Box
 												sx={{
-													width: 60,
-													height: 60,
+													width: { md: 60, xs: 40 },
+													height: { md: 60, xs: 40 },
 													borderRadius: "50%",
 													backgroundColor: "#EBF0FF",
 													color: "#000000db",
 													display: "flex",
 													alignItems: "center",
 													justifyContent: "center",
-													fontSize: "1.5rem",
+													fontSize: {md: "1.5rem", xs: "1.2rem"},
 													fontWeight: "bold",
 													fontFamily: "'Unbounded', Ubuntu",
 													mb: 3,
@@ -280,7 +280,7 @@ const GettingStarted = () => {
 												sx={{
 													fontFamily: "'Mona Sans', Ubuntu",
 													maxWidth: 500,
-													fontSize: { xs: "1rem", md: "1.125rem" },
+													fontSize: { xs: "0.9rem", md: "1.125rem" },
 													lineHeight: 1.7,
 													mb: 4,
 													mx: "auto"
@@ -303,7 +303,7 @@ const GettingStarted = () => {
 													textTransform: "none",
 													py: 1.2,
 													px: 5,
-													fontSize: { xs: "15px", md: "18px" },
+													fontSize: { xs: "12px", md: "18px" },
 													transition: "all 0.3s ease-in-out",
 													"&:hover": {
 														transform: "translateY(-3px)",
@@ -325,7 +325,7 @@ const GettingStarted = () => {
 												px: { xs: 2, sm: 4, md: 6 },
 												pt: { xs: 2, md: 1 },
 												bgcolor: "#FFF1E4",
-												borderRadius: 4,
+												borderRadius: { md: 4, xs: 2 },
 												border: "1px solid #e9ecef"
 											}}
 										>
@@ -334,7 +334,7 @@ const GettingStarted = () => {
 												src={slide.image}
 												alt={slide.title}
 												sx={{
-													width: { xs: "80%", sm: "70%", md: "100%" },
+													width: { xs: "100%", sm: "70%", md: "100%" },
 													height: "auto",
 													maxHeight: 500,
 													objectFit: "contain"
