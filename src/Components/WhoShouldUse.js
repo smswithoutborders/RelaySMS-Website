@@ -28,7 +28,7 @@ const WhoShouldUse = () => {
 			sx={{
 				pb: { xs: 8, md: 4 },
 				pt: { xs: 8, md: 8 },
-				px: { xs: 3, md: 6 }
+				px: { xs: 1.5, md: 6 }
 			}}
 		>
 			<Container>
