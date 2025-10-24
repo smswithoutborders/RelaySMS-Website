@@ -18,9 +18,9 @@
 	},
 	"Landing": {
 		"span": "Pas de données ? Pas de souci.",
-		"h1": "Restez connecté avec RelaySMS",
-		"h2": "RelaySMS permet aux utilisateurs d'envoyer des messages vers des plateformes en ligne sans connexion Internet active.",
-		"Android": "Télécharger RelaySMS",
+		"h1": "Pas d'Internet ? Pas de problème. RelaySMS vous garde connecté.",
+		"h2": "RelaySMS permet aux utilisateurs d'envoyer des messages vers des plateformes en ligne sans connexion Internet active. Les messages sont envoyés par SMS depuis votre appareil.",
+		"Android": "Télécharger RelaySMS ",
 		"supportedPlatforms": "Plateformes supportées :",
 		"auditMessage": {
 			"part1": "RelaySMS s'engage pour la sécurité et la transparence. Lisez notre ",
@@ -54,17 +54,26 @@
 		"Resilience": "Nouvelles fonctionnalités sur RelaySMS",
 		"ResilienceD": "Chez SMSWithoutBorders, nous travaillons constamment à améliorer la connexion hors ligne…",
 		"IDHeader": "Nouvelles fonctionnalités sur RelaySMS",
-		"IDD": "L’un des plus grands défis : savoir si le destinataire a répondu. Nous avons introduit la fonctionnalité Bridge…",
+		"IDD": "L'un des plus grands défis : savoir si le destinataire a répondu. Nous avons introduit la fonctionnalité Bridge…",
 		"Rebrand": "Rebranding",
 		"RebrandD": "SMSWithoutBorders devient le projet principal…",
 		"ReadMore": "Lire la suite",
 		"ReadOtherArticles": "Lire d'autres articles",
 		"articles1": "Résilience des clients passerelle dans SMSWithoutBorders",
 		"articles2": "Fiabilité des clients passerelle dans Smswithoutborders",
-		"articles3": "Nouvelle version alpha : Vault 0.1.0",
+		"articles3": "Nouvelle version alpha : Vault 0.1.0",
 		"tag": "Articles",
 		"tags": "Sortie",
-		"readTime": "2 min de lecture"
+		"readTime": "2 min de lecture",
+		"loading": "Chargement des articles de blog...",
+		"minRead": "min de lecture",
+		"categories": {
+			"Featured": "En vedette",
+			"Article": "Article",
+			"Features": "Fonctionnalités",
+			"Technical": "Technique",
+			"Release": "Version"
+		}
 	},
 	"Faq": {
 		"faqTitle": "Questions fréquentes",
@@ -92,22 +101,28 @@
 		"contact": {
 			"didn't": "Vous n'avez pas trouvé ?",
 			"Contant Us": "Contactez-nous"
+		},
+		"support": {
+			"header": "Vous rencontrez des difficultés techniques ou souhaitez faire des commentaires ?",
+			"troubleshootingGuide": "Guide de dépannage",
+			"mailSupport": "Support par e-mail :"
 		}
 	},
 	"Footer": {
-		"Header1": "Ressources",
-		"body": "SMSWithoutBorders",
-		"Support": "Support",
-		"help": "Documentation",
+		"Resources": "Ressources",
+		"TechnicalResources": "Ressources Techniques",
+		"More": "Plus",
 		"Blog": "Blog",
-		"policy": "Politique de confidentialité",
-		"Header2": "Téléchargements",
-		"download1": "Android",
-		"download2": "iOS",
-		"download3": "Linux",
-		"Header3": "Rejoignez notre liste",
-		"EnterEmail": "developers@smswithoutborders.com",
-		"Subscribe": "Envoyer",
+		"BrandResources": "Ressources de Marque",
+		"Features": "Fonctionnalités",
+		"SystemOverview": "Vue d'Ensemble du Système",
+		"GitHub": "GitHub",
+		"DeveloperDocs": "Documentation Développeur",
+		"Contributing": "Contribuer",
+		"PrivacyPolicy": "Politique de Confidentialité",
+		"AuditReport": "Rapport d'Audit",
+		"Jobs": "Emplois",
+		"ContactUs": "Contactez-nous",
 		"copyright": "AFKANERD"
 	},
 	"policy": "Politique de confidentialité",
@@ -208,7 +223,7 @@
 			"colorVariations": "Variations de Couleur :",
 			"colorVariationsText": "Utilisez la variante appropriée du logo selon la couleur d'arrière-plan. Logos blancs pour arrière-plans sombres, logos sombres pour arrière-plans clairs.",
 			"attribution": "Attribution :",
-			"attributionText": "Lors de l'utilisation des ressources de marque RelaySMS, maintenez l'attribution à SMS Without Borders et créez un lien vers notre site web officiel quand approprié."
+			"attributionText": "Lors de l'utilisation des ressources de marque RelaySMS, maintenez l'attribution à SMSWithoutBorders et créez un lien vers notre site web officiel quand approprié."
 		}
 	},
 	"download": {
@@ -216,6 +231,7 @@
 		"Description": "Accédez à RelaySMS via des sources fiables et vérifiées pour garantir votre sécurité et confidentialité.",
 		"android": "Option Android",
 		"ios": "Option iOS",
+		"downloadButton": "Télécharger",
 		"Titles": {
 			"Github": "GitHub",
 			"PlayStore": "Play Store",
@@ -231,13 +247,13 @@
 		"iosDescription": "Disponible dès maintenant sur l'App Store d'Apple."
 	},
 	"WhoShouldUse": {
-		"Header": "Qui devrait utiliser RelaySMS ?",
+		"Header": "Tout le monde <strike>peut</strike> devrait utiliser RelaySMS",
 		"Description": "Toute personne confrontée à une connectivité Internet médiocre ou vivant dans une région sujette aux coupures d'Internet devrait utiliser RelaySMS pour contourner les coupures et rester connectée. La majorité des utilisateurs de RelaySMS vivent actuellement en Afrique et en Inde—mais l'application est disponible dans le monde entier.",
 		"AndroidButton": "Télécharger pour Android",
 		"iOSButton": "Télécharger pour iOS"
 	},
 	"HowRelaySMSWorks": {
-		"Header": "Comment fonctionne RelaySMS ?",
+		"Header": "Comment la <strike>technologie</strike> magie opère",
 		"Description1": "RelaySMS utilise la messagerie SMS (aussi appelée \"messagerie texte\") pour rediriger les messages hors ligne vers en ligne.",
 		"Description2": "Après avoir configuré RelaySMS sur votre téléphone, vous pouvez vous connecter et envoyer des messages sur vos plateformes de messagerie en ligne préférées sans utiliser de données (tarifs SMS standard applicables).",
 		"Description3": "La clé de RelaySMS réside dans son utilisation de clients passerelles. Ces appareils fonctionnent dans des zones avec une connexion Internet active, leur permettant de recevoir un message SMS d'un utilisateur RelaySMS hors ligne et de le transmettre à un serveur en ligne où l'utilisateur a déjà enregistré ses autorisations de plateforme.",
@@ -245,6 +261,11 @@
 		"EnglishPDF": "Guide anglais (PDF)",
 		"FrenchPDF": "Guide français (PDF)",
 		"SeeSpecification": "Lire la suite"
+	},
+	"GatewayClient": {
+		"Header": "Configuration d'un Client Passerelle",
+		"Description": "Configurer un client passerelle vous permet, à vous et à toute personne avec qui vous le partagez, d'envoyer des messages en utilisant votre numéro. C'est complètement optionnel, mais si vous choisissez d'en configurer un, suivez simplement les instructions ci-dessous.",
+		"ReadMore": "Lire Plus"
 	},
 	"SupportedPlatforms": {
 		"Header": "Plateformes prises en charge",
