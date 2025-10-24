@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useLanguageLink } from "../hooks/useLanguageLink";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -16,7 +15,6 @@ import { SiBluesky } from "react-icons/si";
 
 export default function Navigation() {
 	const { t, i18n } = useTranslation();
-	const { getLanguageLink } = useLanguageLink();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 	const [anchorElNav, setAnchorElNav] = useState(null);
 	const iconColor = "#2d2e2eff";
