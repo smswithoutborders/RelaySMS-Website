@@ -58,7 +58,7 @@
 	"HowRelaySMSWorks": {
 		"Header": "How the <strike>tech</strike> magic happens",
 		"Description1": "RelaySMS utilizes SMS messaging (aka \"text messaging\") to route offline messages back online.",
-		"Description2": "AThe key to RelaySMS lies in its use of Gateway Clients. These devices  operate in areas with an active internet connection, allowing them to  receive an SMS message from an offline RelaySMS user and then forward it to an online server where the user has already saved their platform  permissions.",
+		"Description2": "The key to RelaySMS lies in its use of Gateway Clients. These devices  operate in areas with an active internet connection, allowing them to  receive an SMS message from an offline RelaySMS user and then forward it to an online server where the user has already saved their platform  permissions.",
 		"TrainingTitle": "Download Training Guides",
 		"EnglishPDF": "English Guide (PDF)",
 		"FrenchPDF": "French Guide (PDF)",
