@@ -2,7 +2,6 @@ import React, { useEffect, useState, useMemo } from "react";
 import { Grid, Typography, Link } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link as RouterLink } from "react-router-dom";
-import { useLanguageLink } from "../hooks/useLanguageLink";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import { SiBluesky } from "react-icons/si";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -12,7 +11,6 @@ import { Divider } from "@mui/material";
 
 const Footer = () => {
 	const { t, i18n } = useTranslation();
-	const { getLanguageLink } = useLanguageLink();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 
 	const logoSrc = "/RelaySMSDark.png";
