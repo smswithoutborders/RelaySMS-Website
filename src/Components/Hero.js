@@ -77,7 +77,7 @@ const Hero = () => {
 						>
 							<Typewriter
 								key={i18n.language}
-								words={[t("Landing.h1", "Stay Connected with RelaySMS")]}
+								words={[t("Landing.h1", "No Internet? No Problem. RelaySMS Keeps You Connected.")]}
 								loop={1}
 								cursor={showCursor}
 								cursorStyle="_"
@@ -95,6 +95,7 @@ const Hero = () => {
 								fontSize: { xs: "18px", md: "20px", lg: "22px" },
 								mt: { xs: 2, md: 1.5 },
 								mb: { xs: 3, md: 4 },
+								fontFamily: "Ubuntu",
 								textAlign: { xs: "center", md: "left" },
 								lineHeight: 1.6
 							}}
@@ -121,6 +122,7 @@ const Hero = () => {
 									textTransform: "none",
 									py: 1.2,
 									px: 5,
+									fontFamily: "Ubuntu",
 									fontSize: { xs: "15px", md: "18px" },
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
@@ -138,7 +140,9 @@ const Hero = () => {
 								variant="body1"
 								sx={{
 									fontSize: { xs: "15px", md: "20px" },
-									lineHeight: 1.6
+									fontFamily: "Ubuntu",
+									lineHeight: 1.6,
+									textAlign: { xs: "center", md: "left" }
 								}}
 								color="text.secondary"
 							>
@@ -185,7 +189,7 @@ const Hero = () => {
 								src="/new-phones.png"
 								alt="RelaySMS Background"
 								sx={{
-									width: { lg: "650px", xs: "100%", md: "100%", sm: "80%" },
+									width: { lg: "650px", xs: "100%", md: "100%", sm: "80%" }
 								}}
 							/>
 						</Box>
