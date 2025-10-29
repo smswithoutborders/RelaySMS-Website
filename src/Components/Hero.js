@@ -65,7 +65,7 @@ const Hero = () => {
 							sx={{
 								mt: { xs: 10, md: 8, lg: 2, xl: 4 },
 								mb: { xs: 2, md: 3, lg: 1 },
-								fontSize: { xs: "1.8rem", md: "2.5rem", lg: "3.2rem", xl: "3rem" },
+								fontSize: { xs: "1.8rem", md: "2.5rem", lg: "3rem", xl: "3rem" },
 								textAlign: { xs: "center", md: "left" },
 								color: "#000158",
 								whiteSpace: "pre-wrap",
@@ -189,7 +189,7 @@ const Hero = () => {
 								src="/new-phones.png"
 								alt="RelaySMS Background"
 								sx={{
-									width: { lg: "650px", xs: "100%", md: "100%", sm: "80%" }
+									width: { xl: "620px", xs: "100%", md: "80%", sm: "80%", lg: "600px" }
 								}}
 							/>
 						</Box>
