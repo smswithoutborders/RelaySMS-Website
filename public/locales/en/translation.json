@@ -11,6 +11,10 @@
 		"Branding": "Branding",
 		"Overview": "System Overview"
 	},
+	"Alert": {
+		"message": "You can now make RelaySMS your default SMS app!",
+		"readMore": "Read more"
+	},
 	"social": {
 		"x": "Follow us on X",
 		"bluesky": "Check us out on Bluesky",
@@ -42,7 +46,7 @@
 		"Step3Title": "Save Platforms",
 		"Step3Desc": "Save access to platforms while connected to the internet. Add your credentials to platforms supported by RelaySMS and prepare them for offline use.",
 		"Step3Button": "Set Up Now",
-		"Step4Title": "Configure a Gateway",
+		"Step4Title": "Select a Gateway Client",
 		"Step4Desc": "Choose a Gateway Client for sending SMS. You can select from pre-configured clients or set up a custom client by adding the gateway number to your contacts.",
 		"Step4Button": "Configure Gateway",
 		"Step5Title": "Send Messages",

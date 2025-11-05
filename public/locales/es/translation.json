@@ -11,6 +11,10 @@
 		"Branding": "Marca",
 		"Overview": "Descripción del Sistema"
 	},
+	"Alert": {
+		"message": "¡Ahora puedes hacer de RelaySMS tu aplicación SMS predeterminada!",
+		"readMore": "Leer más"
+	},
 	"social": {
 		"x": "Síguenos en X",
 		"bluesky": "Visítanos en Bluesky",
@@ -41,7 +45,7 @@
 		"Step3Title": "Guarda plataformas",
 		"Step3Desc": "Agrega tus credenciales para usar plataformas fuera de línea.",
 		"Step3Button": "Configurar ahora",
-		"Step4Title": "Configura una pasarela",
+		"Step4Title": "Selecciona un cliente de pasarela",
 		"Step4Desc": "Elige un cliente gateway para SMS o añade el número en contactos.",
 		"Step4Button": "Configurar pasarela",
 		"Step5Title": "Envía mensajes",

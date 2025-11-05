@@ -60,7 +60,8 @@ const FAQSection = ({ isFarsi }) => {
 						fontSize: "1.2rem",
 						color: "#555555",
 						fontFamily: "Ubuntu",
-						mt: 1
+						mt: 1,
+						px: 2
 					}}
 				>
 					{t(

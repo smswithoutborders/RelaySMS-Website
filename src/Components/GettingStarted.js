@@ -131,7 +131,7 @@ const GettingStarted = () => {
 			title: t("Howitworks.Step4Title"),
 			description: t("Howitworks.Step4Desc"),
 			image: "/Gateway-copy.png",
-			buttonText: t("Howitworks.Step4Button", "Configure Gateway"),
+			buttonText: t("Howitworks.Step4Button", "Select a Gateway"),
 			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-6-choose-a-gateway-client",
 			bgColor: "rgb(183, 243, 232)"
 		},
@@ -175,8 +175,9 @@ const GettingStarted = () => {
 					sx={{
 						fontSize: "1.2rem",
 						color: "#555555",
+						mt: 1,
 						fontFamily: "Ubuntu",
-						mt: 1
+						px: 2
 					}}
 				>
 					{t(
@@ -278,7 +279,7 @@ const GettingStarted = () => {
 												variant="body1"
 												color="#555"
 												sx={{
-													fontFamily: "'Mona Sans', Ubuntu",
+													fontFamily: "Ubuntu",
 													maxWidth: 500,
 													fontSize: { xs: "0.9rem", md: "1.125rem" },
 													lineHeight: 1.7,
@@ -303,6 +304,7 @@ const GettingStarted = () => {
 													textTransform: "none",
 													py: 1.2,
 													px: 5,
+													fontFamily: "Ubuntu",
 													fontSize: { xs: "12px", md: "18px" },
 													transition: "all 0.3s ease-in-out",
 													"&:hover": {

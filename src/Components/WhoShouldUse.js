@@ -202,6 +202,10 @@ const WhoShouldUse = () => {
 										)}
 									</Typography>
 									<Button
+										component="a"
+										href="https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide"
+										target="_blank"
+										rel="noopener noreferrer"
 										variant="text"
 										sx={{
 											color: "#2D2A5A",
