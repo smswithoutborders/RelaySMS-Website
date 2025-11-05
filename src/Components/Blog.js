@@ -27,72 +27,83 @@ const BlogSectionNew = () => {
 
 			const files = await response.json();
 
+			// Fetch ALL blog posts first, then sort and slice
 			const posts = await Promise.all(
-				files.slice(0, 3).map(async (file) => {
-					const fileResponse = await fetch(file.download_url);
-					const content = await fileResponse.text();
+				files.map(async (file) => {
+					try {
+						const fileResponse = await fetch(file.download_url);
+						const content = await fileResponse.text();
 
-					const frontMatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
-					if (frontMatterMatch) {
-						const frontMatter = frontMatterMatch[1];
-						const lines = frontMatter.split("\n");
-						const metadata = {};
+						const frontMatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+						if (frontMatterMatch) {
+							const frontMatter = frontMatterMatch[1];
+							const lines = frontMatter.split("\n");
+							const metadata = {};
 
-						lines.forEach((line) => {
-							const [key, ...valueParts] = line.split(":");
-							if (key && valueParts.length > 0) {
-								const value = valueParts.join(":").trim().replace(/"/g, "");
-								if (key.trim() === "author") {
-									const authorMatch = content.match(/author:\s*\n\s*name:\s*"([^"]*)"/);
-									metadata.author = authorMatch ? authorMatch[1] : "SMSWithoutBorders Team";
-								} else {
-									metadata[key.trim()] = value;
+							lines.forEach((line) => {
+								const [key, ...valueParts] = line.split(":");
+								if (key && valueParts.length > 0) {
+									const value = valueParts.join(":").trim().replace(/"/g, "");
+									if (key.trim() === "author") {
+										const authorMatch = content.match(/author:\s*\n\s*name:\s*"([^"]*)"/);
+										metadata.author = authorMatch ? authorMatch[1] : "SMSWithoutBorders Team";
+									} else {
+										metadata[key.trim()] = value;
+									}
 								}
-							}
-						});
+							});
 
-						return {
-							...metadata,
-							slug: file.name.replace(".md", ""),
-							url: `https://blog.smswithoutborders.com/posts/${file.name.replace(".md", "")}`
-						};
+							return {
+								...metadata,
+								slug: file.name.replace(".md", ""),
+								url: `https://blog.smswithoutborders.com/posts/${file.name.replace(".md", "")}`
+							};
+						}
+						return null;
+					} catch (error) {
+						console.error(`Error fetching ${file.name}:`, error);
+						return null;
 					}
-					return null;
 				})
 			);
 
+			// Filter, sort by date (newest first), and take top 3
 			const validPosts = posts
-				.filter((post) => post && post.title)
-				.sort((a, b) => new Date(b.date) - new Date(a.date));
+				.filter((post) => post && post.title && post.date)
+				.sort((a, b) => new Date(b.date) - new Date(a.date))
+				.slice(0, 3);
+
 			setBlogPosts(validPosts);
 		} catch (error) {
 			console.error("Error fetching blog posts:", error);
+			// Fallback to latest known posts
 			setBlogPosts([
 				{
-					title: "New Features on RelaySMS",
+					title: "Sending Images Without Internet? Yeah, That's a Thing Now.",
 					excerpt:
-						"At SMSWithoutBorders, we're constantly working to improve how users stay connected even without internet access.",
+						"Internet down? Doesn't matter. RelaySMS just leveled up. You can now send images over SMS fully encrypted, no Wi-Fi, no internet connection necessary",
 					author: "Aysha Musa",
-					date: "2025-03-14",
-					url: "https://blog.smswithoutborders.com/posts/New-Features-on-RelaySMS",
+					date: "2025-10-31",
+					url: "https://blog.smswithoutborders.com/posts/sending-images-with-relay",
 					category: "Features"
 				},
 				{
-					title: "Resilience Of Gateway Clients In SMSWithoutBorders",
+					title: "RelaySMS Can Now Be Your Default SMS App",
 					excerpt:
-						"SMSWithoutBorders is pleased to announce a significant advancement in message-forwarding functionalities for its gateway clients",
-					author: "Aysha Musa",
-					date: "2024-04-16",
-					url: "https://blog.smswithoutborders.com/posts/resilience-of-gateway-clients-in-smswithoutborders",
-					category: "Technical"
+						"When you set RelaySMS as your default SMS app, all your regular SMS messages move right into your RelaySMS app. You'll see every text, every conversation, all inside one familiar inbox.",
+					author: "Vanessa Christopher",
+					date: "2025-10-30",
+					url: "https://blog.smswithoutborders.com/posts/default-app",
+					category: "Features"
 				},
 				{
-					title: "New Alpha Release: Vault 0.1.0",
-					excerpt: "SMSWithoutBorders Vault 0.1.0 is Now Available in Alpha Release!",
-					author: "Promise Fru",
-					date: "2024-06-28",
-					url: "https://blog.smswithoutborders.com/releases/vault-0-1-0",
-					category: "Release"
+					title: "Local Storage for Your Access Tokens",
+					excerpt:
+						"Storing your tokens locally means reducing your reliance on our servers and giving you total control of your stored tokens. This is especially valuable for users who value privacy and control over their data.",
+					author: "Aysha Musa",
+					date: "2025-06-05",
+					url: "https://blog.smswithoutborders.com/posts/Local-Storage-for-Your-Access-Tokens",
+					category: "Features"
 				}
 			]);
 		} finally {

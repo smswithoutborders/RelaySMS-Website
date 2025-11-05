@@ -320,7 +320,7 @@ const Branding = () => {
 					minHeight: "100vh",
 					maxWidth: "1400px",
 					mx: "auto",
-					pt: 20,
+					pt: { xs: "120px", md: "140px" },
 					pb: 8,
 					px: { xs: 2, sm: 4 }
 				}}

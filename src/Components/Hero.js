@@ -41,11 +41,11 @@ const Hero = () => {
 					minHeight: { xs: "80vh", md: "85vh", lg: "95vh", xl: "100vh" },
 					px: { xs: 2, md: 5, lg: 8, xl: 20 },
 					py: { xs: 6, md: 8, lg: 10, xl: 12 },
-					pt: { xs: 6, md: 12, lg: 16, xl: 20 },
+					pt: { xs: "120px", md: "140px", lg: "150px", xl: "160px" },
 					display: "flex",
 					alignItems: "center",
 					position: "relative",
-					overflow: "hidden"
+					overflow: "hidden",
 				}}
 			>
 				<Grid
@@ -65,12 +65,11 @@ const Hero = () => {
 							sx={{
 								mt: { xs: 10, md: 8, lg: 2, xl: 4 },
 								mb: { xs: 2, md: 3, lg: 1 },
-								fontSize: { xs: "1.8rem", md: "2.5rem", lg: "3rem", xl: "3rem" },
+								fontSize: { xs: "1.8rem", md: "2.5rem", lg: "2.7rem", xl: "3rem" },
 								textAlign: { xs: "center", md: "left" },
 								color: "#000158",
 								whiteSpace: "pre-wrap",
 								wordBreak: "break-word",
-								minHeight: { xs: "60px", md: "80px", lg: "100px" },
 								fontFamily: "'Unbounded', Ubuntu"
 							}}
 							gutterBottom
@@ -88,16 +87,14 @@ const Hero = () => {
 						</Typography>
 
 						<Typography
-							variant="body1"
+							variant="h6"
 							color="text.secondary"
 							paragraph
 							sx={{
-								fontSize: { xs: "18px", md: "20px", lg: "22px" },
 								mt: { xs: 2, md: 1.5 },
 								mb: { xs: 3, md: 4 },
 								fontFamily: "Ubuntu",
-								textAlign: { xs: "center", md: "left" },
-								lineHeight: 1.6
+								textAlign: { xs: "center", md: "left" }
 							}}
 						>
 							{t("Landing.h2")}
@@ -139,7 +136,7 @@ const Hero = () => {
 							<Typography
 								variant="body1"
 								sx={{
-									fontSize: { xs: "15px", md: "20px" },
+									// fontSize: { xs: "15px", md: "20px" },
 									fontFamily: "Ubuntu",
 									lineHeight: 1.6,
 									textAlign: { xs: "center", md: "left" }
@@ -173,15 +170,7 @@ const Hero = () => {
 							sx={{
 								display: "flex",
 								justifyContent: "center",
-								alignItems: "center",
-								position: "relative",
-								height: { xs: 350, sm: 380, md: 400, lg: 450, xl: 500 },
-								mt: { xs: 2, sm: 3, md: 0 },
-								mb: { xs: 4, sm: 5, md: 0 },
-								overflow: "visible",
-								width: "100%",
-								maxWidth: { xs: "100%", md: "90%", lg: "85%", xl: "80%" },
-								px: { xs: 2, sm: 3, md: 0 }
+								alignItems: "center"
 							}}
 						>
 							<Box
@@ -189,7 +178,7 @@ const Hero = () => {
 								src="/new-phones.png"
 								alt="RelaySMS Background"
 								sx={{
-									width: { xl: "620px", xs: "100%", md: "80%", sm: "80%", lg: "600px" }
+									width: { xl: "620px", xs: "100%", md: "100%", sm: "80%", lg: "100%" }
 								}}
 							/>
 						</Box>

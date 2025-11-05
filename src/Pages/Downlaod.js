@@ -50,6 +50,7 @@ const Download = () => {
 			dir={isRtl ? "rtl" : "ltr"}
 			sx={{
 				py: { xs: 6, md: 22 },
+				pt: { xs: "120px", md: "140px" },
 				minHeight: "100vh",
 				pb: 8,
 				px: { xs: 2, md: 6 }
