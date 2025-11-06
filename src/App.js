@@ -9,10 +9,12 @@ import Download from "./Pages/Downlaod";
 import Branding from "./Pages/Branding";
 import Navbar from "./Components/Navbar";
 import Overview from "./Pages/Overview";
+import AlertBanner from "./Components/AlertBanner";
 
 const App = () => {
 	return (
 		<Router>
+			<AlertBanner />
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Landing />} />

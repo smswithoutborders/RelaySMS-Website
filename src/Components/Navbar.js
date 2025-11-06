@@ -64,7 +64,7 @@ export default function Navigation() {
 			elevation={scrolled ? 2 : 0}
 			sx={{
 				backgroundColor: scrolled ? "#ffffffff" : "#ffffff02",
-				top: 0,
+				top: { xs: 36, sm: 38, md: 40 }, // Adjust for alert banner height
 				left: 0,
 				right: 0,
 				zIndex: (theme) => theme.zIndex.drawer + 1,

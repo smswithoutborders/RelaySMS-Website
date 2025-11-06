@@ -11,6 +11,10 @@
 		"Branding": "Identité de marque",
 		"Overview": "Vue d'Ensemble du Système"
 	},
+	"Alert": {
+		"message": "Vous pouvez maintenant faire de RelaySMS votre application SMS par défaut !",
+		"readMore": "En savoir plus"
+	},
 	"social": {
 		"x": "Suivez-nous sur X",
 		"bluesky": "Découvrez-nous sur Bluesky",
@@ -41,7 +45,7 @@
 		"Step3Title": "Enregistrez les plateformes",
 		"Step3Desc": "Ajoutez vos identifiants pour les plateformes prises en charge afin de les préparer à une utilisation hors ligne.",
 		"Step3Button": "Configurer maintenant",
-		"Step4Title": "Configurez une passerelle",
+		"Step4Title": "Sélectionnez un client passerelle",
 		"Step4Desc": "Choisissez un client passerelle SMS. Sélectionnez un client préconfiguré ou ajoutez un numéro de passerelle dans vos contacts.",
 		"Step4Button": "Configurer la passerelle",
 		"Step5Title": "Envoyez des messages",

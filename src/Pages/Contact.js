@@ -63,7 +63,7 @@ const Contact = () => {
 					color: "#000",
 					maxWidth: "1200px",
 					mx: "auto",
-					pt: 8,
+					pt: { xs: "120px", md: "140px" },
 					pb: 10
 				}}
 			>
