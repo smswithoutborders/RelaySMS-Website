@@ -32,7 +32,7 @@ const AlertBanner = () => {
 					lineHeight: 1.4
 				}}
 			>
-				✨ {t("Alert.message")}{" "}
+				✨ {t("Alert.message", "You can now make RelaySMS your default SMS app on Android!")}{" "}
 				<a
 					href="https://blog.smswithoutborders.com/posts/default-app"
 					target="_blank"
@@ -43,7 +43,7 @@ const AlertBanner = () => {
 						fontWeight: "500"
 					}}
 				>
-					{t("Alert.readMore")}
+					{t("Alert.readMore", "Read more")}
 				</a>
 			</Typography>
 		</Box>
