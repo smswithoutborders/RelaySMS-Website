@@ -78,7 +78,7 @@ export default function Navigation() {
 					mx: "auto",
 					width: "100%",
 					display: "flex",
-					justifyContent: "space-between",
+					justifyContent: "flex-start",
 					alignItems: "center",
 					px: { xs: 1, sm: 2 },
 					minHeight: { xs: 64, sm: 72 },
@@ -86,17 +86,19 @@ export default function Navigation() {
 					transition: "all 0.3s ease"
 				}}
 			>
-				<Link to="/" style={{ textDecoration: "none" }} aria-label="Home">
-					<Box
-						component="img"
-						src="/logo.png"
-						alt="Logo"
-						sx={{
-							height: { xs: 20, sm: 30, md: 32 },
-							mr: 1
-						}}
-					/>
-				</Link>
+				<Box sx={{ ml: { xs: 2, sm: 2, md: 2 }, mr: isRtl ? "auto" : 0 }}>
+					<Link to="/" style={{ textDecoration: "none" }} aria-label="Home">
+						<Box
+							component="img"
+							src="/logo.png"
+							alt="Logo"
+							sx={{
+								height: { xs: 20, sm: 30, md: 32 },
+								display: "block"
+							}}
+						/>
+					</Link>
+				</Box>
 
 				<Box
 					sx={{
