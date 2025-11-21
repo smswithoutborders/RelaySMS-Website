@@ -9,6 +9,8 @@ import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
+import InputBase from "@mui/material/InputBase";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import { SiBluesky } from "react-icons/si";
@@ -71,7 +73,7 @@ export default function Navigation() {
             elevation={scrolled ? 2 : 0}
             sx={{
                 backgroundColor: scrolled ? "#ffffffff" : "#ffffff02",
-                top: { xs: 36, sm: 38, md: 40 },
+                top: { xs: 36, sm: 38, md: 40 }, // Adjust for alert banner height
                 left: 0,
                 right: 0,
                 zIndex: (theme) => theme.zIndex.drawer + 1,
@@ -81,7 +83,7 @@ export default function Navigation() {
         >
             <Toolbar
                 sx={{
-                    maxWidth: 1825,
+                    maxWidth: 1826,
                     mx: "auto",
                     width: "100%",
                     display: "flex",
@@ -93,27 +95,33 @@ export default function Navigation() {
                     transition: "all 0.3s ease"
                 }}
             >
-                <Link to="/" style={{ textDecoration: "none" }} aria-label="Home">
+                <Box
+                    sx={{
+                        mr: { xs: "auto", md: 0 }, // mobile: auto right pushes left, desktop: no margin
+                        ml: { xs: 0, md: isRtl ? "auto" : 0 } // adjust for RTL if needed
+                    }}
+                    >
+                    <Link to="/" style={{ textDecoration: "none" }} aria-label="Home">
                     <Box
                         component="img"
                         src="/logo.png"
                         alt="Logo"
                         sx={{
                             height: { xs: 20, sm: 30, md: 32 },
-                            ml: isRtl ? "auto" : 0,
-                            mr: isRtl ? 0 : "auto"
+                            display: "block"
                         }}
-                    /> 
-                </Link>
+                        />
+                    </Link>
+                    </Box>
+
 
                 <Box
                     sx={{
                         display: { xs: "none", md: "flex" },
                         alignItems: "center",
                         gap: 3,
-                        flexGrow: 0,
-                        justifyContent: "flex-end",
-                        ml: "auto"
+                        flexGrow: 1,
+                        justifyContent: "flex-end"
                     }}
                 >
                     {navLinks.map((link, index) =>
@@ -206,23 +214,22 @@ export default function Navigation() {
                     <LanguageSwitcher />
                 </Box>
 
-                <Box sx={{ display: { xs: "flex", md: "none" }, ml: "auto" }}>
-                    <IconButton
-                        size="large"
-                        aria-label="open navigation menu"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        onClick={handleOpenNavMenu}
-                        sx={{
-                            color: iconColor,
-                            transition: "transform 0.2s ease",
-                            "&:hover": {
-                                transform: "scale(1.1)"
-                            }
-                        }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
+              {/* mobile menu button (visible on xs) */}
+                    <Box sx={{ display: { xs: "flex", md: "none" }, ml: 1 }}>
+                        <IconButton
+                            size="large"
+                            aria-label="open navigation menu"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            onClick={handleOpenNavMenu}
+                            sx={{
+                                color: iconColor,
+                                transition: "transform 0.18s ease",
+                                "&:hover": { transform: "scale(1.06)" }
+                            }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
                     <Menu
                         id="menu-appbar"
                         anchorEl={anchorElNav}
