@@ -38,6 +38,8 @@ const Hero = () => {
 			<Box
 				dir={isRtl ? "rtl" : "ltr"}
 				sx={{
+					maxWidth: 1826,
+					mx: "auto",
 					minHeight: { xs: "80vh", md: "85vh", lg: "95vh", xl: "100vh" },
 					px: { xs: 2, md: 5, lg: 8, xl: 20 },
 					py: { xs: 6, md: 8, lg: 10, xl: 12 },

@@ -92,10 +92,10 @@ const Footer = () => {
 							display: "flex",
 							flexDirection: "column",
 							alignItems: "flex-start",
-							maxWidth: { md: "500px" }
+							maxWidth: { md: "1826px" }
 						}}
 					>
-						<Typography
+						<Typography	
 							variant="h6"
 							sx={{
 								fontWeight: 600,
