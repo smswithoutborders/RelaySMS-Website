@@ -4,36 +4,24 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
-		"@babel/plugin-proposal-private-property-in-object": "^7.21.0",
-		"@craco/craco": "^5.9.0",
+		"@craco/craco": "^7.1.0",
 		"@emotion/react": "^11.14.0",
 		"@emotion/styled": "^11.14.0",
-		"@mdx-js/loader": "^3.1.1",
-		"@mdx-js/react": "^3.1.1",
 		"@mui/icons-material": "^6.4.1",
 		"@mui/material": "^6.4.1",
-		"@testing-library/jest-dom": "^6.5.0",
-		"@testing-library/react": "^16.0.1",
-		"@testing-library/user-event": "^14.5.2",
 		"aos": "^2.3.4",
-		"assert": "^2.1.0",
-		"axios": "^1.7.7",
 		"buffer": "^6.0.3",
+		"dompurify": "^3.3.1",
 		"events": "^3.3.0",
-		"framer-motion": "^11.5.4",
 		"i18next": "^23.16.3",
 		"i18next-browser-languagedetector": "^8.0.0",
 		"i18next-http-backend": "^2.5.2",
 		"process": "^0.11.10",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"react-html-parser": "^2.0.2",
 		"react-i18next": "^15.1.0",
 		"react-icons": "^5.5.0",
 		"react-markdown": "^10.1.0",
-		"react-mobile-app-button": "^1.0.13",
-		"react-multi-carousel": "^2.8.5",
-		"react-responsive-carousel": "^3.2.23",
 		"react-router-dom": "^6.26.0",
 		"react-scripts": "^5.0.1",
 		"react-scroll": "^1.9.0",
@@ -41,15 +29,15 @@
 		"react-slick": "^0.30.3",
 		"reactflow": "^11.11.4",
 		"slick-carousel": "^1.8.1",
-		"stream-browserify": "^3.0.0",
-		"string_decoder": "^1.3.0",
-		"util": "^0.12.5",
-		"web-vitals": "^4.2.3"
+		"string_decoder": "^1.3.0"
 	},
 	"overrides": {
 		"nth-check": ">=2.0.1",
 		"css-select": ">=4.3.0",
-		"svgo": ">=2.8.0"
+		"svgo": ">=2.8.0",
+		"glob": ">=11.0.0",
+		"webpack-dev-server": ">=4.15.2",
+		"js-yaml": ">=4.1.0"
 	},
 	"scripts": {
 		"start": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
@@ -73,14 +61,10 @@
 	"resolutions": {
 		"nth-check": "^2.0.1",
 		"postcss": "^8.4.31",
-		"esbuild": "^0.25.0"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.28.0",
-		"@testing-library/dom": "^10.4.0",
-		"@types/react": "^19.1.8",
-		"jquery": "^3.7.1",
-		"typescript": "^5.8.3"
+		"esbuild": "^0.25.0",
+		"glob": "^11.0.0",
+		"webpack-dev-server": "^4.15.2",
+		"js-yaml": "^4.1.0"
 	},
 	"packageManager": "yarn@4.9.4+sha512.7b1cb0b62abba6a537b3a2ce00811a843bea02bcf53138581a6ae5b1bf563f734872bd47de49ce32a9ca9dcaff995aa789577ffb16811da7c603dcf69e73750b"
 }
