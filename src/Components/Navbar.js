@@ -60,11 +60,6 @@ export default function Navigation() {
         setAnchorElNav(null);
     };
 
-    const handleSearch = (e) => {
-        e.preventDefault();
-        console.log("Search for:", searchValue);
-        // Add your search logic here
-    };
 
     return (
         <AppBar

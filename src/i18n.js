@@ -27,7 +27,7 @@ i18n
 			escapeValue: false
 		},
 		react: {
-			useSuspense: false
+			useSuspense: true
 		},
 		detection: {
 			order: ['path', 'navigator', 'localStorage'],
