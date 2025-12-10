@@ -14,7 +14,7 @@ const AlertBanner = () => {
 				right: 0,
 				width: "100%",
 				backgroundColor: "#001871",
-				py: 1,
+				py: 1.2,
 				px: { xs: 2, md: 5, lg: 8, xl: 20 },
 				display: "flex",
 				justifyContent: "center",
