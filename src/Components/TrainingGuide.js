@@ -2,6 +2,8 @@ import React from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { FaFilePdf } from "react-icons/fa";
+import EnglishPDF from "../assets/RelaySMS Training Guide Flyer (English).pdf";
+import FrenchPDF from "../assets/RelaySMS Training Guide Flyer (Français).pdf";
 
 function TrainingGuide() {
 	const { t } = useTranslation();
@@ -33,7 +35,7 @@ function TrainingGuide() {
 			>
 				<Button
 					variant="contained"
-					href="/RelaySMS Training Guide Flyer (English).pdf"
+					href={EnglishPDF}
 					target="_blank"
 					rel="noopener noreferrer"
 					startIcon={<FaFilePdf />}
@@ -62,7 +64,7 @@ function TrainingGuide() {
 				</Button>
 				<Button
 					variant="contained"
-					href="/RelaySMS Training Guide Flyer (Français).pdf"
+					href={FrenchPDF}
 					target="_blank"
 					rel="noopener noreferrer"
 					startIcon={<FaFilePdf />}

@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useTranslation } from "react-i18next";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import DOMPurify from "dompurify";
 
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
@@ -284,13 +285,14 @@ const GettingStarted = () => {
 													fontSize: { xs: "0.9rem", md: "1.125rem" },
 													lineHeight: 1.7,
 													mb: 4,
-													mx: "auto"
+													mx: "auto",
+													"& a": {
+														textDecoration: "none",
+														color: "#000158"
+													}
 												}}
 												dangerouslySetInnerHTML={{
-													__html: slide.description.replace(
-														/<a /g,
-														"<a style='text-decoration: none; color: #000158;' "
-													)
+													__html: DOMPurify.sanitize(slide.description)
 												}}
 											/>
 

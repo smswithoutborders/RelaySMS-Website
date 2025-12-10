@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Typography, Paper, Divider, Button, Grid } from "@mui/material";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import ReactHtmlParser from "react-html-parser";
 
 const FAQSection = ({ isFarsi }) => {
 	const { t, i18n } = useTranslation();
@@ -11,19 +10,19 @@ const FAQSection = ({ isFarsi }) => {
 	const faqs = [
 		{
 			question: t("Faq.faq1.question"),
-			answer: ReactHtmlParser(t("Faq.faq1.answer"))
+			answer: t("Faq.faq1.answer")
 		},
 		{
 			question: t("Faq.faq2.question"),
-			answer: ReactHtmlParser(t("Faq.faq2.answer"))
+			answer: t("Faq.faq2.answer")
 		},
 		{
 			question: t("Faq.faq3.question"),
-			answer: ReactHtmlParser(t("Faq.faq3.answer"))
+			answer: t("Faq.faq3.answer")
 		},
 		{
 			question: t("Faq.faq4.question"),
-			answer: ReactHtmlParser(t("Faq.faq4.answer"))
+			answer: t("Faq.faq4.answer")
 		}
 	];
 
