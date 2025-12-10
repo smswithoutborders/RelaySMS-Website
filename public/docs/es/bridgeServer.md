@@ -16,4 +16,4 @@ El Servidor Puente enruta mensajes a clientes puente y gestiona la comunicación
 
 ---
 
-[![Repositorio Bridge Server](https://img.shields.io/badge/🌉_Bridge-Repository-orange?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Bridge-Server)
+[Repositorio Bridge Server](https://github.com/smswithoutborders/RelaySMS-Bridge-Server)

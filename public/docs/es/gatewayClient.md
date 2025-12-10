@@ -11,10 +11,10 @@ Los clientes gateway sirven como intermediarios entre los usuarios y el sistema 
 - El cliente gateway reenvía el mensaje al Servidor Gateway usando protocolos HTTP, SMTP o FTP
 - El Servidor Gateway procesa el mensaje
 
-[![Repositorio GitHub](https://img.shields.io/badge/GitHub-Source_Code-black?logo=github)](https://github.com/dekusms/DekuSMS-Android)
+[Repositorio DekuSMS Android](https://github.com/dekusms/DekuSMS-Android)
 
-[![Configurando un Cliente Gateway](https://img.shields.io/badge/📚_Docs-Setup_Guide-blue?style=for-the-badge)](https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide)
+[Guía de Configuración Cliente Gateway](https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide)
 
 ---
 
-Para una lista completa de clientes gateway disponibles, consulte el [![clientes disponibles JSON](https://img.shields.io/badge/_Clientes_Disponibles-JSON-blue?style=for-the-badge)](https://gatewayserver.smswithoutborders.com/v3/clients)
+Para una lista completa de clientes gateway disponibles, consulte el [Clientes Disponibles JSON](https://gatewayserver.smswithoutborders.com/v3/clients)

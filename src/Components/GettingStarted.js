@@ -1,16 +1,83 @@
 import React from "react";
 import Slider from "react-slick";
-import { Box, Typography, Button, Container, Grid } from "@mui/material";
+import { Box, Typography, Button, Container, Grid, IconButton } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useTranslation } from "react-i18next";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
-const HowItWorks = () => {
+const GettingStarted = () => {
 	const { t, i18n } = useTranslation();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
+
+	const CustomPrevArrow = ({ className, style, onClick }) => (
+		<IconButton
+			className={className}
+			style={{
+				...style,
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				backgroundColor: "#EBF0FF",
+				color: "#202020ff",
+				width: "50px",
+				height: "50px",
+				borderRadius: "50%",
+				position: "absolute",
+				left: "-25px",
+				top: "50%",
+				transform: "translateY(-50%)",
+				zIndex: 2,
+				transition: "all 0.3s ease"
+			}}
+			onClick={onClick}
+			sx={{
+				"&:hover": {
+					backgroundColor: "#00013b",
+					transform: "translateY(-50%) scale(1.1)",
+					boxShadow: "0 6px 16px rgba(0, 1, 88, 0.4)"
+				}
+			}}
+		>
+			<FiChevronLeft size={20} strokeWidth={2} />
+		</IconButton>
+	);
+
+	const CustomNextArrow = ({ className, style, onClick }) => (
+		<IconButton
+			className={className}
+			style={{
+				...style,
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "center",
+				backgroundColor: "#EBF0FF",
+				color: "#202020ff",
+				width: "50px",
+				height: "50px",
+				borderRadius: "50%",
+				position: "absolute",
+				right: { md: "-65px", sm: "-25px" },
+				top: "50%",
+				transform: "translateY(-50%)",
+				zIndex: 2,
+				transition: "all 0.3s ease"
+			}}
+			onClick={onClick}
+			sx={{
+				"&:hover": {
+					backgroundColor: "#00013b",
+					transform: "translateY(-50%) scale(1.1)",
+					boxShadow: "0 6px 16px rgba(0, 1, 88, 0.4)"
+				}
+			}}
+		>
+			<FiChevronRight size={20} strokeWidth={2} />
+		</IconButton>
+	);
 
 	const settings = {
 		dots: true,
@@ -18,9 +85,10 @@ const HowItWorks = () => {
 		speed: 600,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 5000,
-		arrows: true
+		autoplay: false,
+		arrows: true,
+		prevArrow: <CustomPrevArrow />,
+		nextArrow: <CustomNextArrow />
 	};
 
 	const Item = styled(Paper)(({ theme }) => ({
@@ -35,7 +103,7 @@ const HowItWorks = () => {
 			number: 1,
 			title: t("Howitworks.Step1Title"),
 			description: t("Howitworks.Step1Desc"),
-			image: "/Download.png",
+			image: "/Download-copy.png",
 			buttonText: t("Howitworks.Step1Button", "Download"),
 			link: "/download",
 			bgColor: " #EBF5FB"
@@ -44,7 +112,7 @@ const HowItWorks = () => {
 			number: 2,
 			title: t("Howitworks.Step2Title"),
 			description: t("Howitworks.Step2Desc"),
-			image: "/Login.png",
+			image: "/Login-copy.png",
 			buttonText: t("Howitworks.Step2Button", "Learn More"),
 			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-2-create-an-account",
 			bgColor: "rgb(249, 225, 248)"
@@ -53,7 +121,7 @@ const HowItWorks = () => {
 			number: 3,
 			title: t("Howitworks.Step3Title"),
 			description: t("Howitworks.Step3Desc"),
-			image: "/saveplatform.png",
+			image: "/saveplatform-copy.png",
 			buttonText: t("Howitworks.Step3Button", "Set Up Now"),
 			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-5-save-access-to-platforms",
 			bgColor: "rgb(246, 234, 191)"
@@ -62,8 +130,8 @@ const HowItWorks = () => {
 			number: 4,
 			title: t("Howitworks.Step4Title"),
 			description: t("Howitworks.Step4Desc"),
-			image: "/Gateway.png",
-			buttonText: t("Howitworks.Step4Button", "Configure Gateway"),
+			image: "/Gateway-copy.png",
+			buttonText: t("Howitworks.Step4Button", "Select a Gateway"),
 			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-6-choose-a-gateway-client",
 			bgColor: "rgb(183, 243, 232)"
 		},
@@ -71,7 +139,7 @@ const HowItWorks = () => {
 			number: 5,
 			title: t("Howitworks.Step5Title"),
 			description: t("Howitworks.Step5Desc"),
-			image: "/text.png",
+			image: "/text-copy.png",
 			buttonText: t("Howitworks.Step5Button", "Start Messaging"),
 			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-3-compose-your-message-and-send-as-sms",
 			bgColor: "rgb(176, 218, 248)"
@@ -84,7 +152,6 @@ const HowItWorks = () => {
 			sx={{
 				py: { xs: 6, md: 12 },
 				px: { xs: 3, md: 6 }
-				// bgcolor: "#FFF6EE"
 			}}
 		>
 			<Box
@@ -95,7 +162,7 @@ const HowItWorks = () => {
 				<Typography
 					variant="h3"
 					sx={{
-						fontSize: {md: "2rem", xs: "1.5rem"},
+						fontSize: { md: "2rem", xs: "1.5rem" },
 						color: "#2D2A5A",
 						fontWeight: 700,
 						fontFamily: "'Unbounded', Ubuntu"
@@ -108,8 +175,9 @@ const HowItWorks = () => {
 					sx={{
 						fontSize: "1.2rem",
 						color: "#555555",
+						mt: 1,
 						fontFamily: "Ubuntu",
-						mt: 1
+						px: 2
 					}}
 				>
 					{t(
@@ -121,15 +189,17 @@ const HowItWorks = () => {
 			<Container sx={{ py: 4 }}>
 				<Box
 					sx={{
-						".slick-prev:before, .slick-next:before": {
-							color: " #FF9E43",
-							fontSize: "28px"
-						},
 						".slick-dots li button:before": {
-							color: " #FF9E43"
+							color: " #8b8b8bff",
+							fontSize: "18px"
 						},
 						".slick-dots li.slick-active button:before": {
-							color: " #014088"
+							color: " #000158"
+						},
+						".slick-prev, .slick-next": {
+							"&:before": {
+								display: "none"
+							}
 						}
 					}}
 				>
@@ -167,22 +237,20 @@ const HowItWorks = () => {
 												height: "100%"
 											}}
 										>
-											{/* Step Number Badge */}
 											<Box
 												sx={{
-													width: 60,
-													height: 60,
+													width: { md: 60, xs: 40 },
+													height: { md: 60, xs: 40 },
 													borderRadius: "50%",
-													backgroundColor: "#000158",
-													color: "rgba(210, 210, 211, 0.86)",
+													backgroundColor: "#EBF0FF",
+													color: "#000000db",
 													display: "flex",
 													alignItems: "center",
 													justifyContent: "center",
-													fontSize: "1.5rem",
+													fontSize: {md: "1.5rem", xs: "1.2rem"},
 													fontWeight: "bold",
 													fontFamily: "'Unbounded', Ubuntu",
 													mb: 3,
-													border: "3px solid #223250ff",
 													transition: "all 0.3s ease",
 													"&:hover": {
 														transform: "scale(1.1)",
@@ -201,7 +269,7 @@ const HowItWorks = () => {
 													fontFamily: "'Unbounded', Ubuntu",
 													letterSpacing: "0.05em",
 													mb: 2,
-													fontSize: { xs: "1rem", md: "1.5rem" }
+													fontSize: { md: "1.5rem", xs: "1.25rem" }
 												}}
 											>
 												{slide.title}
@@ -211,9 +279,9 @@ const HowItWorks = () => {
 												variant="body1"
 												color="#555"
 												sx={{
-													fontFamily: "'Mona Sans', Ubuntu",
+													fontFamily: "Ubuntu",
 													maxWidth: 500,
-													fontSize: { xs: "1rem", md: "1.125rem" },
+													fontSize: { xs: "0.9rem", md: "1.125rem" },
 													lineHeight: 1.7,
 													mb: 4,
 													mx: "auto"
@@ -232,20 +300,16 @@ const HowItWorks = () => {
 												target="_blank"
 												rel="noopener noreferrer"
 												sx={{
-													backgroundColor: "#000158",
-													color: "#ffffff",
+													backgroundColor: "#001871",
 													textTransform: "none",
-													fontWeight: 600,
 													py: 1.2,
 													px: 5,
-													fontSize: { xs: "12px", md: "15px" },
+													fontFamily: "Ubuntu",
+													fontSize: { xs: "12px", md: "18px" },
 													transition: "all 0.3s ease-in-out",
-													borderRadius: "8px",
 													"&:hover": {
-														backgroundColor: "#00013bff",
-														color: "white",
-														transform: "translateY(-2px)",
-														boxShadow: "0 8px 20px rgba(0, 1, 59, 0.3)"
+														transform: "translateY(-3px)",
+														boxShadow: "0 12px 30px rgba(209, 218, 252, 1)"
 													}
 												}}
 											>
@@ -261,7 +325,10 @@ const HowItWorks = () => {
 												justifyContent: { xs: "center", md: "flex-end" },
 												alignItems: "center",
 												px: { xs: 2, sm: 4, md: 6 },
-												py: { xs: 2, md: 1 }
+												pt: { xs: 2, md: 1 },
+												bgcolor: "#FFF1E4",
+												borderRadius: { md: 4, xs: 2 },
+												border: "1px solid #e9ecef"
 											}}
 										>
 											<Box
@@ -269,8 +336,7 @@ const HowItWorks = () => {
 												src={slide.image}
 												alt={slide.title}
 												sx={{
-													width: { xs: "80%", sm: "70%", md: "100%" },
-													//maxWidth: 350,
+													width: { xs: "100%", sm: "70%", md: "100%" },
 													height: "auto",
 													maxHeight: 500,
 													objectFit: "contain"
@@ -288,4 +354,4 @@ const HowItWorks = () => {
 	);
 };
 
-export default HowItWorks;
+export default GettingStarted;

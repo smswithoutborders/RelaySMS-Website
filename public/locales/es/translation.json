@@ -11,6 +11,10 @@
 		"Branding": "Marca",
 		"Overview": "Descripción del Sistema"
 	},
+	"Alert": {
+		"message": "¡Ahora puedes hacer de RelaySMS tu aplicación SMS predeterminada en Android!",
+		"readMore": "Leer más"
+	},
 	"social": {
 		"x": "Síguenos en X",
 		"bluesky": "Visítanos en Bluesky",
@@ -18,9 +22,9 @@
 	},
 	"Landing": {
 		"span": "¿Sin datos? No te preocupes.",
-		"h1": "Mantente conectado con RelaySMS",
-		"h2": "RelaySMS permite a los usuarios enviar mensajes a plataformas en línea sin una conexión activa a Internet.",
-		"Android": "Descargar RelaySMS",
+		"h1": "¿Sin Internet? No hay problema. RelaySMS te mantiene conectado.",
+		"h2": "RelaySMS permite a los usuarios enviar mensajes a plataformas en línea sin una conexión activa a Internet. Los mensajes se envían por SMS desde tu dispositivo.",
+		"Android": "Descargar RelaySMS ",
 		"supportedPlatforms": "Plataformas compatibles:",
 		"auditMessage": {
 			"part1": "RelaySMS está comprometido con la seguridad y la transparencia. Lee nuestro ",
@@ -41,7 +45,7 @@
 		"Step3Title": "Guarda plataformas",
 		"Step3Desc": "Agrega tus credenciales para usar plataformas fuera de línea.",
 		"Step3Button": "Configurar ahora",
-		"Step4Title": "Configura una pasarela",
+		"Step4Title": "Selecciona un cliente de pasarela",
 		"Step4Desc": "Elige un cliente gateway para SMS o añade el número en contactos.",
 		"Step4Button": "Configurar pasarela",
 		"Step5Title": "Envía mensajes",
@@ -64,7 +68,16 @@
 		"articles3": "Nueva versión alfa: Vault 0.1.0",
 		"tag": "Artículos",
 		"tags": "Lanzamiento",
-		"readTime": "2 min de lectura"
+		"readTime": "2 min de lectura",
+		"loading": "Cargando publicaciones del blog...",
+		"minRead": "min de lectura",
+		"categories": {
+			"Featured": "Destacado",
+			"Article": "Artículo",
+			"Features": "Características",
+			"Technical": "Técnico",
+			"Release": "Lanzamiento"
+		}
 	},
 	"Faq": {
 		"faqTitle": "Preguntas Frecuentes",
@@ -92,22 +105,28 @@
 		"contact": {
 			"didn't": "¿No encontraste tu respuesta?",
 			"Contant Us": "Contáctanos"
+		},
+		"support": {
+			"header": "¿Experimentas dificultades técnicas u quieres darnos comentarios?",
+			"troubleshootingGuide": "Guía de solución de problemas",
+			"mailSupport": "Soporte por correo:"
 		}
 	},
 	"Footer": {
-		"Header1": "Recursos",
-		"body": "SMSWithoutBorders",
-		"Support": "Soporte",
-		"help": "Documentación",
+		"Resources": "Recursos",
+		"TechnicalResources": "Recursos Técnicos",
+		"More": "Más",
 		"Blog": "Blog",
-		"policy": "Política de privacidad",
-		"Header2": "Descargas",
-		"download1": "Android",
-		"download2": "iOS",
-		"download3": "Linux",
-		"Header3": "Únete a nuestra lista de correo",
-		"EnterEmail": "developers@smswithoutborders.com",
-		"Subscribe": "Enviar",
+		"BrandResources": "Recursos de Marca",
+		"Features": "Características",
+		"SystemOverview": "Descripción del Sistema",
+		"GitHub": "GitHub",
+		"DeveloperDocs": "Documentación para Desarrolladores",
+		"Contributing": "Contribuir",
+		"PrivacyPolicy": "Política de Privacidad",
+		"AuditReport": "Informe de Auditoría",
+		"Jobs": "Empleos",
+		"ContactUs": "Contáctanos",
 		"copyright": "AFKANERD"
 	},
 	"policy": "Política de privacidad",
@@ -208,7 +227,7 @@
 			"colorVariations": "Variaciones de Color:",
 			"colorVariationsText": "Usa la variante apropiada del logo basada en el color de fondo. Logos blancos para fondos oscuros, logos oscuros para fondos claros.",
 			"attribution": "Atribución:",
-			"attributionText": "Al usar los recursos de marca de RelaySMS, mantén la atribución a SMS Without Borders y enlaza a nuestro sitio web oficial cuando sea apropiado."
+			"attributionText": "Al usar los recursos de marca de RelaySMS, mantén la atribución a SMSWithoutBorders y enlaza a nuestro sitio web oficial cuando sea apropiado."
 		}
 	},
 	"download": {
@@ -216,6 +235,7 @@
 		"Description": "Accede a RelaySMS desde fuentes confiables y verificadas para garantizar tu seguridad y privacidad.",
 		"android": "Opción de Android",
 		"ios": "Opción de iOS",
+		"downloadButton": "Descargar",
 		"Titles": {
 			"Github": "GitHub",
 			"PlayStore": "Play Store",
@@ -231,13 +251,13 @@
 		"iosDescription": "Disponible ahora en la App Store de Apple."
 	},
 	"WhoShouldUse": {
-		"Header": "¿Quién debería usar RelaySMS?",
+		"Header": "Todos <strike>pueden</strike> deberían usar RelaySMS",
 		"Description": "Cualquier persona que experimente mala conectividad a Internet o viva en una región propensa a cortes de Internet debería usar RelaySMS para eludir los cortes y mantenerse conectado. La mayoría de los usuarios de RelaySMS viven actualmente en África e India, pero la aplicación está disponible para uso en todo el mundo.",
 		"AndroidButton": "Descargar para Android",
 		"iOSButton": "Descargar para iOS"
 	},
 	"HowRelaySMSWorks": {
-		"Header": "¿Cómo funciona RelaySMS?",
+		"Header": "Cómo sucede la <strike>tecnología</strike> magia",
 		"Description1": "RelaySMS utiliza mensajería SMS (también conocida como \"mensajes de texto\") para enrutar mensajes fuera de línea de vuelta en línea.",
 		"Description2": "Después de configurar RelaySMS en tu teléfono, puedes conectarte sin problemas y enviar mensajes en tus plataformas de mensajería en línea preferidas sin usar datos en absoluto (se aplicarán tarifas SMS estándar).",
 		"Description3": "La clave de RelaySMS radica en su uso de Clientes Gateway. Estos dispositivos operan en áreas con una conexión activa a Internet, lo que les permite recibir un mensaje SMS de un usuario RelaySMS fuera de línea y luego enviarlo a un servidor en línea donde el usuario ya ha guardado sus permisos de plataforma.",
@@ -245,6 +265,11 @@
 		"EnglishPDF": "Guía en Inglés (PDF)",
 		"FrenchPDF": "Guía en Francés (PDF)",
 		"SeeSpecification": "Leer más"
+	},
+	"GatewayClient": {
+		"Header": "Configurar un Cliente Gateway",
+		"Description": "Configurar un cliente gateway te permite a ti y a cualquiera con quien lo compartas enviar mensajes usando tu número. Es completamente opcional, pero si eliges configurar uno, simplemente sigue las instrucciones a continuación.",
+		"ReadMore": "Leer Más"
 	},
 	"SupportedPlatforms": {
 		"Header": "Plataformas Compatibles",
@@ -287,5 +312,11 @@
 			"content": "Contenido"
 		},
 		"documentationError": "Error al cargar la documentación. Por favor, inténtalo de nuevo."
+	},
+	"404": {
+		"title": "¡Ups! Página No Encontrada",
+		"description": "La página que buscas no existe. Puede que haya sido movida, eliminada, o ingresaste una URL incorrecta.",
+		"homeButton": "Volver al Inicio",
+		"backButton": "Regresar"
 	}
 }

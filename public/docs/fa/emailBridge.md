@@ -12,4 +12,4 @@
 - گیرنده ایمیل را از نام مستعار مبتنی بر شماره تلفن دریافت می‌کند
 - کلاینت ایمیل تأیید تحویل را به سرور پل برمی‌گرداند
 
-[![مخزن GitHub](https://img.shields.io/badge/📧_Email-Repository-blue?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Bridge-EmailClient)
+[مخزن Email Bridge](https://github.com/smswithoutborders/RelaySMS-Bridge-EmailClient)

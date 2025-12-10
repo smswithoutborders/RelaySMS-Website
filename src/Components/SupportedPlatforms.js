@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
 	Box,
 	Typography,
 	Container,
-	Grid,
-	Card,
-	CardContent,
-	CircularProgress
+	CircularProgress,
+	IconButton
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { FaPause, FaPlay } from "react-icons/fa";
 
 const SupportedPlatforms = () => {
 	const { t, i18n } = useTranslation();
@@ -16,6 +15,8 @@ const SupportedPlatforms = () => {
 	const [platforms, setPlatforms] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
+	const [isPaused, setIsPaused] = useState(false);
+	const carouselRef = useRef(null);
 
 	useEffect(() => {
 		const fetchPlatforms = async () => {
@@ -25,7 +26,7 @@ const SupportedPlatforms = () => {
 					headers: {
 						"Content-Type": "application/json"
 					},
-					mode: "cors" // Explicitly set CORS mode
+					mode: "cors"
 				});
 
 				if (!response.ok) {
@@ -33,9 +34,8 @@ const SupportedPlatforms = () => {
 				}
 
 				const data = await response.json();
-				console.log("Fetched platforms:", data); // Debug log
+				console.log("Fetched platforms:", data); 
 
-				// Filter out test/internal platforms like "reliability"
 				const filteredPlatforms = data.filter(
 					(platform) => platform.name !== "reliability" && platform.service_type !== "test"
 				);
@@ -45,7 +45,6 @@ const SupportedPlatforms = () => {
 				console.error("Error fetching platforms:", err);
 				setError(err.message);
 
-				// Fallback data in case of network issues
 				const fallbackPlatforms = [
 					{
 						name: "gmail",
@@ -101,7 +100,7 @@ const SupportedPlatforms = () => {
 
 				console.log("Using fallback platforms data");
 				setPlatforms(fallbackPlatforms);
-				setError(null); // Clear error since we have fallback data
+				setError(null);
 			} finally {
 				setLoading(false);
 			}
@@ -144,138 +143,117 @@ const SupportedPlatforms = () => {
 		);
 	}
 
+	const multiPlePlatforms = [...platforms, ...platforms, ...platforms];
+
+	const togglePause = () => {
+		setIsPaused(!isPaused);
+	};
+
 	return (
 		<Box
 			dir={isRtl ? "rtl" : "ltr"}
 			sx={{
-				py: { xs: 8, md: 12 },
+				py: { xs: 6, md: 8 },
 				px: { xs: 3, md: 6 },
 				backgroundColor: "#ffffff"
 			}}
 		>
 			<Container maxWidth="lg">
-				<Box
-					sx={{
-						textAlign: "center",
-						mb: 6
-					}}
-				>
+				<Box sx={{ 
+					mb: 4, 
+					display: "flex", 
+					justifyContent: "space-between", 
+					alignItems: "center" 
+				}}>
 					<Typography
-						variant="h3"
+						variant="h6"
 						sx={{
-							fontSize: {md: "2rem", xs: "1.5rem"},
+							fontSize: "1.2rem",
 							color: "#2D2A5A",
-							fontWeight: 700,
-							fontFamily: "'Unbounded', Ubuntu",
-							mb: 3
+							fontWeight: 600,
+							fontFamily: "Ubuntu"
 						}}
 					>
-						{t("SupportedPlatforms.Header", "Supported Platforms")}
+						{t("SupportedPlatforms.Header", "Supported Platforms")}:
 					</Typography>
-					<Typography
-						variant="body1"
+					
+					<IconButton
+						onClick={togglePause}
 						sx={{
-							fontSize: "1.1rem",
-							color: "#555555",
-							fontFamily: "Ubuntu",
-							lineHeight: 1.7,
-							maxWidth: 800,
-							mx: "auto"
+							backgroundColor: "#2D2A5A",
+							color: "white",
+							width: 40,
+							height: 40,
+							"&:hover": {
+								backgroundColor: "#1f1a3d",
+								transform: "scale(1.05)"
+							},
+							transition: "all 0.2s ease"
 						}}
 					>
-						{t(
-							"SupportedPlatforms.Description",
-							"Send messages to these online platforms through SMS using RelaySMS, even when you don't have internet access."
-						)}
-					</Typography>
+						{isPaused ? <FaPlay size={14} /> : <FaPause size={14} />}
+					</IconButton>
 				</Box>
 
-				<Grid container spacing={3} justifyContent="center">
-					{platforms.map((platform, index) => (
-						<Grid item xs={6} sm={4} md={3} lg={2} key={index}>
+				<Box
+					sx={{
+						position: "relative",
+						overflow: "hidden",
+						width: "100%",
+						mb: 3
+					}}
+				>
+					<Box
+						ref={carouselRef}
+						sx={{
+							display: "flex",
+							alignItems: "center",
+							gap: 4,
+							width: "max-content",
+							animation: isPaused ? "none" : "scroll 20s linear infinite",
+							"@keyframes scroll": {
+								"0%": {
+									transform: "translateX(0)"
+								},
+								"100%": {
+									transform: `translateX(-${(platforms.length * (80 + 16))}px)`
+								}
+							}
+						}}
+					>
+						{multiPlePlatforms.map((platform, index) => (
 							<Box
+								key={`${platform.name}-${index}`}
 								sx={{
-									height: "100%",
+									minWidth: 80,
+									height: 80,
 									display: "flex",
-									flexDirection: "column",
 									alignItems: "center",
-									p: 3,
-									backgroundColor: "#ffffff",
-									borderRadius: 3,
+									justifyContent: "center",
 									transition: "all 0.3s ease",
-									border: "2px solid transparent",
 									"&:hover": {
-										transform: "translateY(-5px)",
-										borderColor: "#FF9E43",
-										boxShadow: "0 8px 25px rgba(255, 158, 67, 0.15)"
+										transform: "scale(1.1)",
 									}
 								}}
 							>
-								<CardContent
+								<Box
+									component="img"
+									src={platform.icon_png || platform.icon_svg}
+									alt={`${platform.name} icon`}
 									sx={{
-										display: "flex",
-										flexDirection: "column",
-										alignItems: "center",
-										textAlign: "center",
-										p: 0,
-										"&:last-child": { pb: 0 }
+										width: 40,
+										height: 40,
+										objectFit: "contain"
 									}}
-								>
-									<Box
-										component="img"
-										src={platform.icon_png || platform.icon_svg}
-										alt={`${platform.name} icon`}
-										sx={{
-											width: { xs: 40, sm: 50, md: 60 },
-											height: { xs: 40, sm: 50, md: 60 },
-											mb: 2,
-											objectFit: "contain"
-										}}
-										onError={(e) => {
-											// Fallback to SVG if PNG fails
-											if (platform.icon_svg && e.target.src !== platform.icon_svg) {
-												e.target.src = platform.icon_svg;
-											}
-										}}
-									/>
-									<Typography
-										variant="h6"
-										sx={{
-											fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
-											fontWeight: 600,
-											color: "#2D2A5A",
-											fontFamily: "'Unbounded', Ubuntu",
-											textTransform: "capitalize",
-											letterSpacing: "0.02em"
-										}}
-									>
-										{platform.name}
-									</Typography>
-								</CardContent>
+									onError={(e) => {
+										if (platform.icon_svg && e.target.src !== platform.icon_svg) {
+											e.target.src = platform.icon_svg;
+										}
+									}}
+								/>
 							</Box>
-						</Grid>
-					))}
-				</Grid>
-
-				<Box
-					sx={{
-						textAlign: "center",
-						mt: 4
-					}}
-				>
-					<Typography
-						variant="body2"
-						sx={{
-							fontSize: "0.9rem",
-							color: "#777",
-							fontStyle: "italic"
-						}}
-					>
-						{t(
-							"SupportedPlatforms.Note",
-							"More platforms are continuously being added. Stay tuned for updates!"
-						)}
-					</Typography>
+						))}
+					</Box>
 				</Box>
 			</Container>
 		</Box>

@@ -15,6 +15,6 @@ Client apps encrypt user messages and send them via SMS to gateway clients. OAut
 - For bridge messages: When replies are sent to the alias, Bridge Server forwards them via SMS
 - App decrypts and displays bridge replies to the user
 
-[![Android Repository](https://img.shields.io/badge/GitHub-Source_Code-black?logo=github)](https://github.com/smswithoutborders/RelaySMS-Android)
+[Android Repository](https://github.com/smswithoutborders/RelaySMS-Android)
 
-[![OS Repository](https://img.shields.io/badge/GitHub-Source_Code-black?logo=github)](https://github.com/smswithoutborders/RelaySMS-iOS)
+[iOS Repository](https://github.com/smswithoutborders/RelaySMS-iOS)

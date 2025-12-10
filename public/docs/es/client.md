@@ -15,6 +15,6 @@ Las aplicaciones cliente cifran los mensajes del usuario y los envían por SMS a
 - Para mensajes del puente: Cuando las respuestas se envían al alias, el Servidor Puente las reenvía por SMS
 - La aplicación descifra y muestra las respuestas del puente al usuario
 
-[![Repositorio Android](https://img.shields.io/badge/GitHub-Source_Code-black?logo=github)](https://github.com/smswithoutborders/RelaySMS-Android)
+[Repositorio Android](https://github.com/smswithoutborders/RelaySMS-Android)
 
-[![Repositorio iOS](https://img.shields.io/badge/GitHub-Source_Code-black?logo=github)](https://github.com/smswithoutborders/RelaySMS-iOS)
+[Repositorio iOS](https://github.com/smswithoutborders/RelaySMS-iOS)

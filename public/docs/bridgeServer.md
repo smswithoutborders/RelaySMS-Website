@@ -14,6 +14,4 @@ The Bridge Server routes messages to bridge clients and manages bidirectional co
 - When reply is received, Bridge Server forwards it to Vault for encryption
 - Vault encrypts the response and the Bridge Server sends it to user via SMS
 
----
-
-[![Bridge Server Repo](https://img.shields.io/badge/🌉_Bridge-Repository-orange?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Bridge-Server)
+[View GitHub Repository](https://github.com/smswithoutborders/RelaySMS-Bridge-Server)

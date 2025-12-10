@@ -14,4 +14,4 @@ Le Vault gère le stockage des jetons et le chiffrement/déchiffrement des messa
 
 ---
 
-[![Dépôt GitHub](https://img.shields.io/badge/🚀_Publisher-Repository-green?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Vault)
+[Dépôt Vault](https://github.com/smswithoutborders/RelaySMS-Vault)

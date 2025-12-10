@@ -11,6 +11,10 @@
 		"Branding": "Branding",
 		"Overview": "System Overview"
 	},
+	"Alert": {
+		"message": "You can now make RelaySMS your default SMS app on Android!",
+		"readMore": "Read more"
+	},
 	"social": {
 		"x": "Follow us on X",
 		"bluesky": "Check us out on Bluesky",
@@ -18,8 +22,8 @@
 	},
 	"Landing": {
 		"span": "No Data? No Worries.",
-		"h1": "Stay Connected with RelaySMS",
-		"h2": "RelaySMS enables users to send messages to online platforms without the use of an active internet connection.",
+		"h1": "No Internet? No Problem. RelaySMS Keeps You Connected.",
+		"h2": "RelaySMS enables users send messages to online platforms without an active internet connection. Messages are sent via SMS from your device.",
 		"Android": "Download RelaySMS ",
 		"supportedPlatforms": "Supported Platforms:",
 		"auditMessage": {
@@ -42,7 +46,7 @@
 		"Step3Title": "Save Platforms",
 		"Step3Desc": "Save access to platforms while connected to the internet. Add your credentials to platforms supported by RelaySMS and prepare them for offline use.",
 		"Step3Button": "Set Up Now",
-		"Step4Title": "Configure a Gateway",
+		"Step4Title": "Select a Gateway Client",
 		"Step4Desc": "Choose a Gateway Client for sending SMS. You can select from pre-configured clients or set up a custom client by adding the gateway number to your contacts.",
 		"Step4Button": "Configure Gateway",
 		"Step5Title": "Send Messages",
@@ -50,20 +54,24 @@
 		"Step5Button": "Start Messaging"
 	},
 	"WhoShouldUse": {
-		"Header": "Who should use RelaySMS?",
-		"Description": "Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns should use RelaySMS to circumvent shutdowns and stay connected. The majority of RelaySMS users currently live in Africa and India—but the app is available for use all around the world.",
+		"Header": "Everyone <strike>can</strike> should use RelaySMS",
+		"Description": "Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns should use RelaySMS to circumvent shutdowns and stay connected. After setting up RelaySMS on your phone, you can seamlessly send messages to your preferred online messaging platform without using any data at all (standard SMS rates will apply).",
 		"AndroidButton": "Download for Android",
 		"iOSButton": "Download for iOS"
 	},
 	"HowRelaySMSWorks": {
-		"Header": "How does RelaySMS work?",
+		"Header": "How the <strike>tech</strike> magic happens",
 		"Description1": "RelaySMS utilizes SMS messaging (aka \"text messaging\") to route offline messages back online.",
-		"Description2": "After setting up RelaySMS on your phone, you can seamlessly connect and send messages on your preferred online messaging platforms without using any data at all (standard SMS rates will apply).",
-		"Description3": "The key to RelaySMS lies in its use of Gateway Clients. These devices operate in areas with an active internet connection, allowing them to receive an SMS message from an offline RelaySMS user and then forward it to an online server where the user has already saved their platform permissions.",
+		"Description2": "The key to RelaySMS lies in its use of Gateway Clients. These devices  operate in areas with an active internet connection, allowing them to  receive an SMS message from an offline RelaySMS user and then forward it to an online server where the user has already saved their platform  permissions.",
 		"TrainingTitle": "Download Training Guides",
 		"EnglishPDF": "English Guide (PDF)",
 		"FrenchPDF": "French Guide (PDF)",
 		"SeeSpecification": "Read more"
+	},
+	"GatewayClient": {
+		"Header": "Setting Up a Gateway-Client",
+		"Description": "Setting up a gateway client allows you and anyone you share it with to send messages using your number. It's completely optional, but if you choose to set one up, just follow the instructions below.",
+		"ReadMore": "Read More"
 	},
 	"SupportedPlatforms": {
 		"Header": "Supported Platforms",
@@ -88,7 +96,16 @@
 		"articles3": "New Alpha Release: Vault 0.1.0",
 		"tag": "Articles",
 		"tags": "Release",
-		"readTime": "2 mins read"
+		"readTime": "2 mins read",
+		"loading": "Loading blog posts...",
+		"minRead": "min read",
+		"categories": {
+			"Featured": "Featured",
+			"Article": "Article",
+			"Features": "Features",
+			"Technical": "Technical",
+			"Release": "Release"
+		}
 	},
 
 	"Faq": {
@@ -117,23 +134,28 @@
 		"contact": {
 			"didn't": "Did not find your answer?",
 			"Contant Us": "Contact Us"
+		},
+		"support": {
+			"header": "Experiencing technical difficulty or want to give some feedback?",
+			"troubleshootingGuide": "Troubleshooting Guide",
+			"mailSupport": "Mail support:"
 		}
 	},
 	"Footer": {
-		"Header1": "Resources",
-		"body": "SMSWithoutBorders",
-		"Support": "Support",
-		"help": "Documentation",
+		"Resources": "Resources",
+		"TechnicalResources": "Technical Resources",
+		"More": "More",
 		"Blog": "Blog",
-		"policy": "Privacy Policy",
-		"Header2": "Downloads",
-		"download1": "Android",
-		"download2": "iOS",
-		"download3": "Linux",
-
-		"Header3": " Join Our Mailing List",
-		"EnterEmail": "developers@smswithoutborders.com",
-		"Subscribe": "Submit",
+		"BrandResources": "Brand Resources",
+		"Features": "Features",
+		"SystemOverview": "System Overview",
+		"GitHub": "GitHub",
+		"DeveloperDocs": "Developer Docs",
+		"Contributing": "Contributing",
+		"PrivacyPolicy": "Privacy Policy",
+		"AuditReport": "Audit Report",
+		"Jobs": "Jobs",
+		"ContactUs": "Contact Us",
 		"copyright": "AFKANERD"
 	},
 	"policy": "Privacy Policy",
@@ -236,7 +258,7 @@
 			"colorVariations": "Color Variations:",
 			"colorVariationsText": "Use the appropriate logo variant based on background color. White logos for dark backgrounds, dark logos for light backgrounds.",
 			"attribution": "Attribution:",
-			"attributionText": "When using RelaySMS brand assets, please maintain attribution to SMS Without Borders and link back to our official website where appropriate."
+			"attributionText": "When using RelaySMS brand assets, please maintain attribution to SMSWithoutBorders and link back to our official website where appropriate."
 		}
 	},
 	"download": {
@@ -244,6 +266,7 @@
 		"Description": "Access RelaySMS from trusted and verified sources to ensure your security and privacy.",
 		"android": "Android",
 		"ios": "iOS",
+		"downloadButton": "Download",
 		"Titles": {
 			"Github": "Github",
 			"PlayStore": "PlayStore",
@@ -293,5 +316,11 @@
 			"content": "Content"
 		},
 		"documentationError": "Error loading documentation. Please try again."
+	},
+	"404": {
+		"title": "Oops! Page Not Found",
+		"description": "The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.",
+		"homeButton": "Go Back Home",
+		"backButton": "Go Back"
 	}
 }

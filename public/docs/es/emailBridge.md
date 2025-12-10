@@ -12,4 +12,4 @@ El Puente de Correo recibe contenido del Servidor Puente y genera alias de corre
 - El destinatario recibe el correo del alias basado en el número de teléfono
 - El Cliente de Correo devuelve confirmación de entrega al Servidor Puente
 
-[![Repositorio GitHub](https://img.shields.io/badge/📧_Email-Repository-blue?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/RelaySMS-Bridge-EmailClient)
+[Repositorio Email Bridge](https://github.com/smswithoutborders/RelaySMS-Bridge-EmailClient)

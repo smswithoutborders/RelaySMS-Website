@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Typography, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Box, Typography, Paper, Divider, Button, Grid } from "@mui/material";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import ReactHtmlParser from "react-html-parser";
 
@@ -24,15 +24,6 @@ const FAQSection = ({ isFarsi }) => {
 		{
 			question: t("Faq.faq4.question"),
 			answer: ReactHtmlParser(t("Faq.faq4.answer"))
-		},
-		{
-			question: t("Faq.faq5.question"),
-			answer: ReactHtmlParser(
-				t("Faq.faq5.answer").replace(
-					/<a /g,
-					"<a style='color:#1E2A78; text-decoration: underline;' "
-				)
-			)
 		}
 	];
 
@@ -42,7 +33,7 @@ const FAQSection = ({ isFarsi }) => {
 			id="faq"
 			sx={{
 				py: { xs: 10, md: 14 },
-				px: { xs: 3, md: 8 },
+				px: { xs: 2, md: 8 },
 				fontFamily: "'Unbounded', 'Ubuntu', sans-serif",
 				direction: isFarsi ? "rtl" : "ltr"
 			}}
@@ -56,7 +47,7 @@ const FAQSection = ({ isFarsi }) => {
 				<Typography
 					variant="h3"
 					sx={{
-						fontSize: {md: "2rem", xs: "1.5rem"},
+						fontSize: { md: "2rem", xs: "1.5rem" },
 						color: "#2D2A5A",
 						fontFamily: "'Unbounded', Ubuntu"
 					}}
@@ -69,7 +60,8 @@ const FAQSection = ({ isFarsi }) => {
 						fontSize: "1.2rem",
 						color: "#555555",
 						fontFamily: "Ubuntu",
-						mt: 1
+						mt: 1,
+						px: 2
 					}}
 				>
 					{t(
@@ -79,88 +71,161 @@ const FAQSection = ({ isFarsi }) => {
 				</Typography>
 			</Box>
 
-			<Box maxWidth="1200px" mx="auto">
-				{faqs.map(({ question, answer }, idx) => (
-					<Accordion
-						key={idx}
+			<Grid
+				container
+				spacing={4}
+				sx={{
+					maxWidth: "1200px",
+					mx: { md: "auto", xs: -2 },
+					width: "100%",
+				}}
+			>
+				<Grid item xs={12} md={8} sx={{ display: "flex", justifyContent: "center" }}>
+					<Box sx={{ width: "100%", overflow: "hidden", maxWidth: { xs: "600px", md: "100%" } }}>
+						{faqs.map(({ question, answer }, idx) => (
+							<Box key={idx}>
+								<Typography
+									variant="h6"
+									sx={{
+										fontWeight: 700,
+										color: "#2D2A5A",
+										fontSize: { xs: "1.1rem", md: "1.2rem" },
+										fontFamily: "'Unbounded', Ubuntu",
+										mb: 2,
+										lineHeight: 1.4
+									}}
+								>
+									{question}
+								</Typography>
+
+								<Typography
+									variant="body1"
+									sx={{
+										color: "#555",
+										fontFamily: "Ubuntu",
+										fontSize: "1rem",
+										lineHeight: 1.7,
+										mb: 3,
+										width: "100%",
+										overflowWrap: "break-word",
+										wordBreak: "break-word",
+										"& a": {
+											color: "#FF9E43",
+											textDecoration: "underline",
+											"&:hover": {
+												color: "#d65500"
+											}
+										}
+									}}
+								>
+									{answer}
+								</Typography>
+
+								{idx < faqs.length - 1 && (
+									<Divider
+										sx={{
+											my: 4,
+											borderColor: "#e0e0e0"
+										}}
+									/>
+								)}
+							</Box>
+						))}
+					</Box>
+				</Grid>
+
+				<Grid item xs={12} md={4}>
+					<Paper
+						elevation={0}
 						sx={{
-							mb: 2,
-							borderRadius: 2,
-							overflow: "hidden",
-							"&:before": {
-								display: "none"
-							}
+							px: { xs: 1.5, md: 4 },
+							py: { xs: 4, md: 10 },
+							backgroundColor: "#f8f9fa",
+							border: "1px solid #e9ecef",
+							width: "100%"
 						}}
 					>
-						<AccordionSummary
-							expandIcon={<ExpandMoreIcon sx={{ color: "#FF9E43" }} />}
-							aria-controls={`faq-content-${idx}`}
-							id={`faq-header-${idx}`}
+						<Typography
+							variant="h6"
 							sx={{
-								px: 3,
-								py: 2,
-								"&.Mui-expanded": {
-									minHeight: 56
-								},
-								"& .MuiAccordionSummary-content": {
-									margin: 0,
-									alignItems: "center",
-									display: "flex",
-									gap: 1
-								},
-								"& .MuiAccordionSummary-content.Mui-expanded": {
-									margin: "12px 0",
-									display: "flex",
-									gap: 1
-								}
+								fontWeight: 600,
+								color: "#2D2A5A",
+								fontSize: { xs: "1rem", md: "1.1rem" },
+								fontFamily: "'Unbounded', Ubuntu",
+								mb: 2,
+								lineHeight: 1.3,
+								overflowWrap: "break-word",
+								wordBreak: "break-word"
 							}}
 						>
-							<Typography
-								variant="h6"
+							{t("Faq.support.header")}
+						</Typography>
+
+						<Box sx={{ mb: 3 }}>
+							<Button
+								component="a"
+								href="https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ"
+								target="_blank"
+								rel="noopener noreferrer"
+								endIcon={<FaExternalLinkAlt size={12} />}
 								sx={{
-									fontWeight: 600,
-									color: "#2F3C79",
-									fontSize: "1rem"
+									display: "flex",
+									justifyContent: "flex-start",
+									alignItems: "center",
+									color: "#555555",
+									textTransform: "none",
+									fontSize: "1rem",
+									fontFamily: "Ubuntu",
+									p: 0,
+									mb: 2,
+									"&:hover": {
+										backgroundColor: "transparent",
+										color: "#FF9E43"
+									}
 								}}
 							>
-								{question}
-							</Typography>
-						</AccordionSummary>
-						<AccordionDetails
-							sx={{
-								px: 3,
-								py: 2,
-								color: "#555",
-								fontFamily: "'Mona Sans', 'Ubuntu', sans-serif",
-								fontSize: "0.95rem",
-								lineHeight: 1.7
-							}}
-						>
-							{answer}
-						</AccordionDetails>
-					</Accordion>
-				))}
-			</Box>
+								{t("Faq.support.troubleshootingGuide")}
+							</Button>
+						</Box>
 
-			<Box textAlign="center" mt={6}>
-				<Typography variant="body1" sx={{ color: "#555", mb: 2 }}>
-					{t("Faq.contact.didn't")}
-				</Typography>
-				<Typography
-					component="a"
-					href="/contact"
-					sx={{
-						color: "#FF9E43",
-						fontWeight: "bold",
-						textDecoration: "none",
-						"&:hover": {
-							textDecoration: "underline"
-						}
-					}}
-				>
-					{t("Faq.contact.Contant Us")}
-				</Typography>
-			</Box>
+						<Box>
+							<Typography
+								variant="body1"
+								sx={{
+									color: "#2D2A5A",
+									fontFamily: "Unbounded, Ubuntu",
+									fontWeight: 600,
+									fontSize: "1rem",
+									mb: 1,
+									mt: 6
+								}}
+							>
+								{t("Faq.support.mailSupport")}
+							</Typography>
+							<Button
+								component="a"
+								href="mailto:developers@smswithoutborders.com"
+								sx={{
+									alignItems: "center",
+									color: "#555555",
+									textTransform: "none",
+									overflowWrap: "break-word",
+									wordBreak: "break-word",
+									fontSize: "1rem",
+									fontFamily: "Ubuntu",
+									p: 0,
+									"&:hover": {
+										backgroundColor: "transparent",
+										color: "#FF9E43"
+									}
+								}}
+							>
+								developers@smswithoutborders.com
+							</Button>
+						</Box>
+					</Paper>
+				</Grid>
+			</Grid>
 		</Box>
 	);
 };

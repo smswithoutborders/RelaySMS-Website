@@ -15,14 +15,14 @@ Cada adaptador de plataforma está diseñado para interactuar con una plataforma
 
 ##### Plataformas Compatibles
 
-[![Adaptador Gmail](https://img.shields.io/badge/🔌_Platforms-Repository-purple?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/gmail-oauth2-adapter)
+[Adaptador Gmail](https://github.com/smswithoutborders/gmail-oauth2-adapter)
 
-[![Adaptador Twitter](https://img.shields.io/badge/🔌_Platforms-Repository-purple?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/twitter-oauth2-adapter)
+[Adaptador Twitter](https://github.com/smswithoutborders/twitter-oauth2-adapter)
 
-[![Adaptador Mastodon](https://img.shields.io/badge/🔌_Platforms-Repository-purple?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/mastodon-oauth2-adapter)
+[Adaptador Mastodon](https://github.com/smswithoutborders/mastodon-oauth2-adapter)
 
-[![Adaptador Bluesky](https://img.shields.io/badge/🔌_Platforms-Repository-purple?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/bluesky-oauth2-adapter)
+[Adaptador Bluesky](https://github.com/smswithoutborders/bluesky-oauth2-adapter)
 
-[![Adaptador Telegram](https://img.shields.io/badge/🔌_Platforms-Repository-purple?style=for-the-badge&logo=github)](https://github.com/smswithoutborders/telegram-pnba-adapter)
+[Adaptador Telegram](https://github.com/smswithoutborders/telegram-pnba-adapter)
 
-Para una lista completa de plataformas compatibles, consulte el <a href="https://publisher.smswithoutborders.com/v1/platforms" target="_blank">JSON de plataformas compatibles</a>.
+Para una lista completa de plataformas compatibles, consulte el [JSON de plataformas compatibles](https://publisher.smswithoutborders.com/v1/platforms)

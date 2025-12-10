@@ -11,10 +11,10 @@ Gateway clients serve as intermediaries between users and the RelaySMS system, e
 - Gateway client forwards message to Gateway Server using HTTP, SMTP, or FTP protocols
 - Gateway Server processes the message
 
-[![GitHub Repository](https://img.shields.io/badge/GitHub-Source_Code-black?logo=github)](https://github.com/dekusms/DekuSMS-Android)
+[DekuSMS Android Repository](https://github.com/dekusms/DekuSMS-Android)
 
-[![Setting Up a Gateway Client](https://img.shields.io/badge/📚_Docs-Setup_Guide-blue?style=for-the-badge)](https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide)
+[Gateway Client Setup Guide](https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide)
 
 ---
 
-For a complete list of available gateway clients, see the [![available clients JSON](https://img.shields.io/badge/_Available_Clients-JSON-blue?style=for-the-badge)](https://gatewayserver.smswithoutborders.com/v3/clients)
+For a complete list of available gateway clients, see the [Available Clients JSON](https://gatewayserver.smswithoutborders.com/v3/clients)
