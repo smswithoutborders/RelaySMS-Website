@@ -36,7 +36,7 @@
 		"css-select": ">=4.3.0",
 		"svgo": ">=2.8.0",
 		"glob": ">=11.0.0",
-		"webpack-dev-server": ">=4.15.2",
+		"webpack-dev-server": ">=5.2.1",
 		"js-yaml": ">=4.1.0"
 	},
 	"scripts": {
@@ -63,7 +63,7 @@
 		"postcss": "^8.4.31",
 		"esbuild": "^0.25.0",
 		"glob": "^11.0.0",
-		"webpack-dev-server": "^4.15.2",
+		"webpack-dev-server": "^5.2.1",
 		"js-yaml": "^4.1.0"
 	},
 	"packageManager": "yarn@4.9.4+sha512.7b1cb0b62abba6a537b3a2ce00811a843bea02bcf53138581a6ae5b1bf563f734872bd47de49ce32a9ca9dcaff995aa789577ffb16811da7c603dcf69e73750b"
