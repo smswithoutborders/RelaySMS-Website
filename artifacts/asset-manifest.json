@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4b568ecd.css",
+    "main.js": "/static/js/main.c614f040.js",
+    "static/media/RelaySMS Training Guide Flyer (Français).pdf": "/static/media/RelaySMS Training Guide Flyer (Français).df914518e0e781553a84.pdf",
+    "static/media/RelaySMS Training Guide Flyer (English).pdf": "/static/media/RelaySMS Training Guide Flyer (English).eac99401350ce10cf53f.pdf",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "static/media/getFetch.cjs": "/static/media/getFetch.7a7a1c81840c96d5a3ea.cjs",
+    "main.4b568ecd.css.map": "/static/css/main.4b568ecd.css.map",
+    "main.c614f040.js.map": "/static/js/main.c614f040.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b568ecd.css",
+    "static/js/main.c614f040.js"
+  ]
+}
