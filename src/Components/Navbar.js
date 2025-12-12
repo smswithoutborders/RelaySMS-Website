@@ -60,11 +60,6 @@ export default function Navigation() {
         setAnchorElNav(null);
     };
 
-    const handleSearch = (e) => {
-        e.preventDefault();
-        console.log("Search for:", searchValue);
-        // Add your search logic here
-    };
 
     return (
         <AppBar
@@ -136,7 +131,7 @@ export default function Navigation() {
                                     color: iconColor,
                                     textTransform: "none",
                                     fontWeight: 500,
-                                    fontSize: { md: "15px", lg: "16px", xl: "16px" },
+                                    fontSize: { md: "15px", lg: "15px", xl: "16px" },
                                     backgroundImage: "linear-gradient(to right,rgb(23, 114, 184),rgb(5, 105, 155))",
                                     backgroundSize: "0% 2px",
                                     backgroundRepeat: "no-repeat",
@@ -159,7 +154,7 @@ export default function Navigation() {
                                     color: iconColor,
                                     textTransform: "none",
                                     fontWeight: 500,
-                                    fontSize: { md: "15px", lg: "16px", xl: "16px" },
+                                    fontSize: { md: "15px", lg: "15px", xl: "16px" },
                                     backgroundImage: "linear-gradient(to right,rgb(23, 114, 184),rgb(5, 105, 155))",
                                     backgroundSize: "0% 2px",
                                     backgroundRepeat: "no-repeat",
