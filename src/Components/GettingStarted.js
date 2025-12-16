@@ -240,15 +240,15 @@ const GettingStarted = () => {
 										>
 											<Box
 												sx={{
-													width: { md: 60, xs: 40 },
-													height: { md: 60, xs: 40 },
+													width: { md: 50, xs: 40 },
+													height: { md: 50, xs: 40 },
 													borderRadius: "50%",
 													backgroundColor: "#EBF0FF",
 													color: "#000000db",
 													display: "flex",
 													alignItems: "center",
 													justifyContent: "center",
-													fontSize: {md: "1.5rem", xs: "1.2rem"},
+													fontSize: {md: "1.3rem", xs: "1.2rem"},
 													fontWeight: "bold",
 													fontFamily: "'Unbounded', Ubuntu",
 													mb: 3,
@@ -270,7 +270,7 @@ const GettingStarted = () => {
 													fontFamily: "'Unbounded', Ubuntu",
 													letterSpacing: "0.05em",
 													mb: 2,
-													fontSize: { md: "1.5rem", xs: "1.25rem" }
+													fontSize: { md: "1.3rem", xs: "1.25rem" }
 												}}
 											>
 												{slide.title}
@@ -304,10 +304,10 @@ const GettingStarted = () => {
 												sx={{
 													backgroundColor: "#001871",
 													textTransform: "none",
-													py: 1.2,
-													px: 5,
+													// py: 1,
+													px: 4,
 													fontFamily: "Ubuntu",
-													fontSize: { xs: "12px", md: "18px" },
+													fontSize: { xs: "12px", md: "16px" },
 													transition: "all 0.3s ease-in-out",
 													"&:hover": {
 														transform: "translateY(-3px)",
@@ -320,11 +320,11 @@ const GettingStarted = () => {
 										</Item>
 									</Grid>
 
-									<Grid item xs={12} md={6}>
+									<Grid item xs={12} md={5}>
 										<Item
 											sx={{
 												display: "flex",
-												justifyContent: { xs: "center", md: "flex-end" },
+												justifyContent: 'center',
 												alignItems: "center",
 												px: { xs: 2, sm: 4, md: 6 },
 												pt: { xs: 2, md: 1 },
@@ -338,7 +338,7 @@ const GettingStarted = () => {
 												src={slide.image}
 												alt={slide.title}
 												sx={{
-													width: { xs: "100%", sm: "70%", md: "100%" },
+													width: { xs: "100%", sm: "70%", md: "90%", xl: "100%" },
 													height: "auto",
 													maxHeight: 500,
 													objectFit: "contain"

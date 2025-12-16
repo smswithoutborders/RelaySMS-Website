@@ -34,7 +34,7 @@ const SupportedPlatforms = () => {
 				}
 
 				const data = await response.json();
-				console.log("Fetched platforms:", data); 
+				// console.log("Fetched platforms:", data); 
 
 				const filteredPlatforms = data.filter(
 					(platform) => platform.name !== "reliability" && platform.service_type !== "test"
@@ -98,7 +98,7 @@ const SupportedPlatforms = () => {
 					}
 				];
 
-				console.log("Using fallback platforms data");
+				// console.log("Using fallback platforms data");
 				setPlatforms(fallbackPlatforms);
 				setError(null);
 			} finally {

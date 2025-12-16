@@ -40,14 +40,15 @@ const Hero = () => {
 				sx={{
 					maxWidth: 1826,
 					mx: "auto",
-					minHeight: { xs: "80vh", md: "85vh", lg: "95vh", xl: "100vh" },
-					px: { xs: 2, md: 5, lg: 8, xl: 20 },
-					py: { xs: 6, md: 8, lg: 10, xl: 12 },
-					pt: { xs: "120px", md: "140px", lg: "150px", xl: "160px" },
+					minHeight: "100vh",
+					px: { xs: 2, md: 5, lg: 10, xl: 20 },
+					pt: { xs: "140px", md: "150px", lg: "130px" },
+					pb: { xs: 4, md: 6 },
 					display: "flex",
 					alignItems: "center",
+					justifyContent: "center",
 					position: "relative",
-					overflow: "hidden",
+					overflow: "hidden"
 				}}
 			>
 				<Grid
@@ -55,7 +56,6 @@ const Hero = () => {
 					spacing={4}
 					alignItems="center"
 					justifyContent="center"
-					sx={{ height: "100%" }}
 				>
 					<Grid
 						item
@@ -65,9 +65,8 @@ const Hero = () => {
 					>
 						<Typography
 							sx={{
-								mt: { xs: 10, md: 8, lg: 2, xl: 4 },
 								mb: { xs: 2, md: 3, lg: 1 },
-								fontSize: { xs: "1.8rem", md: "2.5rem", lg: "2.7rem", xl: "3rem" },
+								fontSize: { xs: "1.8rem", md: "2.5rem", lg: "2.3rem", xl: "3rem" },
 								textAlign: { xs: "center", md: "left" },
 								color: "#000158",
 								whiteSpace: "pre-wrap",
@@ -94,9 +93,10 @@ const Hero = () => {
 							paragraph
 							sx={{
 								mt: { xs: 2, md: 1.5 },
-								mb: { xs: 3, md: 4 },
+								mb: { xs: 3, md: 2, xl: 4 },
 								fontFamily: "Ubuntu",
-								textAlign: { xs: "center", md: "left" }
+								textAlign: { xs: "center", md: "left" },
+								fontSize: { xs: "16px", md: "18px", lg: "18px", xl: "20px" }
 							}}
 						>
 							{t("Landing.h2")}
@@ -119,10 +119,10 @@ const Hero = () => {
 								sx={{
 									backgroundColor: "#001871",
 									textTransform: "none",
-									py: 1.2,
+									py: 1,
 									px: 5,
 									fontFamily: "Ubuntu",
-									fontSize: { xs: "15px", md: "18px" },
+									fontSize: { xs: "15px", md: "16px" },
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
 										transform: "translateY(-3px)",
@@ -134,7 +134,11 @@ const Hero = () => {
 							</Button>
 						</Box>
 
-						<Box display="flex" alignItems="flex-start" mt={3} sx={{ py: 3, gap: 1 }}>
+						<Box
+							display="flex"
+							alignItems="flex-start"
+							sx={{ py: { md: 2, xl: 3 }, gap: 1, mt: { xs: 2, md: 1, xl: 3 } }}
+						>
 							<Typography
 								variant="body1"
 								sx={{
@@ -180,7 +184,7 @@ const Hero = () => {
 								src="/new-phones.png"
 								alt="RelaySMS Background"
 								sx={{
-									width: { xl: "620px", xs: "100%", md: "100%", sm: "80%", lg: "100%" }
+									width: { xl: "620px", xs: "100%", md: "100%", sm: "80%", lg: "80%" }
 								}}
 							/>
 						</Box>
