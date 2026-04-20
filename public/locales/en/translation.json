@@ -25,6 +25,7 @@
 		"h1": "No Internet? No Problem. RelaySMS Keeps You Connected.",
 		"h2": "RelaySMS enables users send messages to online platforms without an active internet connection. Messages are sent via SMS from your device.",
 		"Android": "Download RelaySMS ",
+		"GatewayClient": "Set-Up Gateway Client",
 		"supportedPlatforms": "Supported Platforms:",
 		"auditMessage": {
 			"part1": "RelaySMS is committed to security and transparency. Read our ",
