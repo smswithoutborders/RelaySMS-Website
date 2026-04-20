@@ -55,13 +55,13 @@
 		"Step5Button": "Start Messaging"
 	},
 	"WhoShouldUse": {
-		"Header": "Everyone <strike>can</strike> should use RelaySMS",
+		"Header": "Everyone can use RelaySMS",
 		"Description": "Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns should use RelaySMS to circumvent shutdowns and stay connected. After setting up RelaySMS on your phone, you can seamlessly send messages to your preferred online messaging platform without using any data at all (standard SMS rates will apply).",
 		"AndroidButton": "Download for Android",
 		"iOSButton": "Download for iOS"
 	},
 	"HowRelaySMSWorks": {
-		"Header": "How the <strike>tech</strike> magic happens",
+		"Header": "How it works",
 		"Description1": "RelaySMS utilizes SMS messaging (aka \"text messaging\") to route offline messages back online.",
 		"Description2": "The key to RelaySMS lies in its use of Gateway Clients. These devices  operate in areas with an active internet connection, allowing them to  receive an SMS message from an offline RelaySMS user and then forward it to an online server where the user has already saved their platform  permissions.",
 		"TrainingTitle": "Download Training Guides",
