@@ -102,36 +102,71 @@ const Hero = () => {
 							{t("Landing.h2")}
 						</Typography>
 
-						<Box
-							sx={{
-								display: "flex",
-								justifyContent: { xs: "center", md: "flex-start" },
-								mt: { xs: 3, md: 1 },
-								mb: { xs: 2, md: 1 },
-								width: "100%"
-							}}
+					<Box
+						sx={{
+							display: "flex",
+							flexDirection: { xs: "column", sm: "row" },
+							justifyContent: { xs: "center", md: "flex-start" },
+							alignItems: "center",
+							gap: 2,
+							mt: { xs: 3, md: 1 },
+							mb: { xs: 2, md: 1 },
+							width: "100%"
+						}}
 						>
-							<Button
-								component={Link}
-								to="/download"
-								variant="contained"
-								size="large"
-								sx={{
-									backgroundColor: "#001871",
-									textTransform: "none",
-									py: 1,
-									px: 5,
-									fontFamily: "Ubuntu",
-									fontSize: { xs: "15px", md: "16px" },
-									transition: "all 0.3s ease-in-out",
-									"&:hover": {
-										transform: "translateY(-3px)",
-										boxShadow: "0 12px 30px rgba(209, 218, 252, 1)"
-									}
-								}}
-							>
-								{t("Landing.Android")}
-							</Button>
+						<Button
+						component={Link}
+						to="/download"
+						variant="contained"
+						size="large"
+						sx={{
+							backgroundColor: "#001871",
+							textTransform: "none",
+							py: 1.2,
+							px: 4,
+							fontFamily: "Ubuntu",
+							fontSize: { xs: "15px", md: "16px" },
+							fontWeight: 500,
+							borderRadius: "5px",
+							width: { xs: "100%", sm: "220px" },
+							height: "48px",
+							transition: "all 0.3s ease-in-out",
+							"&:hover": {
+							transform: "translateY(-3px)",
+							boxShadow: "0 12px 30px rgba(209, 218, 252, 1)"
+							}
+						}}
+						>
+						{t("Landing.Android")}
+						</Button>
+
+						<Button
+						component={Link}
+						to="https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide"
+						variant="outlined"
+						size="large"
+						sx={{
+							backgroundColor: "transparent",
+							color: "#d97706",
+							textTransform: "none",
+							py: 1.2,
+							px: 5,
+							fontFamily: "Ubuntu",
+							fontSize: { xs: "15px", md: "16px" },
+							borderRadius: "5px",
+							border: "2px solid #d97706",
+							transition: "all 0.3s ease-in-out",
+							width: { xs: "100%", sm: "auto" },
+							"&:hover": {
+							backgroundColor: "#d97706",
+							color: "#fff",
+							transform: "translateY(-3px)",
+							boxShadow: "0 12px 30px rgba(217, 119, 6, 0.4)"
+							}
+						}}
+						>
+						{t("Landing.GatewayClient")}
+						</Button>
 						</Box>
 
 						<Box
