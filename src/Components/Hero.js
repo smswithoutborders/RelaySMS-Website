@@ -135,7 +135,7 @@ const Hero = () => {
 							backgroundColor:"#001871",
 							color: "#fff",
 							transform: "translateY(-3px)",
-							boxShadow: "0 10px 20px rgba(6, 90, 217, 0.4)"
+							boxShadow: "0 2px 8px rgba(6, 90, 217, 0.4)"
 							}
 						}}
 						>
@@ -148,22 +148,21 @@ const Hero = () => {
 						variant="outlined"
 						size="large"
 						sx={{
-							backgroundColor: "transparent",
-							color: "#d97706",
+						backgroundColor: "#001871",
+							color: "white",
 							textTransform: "none",
 							py: 1.2,
 							px: 5,
 							fontFamily: "Ubuntu",
 							fontSize: { xs: "15px", md: "16px" },
 							borderRadius: "5px",
-							border: "2px solid #d97706",
 							transition: "all 0.3s ease-in-out",
 							width: { xs: "100%", sm: "auto" },
 							"&:hover": {
-							backgroundColor: "transparent",
-							color: "#001871",
+							backgroundColor:"#001871",
+							color: "#fff",
 							transform: "translateY(-3px)",
-							boxShadow: "0 10px 20px rgba(217, 119, 6, 0.4)"
+							boxShadow: "0 2px 8px rgba(6, 90, 217, 0.4)"
 							}
 						}}
 						>
