@@ -114,26 +114,28 @@ const Hero = () => {
 							width: "100%"
 						}}
 						>
-						<Button
+				
+							<Button
 						component={Link}
 						to="/download"
-						variant="contained"
+						variant="outlined"
 						size="large"
 						sx={{
 							backgroundColor: "#001871",
+							color: "white",
 							textTransform: "none",
 							py: 1.2,
-							px: 4,
+							px: 5,
 							fontFamily: "Ubuntu",
 							fontSize: { xs: "15px", md: "16px" },
-							fontWeight: 500,
 							borderRadius: "5px",
-							width: { xs: "100%", sm: "220px" },
-							height: "48px",
 							transition: "all 0.3s ease-in-out",
+							width: { xs: "100%", sm: "auto" },
 							"&:hover": {
+							backgroundColor:"#001871",
+							color: "#fff",
 							transform: "translateY(-3px)",
-							boxShadow: "0 12px 30px rgba(209, 218, 252, 1)"
+							boxShadow: "0 10px 20px rgba(6, 90, 217, 0.4)"
 							}
 						}}
 						>
@@ -158,10 +160,10 @@ const Hero = () => {
 							transition: "all 0.3s ease-in-out",
 							width: { xs: "100%", sm: "auto" },
 							"&:hover": {
-							backgroundColor: "#d97706",
-							color: "#fff",
+							backgroundColor: "transparent",
+							color: "#001871",
 							transform: "translateY(-3px)",
-							boxShadow: "0 12px 30px rgba(217, 119, 6, 0.4)"
+							boxShadow: "0 10px 20px rgba(217, 119, 6, 0.4)"
 							}
 						}}
 						>
