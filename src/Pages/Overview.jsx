@@ -144,7 +144,19 @@ const Overview = () => {
 						<ReactMarkdown
 							components={{
 								a: ({ node, href, children, ...props }) => {
-									if (href && href.includes("github.com")) {
+									let isGitHubLink = false;
+
+									if (href) {
+										try {
+											const parsedUrl = new URL(href, window.location.origin);
+											const host = parsedUrl.hostname.toLowerCase();
+											isGitHubLink = host === "github.com" || host.endsWith(".github.com");
+										} catch (error) {
+											isGitHubLink = false;
+										}
+									}
+
+									if (isGitHubLink) {
 										return <ButtonContained text={children} linkTo={href} />;
 									}
 									return (
