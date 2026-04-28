@@ -132,7 +132,7 @@ const Hero = () => {
 							transition: "all 0.3s ease-in-out",
 							width: { xs: "100%", sm: "auto" },
 							"&:hover": {
-							backgroundColor:"#001871",
+							backgroundColor: "#001871",
 							color: "#fff",
 							transform: "translateY(-3px)",
 							boxShadow: "0 2px 8px rgba(6, 90, 217, 0.4)"
@@ -159,7 +159,7 @@ const Hero = () => {
 							transition: "all 0.3s ease-in-out",
 							width: { xs: "100%", sm: "auto" },
 							"&:hover": {
-							backgroundColor:"#001871",
+							backgroundColor: "#001871",
 							color: "#fff",
 							transform: "translateY(-3px)",
 							boxShadow: "0 2px 8px rgba(6, 90, 217, 0.4)"
@@ -187,7 +187,7 @@ const Hero = () => {
 							>
 								{t("Landing.auditMessage.part1")}&nbsp;
 								<a
-									href="https://www.opentech.fund/security-safety-audits/smswithoutborders-penetration-testt/"
+									href="https://www.opentech.fund/security-safety-audits/smswithoutborders-penetration-test/"
 									target="_blank"
 									rel="noopener noreferrer"
 									style={{
