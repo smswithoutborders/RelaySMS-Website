@@ -25,6 +25,7 @@
 		"h1": "Pas d'Internet ? Pas de problème. RelaySMS vous garde connecté.",
 		"h2": "RelaySMS permet aux utilisateurs d'envoyer des messages vers des plateformes en ligne sans connexion Internet active. Les messages sont envoyés par SMS depuis votre appareil.",
 		"Android": "Télécharger RelaySMS ",
+		"GatewayClient": "Configurer le client passerelle",
 		"supportedPlatforms": "Plateformes supportées :",
 		"auditMessage": {
 			"part1": "RelaySMS s'engage pour la sécurité et la transparence. Lisez notre ",
@@ -251,13 +252,13 @@
 		"iosDescription": "Disponible dès maintenant sur l'App Store d'Apple."
 	},
 	"WhoShouldUse": {
-		"Header": "Tout le monde <strike>peut</strike> devrait utiliser RelaySMS",
+		"Header": "RelaySMS est accessible à tous.",
 		"Description": "Toute personne confrontée à une connectivité Internet médiocre ou vivant dans une région sujette aux coupures d'Internet devrait utiliser RelaySMS pour contourner les coupures et rester connectée. La majorité des utilisateurs de RelaySMS vivent actuellement en Afrique et en Inde—mais l'application est disponible dans le monde entier.",
 		"AndroidButton": "Télécharger pour Android",
 		"iOSButton": "Télécharger pour iOS"
 	},
 	"HowRelaySMSWorks": {
-		"Header": "Comment la <strike>technologie</strike> magie opère",
+		"Header": "Comment ça marche",
 		"Description1": "RelaySMS utilise la messagerie SMS (aussi appelée \"messagerie texte\") pour rediriger les messages hors ligne vers en ligne.",
 		"Description2": "Après avoir configuré RelaySMS sur votre téléphone, vous pouvez vous connecter et envoyer des messages sur vos plateformes de messagerie en ligne préférées sans utiliser de données (tarifs SMS standard applicables).",
 		"Description3": "La clé de RelaySMS réside dans son utilisation de clients passerelles. Ces appareils fonctionnent dans des zones avec une connexion Internet active, leur permettant de recevoir un message SMS d'un utilisateur RelaySMS hors ligne et de le transmettre à un serveur en ligne où l'utilisateur a déjà enregistré ses autorisations de plateforme.",
