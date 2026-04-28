@@ -184,7 +184,7 @@ const WhoShouldUse = () => {
 											mb: 2
 										}}
 									>
-										{t("GatewayClient.Header", "Setting Up a Gateway-Client")}
+										{t("GatewayClient.Header", "Setting Up Routing Numbers")}
 									</Typography>
 									<Typography
 										variant="body1"
