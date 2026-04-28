@@ -198,7 +198,7 @@ const WhoShouldUse = () => {
 									>
 										{t(
 											"GatewayClient.Description",
-											"Setting up a gateway client allows you and anyone you share it with to send messages using your number. It's completely optional, but if you choose to set one up, just follow the instructions below."
+											"Routing Numbers are devices with active internet that act as a bridge between offline users and online platforms. When you send a message without internet, it goes via SMS to a Routing numbers which forwards it to your selected platform. Within the app, Routing numbers are listed under the Countries tab. They can be set up using the DekuSMS app."
 										)}
 									</Typography>
 									<Button

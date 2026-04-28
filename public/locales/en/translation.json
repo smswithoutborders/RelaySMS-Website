@@ -25,7 +25,7 @@
 		"h1": "No Internet? No Problem. RelaySMS Keeps You Connected.",
 		"h2": "RelaySMS enables users send messages to online platforms without an active internet connection. Messages are sent via SMS from your device.",
 		"Android": "Download RelaySMS ",
-		"GatewayClient": "Set-Up Gateway Client",
+		"GatewayClient": "Set Up Routing Numbers",
 		"supportedPlatforms": "Supported Platforms:",
 		"auditMessage": {
 			"part1": "RelaySMS is committed to security and transparency. Read our ",
@@ -47,11 +47,11 @@
 		"Step3Title": "Save Platforms",
 		"Step3Desc": "Save access to platforms while connected to the internet. Add your credentials to platforms supported by RelaySMS and prepare them for offline use.",
 		"Step3Button": "Set Up Now",
-		"Step4Title": "Select a Gateway Client",
-		"Step4Desc": "Choose a Gateway Client for sending SMS. You can select from pre-configured clients or set up a custom client by adding the gateway number to your contacts.",
-		"Step4Button": "Configure Gateway",
+		"Step4Title": "Select a Routing Number",
+		"Step4Desc": "Choose a Routing Number for sending SMS. You can select from pre-configured numbers or set up a custom number by adding the routing number to your contacts.",
+		"Step4Button": "Configure Routing Number",
 		"Step5Title": "Send Messages",
-		"Step5Desc": "Compose messages for supported platforms without internet. Send these as SMS to a pre-saved gateway number, ensuring encrypted communication.",
+		"Step5Desc": "Compose messages for supported platforms without internet. Send these as SMS to a pre-saved routing number, ensuring encrypted communication.",
 		"Step5Button": "Start Messaging"
 	},
 	"WhoShouldUse": {
@@ -63,15 +63,15 @@
 	"HowRelaySMSWorks": {
 		"Header": "How it works",
 		"Description1": "RelaySMS utilizes SMS messaging (aka \"text messaging\") to route offline messages back online.",
-		"Description2": "The key to RelaySMS lies in its use of Gateway Clients. These devices  operate in areas with an active internet connection, allowing them to  receive an SMS message from an offline RelaySMS user and then forward it to an online server where the user has already saved their platform  permissions.",
+		"Description2": "The key to RelaySMS lies in its use of Routing Numbers. These devices  operate in areas with an active internet connection, allowing them to  receive an SMS message from an offline RelaySMS user and then forward it to an online server where the user has already saved their platform  permissions.",
 		"TrainingTitle": "Download Training Guides",
 		"EnglishPDF": "English Guide (PDF)",
 		"FrenchPDF": "French Guide (PDF)",
 		"SeeSpecification": "Read more"
 	},
 	"GatewayClient": {
-		"Header": "Setting Up a Gateway-Client",
-		"Description": "Setting up a gateway client allows you and anyone you share it with to send messages using your number. It's completely optional, but if you choose to set one up, just follow the instructions below.",
+		"Header": "Setting Up Routing Numbers",
+		"Description": "Routing Numbers are devices with active internet that act as a bridge between offline users and online platforms. When you send a message without internet, it goes via SMS to a Routing numbers which forwards it to your selected platform. Within the app, Routing numbers are listed under the Countries tab. They can be set up using the DekuSMS app.",
 		"ReadMore": "Read More"
 	},
 	"SupportedPlatforms": {
