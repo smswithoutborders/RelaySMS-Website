@@ -25,7 +25,7 @@
 		"h1": "No Internet? No Problem. RelaySMS Keeps You Connected.",
 		"h2": "RelaySMS enables users send messages to online platforms without an active internet connection. Messages are sent via SMS from your device.",
 		"Android": "Download RelaySMS ",
-		"RoutingNumbers": "Set Up Routing Numbers",
+		"RoutingNumbers": "Set Up Gateway Clients",
 		"supportedPlatforms": "Supported Platforms:",
 		"auditMessage": {
 			"part1": "RelaySMS is committed to security and transparency. Read our ",
@@ -63,15 +63,15 @@
 	"HowRelaySMSWorks": {
 		"Header": "How it works",
 		"Description1": "RelaySMS utilizes SMS messaging (aka \"text messaging\") to route offline messages back online.",
-		"Description2": "The key to RelaySMS lies in its use of Routing Numbers. These devices  operate in areas with an active internet connection, allowing them to  receive an SMS message from an offline RelaySMS user and then forward it to an online server where the user has already saved their platform  permissions.",
+		"Description2": "The key to RelaySMS lies in its use of Gateway Clients. These devices  operate in areas with an active internet connection, allowing them to  receive an SMS message from an offline RelaySMS user and then forward it to an online server where the user has already saved their platform  permissions.",
 		"TrainingTitle": "Download Training Guides",
 		"EnglishPDF": "English Guide (PDF)",
 		"FrenchPDF": "French Guide (PDF)",
 		"SeeSpecification": "Read more"
 	},
 	"GatewayClient": {
-		"Header": "Setting Up Routing Numbers",
-		"Description": "Routing Numbers are devices with active internet that act as a bridge between offline users and online platforms. When you send a message without internet, it goes via SMS to a Routing numbers which forwards it to your selected platform. Within the app, Routing numbers are listed under the Countries tab. They can be set up using the DekuSMS app.",
+		"Header": "Setting Up Gateway Clients",
+		"Description": "Gateway Clients are devices with active internet that act as a bridge between offline users and online platforms. When you send a message without internet, it goes via SMS to a Gateway Clients which forwards it to your selected platform. Within the app, Gateway Clients are listed under the Countries tab. They can be set up using the DekuSMS app.",
 		"ReadMore": "Read More"
 	},
 	"SupportedPlatforms": {
@@ -92,8 +92,8 @@
 		"RebrandD": "SMSWithoutBorders itself is becoming the umbrella project encompassing RelaySMS and other messaging tools. The core functionality remains the same, but users can expect a new name, enhanced security features, and a focus on future growth under the SMSWithoutBorders project.",
 		"ReadMore": "Read More",
 		"ReadOtherArticles": "Read Other Articles",
-		"articles1": "Resilience Of Routing Numbers In SMSWithoutBorders",
-		"articles2": "Reliability Of Routing Numbers In Smswithoutborders",
+		"articles1": "Resilience Of Gateway Clients In SMSWithoutBorders",
+		"articles2": "Reliability Of Gateway Clients In Smswithoutborders",
 		"articles3": "New Alpha Release: Vault 0.1.0",
 		"tag": "Articles",
 		"tags": "Release",
@@ -118,7 +118,7 @@
 		},
 		"faq2": {
 			"question": "How does RelaySMS work?",
-			"answer": "RelaySMS works by using SMS messages sent from your app to SMS Routing Numbers run by volunteers, who forward them to the internet."
+			"answer": "RelaySMS works by using SMS messages sent from your app to SMS Gateway Clients run by volunteers, who forward them to the internet."
 		},
 		"faq3": {
 			"question": "Do I need an internet connection to use RelaySMS?",
@@ -284,7 +284,7 @@
 	},
 	"Overview": {
 		"title": "RelaySMS System Overview",
-		"description": "The diagram below illustrates the flow of messages and data between the main components of the RelaySMS, from client apps through routing numbers, servers, and external services.",
+		"description": "The diagram below illustrates the flow of messages and data between the main components of the RelaySMS, from client apps through Gateway Clients, servers, and external services.",
 		"tip": "Tip: Click on a node in the diagram to view more information about that component.",
 		"details": "Details",
 		"loading": "Loading documentation...",
@@ -292,16 +292,16 @@
 			"Client": "Client",
 			"Vault": "Vault",
 			"Publisher": "Publisher",
-			"GatewayClient": "Routing Numbers",
-			"GatewayServer": "Routing Server",
+			"GatewayClient": "Gateway Clients",
+			"GatewayServer": "Gateway Server",
 			"BridgeServer": "Bridge Server",
 			"Platforms": "Platforms",
 			"EmailBridge": "Email Bridge"
 		},
 		"nodes": {
 			"Client": "Client (Apps)",
-			"GatewayClient": "Routing Numbers",
-			"GatewayServer": "Routing Server",
+			"GatewayClient": "Gateway Clients",
+			"GatewayServer": "Gateway Server",
 			"Publisher": "Publisher",
 			"BridgeServer": "Bridge Server",
 			"Vault": "Vault",
