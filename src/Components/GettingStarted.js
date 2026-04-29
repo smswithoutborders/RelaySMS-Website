@@ -132,7 +132,7 @@ const GettingStarted = () => {
 			title: t("Howitworks.Step4Title"),
 			description: t("Howitworks.Step4Desc"),
 			image: "/Gateway-copy.png",
-			buttonText: t("Howitworks.Step4Button", "Select a Gateway"),
+			buttonText: t("Howitworks.Step4Button", "Select a Routing Number"),
 			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-6-choose-a-gateway-client",
 			bgColor: "rgb(183, 243, 232)"
 		},

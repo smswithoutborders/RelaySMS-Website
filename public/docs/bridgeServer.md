@@ -6,7 +6,7 @@ Bridge Server handles bridge communication by routing messages to bridge clients
 
 The Bridge Server routes messages to bridge clients and manages bidirectional communication through phone number-based aliases.
 
-- Gateway Server sends publishing request to Bridge Server
+- Routing Server sends publishing request to Bridge Server
 - Bridge Server determines the target bridge for the message
 - Bridge Server sends message content to Vault to be decrypted
 - Bridge Server sends message to the appropriate bridge client

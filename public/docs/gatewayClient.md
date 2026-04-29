@@ -1,15 +1,15 @@
 ##### Description
 
-Gateway clients are Android devices with internet connection that receive SMS messages from users and forward them to the Gateway Server using HTTP, SMTP, and FTP protocols.
+Routing Numbers are Android devices with internet connection that receive SMS messages from users and forward them to the Routing Server using HTTP, SMTP, and FTP protocols.
 
 ##### How It Works
 
-Gateway clients serve as intermediaries between users and the RelaySMS system, enabling SMS messages sent from users without internet access to be securely transmitted to the Gateway Server over the internet. These devices receive SMS messages and forward them using supported protocols.
+Routing Numbers serve as intermediaries between users and the RelaySMS system, enabling SMS messages sent from users without internet access to be securely transmitted to the Routing Server over the internet. These devices receive SMS messages and forward them using supported protocols.
 
-- User sends encrypted SMS message to gateway client's phone number
-- Gateway client receives SMS on the Android device
-- Gateway client forwards message to Gateway Server using HTTP, SMTP, or FTP protocols
-- Gateway Server processes the message
+- User sends encrypted SMS message to Routing Numbers phone number
+- Routing Numbers receives SMS on the Android device
+- Routing Numbers forwards message to Routing Server using HTTP, SMTP, or FTP protocols
+- Routing Server processes the message
 
 [DekuSMS Android Repository](https://github.com/dekusms/DekuSMS-Android)
 
@@ -17,4 +17,4 @@ Gateway clients serve as intermediaries between users and the RelaySMS system, e
 
 ---
 
-For a complete list of available gateway clients, see the [Available Clients JSON](https://gatewayserver.smswithoutborders.com/v3/clients)
+For a complete list of available Routhing Numbers, see the [Available Clients JSON](https://gatewayserver.smswithoutborders.com/v3/clients)
