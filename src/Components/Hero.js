@@ -166,7 +166,7 @@ const Hero = () => {
 							}
 						}}
 						>
-						{t("Landing.GatewayClient")}
+						{t("Landing.RoutingNumbers")}
 						</Button>
 						</Box>
 

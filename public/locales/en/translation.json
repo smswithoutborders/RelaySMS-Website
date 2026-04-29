@@ -25,7 +25,7 @@
 		"h1": "No Internet? No Problem. RelaySMS Keeps You Connected.",
 		"h2": "RelaySMS enables users send messages to online platforms without an active internet connection. Messages are sent via SMS from your device.",
 		"Android": "Download RelaySMS ",
-		"GatewayClient": "Set Up Routing Numbers",
+		"RoutingNumbers": "Set Up Routing Numbers",
 		"supportedPlatforms": "Supported Platforms:",
 		"auditMessage": {
 			"part1": "RelaySMS is committed to security and transparency. Read our ",
@@ -118,7 +118,7 @@
 		},
 		"faq2": {
 			"question": "How does RelaySMS work?",
-			"answer": "RelaySMS works by using SMS messages sent from your app to SMS Gateway clients run by volunteers, who forward them to the internet."
+			"answer": "RelaySMS works by using SMS messages sent from your app to SMS Routing Numbers run by volunteers, who forward them to the internet."
 		},
 		"faq3": {
 			"question": "Do I need an internet connection to use RelaySMS?",
@@ -284,7 +284,7 @@
 	},
 	"Overview": {
 		"title": "RelaySMS System Overview",
-		"description": "The diagram below illustrates the flow of messages and data between the main components of the RelaySMS, from client apps through gateways, servers, and external services.",
+		"description": "The diagram below illustrates the flow of messages and data between the main components of the RelaySMS, from client apps through routing numbers, servers, and external services.",
 		"tip": "Tip: Click on a node in the diagram to view more information about that component.",
 		"details": "Details",
 		"loading": "Loading documentation...",
