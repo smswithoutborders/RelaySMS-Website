@@ -143,8 +143,10 @@ const Hero = () => {
 						</Button>
 
 						<Button
-						component={Link}
-						to="https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide"
+						component="a"
+						href="https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide"
+						target="_blank"
+						rel="noopener noreferrer"
 						variant="outlined"
 						size="large"
 						sx={{
@@ -178,7 +180,6 @@ const Hero = () => {
 							<Typography
 								variant="body1"
 								sx={{
-									// fontSize: { xs: "15px", md: "20px" },
 									fontFamily: "Ubuntu",
 									lineHeight: 1.6,
 									textAlign: { xs: "center", md: "left" }
