@@ -41,12 +41,19 @@ const Overview = () => {
 				if (response.ok) {
 					markdown = await response.text();
 					if (/<!doctype\s+html\b|<html(?=[\s>/])/i.test(markdown)) {
+						console.warn(
+							`Localized documentation returned HTML instead of markdown: /docs/${currentLanguage}/${fileName}`
+						);
 						throw new Error("Got HTML instead of markdown");
 					}
 				} else {
 					throw new Error("Localized file not found");
 				}
 			} catch (error) {
+				console.warn(
+					`Failed to load localized documentation (/docs/${currentLanguage}/${fileName}); falling back to default documentation.`,
+					error
+				);
 				response = await fetch(`/docs/${fileName}`);
 				if (!response.ok) {
 					throw new Error("Documentation file not found");
@@ -143,7 +150,7 @@ const Overview = () => {
 					) : (
 						<ReactMarkdown
 							components={{
-								a: ({ node, href, children, ...props }) => {
+								a: ({ href, children, ...props }) => {
 									let isGitHubLink = false;
 									const getNodeText = (value) => {
 										if (typeof value === "string" || typeof value === "number") {
@@ -161,10 +168,11 @@ const Overview = () => {
 
 									if (href) {
 										try {
-											const parsedUrl = new URL(href, window.location.origin);
+											const parsedUrl = new URL(href, window.location.href);
 											const host = parsedUrl.hostname.toLowerCase();
 											isGitHubLink = host === "github.com" || host.endsWith(".github.com");
 										} catch (error) {
+											console.warn("Failed to parse markdown link URL in Overview:", href, error);
 											isGitHubLink = false;
 										}
 									}
