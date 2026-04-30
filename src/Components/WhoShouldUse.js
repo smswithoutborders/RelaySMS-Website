@@ -94,7 +94,7 @@ const WhoShouldUse = () => {
 							direction="column"
 							spacing={4}
 							sx={{
-								height: "104%",
+								height: "100%",
 								flex: 1,
 								"& .MuiGrid-item": {
 									display: "flex",
@@ -198,7 +198,7 @@ const WhoShouldUse = () => {
 									>
 										{t(
 											"GatewayClient.Description",
-											"Gateway Clients are devices with active internet that act as a bridge between offline users and online platforms. When you send a message without internet, it goes via SMS to a Gateway Clients which forwards it to your selected platform. Within the app, Gateway Clients are listed under the Countries tab. They can be set up using the DekuSMS app."
+											"Gateway Clients are devices with active internet that act as a bridge between offline users and online platforms. When you send a message without internet, it goes via SMS to a Gateway Client which forwards it to your selected platform. Within the app, Gateway Clients are listed under the Countries tab. They can be set up using the DekuSMS app."
 										)}
 									</Typography>
 									<Button
