@@ -6,7 +6,7 @@ Publisher executes platform requests by retrieving tokens from the Vault and cal
 
 The Publisher acts as the execution engine that connects to various social media platforms using stored user credentials. It receives publishing requests, determines the target platform, and handles the actual API calls to deliver content.
 
-- Gateway Server sends publishing request to Publisher
+- Routing Server sends publishing request to Publisher
 - Publisher determines the target platform for the message
 - Publisher sends message content to Vault to be decrypted
 - Publisher requests user's tokens from Vault

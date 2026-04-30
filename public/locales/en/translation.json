@@ -25,7 +25,7 @@
 		"h1": "No Internet? No Problem. RelaySMS Keeps You Connected.",
 		"h2": "RelaySMS enables users send messages to online platforms without an active internet connection. Messages are sent via SMS from your device.",
 		"Android": "Download RelaySMS ",
-		"GatewayClient": "Set-Up Gateway Client",
+		"RoutingNumbers": "Set Up Gateway Clients",
 		"supportedPlatforms": "Supported Platforms:",
 		"auditMessage": {
 			"part1": "RelaySMS is committed to security and transparency. Read our ",
@@ -47,11 +47,11 @@
 		"Step3Title": "Save Platforms",
 		"Step3Desc": "Save access to platforms while connected to the internet. Add your credentials to platforms supported by RelaySMS and prepare them for offline use.",
 		"Step3Button": "Set Up Now",
-		"Step4Title": "Select a Gateway Client",
-		"Step4Desc": "Choose a Gateway Client for sending SMS. You can select from pre-configured clients or set up a custom client by adding the gateway number to your contacts.",
-		"Step4Button": "Configure Gateway",
+		"Step4Title": "Select a Routing Number",
+		"Step4Desc": "Choose a Routing Number for sending SMS. You can select from pre-configured numbers or set up a custom number by adding the routing number to your contacts.",
+		"Step4Button": "Configure Routing Number",
 		"Step5Title": "Send Messages",
-		"Step5Desc": "Compose messages for supported platforms without internet. Send these as SMS to a pre-saved gateway number, ensuring encrypted communication.",
+		"Step5Desc": "Compose messages for supported platforms without internet. Send these as SMS to a pre-saved routing number, ensuring encrypted communication.",
 		"Step5Button": "Start Messaging"
 	},
 	"WhoShouldUse": {
@@ -70,8 +70,8 @@
 		"SeeSpecification": "Read more"
 	},
 	"GatewayClient": {
-		"Header": "Setting Up a Gateway-Client",
-		"Description": "Setting up a gateway client allows you and anyone you share it with to send messages using your number. It's completely optional, but if you choose to set one up, just follow the instructions below.",
+		"Header": "Setting Up Gateway Clients",
+		"Description": "Gateway Clients are devices with active internet that act as a bridge between offline users and online platforms. When you send a message without internet, it goes via SMS to a Gateway Clients which forwards it to your selected platform. Within the app, Gateway Clients are listed under the Countries tab. They can be set up using the DekuSMS app.",
 		"ReadMore": "Read More"
 	},
 	"SupportedPlatforms": {
@@ -118,7 +118,7 @@
 		},
 		"faq2": {
 			"question": "How does RelaySMS work?",
-			"answer": "RelaySMS works by using SMS messages sent from your app to SMS Gateway clients run by volunteers, who forward them to the internet."
+			"answer": "RelaySMS works by using SMS messages sent from your app to SMS Gateway Clients run by volunteers, who forward them to the internet."
 		},
 		"faq3": {
 			"question": "Do I need an internet connection to use RelaySMS?",
@@ -284,7 +284,7 @@
 	},
 	"Overview": {
 		"title": "RelaySMS System Overview",
-		"description": "The diagram below illustrates the flow of messages and data between the main components of the RelaySMS, from client apps through gateways, servers, and external services.",
+		"description": "The diagram below illustrates the flow of messages and data between the main components of the RelaySMS, from client apps through Gateway Clients, servers, and external services.",
 		"tip": "Tip: Click on a node in the diagram to view more information about that component.",
 		"details": "Details",
 		"loading": "Loading documentation...",
@@ -292,7 +292,7 @@
 			"Client": "Client",
 			"Vault": "Vault",
 			"Publisher": "Publisher",
-			"GatewayClient": "Gateway Client",
+			"GatewayClient": "Gateway Clients",
 			"GatewayServer": "Gateway Server",
 			"BridgeServer": "Bridge Server",
 			"Platforms": "Platforms",
@@ -300,7 +300,7 @@
 		},
 		"nodes": {
 			"Client": "Client (Apps)",
-			"GatewayClient": "Gateway Client",
+			"GatewayClient": "Gateway Clients",
 			"GatewayServer": "Gateway Server",
 			"Publisher": "Publisher",
 			"BridgeServer": "Bridge Server",
