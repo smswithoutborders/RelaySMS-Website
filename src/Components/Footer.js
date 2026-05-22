@@ -21,12 +21,32 @@ const Footer = () => {
 			links: [
 				{ label: t("Footer.Blog"), href: "https://blog.smswithoutborders.com/", external: true },
 				{ label: t("Footer.BrandResources"), to: "/branding" },
+				{ label: t("Footer.SystemOverview"), to: "/system-overview" }
+			]
+		},
+		{
+			title: t("Footer.Tutorials"),
+			links: [
 				{
-					label: t("Footer.Features"),
-					href: "https://smswithoutborders.com/Features",
+					label: t("Footer.AndroidTutorial"),
+					href: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android",
 					external: true
 				},
-				{ label: t("Footer.SystemOverview"), to: "/system-overview" }
+				{
+					label: t("Footer.iOSTutorial"),
+					href: "https://docs.smswithoutborders.com/docs/iOS%20Tutorial/Getting-Started-With-iOS",
+					external: true
+				},
+				{
+					label: t("Footer.GatewayClientSetup"),
+					href: "https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide",
+					external: true
+				},
+				{
+					label: t("Footer.Troubleshooting"),
+					href: "https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ",
+					external: true
+				}
 			]
 		},
 		{
@@ -38,11 +58,7 @@ const Footer = () => {
 					href: "https://docs.smswithoutborders.com/",
 					external: true
 				},
-				{
-					label: t("Footer.Contributing"),
-					href: "https://github.com/smswithoutborders",
-					external: true
-				}
+				{ label: t("Footer.Contributing"), to: "/contributing" }
 			]
 		},
 		{
@@ -73,29 +89,29 @@ const Footer = () => {
 			component="footer"
 			dir={isRtl ? "rtl" : "ltr"}
 			sx={{
-				bgcolor: "#161616ff",
+				bgcolor: "rgb(0, 0, 0)",
 				color: "#ffffff",
 				py: { xs: 4, md: 6 },
 				width: "100%"
 			}}
 		>
-			{/* Footer Content Sections */}
-			<Grid container sx={{ px: { xs: 2, md: 5 }, mb: 4, justifyContent: "center" }}>
+			<Grid container sx={{ px: { xs: 2, md: 5 }, mb: 4, width: "100%" }}>
 				{footerSections.map((section, index) => (
 					<Grid
 						item
 						xs={12}
-						md={4}
+						sm={6}
+						md={3}
 						key={index}
 						sx={{
 							mb: { xs: 4, md: 0 },
 							display: "flex",
 							flexDirection: "column",
 							alignItems: "flex-start",
-							maxWidth: { md: "1826px" }
+							px: { md: 2 }
 						}}
 					>
-						<Typography	
+						<Typography
 							variant="h6"
 							sx={{
 								fontWeight: 600,
@@ -212,7 +228,7 @@ const Footer = () => {
 								color: "#ffffff",
 								transition: "transform 0.3s, color 0.3s",
 								"&:hover": {
-									color: "#FF9E43",
+									color: "secondary.main",
 									transform: "scale(1.15)"
 								}
 							}}
@@ -230,7 +246,7 @@ const Footer = () => {
 								color: "#ffffff",
 								transition: "transform 0.3s, color 0.3s",
 								"&:hover": {
-									color: "#FF9E43",
+									color: "secondary.main",
 									transform: "scale(1.15)"
 								}
 							}}
@@ -248,7 +264,7 @@ const Footer = () => {
 								color: "#ffffff",
 								transition: "transform 0.3s, color 0.3s",
 								"&:hover": {
-									color: "#FF9E43",
+									color: "secondary.main",
 									transform: "scale(1.15)"
 								}
 							}}

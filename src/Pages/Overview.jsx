@@ -69,14 +69,25 @@ const Overview = () => {
 		setDrawerTitle("");
 	};
 	return (
-		<Box>
+		<Box
+			sx={{
+				background: (theme) =>
+					theme.palette.mode === "dark"
+						? `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(77, 125, 192, 0.07) 0%, transparent 65%),
+							   linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+							   linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`
+						: `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(0,24,113,0.09) 0%, transparent 65%),
+							   linear-gradient(rgba(0,24,113,0.05) 1px, transparent 1px),
+							   linear-gradient(90deg, rgba(0,24,113,0.05) 1px, transparent 1px)`,
+				backgroundSize: "auto, 44px 44px, 44px 44px"
+			}}
+		>
 			<Box
 				sx={{
 					pt: { xs: 15, sm: 20, md: 25 },
 					my: "auto",
 					alignContent: "center",
 					textAlign: "center",
-
 					mx: { xs: 2, md: 15, sm: 10, lg: 25 }
 				}}
 			>
@@ -86,7 +97,7 @@ const Overview = () => {
 						fontWeight: "bold",
 						fontSize: { xs: "2.5rem", sm: "3rem", md: "3rem" },
 						mb: 10,
-						color: "#2D2A5A",
+						color: "text.primary",
 						fontFamily: "'Unbounded', Ubuntu"
 					}}
 				>
@@ -104,7 +115,7 @@ const Overview = () => {
 				</Box>
 			</Box>
 			<Drawer
-			className="markdown-drawer"
+				className="markdown-drawer"
 				anchor="right"
 				open={drawerOpen}
 				onClose={handleDrawerClose}

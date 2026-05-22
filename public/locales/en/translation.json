@@ -22,7 +22,7 @@
 	},
 	"Landing": {
 		"span": "No Data? No Worries.",
-		"h1": "No Internet? No Problem. RelaySMS Keeps You Connected.",
+		"h1": "Stay Connected even with no internet access.",
 		"h2": "RelaySMS enables users send messages to online platforms without an active internet connection. Messages are sent via SMS from your device.",
 		"Android": "Download RelaySMS ",
 		"supportedPlatforms": "Supported Platforms:",
@@ -51,16 +51,27 @@
 		"Step4Button": "Configure Gateway",
 		"Step5Title": "Send Messages",
 		"Step5Desc": "Compose messages for supported platforms without internet. Send these as SMS to a pre-saved gateway number, ensuring encrypted communication.",
-		"Step5Button": "Start Messaging"
+		"Step5Button": "Start Messaging",
+		"StepLabel": "Step",
+		"ScrollHint": "Scroll to advance steps"
 	},
 	"WhoShouldUse": {
-		"Header": "Everyone <strike>can</strike> should use RelaySMS",
+		"Header": "Everyone can use RelaySMS",
 		"Description": "Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns should use RelaySMS to circumvent shutdowns and stay connected. After setting up RelaySMS on your phone, you can seamlessly send messages to your preferred online messaging platform without using any data at all (standard SMS rates will apply).",
 		"AndroidButton": "Download for Android",
-		"iOSButton": "Download for iOS"
+		"iOSButton": "Download for iOS",
+		"FlowNodes": {
+			"relaySublabel": "Your phone",
+			"encryptedLabel": "Encrypted",
+			"encryptedSublabel": "SMS",
+			"relayCloudLabel": "Relay Cloud",
+			"relayCloudSublabel": "Gateway",
+			"platformLabel": "Platform",
+			"platformSublabel": "Delivered"
+		}
 	},
 	"HowRelaySMSWorks": {
-		"Header": "How the <strike>tech</strike> magic happens",
+		"Header": "How it works",
 		"Description1": "RelaySMS utilizes SMS messaging (aka \"text messaging\") to route offline messages back online.",
 		"Description2": "The key to RelaySMS lies in its use of Gateway Clients. These devices  operate in areas with an active internet connection, allowing them to  receive an SMS message from an offline RelaySMS user and then forward it to an online server where the user has already saved their platform  permissions.",
 		"TrainingTitle": "Download Training Guides",
@@ -70,11 +81,12 @@
 	},
 	"GatewayClient": {
 		"Header": "Setting Up a Gateway-Client",
-		"Description": "Setting up a gateway client allows you and anyone you share it with to send messages using your number. It's completely optional, but if you choose to set one up, just follow the instructions below.",
+		"Description": "Gateway Clients are devices with active internet that act as a bridge between offline users and online platforms. When you send a message without internet, it goes via SMS to a Gateway Clients which forwards it to your selected platform. Within the app, Gateway Clients are listed under the Countries tab. They can be set up using the DekuSMS app.",
 		"ReadMore": "Read More"
 	},
 	"SupportedPlatforms": {
 		"Header": "Supported Platforms",
+		"SubText": "Send messages to <bold>{{platform}}</bold> using RelaySMS.",
 		"Description": "Send messages to these online platforms through SMS using RelaySMS, even when you don't have internet access.",
 		"Error": "Unable to load supported platforms. Please try again later.",
 		"Note": "More platforms are continuously being added. Stay tuned for updates!"
@@ -156,6 +168,11 @@
 		"AuditReport": "Audit Report",
 		"Jobs": "Jobs",
 		"ContactUs": "Contact Us",
+		"Tutorials": "Tutorials",
+		"AndroidTutorial": "Android Tutorial",
+		"iOSTutorial": "iOS Tutorial",
+		"GatewayClientSetup": "Gateway Client Setup",
+		"Troubleshooting": "Troubleshooting",
 		"copyright": "AFKANERD"
 	},
 	"policy": "Privacy Policy",
@@ -316,6 +333,85 @@
 			"content": "Content"
 		},
 		"documentationError": "Error loading documentation. Please try again."
+	},
+	"Contributing": {
+		"Hero": {
+			"eyebrow": "Open Source",
+			"title": "Join the RelaySMS Contributor Community",
+			"subtitle": "RelaySMS is open source and community-driven. Whether you write code, file issues, or improve documentation, every contribution helps keep people connected.",
+			"cta": "View on GitHub",
+			"docs": "Read the Docs"
+		},
+		"Ways": {
+			"title": "Ways to Contribute",
+			"subtitle": "There are many ways to get involved, pick whatever fits your skills.",
+			"ReportBug": {
+				"title": "Report a Bug",
+				"description": "Found something broken? Open an issue on GitHub so we can investigate and fix it."
+			},
+			"WriteCode": {
+				"title": "Write Code",
+				"description": "Pick up a good-first-issue or tackle an existing bug."
+			},
+			"ImproveDoc": {
+				"title": "Improve Docs",
+				"description": "Clarify guides, fix typos, or add tutorials to help new users get started faster."
+			},
+			"HelpCommunity": {
+				"title": "Help the Community",
+				"description": "Answer questions and share your experience to help others build with RelaySMS."
+			}
+		},
+		"HowTo": {
+			"title": "How to Contribute",
+			"subtitle": "Follow these steps to get your changes merged into RelaySMS.",
+			"Steps": {
+				"Fork": {
+					"title": "Fork & Clone",
+					"description": "Fork the repository on GitHub and clone your fork locally to start working."
+				},
+				"Branch": {
+					"title": "Create a Branch",
+					"description": "Create a new branch from the dev branch for your feature or bug fix."
+				},
+				"Commit": {
+					"title": "Make Changes",
+					"description": "Make your changes and commit them with clear, descriptive commit messages."
+				},
+				"PR": {
+					"title": "Open a Pull Request",
+					"description": "Push your branch and open a pull request targeting the dev branch for review."
+				}
+			}
+		},
+		"Repos": {
+			"title": "Our Repositories",
+			"subtitle": "Pick a project you'd like to contribute to. All repos are GPL-3.0 licensed.",
+			"openIssues": "issues",
+			"goodFirstIssue": "good first issue",
+			"viewAll": "View all repositories",
+			"Android": {
+				"description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like Android Apps which posses well tested tools for security"
+			},
+			"iOS": {
+				"description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like iOS Apps which posses well tested tools for security"
+			},
+			"Publisher": {
+				"description": "Publisher is the middle-ware that sits between the Gateway Server and the SMSWithoutBorder backend. It does the handshake between the necessary parties and performs the request to decrypt the encrypted stored tokens."
+			},
+			"Vault": {
+				"description": "A secure access token management system for safe message publishing."
+			},
+			"GatewayServer": {
+				"description": "Gateway-servers enables the users to synchronize and communicate with the publisher module"
+			},
+			"BridgeServer": {
+				"description": "The bridge is a technology designed to allow users to communicate with online platforms via SMS, even without an active internet connection. It enables a secure handshake and encrypted message exchange entirely over SMS."
+			},
+			"Website": {
+				"description": "RelaySMS Homepage"
+			}
+		}
 	},
 	"404": {
 		"title": "Oops! Page Not Found",

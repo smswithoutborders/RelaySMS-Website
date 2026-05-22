@@ -191,8 +191,9 @@ const Branding = () => {
 			elevation={0}
 			sx={{
 				height: "100%",
-				backgroundColor: "#f8f9fa",
-				border: "1px solid #e9ecef",
+				bgcolor: "background.paper",
+				border: "1px solid",
+borderColor: "divider",
 				display: "flex",
 				flexDirection: "column",
 				transition: "transform 0.3s ease, box-shadow 0.3s ease",
@@ -208,7 +209,8 @@ const Branding = () => {
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
-					backgroundColor: asset.name.includes("White") ? "#1E283A" : "#e4e4e4ff",
+					backgroundColor: asset.name.includes("White") ? "#1E283A" : undefined,
+bgcolor: asset.name.includes("White") ? undefined : "background.paper",
 					p: 2
 				}}
 			>
@@ -237,7 +239,7 @@ const Branding = () => {
 					{asset.usage}
 				</Typography>
 				<Box sx={{ display: "flex", gap: 1, flexWrap: "wrap" }}>
-					{asset.png && <Chip label="PNG" size="small" color="#000158" variant="outlined" />}
+					{asset.png && <Chip label="PNG" size="small" color="primary" variant="outlined" />}
 					{asset.svg && <Chip label="SVG" size="small" color="secondary" variant="outlined" />}
 					{asset.file && <Chip label="IMG" size="small" color="info" variant="outlined" />}
 				</Box>
@@ -250,7 +252,7 @@ const Branding = () => {
 							onClick={() =>
 								previewAsset(showSvg && asset.svg ? asset.svg : asset.png || asset.file)
 							}
-							sx={{ color: "#000158" }}
+							sx={{ color: "primary.main" }}
 						>
 							<FaEye />
 						</IconButton>
@@ -260,7 +262,7 @@ const Branding = () => {
 							size="small"
 							startIcon={<FaDownload />}
 							onClick={() => downloadAsset(asset.png, `${asset.name}-PNG.png`)}
-							sx={{ flex: 1, fontSize: "12px", color: "#000158" }}
+							sx={{ flex: 1, fontSize: "12px", color: "primary.main" }}
 						>
 							PNG
 						</Button>
@@ -270,7 +272,7 @@ const Branding = () => {
 							size="small"
 							startIcon={<FaDownload />}
 							onClick={() => downloadAsset(asset.svg, `${asset.name}-SVG.svg`)}
-							sx={{ flex: 1, fontSize: "12px", color: "#000158" }}
+							sx={{ flex: 1, fontSize: "12px", color: "primary.main" }}
 						>
 							SVG
 						</Button>
@@ -331,7 +333,7 @@ const Branding = () => {
 						sx={{
 							fontWeight: 600,
 							mb: 3,
-							color: "#1e283a",
+							color: "text.primary",
 							fontFamily: "Unbounded"
 						}}
 					>
@@ -350,13 +352,13 @@ const Branding = () => {
 								fontWeight: 500,
 								fontSize: "16px",
 								fontFamily: "Montserrat, sans-serif",
-								color: "#1E283A"
+								color: "text.primary"
 							},
 							"& .Mui-selected": {
-								color: "#FF9E43 !important"
+								color: "secondary.main !important"
 							},
 							"& .MuiTabs-indicator": {
-								backgroundColor: "#FF9E43"
+								bgcolor: "secondary.main"
 							}
 						}}
 					>

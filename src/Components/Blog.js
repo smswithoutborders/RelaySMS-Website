@@ -1,13 +1,183 @@
 import React, { useState, useEffect } from "react";
-import { Box, Typography, Card, CardContent, Button, Chip } from "@mui/material";
-import { FaUser, FaClock, FaExternalLinkAlt } from "react-icons/fa";
+import { Box, Typography, Paper, Button } from "@mui/material";
+import { FaUser, FaClock } from "react-icons/fa";
+import { FaDiscord } from "react-icons/fa6";
+import { keyframes } from "@emotion/react";
 import { useTranslation } from "react-i18next";
+
+const DISCORD_URL = "https://discord.gg/smswithoutborders";
+
+const scrollLeft = keyframes`
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+`;
+
+const scrollRight = keyframes`
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+`;
+
+const BlogCard = ({ post, calculateReadTime }) => (
+	<Paper
+		elevation={0}
+		component="a"
+		href={post.url}
+		target="_blank"
+		rel="noopener noreferrer"
+		sx={{
+			width: { xs: 280, md: 340 },
+			minWidth: { xs: 280, md: 340 },
+			mx: 1.5,
+			p: 2.5,
+			py: 3,
+			bgcolor: "background.paper",
+			border: "0.5px solid",
+			borderColor: "divider",
+			textDecoration: "none",
+			display: "flex",
+			flexDirection: "column",
+			transition: "box-shadow 0.3s ease, transform 0.3s ease",
+			cursor: "pointer",
+			"&:hover": {
+				transform: "translateY(-3px)",
+				boxShadow: "0 6px 24px rgba(0,0,0,0.12)"
+			}
+		}}
+	>
+		{/* Author row */}
+		<Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 1.75 }}>
+			<Box
+				sx={{
+					width: 32,
+					height: 32,
+					borderRadius: "50%",
+					bgcolor: "divider",
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+					flexShrink: 0
+				}}
+			>
+				<FaUser size={14} color="text.secondary" />
+			</Box>
+			<Typography
+				variant="caption"
+				sx={{ color: "text.secondary", fontFamily: "Ubuntu", fontWeight: 600, fontSize: "0.8rem" }}
+			>
+				{post.author || "SMSWithoutBorders Team"}
+			</Typography>
+		</Box>
+
+		{/* Title */}
+		<Typography
+			sx={{
+				fontSize: { xs: "1rem", md: "1rem" },
+				fontWeight: 700,
+				color: "text.primary",
+				mb: 1.5,
+				lineHeight: 1.5,
+				display: "-webkit-box",
+				WebkitLineClamp: 2,
+				WebkitBoxOrient: "vertical",
+				overflow: "hidden"
+			}}
+		>
+			{post.title}
+		</Typography>
+
+		{/* Excerpt */}
+		<Typography
+			sx={{
+				fontSize: "0.875rem",
+				color: "text.secondary",
+				fontFamily: "Ubuntu",
+				lineHeight: 1.6,
+				mb: 2,
+				flexGrow: 1,
+				display: "-webkit-box",
+				WebkitLineClamp: 3,
+				WebkitBoxOrient: "vertical",
+				overflow: "hidden"
+			}}
+		>
+			{post.excerpt}
+		</Typography>
+
+		{/* Read time */}
+		<Box sx={{ display: "flex", alignItems: "center", gap: 0.75, mt: "auto" }}>
+			<FaClock size={11} color="#888" />
+			<Typography variant="caption" sx={{ color: "#888", fontFamily: "Ubuntu" }}>
+				{calculateReadTime(post.excerpt)} min read
+			</Typography>
+		</Box>
+	</Paper>
+);
+
+const MarqueeRow = ({ posts, direction, calculateReadTime }) => {
+	const duplicated = [...posts, ...posts];
+	return (
+		<Box
+			sx={{
+				display: "flex",
+				overflow: "hidden",
+				width: "100%",
+				mb: 2.5,
+				maskImage:
+					"linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%)",
+				WebkitMaskImage:
+					"linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%)",
+				"&:hover > div": { animationPlayState: "paused" }
+			}}
+		>
+			<Box
+				sx={{
+					display: "flex",
+					animation: `${direction === "left" ? scrollLeft : scrollRight} 35s linear infinite`,
+					willChange: "transform"
+				}}
+			>
+				{duplicated.map((post, i) => (
+					<BlogCard key={i} post={post} calculateReadTime={calculateReadTime} />
+				))}
+			</Box>
+		</Box>
+	);
+};
+
+const FALLBACK_POSTS = [
+	{
+		title: "Sending Images Without Internet? Yeah, That's a Thing Now.",
+		excerpt:
+			"Internet down? Doesn't matter. RelaySMS just leveled up. You can now send images over SMS fully encrypted, no Wi-Fi, no internet connection necessary",
+		author: "Aysha Musa",
+		date: "2025-10-31",
+		url: "https://blog.smswithoutborders.com/posts/sending-images-with-relay",
+		category: "Features"
+	},
+	{
+		title: "RelaySMS Can Now Be Your Default SMS App",
+		excerpt:
+			"When you set RelaySMS as your default SMS app, all your regular SMS messages move right into your RelaySMS app. You'll see every text, every conversation, all inside one familiar inbox.",
+		author: "Vanessa Christopher",
+		date: "2025-10-30",
+		url: "https://blog.smswithoutborders.com/posts/default-app",
+		category: "Features"
+	},
+	{
+		title: "Local Storage for Your Access Tokens",
+		excerpt:
+			"Storing your tokens locally means reducing your reliance on our servers and giving you total control of your stored tokens. This is especially valuable for users who value privacy and control over their data.",
+		author: "Aysha Musa",
+		date: "2025-06-05",
+		url: "https://blog.smswithoutborders.com/posts/Local-Storage-for-Your-Access-Tokens",
+		category: "Features"
+	}
+];
 
 const BlogSectionNew = () => {
 	const { t, i18n } = useTranslation();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
-	const [blogPosts, setBlogPosts] = useState([]);
-	const [loading, setLoading] = useState(true);
+	const [blogPosts, setBlogPosts] = useState(FALLBACK_POSTS);
 
 	const calculateReadTime = (text) => {
 		const wordsPerMinute = 200;
@@ -27,7 +197,6 @@ const BlogSectionNew = () => {
 
 			const files = await response.json();
 
-			// Fetch ALL blog posts first, then sort and slice
 			const posts = await Promise.all(
 				files.map(async (file) => {
 					try {
@@ -67,47 +236,14 @@ const BlogSectionNew = () => {
 				})
 			);
 
-			// Filter, sort by date (newest first), and take top 3
 			const validPosts = posts
 				.filter((post) => post && post.title && post.date)
 				.sort((a, b) => new Date(b.date) - new Date(a.date))
-				.slice(0, 3);
+				.slice(0, 8);
 
 			setBlogPosts(validPosts);
 		} catch (error) {
 			console.error("Error fetching blog posts:", error);
-			// Fallback to latest known posts
-			setBlogPosts([
-				{
-					title: "Sending Images Without Internet? Yeah, That's a Thing Now.",
-					excerpt:
-						"Internet down? Doesn't matter. RelaySMS just leveled up. You can now send images over SMS fully encrypted, no Wi-Fi, no internet connection necessary",
-					author: "Aysha Musa",
-					date: "2025-10-31",
-					url: "https://blog.smswithoutborders.com/posts/sending-images-with-relay",
-					category: "Features"
-				},
-				{
-					title: "RelaySMS Can Now Be Your Default SMS App",
-					excerpt:
-						"When you set RelaySMS as your default SMS app, all your regular SMS messages move right into your RelaySMS app. You'll see every text, every conversation, all inside one familiar inbox.",
-					author: "Vanessa Christopher",
-					date: "2025-10-30",
-					url: "https://blog.smswithoutborders.com/posts/default-app",
-					category: "Features"
-				},
-				{
-					title: "Local Storage for Your Access Tokens",
-					excerpt:
-						"Storing your tokens locally means reducing your reliance on our servers and giving you total control of your stored tokens. This is especially valuable for users who value privacy and control over their data.",
-					author: "Aysha Musa",
-					date: "2025-06-05",
-					url: "https://blog.smswithoutborders.com/posts/Local-Storage-for-Your-Access-Tokens",
-					category: "Features"
-				}
-			]);
-		} finally {
-			setLoading(false);
 		}
 	};
 
@@ -115,270 +251,106 @@ const BlogSectionNew = () => {
 		fetchBlogPosts();
 	}, []);
 
-	if (loading) {
-		return (
-			<Box sx={{ py: 8, textAlign: "center" }}>
-				<Typography>{t("Blog.loading")}</Typography>
-			</Box>
-		);
-	}
-
-	const [featuredPost, ...otherPosts] = blogPosts;
+	const half = Math.ceil(blogPosts.length / 2);
+	const row1 = blogPosts.slice(0, half);
+	const row2 = blogPosts.slice(half);
 
 	return (
-		<Box
-			dir={isRtl ? "rtl" : "ltr"}
-			id="Blog"
-			sx={{
-				py: { xs: 6, md: 8 },
-				px: { xs: 3, md: 6 },
-				display: "flex",
-				flexDirection: "column",
-				alignItems: "center",
-				maxWidth: "1200px",
-				mx: "auto"
-			}}
-		>
-			{featuredPost && (
-				<Card
-					elevation={0}
-					sx={{
-						display: "flex",
-						flexDirection: { xs: "column", md: "row" },
-						mb: 4,
-						overflow: "hidden",
-						backgroundColor: "#fff5ecff",
-						border: "1px solid #e9ecef",
-						width: "100%",
-						borderRadius: 3,
-						position: "relative",
-						transition: "all 0.3s ease",
-						"&:hover": {
-							transform: "translateY(-3px)",
-							boxShadow: "0 4px 20px rgba(0,0,0,0.12)"
-						}
-					}}
-				>
-					<Chip
-						label={
-							featuredPost.category
-								? t(`Blog.categories.${featuredPost.category}`)
-								: t("Blog.categories.Featured")
-						}
-						sx={{
-							position: "absolute",
-							top: 16,
-							right: 16,
-							backgroundColor: "#FF9E43",
-							fontFamily: "Ubuntu",
-							color: "white",
-							fontWeight: 600,
-							fontSize: "0.75rem",
-							zIndex: 2
-						}}
-					/>
-
-					<Box
-						sx={{
-							width: { xs: "100%", md: "35%" },
-							position: "relative",
-							overflow: "hidden"
-						}}
-					>
-						<Box
-							component="img"
-							src="/blog.png"
-							alt="Featured blog post"
-							sx={{
-								width: "100%",
-								height: "100%",
-								objectFit: "cover",
-								transition: "transform 0.3s ease",
-								"&:hover": { transform: "scale(1.05)" }
-							}}
-						/>
-					</Box>
-
-					<CardContent
-						sx={{
-							flex: 1,
-							p: { xs: 2.5, md: 3 },
-							display: "flex",
-							flexDirection: "column",
-							justifyContent: "space-between",
-							my: "auto"
-						}}
-					>
-						<Box sx={{ mb: 2 }}>
-							<Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}>
-								<Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-									<FaUser size={14} color="#666" />
-									<Typography variant="body2" color="#666" fontFamily="Ubuntu">
-										{featuredPost.author || "SMSWithoutBorders Team"}
-									</Typography>
-								</Box>
-								<Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-									<FaClock size={14} color="#666" />
-									<Typography variant="body2" color="#666" fontFamily="Ubuntu">
-										{calculateReadTime(featuredPost.excerpt)} {t("Blog.minRead")}
-									</Typography>
-								</Box>
-							</Box>
-
-							<Typography
-								variant="h4"
-								sx={{
-									fontSize: { xs: "1.25rem", md: "1.5rem" },
-									fontWeight: 700,
-									color: "#2D2A5A",
-									fontFamily: "'Unbounded', Ubuntu",
-									mb: 2,
-									lineHeight: 1.3
-								}}
-							>
-								{featuredPost.title}
-							</Typography>
-
-							<Typography
-								variant="body1"
-								sx={{
-									fontSize: { xs: "0.95rem", md: "1rem" },
-									color: "#555",
-									fontFamily: "Ubuntu",
-									lineHeight: 1.5,
-									mb: 2
-								}}
-							>
-								{featuredPost.excerpt}
-							</Typography>
-						</Box>
-
-						<Button
-							component="a"
-							href={featuredPost.url}
-							target="_blank"
-							rel="noopener noreferrer"
-							endIcon={<FaExternalLinkAlt size={12} />}
-							sx={{
-								alignSelf: "flex-start",
-								color: "#1d1d22ff",
-								fontWeight: 400,
-								textTransform: "none",
-								fontSize: "1rem",
-								fontFamily: "Ubuntu",
-								"&:hover": {
-									backgroundColor: "transparent",
-									color: "#d65500"
-								}
-							}}
-						>
-							{t("Blog.ReadMore")}
-						</Button>
-					</CardContent>
-				</Card>
-			)}
-
+		<Box dir={isRtl ? "rtl" : "ltr"} id="Blog" sx={{ width: "100%", overflow: "hidden" }}>
 			<Box
 				sx={{
-					display: "grid",
-					gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
-					gap: 3,
-					width: "100%"
+					textAlign: "center",
+					px: { xs: 3, md: 6 },
+					pt: { xs: 6, md: 12 },
+					pb: { xs: 4, md: 5 }
 				}}
 			>
-				{otherPosts.slice(0, 2).map((post, index) => (
-					<Card
-						elevation={0}
-						key={index}
-						sx={{
-							p: 2.5,
-							backgroundColor: "#f8f9fa",
-							border: "1px solid #e9ecef",
-							borderRadius: 2,
-							position: "relative",
-							transition: "all 0.3s ease",
-							cursor: "pointer",
-							"&:hover": {
-								transform: "translateY(-2px)",
-								boxShadow: "0 3px 15px rgba(0,0,0,0.1)"
-							}
-						}}
-						onClick={() => window.open(post.url, "_blank")}
-					>
-						<Chip
-							label={
-								post.category ? t(`Blog.categories.${post.category}`) : t("Blog.categories.Article")
-							}
-							size="small"
-							sx={{
-								position: "absolute",
-								top: 16,
-								right: 16,
-								backgroundColor: "#e8f4f8",
-								color: "#2D2A5A",
-								fontWeight: 600,
-								fontSize: "0.7rem"
-							}}
-						/>
-
-						<Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}>
-							<FaUser size={12} color="#666" />
-							<Typography variant="body2" color="#666" fontFamily="Ubuntu">
-								{post.author || "SMSWithoutBorders Team"}
-							</Typography>
-						</Box>
-
-						<Typography
-							variant="h6"
-							sx={{
-								fontSize: { xs: "1.1rem", md: "1.2rem" },
-								fontWeight: 700,
-								color: "#2D2A5A",
-								fontFamily: "'Unbounded', Ubuntu",
-								mb: 1.5,
-								lineHeight: 1.3
-							}}
-						>
-							{post.title}
-						</Typography>
-
-						<Typography
-							variant="body2"
-							sx={{
-								fontSize: "0.9rem",
-								color: "#666",
-								fontFamily: "Ubuntu",
-								lineHeight: 1.4,
-								mb: 2,
-								display: "-webkit-box",
-								WebkitLineClamp: 3,
-								WebkitBoxOrient: "vertical",
-								overflow: "hidden"
-							}}
-						>
-							{post.excerpt}
-						</Typography>
-
-						<Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-							<Typography
-								variant="body2"
-								sx={{
-									color: "#1d1d22ff",
-									fontFamily: "Ubuntu",
-									fontWeight: 400,
-									textDecoration: "none",
-									"&:hover": { color: "#d65500" }
-								}}
-							>
-								{t("Blog.ReadMore")} <FaExternalLinkAlt size={10} style={{ marginRight: "4px" }} />
-							</Typography>
-							<Typography variant="body2" color="#888">
-								{calculateReadTime(post.excerpt)} {t("Blog.minRead")}
-							</Typography>
-						</Box>
-					</Card>
-				))}
+				<Typography
+					variant="h3"
+					sx={{
+						fontSize: { xs: "1.5rem", md: "1.9rem" },
+						fontWeight: 800,
+						fontFamily: "'Unbounded', Ubuntu",
+						color: "text.primary",
+						mb: 2,
+						lineHeight: 1.2
+					}}
+				>
+					Blogs &amp; Documentation
+				</Typography>
 			</Box>
+
+			{/* ── Marquee Rows ── */}
+			{row1.length > 0 && (
+				<MarqueeRow posts={row1} direction="left" calculateReadTime={calculateReadTime} />
+			)}
+			{/* {row2.length > 0 && (
+				<MarqueeRow posts={row2} direction="right" calculateReadTime={calculateReadTime} />
+			)} */}
+
+			{/* ── Join the Community ── */}
+			{/* <Box
+				sx={{
+					mt: { xs: 6, md: 12 },
+					mx: { xs: 3, md: 6 },
+					mb: { xs: 6, md: 8 },
+					borderRadius: 4,
+					py: { xs: 6, md: 8 },
+					px: { xs: 3, md: 8 },
+					textAlign: "center",
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+					gap: 3
+				}}
+			>
+				<Typography
+					variant="h4"
+					sx={{
+						fontSize: { xs: "1.5rem", md: "1.9rem" },
+						fontWeight: 800,
+						fontFamily: "'Unbounded', Ubuntu",
+						color: "text.primary",
+						lineHeight: 1.25
+					}}
+				>
+					Join the community
+				</Typography>
+				<Typography
+					sx={{
+						fontSize: { xs: "0.95rem", md: "1.05rem" },
+						color: "text.secondary",
+						fontFamily: "Ubuntu",
+						maxWidth: 520,
+						lineHeight: 1.75
+					}}
+				>
+					RelaySMS is built for everyone. Connect with users and developers who believe in open,
+					accessible communication — even without the internet.
+				</Typography>
+				<Button
+					component="a"
+					href={DISCORD_URL}
+					target="_blank"
+					rel="noopener noreferrer"
+					variant="contained"
+					startIcon={<FaDiscord size={18} />}
+					sx={{
+						bgcolor: "primary.main",
+						color: "#ffffff",
+						fontFamily: "Ubuntu",
+						fontWeight: 600,
+						fontSize: "1rem",
+						textTransform: "none",
+						borderRadius: 2,
+						px: 4,
+						py: 1.5,
+						"&:hover": { bgcolor: "primary.dark" }
+					}}
+				>
+					Join Discord
+				</Button>
+			</Box> */}
 		</Box>
 	);
 };

@@ -22,7 +22,7 @@
 	},
 	"Landing": {
 		"span": "Pas de données ? Pas de souci.",
-		"h1": "Pas d'Internet ? Pas de problème. RelaySMS vous garde connecté.",
+		"h1": "Restez connecté même sans accès à Internet.",
 		"h2": "RelaySMS permet aux utilisateurs d'envoyer des messages vers des plateformes en ligne sans connexion Internet active. Les messages sont envoyés par SMS depuis votre appareil.",
 		"Android": "Télécharger RelaySMS ",
 		"supportedPlatforms": "Plateformes supportées :",
@@ -50,7 +50,9 @@
 		"Step4Button": "Configurer la passerelle",
 		"Step5Title": "Envoyez des messages",
 		"Step5Desc": "Composez des messages hors ligne, envoyez-les par SMS à un numéro de passerelle pré-enregistré, avec chiffrement.",
-		"Step5Button": "Commencer"
+		"Step5Button": "Commencer",
+		"StepLabel": "Étape",
+		"ScrollHint": "Faites défiler pour avancer les étapes"
 	},
 	"Blog": {
 		"Header": "Articles de blog",
@@ -123,6 +125,11 @@
 		"GitHub": "GitHub",
 		"DeveloperDocs": "Documentation Développeur",
 		"Contributing": "Contribuer",
+		"Tutorials": "Tutoriels",
+		"AndroidTutorial": "Tutoriel Android",
+		"iOSTutorial": "Tutoriel iOS",
+		"GatewayClientSetup": "Configuration du client passerelle",
+		"Troubleshooting": "Dépannage",
 		"PrivacyPolicy": "Politique de Confidentialité",
 		"AuditReport": "Rapport d'Audit",
 		"Jobs": "Emplois",
@@ -251,16 +258,24 @@
 		"iosDescription": "Disponible dès maintenant sur l'App Store d'Apple."
 	},
 	"WhoShouldUse": {
-		"Header": "Tout le monde <strike>peut</strike> devrait utiliser RelaySMS",
-		"Description": "Toute personne confrontée à une connectivité Internet médiocre ou vivant dans une région sujette aux coupures d'Internet devrait utiliser RelaySMS pour contourner les coupures et rester connectée. La majorité des utilisateurs de RelaySMS vivent actuellement en Afrique et en Inde—mais l'application est disponible dans le monde entier.",
+		"Header": "Tout le monde peut utiliser RelaySMS",
+		"Description": "Toute personne confrontée à une connectivité Internet médiocre ou vivant dans une région sujette aux coupures d'Internet devrait utiliser RelaySMS pour contourner les coupures et rester connectée. Après avoir configuré RelaySMS sur votre téléphone, vous pouvez envoyer des messages à votre plateforme de messagerie en ligne préférée sans utiliser de données (tarifs SMS standard applicables).",
 		"AndroidButton": "Télécharger pour Android",
-		"iOSButton": "Télécharger pour iOS"
+		"iOSButton": "Télécharger pour iOS",
+		"FlowNodes": {
+			"relaySublabel": "Votre téléphone",
+			"encryptedLabel": "Chiffré",
+			"encryptedSublabel": "SMS",
+			"relayCloudLabel": "Relay Cloud",
+			"relayCloudSublabel": "Passerelle",
+			"platformLabel": "Plateforme",
+			"platformSublabel": "Livré"
+		}
 	},
 	"HowRelaySMSWorks": {
-		"Header": "Comment la <strike>technologie</strike> magie opère",
+		"Header": "Comment ça marche",
 		"Description1": "RelaySMS utilise la messagerie SMS (aussi appelée \"messagerie texte\") pour rediriger les messages hors ligne vers en ligne.",
-		"Description2": "Après avoir configuré RelaySMS sur votre téléphone, vous pouvez vous connecter et envoyer des messages sur vos plateformes de messagerie en ligne préférées sans utiliser de données (tarifs SMS standard applicables).",
-		"Description3": "La clé de RelaySMS réside dans son utilisation de clients passerelles. Ces appareils fonctionnent dans des zones avec une connexion Internet active, leur permettant de recevoir un message SMS d'un utilisateur RelaySMS hors ligne et de le transmettre à un serveur en ligne où l'utilisateur a déjà enregistré ses autorisations de plateforme.",
+		"Description2": "La clé de RelaySMS réside dans son utilisation de clients passerelles. Ces appareils fonctionnent dans des zones avec une connexion Internet active, leur permettant de recevoir un message SMS d'un utilisateur RelaySMS hors ligne et de le transmettre à un serveur en ligne où l'utilisateur a déjà enregistré ses autorisations de plateforme.",
 		"TrainingTitle": "Télécharger les guides de formation",
 		"EnglishPDF": "Guide anglais (PDF)",
 		"FrenchPDF": "Guide français (PDF)",
@@ -268,11 +283,12 @@
 	},
 	"GatewayClient": {
 		"Header": "Configuration d'un Client Passerelle",
-		"Description": "Configurer un client passerelle vous permet, à vous et à toute personne avec qui vous le partagez, d'envoyer des messages en utilisant votre numéro. C'est complètement optionnel, mais si vous choisissez d'en configurer un, suivez simplement les instructions ci-dessous.",
+		"Description": "Les clients passerelle sont des appareils avec une connexion Internet active qui servent de pont entre les utilisateurs hors ligne et les plateformes en ligne. Lorsque vous envoyez un message sans Internet, il transite par SMS vers un client passerelle qui le transmet à votre plateforme sélectionnée. Dans l'application, les clients passerelle sont répertoriés sous l'onglet Pays. Ils peuvent être configurés à l'aide de l'application DekuSMS.",
 		"ReadMore": "Lire Plus"
 	},
 	"SupportedPlatforms": {
 		"Header": "Plateformes prises en charge",
+		"SubText": "Envoyez des messages à <bold>{{platform}}</bold> en utilisant RelaySMS.",
 		"Description": "Envoyez des messages vers ces plateformes en ligne par SMS en utilisant RelaySMS, même lorsque vous n'avez pas accès à Internet.",
 		"Error": "Impossible de charger les plateformes prises en charge. Veuillez réessayer plus tard.",
 		"Note": "D'autres plateformes sont continuellement ajoutées. Restez à l'écoute pour les mises à jour !"
@@ -312,6 +328,110 @@
 			"content": "Contenu"
 		},
 		"documentationError": "Erreur lors du chargement de la documentation. Veuillez réessayer."
+	},
+	"AppFeatures": {
+		"Header": "Fonctionnalités de l'application",
+		"Subheader": "Comparez ce qui est disponible sur Android, iOS et bureau.",
+		"Features": {
+			"OfflineMessaging": "Messagerie hors ligne via SMS",
+			"Gmail": "Gmail",
+			"Twitter": "Twitter / X",
+			"Telegram": "Telegram",
+			"GatewaySetup": "Configuration du client passerelle",
+			"DarkMode": "Mode sombre",
+			"MultiLanguage": "Support multilingue",
+			"E2EEncryption": "Chiffrement de bout en bout",
+			"OpenSource": "Gratuit et open source"
+		},
+		"Platforms": {
+			"Android": {
+				"label": "Android",
+				"badge": "Disponible sur Google Play",
+				"imageAlt": "RelaySMS sur Android"
+			},
+			"iOS": {
+				"label": "iOS",
+				"badge": "Disponible sur l'App Store",
+				"imageAlt": "RelaySMS sur iOS"
+			},
+			"Desktop": {
+				"label": "Bureau",
+				"badge": "Application Web et bureau",
+				"imageAlt": "RelaySMS Bureau"
+			}
+		}
+	},
+	"Navbar": {
+		"Theme": {
+			"Light": "Clair",
+			"Dark": "Sombre",
+			"System": "Système"
+		}
+	},
+	"Contributing": {
+		"Hero": {
+			"eyebrow": "Open Source",
+			"title": "Rejoignez la communauté des contributeurs RelaySMS",
+			"subtitle": "RelaySMS est open source et communautaire. Que vous écriviez du code, signalez des problèmes ou améliorez la documentation — chaque contribution compte.",
+			"cta": "Voir sur GitHub",
+			"docs": "Lire la documentation"
+		},
+		"Ways": {
+			"title": "Manières de contribuer",
+			"subtitle": "Il existe de nombreuses façons de s'impliquer — choisissez ce qui correspond à vos compétences.",
+			"ReportBug": {
+				"title": "Signaler un bug",
+				"description": "Vous avez trouvé un problème ? Ouvrez une issue sur GitHub afin que nous puissions l'examiner."
+			},
+			"WriteCode": {
+				"title": "Écrire du code",
+				"description": "Choisissez une 'good-first-issue' ou attaquez un bug existant — tous les niveaux sont les bienvenus."
+			},
+			"ImproveDoc": {
+				"title": "Améliorer la doc",
+				"description": "Clarifiez des guides, corrigez des fautes de frappe ou ajoutez des tutoriels pour aider les nouveaux utilisateurs."
+			},
+			"HelpCommunity": {
+				"title": "Aider la communauté",
+				"description": "Répondez aux questions et partagez votre expérience pour aider les autres."
+			}
+		},
+		"HowTo": {
+			"title": "Comment contribuer",
+			"subtitle": "Suivez ces étapes pour faire fusionner vos modifications dans RelaySMS.",
+			"Steps": {
+				"Fork": {
+					"title": "Forker et cloner",
+					"description": "Forkez le dépôt sur GitHub et clonez votre fork localement pour commencer."
+				},
+				"Branch": {
+					"title": "Créer une branche",
+					"description": "Créez une nouvelle branche depuis la branche dev pour votre fonctionnalité ou correction."
+				},
+				"Commit": {
+					"title": "Faire des modifications",
+					"description": "Faites vos modifications et validez-les avec des messages de commit clairs."
+				},
+				"PR": {
+					"title": "Ouvrir une Pull Request",
+					"description": "Poussez votre branche et ouvrez une pull request ciblant la branche dev."
+				}
+			}
+		},
+		"Repos": {
+			"title": "Nos dépôts",
+			"subtitle": "Choisissez un projet. Tous les dépôts sont sous licence GPL-3.0.",
+			"openIssues": "problèmes",
+			"goodFirstIssue": "bonne première issue",
+			"viewAll": "Voir tous les dépôts",
+			"Android": { "description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like Android Apps which posses well tested tools for security" },
+			"iOS": { "description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like iOS Apps which posses well tested tools for security" },
+			"Publisher": { "description": "Publisher is the middle-ware that sits between the Gateway Server and the SMSWithoutBorder backend. It does the handshake between the necessary parties and performs the request to decrypt the encrypted stored tokens." },
+			"Vault": { "description": "A secure access token management system for safe message publishing." },
+			"GatewayServer": { "description": "Gateway-servers enables the users to synchronize and communicate with the publisher module" },
+			"BridgeServer": { "description": "The bridge is a technology designed to allow users to communicate with online platforms via SMS, even without an active internet connection. It enables a secure handshake and encrypted message exchange entirely over SMS." },
+			"Website": { "description": "RelaySMS Homepage" }
+		}
 	},
 	"404": {
 		"title": "Oups ! Page Non Trouvée",

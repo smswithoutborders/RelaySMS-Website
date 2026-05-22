@@ -22,7 +22,7 @@
 	},
 	"Landing": {
 		"span": "¿Sin datos? No te preocupes.",
-		"h1": "¿Sin Internet? No hay problema. RelaySMS te mantiene conectado.",
+		"h1": "Manténte conectado incluso sin acceso a Internet.",
 		"h2": "RelaySMS permite a los usuarios enviar mensajes a plataformas en línea sin una conexión activa a Internet. Los mensajes se envían por SMS desde tu dispositivo.",
 		"Android": "Descargar RelaySMS ",
 		"supportedPlatforms": "Plataformas compatibles:",
@@ -50,7 +50,9 @@
 		"Step4Button": "Configurar pasarela",
 		"Step5Title": "Envía mensajes",
 		"Step5Desc": "Escribe mensajes sin internet y envíalos por SMS a la pasarela, con cifrado.",
-		"Step5Button": "Enviar mensajes"
+		"Step5Button": "Enviar mensajes",
+		"StepLabel": "Paso",
+		"ScrollHint": "Desplázate para avanzar pasos"
 	},
 	"Blog": {
 		"Header": "Publicaciones del blog",
@@ -123,6 +125,11 @@
 		"GitHub": "GitHub",
 		"DeveloperDocs": "Documentación para Desarrolladores",
 		"Contributing": "Contribuir",
+		"Tutorials": "Tutoriales",
+		"AndroidTutorial": "Tutorial de Android",
+		"iOSTutorial": "Tutorial de iOS",
+		"GatewayClientSetup": "Configuración del cliente de pasarela",
+		"Troubleshooting": "Resolución de problemas",
 		"PrivacyPolicy": "Política de Privacidad",
 		"AuditReport": "Informe de Auditoría",
 		"Jobs": "Empleos",
@@ -251,16 +258,24 @@
 		"iosDescription": "Disponible ahora en la App Store de Apple."
 	},
 	"WhoShouldUse": {
-		"Header": "Todos <strike>pueden</strike> deberían usar RelaySMS",
-		"Description": "Cualquier persona que experimente mala conectividad a Internet o viva en una región propensa a cortes de Internet debería usar RelaySMS para eludir los cortes y mantenerse conectado. La mayoría de los usuarios de RelaySMS viven actualmente en África e India, pero la aplicación está disponible para uso en todo el mundo.",
+		"Header": "Todos pueden usar RelaySMS",
+		"Description": "Cualquier persona que experimente mala conectividad a Internet o viva en una región propensa a cortes de Internet debería usar RelaySMS para eludir los cortes y mantenerse conectado. Después de configurar RelaySMS en tu teléfono, puedes enviar mensajes a tu plataforma de mensajería en línea preferida sin usar datos en absoluto (se aplicarán tarifas SMS estándar).",
 		"AndroidButton": "Descargar para Android",
-		"iOSButton": "Descargar para iOS"
+		"iOSButton": "Descargar para iOS",
+		"FlowNodes": {
+			"relaySublabel": "Tu teléfono",
+			"encryptedLabel": "Cifrado",
+			"encryptedSublabel": "SMS",
+			"relayCloudLabel": "Relay Cloud",
+			"relayCloudSublabel": "Pasarela",
+			"platformLabel": "Plataforma",
+			"platformSublabel": "Entregado"
+		}
 	},
 	"HowRelaySMSWorks": {
-		"Header": "Cómo sucede la <strike>tecnología</strike> magia",
+		"Header": "Cómo funciona",
 		"Description1": "RelaySMS utiliza mensajería SMS (también conocida como \"mensajes de texto\") para enrutar mensajes fuera de línea de vuelta en línea.",
-		"Description2": "Después de configurar RelaySMS en tu teléfono, puedes conectarte sin problemas y enviar mensajes en tus plataformas de mensajería en línea preferidas sin usar datos en absoluto (se aplicarán tarifas SMS estándar).",
-		"Description3": "La clave de RelaySMS radica en su uso de Clientes Gateway. Estos dispositivos operan en áreas con una conexión activa a Internet, lo que les permite recibir un mensaje SMS de un usuario RelaySMS fuera de línea y luego enviarlo a un servidor en línea donde el usuario ya ha guardado sus permisos de plataforma.",
+		"Description2": "La clave de RelaySMS radica en su uso de Clientes Gateway. Estos dispositivos operan en áreas con una conexión activa a Internet, lo que les permite recibir un mensaje SMS de un usuario RelaySMS fuera de línea y luego enviarlo a un servidor en línea donde el usuario ya ha guardado sus permisos de plataforma.",
 		"TrainingTitle": "Descargar Guías de Entrenamiento",
 		"EnglishPDF": "Guía en Inglés (PDF)",
 		"FrenchPDF": "Guía en Francés (PDF)",
@@ -268,11 +283,12 @@
 	},
 	"GatewayClient": {
 		"Header": "Configurar un Cliente Gateway",
-		"Description": "Configurar un cliente gateway te permite a ti y a cualquiera con quien lo compartas enviar mensajes usando tu número. Es completamente opcional, pero si eliges configurar uno, simplemente sigue las instrucciones a continuación.",
+		"Description": "Los clientes gateway son dispositivos con Internet activo que actúan como puente entre usuarios sin conexión y plataformas en línea. Cuando envías un mensaje sin Internet, va por SMS a un cliente gateway que lo reenvía a tu plataforma seleccionada. En la app, los clientes gateway se listan bajo la pestaña Países. Se pueden configurar usando la aplicación DekuSMS.",
 		"ReadMore": "Leer Más"
 	},
 	"SupportedPlatforms": {
 		"Header": "Plataformas Compatibles",
+		"SubText": "Envía mensajes a <bold>{{platform}}</bold> usando RelaySMS.",
 		"Description": "Envía mensajes a estas plataformas en línea a través de SMS usando RelaySMS, incluso cuando no tengas acceso a Internet.",
 		"Error": "No se pudieron cargar las plataformas compatibles. Por favor, inténtalo de nuevo más tarde.",
 		"Note": "¡Se están añadiendo continuamente más plataformas. ¡Mantente atento a las actualizaciones!"
@@ -312,6 +328,110 @@
 			"content": "Contenido"
 		},
 		"documentationError": "Error al cargar la documentación. Por favor, inténtalo de nuevo."
+	},
+	"AppFeatures": {
+		"Header": "Funciones de la app",
+		"Subheader": "Compara lo que está disponible en Android, iOS y escritorio.",
+		"Features": {
+			"OfflineMessaging": "Mensajería sin conexión vía SMS",
+			"Gmail": "Gmail",
+			"Twitter": "Twitter / X",
+			"Telegram": "Telegram",
+			"GatewaySetup": "Configuración del cliente gateway",
+			"DarkMode": "Modo oscuro",
+			"MultiLanguage": "Soporte multiidioma",
+			"E2EEncryption": "Cifrado de extremo a extremo",
+			"OpenSource": "Gratuito y código abierto"
+		},
+		"Platforms": {
+			"Android": {
+				"label": "Android",
+				"badge": "Disponible en Google Play",
+				"imageAlt": "RelaySMS en Android"
+			},
+			"iOS": {
+				"label": "iOS",
+				"badge": "Disponible en App Store",
+				"imageAlt": "RelaySMS en iOS"
+			},
+			"Desktop": {
+				"label": "Escritorio",
+				"badge": "Aplicación web y escritorio",
+				"imageAlt": "RelaySMS Escritorio"
+			}
+		}
+	},
+	"Navbar": {
+		"Theme": {
+			"Light": "Claro",
+			"Dark": "Oscuro",
+			"System": "Sistema"
+		}
+	},
+	"Contributing": {
+		"Hero": {
+			"eyebrow": "Código Abierto",
+			"title": "Únete a la comunidad de contribuidores de RelaySMS",
+			"subtitle": "RelaySMS es de código abierto y orientado a la comunidad. Ya sea que escribas código, reportes problemas o mejores la documentación — cada contribución importa.",
+			"cta": "Ver en GitHub",
+			"docs": "Leer la documentación"
+		},
+		"Ways": {
+			"title": "Cómo contribuir",
+			"subtitle": "Hay muchas formas de participar — elige la que mejor se adapte a tus habilidades.",
+			"ReportBug": {
+				"title": "Reportar un error",
+				"description": "¿Encontraste algo roto? Abre un issue en GitHub para que podamos investigarlo."
+			},
+			"WriteCode": {
+				"title": "Escribir código",
+				"description": "Toma un 'good-first-issue' o trabaja en un error existente — todos los niveles son bienvenidos."
+			},
+			"ImproveDoc": {
+				"title": "Mejorar la documentación",
+				"description": "Aclara guías, corrige errores tipográficos o añade tutoriales para ayudar a nuevos usuarios."
+			},
+			"HelpCommunity": {
+				"title": "Ayudar a la comunidad",
+				"description": "Responde preguntas y comparte tu experiencia para ayudar a otros a construir con RelaySMS."
+			}
+		},
+		"HowTo": {
+			"title": "Cómo contribuir",
+			"subtitle": "Sigue estos pasos para que tus cambios se integren en RelaySMS.",
+			"Steps": {
+				"Fork": {
+					"title": "Bifurcar y clonar",
+					"description": "Bifurca el repositorio en GitHub y clona tu fork localmente para comenzar."
+				},
+				"Branch": {
+					"title": "Crear una rama",
+					"description": "Crea una nueva rama desde la rama dev para tu función o corrección de errores."
+				},
+				"Commit": {
+					"title": "Hacer cambios",
+					"description": "Realiza tus cambios y envíalos con mensajes de commit claros y descriptivos."
+				},
+				"PR": {
+					"title": "Abrir un Pull Request",
+					"description": "Sube tu rama y abre un pull request apuntando a la rama dev para revisión."
+				}
+			}
+		},
+		"Repos": {
+			"title": "Nuestros repositorios",
+			"subtitle": "Elige un proyecto. Todos los repos tienen licencia GPL-3.0.",
+			"openIssues": "problemas",
+			"goodFirstIssue": "primer issue fácil",
+			"viewAll": "Ver todos los repositorios",
+			"Android": { "description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like Android Apps which posses well tested tools for security" },
+			"iOS": { "description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like iOS Apps which posses well tested tools for security" },
+			"Publisher": { "description": "Publisher is the middle-ware that sits between the Gateway Server and the SMSWithoutBorder backend. It does the handshake between the necessary parties and performs the request to decrypt the encrypted stored tokens." },
+			"Vault": { "description": "A secure access token management system for safe message publishing." },
+			"GatewayServer": { "description": "Gateway-servers enables the users to synchronize and communicate with the publisher module" },
+			"BridgeServer": { "description": "The bridge is a technology designed to allow users to communicate with online platforms via SMS, even without an active internet connection. It enables a secure handshake and encrypted message exchange entirely over SMS." },
+			"Website": { "description": "RelaySMS Homepage" }
+		}
 	},
 	"404": {
 		"title": "¡Ups! Página No Encontrada",

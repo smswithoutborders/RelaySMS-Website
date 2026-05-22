@@ -1,10 +1,11 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, useTheme } from "@mui/material";
 import { FaGithub, FaXTwitter, FaEnvelope } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 
 const Contact = () => {
 	const { t, i18n } = useTranslation();
+	const theme = useTheme();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 
 	const socialLinks = [
@@ -72,7 +73,7 @@ const Contact = () => {
 					sx={{
 						mb: { xs: 6, md: 8 },
 						fontSize: { md: "2rem", xs: "1.5rem" },
-						color: "#2D2A5A",
+						color: "text.primary",
 						fontWeight: 700,
 						fontFamily: "'Unbounded', Ubuntu",
 						mt: { xs: 6, md: 0 }
@@ -98,7 +99,6 @@ const Contact = () => {
 						<Box
 							key={index}
 							sx={{
-								// bgcolor: "#ffffff",
 								borderRadius: "6px",
 								padding: 3,
 								display: "flex",
@@ -106,7 +106,8 @@ const Contact = () => {
 								alignItems: "flex-start",
 								textAlign: "left",
 								transition: "transform 0.3s ease, box-shadow 0.3s ease",
-								border: "1px solid #c9c9c9ff",
+								border: "1px solid",
+								borderColor: "divider",
 								"&:hover": {
 									transform: "translateY(-4px)",
 									boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)"
@@ -116,14 +117,17 @@ const Contact = () => {
 							{React.createElement(icon, {
 								style: {
 									fontSize: "1.6rem",
-									color: "#202020ff",
+									color: theme.palette.text.primary,
 									marginBottom: "2.5rem"
 								}
 							})}
-							<Typography variant="body1" sx={{ fontWeight: 600, mb: 1.5, color: "#1e283a" }}>
+							<Typography variant="body1" sx={{ fontWeight: 600, mb: 1.5, color: "text.primary" }}>
 								{label}
 							</Typography>
-							<Typography variant="body2" sx={{ mb: 3, color: "#666", lineHeight: 1.6, flex: 1 }}>
+							<Typography
+								variant="body2"
+								sx={{ mb: 3, color: "text.secondary", lineHeight: 1.6, flex: 1 }}
+							>
 								{description}
 							</Typography>
 							<Button
@@ -131,7 +135,7 @@ const Contact = () => {
 								target={url.startsWith("mailto:") ? undefined : "_blank"}
 								rel={url.startsWith("mailto:") ? undefined : "noopener noreferrer"}
 								sx={{
-									color: "#2D2A5A",
+									color: "text.primary",
 									textTransform: "none",
 									fontWeight: 400,
 									fontSize: "15px",
@@ -141,8 +145,8 @@ const Contact = () => {
 									textDecorationThickness: "2px",
 									transition: "all 0.3s ease",
 									"&:hover": {
-										color: "#1e283a",
-										textDecorationColor: "#1e283a",
+										color: "text.primary",
+										textDecorationColor: "primary.main",
 										backgroundColor: "transparent"
 									}
 								}}
