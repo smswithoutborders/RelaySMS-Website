@@ -14,6 +14,7 @@ import WhoShouldUse from "./WhoShouldUse";
 import SupportedPlatforms from "./SupportedPlatforms";
 import TrainingGuide from "./TrainingGuide";
 import AppFeatures from "./AppFeatures";
+import { ArrowDownOutlined } from "@ant-design/icons";
 
 const Hero = () => {
 	const [showCursor, setShowCursor] = useState(true);
@@ -39,8 +40,8 @@ const Hero = () => {
 			<Box
 				dir={isRtl ? "rtl" : "ltr"}
 				sx={{
-					mx: "auto",
-					minHeight: "100vh",
+					mx: { md: "auto", xs: 2 },
+					minHeight: { md: "100vh", xs: "95vh" },
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
@@ -93,7 +94,7 @@ const Hero = () => {
 							color="text.secondary"
 							paragraph
 							sx={{
-								mt: { xs: 2, md: 1.5 },
+								mt: { xs: 2, md: 2 },
 								mb: 2,
 								fontFamily: "Ubuntu",
 								fontSize: { xs: "16px", md: "18px", lg: "18px", xl: "20px" }
@@ -101,39 +102,15 @@ const Hero = () => {
 						>
 							{t("Landing.h2")}
 						</Typography>
-						<Box sx={{ mb: { md: 2, xl: 6 }, gap: 1, mt: 1 }}>
-							<Typography
-								variant="body1"
-								sx={{
-									fontSize: { xs: "16px", md: "18px", lg: "18px", xl: "20px" },
-									fontFamily: "Ubuntu",
-									lineHeight: 1.6
-								}}
-								color="text.secondary"
-							>
-								{t("Landing.auditMessage.part1")}&nbsp;
-								<a
-									href="https://www.opentech.fund/security-safety-audits/smswithoutborders-penetration-testt/"
-									target="_blank"
-									rel="noopener noreferrer"
-									style={{
-										color: "inherit",
-										opacity: 0.8,
-										textDecoration: "none"
-									}}
-								>
-									{t("Landing.auditMessage.link")}
-								</a>
-								&nbsp;{t("Landing.auditMessage.part2")}
-							</Typography>
-						</Box>
-
 						<Box
 							sx={{
 								display: "flex",
+								flexDirection: { xs: "column", sm: "row" },
 								justifyContent: "center",
-								mt: { xs: 3, md: 1 },
+								gap: 2,
+								mt: { xs: 3, md: 2 },
 								mb: { xs: 2, md: 1 },
+								px: { xs: 2, md: 0 },
 								width: "100%"
 							}}
 						>
@@ -156,6 +133,30 @@ const Hero = () => {
 								}}
 							>
 								{t("Landing.Android")}
+							</Button>
+							<Button
+								variant="outlined"
+								size="large"
+								onClick={() => {
+									const el = document.getElementById("training-guide");
+									if (el) {
+										const navbarHeight = 100;
+										const top = el.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+										window.scrollTo({ top, behavior: "smooth" });
+									}
+								}}
+								sx={{
+									textTransform: "none",
+									color: (theme) =>
+										theme.palette.mode === "dark" ? "primary.light" : "primary.main",
+									fontFamily: "Ubuntu",
+									transition: "all 0.3s ease-in-out",
+									"&:hover": {
+										transform: "translateY(-3px)"
+									}
+								}}
+							>
+								{t("HowRelaySMSWorks.TrainingTitle", "Download Training Guides")}
 							</Button>
 						</Box>
 					</Grid>
@@ -188,10 +189,31 @@ const Hero = () => {
 
 			{/* ========== OTHER SECTIONS ========== */}
 			<GettingStarted />
+			<TrainingGuide />
 			<SupportedPlatforms />
 			<WhoShouldUse />
-			<TrainingGuide />
 			{/* <AppFeatures /> */}
+			<Box
+				data-aos="fade-up"
+				sx={{
+					textAlign: "center",
+					px: 2,
+					pb: 4
+				}}
+			>
+				<Typography variant="body1" color="text.secondary" sx={{ fontFamily: "Ubuntu" }}>
+					{t("Landing.auditMessage.part1")}&nbsp;
+					<a
+						href="https://www.opentech.fund/security-safety-audits/smswithoutborders-penetration-testt/"
+						target="_blank"
+						rel="noopener noreferrer"
+						style={{ color: "inherit", opacity: 0.75, textDecoration: "underline" }}
+					>
+						{t("Landing.auditMessage.link")}
+					</a>
+					&nbsp;{t("Landing.auditMessage.part2")}
+				</Typography>
+			</Box>
 			<Blog />
 			<FAQ />
 		</>

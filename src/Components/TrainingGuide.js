@@ -9,7 +9,10 @@ function TrainingGuide() {
 	const { t } = useTranslation();
 
 	return (
-		<Container maxWidth="lg" sx={{ py: { xs: 6, md: 12 }, textAlign: "center" }}>
+		<Container
+			id="training-guide"
+			sx={{ mt: { xs: 6, md: 1 }, mb: { xs: 6, md: 10 }, textAlign: "center", scrollMarginTop: "100px" }}
+		>
 			<Grid container spacing={4} justifyContent="center">
 				<Grid item xs={12} md={6}>
 					<Typography

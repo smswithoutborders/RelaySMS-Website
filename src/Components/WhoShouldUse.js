@@ -47,8 +47,8 @@ const FlowAnimation = ({ t }) => {
 		<Box
 			sx={{
 				position: "absolute",
-				left: cx - 18,
-				top: cy - 18,
+				left: `${(((cx - 18) / W) * 100).toFixed(2)}%`,
+				top: `${(((cy - 18) / H) * 100).toFixed(2)}%`,
 				display: "flex",
 				flexDirection: "column",
 				alignItems: "center",
@@ -95,10 +95,11 @@ const FlowAnimation = ({ t }) => {
 	);
 
 	return (
-		<Box sx={{ position: "relative", width: W, height: H, mx: "auto", maxWidth: "100%" }}>
+		<Box sx={{ position: "relative", width: "100%", maxWidth: W, paddingTop: `${((H / W) * 100).toFixed(2)}%`, mx: "auto" }}>
+			<Box sx={{ position: "absolute", inset: 0 }}>
 			<svg
-				width={W}
-				height={H}
+				width="100%"
+				height="100%"
 				viewBox={`0 0 ${W} ${H}`}
 				style={{ position: "absolute", inset: 0 }}
 			>
@@ -118,6 +119,7 @@ const FlowAnimation = ({ t }) => {
 			<NodeBox cx={T.x} cy={T.y} Icon={LockOutlined} label={t("WhoShouldUse.FlowNodes.encryptedLabel", "Encrypted")} sublabel={t("WhoShouldUse.FlowNodes.encryptedSublabel", "SMS")} />
 			<NodeBox cx={B.x} cy={B.y} Icon={CloudOutlined} label={t("WhoShouldUse.FlowNodes.relayCloudLabel", "Relay Cloud")} sublabel={t("WhoShouldUse.FlowNodes.relayCloudSublabel", "Gateway")} />
 			<NodeBox cx={R.x} cy={R.y} Icon={CheckCircleOutlined} label={t("WhoShouldUse.FlowNodes.platformLabel", "Platform")} sublabel={t("WhoShouldUse.FlowNodes.platformSublabel", "Delivered")} />
+			</Box>
 		</Box>
 	);
 };
