@@ -25,6 +25,7 @@
 		"h1": "Stay Connected even with no internet access.",
 		"h2": "RelaySMS enables users send messages to online platforms without an active internet connection. Messages are sent via SMS from your device.",
 		"Android": "Download RelaySMS ",
+		"RoutingNumbers": "Set Up Gateway Clients",
 		"supportedPlatforms": "Supported Platforms:",
 		"auditMessage": {
 			"part1": "RelaySMS is committed to security and transparency. Read our ",
@@ -46,9 +47,9 @@
 		"Step3Title": "Save Platforms",
 		"Step3Desc": "Save access to platforms while connected to the internet. Add your credentials to platforms supported by RelaySMS and prepare them for offline use.",
 		"Step3Button": "Set Up Now",
-		"Step4Title": "Select a Gateway Client",
-		"Step4Desc": "Choose a Gateway Client for sending SMS. You can select from pre-configured clients or set up a custom client by adding the gateway number to your contacts.",
-		"Step4Button": "Configure Gateway",
+		"Step4Title": "Select a Routing Number",
+		"Step4Desc": "Choose a Routing Number for sending SMS. You can select from pre-configured numbers or set up a custom number by adding the routing number to your contacts.",
+		"Step4Button": "Configure Routing Number",
 		"Step5Title": "Send Messages",
 		"Step5Desc": "Compose messages for supported platforms without internet. Send these as SMS to a pre-saved gateway number, ensuring encrypted communication.",
 		"Step5Button": "Start Messaging",
@@ -129,7 +130,7 @@
 		},
 		"faq2": {
 			"question": "How does RelaySMS work?",
-			"answer": "RelaySMS works by using SMS messages sent from your app to SMS Gateway clients run by volunteers, who forward them to the internet."
+			"answer": "RelaySMS works by using SMS messages sent from your app to SMS Gateway Clients run by volunteers, who forward them to the internet."
 		},
 		"faq3": {
 			"question": "Do I need an internet connection to use RelaySMS?",
@@ -216,7 +217,7 @@
 				"description": "Complete RelaySMS logos with text for official use"
 			},
 			"logoIcons": {
-				"title": "Logo Icons", 
+				"title": "Logo Icons",
 				"description": "Icon-only versions for compact spaces and app icons"
 			},
 			"socialMedia": {
@@ -228,14 +229,14 @@
 			"default": "Default",
 			"defaultShaped": "Default (Shaped)",
 			"black": "Black",
-			"blackShaped": "Black (Shaped)", 
+			"blackShaped": "Black (Shaped)",
 			"blue": "Blue",
 			"blueShaped": "Blue (Shaped)",
 			"white": "White",
 			"whiteShaped": "White (Shaped)",
 			"darkTheme": "Dark Theme",
 			"avatar1": "Avatar 1",
-			"avatar2": "Avatar 2", 
+			"avatar2": "Avatar 2",
 			"cover1": "Cover 1",
 			"cover2": "Cover 2",
 			"cover3": "Cover 3"
@@ -300,7 +301,7 @@
 	},
 	"Overview": {
 		"title": "RelaySMS System Overview",
-		"description": "The diagram below illustrates the flow of messages and data between the main components of the RelaySMS, from client apps through gateways, servers, and external services.",
+		"description": "The diagram below illustrates the flow of messages and data between the main components of the RelaySMS, from client apps through Gateway Clients, servers, and external services.",
 		"tip": "Tip: Click on a node in the diagram to view more information about that component.",
 		"details": "Details",
 		"loading": "Loading documentation...",
@@ -308,7 +309,7 @@
 			"Client": "Client",
 			"Vault": "Vault",
 			"Publisher": "Publisher",
-			"GatewayClient": "Gateway Client",
+			"GatewayClient": "Gateway Clients",
 			"GatewayServer": "Gateway Server",
 			"BridgeServer": "Bridge Server",
 			"Platforms": "Platforms",
@@ -316,7 +317,7 @@
 		},
 		"nodes": {
 			"Client": "Client (Apps)",
-			"GatewayClient": "Gateway Client",
+			"GatewayClient": "Gateway Clients",
 			"GatewayServer": "Gateway Server",
 			"Publisher": "Publisher",
 			"BridgeServer": "Bridge Server",

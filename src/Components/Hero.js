@@ -151,7 +151,7 @@ const Hero = () => {
 									// fontSize: { xs: "15px", md: "19px" },
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
-										transform: "translateY(-3px)",
+										transform: "translateY(-3px)"
 									}
 								}}
 							>

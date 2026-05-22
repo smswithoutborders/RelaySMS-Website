@@ -25,6 +25,7 @@
 		"h1": "Manténte conectado incluso sin acceso a Internet.",
 		"h2": "RelaySMS permite a los usuarios enviar mensajes a plataformas en línea sin una conexión activa a Internet. Los mensajes se envían por SMS desde tu dispositivo.",
 		"Android": "Descargar RelaySMS ",
+		"GatewayClient": "Configurar cliente de pasarela",
 		"supportedPlatforms": "Plataformas compatibles:",
 		"auditMessage": {
 			"part1": "RelaySMS está comprometido con la seguridad y la transparencia. Lee nuestro ",
@@ -424,12 +425,24 @@
 			"openIssues": "problemas",
 			"goodFirstIssue": "primer issue fácil",
 			"viewAll": "Ver todos los repositorios",
-			"Android": { "description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like Android Apps which posses well tested tools for security" },
-			"iOS": { "description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like iOS Apps which posses well tested tools for security" },
-			"Publisher": { "description": "Publisher is the middle-ware that sits between the Gateway Server and the SMSWithoutBorder backend. It does the handshake between the necessary parties and performs the request to decrypt the encrypted stored tokens." },
-			"Vault": { "description": "A secure access token management system for safe message publishing." },
-			"GatewayServer": { "description": "Gateway-servers enables the users to synchronize and communicate with the publisher module" },
-			"BridgeServer": { "description": "The bridge is a technology designed to allow users to communicate with online platforms via SMS, even without an active internet connection. It enables a secure handshake and encrypted message exchange entirely over SMS." },
+			"Android": {
+				"description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like Android Apps which posses well tested tools for security"
+			},
+			"iOS": {
+				"description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like iOS Apps which posses well tested tools for security"
+			},
+			"Publisher": {
+				"description": "Publisher is the middle-ware that sits between the Gateway Server and the SMSWithoutBorder backend. It does the handshake between the necessary parties and performs the request to decrypt the encrypted stored tokens."
+			},
+			"Vault": {
+				"description": "A secure access token management system for safe message publishing."
+			},
+			"GatewayServer": {
+				"description": "Gateway-servers enables the users to synchronize and communicate with the publisher module"
+			},
+			"BridgeServer": {
+				"description": "The bridge is a technology designed to allow users to communicate with online platforms via SMS, even without an active internet connection. It enables a secure handshake and encrypted message exchange entirely over SMS."
+			},
 			"Website": { "description": "RelaySMS Homepage" }
 		}
 	},

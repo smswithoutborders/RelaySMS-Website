@@ -1,20 +1,22 @@
-name: Deploy SMSWithoutBorders Relay Homepage on Server (production)
+name: Preview Deployment Pipeline
+
 on:
   push:
     branches:
-      - main
+      - preview
+
 jobs:
-  deploy:
-    name: Execute Deployment Script on Server
+  build:
+    name: Build Application
     runs-on: ubuntu-latest
     environment:
-      name: production
-      url: https://relay.smswithoutborders.com
+      name: preview
+      url: https://preview-1.relaysms.afkanerd.de
     steps:
-      - name: Checkout Git Repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup NodeJs
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -36,19 +38,19 @@ jobs:
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          source: "./build/*"
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "build/*"
           target: ${{ secrets.BUILD_PATH }}
           strip_components: 1
-          rm: true
+          rm: false
 
       - name: Execute Remote SSH Commands
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
             set -e
 
@@ -62,4 +64,3 @@ jobs:
             echo "==============================="
             echo "✅ Deployment complete"
             echo "==============================="
-

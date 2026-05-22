@@ -40,7 +40,7 @@ const Overview = () => {
 				response = await fetch(`/docs/${currentLanguage}/${fileName}`);
 				if (response.ok) {
 					markdown = await response.text();
-					if (markdown.includes("<!doctype html>") || markdown.includes("<html")) {
+					if (/<!doctype\s+html\b|<html(?=[\s>/])/i.test(markdown)) {
 						throw new Error("Got HTML instead of markdown");
 					}
 				} else {
@@ -155,8 +155,33 @@ const Overview = () => {
 						<ReactMarkdown
 							components={{
 								a: ({ node, href, children, ...props }) => {
-									if (href && href.includes("github.com")) {
-										return <ButtonContained text={children} linkTo={href} />;
+									let isGitHubLink = false;
+									const getNodeText = (value) => {
+										if (typeof value === "string" || typeof value === "number") {
+											return String(value);
+										}
+										if (Array.isArray(value)) {
+											return value.map(getNodeText).join("");
+										}
+										if (React.isValidElement(value)) {
+											return getNodeText(value.props?.children);
+										}
+										return "";
+									};
+									const linkText = getNodeText(children);
+
+									if (href) {
+										try {
+											const parsedUrl = new URL(href, window.location.origin);
+											const host = parsedUrl.hostname.toLowerCase();
+											isGitHubLink = host === "github.com" || host.endsWith(".github.com");
+										} catch (error) {
+											isGitHubLink = false;
+										}
+									}
+
+									if (isGitHubLink) {
+										return <ButtonContained text={linkText} linkTo={href} />;
 									}
 									return (
 										<a {...props} href={href} target="_blank" rel="noopener noreferrer">
