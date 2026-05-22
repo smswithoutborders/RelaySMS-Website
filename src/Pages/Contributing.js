@@ -183,7 +183,7 @@ const Contributing = () => {
 					maxWidth: 860,
 					mx: "auto",
 					px: { xs: 3, md: 4 },
-					mt: { xs: 8, md: 25 },
+					mt: { xs: 20, md: 25 },
 					pb: { xs: 6, md: 8 },
 					textAlign: "center"
 				}}
