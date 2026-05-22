@@ -46,8 +46,8 @@ const FAQSection = ({ isFarsi }) => {
 				<Typography
 					variant="h3"
 					sx={{
-						fontSize: { md: "2rem", xs: "1.5rem" },
-						color: "#2D2A5A",
+						fontSize: { xs: "1.5rem", md: "1.9rem" },
+						color: "text.primary",
 						fontFamily: "'Unbounded', Ubuntu"
 					}}
 				>
@@ -57,7 +57,7 @@ const FAQSection = ({ isFarsi }) => {
 					variant="body1"
 					sx={{
 						fontSize: "1.2rem",
-						color: "#555555",
+						color: "text.secondary",
 						fontFamily: "Ubuntu",
 						mt: 1,
 						px: 2
@@ -76,7 +76,7 @@ const FAQSection = ({ isFarsi }) => {
 				sx={{
 					maxWidth: "1200px",
 					mx: { md: "auto", xs: -2 },
-					width: "100%",
+					width: "100%"
 				}}
 			>
 				<Grid item xs={12} md={8} sx={{ display: "flex", justifyContent: "center" }}>
@@ -87,7 +87,7 @@ const FAQSection = ({ isFarsi }) => {
 									variant="h6"
 									sx={{
 										fontWeight: 700,
-										color: "#2D2A5A",
+										color: "text.primary",
 										fontSize: { xs: "1.1rem", md: "1.2rem" },
 										fontFamily: "'Unbounded', Ubuntu",
 										mb: 2,
@@ -100,7 +100,7 @@ const FAQSection = ({ isFarsi }) => {
 								<Typography
 									variant="body1"
 									sx={{
-										color: "#555",
+										color: "text.secondary",
 										fontFamily: "Ubuntu",
 										fontSize: "1rem",
 										lineHeight: 1.7,
@@ -109,10 +109,10 @@ const FAQSection = ({ isFarsi }) => {
 										overflowWrap: "break-word",
 										wordBreak: "break-word",
 										"& a": {
-											color: "#FF9E43",
+											color: "secondary.main",
 											textDecoration: "underline",
 											"&:hover": {
-												color: "#d65500"
+												color: "secondary.dark"
 											}
 										}
 									}}
@@ -124,7 +124,7 @@ const FAQSection = ({ isFarsi }) => {
 									<Divider
 										sx={{
 											my: 4,
-											borderColor: "#e0e0e0"
+											borderColor: "divider"
 										}}
 									/>
 								)}
@@ -139,8 +139,9 @@ const FAQSection = ({ isFarsi }) => {
 						sx={{
 							px: { xs: 1.5, md: 4 },
 							py: { xs: 4, md: 10 },
-							backgroundColor: "#f8f9fa",
-							border: "1px solid #e9ecef",
+							bgcolor: "background.paper",
+							border: "1px solid",
+							borderColor: "divider",
 							width: "100%"
 						}}
 					>
@@ -148,7 +149,7 @@ const FAQSection = ({ isFarsi }) => {
 							variant="h6"
 							sx={{
 								fontWeight: 600,
-								color: "#2D2A5A",
+								color: "text.primary",
 								fontSize: { xs: "1rem", md: "1.1rem" },
 								fontFamily: "'Unbounded', Ubuntu",
 								mb: 2,
@@ -171,7 +172,7 @@ const FAQSection = ({ isFarsi }) => {
 									display: "flex",
 									justifyContent: "flex-start",
 									alignItems: "center",
-									color: "#555555",
+									color: "text.secondary",
 									textTransform: "none",
 									fontSize: "1rem",
 									fontFamily: "Ubuntu",
@@ -179,7 +180,7 @@ const FAQSection = ({ isFarsi }) => {
 									mb: 2,
 									"&:hover": {
 										backgroundColor: "transparent",
-										color: "#FF9E43"
+										color: "secondary.main"
 									}
 								}}
 							>
@@ -191,7 +192,7 @@ const FAQSection = ({ isFarsi }) => {
 							<Typography
 								variant="body1"
 								sx={{
-									color: "#2D2A5A",
+									color: "text.primary",
 									fontFamily: "Unbounded, Ubuntu",
 									fontWeight: 600,
 									fontSize: "1rem",
@@ -206,7 +207,7 @@ const FAQSection = ({ isFarsi }) => {
 								href="mailto:developers@smswithoutborders.com"
 								sx={{
 									alignItems: "center",
-									color: "#555555",
+									color: "text.secondary",
 									textTransform: "none",
 									overflowWrap: "break-word",
 									wordBreak: "break-word",
@@ -215,7 +216,7 @@ const FAQSection = ({ isFarsi }) => {
 									p: 0,
 									"&:hover": {
 										backgroundColor: "transparent",
-										color: "#FF9E43"
+										color: "secondary.main"
 									}
 								}}
 							>

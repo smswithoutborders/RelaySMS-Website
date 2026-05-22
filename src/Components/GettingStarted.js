@@ -1,170 +1,44 @@
-import React from "react";
-import Slider from "react-slick";
-import { Box, Typography, Button, Container, Grid, IconButton } from "@mui/material";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { useState, useMemo, useEffect, useRef } from "react";
+import { Box, Typography, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import DOMPurify from "dompurify";
+import { FiExternalLink } from "react-icons/fi";
 
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
+const MobileCarousel = ({ slides, t }) => {
+	const [current, setCurrent] = useState(0);
+	const touchStartX = useRef(null);
+	const touchStartY = useRef(null);
 
-const GettingStarted = () => {
-	const { t, i18n } = useTranslation();
-	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
+	const prev = () => setCurrent((c) => Math.max(c - 1, 0));
+	const next = () => setCurrent((c) => Math.min(c + 1, slides.length - 1));
 
-	const CustomPrevArrow = ({ className, style, onClick }) => (
-		<IconButton
-			className={className}
-			style={{
-				...style,
-				display: "flex",
-				alignItems: "center",
-				justifyContent: "center",
-				backgroundColor: "#EBF0FF",
-				color: "#202020ff",
-				width: "50px",
-				height: "50px",
-				borderRadius: "50%",
-				position: "absolute",
-				left: "-25px",
-				top: "50%",
-				transform: "translateY(-50%)",
-				zIndex: 2,
-				transition: "all 0.3s ease"
-			}}
-			onClick={onClick}
-			sx={{
-				"&:hover": {
-					backgroundColor: "#00013b",
-					transform: "translateY(-50%) scale(1.1)",
-					boxShadow: "0 6px 16px rgba(0, 1, 88, 0.4)"
-				}
-			}}
-		>
-			<FiChevronLeft size={20} strokeWidth={2} />
-		</IconButton>
-	);
-
-	const CustomNextArrow = ({ className, style, onClick }) => (
-		<IconButton
-			className={className}
-			style={{
-				...style,
-				display: "flex",
-				alignItems: "center",
-				justifyContent: "center",
-				backgroundColor: "#EBF0FF",
-				color: "#202020ff",
-				width: "50px",
-				height: "50px",
-				borderRadius: "50%",
-				position: "absolute",
-				right: { md: "-65px", sm: "-25px" },
-				top: "50%",
-				transform: "translateY(-50%)",
-				zIndex: 2,
-				transition: "all 0.3s ease"
-			}}
-			onClick={onClick}
-			sx={{
-				"&:hover": {
-					backgroundColor: "#00013b",
-					transform: "translateY(-50%) scale(1.1)",
-					boxShadow: "0 6px 16px rgba(0, 1, 88, 0.4)"
-				}
-			}}
-		>
-			<FiChevronRight size={20} strokeWidth={2} />
-		</IconButton>
-	);
-
-	const settings = {
-		dots: true,
-		infinite: true,
-		speed: 600,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		autoplay: false,
-		arrows: true,
-		prevArrow: <CustomPrevArrow />,
-		nextArrow: <CustomNextArrow />
+	const onTouchStart = (e) => {
+		touchStartX.current = e.touches[0].clientX;
+		touchStartY.current = e.touches[0].clientY;
 	};
 
-	const Item = styled(Paper)(({ theme }) => ({
-		padding: theme.spacing(1),
-		textAlign: "center",
-		backgroundColor: "transparent",
-		boxShadow: "none"
-	}));
-
-	const slides = [
-		{
-			number: 1,
-			title: t("Howitworks.Step1Title"),
-			description: t("Howitworks.Step1Desc"),
-			image: "/Download-copy.png",
-			buttonText: t("Howitworks.Step1Button", "Download"),
-			link: "/download",
-			bgColor: " #EBF5FB"
-		},
-		{
-			number: 2,
-			title: t("Howitworks.Step2Title"),
-			description: t("Howitworks.Step2Desc"),
-			image: "/Login-copy.png",
-			buttonText: t("Howitworks.Step2Button", "Learn More"),
-			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-2-create-an-account",
-			bgColor: "rgb(249, 225, 248)"
-		},
-		{
-			number: 3,
-			title: t("Howitworks.Step3Title"),
-			description: t("Howitworks.Step3Desc"),
-			image: "/saveplatform-copy.png",
-			buttonText: t("Howitworks.Step3Button", "Set Up Now"),
-			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-5-save-access-to-platforms",
-			bgColor: "rgb(246, 234, 191)"
-		},
-		{
-			number: 4,
-			title: t("Howitworks.Step4Title"),
-			description: t("Howitworks.Step4Desc"),
-			image: "/Gateway-copy.png",
-			buttonText: t("Howitworks.Step4Button", "Select a Routing Number"),
-			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-6-choose-a-gateway-client",
-			bgColor: "rgb(183, 243, 232)"
-		},
-		{
-			number: 5,
-			title: t("Howitworks.Step5Title"),
-			description: t("Howitworks.Step5Desc"),
-			image: "/text-copy.png",
-			buttonText: t("Howitworks.Step5Button", "Start Messaging"),
-			link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-3-compose-your-message-and-send-as-sms",
-			bgColor: "rgb(176, 218, 248)"
+	const onTouchEnd = (e) => {
+		if (touchStartX.current === null) return;
+		const dx = e.changedTouches[0].clientX - touchStartX.current;
+		const dy = e.changedTouches[0].clientY - touchStartY.current;
+		if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+			if (dx < 0) next();
+			else prev();
 		}
-	];
+		touchStartX.current = null;
+		touchStartY.current = null;
+	};
+
+	const slide = slides[current];
 
 	return (
-		<Box
-			dir={isRtl ? "rtl" : "ltr"}
-			sx={{
-				py: { xs: 6, md: 12 },
-				px: { xs: 3, md: 6 }
-			}}
-		>
-			<Box
-				sx={{
-					textAlign: "center"
-				}}
-			>
+		<Box sx={{ display: { xs: "flex", md: "none" }, flexDirection: "column", px: 3, py: 6 }}>
+			<Box sx={{ textAlign: "center", mb: 4 }}>
 				<Typography
 					variant="h3"
 					sx={{
-						fontSize: { md: "2rem", xs: "1.5rem" },
-						color: "#2D2A5A",
+						fontSize: "1.5rem",
+						color: "text.primary",
 						fontWeight: 700,
 						fontFamily: "'Unbounded', Ubuntu"
 					}}
@@ -173,13 +47,7 @@ const GettingStarted = () => {
 				</Typography>
 				<Typography
 					variant="body1"
-					sx={{
-						fontSize: "1.2rem",
-						color: "#555555",
-						mt: 1,
-						fontFamily: "Ubuntu",
-						px: 2
-					}}
+					sx={{ fontSize: "1rem", color: "text.secondary", mt: 1, fontFamily: "Ubuntu" }}
 				>
 					{t(
 						"Howitworks.SubHeader",
@@ -187,171 +55,443 @@ const GettingStarted = () => {
 					)}
 				</Typography>
 			</Box>
-			<Container sx={{ py: 4 }}>
+
+			<Box
+				onTouchStart={onTouchStart}
+				onTouchEnd={onTouchEnd}
+				sx={{ overflow: "hidden", position: "relative" }}
+			>
+				{/* Track */}
 				<Box
 					sx={{
-						".slick-dots li button:before": {
-							color: " #8b8b8bff",
-							fontSize: "18px"
-						},
-						".slick-dots li.slick-active button:before": {
-							color: " #000158"
-						},
-						".slick-prev, .slick-next": {
-							"&:before": {
-								display: "none"
-							}
-						}
+						display: "flex",
+						transform: `translateX(-${current * 100}%)`,
+						transition: "transform 0.4s ease"
 					}}
 				>
-					<Slider {...settings}>
+					{slides.map((s, index) => (
+						<Box
+							key={index}
+							sx={{
+								minWidth: "100%",
+								display: "flex",
+								flexDirection: "column",
+								alignItems: "center",
+								px: 1
+							}}
+						>
+							<Box
+								component="img"
+								src={s.image}
+								alt={s.title}
+								sx={{ width: "70%", maxHeight: 260, objectFit: "contain", mb: 3 }}
+							/>
+							<Typography
+								sx={{
+									color: "primary.light",
+									fontWeight: 700,
+									letterSpacing: "0.15em",
+									fontFamily: "Ubuntu",
+									fontSize: "0.75rem",
+									textTransform: "uppercase",
+									mb: 0.75,
+									alignSelf: "flex-start"
+								}}
+							>
+								Step {s.number}
+							</Typography>
+							<Typography
+								variant="h5"
+								sx={{
+									fontFamily: "'Unbounded', Ubuntu",
+									fontWeight: 700,
+									color: "text.primary",
+									fontSize: "1.1rem",
+									mb: 1.5,
+									alignSelf: "flex-start"
+								}}
+							>
+								{s.title}
+							</Typography>
+							<Typography
+								variant="body1"
+								sx={{
+									fontFamily: "Ubuntu",
+									color: "text.secondary",
+									fontSize: "0.95rem",
+									lineHeight: 1.8,
+									mb: 2,
+									alignSelf: "flex-start",
+									"& a": { textDecoration: "none", color: "primary.light" }
+								}}
+								dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(s.description) }}
+							/>
+							<Button
+								variant="text"
+								endIcon={<FiExternalLink style={{ marginLeft: 4 }} />}
+								href={s.link}
+								target="_blank"
+								rel="noopener noreferrer"
+								sx={{
+									textTransform: "none",
+									fontFamily: "Ubuntu",
+									fontSize: "13px",
+									alignSelf: "flex-start",
+									color: "primary.light"
+								}}
+							>
+								{s.buttonText}
+							</Button>
+						</Box>
+					))}
+				</Box>
+			</Box>
+
+			<Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", mt: 4, gap: 2 }}>
+				<Box
+					component="button"
+					onClick={prev}
+					disabled={current === 0}
+					sx={{
+						background: "none",
+						border: "none",
+						cursor: current === 0 ? "default" : "pointer",
+						fontSize: "1.4rem",
+						color: current === 0 ? "text.disabled" : "primary.light",
+						lineHeight: 1,
+						p: 0
+					}}
+				>
+					‹
+				</Box>
+				{slides.map((_, i) => (
+					<Box
+						key={i}
+						onClick={() => setCurrent(i)}
+						sx={{
+							width: i === current ? 20 : 8,
+							height: 8,
+							borderRadius: 4,
+							bgcolor: i === current ? "primary.light" : "action.disabled",
+							cursor: "pointer",
+							transition: "all 0.3s ease"
+						}}
+					/>
+				))}
+				<Box
+					component="button"
+					onClick={next}
+					disabled={current === slides.length - 1}
+					sx={{
+						background: "none",
+						border: "none",
+						cursor: current === slides.length - 1 ? "default" : "pointer",
+						fontSize: "1.4rem",
+						color: current === slides.length - 1 ? "text.disabled" : "primary.light",
+						lineHeight: 1,
+						p: 0
+					}}
+				>
+					›
+				</Box>
+			</Box>
+		</Box>
+	);
+};
+
+const GettingStarted = () => {
+	const { t, i18n } = useTranslation();
+	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
+	const [activeStep, setActiveStep] = useState(0);
+	const activeStepRef = useRef(0);
+	const sectionRef = useRef(null);
+	const lastWheelTime = useRef(0);
+
+	const slides = useMemo(
+		() => [
+			{
+				number: 1,
+				title: t("Howitworks.Step1Title"),
+				description: t("Howitworks.Step1Desc"),
+				image: "/Download-copy.png",
+				buttonText: t("Howitworks.Step1Button", "Download"),
+				link: "/download"
+			},
+			{
+				number: 2,
+				title: t("Howitworks.Step2Title"),
+				description: t("Howitworks.Step2Desc"),
+				image: "/Login-half.png",
+				buttonText: t("Howitworks.Step2Button", "Learn More"),
+				link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-2-create-an-account"
+			},
+			{
+				number: 3,
+				title: t("Howitworks.Step3Title"),
+				description: t("Howitworks.Step3Desc"),
+				image: "/saveplatform-copy.png",
+				buttonText: t("Howitworks.Step3Button", "Set Up Now"),
+				link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-5-save-access-to-platforms"
+			},
+			{
+				number: 4,
+				title: t("Howitworks.Step4Title"),
+				description: t("Howitworks.Step4Desc"),
+				image: "/Gateway-copy.png",
+				buttonText: t("Howitworks.Step4Button", "Select a Gateway"),
+				link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-6-choose-a-gateway-client"
+			},
+			{
+				number: 5,
+				title: t("Howitworks.Step5Title"),
+				description: t("Howitworks.Step5Desc"),
+				image: "/saveplatform-copy.png",
+				buttonText: t("Howitworks.Step5Button", "Start Messaging"),
+				link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-3-compose-your-message-and-send-as-sms"
+			}
+		],
+		[t]
+	);
+
+	const goToStep = (index) => {
+		activeStepRef.current = index;
+		setActiveStep(index);
+	};
+
+	useEffect(() => {
+		const el = sectionRef.current;
+		if (!el) return;
+
+		const onWheel = (e) => {
+			const { top, bottom } = el.getBoundingClientRect();
+			if (top > 60 || bottom < window.innerHeight - 60) return;
+
+			const dir = e.deltaY > 0 ? 1 : -1;
+
+			if (dir > 0 && activeStepRef.current >= slides.length - 1) return;
+			if (dir < 0 && activeStepRef.current <= 0) return;
+
+			e.preventDefault();
+
+			const now = Date.now();
+			if (now - lastWheelTime.current < 650) return;
+			lastWheelTime.current = now;
+
+			const next = activeStepRef.current + dir;
+			activeStepRef.current = next;
+			setActiveStep(next);
+		};
+
+		const onIntersect = ([entry]) => {
+			if (entry.isIntersecting && entry.boundingClientRect.top > window.innerHeight * 0.3) {
+				activeStepRef.current = 0;
+				setActiveStep(0);
+			}
+		};
+
+		const observer = new IntersectionObserver(onIntersect, { threshold: 0.1 });
+		observer.observe(el);
+		window.addEventListener("wheel", onWheel, { passive: false });
+
+		return () => {
+			observer.disconnect();
+			window.removeEventListener("wheel", onWheel);
+		};
+	}, [slides.length]);
+
+	return (
+		<Box dir={isRtl ? "rtl" : "ltr"}>
+			<Box
+				ref={sectionRef}
+				sx={{
+					display: { xs: "none", md: "flex" },
+					flexDirection: "column",
+					justifyContent: "center",
+					height: "100vh",
+					px: { md: 6, lg: 10 },
+					py: 4,
+					boxSizing: "border-box"
+				}}
+			>
+				<Box sx={{ textAlign: "center", mb: 10 }}>
+					<Typography
+						variant="h3"
+						sx={{
+							fontSize: { md: "2rem", xs: "1.5rem" },
+							color: "text.primary",
+							fontWeight: 700,
+							fontFamily: "'Unbounded', Ubuntu"
+						}}
+					>
+						{t("Howitworks.Header", "Getting Started with RelaySMS")}
+					</Typography>
+					<Typography
+						variant="body1"
+						sx={{
+							fontSize: "1.1rem",
+							color: "text.secondary",
+							mt: 1,
+							fontFamily: "Ubuntu"
+						}}
+					>
+						{t(
+							"Howitworks.SubHeader",
+							"Learn how to set up and use RelaySMS for seamless offline communication."
+						)}
+					</Typography>
+				</Box>
+
+				<Box
+					sx={{
+						display: "flex",
+						flexDirection: isRtl ? "row-reverse" : "row",
+						gap: { md: 6, lg: 10 },
+						maxWidth: 1200,
+						mx: "auto",
+						width: "100%",
+						alignItems: "center"
+					}}
+				>
+					<Box
+						sx={{
+							flex: 1,
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center"
+						}}
+					>
+						{slides.map((slide, index) => {
+							const isActive = activeStep === index;
+							return (
+								<Box
+									key={index}
+									onClick={() => goToStep(index)}
+									sx={{
+										cursor: "pointer",
+										borderLeftWidth: "3px",
+										borderLeftStyle: "solid",
+										borderLeftColor: isActive ? "primary.light" : "transparent",
+										pl: 3,
+										py: isActive ? 2 : 1,
+										transition: "all 0.3s ease",
+										opacity: isActive ? 1 : 0.3,
+										"&:hover": { opacity: isActive ? 1 : 0.55 }
+									}}
+								>
+									{/* <Typography
+										sx={{
+											color: "primary.light",
+											fontWeight: 700,
+											letterSpacing: "0.15em",
+											fontFamily: "Ubuntu",
+											fontSize: "0.7rem",
+											textTransform: "uppercase",
+											mb: 0.25
+										}}
+									>
+										Step {slide.number}
+									</Typography> */}
+									<Typography
+										variant="h6"
+										sx={{
+											fontFamily: "'Unbounded', Ubuntu",
+											fontWeight: 700,
+											color: "text.primary",
+											lineHeight: 1.3
+										}}
+									>
+										{slide.title}
+									</Typography>
+
+									<Box
+										sx={{
+											overflow: "hidden",
+											maxHeight: isActive ? "220px" : "0px",
+											opacity: isActive ? 1 : 0,
+											transition: "max-height 0.45s ease, opacity 0.35s ease",
+											mt: isActive ? 1.5 : 0
+										}}
+									>
+										<Typography
+											variant="body1"
+											sx={{
+												fontFamily: "Ubuntu",
+												color: "text.secondary",
+												lineHeight: 1.8,
+												mb: 2,
+												"& a": {
+													textDecoration: "none",
+													color: "primary.light"
+												}
+											}}
+											dangerouslySetInnerHTML={{
+												__html: DOMPurify.sanitize(slide.description)
+											}}
+										/>
+										<Button
+											variant="text"
+											href={slide.link}
+											target="_blank"
+											rel="noopener noreferrer"
+											onClick={(e) => e.stopPropagation()}
+											endIcon={<FiExternalLink style={{ marginLeft: 4 }} />}
+											sx={{
+												textTransform: "none",
+												py: 0.75,
+												fontFamily: "Ubuntu",
+												color: "primary.light"
+											}}
+										>
+											{slide.buttonText}
+										</Button>
+									</Box>
+								</Box>
+							);
+						})}
+
+						<Typography
+							sx={{
+								mt: 3,
+								fontFamily: "Ubuntu",
+								fontSize: "0.75rem",
+								color: "text.secondary",
+								letterSpacing: "0.05em"
+							}}
+						>
+							{t("Howitworks.ScrollHint", "Scroll to advance steps")}
+						</Typography>
+					</Box>
+
+					<Box
+						sx={{
+							flex: 1,
+							position: "relative",
+							height: "55vh"
+						}}
+					>
 						{slides.map((slide, index) => (
 							<Box
 								key={index}
+								component="img"
+								src={slide.image}
+								alt={slide.title}
 								sx={{
-									flexGrow: 1,
-									width: { xs: "100%", sm: "90%", md: "80%", lg: "70%", xl: "65%" },
-									maxWidth: 1200,
-									marginX: "auto",
-									p: { xs: 4, sm: 5, md: 6, lg: 4 },
-									borderRadius: 4,
-									minHeight: 360,
-									display: "flex",
-									flexDirection: { xs: "column", md: "row" },
-									alignItems: "center",
-									justifyContent: "space-between",
-									gap: { xs: 3, md: 4 },
-									transition: "transform 0.3s ease, box-shadow 0.3s ease"
+									position: "absolute",
+									inset: 0,
+									width: "100%",
+									height: "100%",
+									objectFit: "contain",
+									opacity: activeStep === index ? 1 : 0,
+									transition: "opacity 0.5s ease",
+									pointerEvents: "none"
 								}}
-							>
-								<Grid container spacing={2}>
-									<Grid item xs={12} md={6}>
-										<Item
-											sx={{
-												textAlign: "center",
-												px: { xs: 2, sm: 4, md: 6 },
-												py: { xs: 2, md: 4 },
-												display: "flex",
-												flexDirection: "column",
-												alignItems: "center",
-												justifyContent: "center",
-												height: "100%"
-											}}
-										>
-											<Box
-												sx={{
-													width: { md: 50, xs: 40 },
-													height: { md: 50, xs: 40 },
-													borderRadius: "50%",
-													backgroundColor: "#EBF0FF",
-													color: "#000000db",
-													display: "flex",
-													alignItems: "center",
-													justifyContent: "center",
-													fontSize: {md: "1.3rem", xs: "1.2rem"},
-													fontWeight: "bold",
-													fontFamily: "'Unbounded', Ubuntu",
-													mb: 3,
-													transition: "all 0.3s ease",
-													"&:hover": {
-														transform: "scale(1.1)",
-														boxShadow: "0 6px 15px rgba(255, 158, 67, 0.4)"
-													}
-												}}
-											>
-												{slide.number}
-											</Box>
-
-											<Typography
-												variant="h5"
-												fontWeight="600"
-												color="#2D2A5A"
-												sx={{
-													fontFamily: "'Unbounded', Ubuntu",
-													letterSpacing: "0.05em",
-													mb: 2,
-													fontSize: { md: "1.3rem", xs: "1.25rem" }
-												}}
-											>
-												{slide.title}
-											</Typography>
-
-											<Typography
-												variant="body1"
-												color="#555"
-												sx={{
-													fontFamily: "Ubuntu",
-													maxWidth: 500,
-													fontSize: { xs: "0.9rem", md: "1.125rem" },
-													lineHeight: 1.7,
-													mb: 4,
-													mx: "auto",
-													"& a": {
-														textDecoration: "none",
-														color: "#000158"
-													}
-												}}
-												dangerouslySetInnerHTML={{
-													__html: DOMPurify.sanitize(slide.description)
-												}}
-											/>
-
-											<Button
-												variant="contained"
-												href={slide.link}
-												target="_blank"
-												rel="noopener noreferrer"
-												sx={{
-													backgroundColor: "#001871",
-													textTransform: "none",
-													// py: 1,
-													px: 4,
-													fontFamily: "Ubuntu",
-													fontSize: { xs: "12px", md: "16px" },
-													transition: "all 0.3s ease-in-out",
-													"&:hover": {
-														transform: "translateY(-3px)",
-														boxShadow: "0 12px 30px rgba(209, 218, 252, 1)"
-													}
-												}}
-											>
-												{slide.buttonText}
-											</Button>
-										</Item>
-									</Grid>
-
-									<Grid item xs={12} md={5}>
-										<Item
-											sx={{
-												display: "flex",
-												justifyContent: 'center',
-												alignItems: "center",
-												px: { xs: 2, sm: 4, md: 6 },
-												pt: { xs: 2, md: 1 },
-												bgcolor: "#FFF1E4",
-												borderRadius: { md: 4, xs: 2 },
-												border: "1px solid #e9ecef"
-											}}
-										>
-											<Box
-												component="img"
-												src={slide.image}
-												alt={slide.title}
-												sx={{
-													width: { xs: "100%", sm: "70%", md: "90%", xl: "100%" },
-													height: "auto",
-													maxHeight: 500,
-													objectFit: "contain"
-												}}
-											/>
-										</Item>
-									</Grid>
-								</Grid>
-							</Box>
+							/>
 						))}
-					</Slider>
+					</Box>
 				</Box>
-			</Container>
+			</Box>
+
+			<MobileCarousel slides={slides} t={t} />
 		</Box>
 	);
 };

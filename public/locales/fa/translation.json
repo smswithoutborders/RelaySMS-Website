@@ -22,7 +22,7 @@
 	},
 	"Landing": {
 		"span": "بدون داده؟ نگران نباشید.",
-		"h1": "بدون اینترنت؟ مشکلی نیست. RelaySMS شما را متصل نگه می‌دارد.",
+		"h1": "حتی بدون دسترسی به اینترنت متصل بمانید.",
 		"h2": "RelaySMS به کاربران امکان ارسال پیام به پلتفرم‌های آنلاین بدون داشتن اینترنت فعال را می‌دهد. پیام‌ها از طریق SMS از دستگاه شما ارسال می‌شوند.",
 		"Android": "دانلود RelaySMS ",
 		"GatewayClient":  "راه‌اندازی کلاینت درگاه",
@@ -51,7 +51,9 @@
 		"Step4Button": "راه‌اندازی گیت‌وی",
 		"Step5Title": "ارسال پیام‌ها",
 		"Step5Desc": "پیام‌ها را آفلاین بنویسید و به صورت SMS به شماره گیت‌وی ارسال کنید؛ ارتباط کاملاً رمزگذاری‌شده.",
-		"Step5Button": "شروع پیام‌رسانی"
+		"Step5Button": "شروع پیام‌رسانی",
+		"StepLabel": "مرحله",
+		"ScrollHint": "برای پیشروی مراحل اسکرول کنید"
 	},
 	"Blog": {
 		"Header": "مطالب وبلاگ",
@@ -124,6 +126,11 @@
 		"GitHub": "گیت‌هاب",
 		"DeveloperDocs": "مستندات توسعه‌دهنده",
 		"Contributing": "مشارکت",
+		"Tutorials": "آموزش‌ها",
+		"AndroidTutorial": "آموزش اندروید",
+		"iOSTutorial": "آموزش iOS",
+		"GatewayClientSetup": "راه‌اندازی کلاینت گیت‌وی",
+		"Troubleshooting": "عیب‌یابی",
 		"PrivacyPolicy": "سیاست حفظ حریم خصوصی",
 		"AuditReport": "گزارش ممیزی",
 		"Jobs": "فرصت‌های شغلی",
@@ -252,16 +259,24 @@
 		"iosDescription": "اکنون در فروشگاه اپل در دسترس است."
 	},
 	"WhoShouldUse": {
-		"Header": "همه می‌توانند از RelaySMS استفاده کنند.",
-		"Description": "هر کسی که اتصال ضعیف اینترنت دارد یا در منطقه‌ای زندگی می‌کند که مستعد قطع اینترنت است، باید از RelaySMS برای دور زدن قطعی‌ها و ماندن در ارتباط استفاده کند. اکثر کاربران RelaySMS در حال حاضر در آفریقا و هند زندگی می‌کنند—اما این اپ در سراسر جهان قابل استفاده است.",
+		"Header": "همه می‌توانند از RelaySMS استفاده کنند",
+		"Description": "هر کسی که اتصال ضعیف اینترنت دارد یا در منطقه‌ای زندگی می‌کند که مستعد قطع اینترنت است، باید از RelaySMS برای دور زدن قطعی‌ها و ماندن در ارتباط استفاده کند. پس از راه‌اندازی RelaySMS روی تلفن خود، می‌توانید پیام‌هایی را به پلتفرم پیام‌رسانی آنلاین مورد علاقه‌تان بدون استفاده از هیچ داده‌ای ارسال کنید (نرخ‌های استاندارد SMS اعمال خواهد شد).",
 		"AndroidButton": "دانلود برای اندروید",
-		"iOSButton": "دانلود برای iOS"
+		"iOSButton": "دانلود برای iOS",
+		"FlowNodes": {
+			"relaySublabel": "گوشی شما",
+			"encryptedLabel": "رمزگذاری شده",
+			"encryptedSublabel": "SMS",
+			"relayCloudLabel": "ابر رله",
+			"relayCloudSublabel": "دروازه",
+			"platformLabel": "پلتفرم",
+			"platformSublabel": "تحویل داده شد"
+		}
 	},
 	"HowRelaySMSWorks": {
-		"Header": "نحوه کارکرد",
+		"Header": "نحوه عملکرد",
 		"Description1": "RelaySMS از پیام‌رسانی SMS (به عبارت دیگر «پیام متنی») برای هدایت پیام‌های آفلاین به آنلاین استفاده می‌کند.",
-		"Description2": "پس از راه‌اندازی RelaySMS روی تلفن خود، می‌توانید به‌طور یکپارچه متصل شوید و پیام‌هایی را در پلتفرم‌های پیام‌رسانی آنلاین مورد علاقه‌تان ارسال کنید بدون استفاده از هیچ داده‌ای (نرخ‌های استاندارد SMS اعمال خواهد شد).",
-		"Description3": "کلید RelaySMS در استفاده از کلاینت‌های Gateway قرار دارد. این دستگاه‌ها در مناطقی با اتصال فعال اینترنت کار می‌کنند و به آن‌ها اجازه می‌دهند پیام SMS از کاربر آفلاین RelaySMS دریافت کنند و سپس آن را به سرور آنلاینی که کاربر قبلاً مجوزهای پلتفرم خود را ذخیره کرده، ارسال کنند.",
+		"Description2": "کلید RelaySMS در استفاده از کلاینت‌های Gateway قرار دارد. این دستگاه‌ها در مناطقی با اتصال فعال اینترنت کار می‌کنند و به آن‌ها اجازه می‌دهند پیام SMS از کاربر آفلاین RelaySMS دریافت کنند و سپس آن را به سرور آنلاینی که کاربر قبلاً مجوزهای پلتفرم خود را ذخیره کرده، ارسال کنند.",
 		"TrainingTitle": "دانلود راهنماهای آموزشی",
 		"EnglishPDF": "راهنمای انگلیسی (PDF)",
 		"FrenchPDF": "راهنمای فرانسوی (PDF)",
@@ -269,11 +284,12 @@
 	},
 	"GatewayClient": {
 		"Header": "راه‌اندازی کلاینت Gateway",
-		"Description": "راه‌اندازی کلاینت gateway به شما و هر کسی که آن را با او به اشتراک می‌گذارید اجازه می‌دهد پیام‌هایی را با استفاده از شماره شما ارسال کنید. این کاملاً اختیاری است، اما اگر تصمیم به راه‌اندازی آن دارید، فقط دستورالعمل‌های زیر را دنبال کنید.",
+		"Description": "کلاینت‌های گیت‌وی دستگاه‌هایی با اینترنت فعال هستند که به عنوان پل بین کاربران آفلاین و پلتفرم‌های آنلاین عمل می‌کنند. وقتی بدون اینترنت پیامی ارسال می‌کنید، از طریق SMS به کلاینت گیت‌وی می‌رود که آن را به پلتفرم انتخابی شما ارسال می‌کند. در برنامه، کلاینت‌های گیت‌وی در زیر تب کشورها فهرست شده‌اند. می‌توان آن‌ها را با استفاده از برنامه DekuSMS راه‌اندازی کرد.",
 		"ReadMore": "بیشتر بخوانید"
 	},
 	"SupportedPlatforms": {
 		"Header": "پلتفرم‌های پشتیبانی‌شده",
+		"SubText": "پیام‌ها را با استفاده از RelaySMS به <bold>{{platform}}</bold> ارسال کنید.",
 		"Description": "با استفاده از RelaySMS از طریق SMS به این پلتفرم‌های آنلاین پیام ارسال کنید، حتی زمانی که دسترسی به اینترنت ندارید.",
 		"Error": "بارگیری پلتفرم‌های پشتیبانی‌شده امکان‌پذیر نیست. لطفاً بعداً دوباره تلاش کنید.",
 		"Note": "پلتفرم‌های بیشتری به‌طور مداوم اضافه می‌شوند. منتظر به‌روزرسانی‌ها باشید!"
@@ -313,6 +329,110 @@
 			"content": "محتوا"
 		},
 		"documentationError": "خطا در بارگیری مستندات. لطفاً دوباره تلاش کنید."
+	},
+	"AppFeatures": {
+		"Header": "ویژگی‌های برنامه",
+		"Subheader": "مقایسه آنچه در اندروید، iOS و دسکتاپ در دسترس است.",
+		"Features": {
+			"OfflineMessaging": "پیام‌رسانی آفلاین از طریق SMS",
+			"Gmail": "Gmail",
+			"Twitter": "Twitter / X",
+			"Telegram": "Telegram",
+			"GatewaySetup": "راه‌اندازی کلاینت گیت‌وی",
+			"DarkMode": "حالت تاریک",
+			"MultiLanguage": "پشتیبانی چند زبانه",
+			"E2EEncryption": "رمزگذاری سرتاسری",
+			"OpenSource": "رایگان و متن‌باز"
+		},
+		"Platforms": {
+			"Android": {
+				"label": "اندروید",
+				"badge": "در دسترس در Google Play",
+				"imageAlt": "RelaySMS در اندروید"
+			},
+			"iOS": {
+				"label": "iOS",
+				"badge": "در دسترس در App Store",
+				"imageAlt": "RelaySMS در iOS"
+			},
+			"Desktop": {
+				"label": "دسکتاپ",
+				"badge": "برنامه وب و دسکتاپ",
+				"imageAlt": "RelaySMS دسکتاپ"
+			}
+		}
+	},
+	"Navbar": {
+		"Theme": {
+			"Light": "روشن",
+			"Dark": "تاریک",
+			"System": "سیستم"
+		}
+	},
+	"Contributing": {
+		"Hero": {
+			"eyebrow": "متن‌باز",
+			"title": "به جامعه مشارکت‌کنندگان RelaySMS بپیوندید",
+			"subtitle": "RelaySMS متن‌باز و جامعه‌محور است. چه کد بنویسید، مشکل گزارش دهید یا مستندسازی را بهبود بخشید — هر مشارکتی اهمیت دارد.",
+			"cta": "مشاهده در GitHub",
+			"docs": "مطالعه مستندات"
+		},
+		"Ways": {
+			"title": "روش‌های مشارکت",
+			"subtitle": "راه‌های زیادی برای مشارکت وجود دارد — آنچه با مهارت‌های شما تناسب است را انتخاب کنید.",
+			"ReportBug": {
+				"title": "گزارش اشکال",
+				"description": "چیزی خراب دیدید؟ یک issue در GitHub باز کنید تا بررسی شود."
+			},
+			"WriteCode": {
+				"title": "نوشتن کد",
+				"description": "یک 'good-first-issue' بردارید یا یک باگ موجود را برطرف کنید — همه سطح‌ها خوشآمد هستند."
+			},
+			"ImproveDoc": {
+				"title": "بهبود مستندات",
+				"description": "راهنمایاها را واضح‌تر کنید، غلط املایی را درست کنید یا آموزش‌های جدید اضافه کنید."
+			},
+			"HelpCommunity": {
+				"title": "کمک به جامعه",
+				"description": "به سوالات پاسخ دهید و تجربت خود را به اشتراک بگذارید."
+			}
+		},
+		"HowTo": {
+			"title": "چگونه مشارکت کنیم",
+			"subtitle": "این مراحل را دنبال کنید تا تغییرات شما در RelaySMS ادغام شود.",
+			"Steps": {
+				"Fork": {
+					"title": "فورک و کلون",
+					"description": "مخزن را در GitHub فورک کنید و فورک خود را به صورت محلی کلون کنید."
+				},
+				"Branch": {
+					"title": "ساختن شاخه",
+					"description": "یک شاخه جدید از شاخه dev برای ویژگی یا رفع اشکال ایجاد کنید."
+				},
+				"Commit": {
+					"title": "انجام تغییرات",
+					"description": "تغییرات خود را انجام دهید و با پیام‌های کامیت واضح ثبت کنید."
+				},
+				"PR": {
+					"title": "باز کردن Pull Request",
+					"description": "شاخه خود را پوش دهید و یک pull request به سمت شاخه dev برای بررسی باز کنید."
+				}
+			}
+		},
+		"Repos": {
+			"title": "مخازن ما",
+			"subtitle": "پروژه‌ای را انتخاب کنید. همه مخازن دارای مجوزنامه GPL-3.0 هستند.",
+			"openIssues": "مشکلات",
+			"goodFirstIssue": "اولین issue مناسب",
+			"viewAll": "مشاهده همه مخازن",
+			"Android": { "description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like Android Apps which posses well tested tools for security" },
+			"iOS": { "description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like iOS Apps which posses well tested tools for security" },
+			"Publisher": { "description": "Publisher is the middle-ware that sits between the Gateway Server and the SMSWithoutBorder backend. It does the handshake between the necessary parties and performs the request to decrypt the encrypted stored tokens." },
+			"Vault": { "description": "A secure access token management system for safe message publishing." },
+			"GatewayServer": { "description": "Gateway-servers enables the users to synchronize and communicate with the publisher module" },
+			"BridgeServer": { "description": "The bridge is a technology designed to allow users to communicate with online platforms via SMS, even without an active internet connection. It enables a secure handshake and encrypted message exchange entirely over SMS." },
+			"Website": { "description": "RelaySMS Homepage" }
+		}
 	},
 	"404": {
 		"title": "اوه! صفحه پیدا نشد",

@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FormControl, Select, MenuItem, Button, Box } from "@mui/material";
+import { FormControl, Select, MenuItem, Box } from "@mui/material";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
+import { useTheme } from "@mui/material/styles";
 
-const LanguageSwitcher = ({ theme = "light" }) => {
+const LanguageSwitcher = ({ theme: themeProp }) => {
 	const { i18n } = useTranslation();
 	const [selectedLang, setSelectedLang] = useState("en");
+	const muiTheme = useTheme();
+	const isDark = themeProp === "dark" || (!themeProp && muiTheme.palette.mode === "dark");
+	const textColor = isDark ? "#ffffff" : muiTheme.palette.text.primary;
+	const bgColor = isDark ? "#2d2d2d" : muiTheme.palette.background.paper;
+	const hoverColor = isDark ? "#404040" : muiTheme.palette.action.hover;
 
 	const languages = {
 		en: { flag: "🇺🇸", name: "English" },
@@ -43,14 +49,9 @@ const LanguageSwitcher = ({ theme = "light" }) => {
 	};
 
 	const getThemeStyles = () => ({
-		color: theme === "dark" ? "#ffffff" : "#2d2e2eff",
-		"& .MuiSelect-icon": {
-			color: theme === "dark" ? "#ffffff" : "#2d2e2eff",
-		},
-		"& .MuiInput-underline": {
-			borderBottomColor: theme === "dark" ? "#ffffff" : "#2d2e2eff",
-		},
-		
+		color: textColor,
+		"& .MuiSelect-icon": { color: textColor },
+		"& .MuiInput-underline": { borderBottomColor: textColor }
 	});
 
 	return (
@@ -59,7 +60,7 @@ const LanguageSwitcher = ({ theme = "light" }) => {
 				value={selectedLang}
 				onChange={(e) => handleLanguageChange(e.target.value)}
 				sx={getThemeStyles()}
-				IconComponent={theme === "dark" ? KeyboardArrowUp : KeyboardArrowDown}
+				IconComponent={isDark ? KeyboardArrowDown : KeyboardArrowDown}
 				renderValue={(value) => (
 					<Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
 						<span>{languages[value]?.flag}</span>
@@ -67,27 +68,31 @@ const LanguageSwitcher = ({ theme = "light" }) => {
 					</Box>
 				)}
 				MenuProps={{
-					anchorOrigin: theme === "dark" ? {
-						vertical: 'top',
-						horizontal: 'left',
-					} : {
-						vertical: 'bottom',
-						horizontal: 'left',
-					},
-					transformOrigin: theme === "dark" ? {
-						vertical: 'bottom',
-						horizontal: 'left',
-					} : {
-						vertical: 'top',
-						horizontal: 'left',
-					},
+					anchorOrigin: isDark
+						? {
+								vertical: "top",
+								horizontal: "left"
+							}
+						: {
+								vertical: "bottom",
+								horizontal: "left"
+							},
+					transformOrigin: isDark
+						? {
+								vertical: "bottom",
+								horizontal: "left"
+							}
+						: {
+								vertical: "top",
+								horizontal: "left"
+							},
 					PaperProps: {
 						sx: {
-							bgcolor: theme === "dark" ? "#2d2d2d" : "#ffffff",
-							color: theme === "dark" ? "#ffffff" : "#2d2e2eff",
+							bgcolor: bgColor,
+							color: textColor,
 							"& .MuiMenuItem-root": {
 								"&:hover": {
-									backgroundColor: theme === "dark" ? "#404040" : "#f5f5f5",
+									backgroundColor: hoverColor
 								}
 							}
 						}
