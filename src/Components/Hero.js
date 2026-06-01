@@ -135,7 +135,7 @@ const Hero = () => {
 								{t("Landing.Android")}
 							</Button>
 							<Button
-								variant="outlined"
+								variant="text"
 								size="large"
 								onClick={() => {
 									const el = document.getElementById("training-guide");
@@ -190,7 +190,6 @@ const Hero = () => {
 			{/* ========== OTHER SECTIONS ========== */}
 			<GettingStarted />
 			<TrainingGuide />
-			<SupportedPlatforms />
 			<WhoShouldUse />
 			{/* <AppFeatures /> */}
 			<Box
@@ -214,6 +213,7 @@ const Hero = () => {
 					&nbsp;{t("Landing.auditMessage.part2")}
 				</Typography>
 			</Box>
+			<SupportedPlatforms />
 			<Blog />
 			<FAQ />
 		</>
