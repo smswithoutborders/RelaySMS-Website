@@ -74,6 +74,11 @@
 		"readTime": "2 min de lectura",
 		"loading": "Cargando publicaciones del blog...",
 		"minRead": "min de lectura",
+		"defaultAuthor": "Equipo de SMSWithoutBorders",
+		"sectionTitle": "Blogs y documentación",
+		"communityTitle": "Únete a la comunidad",
+		"communityDescription": "Haz una pregunta, comparte cómo usas RelaySMS o cuéntanos qué podría mejorar. Cada voz ayuda a que la app sea más útil para todos, especialmente en lugares donde mantenerse conectado es más difícil.",
+		"joinTelegram": "Unirse a la comunidad de Telegram",
 		"categories": {
 			"Featured": "Destacado",
 			"Article": "Artículo",

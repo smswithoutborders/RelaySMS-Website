@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Box, Typography, Grid, Button, Chip, Divider, Link } from "@mui/material";
+import { useState } from "react";
+import { Box, Typography, Grid, Button, Link } from "@mui/material";
 import {
 	FaGithub,
 	FaCodeBranch,
@@ -12,7 +12,6 @@ import {
 	FaUsers,
 	FaPenToSquare
 } from "react-icons/fa6";
-import { SiKotlin, SiSwift, SiPython, SiJavascript } from "react-icons/si";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@mui/material/styles";
 
@@ -21,13 +20,6 @@ const langColor = {
 	Swift: "#F05138",
 	Python: "#3572A5",
 	JavaScript: "#f1e05a"
-};
-
-const langIcon = {
-	Kotlin: <SiKotlin size={12} />,
-	Swift: <SiSwift size={12} />,
-	Python: <SiPython size={12} />,
-	JavaScript: <SiJavascript size={12} />
 };
 
 const FILTERS = ["All", "Kotlin", "Swift", "Python", "JavaScript"];

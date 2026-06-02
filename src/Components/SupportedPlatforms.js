@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Box, Typography, CircularProgress, Grid, Container } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useTranslation, Trans } from "react-i18next";

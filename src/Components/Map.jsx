@@ -1,9 +1,4 @@
-import ReactFlow, { 
-  Background, 
-  Controls, 
-  MarkerType,
-  ConnectionLineType 
-} from "reactflow";
+import ReactFlow, { MarkerType } from "reactflow";
 import "reactflow/dist/style.css";
 import { Box } from "@mui/material";
 import { useTranslation } from "react-i18next";

@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Container, Grid, Typography, Button, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
 

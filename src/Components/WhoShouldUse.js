@@ -1,8 +1,6 @@
-import React from "react";
 import { Box, Typography, Container, Grid, Button, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@mui/material/styles";
-import { keyframes } from "@emotion/react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import {
 	MobileOutlined,
@@ -11,27 +9,10 @@ import {
 	CheckCircleOutlined
 } from "@ant-design/icons";
 
-const travelRight = keyframes`
-  0%   { left: 0%;   opacity: 0; }
-  10%  { opacity: 1; }
-  90%  { opacity: 1; }
-  100% { left: 100%; opacity: 0; }
-`;
-const fadeSlideIn = keyframes`
-  0%   { opacity: 0; transform: translateY(4px); }
-  100% { opacity: 1; transform: translateY(0);   }
-`;
-const checkPop = keyframes`
-  0%   { transform: scale(0); opacity: 0; }
-  60%  { transform: scale(1.2); }
-  100% { transform: scale(1); opacity: 1; }
-`;
-
 const FlowAnimation = ({ t }) => {
 	const theme = useTheme();
 	const accent = theme.palette.text.primary;
 	const divider = theme.palette.divider;
-	const bg = theme.palette.background.paper;
 	const textSec = theme.palette.text.secondary;
 
 	const W = 340,
