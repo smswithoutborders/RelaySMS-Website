@@ -1,106 +1,71 @@
-import React, { useState, useEffect, useRef } from "react";
-import {
-	Box,
-	Typography,
-	Container,
-	CircularProgress,
-	IconButton
-} from "@mui/material";
-import { useTranslation } from "react-i18next";
-import { FaPause, FaPlay } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { Box, Typography, CircularProgress, Grid, Container } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { useTranslation, Trans } from "react-i18next";
+
+const capitalize = (s) => s && s.charAt(0).toUpperCase() + s.slice(1);
 
 const SupportedPlatforms = () => {
 	const { t, i18n } = useTranslation();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
+	const muiTheme = useTheme();
+	const isDark = muiTheme.palette.mode === "dark";
 	const [platforms, setPlatforms] = useState([]);
 	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
-	const [isPaused, setIsPaused] = useState(false);
-	const carouselRef = useRef(null);
+	const [hoveredPlatform, setHoveredPlatform] = useState(null);
 
 	useEffect(() => {
 		const fetchPlatforms = async () => {
 			try {
 				const response = await fetch("https://publisher.smswithoutborders.com/v1/platforms", {
 					method: "GET",
-					headers: {
-						"Content-Type": "application/json"
-					},
+					headers: { "Content-Type": "application/json" },
 					mode: "cors"
 				});
 
-				if (!response.ok) {
-					throw new Error(`HTTP error! status: ${response.status}`);
-				}
+				if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
 				const data = await response.json();
-				// console.log("Fetched platforms:", data); 
-
-				const filteredPlatforms = data.filter(
-					(platform) => platform.name !== "reliability" && platform.service_type !== "test"
-				);
-
-				setPlatforms(filteredPlatforms);
+				setPlatforms(data.filter((p) => p.name !== "reliability" && p.service_type !== "test"));
 			} catch (err) {
 				console.error("Error fetching platforms:", err);
-				setError(err.message);
-
-				const fallbackPlatforms = [
+				setPlatforms([
 					{
 						name: "gmail",
-						shortcode: "g",
-						protocol_type: "oauth2",
-						service_type: "email",
-						icon_svg:
-							"https://raw.githubusercontent.com/smswithoutborders/gmail-oauth2-adapter/main/icons/gmail.svg",
 						icon_png:
-							"https://raw.githubusercontent.com/smswithoutborders/gmail-oauth2-adapter/main/icons/gmail.png"
+							"https://raw.githubusercontent.com/smswithoutborders/gmail-oauth2-adapter/main/icons/gmail.png",
+						icon_svg:
+							"https://raw.githubusercontent.com/smswithoutborders/gmail-oauth2-adapter/main/icons/gmail.svg"
 					},
 					{
 						name: "mastodon",
-						shortcode: "m",
-						protocol_type: "oauth2",
-						service_type: "text",
-						icon_svg:
-							"https://raw.githubusercontent.com/smswithoutborders/mastodon-oauth2-adapter/main/icons/mastodon.svg",
 						icon_png:
-							"https://raw.githubusercontent.com/smswithoutborders/mastodon-oauth2-adapter/main/icons/mastodon.png"
+							"https://raw.githubusercontent.com/smswithoutborders/mastodon-oauth2-adapter/main/icons/mastodon.png",
+						icon_svg:
+							"https://raw.githubusercontent.com/smswithoutborders/mastodon-oauth2-adapter/main/icons/mastodon.svg"
 					},
 					{
 						name: "telegram",
-						shortcode: "T",
-						protocol_type: "pnba",
-						service_type: "message",
-						icon_svg:
-							"https://raw.githubusercontent.com/smswithoutborders/telegram-pnba-adapter/main/icons/telegram.svg",
 						icon_png:
-							"https://raw.githubusercontent.com/smswithoutborders/telegram-pnba-adapter/main/icons/telegram.png"
+							"https://raw.githubusercontent.com/smswithoutborders/telegram-pnba-adapter/main/icons/telegram.png",
+						icon_svg:
+							"https://raw.githubusercontent.com/smswithoutborders/telegram-pnba-adapter/main/icons/telegram.svg"
 					},
 					{
 						name: "bluesky",
-						shortcode: "b",
-						protocol_type: "oauth2",
-						service_type: "text",
-						icon_svg:
-							"https://raw.githubusercontent.com/smswithoutborders/bluesky-oauth2-adapter/main/icons/bluesky.svg",
 						icon_png:
-							"https://raw.githubusercontent.com/smswithoutborders/bluesky-oauth2-adapter/main/icons/bluesky.png"
+							"https://raw.githubusercontent.com/smswithoutborders/bluesky-oauth2-adapter/main/icons/bluesky.png",
+						icon_svg:
+							"https://raw.githubusercontent.com/smswithoutborders/bluesky-oauth2-adapter/main/icons/bluesky.svg"
 					},
 					{
 						name: "twitter",
-						shortcode: "t",
-						protocol_type: "oauth2",
-						service_type: "text",
-						icon_svg:
-							"https://raw.githubusercontent.com/smswithoutborders/twitter-oauth2-adapter/main/icons/twitter.svg",
 						icon_png:
-							"https://raw.githubusercontent.com/smswithoutborders/twitter-oauth2-adapter/main/icons/twitter.png"
+							"https://raw.githubusercontent.com/smswithoutborders/twitter-oauth2-adapter/main/icons/twitter.png",
+						icon_svg:
+							"https://raw.githubusercontent.com/smswithoutborders/twitter-oauth2-adapter/main/icons/twitter.svg"
 					}
-				];
-
-				// console.log("Using fallback platforms data");
-				setPlatforms(fallbackPlatforms);
-				setError(null);
+				]);
 			} finally {
 				setLoading(false);
 			}
@@ -111,152 +76,111 @@ const SupportedPlatforms = () => {
 
 	if (loading) {
 		return (
-			<Box
-				sx={{
-					display: "flex",
-					justifyContent: "center",
-					alignItems: "center",
-					py: 8
-				}}
-			>
-				<CircularProgress sx={{ color: "#FF9E43" }} />
+			<Box sx={{ display: "flex", justifyContent: "center", py: 8 }}>
+				<CircularProgress sx={{ color: "secondary.main" }} />
 			</Box>
 		);
 	}
 
-	if (error && platforms.length === 0) {
-		return (
-			<Box
-				sx={{
-					textAlign: "center",
-					py: 8,
-					px: 3
-				}}
-			>
-				<Typography variant="body1" color="error">
-					{t(
-						"SupportedPlatforms.Error",
-						"Unable to load supported platforms. Please try again later."
-					)}
-				</Typography>
-			</Box>
-		);
-	}
-
-	const multiPlePlatforms = [...platforms, ...platforms, ...platforms];
-
-	const togglePause = () => {
-		setIsPaused(!isPaused);
-	};
+	const displayName = capitalize(hoveredPlatform || (platforms[0]?.name ?? ""));
 
 	return (
-		<Box
+		<Container
+			maxWidth="lg"
 			dir={isRtl ? "rtl" : "ltr"}
 			sx={{
 				py: { xs: 6, md: 8 },
-				px: { xs: 3, md: 6 },
-				backgroundColor: "#ffffff"
+				px: { xs: 3, md: 6, lg: 10 },
+				bgcolor: "background.default"
 			}}
 		>
-			<Container maxWidth="lg">
-				<Box sx={{ 
-					mb: 4, 
-					display: "flex", 
-					justifyContent: "space-between", 
-					alignItems: "center" 
-				}}>
+			<Grid
+				container
+				spacing={{ xs: 5, md: 8 }}
+				alignItems="center"
+				direction={isRtl ? "row-reverse" : "row"}
+			>
+				{/* Left: text */}
+				<Grid item xs={12} md={6}>
 					<Typography
-						variant="h6"
+						variant="h4"
 						sx={{
-							fontSize: "1.2rem",
-							color: "#2D2A5A",
-							fontWeight: 600,
-							fontFamily: "Ubuntu"
+							fontSize: { xs: "1.5rem", md: "1.9rem" },
+							color: "text.primary",
+							fontWeight: 700,
+							fontFamily: "'Unbounded', Ubuntu",
+							lineHeight: 1.25,
+							mb: 1.5
 						}}
 					>
-						{t("SupportedPlatforms.Header", "Supported Platforms")}:
+						{t("SupportedPlatforms.Header", "Supported Platforms")}
 					</Typography>
-					
-					<IconButton
-						onClick={togglePause}
-						sx={{
-							backgroundColor: "#2D2A5A",
-							color: "white",
-							width: 40,
-							height: 40,
-							"&:hover": {
-								backgroundColor: "#1f1a3d",
-								transform: "scale(1.05)"
-							},
-							transition: "all 0.2s ease"
-						}}
-					>
-						{isPaused ? <FaPlay size={14} /> : <FaPause size={14} />}
-					</IconButton>
-				</Box>
 
-				<Box
-					sx={{
-						position: "relative",
-						overflow: "hidden",
-						width: "100%",
-						mb: 3
-					}}
-				>
-					<Box
-						ref={carouselRef}
+					<Typography
 						sx={{
-							display: "flex",
-							alignItems: "center",
-							gap: 4,
-							width: "max-content",
-							animation: isPaused ? "none" : "scroll 20s linear infinite",
-							"@keyframes scroll": {
-								"0%": {
-									transform: "translateX(0)"
-								},
-								"100%": {
-									transform: `translateX(-${(platforms.length * (80 + 16))}px)`
-								}
-							}
+							fontFamily: "Ubuntu",
+							fontSize: "1rem",
+							color: "text.secondary",
+							lineHeight: 1.7,
+							minHeight: "3.4em",
+							transition: "opacity 0.2s ease"
 						}}
 					>
-						{multiPlePlatforms.map((platform, index) => (
-							<Box
-								key={`${platform.name}-${index}`}
-								sx={{
-									minWidth: 80,
-									height: 80,
-									display: "flex",
-									alignItems: "center",
-									justifyContent: "center",
-									transition: "all 0.3s ease",
-									"&:hover": {
-										transform: "scale(1.1)",
-									}
-								}}
-							>
+						<Trans
+							i18nKey="SupportedPlatforms.SubText"
+							values={{ platform: displayName }}
+							components={{ bold: <strong /> }}
+						/>
+					</Typography>
+				</Grid>
+
+				<Grid item xs={12} md={6}>
+					<Grid container spacing={{ xs: 3, sm: 4 }} alignItems="center">
+						{platforms.map((platform) => (
+							<Grid item key={platform.name} xs="auto">
 								<Box
-									component="img"
-									src={platform.icon_png || platform.icon_svg}
-									alt={`${platform.name} icon`}
+									onMouseEnter={() => setHoveredPlatform(platform.name)}
+									onMouseLeave={() => setHoveredPlatform(null)}
 									sx={{
-										width: 40,
-										height: 40,
-										objectFit: "contain"
+										width: { xs: 48, sm: 56 },
+										height: { xs: 48, sm: 56 },
+										display: "flex",
+										alignItems: "center",
+										justifyContent: "center",
+										cursor: "default"
 									}}
-									onError={(e) => {
-										if (platform.icon_svg && e.target.src !== platform.icon_svg) {
-											e.target.src = platform.icon_svg;
+								>
+									<Box
+										component="img"
+										src={
+											platform.name === "twitter"
+												? isDark
+													? "/x-logo-white.png"
+													: "/x-logo-black.png"
+												: platform.icon_png || platform.icon_svg
 										}
-									}}
-								/>
-							</Box>
+										alt={platform.name}
+										sx={{
+											width: platform.name === "twitter" ? { xs: 26, sm: 32 } : { xs: 36, sm: 44 },
+											height: platform.name === "twitter" ? { xs: 26, sm: 32 } : { xs: 36, sm: 44 },
+											objectFit: "contain",
+											filter: "none",
+											transform: hoveredPlatform === platform.name ? "scale(1.15)" : "scale(1)",
+											transition: "filter 0.25s ease, transform 0.25s ease"
+										}}
+										onError={(e) => {
+											if (platform.icon_svg && e.target.src !== platform.icon_svg) {
+												e.target.src = platform.icon_svg;
+											}
+										}}
+									/>
+								</Box>
+							</Grid>
 						))}
-					</Box>
-				</Box>
-			</Container>
-		</Box>
+					</Grid>
+				</Grid>
+			</Grid>
+		</Container>
 	);
 };
 

@@ -1,5 +1,4 @@
 import { Box, Typography, Button, Container, Stack } from "@mui/material";
-import React from "react";
 import { FaArrowRight, FaHouse } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { useLanguageLink } from "../hooks/useLanguageLink";
@@ -68,8 +67,8 @@ export default function PageNotFound() {
 						size="large"
 						startIcon={<FaHouse />}
 						sx={{
-							bgcolor: "#FF9E43",
-							color: "#000158",
+							bgcolor: "secondary.main",
+							color: "primary.main",
 							fontWeight: 600,
 							py: 1.5,
 							px: 4,
@@ -79,8 +78,8 @@ export default function PageNotFound() {
 							boxShadow: "0 8px 24px rgba(255, 158, 67, 0.4)",
 							transition: "all 0.3s ease",
 							"&:hover": {
-								bgcolor: "#000158",
-								color: "#fdf1e6ff",
+								bgcolor: "primary.main",
+								color: "secondary.contrastText",
 								transform: "translateY(-2px)",
 								boxShadow: "0 12px 32px rgba(255, 158, 67, 0.6)"
 							}

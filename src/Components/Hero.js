@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -34,29 +34,30 @@ const Hero = () => {
 	}, []);
 
 	return (
-		<div>
+		<>
 			<Box
 				dir={isRtl ? "rtl" : "ltr"}
 				sx={{
-					maxWidth: 1826,
-					mx: "auto",
-					minHeight: "100vh",
-					px: { xs: 2, md: 5, lg: 10, xl: 20 },
-					pt: { xs: "140px", md: "150px", lg: "130px" },
-					pb: { xs: 4, md: 6 },
+					mx: { md: "auto", xs: 2 },
+					minHeight: { md: "100vh", xs: "95vh" },
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
 					position: "relative",
-					overflow: "hidden"
+					overflow: "hidden",
+					textAlign: "center",
+					background: (theme) =>
+						theme.palette.mode === "dark"
+							? `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(77, 125, 192, 0.25) 0%, transparent 65%),
+						   linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+						   linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`
+							: `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(0,24,113,0.09) 0%, transparent 65%),
+							   linear-gradient(rgba(0,24,113,0.05) 1px, transparent 1px),
+							   linear-gradient(90deg, rgba(0,24,113,0.05) 1px, transparent 1px)`,
+					backgroundSize: "auto, 44px 44px, 44px 44px"
 				}}
 			>
-				<Grid
-					container
-					spacing={4}
-					alignItems="center"
-					justifyContent="center"
-				>
+				<Grid container spacing={4} alignItems="center" justifyContent="center">
 					<Grid
 						item
 						xs={12}
@@ -67,9 +68,8 @@ const Hero = () => {
 							sx={{
 								mb: { xs: 2, md: 3, lg: 1 },
 								fontSize: { xs: "1.8rem", md: "2.5rem", lg: "2.3rem", xl: "3rem" },
-								textAlign: { xs: "center", md: "left" },
-								color: "#000158",
 								whiteSpace: "pre-wrap",
+								fontWeight: 700,
 								wordBreak: "break-word",
 								fontFamily: "'Unbounded', Ubuntu"
 							}}
@@ -92,117 +92,74 @@ const Hero = () => {
 							color="text.secondary"
 							paragraph
 							sx={{
-								mt: { xs: 2, md: 1.5 },
-								mb: { xs: 3, md: 2, xl: 4 },
+								mt: { xs: 2, md: 2 },
+								mb: 2,
 								fontFamily: "Ubuntu",
-								textAlign: { xs: "center", md: "left" },
 								fontSize: { xs: "16px", md: "18px", lg: "18px", xl: "20px" }
 							}}
 						>
 							{t("Landing.h2")}
 						</Typography>
-
-					<Box
-						sx={{
-							display: "flex",
-							flexDirection: { xs: "column", sm: "row" },
-							justifyContent: { xs: "center", md: "flex-start" },
-							alignItems: "center",
-							gap: 2,
-							mt: { xs: 3, md: 1 },
-							mb: { xs: 2, md: 1 },
-							width: "100%"
-						}}
-						>
-				
-							<Button
-						component={Link}
-						to="/download"
-						variant="outlined"
-						size="large"
-						sx={{
-							backgroundColor: "#001871",
-							color: "white",
-							textTransform: "none",
-							py: 1.2,
-							px: 5,
-							fontFamily: "Ubuntu",
-							fontSize: { xs: "15px", md: "16px" },
-							borderRadius: "5px",
-							transition: "all 0.3s ease-in-out",
-							width: { xs: "100%", sm: "auto" },
-							"&:hover": {
-							backgroundColor: "#001871",
-							color: "#fff",
-							transform: "translateY(-3px)",
-							boxShadow: "0 2px 8px rgba(6, 90, 217, 0.4)"
-							}
-						}}
-						>
-						{t("Landing.Android")}
-						</Button>
-
-						<Button
-						component={Link}
-						to="https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide"
-						variant="outlined"
-						size="large"
-						sx={{
-						backgroundColor: "#001871",
-							color: "white",
-							textTransform: "none",
-							py: 1.2,
-							px: 5,
-							fontFamily: "Ubuntu",
-							fontSize: { xs: "15px", md: "16px" },
-							borderRadius: "5px",
-							transition: "all 0.3s ease-in-out",
-							width: { xs: "100%", sm: "auto" },
-							"&:hover": {
-							backgroundColor: "#001871",
-							color: "#fff",
-							transform: "translateY(-3px)",
-							boxShadow: "0 2px 8px rgba(6, 90, 217, 0.4)"
-							}
-						}}
-						>
-						{t("Landing.RoutingNumbers")}
-						</Button>
-						</Box>
-
 						<Box
-							display="flex"
-							alignItems="flex-start"
-							sx={{ py: { md: 2, xl: 3 }, gap: 1, mt: { xs: 2, md: 1, xl: 3 } }}
+							sx={{
+								display: "flex",
+								flexDirection: { xs: "column", sm: "row" },
+								justifyContent: "center",
+								gap: 2,
+								mt: { xs: 3, md: 2 },
+								mb: { xs: 2, md: 1 },
+								px: { xs: 2, md: 0 },
+								width: "100%"
+							}}
 						>
-							<Typography
-								variant="body1"
+							<Button
+								component={Link}
+								to="/download"
+								variant="contained"
+								size="large"
 								sx={{
-									// fontSize: { xs: "15px", md: "20px" },
+									bgcolor: "primary.main",
+									textTransform: "none",
+									// py: 1.5,
+									// px: 6,
 									fontFamily: "Ubuntu",
-									lineHeight: 1.6,
-									textAlign: { xs: "center", md: "left" }
+									// fontSize: { xs: "15px", md: "19px" },
+									transition: "all 0.3s ease-in-out",
+									"&:hover": {
+										transform: "translateY(-3px)"
+									}
 								}}
-								color="text.secondary"
 							>
-								{t("Landing.auditMessage.part1")}&nbsp;
-								<a
-									href="https://www.opentech.fund/security-safety-audits/smswithoutborders-penetration-test/"
-									target="_blank"
-									rel="noopener noreferrer"
-									style={{
-										color: "rgba(0, 1, 88, 0.85)",
-										textDecoration: "none"
-									}}
-								>
-									{t("Landing.auditMessage.link")}
-								</a>
-								&nbsp;{t("Landing.auditMessage.part2")}
-							</Typography>
+								{t("Landing.Android")}
+							</Button>
+							<Button
+								variant="text"
+								size="large"
+								onClick={() => {
+									const el = document.getElementById("training-guide");
+									if (el) {
+										const navbarHeight = 100;
+										const top = el.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+										window.scrollTo({ top, behavior: "smooth" });
+									}
+								}}
+								sx={{
+									textTransform: "none",
+									color: (theme) =>
+										theme.palette.mode === "dark" ? "primary.light" : "primary.main",
+									fontFamily: "Ubuntu",
+									transition: "all 0.3s ease-in-out",
+									"&:hover": {
+										transform: "translateY(-3px)"
+									}
+								}}
+							>
+								{t("HowRelaySMSWorks.TrainingTitle", "Download Training Guides")}
+							</Button>
 						</Box>
 					</Grid>
 
-					<Grid
+					{/* <Grid
 						item
 						xs={12}
 						md={6}
@@ -224,18 +181,40 @@ const Hero = () => {
 								}}
 							/>
 						</Box>
-					</Grid>
+					</Grid> */}
 				</Grid>
 			</Box>
 
 			{/* ========== OTHER SECTIONS ========== */}
 			<GettingStarted />
-			<WhoShouldUse />
 			<TrainingGuide />
+			<WhoShouldUse />
+			{/* <AppFeatures /> */}
+			<Box
+				data-aos="fade-up"
+				sx={{
+					textAlign: "center",
+					px: 2,
+					pb: 4
+				}}
+			>
+				<Typography variant="body1" color="text.secondary" sx={{ fontFamily: "Ubuntu" }}>
+					{t("Landing.auditMessage.part1")}&nbsp;
+					<a
+						href="https://www.opentech.fund/security-safety-audits/smswithoutborders-penetration-testt/"
+						target="_blank"
+						rel="noopener noreferrer"
+						style={{ color: "inherit", opacity: 0.75, textDecoration: "underline" }}
+					>
+						{t("Landing.auditMessage.link")}
+					</a>
+					&nbsp;{t("Landing.auditMessage.part2")}
+				</Typography>
+			</Box>
 			<SupportedPlatforms />
 			<Blog />
 			<FAQ />
-		</div>
+		</>
 	);
 };
 

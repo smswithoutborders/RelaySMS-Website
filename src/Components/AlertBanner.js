@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
@@ -13,7 +12,7 @@ const AlertBanner = () => {
 				left: 0,
 				right: 0,
 				width: "100%",
-				backgroundColor: "#001871",
+				bgcolor: "primary.main",
 				py: 1.2,
 				px: { xs: 2, md: 5, lg: 8, xl: 20 },
 				display: "flex",
@@ -38,7 +37,7 @@ const AlertBanner = () => {
 					target="_blank"
 					rel="noopener noreferrer"
 					style={{
-						color: "#D1DAFC",
+						color: "primary.contrastText",
 						textDecoration: "underline",
 						fontWeight: "500"
 					}}

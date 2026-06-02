@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Container, Grid, Typography, Button, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
@@ -67,7 +66,7 @@ const Download = () => {
 						variant="h3"
 						sx={{
 							fontSize: { md: "2rem", xs: "1.5rem" },
-							color: "#2D2A5A",
+							color: "text.primary",
 							fontFamily: "'Unbounded', Ubuntu",
 							mt: { xs: 6, md: 0 }
 						}}
@@ -78,7 +77,7 @@ const Download = () => {
 						variant="body1"
 						sx={{
 							fontSize: "1.2rem",
-							color: "#555555",
+							color: "text.secondary",
 							fontFamily: "Ubuntu",
 							mt: 1
 						}}
@@ -93,7 +92,13 @@ const Download = () => {
 					<Grid item xs={12} md={6}>
 						<Typography
 							variant="body1"
-							sx={{ mb: 3, color: " #666", fontFamily: "Unbounded", fontWeight: 400, fontSize: "1rem" }}
+							sx={{
+								mb: 3,
+								color: " #666",
+								fontFamily: "Unbounded",
+								fontWeight: 400,
+								fontSize: "1rem"
+							}}
 							align="start"
 						>
 							{t("download.android")}
@@ -108,8 +113,9 @@ const Download = () => {
 								rel="noopener noreferrer"
 								sx={{
 									display: "flex",
-									backgroundColor: "#f8f9fa",
-									border: "1px solid #e9ecef",
+									bgcolor: "background.paper",
+									border: "1px solid",
+									borderColor: "divider",
 									alignItems: "center",
 									p: 3,
 									mb: 3,
@@ -136,7 +142,12 @@ const Download = () => {
 								<Box sx={{ flexGrow: 1 }}>
 									<Typography
 										variant="h6"
-										sx={{ fontWeight: 400, color: "#2d2a5a", mb: 0.5, fontFamily: "Unbounded" }}
+										sx={{
+											fontWeight: 400,
+											color: "text.primary",
+											mb: 0.5,
+											fontFamily: "Unbounded"
+										}}
 									>
 										{item.title}
 									</Typography>
@@ -149,13 +160,13 @@ const Download = () => {
 									sx={{
 										fontSize: "0.9rem",
 										fontFamily: "Ubuntu",
-										bgcolor: "#e9903dff",
-										color: "#000158",
+										bgcolor: "secondary.main",
+										color: "primary.main",
 										fontWeight: 400,
 										textTransform: "none",
 										ml: 3,
 										px: 4,
-										"&:hover": { bgcolor: "#d65500" }
+										"&:hover": { bgcolor: "secondary.dark" }
 									}}
 								>
 									{t("download.downloadButton")}
@@ -165,7 +176,14 @@ const Download = () => {
 
 						<Typography
 							variant="body1"
-							sx={{ mt: 6, mb: 3, color: "#666", fontFamily: "Unbounded", fontWeight: 400, fontSize: "1rem" }}
+							sx={{
+								mt: 6,
+								mb: 3,
+								color: "text.secondary",
+								fontFamily: "Unbounded",
+								fontWeight: 400,
+								fontSize: "1rem"
+							}}
 							align="start"
 						>
 							{t("download.ios")}
@@ -180,8 +198,9 @@ const Download = () => {
 								rel="noopener noreferrer"
 								sx={{
 									display: "flex",
-									backgroundColor: "#f8f9fa",
-									border: "1px solid #e9ecef",
+									bgcolor: "background.paper",
+									border: "1px solid",
+									borderColor: "divider",
 									alignItems: "center",
 									p: 3,
 									mb: 3,
@@ -208,7 +227,12 @@ const Download = () => {
 								<Box sx={{ flexGrow: 1 }}>
 									<Typography
 										variant="h6"
-										sx={{ fontWeight: 400, color: "#2d2a5a", mb: 0.5, fontFamily: "Unbounded" }}
+										sx={{
+											fontWeight: 400,
+											color: "text.primary",
+											mb: 0.5,
+											fontFamily: "Unbounded"
+										}}
 									>
 										{item.title}
 									</Typography>
@@ -219,7 +243,7 @@ const Download = () => {
 								<Button
 									variant="contained"
 									sx={{
-										bgcolor: "#000158",
+										bgcolor: "primary.main",
 										fontSize: "0.9rem",
 										fontFamily: "Ubuntu",
 										color: "#fff",
@@ -227,7 +251,7 @@ const Download = () => {
 										textTransform: "none",
 										ml: 3,
 										px: 4,
-										"&:hover": { bgcolor: "#003f8a" }
+										"&:hover": { bgcolor: "primary.dark" }
 									}}
 								>
 									{t("download.downloadButton")}
@@ -252,7 +276,8 @@ const Download = () => {
 							sx={{
 								width: "100%",
 								maxWidth: 450,
-								border: "1px solid #e9ecef",
+								border: "1px solid",
+								borderColor: "divider",
 								borderRadius: 3
 							}}
 						/>
