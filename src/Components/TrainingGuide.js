@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Button, Typography, Container, Grid } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { FaFilePdf } from "react-icons/fa";

@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect, useRef } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import DOMPurify from "dompurify";

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./Components/Footer";
 import Landing from "./Pages/Landing";
@@ -10,8 +10,6 @@ import Branding from "./Pages/Branding";
 import Navbar from "./Components/Navbar";
 import Overview from "./Pages/Overview";
 import Contributing from "./Pages/Contributing";
-import AlertBanner from "./Components/AlertBanner";
-import { AppThemeProvider } from "./ThemeContext";
 
 const ScrollToTop = () => {
 	const { pathname } = useLocation();
@@ -23,7 +21,6 @@ const ScrollToTop = () => {
 
 const App = () => {
 	return (
-		<AppThemeProvider>
 		<Router
 			future={{
 				v7_startTransition: true,
@@ -31,7 +28,6 @@ const App = () => {
 			}}
 		>
 			<ScrollToTop />
-			{/* <AlertBanner /> */}
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Landing />} />
@@ -46,7 +42,6 @@ const App = () => {
 			</Routes>
 			<Footer />
 		</Router>
-		</AppThemeProvider>
 	);
 };
 

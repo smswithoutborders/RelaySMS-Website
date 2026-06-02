@@ -1,4 +1,3 @@
-import React, { useEffect, useState, useMemo } from "react";
 import { Grid, Typography, Link } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link as RouterLink } from "react-router-dom";

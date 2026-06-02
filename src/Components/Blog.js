@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Box, Typography, Paper, Button } from "@mui/material";
 import { FaUser, FaClock } from "react-icons/fa";
-import { FaDiscord } from "react-icons/fa6";
+import { FaTelegram } from "react-icons/fa6";
 import { keyframes } from "@emotion/react";
 import { useTranslation } from "react-i18next";
 
-const DISCORD_URL = "https://discord.gg/smswithoutborders";
+const TELEGRAM_URL = "https://t.me/+IPYp6q06dWsyZjY0";
 
 const scrollLeft = keyframes`
   0% { transform: translateX(0); }
@@ -17,7 +17,7 @@ const scrollRight = keyframes`
   100% { transform: translateX(0); }
 `;
 
-const BlogCard = ({ post, calculateReadTime }) => (
+const BlogCard = ({ post, calculateReadTime, defaultAuthor, minReadLabel }) => (
 	<Paper
 		elevation={0}
 		component="a"
@@ -64,7 +64,7 @@ const BlogCard = ({ post, calculateReadTime }) => (
 				variant="caption"
 				sx={{ color: "text.secondary", fontFamily: "Ubuntu", fontWeight: 600, fontSize: "0.8rem" }}
 			>
-				{post.author || "SMSWithoutBorders Team"}
+				{post.author || defaultAuthor}
 			</Typography>
 		</Box>
 
@@ -107,13 +107,13 @@ const BlogCard = ({ post, calculateReadTime }) => (
 		<Box sx={{ display: "flex", alignItems: "center", gap: 0.75, mt: "auto" }}>
 			<FaClock size={11} color="#888" />
 			<Typography variant="caption" sx={{ color: "#888", fontFamily: "Ubuntu" }}>
-				{calculateReadTime(post.excerpt)} min read
+				{calculateReadTime(post.excerpt)} {minReadLabel}
 			</Typography>
 		</Box>
 	</Paper>
 );
 
-const MarqueeRow = ({ posts, direction, calculateReadTime }) => {
+const MarqueeRow = ({ posts, direction, calculateReadTime, defaultAuthor, minReadLabel }) => {
 	const duplicated = [...posts, ...posts];
 	return (
 		<Box
@@ -137,7 +137,13 @@ const MarqueeRow = ({ posts, direction, calculateReadTime }) => {
 				}}
 			>
 				{duplicated.map((post, i) => (
-					<BlogCard key={i} post={post} calculateReadTime={calculateReadTime} />
+					<BlogCard
+						key={i}
+						post={post}
+						calculateReadTime={calculateReadTime}
+						defaultAuthor={defaultAuthor}
+						minReadLabel={minReadLabel}
+					/>
 				))}
 			</Box>
 		</Box>
@@ -178,6 +184,8 @@ const BlogSectionNew = () => {
 	const { t, i18n } = useTranslation();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 	const [blogPosts, setBlogPosts] = useState(FALLBACK_POSTS);
+	const defaultAuthor = t("Blog.defaultAuthor");
+	const minReadLabel = t("Blog.minRead");
 
 	const calculateReadTime = (text) => {
 		const wordsPerMinute = 200;
@@ -215,7 +223,7 @@ const BlogSectionNew = () => {
 									const value = valueParts.join(":").trim().replace(/"/g, "");
 									if (key.trim() === "author") {
 										const authorMatch = content.match(/author:\s*\n\s*name:\s*"([^"]*)"/);
-										metadata.author = authorMatch ? authorMatch[1] : "SMSWithoutBorders Team";
+										metadata.author = authorMatch ? authorMatch[1] : defaultAuthor;
 									} else {
 										metadata[key.trim()] = value;
 									}
@@ -249,7 +257,7 @@ const BlogSectionNew = () => {
 
 	useEffect(() => {
 		fetchBlogPosts();
-	}, []);
+	}, [defaultAuthor]);
 
 	const half = Math.ceil(blogPosts.length / 2);
 	const row1 = blogPosts.slice(0, half);
@@ -276,20 +284,26 @@ const BlogSectionNew = () => {
 						lineHeight: 1.2
 					}}
 				>
-					Blogs &amp; Documentation
+					{t("Blog.sectionTitle")}
 				</Typography>
 			</Box>
 
 			{/* ── Marquee Rows ── */}
 			{row1.length > 0 && (
-				<MarqueeRow posts={row1} direction="left" calculateReadTime={calculateReadTime} />
+				<MarqueeRow
+					posts={row1}
+					direction="left"
+					calculateReadTime={calculateReadTime}
+					defaultAuthor={defaultAuthor}
+					minReadLabel={minReadLabel}
+				/>
 			)}
 			{/* {row2.length > 0 && (
 				<MarqueeRow posts={row2} direction="right" calculateReadTime={calculateReadTime} />
 			)} */}
 
 			{/* ── Join the Community ── */}
-			{/* <Box
+			<Box
 				sx={{
 					mt: { xs: 6, md: 12 },
 					mx: { xs: 3, md: 6 },
@@ -314,7 +328,7 @@ const BlogSectionNew = () => {
 						lineHeight: 1.25
 					}}
 				>
-					Join the community
+					{t("Blog.communityTitle")}
 				</Typography>
 				<Typography
 					sx={{
@@ -325,16 +339,15 @@ const BlogSectionNew = () => {
 						lineHeight: 1.75
 					}}
 				>
-					RelaySMS is built for everyone. Connect with users and developers who believe in open,
-					accessible communication — even without the internet.
+					{t("Blog.communityDescription")}
 				</Typography>
 				<Button
 					component="a"
-					href={DISCORD_URL}
+					href={TELEGRAM_URL}
 					target="_blank"
 					rel="noopener noreferrer"
 					variant="contained"
-					startIcon={<FaDiscord size={18} />}
+					startIcon={<FaTelegram size={18} />}
 					sx={{
 						bgcolor: "primary.main",
 						color: "#ffffff",
@@ -348,9 +361,9 @@ const BlogSectionNew = () => {
 						"&:hover": { bgcolor: "primary.dark" }
 					}}
 				>
-					Join Discord
+					{t("Blog.joinTelegram")}
 				</Button>
-			</Box> */}
+			</Box>
 		</Box>
 	);
 };

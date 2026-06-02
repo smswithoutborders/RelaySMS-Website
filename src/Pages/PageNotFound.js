@@ -1,5 +1,4 @@
 import { Box, Typography, Button, Container, Stack } from "@mui/material";
-import React from "react";
 import { FaArrowRight, FaHouse } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { useLanguageLink } from "../hooks/useLanguageLink";

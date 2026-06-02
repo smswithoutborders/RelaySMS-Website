@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 import { useTranslation } from "react-i18next";
-import { Grid, Typography, Box, Button, Container } from "@mui/material";
+import { Grid, Typography, Box, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -13,8 +13,6 @@ import FAQ from "./FAQ";
 import WhoShouldUse from "./WhoShouldUse";
 import SupportedPlatforms from "./SupportedPlatforms";
 import TrainingGuide from "./TrainingGuide";
-import AppFeatures from "./AppFeatures";
-import { ArrowDownOutlined } from "@ant-design/icons";
 
 const Hero = () => {
 	const [showCursor, setShowCursor] = useState(true);

@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Typography, Paper, Divider, Button, Grid } from "@mui/material";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
