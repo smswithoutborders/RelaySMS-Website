@@ -18,6 +18,7 @@ const Footer = () => {
 		{
 			title: t("Footer.Resources"),
 			links: [
+				{ label: t("Footer.Changelog", "Changelog"), to: "/changelog" },
 				{ label: t("Footer.Blog"), href: "https://blog.smswithoutborders.com/", external: true },
 				{ label: t("Footer.BrandResources"), to: "/branding" },
 				{ label: t("Footer.SystemOverview"), to: "/system-overview" }
