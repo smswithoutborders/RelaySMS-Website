@@ -9,7 +9,9 @@ import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Tooltip from "@mui/material/Tooltip";
+import Divider from "@mui/material/Divider";
 import MenuIcon from "@mui/icons-material/Menu";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import { SiBluesky } from "react-icons/si";
@@ -21,6 +23,7 @@ export default function Navigation() {
 	const { t, i18n } = useTranslation();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 	const [anchorElNav, setAnchorElNav] = useState(null);
+	const [anchorElDevelopers, setAnchorElDevelopers] = useState(null);
 	const [scrolled, setScrolled] = useState(false);
 	const muiTheme = useTheme();
 	const { mode, setMode } = useThemeMode();
@@ -61,12 +64,31 @@ export default function Navigation() {
 		{ label: t("Nav.Overview"), to: "/system-overview" }
 	];
 
+	const developerLinks = [
+		{ label: t("Nav.Changelog", "Changelog"), to: "/changelog" },
+		{ label: t("Footer.BrandResources", "Brand Resources"), to: "/branding" },
+		{ label: t("Footer.Contributing", "Contributing"), to: "/contributing" },
+		{
+			label: t("Footer.Troubleshooting", "Troubleshooting"),
+			href: "https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ",
+			external: true
+		}
+	];
+
 	const handleOpenNavMenu = (event) => {
 		setAnchorElNav(event.currentTarget);
 	};
 
 	const handleCloseNavMenu = () => {
 		setAnchorElNav(null);
+	};
+
+	const handleOpenDevelopersMenu = (event) => {
+		setAnchorElDevelopers(event.currentTarget);
+	};
+
+	const handleCloseDevelopersMenu = () => {
+		setAnchorElDevelopers(null);
 	};
 
 	return (
@@ -185,6 +207,60 @@ export default function Navigation() {
 							</Button>
 						)
 					)}
+
+					<Button
+						onClick={handleOpenDevelopersMenu}
+						endIcon={<KeyboardArrowDownIcon fontSize="small" />}
+						sx={{
+							color: iconColor,
+							textTransform: "none",
+							fontWeight: 500,
+							fontSize: { md: "15px", lg: "15px", xl: "16px" },
+							backgroundImage: "linear-gradient(to right,rgb(23, 114, 184),rgb(5, 105, 155))",
+							backgroundSize: "0% 2px",
+							backgroundRepeat: "no-repeat",
+							backgroundPosition: "left bottom",
+							transition: "all 0.3s ease-in-out",
+							"&:hover": {
+								backgroundSize: "100% 2px",
+								color: "secondary.main"
+							}
+						}}
+					>
+						{t("Nav.Developers", "Developers")}
+					</Button>
+
+					<Menu
+						anchorEl={anchorElDevelopers}
+						open={Boolean(anchorElDevelopers)}
+						onClose={handleCloseDevelopersMenu}
+						anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+						transformOrigin={{ vertical: "top", horizontal: "left" }}
+					>
+						{developerLinks.map((link, index) =>
+							link.external ? (
+								<MenuItem
+									key={`dev-${index}`}
+									component="a"
+									href={link.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									onClick={handleCloseDevelopersMenu}
+								>
+									{link.label}
+								</MenuItem>
+							) : (
+								<MenuItem
+									key={`dev-${index}`}
+									component={Link}
+									to={link.to}
+									onClick={handleCloseDevelopersMenu}
+								>
+									{link.label}
+								</MenuItem>
+							)
+						)}
+					</Menu>
 				</Box>
 
 				<Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center", ml: 2, gap: 1 }}>
@@ -327,6 +403,32 @@ export default function Navigation() {
 								</MenuItem>
 							) : (
 								<MenuItem key={index} component={Link} to={link.to} onClick={handleCloseNavMenu}>
+									{link.label}
+								</MenuItem>
+							)
+						)}
+
+						<Divider sx={{ my: 0.5 }} />
+						<MenuItem disabled>{t("Nav.Developers", "Developers")}</MenuItem>
+						{developerLinks.map((link, index) =>
+							link.external ? (
+								<MenuItem
+									key={`mobile-dev-${index}`}
+									component="a"
+									href={link.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									onClick={handleCloseNavMenu}
+								>
+									{link.label}
+								</MenuItem>
+							) : (
+								<MenuItem
+									key={`mobile-dev-${index}`}
+									component={Link}
+									to={link.to}
+									onClick={handleCloseNavMenu}
+								>
 									{link.label}
 								</MenuItem>
 							)

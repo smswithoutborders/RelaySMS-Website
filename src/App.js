@@ -10,6 +10,7 @@ import Branding from "./Pages/Branding";
 import Navbar from "./Components/Navbar";
 import Overview from "./Pages/Overview";
 import Contributing from "./Pages/Contributing";
+import Changelog from "./Pages/Changelog";
 
 const ScrollToTop = () => {
 	const { pathname } = useLocation();
@@ -36,6 +37,7 @@ const App = () => {
 				<Route path="/android" element={<Landing />} />
 				<Route path="/ios" element={<Landing />} />
 				<Route path="/branding" element={<Branding />} />
+				<Route path="/changelog" element={<Changelog />} />
 				<Route path="/system-overview" element={<Overview />} />
 				<Route path="/contributing" element={<Contributing />} />
 				<Route path="*" element={<PageNotFound />} />

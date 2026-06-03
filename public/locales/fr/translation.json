@@ -8,8 +8,10 @@
 		"Support": "Assistance",
 		"Back": "Retour",
 		"Download": "Télécharger",
+		"Developers": "Développeurs",
 		"Branding": "Identité de marque",
-		"Overview": "Vue d'Ensemble du Système"
+		"Overview": "Vue d'Ensemble du Système",
+		"Changelog": "Journal des changements"
 	},
 	"Alert": {
 		"message": "Vous pouvez maintenant faire de RelaySMS votre application SMS par défaut sur Android !",
@@ -124,6 +126,7 @@
 		"Resources": "Ressources",
 		"TechnicalResources": "Ressources Techniques",
 		"More": "Plus",
+		"Changelog": "Journal des changements",
 		"Blog": "Blog",
 		"BrandResources": "Ressources de Marque",
 		"Features": "Fonctionnalités",
@@ -141,6 +144,33 @@
 		"Jobs": "Emplois",
 		"ContactUs": "Contactez-nous",
 		"copyright": "AFKANERD"
+	},
+	"Changelog": {
+		"title": "Journal des changements produit",
+		"comingSoon": "Bientôt disponible",
+		"subtitle": "Consultez les changements récents, regroupés par impact ressenti.",
+		"editorHint": "Pour publier une mise à jour, ajoutez un fichier markdown dans public/changelog et référencez-le dans public/changelog/index.json.",
+		"whatsNew": "Nouveautés",
+		"technicalDetails": "Détails techniques",
+		"productDefault": "RelaySMS",
+		"version": "Version",
+		"viewOnGithub": "Voir sur GitHub",
+		"loading": "Chargement du journal des changements...",
+		"empty": "Aucune entrée trouvée pour le moment.",
+		"fetchError": "Impossible de charger le journal maintenant. Réessayez bientôt.",
+		"fallbackSummary": "Une nouvelle mise à jour a été publiée.",
+		"update": "Mise à jour",
+		"notAvailable": "Non disponible",
+		"noTechnicalDetails": "Aucun détail technique supplémentaire n'a été fourni.",
+		"noItemsInGroup": "Aucune mise à jour dans ce groupe d'impact pour le moment.",
+		"impact": {
+			"major": "Mises à jour majeures côté utilisateur",
+			"quality": "Améliorations de qualité et d'expérience",
+			"fixes": "Corrections et fiabilité"
+		},
+		"impactMajorDescription": "Grandes améliorations visibles immédiatement par les utilisateurs.",
+		"impactQualityDescription": "Polissage, performance et améliorations de l'usage quotidien.",
+		"impactFixDescription": "Corrections de bugs et stabilité pour un fonctionnement fluide."
 	},
 	"policy": "Politique de confidentialité",
 	"ContactUs": {

@@ -8,8 +8,10 @@
 		"Support": "پشتیبانی",
 		"Back": "بازگشت",
 		"Download": "دانلود",
+		"Developers": "توسعه‌دهندگان",
 		"Branding": "برندینگ",
-		"Overview": "نمای کلی سیستم"
+		"Overview": "نمای کلی سیستم",
+		"Changelog": "تغییرات"
 	},
 	"Alert": {
 		"message": "اکنون می‌توانید RelaySMS را به عنوان برنامه پیامک پیش‌فرض خود در اندروید تنظیم کنید!",
@@ -124,6 +126,7 @@
 		"Resources": "منابع",
 		"TechnicalResources": "منابع فنی",
 		"More": "بیشتر",
+		"Changelog": "تغییرات",
 		"Blog": "وبلاگ",
 		"BrandResources": "منابع برند",
 		"Features": "ویژگی‌ها",
@@ -141,6 +144,33 @@
 		"Jobs": "فرصت‌های شغلی",
 		"ContactUs": "تماس با ما",
 		"copyright": "AFKANERD"
+	},
+	"Changelog": {
+		"title": "تغییرات محصول",
+		"comingSoon": "به زودی",
+		"subtitle": "ببینید چه چیزهایی اخیراً تغییر کرده، بر اساس تاثیری که کاربر واقعاً حس می‌کند.",
+		"editorHint": "برای انتشار به‌روزرسانی، یک فایل markdown در public/changelog بسازید و آن را به public/changelog/index.json اضافه کنید.",
+		"whatsNew": "چه چیز جدید است",
+		"technicalDetails": "جزئیات فنی",
+		"productDefault": "RelaySMS",
+		"version": "نسخه",
+		"viewOnGithub": "مشاهده در GitHub",
+		"loading": "در حال بارگذاری تغییرات...",
+		"empty": "هنوز موردی در تغییرات پیدا نشد.",
+		"fetchError": "در حال حاضر بارگذاری تغییرات ممکن نیست. لطفاً کمی بعد دوباره تلاش کنید.",
+		"fallbackSummary": "یک به‌روزرسانی جدید منتشر شده است.",
+		"update": "به‌روزرسانی",
+		"notAvailable": "در دسترس نیست",
+		"noTechnicalDetails": "جزئیات فنی بیشتری ارائه نشده است.",
+		"noItemsInGroup": "هنوز به‌روزرسانی‌ای در این گروه اثرگذاری وجود ندارد.",
+		"impact": {
+			"major": "به‌روزرسانی‌های مهم کاربرمحور",
+			"quality": "بهبود کیفیت و تجربه",
+			"fixes": "رفع اشکال و پایداری"
+		},
+		"impactMajorDescription": "بهبودهای بزرگی که کاربران سریع متوجه آن می‌شوند.",
+		"impactQualityDescription": "بهبودهای صیقل، عملکرد و استفاده روزمره.",
+		"impactFixDescription": "رفع باگ‌ها و افزایش پایداری برای کارکرد روان‌تر."
 	},
 	"policy": "سیاست حفظ حریم خصوصی",
 	"ContactUs": {

@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@mui/material/styles";
+import { FaTelegram } from "react-icons/fa6";
 
 const langColor = {
 	Kotlin: "#7F52FF",
@@ -156,7 +157,7 @@ const Contributing = () => {
 			icon: <FaUsers size={20} />,
 			title: t("Contributing.Ways.HelpCommunity.title"),
 			description: t("Contributing.Ways.HelpCommunity.description"),
-			href: "https://github.com/smswithoutborders"
+			href: "https://t.me/+IPYp6q06dWsyZjY0"
 		}
 	];
 
@@ -220,15 +221,16 @@ const Contributing = () => {
 					</Button>
 					<Button
 						variant="outlined"
-						href="https://docs.smswithoutborders.com/"
+						href="https://t.me/+IPYp6q06dWsyZjY0"
 						target="_blank"
 						rel="noopener noreferrer"
+						startIcon={<FaTelegram size={18} />}
 						sx={{
 							textTransform: "none",
 							borderRadius: 2
 						}}
 					>
-						{t("Contributing.Hero.docs")}
+						{t("Blog.joinTelegram")}
 					</Button>
 				</Box>
 			</Box>
@@ -591,6 +593,69 @@ const Contributing = () => {
 						</Grid>
 					))}
 				</Grid>
+			</Box>
+
+			{/* ── Join the Community ── */}
+			<Box
+				sx={{
+					mt: { xs: 6, md: 8 },
+					mx: { xs: 3, md: 6 },
+					mb: { xs: 6, md: 12 },
+					borderRadius: 4,
+					py: { xs: 6, md: 8 },
+					px: { xs: 3, md: 8 },
+					textAlign: "center",
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+					gap: 3
+				}}
+			>
+				<Typography
+					variant="h4"
+					sx={{
+						fontSize: { xs: "1.5rem", md: "1.9rem" },
+						fontWeight: 800,
+						fontFamily: "'Unbounded', Ubuntu",
+						color: "text.primary",
+						lineHeight: 1.25
+					}}
+				>
+					{t("Blog.communityTitle")}
+				</Typography>
+				<Typography
+					sx={{
+						fontSize: { xs: "0.95rem", md: "1.05rem" },
+						color: "text.secondary",
+						fontFamily: "Ubuntu",
+						maxWidth: 520,
+						lineHeight: 1.75
+					}}
+				>
+					{t("Blog.communityDescription")}
+				</Typography>
+				<Button
+					component="a"
+					href="https://t.me/+IPYp6q06dWsyZjY0"
+					target="_blank"
+					rel="noopener noreferrer"
+					variant="contained"
+					startIcon={<FaTelegram size={18} />}
+					sx={{
+						bgcolor: "primary.main",
+						color: "#ffffff",
+						fontFamily: "Ubuntu",
+						fontWeight: 600,
+						fontSize: "1rem",
+						textTransform: "none",
+						borderRadius: 2,
+						px: 4,
+						py: 1.5,
+						"&:hover": { bgcolor: "primary.dark" }
+					}}
+				>
+					{t("Blog.joinTelegram")}
+				</Button>
 			</Box>
 		</Box>
 	);

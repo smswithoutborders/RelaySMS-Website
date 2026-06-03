@@ -8,8 +8,10 @@
 		"Support": "Soporte",
 		"Back": "Atrás",
 		"Download": "Descargar",
+		"Developers": "Desarrolladores",
 		"Branding": "Marca",
-		"Overview": "Descripción del Sistema"
+		"Overview": "Descripción del Sistema",
+		"Changelog": "Registro de cambios"
 	},
 	"Alert": {
 		"message": "¡Ahora puedes hacer de RelaySMS tu aplicación SMS predeterminada en Android!",
@@ -124,6 +126,7 @@
 		"Resources": "Recursos",
 		"TechnicalResources": "Recursos Técnicos",
 		"More": "Más",
+		"Changelog": "Registro de cambios",
 		"Blog": "Blog",
 		"BrandResources": "Recursos de Marca",
 		"Features": "Características",
@@ -141,6 +144,33 @@
 		"Jobs": "Empleos",
 		"ContactUs": "Contáctanos",
 		"copyright": "AFKANERD"
+	},
+	"Changelog": {
+		"title": "Registro de cambios del producto",
+		"comingSoon": "Próximamente",
+		"subtitle": "Mira qué cambió recientemente, agrupado por el impacto que realmente sientes.",
+		"editorHint": "¿Quieres publicar una actualización? Agrega un archivo markdown en public/changelog y súmalo en public/changelog/index.json.",
+		"whatsNew": "Novedades",
+		"technicalDetails": "Detalles técnicos",
+		"productDefault": "RelaySMS",
+		"version": "Versión",
+		"viewOnGithub": "Ver en GitHub",
+		"loading": "Cargando registro de cambios...",
+		"empty": "Aún no se encontraron entradas del registro de cambios.",
+		"fetchError": "No se puede cargar el registro ahora. Inténtalo de nuevo pronto.",
+		"fallbackSummary": "Se publicó una nueva actualización.",
+		"update": "Actualización",
+		"notAvailable": "No disponible",
+		"noTechnicalDetails": "No se proporcionaron detalles técnicos adicionales.",
+		"noItemsInGroup": "Aún no hay actualizaciones en este grupo de impacto.",
+		"impact": {
+			"major": "Actualizaciones importantes para usuarios",
+			"quality": "Mejoras de calidad y experiencia",
+			"fixes": "Correcciones y confiabilidad"
+		},
+		"impactMajorDescription": "Mejoras grandes que los usuarios notarán de inmediato.",
+		"impactQualityDescription": "Pulido, rendimiento y mejoras de uso diario.",
+		"impactFixDescription": "Correcciones y estabilidad para que todo funcione sin problemas."
 	},
 	"policy": "Política de privacidad",
 	"ContactUs": {
