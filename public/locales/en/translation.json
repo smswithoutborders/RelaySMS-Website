@@ -8,8 +8,10 @@
 		"Support": "Support",
 		"Back": "Back",
 		"Download": "Download",
+		"Developers": "Developers",
 		"Branding": "Branding",
-		"Overview": "System Overview"
+		"Overview": "System Overview",
+		"Changelog": "Changelog"
 	},
 	"Alert": {
 		"message": "You can now make RelaySMS your default SMS app on Android!",
@@ -163,6 +165,7 @@
 		"Resources": "Resources",
 		"TechnicalResources": "Technical Resources",
 		"More": "More",
+		"Changelog": "Changelog",
 		"Blog": "Blog",
 		"BrandResources": "Brand Resources",
 		"Features": "Features",
@@ -180,6 +183,33 @@
 		"GatewayClientSetup": "Gateway Client Setup",
 		"Troubleshooting": "Troubleshooting",
 		"copyright": "AFKANERD"
+	},
+	"Changelog": {
+		"title": "Product Changelog",
+		"comingSoon": "Coming soon",
+		"subtitle": "See what changed recently, grouped by the impact you feel most.",
+		"editorHint": "Want to publish an update? Add a markdown file in public/changelog and list it in public/changelog/index.json.",
+		"whatsNew": "What's New",
+		"technicalDetails": "Technical details",
+		"productDefault": "RelaySMS",
+		"version": "Version",
+		"viewOnGithub": "View on GitHub",
+		"loading": "Loading changelog...",
+		"empty": "No changelog entries found yet.",
+		"fetchError": "Unable to load changelog right now. Please try again soon.",
+		"fallbackSummary": "A new update has been published.",
+		"update": "Update",
+		"notAvailable": "Not available",
+		"noTechnicalDetails": "No additional technical details were provided.",
+		"noItemsInGroup": "No updates in this impact group yet.",
+		"impact": {
+			"major": "Major user-facing updates",
+			"quality": "Quality and experience improvements",
+			"fixes": "Fixes and reliability"
+		},
+		"impactMajorDescription": "Big improvements users are likely to notice immediately.",
+		"impactQualityDescription": "Polish, performance, and day-to-day usability improvements.",
+		"impactFixDescription": "Bug fixes and stability updates to keep things working smoothly."
 	},
 	"policy": "Privacy Policy",
 
