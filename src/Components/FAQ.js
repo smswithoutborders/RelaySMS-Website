@@ -22,6 +22,10 @@ const FAQSection = ({ isFarsi }) => {
 		{
 			question: t("Faq.faq4.question"),
 			answer: t("Faq.faq4.answer")
+		},
+		{
+			question: t("Faq.faq5.question"),
+			answer: t("Faq.faq5.answer")
 		}
 	];
 

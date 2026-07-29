@@ -7,7 +7,7 @@
 		"Contact": "Contact Us",
 		"Support": "Support",
 		"Back": "Back",
-		"Download": "Download",
+		"Download": "Download App",
 		"Developers": "Developers",
 		"Branding": "Branding",
 		"Overview": "System Overview",
@@ -24,8 +24,8 @@
 	},
 	"Landing": {
 		"span": "No Data? No Worries.",
-		"h1": "Stay Connected even with no internet access.",
-		"h2": "RelaySMS enables users send messages to online platforms without an active internet connection. Messages are sent via SMS from your device.",
+		"h1": "Stay connected even with no internet access.",
+		"h2": "RelaySMS enables you to send messages to online platforms like Gmail, Telegram and others without an active internet connection. Messages are sent via SMS from your mobile device.",
 		"Android": "Download RelaySMS ",
 		"RoutingNumbers": "Set Up Gateway Clients",
 		"supportedPlatforms": "Supported Platforms:",
@@ -38,8 +38,8 @@
 
 	"Howitworks": {
 		"ReadMore": "Read More",
-		"Header": "Getting Started with RelaySMS",
-		"SubHeader": "Learn how to set up and use RelaySMS for seamless offline communication.",
+		"Header": "How to set up RelaySMS",
+		"SubHeader": "Do not wait for internet shutdowns to set up RelaySMS. Follow these steps to ensure you can stay connected when you need it most.",
 		"Step1Title": "Download the App",
 		"Step1Desc": "Download the RelaySMS App from <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>Google PlayStore</a>, <a href='https://github.com/smswithoutborders/RelaySMS-Android' target='_blank' rel='noopener noreferrer'>GitHub</a>, or <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>build it from source</a>. Ensure your Android device meets the technical requirements (Android 6.0+ with SMS capability).",
 		"Step1Button": "Download",
@@ -148,8 +148,8 @@
 			"answer": "RelaySMS is currently available on Android and iOS. Linux support is coming soon."
 		},
 		"faq5": {
-			"question": "I'm experiencing technical difficulties. How can I get help?",
-			"answer": "Check out our <a href='https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ' target='_blank' rel='noopener noreferrer'>Troubleshooting guide</a> or reach out to support at <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a>."
+			"question": "Can I get message replies through RelaySMS?",
+			"answer": "Yes you can receive replies in the RelaySMS app using the bridge feature. Replies are sent via SMS to your device, even without an internet connection."
 		},
 		"contact": {
 			"didn't": "Did not find your answer?",
@@ -182,7 +182,24 @@
 		"iOSTutorial": "iOS Tutorial",
 		"GatewayClientSetup": "Gateway Client Setup",
 		"Troubleshooting": "Troubleshooting",
+		"NewsletterTitle": "Subscribe to our newsletter",
+		"NewsletterDescription": "Get RelaySMS updates and release highlights in your mail.",
+		"SubscribeNow": "Subscribe now",
 		"copyright": "AFKANERD"
+	},
+	"Newsletter": {
+		"title": "Subscribe to MailingList",
+		"description": "Get RelaySMS updates and release highlights in your mail.",
+		"emailPlaceholder": "Email address",
+		"emailAria": "Email address",
+		"submit": "Subscribe",
+		"subscribing": "Subscribing…",
+		"successTitle": "You're subscribed.",
+		"doubleOptInTitle": "Check your inbox.",
+		"successHint": "Thanks. Please check your email to confirm your subscription.",
+		"doubleOptInHint": "Check your inbox and click the confirmation link to finish subscribing.",
+		"error": "Something went wrong. Please try again.",
+		"privacyHint": "No spam. Unsubscribe anytime."
 	},
 	"Changelog": {
 		"title": "Product Changelog",
@@ -399,7 +416,7 @@
 			}
 		},
 		"HowTo": {
-			"title": "How to Contribute",
+			"title": "GitHub contribution Guide",
 			"subtitle": "Follow these steps to get your changes merged into RelaySMS.",
 			"Steps": {
 				"Fork": {
@@ -447,6 +464,11 @@
 			"Website": {
 				"description": "RelaySMS Homepage"
 			}
+		},
+		"GatewayClients": {
+			"title": "Be a crucial part of RelaySMS by setting up a Gateway Clients",
+			"description": "When you set up a Gateway Client (phone number) in a region with internet connectivity, this number helps route messages from users who are offline to online platforms.",
+			"cta": "Learn all about Gateway Clients"
 		}
 	},
 	"404": {

@@ -67,7 +67,7 @@ const Hero = () => {
 						<Typography
 							sx={{
 								mb: { xs: 2, md: 3, lg: 1 },
-								fontSize: { xs: "1.8rem", md: "2.5rem", lg: "2.3rem", xl: "3rem" },
+								fontSize: { xs: "1.8rem", md: "2.5rem", lg: "2.3rem", xl: "3.3rem" },
 								whiteSpace: "pre-wrap",
 								fontWeight: 700,
 								wordBreak: "break-word",
@@ -187,7 +187,9 @@ const Hero = () => {
 
 			{/* ========== OTHER SECTIONS ========== */}
 			<GettingStarted />
-			<TrainingGuide />
+			<Box my={15}>
+				<TrainingGuide />
+			</Box>
 			<WhoShouldUse />
 			{/* <AppFeatures /> */}
 			<Box
@@ -211,9 +213,18 @@ const Hero = () => {
 					&nbsp;{t("Landing.auditMessage.part2")}
 				</Typography>
 			</Box>
-			<SupportedPlatforms />
-			<Blog />
-			<FAQ />
+
+			<Box mt={15}>
+				<SupportedPlatforms />
+			</Box>
+
+			<Box mt={15}>
+				<Blog />
+			</Box>
+
+			<Box mb={15}>
+				<FAQ />
+			</Box>
 		</>
 	);
 };

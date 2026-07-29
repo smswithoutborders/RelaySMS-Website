@@ -39,9 +39,20 @@
 		"ReadMore": "Leer más",
 		"Header": "Primeros pasos con RelaySMS",
 		"SubHeader": "Aprende a configurar y usar RelaySMS para comunicación offline sin inconvenientes.",
-		"Step1Title": "Descarga la app",
-		"Step1Desc": "Descarga RelaySMS desde <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>Google Play Store</a>, <a href='https://github.com/smswithoutborders/RelaySMS-Android' target='_blank' rel='noopener noreferrer'>GitHub</a> o compílala desde el código fuente. Asegúrate de tener Android 6.0+ con capacidad SMS.",
-		"Step1Button": "Comenzar",
+		"Newsletter": {
+			"title": "Suscríbete a nuestro boletín",
+			"description": "Recibe actualizaciones de RelaySMS, novedades de versiones y consejos prácticos en tu correo.",
+			"emailPlaceholder": "Correo electrónico",
+			"emailAria": "Correo electrónico",
+			"submit": "Suscribirse",
+			"subscribing": "Suscribiendo…",
+			"successTitle": "Ya estás suscrito.",
+			"doubleOptInTitle": "Revisa tu correo.",
+			"successHint": "Gracias. Revisa tu correo para confirmar tu suscripción.",
+			"doubleOptInHint": "Revisa tu correo y pulsa el enlace de confirmación para terminar la suscripción.",
+			"error": "Algo salió mal. Inténtalo de nuevo.",
+			"privacyHint": "Sin spam. Puedes darte de baja en cualquier momento."
+		},
 		"Step2Title": "Crea una cuenta",
 		"Step2Desc": "Haz clic en \"Añadir cuenta\" y completa los datos. Se enviará un PIN a tu teléfono para verificar.",
 		"Step2Button": "Saber más",
@@ -139,11 +150,28 @@
 		"iOSTutorial": "Tutorial de iOS",
 		"GatewayClientSetup": "Configuración del cliente de pasarela",
 		"Troubleshooting": "Resolución de problemas",
+		"NewsletterTitle": "Suscríbete a nuestro boletín",
+		"NewsletterDescription": "Recibe actualizaciones de RelaySMS, novedades de versiones y consejos prácticos en tu correo.",
+		"SubscribeNow": "Suscribirse ahora",
 		"PrivacyPolicy": "Política de Privacidad",
 		"AuditReport": "Informe de Auditoría",
 		"Jobs": "Empleos",
 		"ContactUs": "Contáctanos",
 		"copyright": "AFKANERD"
+	},
+	"Newsletter": {
+		"title": "Suscríbete a nuestro boletín",
+		"description": "Recibe actualizaciones de RelaySMS, novedades de versiones y consejos prácticos en tu correo.",
+		"emailPlaceholder": "Correo electrónico",
+		"emailAria": "Correo electrónico",
+		"submit": "Suscribirse",
+		"subscribing": "Suscribiendo…",
+		"successTitle": "Ya estás suscrito.",
+		"doubleOptInTitle": "Revisa tu correo.",
+		"successHint": "Gracias. Revisa tu correo para confirmar tu suscripción.",
+		"doubleOptInHint": "Revisa tu correo y pulsa el enlace de confirmación para terminar la suscripción.",
+		"error": "Algo salió mal. Inténtalo de nuevo.",
+		"privacyHint": "Sin spam. Puedes darte de baja en cualquier momento."
 	},
 	"Changelog": {
 		"title": "Registro de cambios del producto",
@@ -479,6 +507,11 @@
 				"description": "The bridge is a technology designed to allow users to communicate with online platforms via SMS, even without an active internet connection. It enables a secure handshake and encrypted message exchange entirely over SMS."
 			},
 			"Website": { "description": "RelaySMS Homepage" }
+		},
+		"GatewayClients": {
+			"title": "Sé una parte crucial de RelaySMS configurando Gateway Clients",
+			"description": "Cuando configuras un Gateway Client (número de teléfono) en una región con conectividad a internet, ese número ayuda a enrutar mensajes de usuarios sin conexión hacia plataformas en línea.",
+			"cta": "Aprende todo sobre Gateway Clients"
 		}
 	},
 	"404": {

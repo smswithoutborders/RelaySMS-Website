@@ -10,7 +10,11 @@ import Branding from "./Pages/Branding";
 import Navbar from "./Components/Navbar";
 import Overview from "./Pages/Overview";
 import Contributing from "./Pages/Contributing";
-import Changelog from "./Pages/Changelog";
+import About from "./Pages/About";
+import NewsletterSubscribed from "./Pages/NewsletterSubscribed";
+import NewsletterConfirmationError from "./Pages/NewsletterConfirmationError";
+import NewsletterUnsubscribed from "./Pages/NewsletterUnsubscribed";
+import { NEWSLETTER_ROUTES } from "./config/newsletter";
 
 const ScrollToTop = () => {
 	const { pathname } = useLocation();
@@ -32,14 +36,20 @@ const App = () => {
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Landing />} />
+				<Route path="/about" element={<About />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/download" element={<Download />} />
 				<Route path="/android" element={<Landing />} />
 				<Route path="/ios" element={<Landing />} />
 				<Route path="/branding" element={<Branding />} />
-				<Route path="/changelog" element={<Changelog />} />
 				<Route path="/system-overview" element={<Overview />} />
 				<Route path="/contributing" element={<Contributing />} />
+				<Route path={NEWSLETTER_ROUTES.subscribed} element={<NewsletterSubscribed />} />
+				<Route
+					path={NEWSLETTER_ROUTES.confirmationError}
+					element={<NewsletterConfirmationError />}
+				/>
+				<Route path={NEWSLETTER_ROUTES.unsubscribed} element={<NewsletterUnsubscribed />} />
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>
 			<Footer />
