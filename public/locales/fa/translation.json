@@ -139,11 +139,39 @@
 		"iOSTutorial": "آموزش iOS",
 		"GatewayClientSetup": "راه‌اندازی کلاینت گیت‌وی",
 		"Troubleshooting": "عیب‌یابی",
+		"Newsletter": {
+			"title": "عضویت در خبرنامه",
+			"description": "به‌روزرسانی‌های RelaySMS، نکات انتشار نسخه‌ها و راهنمایی‌های کاربردی را در ایمیل خود دریافت کنید.",
+			"emailPlaceholder": "نشانی ایمیل",
+			"emailAria": "نشانی ایمیل",
+			"submit": "عضویت",
+			"subscribing": "در حال عضویت…",
+			"successTitle": "شما عضو شدید.",
+			"doubleOptInTitle": "صندوق ورودی خود را بررسی کنید.",
+			"successHint": "متشکریم. لطفاً ایمیل خود را برای تأیید عضویت بررسی کنید.",
+			"doubleOptInHint": "صندوق ورودی خود را بررسی کنید و برای نهایی کردن عضویت روی لینک تأیید کلیک کنید.",
+			"error": "مشکلی پیش آمد. لطفاً دوباره تلاش کنید.",
+			"privacyHint": "بدون اسپم. هر زمان بخواهید می‌توانید لغو عضویت کنید."
+		},
 		"PrivacyPolicy": "سیاست حفظ حریم خصوصی",
 		"AuditReport": "گزارش ممیزی",
 		"Jobs": "فرصت‌های شغلی",
 		"ContactUs": "تماس با ما",
 		"copyright": "AFKANERD"
+	},
+	"Newsletter": {
+		"title": "عضویت در خبرنامه",
+		"description": "به‌روزرسانی‌های RelaySMS، نکات انتشار نسخه‌ها و راهنمایی‌های کاربردی را در ایمیل خود دریافت کنید.",
+		"emailPlaceholder": "نشانی ایمیل",
+		"emailAria": "نشانی ایمیل",
+		"submit": "عضویت",
+		"subscribing": "در حال عضویت…",
+		"successTitle": "شما عضو شدید.",
+		"doubleOptInTitle": "صندوق ورودی خود را بررسی کنید.",
+		"successHint": "متشکریم. لطفاً ایمیل خود را برای تأیید عضویت بررسی کنید.",
+		"doubleOptInHint": "صندوق ورودی خود را بررسی کنید و برای نهایی کردن عضویت روی لینک تأیید کلیک کنید.",
+		"error": "مشکلی پیش آمد. لطفاً دوباره تلاش کنید.",
+		"privacyHint": "بدون اسپم. هر زمان بخواهید می‌توانید لغو عضویت کنید."
 	},
 	"Changelog": {
 		"title": "تغییرات محصول",
@@ -467,6 +495,11 @@
 			"GatewayServer": { "description": "Gateway-servers enables the users to synchronize and communicate with the publisher module" },
 			"BridgeServer": { "description": "The bridge is a technology designed to allow users to communicate with online platforms via SMS, even without an active internet connection. It enables a secure handshake and encrypted message exchange entirely over SMS." },
 			"Website": { "description": "RelaySMS Homepage" }
+		},
+		"GatewayClients": {
+			"title": "با راه‌اندازی Gateway Client ها بخش مهمی از RelaySMS باشید",
+			"description": "وقتی یک Gateway Client (شماره تلفن) را در منطقه‌ای با اتصال اینترنت راه‌اندازی می‌کنید، این شماره به هدایت پیام‌های کاربران آفلاین به پلتفرم‌های آنلاین کمک می‌کند.",
+			"cta": "همه چیز درباره Gateway Client ها"
 		}
 	},
 	"404": {

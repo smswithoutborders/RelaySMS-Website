@@ -1,7 +1,11 @@
 import React from "react";
 import { Box, Typography, Button, useTheme } from "@mui/material";
-import { FaGithub, FaXTwitter, FaEnvelope } from "react-icons/fa6";
+import { FaGithub, FaXTwitter, FaEnvelope, FaTelegram } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
+
+
+const TELEGRAM_URL = "https://t.me/+IPYp6q06dWsyZjY0";
+
 
 const Contact = () => {
 	const { t, i18n } = useTranslation();
@@ -65,7 +69,7 @@ const Contact = () => {
 					maxWidth: "1200px",
 					mx: "auto",
 					pt: { xs: "120px", md: "140px" },
-					pb: 10
+					
 				}}
 			>
 				<Typography
@@ -156,6 +160,73 @@ const Contact = () => {
 						</Box>
 					))}
 				</Box>
+			</Box>
+			{/* ── Join the Community ── */}
+			<Box
+				sx={{
+					mt: { xs: 6, md: 2 },
+					mx: { xs: 3, md: 6 },
+					mb: { xs: 6, md: 10 },
+					borderRadius: 4,
+					py: { xs: 6, md: 8 },
+					px: { xs: 3, md: 8 },
+					textAlign: "center",
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+					gap: 3
+				}}
+			>
+				<Typography
+					variant="h4"
+					sx={{
+						fontSize: { xs: "1.5rem", md: "1.9rem" },
+						fontWeight: 800,
+						fontFamily: "'Unbounded', Ubuntu",
+						color: "text.primary",
+						lineHeight: 1.25
+					}}
+				>
+					{t("Blog.communityTitle")}
+				</Typography>
+				<Typography
+					sx={{
+						fontSize: { xs: "0.95rem", md: "1.05rem" },
+						color: "text.secondary",
+						fontFamily: "Ubuntu",
+						maxWidth: 520,
+						lineHeight: 1.75
+					}}
+				>
+					{t("Blog.communityDescription")}
+				</Typography>
+				{/* <NewsletterForm
+								showHeading={false}
+								align="center"
+								sx={{ width: "100%", maxWidth: 620 }}
+							/> */}
+				<Button
+					component="a"
+					href={TELEGRAM_URL}
+					target="_blank"
+					rel="noopener noreferrer"
+					variant="contained"
+					startIcon={<FaTelegram size={18} />}
+					sx={{
+						bgcolor: "primary.main",
+						color: "#ffffff",
+						fontFamily: "Ubuntu",
+						fontWeight: 600,
+						fontSize: "1rem",
+						textTransform: "none",
+						borderRadius: 2,
+						px: 4,
+						py: 1.5,
+						"&:hover": { bgcolor: "primary.dark" }
+					}}
+				>
+					{t("Blog.joinTelegram")}
+				</Button>
 			</Box>
 		</Box>
 	);

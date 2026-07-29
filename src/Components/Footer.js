@@ -4,6 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import { SiBluesky } from "react-icons/si";
 import LanguageSwitcher from "./LanguageSwitcher";
+import NewsletterForm from "./NewsletterForm";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import { Divider } from "@mui/material";
@@ -101,10 +102,11 @@ const Footer = () => {
 						item
 						xs={12}
 						sm={6}
-						md={3}
+						md={6}
+						lg={2.2}
 						key={index}
 						sx={{
-							mb: { xs: 4, md: 0 },
+							mb: { xs: 4, lg: 0 },
 							display: "flex",
 							flexDirection: "column",
 							alignItems: "flex-start",
@@ -176,6 +178,21 @@ const Footer = () => {
 						</Box>
 					</Grid>
 				))}
+				<Grid
+					item
+					xs={12}
+					sm={6}
+					md={6}
+					lg={3}
+					sx={{
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "flex-start",
+						px: { md: 2 }
+					}}
+				>
+					<NewsletterForm dark sx={{ width: "100%" }} />
+				</Grid>
 			</Grid>
 
 			{/* Divider */}
