@@ -10,8 +10,8 @@ const LanguageSwitcher = ({ theme: themeProp }) => {
 	const muiTheme = useTheme();
 	const isDark = themeProp === "dark" || (!themeProp && muiTheme.palette.mode === "dark");
 	const textColor = isDark ? "#ffffff" : muiTheme.palette.text.primary;
-	const bgColor = isDark ? "#2d2d2d" : muiTheme.palette.background.paper;
-	const hoverColor = isDark ? "#404040" : muiTheme.palette.action.hover;
+	const bgColor = isDark ? "#0b0e11" : muiTheme.palette.background.paper;
+	const hoverColor = isDark ? "#1a1a1a" : muiTheme.palette.action.hover;
 
 	const languages = {
 		en: { flag: "🇺🇸", name: "English" },

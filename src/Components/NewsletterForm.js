@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Button, TextField, Typography, Stack, useTheme } from "@mui/material";
+import { Box, Button, TextField, Typography, Stack, useTheme, Alert } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { NEWSLETTER_HONEYPOT_NAME, NEWSLETTER_SUBMIT_URL } from "../config/newsletter";
 
@@ -23,11 +23,7 @@ const NewsletterForm = ({
 	const showForm = status !== "success" && status !== "doubleOptIn";
 	const isSubmitting = status === "submitting";
 	const isError = status === "error";
-	const submitButtonBg = adaptiveButtonContrast
-		? isDarkMode
-			? "#ffffff"
-			: "#000000"
-		: "#ffffff";
+	const submitButtonBg = adaptiveButtonContrast ? (isDarkMode ? "#ffffff" : "#000000") : "#ffffff";
 	const submitButtonColor = adaptiveButtonContrast
 		? isDarkMode
 			? "#000000"
@@ -82,8 +78,6 @@ const NewsletterForm = ({
 				body: payload
 			});
 
-			// no-cors responses are opaque, so we cannot read status.
-			// Keila forms typically run as double opt-in; show that next step inline.
 			setStatus("doubleOptIn");
 		} catch (error) {
 			setStatus("error");
@@ -96,11 +90,7 @@ const NewsletterForm = ({
 	};
 
 	const statusMessage =
-		status === "doubleOptIn"
-			? doubleOptInBody
-			: status === "success"
-				? successBody
-				: "";
+		status === "doubleOptIn" ? doubleOptInBody : status === "success" ? successBody : "";
 
 	return (
 		<Box sx={sx}>
@@ -249,37 +239,7 @@ const NewsletterForm = ({
 					)}
 				</Box>
 			) : (
-				<Box
-					sx={{
-						border: dark ? "1px solid rgba(255,255,255,0.14)" : "1px solid rgba(0,0,0,0.08)",
-						borderRadius: 2,
-						px: 2,
-						py: 2,
-						bgcolor: dark ? "rgba(255,255,255,0.04)" : "background.paper"
-					}}
-				>
-					<Typography
-						variant="subtitle2"
-						sx={{
-							fontWeight: 700,
-							color: dark ? "#ffffff" : "text.primary",
-							textAlign: centered ? "center" : "start"
-						}}
-					>
-						{successTitle}
-					</Typography>
-					<Typography
-						variant="body2"
-						sx={{
-							mt: 0.75,
-							color: helperColor,
-							lineHeight: 1.6,
-							textAlign: centered ? "center" : "start"
-						}}
-					>
-						{statusMessage}
-					</Typography>
-				</Box>
+				<Alert severity="info">{statusMessage}</Alert>
 			)}
 		</Box>
 	);

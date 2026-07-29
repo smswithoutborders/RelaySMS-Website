@@ -638,11 +638,8 @@ const Contributing = () => {
 									mt: 2,
 									color: isDark ? "#000000" : "#ffffff",
 									bgcolor: isDark ? "#fff" : "primary.main",
-									// fontWeight: 600,
 									textTransform: "none",
-									borderRadius: 2,
-									// px: 4,
-									// py: 1.5
+									borderRadius: 2
 								}}
 							>
 								{t("Contributing.GatewayClients.cta")}
@@ -650,63 +647,6 @@ const Contributing = () => {
 						</Box>
 					</Stack>
 				</Box>
-
-				{/* <Box
-					sx={{
-						mt: 8,
-						p: 5,
-						borderRadius: 2,
-						border: "1px solid",
-						borderColor: "divider",
-						bgcolor: "background.paper",
-						textDecoration: "none",
-						color: "inherit",
-						transition: "border-color 0.2s, box-shadow 0.2s",
-						"&:hover": {
-							borderColor: "primary.main",
-							boxShadow: `0 0 0 1px ${theme.palette.primary.main}22`
-						}
-					}}
-				>
-					<Stack
-						direction={{ xs: "column", sm: "row" }}
-						justifyContent="center"
-						alignItems="center"
-						spacing={4}
-						mt={2}
-					>
-						<Box>
-							<Typography variant="h6" sx={{ fontFamily: "'Unbounded', Ubuntu", fontWeight: 600 }}>
-								Donate to RelaySMS
-							</Typography>
-						</Box>
-						<Box>
-							<Typography variant="body1" sx={{ color: "text.secondary" }}>
-								SMS reply costs are covered by RelaySMS and it can get really expensive, donating
-								can help keep SMS replies going, you could also just buy the developers a cup of
-								coffee.
-							</Typography>
-							<Button
-								variant="contained"
-								component="a"
-								href="https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide"
-								target="_blank"
-								rel="noopener noreferrer"
-								sx={{
-									mt: 2,
-									color: "#ffffff",
-									// fontWeight: 600,
-									textTransform: "none",
-									borderRadius: 2,
-									px: 4,
-									py: 1.5
-								}}
-							>
-								{t("Contributing.GatewayClients.cta")}
-							</Button>
-						</Box>
-					</Stack>
-				</Box> */}
 			</Box>
 
 			{/* ── Join the Community ── */}
@@ -748,11 +688,7 @@ const Contributing = () => {
 				>
 					{t("Blog.communityDescription")}
 				</Typography>
-				{/* <NewsletterForm
-					showHeading={false}
-					align="center"
-					sx={{ width: "100%", maxWidth: 620 }}
-				/> */}
+
 				<Button
 					component="a"
 					href="https://t.me/+IPYp6q06dWsyZjY0"

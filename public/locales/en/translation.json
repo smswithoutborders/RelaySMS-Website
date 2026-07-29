@@ -1,4 +1,10 @@
 {
+	"404": {
+		"title": "Oops! Page Not Found",
+		"description": "The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.",
+		"homeButton": "Go Back Home",
+		"backButton": "Go Back"
+	},
 	"Nav": {
 		"Home": "Home",
 		"Help": "Documentation",
@@ -11,7 +17,8 @@
 		"Developers": "Developers",
 		"Branding": "Branding",
 		"Overview": "System Overview",
-		"Changelog": "Changelog"
+		"Changelog": "Changelog",
+		"About": "About"
 	},
 	"Alert": {
 		"message": "You can now make RelaySMS your default SMS app on Android!",
@@ -35,7 +42,6 @@
 			"part2": "."
 		}
 	},
-
 	"Howitworks": {
 		"ReadMore": "Read More",
 		"Header": "How to set up RelaySMS",
@@ -99,7 +105,6 @@
 		"SubHeader": " Stay informed with the latest updates, tips, and stories from the RelaySMS blog.",
 		"Resilience": "New Features on RelaySMS",
 		"ResilienceD": "At SMSWithoutBorders, we're constantly working to improve how users stay connected even without internet access....",
-
 		"IDHeader": "New Features on RelaySMS",
 		"IDD": "One of the greatest challenges of offline communication is knowing if the recipient has responded. We introduced the Bridge feature in a previous update, which enables users to communicate without saving their accounts, but are given primary aliases which act as their default RelaySMS accounts. The new feature, Replies for Bridges, enables users who send messages through Bridges to now receive replies directly via SMS.",
 		"Rebrand": "Rebranding",
@@ -127,7 +132,6 @@
 			"Release": "Release"
 		}
 	},
-
 	"Faq": {
 		"faqTitle": "Frequently Asked Questions",
 		"SubHeader": "Find answers to the most common questions about RelaySMS and how it works.",
@@ -185,21 +189,34 @@
 		"NewsletterTitle": "Subscribe to our newsletter",
 		"NewsletterDescription": "Get RelaySMS updates and release highlights in your mail.",
 		"SubscribeNow": "Subscribe now",
-		"copyright": "AFKANERD"
+		"copyright": "AFKANERD",
+		"Aria": {
+			"Logo": "RelaySMS logo",
+			"GitHub": "GitHub",
+			"X": "X",
+			"Bluesky": "Bluesky"
+		}
 	},
 	"Newsletter": {
 		"title": "Subscribe to MailingList",
-		"description": "Get RelaySMS updates and release highlights in your mail.",
+		"description": "Get RelaySMS news and release updates in your mail.",
 		"emailPlaceholder": "Email address",
 		"emailAria": "Email address",
 		"submit": "Subscribe",
 		"subscribing": "Subscribing…",
-		"successTitle": "You're subscribed.",
+		"successTitle": "You're subscribed!",
 		"doubleOptInTitle": "Check your inbox.",
-		"successHint": "Thanks. Please check your email to confirm your subscription.",
+		"successHint": "Thanks for confirming your email. Watch your inbox - a welcome email is on its way.",
 		"doubleOptInHint": "Check your inbox and click the confirmation link to finish subscribing.",
 		"error": "Something went wrong. Please try again.",
-		"privacyHint": "No spam. Unsubscribe anytime."
+		"privacyHint": "No spam. Unsubscribe anytime.",
+		"confirmationErrorTitle": "This confirmation link has expired or has already been used.",
+		"confirmationErrorBody": "Try subscribing again below and we will send you a fresh confirmation email.",
+		"unsubscribedTitle": "You have unsubscribed from this list.",
+		"unsubscribedBody": "You will no longer receive emails from this newsletter.",
+		"backHome": "Back to home",
+		"successImageAlt": "Newsletter success",
+		"awesomeButton": "Awesome!"
 	},
 	"Changelog": {
 		"title": "Product Changelog",
@@ -229,11 +246,9 @@
 		"impactFixDescription": "Bug fixes and stability updates to keep things working smoothly."
 	},
 	"policy": "Privacy Policy",
-
 	"ContactUs": {
 		"Title": "Contact RelaySMS Team",
 		"Subtitle": " We’re here to help. Reach out to us through any of these channels.",
-
 		"Items": {
 			"GitHub": {
 				"Link": "https://github.com/smswithoutborders",
@@ -349,7 +364,8 @@
 			"playStore": "Get RelaySMS from the official Google Play Store.",
 			"fDroid": "Install via F-Droid for open source lovers."
 		},
-		"iosDescription": "Available now on the Apple App Store."
+		"iosDescription": "Available now on the Apple App Store.",
+		"heroImageAlt": "Download RelaySMS"
 	},
 	"Overview": {
 		"title": "RelaySMS System Overview",
@@ -471,10 +487,90 @@
 			"cta": "Learn all about Gateway Clients"
 		}
 	},
-	"404": {
-		"title": "Oops! Page Not Found",
-		"description": "The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.",
-		"homeButton": "Go Back Home",
-		"backButton": "Go Back"
+	"AppFeatures": {
+		"Features": {
+			"OfflineMessaging": "Offline messaging via SMS",
+			"Gmail": "Gmail",
+			"Twitter": "Twitter / X",
+			"Telegram": "Telegram",
+			"GatewaySetup": "Gateway client setup",
+			"DarkMode": "Dark mode",
+			"MultiLanguage": "Multi-language support",
+			"E2EEncryption": "End-to-end encryption",
+			"OpenSource": "Free & open source"
+		},
+		"Platforms": {
+			"Android": {
+				"label": "Android",
+				"imageAlt": "RelaySMS on Android",
+				"badge": "Available on Google Play"
+			},
+			"iOS": {
+				"label": "iOS",
+				"imageAlt": "RelaySMS on iOS",
+				"badge": "Available on the App Store"
+			},
+			"Desktop": {
+				"label": "Desktop",
+				"imageAlt": "RelaySMS Desktop",
+				"badge": "Web & Desktop app"
+			}
+		},
+		"Header": "App Features",
+		"Subheader": "Compare what's available across Android, iOS, and Desktop."
+	},
+	"Navbar": {
+		"Theme": {
+			"Light": "Light",
+			"Dark": "Dark",
+			"System": "System"
+		},
+		"Aria": {
+			"Home": "Home",
+			"Logo": "RelaySMS logo",
+			"GitHub": "GitHub",
+			"X": "RelaySMS on X",
+			"Bluesky": "RelaySMS on Bluesky",
+			"ThemeTooltip": "Theme",
+			"ToggleTheme": "Toggle theme",
+			"OpenMenu": "Open navigation menu"
+		}
+	},
+	"Step2Button": "Learn More",
+	"About": {
+		"Flow": {
+			"Phone": {
+				"Title": "Your Phone",
+				"Subtitle": "Offline message via SMS"
+			},
+			"Gateway": {
+				"Title": "Gateway Client",
+				"Subtitle": "The bridge that pushes messages online"
+			},
+			"Platform": {
+				"Title": "Platform",
+				"Subtitle": "Delivered to Telegram, Gmail, and more"
+			}
+		},
+		"Hero": {
+			"Title": "RelaySMS is utilizing SMS to bridge internet censorships and shutdowns",
+			"Subtitle": "Don't let internet censorship or shutdowns stop you from communicating. RelaySMS is a free and open-source project that allows you to send messages to popular platforms like Gmail, Telegram, Bluesky, and more, when you don't have internet access."
+		},
+		"GatewayShare": "If you are in an area with internet connection, you can set up a Gateway Client and share access with your family and friends in areas without internet connectivity.",
+		"CTA": {
+			"SetupGateway": "Setting up a Gateway Client",
+			"SMSWithoutBorders": "Learn more about SMSWithoutBorders",
+			"Contribute": "Contribution Guide"
+		},
+		"WhoBuilt": {
+			"Title": "The team behind RelaySMS?",
+			"Description": "RelaySMS is an SMSWithoutBorders project, built and maintained by the Afkanerd team with support from open-source contributors and partners. We accept and encourage contributions from the community to improve RelaySMS and expand its reach."
+		}
+	},
+	"awesomeButton": "Awesome!",
+	"Common": {
+		"Aria": {
+			"Logo": "RelaySMS logo"
+		}
 	}
 }

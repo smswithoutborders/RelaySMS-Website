@@ -119,11 +119,8 @@ const Hero = () => {
 								size="large"
 								sx={{
 									bgcolor: "primary.main",
-									textTransform: "none",
-									// py: 1.5,
-									// px: 6,
+
 									fontFamily: "Ubuntu",
-									// fontSize: { xs: "15px", md: "19px" },
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
 										transform: "translateY(-3px)"
@@ -158,40 +155,14 @@ const Hero = () => {
 							</Button>
 						</Box>
 					</Grid>
-
-					{/* <Grid
-						item
-						xs={12}
-						md={6}
-						sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-					>
-						<Box
-							sx={{
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center"
-							}}
-						>
-							<Box
-								component="img"
-								src="/new-phones.png"
-								alt="RelaySMS Background"
-								sx={{
-									width: { xl: "620px", xs: "100%", md: "100%", sm: "80%", lg: "80%" }
-								}}
-							/>
-						</Box>
-					</Grid> */}
 				</Grid>
 			</Box>
 
-			{/* ========== OTHER SECTIONS ========== */}
 			<GettingStarted />
 			<Box my={15}>
 				<TrainingGuide />
 			</Box>
 			<WhoShouldUse />
-			{/* <AppFeatures /> */}
 			<Box
 				data-aos="fade-up"
 				sx={{

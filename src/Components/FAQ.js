@@ -1,6 +1,6 @@
 import { Box, Typography, Paper, Divider, Button, Grid } from "@mui/material";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 const FAQSection = ({ isFarsi }) => {
 	const { t, i18n } = useTranslation();
@@ -120,7 +120,23 @@ const FAQSection = ({ isFarsi }) => {
 										}
 									}}
 								>
-									{answer}
+									{idx === 4 ? (
+										<Trans
+											i18nKey="Faq.faq5.answer"
+											components={{
+												docLink: (
+													<a
+														href="https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ"
+														target="_blank"
+														rel="noopener noreferrer"
+													/>
+												),
+												emailLink: <a href="mailto:developers@smswithoutborders.com" />
+											}}
+										/>
+									) : (
+										answer
+									)}
 								</Typography>
 
 								{idx < faqs.length - 1 && (

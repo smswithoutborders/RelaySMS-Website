@@ -1,4 +1,10 @@
 {
+	"404": {
+		"title": "اوه! صفحه پیدا نشد",
+		"description": "صفحه‌ای که به دنبال آن هستید وجود ندارد. ممکن است جابجا شده، حذف شده، یا آدرس اشتباهی وارد کرده باشید.",
+		"homeButton": "بازگشت به خانه",
+		"backButton": "بازگشت"
+	},
 	"Nav": {
 		"Home": "خانه",
 		"Help": "مستندات",
@@ -11,7 +17,8 @@
 		"Developers": "توسعه‌دهندگان",
 		"Branding": "برندینگ",
 		"Overview": "نمای کلی سیستم",
-		"Changelog": "تغییرات"
+		"Changelog": "تغییرات",
+		"About": "درباره ما"
 	},
 	"Alert": {
 		"message": "اکنون می‌توانید RelaySMS را به عنوان برنامه پیامک پیش‌فرض خود در اندروید تنظیم کنید!",
@@ -27,13 +34,14 @@
 		"h1": "حتی بدون دسترسی به اینترنت متصل بمانید.",
 		"h2": "RelaySMS به کاربران امکان ارسال پیام به پلتفرم‌های آنلاین بدون داشتن اینترنت فعال را می‌دهد. پیام‌ها از طریق SMS از دستگاه شما ارسال می‌شوند.",
 		"Android": "دانلود RelaySMS ",
-		"GatewayClient":  "راه‌اندازی کلاینت درگاه",
+		"GatewayClient": "راه‌اندازی کلاینت درگاه",
 		"supportedPlatforms": "پلتفرم‌های پشتیبانی شده:",
 		"auditMessage": {
 			"part1": "RelaySMS متعهد به امنیت و شفافیت است. گزارش ",
 			"link": "ممیزی امنیتی",
 			"part2": " را بخوانید."
-		}
+		},
+		"RoutingNumbers": "Set Up Gateway Clients"
 	},
 	"Howitworks": {
 		"ReadMore": "بیشتر بخوانید",
@@ -109,8 +117,8 @@
 			"answer": "فعلاً برای Android و iOS. پشتیبانی Linux به زودی اضافه خواهد شد."
 		},
 		"faq5": {
-			"question": "مشکل فنی دارم، چه کنم؟",
-			"answer": "راهنمای <a href='https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ' target='_blank' rel='noopener noreferrer'>عیب‌یابی</a> را بررسی کنید یا با developers@smswithoutborders.com تماس بگیرید."
+			"question": "آیا می‌توانم از طریق RelaySMS پاسخ پیام‌ها را دریافت کنم؟",
+			"answer": "بله، می‌توانید با استفاده از قابلیت bridge پاسخ‌ها را در برنامه RelaySMS دریافت کنید. پاسخ‌ها از طریق SMS به دستگاه شما ارسال می‌شوند، حتی بدون اتصال به اینترنت."
 		},
 		"contact": {
 			"didn't": "پاسخی نیافتید؟",
@@ -157,7 +165,16 @@
 		"AuditReport": "گزارش ممیزی",
 		"Jobs": "فرصت‌های شغلی",
 		"ContactUs": "تماس با ما",
-		"copyright": "AFKANERD"
+		"copyright": "AFKANERD",
+		"NewsletterTitle": "Subscribe to our newsletter",
+		"NewsletterDescription": "Get RelaySMS updates and release highlights in your mail.",
+		"SubscribeNow": "Subscribe now",
+		"Aria": {
+			"Logo": "RelaySMS logo",
+			"GitHub": "GitHub",
+			"X": "X",
+			"Bluesky": "Bluesky"
+		}
 	},
 	"Newsletter": {
 		"title": "عضویت در خبرنامه",
@@ -171,7 +188,14 @@
 		"successHint": "متشکریم. لطفاً ایمیل خود را برای تأیید عضویت بررسی کنید.",
 		"doubleOptInHint": "صندوق ورودی خود را بررسی کنید و برای نهایی کردن عضویت روی لینک تأیید کلیک کنید.",
 		"error": "مشکلی پیش آمد. لطفاً دوباره تلاش کنید.",
-		"privacyHint": "بدون اسپم. هر زمان بخواهید می‌توانید لغو عضویت کنید."
+		"privacyHint": "بدون اسپم. هر زمان بخواهید می‌توانید لغو عضویت کنید.",
+		"confirmationErrorTitle": "این لینک تایید منقضی شده است یا قبلا استفاده شده است.",
+		"confirmationErrorBody": "دوباره از پایین مشترک شوید تا یک ایمیل تایید جدید برای شما ارسال کنیم.",
+		"unsubscribedTitle": "اشتراک شما از این فهرست لغو شد.",
+		"unsubscribedBody": "دیگر ایمیلی از این خبرنامه دریافت نخواهید کرد.",
+		"backHome": "بازگشت به خانه",
+		"successImageAlt": "اشتراک خبرنامه با موفقیت انجام شد",
+		"awesomeButton": "عالیه!"
 	},
 	"Changelog": {
 		"title": "تغییرات محصول",
@@ -319,7 +343,8 @@
 			"playStore": "RelaySMS را از فروشگاه رسمی گوگل پلی دریافت کنید.",
 			"fDroid": "از طریق F-Droid برای علاقه‌مندان به متن‌باز نصب کنید."
 		},
-		"iosDescription": "اکنون در فروشگاه اپل در دسترس است."
+		"iosDescription": "اکنون در فروشگاه اپل در دسترس است.",
+		"heroImageAlt": "Download RelaySMS"
 	},
 	"WhoShouldUse": {
 		"Header": "همه می‌توانند از RelaySMS استفاده کنند",
@@ -430,6 +455,16 @@
 			"Light": "روشن",
 			"Dark": "تاریک",
 			"System": "سیستم"
+		},
+		"Aria": {
+			"Home": "Home",
+			"Logo": "RelaySMS logo",
+			"GitHub": "GitHub",
+			"X": "RelaySMS on X",
+			"Bluesky": "RelaySMS on Bluesky",
+			"ThemeTooltip": "Theme",
+			"ToggleTheme": "Toggle theme",
+			"OpenMenu": "Open navigation menu"
 		}
 	},
 	"Contributing": {
@@ -488,13 +523,27 @@
 			"openIssues": "مشکلات",
 			"goodFirstIssue": "اولین issue مناسب",
 			"viewAll": "مشاهده همه مخازن",
-			"Android": { "description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like Android Apps which posses well tested tools for security" },
-			"iOS": { "description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like iOS Apps which posses well tested tools for security" },
-			"Publisher": { "description": "Publisher is the middle-ware that sits between the Gateway Server and the SMSWithoutBorder backend. It does the handshake between the necessary parties and performs the request to decrypt the encrypted stored tokens." },
-			"Vault": { "description": "A secure access token management system for safe message publishing." },
-			"GatewayServer": { "description": "Gateway-servers enables the users to synchronize and communicate with the publisher module" },
-			"BridgeServer": { "description": "The bridge is a technology designed to allow users to communicate with online platforms via SMS, even without an active internet connection. It enables a secure handshake and encrypted message exchange entirely over SMS." },
-			"Website": { "description": "RelaySMS Homepage" }
+			"Android": {
+				"description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like Android Apps which posses well tested tools for security"
+			},
+			"iOS": {
+				"description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like iOS Apps which posses well tested tools for security"
+			},
+			"Publisher": {
+				"description": "Publisher is the middle-ware that sits between the Gateway Server and the SMSWithoutBorder backend. It does the handshake between the necessary parties and performs the request to decrypt the encrypted stored tokens."
+			},
+			"Vault": {
+				"description": "A secure access token management system for safe message publishing."
+			},
+			"GatewayServer": {
+				"description": "Gateway-servers enables the users to synchronize and communicate with the publisher module"
+			},
+			"BridgeServer": {
+				"description": "The bridge is a technology designed to allow users to communicate with online platforms via SMS, even without an active internet connection. It enables a secure handshake and encrypted message exchange entirely over SMS."
+			},
+			"Website": {
+				"description": "RelaySMS Homepage"
+			}
 		},
 		"GatewayClients": {
 			"title": "با راه‌اندازی Gateway Client ها بخش مهمی از RelaySMS باشید",
@@ -502,10 +551,41 @@
 			"cta": "همه چیز درباره Gateway Client ها"
 		}
 	},
-	"404": {
-		"title": "اوه! صفحه پیدا نشد",
-		"description": "صفحه‌ای که به دنبال آن هستید وجود ندارد. ممکن است جابجا شده، حذف شده، یا آدرس اشتباهی وارد کرده باشید.",
-		"homeButton": "بازگشت به خانه",
-		"backButton": "بازگشت"
+	"Step2Button": "Learn More",
+	"About": {
+		"Flow": {
+			"Phone": {
+				"Title": "تلفن شما",
+				"Subtitle": "پیام آفلاین از طریق SMS"
+			},
+			"Gateway": {
+				"Title": "کلاینت Gateway",
+				"Subtitle": "پل ارتباطی برای ارسال پیام‌ها به اینترنت"
+			},
+			"Platform": {
+				"Title": "پلتفرم",
+				"Subtitle": "تحویل به Telegram، Gmail و بیشتر"
+			}
+		},
+		"Hero": {
+			"Title": "RelaySMS با استفاده از SMS سانسور و قطعی اینترنت را دور می‌زند",
+			"Subtitle": "اجازه ندهید سانسور یا قطعی اینترنت ارتباط شما را متوقف کند. RelaySMS یک پروژه رایگان و متن‌باز است که به شما امکان می‌دهد بدون دسترسی به اینترنت، پیام‌های خود را به پلتفرم‌های محبوبی مانند Gmail، Telegram، Bluesky و بیشتر ارسال کنید."
+		},
+		"GatewayShare": "اگر در منطقه‌ای با اتصال اینترنت هستید، می‌توانید یک کلاینت Gateway راه‌اندازی کنید و این دسترسی را با خانواده و دوستان خود در مناطق بدون اینترنت به اشتراک بگذارید.",
+		"CTA": {
+			"SetupGateway": "راه‌اندازی کلاینت Gateway",
+			"SMSWithoutBorders": "بیشتر درباره SMSWithoutBorders",
+			"Contribute": "راهنمای مشارکت"
+		},
+		"WhoBuilt": {
+			"Title": "چه کسانی پشت RelaySMS هستند؟",
+			"Description": "RelaySMS یک پروژه از SMSWithoutBorders است که توسط تیم Afkanerd با حمایت مشارکت‌کنندگان متن‌باز و شرکا توسعه داده و نگهداری می‌شود. ما مشارکت‌های جامعه را برای بهبود RelaySMS و گسترش دسترسی آن می‌پذیریم و تشویق می‌کنیم."
+		}
+	},
+	"awesomeButton": "عالیه!",
+	"Common": {
+		"Aria": {
+			"Logo": "RelaySMS logo"
+		}
 	}
 }

@@ -1,4 +1,10 @@
 {
+	"404": {
+		"title": "Oups ! Page Non Trouvée",
+		"description": "La page que vous recherchez n'existe pas. Elle a peut-être été déplacée, supprimée, ou vous avez saisi une URL incorrecte.",
+		"homeButton": "Retour à l'Accueil",
+		"backButton": "Retour"
+	},
 	"Nav": {
 		"Home": "Accueil",
 		"Help": "Documentation",
@@ -11,7 +17,8 @@
 		"Developers": "Développeurs",
 		"Branding": "Identité de marque",
 		"Overview": "Vue d'Ensemble du Système",
-		"Changelog": "Journal des changements"
+		"Changelog": "Journal des changements",
+		"About": "À propos"
 	},
 	"Alert": {
 		"message": "Vous pouvez maintenant faire de RelaySMS votre application SMS par défaut sur Android !",
@@ -33,7 +40,8 @@
 			"part1": "RelaySMS s'engage pour la sécurité et la transparence. Lisez notre ",
 			"link": "rapport d’audit de sécurité",
 			"part2": "."
-		}
+		},
+		"RoutingNumbers": "Set Up Gateway Clients"
 	},
 	"Howitworks": {
 		"ReadMore": "Lire la suite",
@@ -109,8 +117,8 @@
 			"answer": "Disponible sur Android et iOS. Le support Linux arrive bientôt."
 		},
 		"faq5": {
-			"question": "Problème technique, que faire ?",
-			"answer": "Consultez notre <a href='https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ' target='_blank' rel='noopener noreferrer'>guide de dépannage</a> ou contactez‑nous à <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a>."
+			"question": "Puis-je recevoir des réponses aux messages via RelaySMS ?",
+			"answer": "Oui, vous pouvez recevoir des réponses dans l'application RelaySMS grâce à la fonctionnalité bridge. Les réponses sont envoyées par SMS vers votre appareil, même sans connexion Internet."
 		},
 		"contact": {
 			"didn't": "Vous n'avez pas trouvé ?",
@@ -157,7 +165,16 @@
 		"AuditReport": "Rapport d'Audit",
 		"Jobs": "Emplois",
 		"ContactUs": "Contactez-nous",
-		"copyright": "AFKANERD"
+		"copyright": "AFKANERD",
+		"NewsletterTitle": "Subscribe to our newsletter",
+		"NewsletterDescription": "Get RelaySMS updates and release highlights in your mail.",
+		"SubscribeNow": "Subscribe now",
+		"Aria": {
+			"Logo": "RelaySMS logo",
+			"GitHub": "GitHub",
+			"X": "X",
+			"Bluesky": "Bluesky"
+		}
 	},
 	"Newsletter": {
 		"title": "Abonnez-vous à notre newsletter",
@@ -171,7 +188,14 @@
 		"successHint": "Merci. Vérifiez votre boîte mail pour confirmer votre abonnement.",
 		"doubleOptInHint": "Vérifiez votre boîte mail et cliquez sur le lien de confirmation pour terminer l’abonnement.",
 		"error": "Une erreur est survenue. Veuillez réessayer.",
-		"privacyHint": "Pas de spam. Désabonnement possible à tout moment."
+		"privacyHint": "Pas de spam. Désabonnement possible à tout moment.",
+		"confirmationErrorTitle": "Ce lien de confirmation a expiré ou a déjà été utilisé.",
+		"confirmationErrorBody": "Réabonnez-vous ci-dessous et nous vous enverrons un nouvel e-mail de confirmation.",
+		"unsubscribedTitle": "Vous vous êtes désabonné de cette liste.",
+		"unsubscribedBody": "Vous ne recevrez plus d'e-mails de cette newsletter.",
+		"backHome": "Retour à l'accueil",
+		"successImageAlt": "Abonnement à la newsletter réussi",
+		"awesomeButton": "Super !"
 	},
 	"Changelog": {
 		"title": "Journal des changements produit",
@@ -319,7 +343,8 @@
 			"playStore": "Obtenez RelaySMS depuis le Google Play Store officiel.",
 			"fDroid": "Installez via F-Droid pour les amateurs de logiciels libres."
 		},
-		"iosDescription": "Disponible dès maintenant sur l'App Store d'Apple."
+		"iosDescription": "Disponible dès maintenant sur l'App Store d'Apple.",
+		"heroImageAlt": "Download RelaySMS"
 	},
 	"WhoShouldUse": {
 		"Header": "Tout le monde peut utiliser RelaySMS",
@@ -430,6 +455,16 @@
 			"Light": "Clair",
 			"Dark": "Sombre",
 			"System": "Système"
+		},
+		"Aria": {
+			"Home": "Home",
+			"Logo": "RelaySMS logo",
+			"GitHub": "GitHub",
+			"X": "RelaySMS on X",
+			"Bluesky": "RelaySMS on Bluesky",
+			"ThemeTooltip": "Theme",
+			"ToggleTheme": "Toggle theme",
+			"OpenMenu": "Open navigation menu"
 		}
 	},
 	"Contributing": {
@@ -506,7 +541,9 @@
 			"BridgeServer": {
 				"description": "The bridge is a technology designed to allow users to communicate with online platforms via SMS, even without an active internet connection. It enables a secure handshake and encrypted message exchange entirely over SMS."
 			},
-			"Website": { "description": "RelaySMS Homepage" }
+			"Website": {
+				"description": "RelaySMS Homepage"
+			}
 		},
 		"GatewayClients": {
 			"title": "Jouez un role essentiel dans RelaySMS en configurant des Gateway Clients",
@@ -514,10 +551,41 @@
 			"cta": "Tout savoir sur les Gateway Clients"
 		}
 	},
-	"404": {
-		"title": "Oups ! Page Non Trouvée",
-		"description": "La page que vous recherchez n'existe pas. Elle a peut-être été déplacée, supprimée, ou vous avez saisi une URL incorrecte.",
-		"homeButton": "Retour à l'Accueil",
-		"backButton": "Retour"
+	"Step2Button": "Learn More",
+	"About": {
+		"Flow": {
+			"Phone": {
+				"Title": "Votre téléphone",
+				"Subtitle": "Message hors ligne via SMS"
+			},
+			"Gateway": {
+				"Title": "Client passerelle",
+				"Subtitle": "Le pont qui envoie les messages en ligne"
+			},
+			"Platform": {
+				"Title": "Plateforme",
+				"Subtitle": "Livré vers Telegram, Gmail et plus"
+			}
+		},
+		"Hero": {
+			"Title": "RelaySMS utilise les SMS pour contourner la censure et les coupures d'internet",
+			"Subtitle": "Ne laissez pas la censure ou les coupures d'internet vous empêcher de communiquer. RelaySMS est un projet gratuit et open source qui vous permet d'envoyer des messages vers des plateformes populaires comme Gmail, Telegram, Bluesky et bien plus, même sans accès à internet."
+		},
+		"GatewayShare": "Si vous êtes dans une zone avec internet, vous pouvez configurer un Client passerelle et partager l'accès avec votre famille et vos amis dans des zones sans connectivité.",
+		"CTA": {
+			"SetupGateway": "Configurer un Client passerelle",
+			"SMSWithoutBorders": "En savoir plus sur SMSWithoutBorders",
+			"Contribute": "Guide de contribution"
+		},
+		"WhoBuilt": {
+			"Title": "Qui est derrière RelaySMS ?",
+			"Description": "RelaySMS est un projet SMSWithoutBorders, développé et maintenu par l'équipe Afkanerd avec le soutien de contributeurs open source et de partenaires. Nous accueillons et encourageons les contributions de la communauté pour améliorer RelaySMS et élargir sa portée."
+		}
+	},
+	"awesomeButton": "Super !",
+	"Common": {
+		"Aria": {
+			"Logo": "RelaySMS logo"
+		}
 	}
 }

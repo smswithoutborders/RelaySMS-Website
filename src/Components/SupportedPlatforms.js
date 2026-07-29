@@ -100,7 +100,6 @@ const SupportedPlatforms = () => {
 				alignItems="center"
 				direction={isRtl ? "row-reverse" : "row"}
 			>
-				{/* Left: text */}
 				<Grid item xs={12} md={6}>
 					<Typography
 						variant="h4"

@@ -14,12 +14,18 @@ const Footer = () => {
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 
 	const logoSrc = "/RelaySMSDark.png";
+	const footerAria = {
+		logo: t("Footer.Aria.Logo", "RelaySMS logo"),
+		github: t("Footer.Aria.GitHub", "GitHub"),
+		x: t("Footer.Aria.X", "X"),
+		bluesky: t("Footer.Aria.Bluesky", "Bluesky")
+	};
 
 	const footerSections = [
 		{
 			title: t("Footer.Resources"),
 			links: [
-				{ label: t("Footer.Changelog", "Changelog"), to: "/changelog" },
+				{ label: t("Footer.Changelog", "Changelog"), href: "https://github.com/smswithoutborders/RelaySMS-Android/releases", external: true },
 				{ label: t("Footer.Blog"), href: "https://blog.smswithoutborders.com/", external: true },
 				{ label: t("Footer.BrandResources"), to: "/branding" },
 				{ label: t("Footer.SystemOverview"), to: "/system-overview" }
@@ -77,7 +83,7 @@ const Footer = () => {
 				},
 				{
 					label: t("Footer.Jobs"),
-					href: "mailto:developers@smswithoutborders.com?subject=Job Inquiry",
+					href: "https://afkanerd.com/careers",
 					external: true
 				},
 				{ label: t("Footer.ContactUs"), to: "/contact" }
@@ -195,10 +201,8 @@ const Footer = () => {
 				</Grid>
 			</Grid>
 
-			{/* Divider */}
 			<Divider sx={{ borderColor: "#cccccc67", mx: { xs: 2, md: 5 } }} />
 
-			{/* Bottom Section with Logo, Social Icons, and Language Switcher */}
 			<Grid container alignItems="center" sx={{ px: { xs: 2, md: 5 }, mt: 4 }}>
 				<Grid
 					item
@@ -212,7 +216,7 @@ const Footer = () => {
 				>
 					<img
 						src={logoSrc}
-						alt="RelaySMS Logo"
+						alt={footerAria.logo}
 						style={{ height: 32, transition: "0.5s ease-in-out" }}
 					/>
 				</Grid>
@@ -240,7 +244,7 @@ const Footer = () => {
 							href="https://github.com/smswithoutborders"
 							target="_blank"
 							rel="noopener noreferrer"
-							aria-label="GitHub"
+							aria-label={footerAria.github}
 							sx={{
 								color: "#ffffff",
 								transition: "transform 0.3s, color 0.3s",
@@ -258,7 +262,7 @@ const Footer = () => {
 							href="https://x.com/RelaySMS"
 							target="_blank"
 							rel="noopener noreferrer"
-							aria-label="X"
+							aria-label={footerAria.x}
 							sx={{
 								color: "#ffffff",
 								transition: "transform 0.3s, color 0.3s",
@@ -276,7 +280,7 @@ const Footer = () => {
 							href="https://bsky.app/profile/relaysms.bsky.social"
 							target="_blank"
 							rel="noopener noreferrer"
-							aria-label="Bluesky"
+							aria-label={footerAria.bluesky}
 							sx={{
 								color: "#ffffff",
 								transition: "transform 0.3s, color 0.3s",
@@ -304,7 +308,6 @@ const Footer = () => {
 				</Grid>
 			</Grid>
 
-			{/* Copyright */}
 			<Grid container sx={{ px: { xs: 2, md: 5 }, pt: 3 }}>
 				<Grid item xs={12}>
 					<Box sx={{ textAlign: "center" }}>

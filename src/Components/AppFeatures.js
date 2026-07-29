@@ -158,7 +158,6 @@ const AppFeatures = () => {
 					{t("AppFeatures.Subheader", "Compare what's available across Android, iOS, and Desktop.")}
 				</Typography>
 
-				{/* ✅ Centered tabs, no bottom border/indicator */}
 				<Tabs
 					value={activeTab}
 					onChange={(_, v) => setActiveTab(v)}

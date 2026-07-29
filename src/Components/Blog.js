@@ -299,9 +299,7 @@ const BlogSectionNew = () => {
 					minReadLabel={minReadLabel}
 				/>
 			)}
-			{/* {row2.length > 0 && (
-				<MarqueeRow posts={row2} direction="right" calculateReadTime={calculateReadTime} />
-			)} */}
+		
 
 			{/* ── Join the Community ── */}
 			<Box
@@ -342,11 +340,7 @@ const BlogSectionNew = () => {
 				>
 					{t("Blog.communityDescription")}
 				</Typography>
-				{/* <NewsletterForm
-					showHeading={false}
-					align="center"
-					sx={{ width: "100%", maxWidth: 620 }}
-				/> */}
+				
 				<Button
 					component="a"
 					href={TELEGRAM_URL}
