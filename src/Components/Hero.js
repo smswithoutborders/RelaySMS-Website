@@ -119,7 +119,7 @@ const Hero = () => {
 								size="large"
 								sx={{
 									bgcolor: "primary.main",
-
+									textTransform: "none",
 									fontFamily: "Ubuntu",
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
