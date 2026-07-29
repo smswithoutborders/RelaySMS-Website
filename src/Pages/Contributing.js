@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Typography, Grid, Button, Link } from "@mui/material";
+import { Box, Typography, Grid, Button, Link, Stack } from "@mui/material";
 import {
 	FaGithub,
 	FaCodeBranch,
@@ -15,6 +15,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@mui/material/styles";
 import { FaTelegram } from "react-icons/fa6";
+import NewsletterForm from "../Components/NewsletterForm";
 
 const langColor = {
 	Kotlin: "#7F52FF",
@@ -477,6 +478,63 @@ const Contributing = () => {
 				<Typography
 					sx={{
 						fontFamily: "'Unbounded', Ubuntu",
+						fontWeight: 700,
+						fontSize: { xs: "1.2rem", md: "1.3rem" },
+						mb: 1
+					}}
+				>
+					{t("Contributing.HowTo.title")}
+				</Typography>
+				<Typography sx={{ color: "text.secondary", mb: 5, maxWidth: 540 }}>
+					{t("Contributing.HowTo.subtitle")}
+				</Typography>
+				<Grid container spacing={2}>
+					{steps.map((step, i) => (
+						<Grid item xs={12} sm={6} md={3} key={i}>
+							<Box
+								sx={{
+									p: 3,
+									height: "100%",
+									borderRadius: 2,
+									border: "1px solid",
+									borderColor: "divider",
+									bgcolor: "background.paper",
+									display: "flex",
+									flexDirection: "column",
+									gap: 1.5,
+									position: "relative"
+								}}
+							>
+								<Typography
+									sx={{
+										position: "absolute",
+										top: 16,
+										right: isRtl ? "unset" : 16,
+										left: isRtl ? 16 : "unset",
+										fontFamily: "'Unbounded', Ubuntu",
+										fontWeight: 800,
+										fontSize: "1.5rem",
+										color: isDark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)",
+										lineHeight: 1,
+										userSelect: "none"
+									}}
+								>
+									{i + 1}
+								</Typography>
+								<Typography sx={{ fontWeight: 700, fontSize: "0.95rem" }}>{step.title}</Typography>
+								<Typography sx={{ color: "text.secondary", fontSize: "0.85rem", lineHeight: 1.65 }}>
+									{step.description}
+								</Typography>
+							</Box>
+						</Grid>
+					))}
+				</Grid>
+			</Box>
+
+			<Box sx={{ maxWidth: 1100, mx: "auto", px: { xs: 3, md: 4 }, py: { xs: 6, md: 8 } }}>
+				<Typography
+					sx={{
+						fontFamily: "'Unbounded', Ubuntu",
 						fontSize: { xs: "1.2rem", md: "1.3rem" },
 						fontWeight: 700,
 						mb: 1
@@ -536,63 +594,119 @@ const Contributing = () => {
 						</Grid>
 					))}
 				</Grid>
-			</Box>
 
-			<Box sx={{ maxWidth: 1100, mx: "auto", px: { xs: 3, md: 4 }, py: { xs: 6, md: 8 } }}>
-				<Typography
+				<Box
 					sx={{
-						fontFamily: "'Unbounded', Ubuntu",
-						fontWeight: 700,
-						fontSize: { xs: "1.2rem", md: "1.3rem" },
-						mb: 1
+						mt: 8,
+						p: 5,
+						borderRadius: 2,
+						border: "1px solid",
+						borderColor: "divider",
+						bgcolor: "background.paper",
+						textDecoration: "none",
+						color: "inherit",
+						transition: "border-color 0.2s, box-shadow 0.2s",
+						"&:hover": {
+							borderColor: "primary.main",
+							boxShadow: `0 0 0 1px ${theme.palette.primary.main}22`
+						}
 					}}
 				>
-					{t("Contributing.HowTo.title")}
-				</Typography>
-				<Typography sx={{ color: "text.secondary", mb: 5, maxWidth: 540 }}>
-					{t("Contributing.HowTo.subtitle")}
-				</Typography>
-				<Grid container spacing={2}>
-					{steps.map((step, i) => (
-						<Grid item xs={12} sm={6} md={3} key={i}>
-							<Box
+					<Stack
+						direction={{ xs: "column", sm: "row" }}
+						justifyContent="center"
+						alignItems="center"
+						spacing={4}
+						mt={2}
+					>
+						<Box>
+							<Typography variant="h6" sx={{ fontFamily: "'Unbounded', Ubuntu", fontWeight: 600 }}>
+								{t("Contributing.GatewayClients.title")}
+							</Typography>
+						</Box>
+						<Box>
+							<Typography variant="body1" sx={{ color: "text.secondary" }}>
+								{t("Contributing.GatewayClients.description")}
+							</Typography>
+							<Button
+								variant="contained"
+								component="a"
+								href="https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide"
+								target="_blank"
+								rel="noopener noreferrer"
 								sx={{
-									p: 3,
-									height: "100%",
+									mt: 2,
+									color: isDark ? "#000000" : "#ffffff",
+									bgcolor: isDark ? "#fff" : "primary.main",
+									// fontWeight: 600,
+									textTransform: "none",
 									borderRadius: 2,
-									border: "1px solid",
-									borderColor: "divider",
-									bgcolor: "background.paper",
-									display: "flex",
-									flexDirection: "column",
-									gap: 1.5,
-									position: "relative"
+									// px: 4,
+									// py: 1.5
 								}}
 							>
-								<Typography
-									sx={{
-										position: "absolute",
-										top: 16,
-										right: isRtl ? "unset" : 16,
-										left: isRtl ? 16 : "unset",
-										fontFamily: "'Unbounded', Ubuntu",
-										fontWeight: 800,
-										fontSize: "1.5rem",
-										color: isDark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)",
-										lineHeight: 1,
-										userSelect: "none"
-									}}
-								>
-									{i + 1}
-								</Typography>
-								<Typography sx={{ fontWeight: 700, fontSize: "0.95rem" }}>{step.title}</Typography>
-								<Typography sx={{ color: "text.secondary", fontSize: "0.85rem", lineHeight: 1.65 }}>
-									{step.description}
-								</Typography>
-							</Box>
-						</Grid>
-					))}
-				</Grid>
+								{t("Contributing.GatewayClients.cta")}
+							</Button>
+						</Box>
+					</Stack>
+				</Box>
+
+				{/* <Box
+					sx={{
+						mt: 8,
+						p: 5,
+						borderRadius: 2,
+						border: "1px solid",
+						borderColor: "divider",
+						bgcolor: "background.paper",
+						textDecoration: "none",
+						color: "inherit",
+						transition: "border-color 0.2s, box-shadow 0.2s",
+						"&:hover": {
+							borderColor: "primary.main",
+							boxShadow: `0 0 0 1px ${theme.palette.primary.main}22`
+						}
+					}}
+				>
+					<Stack
+						direction={{ xs: "column", sm: "row" }}
+						justifyContent="center"
+						alignItems="center"
+						spacing={4}
+						mt={2}
+					>
+						<Box>
+							<Typography variant="h6" sx={{ fontFamily: "'Unbounded', Ubuntu", fontWeight: 600 }}>
+								Donate to RelaySMS
+							</Typography>
+						</Box>
+						<Box>
+							<Typography variant="body1" sx={{ color: "text.secondary" }}>
+								SMS reply costs are covered by RelaySMS and it can get really expensive, donating
+								can help keep SMS replies going, you could also just buy the developers a cup of
+								coffee.
+							</Typography>
+							<Button
+								variant="contained"
+								component="a"
+								href="https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide"
+								target="_blank"
+								rel="noopener noreferrer"
+								sx={{
+									mt: 2,
+									color: "#ffffff",
+									// fontWeight: 600,
+									textTransform: "none",
+									borderRadius: 2,
+									px: 4,
+									py: 1.5
+								}}
+							>
+								{t("Contributing.GatewayClients.cta")}
+							</Button>
+						</Box>
+					</Stack>
+				</Box> */}
 			</Box>
 
 			{/* ── Join the Community ── */}
@@ -634,6 +748,11 @@ const Contributing = () => {
 				>
 					{t("Blog.communityDescription")}
 				</Typography>
+				{/* <NewsletterForm
+					showHeading={false}
+					align="center"
+					sx={{ width: "100%", maxWidth: 620 }}
+				/> */}
 				<Button
 					component="a"
 					href="https://t.me/+IPYp6q06dWsyZjY0"

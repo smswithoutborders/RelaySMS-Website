@@ -139,11 +139,39 @@
 		"iOSTutorial": "Tutoriel iOS",
 		"GatewayClientSetup": "Configuration du client passerelle",
 		"Troubleshooting": "Dépannage",
+		"Newsletter": {
+			"title": "Abonnez-vous à notre newsletter",
+			"description": "Recevez les mises à jour RelaySMS, les nouveautés des versions et des conseils pratiques par email.",
+			"emailPlaceholder": "Adresse e-mail",
+			"emailAria": "Adresse e-mail",
+			"submit": "S'abonner",
+			"subscribing": "Abonnement en cours…",
+			"successTitle": "Vous êtes abonné.",
+			"doubleOptInTitle": "Vérifiez votre boîte mail.",
+			"successHint": "Merci. Vérifiez votre boîte mail pour confirmer votre abonnement.",
+			"doubleOptInHint": "Vérifiez votre boîte mail et cliquez sur le lien de confirmation pour terminer l’abonnement.",
+			"error": "Une erreur est survenue. Veuillez réessayer.",
+			"privacyHint": "Pas de spam. Désabonnement possible à tout moment."
+		},
 		"PrivacyPolicy": "Politique de Confidentialité",
 		"AuditReport": "Rapport d'Audit",
 		"Jobs": "Emplois",
 		"ContactUs": "Contactez-nous",
 		"copyright": "AFKANERD"
+	},
+	"Newsletter": {
+		"title": "Abonnez-vous à notre newsletter",
+		"description": "Recevez les mises à jour RelaySMS, les nouveautés des versions et des conseils pratiques par email.",
+		"emailPlaceholder": "Adresse e-mail",
+		"emailAria": "Adresse e-mail",
+		"submit": "S'abonner",
+		"subscribing": "Abonnement en cours…",
+		"successTitle": "Vous êtes abonné.",
+		"doubleOptInTitle": "Vérifiez votre boîte mail.",
+		"successHint": "Merci. Vérifiez votre boîte mail pour confirmer votre abonnement.",
+		"doubleOptInHint": "Vérifiez votre boîte mail et cliquez sur le lien de confirmation pour terminer l’abonnement.",
+		"error": "Une erreur est survenue. Veuillez réessayer.",
+		"privacyHint": "Pas de spam. Désabonnement possible à tout moment."
 	},
 	"Changelog": {
 		"title": "Journal des changements produit",
@@ -479,6 +507,11 @@
 				"description": "The bridge is a technology designed to allow users to communicate with online platforms via SMS, even without an active internet connection. It enables a secure handshake and encrypted message exchange entirely over SMS."
 			},
 			"Website": { "description": "RelaySMS Homepage" }
+		},
+		"GatewayClients": {
+			"title": "Jouez un role essentiel dans RelaySMS en configurant des Gateway Clients",
+			"description": "Lorsque vous configurez un Gateway Client (numero de telephone) dans une region avec une connexion internet, ce numero aide a acheminer les messages des utilisateurs hors ligne vers des plateformes en ligne.",
+			"cta": "Tout savoir sur les Gateway Clients"
 		}
 	},
 	"404": {

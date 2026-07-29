@@ -323,7 +323,7 @@ const GettingStarted = () => {
 							fontFamily: "'Unbounded', Ubuntu"
 						}}
 					>
-						{t("Howitworks.Header", "Getting Started with RelaySMS")}
+						{t("Howitworks.Header", "How to set up RelaySMS")}
 					</Typography>
 					<Typography
 						variant="body1"
@@ -331,12 +331,14 @@ const GettingStarted = () => {
 							fontSize: "1.1rem",
 							color: "text.secondary",
 							mt: 1,
+							mx: "auto",
+							maxWidth: 800,
 							fontFamily: "Ubuntu"
 						}}
 					>
 						{t(
 							"Howitworks.SubHeader",
-							"Learn how to set up and use RelaySMS for seamless offline communication."
+							"Do not wait for internet shutdowns to set up RelaySMS. Follow these steps to ensure you can stay connected when you need it most."
 						)}
 					</Typography>
 				</Box>

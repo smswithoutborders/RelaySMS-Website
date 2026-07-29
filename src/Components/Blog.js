@@ -4,6 +4,7 @@ import { FaUser, FaClock } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa6";
 import { keyframes } from "@emotion/react";
 import { useTranslation } from "react-i18next";
+import NewsletterForm from "./NewsletterForm";
 
 const TELEGRAM_URL = "https://t.me/+IPYp6q06dWsyZjY0";
 
@@ -341,6 +342,11 @@ const BlogSectionNew = () => {
 				>
 					{t("Blog.communityDescription")}
 				</Typography>
+				{/* <NewsletterForm
+					showHeading={false}
+					align="center"
+					sx={{ width: "100%", maxWidth: 620 }}
+				/> */}
 				<Button
 					component="a"
 					href={TELEGRAM_URL}
