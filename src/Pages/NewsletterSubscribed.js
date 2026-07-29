@@ -23,27 +23,29 @@ const NewsletterSubscribed = () => {
 			<Box
 				dir={isRtl ? "rtl" : "ltr"}
 				sx={{
-					minHeight: "70vh",
+					minHeight: "95vh",
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
 					px: 2
 				}}
 			>
-				<Container maxWidth="sm">
+				<Container>
 					<Stack
-						spacing={2}
+						spacing={3}
 						alignItems="center"
 						textAlign="center"
 						sx={{
 							py: { xs: 10, md: 12 },
-							px: { xs: 3, md: 4 },
-							border: "1px solid",
-							borderColor: "divider",
-							// borderRadius: 3,
-							bgcolor: "background.paper"
+							px: { xs: 3, md: 4 }
 						}}
 					>
+						<Box
+							component="img"
+							src="/popper.png"
+							alt={t("Newsletter.successImageAlt", "Newsletter success")}
+							sx={{ width: 150, height: 150 }}
+						/>
 						<Typography
 							variant="h4"
 							sx={{
@@ -54,7 +56,10 @@ const NewsletterSubscribed = () => {
 						>
 							{t("Newsletter.successTitle", "You've successfully subscribed!")}
 						</Typography>
-						<Typography sx={{ color: "text.secondary", maxWidth: 520, lineHeight: 1.7 }}>
+						<Typography
+							variant="h6"
+							sx={{ color: "text.secondary", maxWidth: 520, lineHeight: 1.7 }}
+						>
 							{t(
 								"Newsletter.successHint",
 								"Thanks. Please check your email to confirm your subscription."
@@ -65,14 +70,15 @@ const NewsletterSubscribed = () => {
 							to="/"
 							variant="contained"
 							sx={{
-								mt: 1,
+								mt: 2.5,
 								textTransform: "none",
 								fontWeight: 600,
+								fontFamily: "Unbounded",
 								px: 3,
 								py: 1
 							}}
 						>
-							{t("awesomeButton", "Awesome!")}
+							{t("Newsletter.awesomeButton", "Awesome!")}
 						</Button>
 					</Stack>
 				</Container>

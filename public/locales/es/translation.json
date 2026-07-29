@@ -1,4 +1,10 @@
 {
+	"404": {
+		"title": "¡Ups! Página No Encontrada",
+		"description": "La página que buscas no existe. Puede que haya sido movida, eliminada, o ingresaste una URL incorrecta.",
+		"homeButton": "Volver al Inicio",
+		"backButton": "Regresar"
+	},
 	"Nav": {
 		"Home": "Inicio",
 		"Help": "Documentación",
@@ -11,7 +17,8 @@
 		"Developers": "Desarrolladores",
 		"Branding": "Marca",
 		"Overview": "Descripción del Sistema",
-		"Changelog": "Registro de cambios"
+		"Changelog": "Registro de cambios",
+		"About": "Acerca de"
 	},
 	"Alert": {
 		"message": "¡Ahora puedes hacer de RelaySMS tu aplicación SMS predeterminada en Android!",
@@ -33,7 +40,8 @@
 			"part1": "RelaySMS está comprometido con la seguridad y la transparencia. Lee nuestro ",
 			"link": "informe de auditoría de seguridad",
 			"part2": "."
-		}
+		},
+		"RoutingNumbers": "Set Up Gateway Clients"
 	},
 	"Howitworks": {
 		"ReadMore": "Leer más",
@@ -66,7 +74,10 @@
 		"Step5Desc": "Escribe mensajes sin internet y envíalos por SMS a la pasarela, con cifrado.",
 		"Step5Button": "Enviar mensajes",
 		"StepLabel": "Paso",
-		"ScrollHint": "Desplázate para avanzar pasos"
+		"ScrollHint": "Desplázate para avanzar pasos",
+		"Step1Button": "Download",
+		"Step1Title": "Download the App",
+		"Step1Desc": "Download the RelaySMS App from <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>Google PlayStore</a>, <a href='https://github.com/smswithoutborders/RelaySMS-Android' target='_blank' rel='noopener noreferrer'>GitHub</a>, or <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>build it from source</a>. Ensure your Android device meets the technical requirements (Android 6.0+ with SMS capability)."
 	},
 	"Blog": {
 		"Header": "Publicaciones del blog",
@@ -120,8 +131,8 @@
 			"answer": "Disponible para Android e iOS. Soporte Linux próximamente."
 		},
 		"faq5": {
-			"question": "¿Tengo problemas técnicos?",
-			"answer": "Consulta nuestra <a href='https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ' target='_blank' rel='noopener noreferrer'>guía de resolución</a> o contáctanos en developers@smswithoutborders.com."
+			"question": "¿Puedo recibir respuestas de mensajes a través de RelaySMS?",
+			"answer": "Sí, puedes recibir respuestas en la app RelaySMS usando la función bridge. Las respuestas se envían por SMS a tu dispositivo, incluso sin conexión a internet."
 		},
 		"contact": {
 			"didn't": "¿No encontraste tu respuesta?",
@@ -157,7 +168,13 @@
 		"AuditReport": "Informe de Auditoría",
 		"Jobs": "Empleos",
 		"ContactUs": "Contáctanos",
-		"copyright": "AFKANERD"
+		"copyright": "AFKANERD",
+		"Aria": {
+			"Logo": "RelaySMS logo",
+			"GitHub": "GitHub",
+			"X": "X",
+			"Bluesky": "Bluesky"
+		}
 	},
 	"Newsletter": {
 		"title": "Suscríbete a nuestro boletín",
@@ -171,7 +188,14 @@
 		"successHint": "Gracias. Revisa tu correo para confirmar tu suscripción.",
 		"doubleOptInHint": "Revisa tu correo y pulsa el enlace de confirmación para terminar la suscripción.",
 		"error": "Algo salió mal. Inténtalo de nuevo.",
-		"privacyHint": "Sin spam. Puedes darte de baja en cualquier momento."
+		"privacyHint": "Sin spam. Puedes darte de baja en cualquier momento.",
+		"confirmationErrorTitle": "Este enlace de confirmación ha caducado o ya se usó.",
+		"confirmationErrorBody": "Vuelve a suscribirte abajo y te enviaremos un nuevo correo de confirmación.",
+		"unsubscribedTitle": "Te has dado de baja de esta lista.",
+		"unsubscribedBody": "Ya no recibirás correos de este boletín.",
+		"backHome": "Volver al inicio",
+		"successImageAlt": "Suscripción al boletín completada",
+		"awesomeButton": "¡Genial!"
 	},
 	"Changelog": {
 		"title": "Registro de cambios del producto",
@@ -319,7 +343,8 @@
 			"playStore": "Obtén RelaySMS desde la tienda oficial de Google Play.",
 			"fDroid": "Instala desde F-Droid para los amantes del código abierto."
 		},
-		"iosDescription": "Disponible ahora en la App Store de Apple."
+		"iosDescription": "Disponible ahora en la App Store de Apple.",
+		"heroImageAlt": "Download RelaySMS"
 	},
 	"WhoShouldUse": {
 		"Header": "Todos pueden usar RelaySMS",
@@ -430,6 +455,16 @@
 			"Light": "Claro",
 			"Dark": "Oscuro",
 			"System": "Sistema"
+		},
+		"Aria": {
+			"Home": "Home",
+			"Logo": "RelaySMS logo",
+			"GitHub": "GitHub",
+			"X": "RelaySMS on X",
+			"Bluesky": "RelaySMS on Bluesky",
+			"ThemeTooltip": "Theme",
+			"ToggleTheme": "Toggle theme",
+			"OpenMenu": "Open navigation menu"
 		}
 	},
 	"Contributing": {
@@ -506,7 +541,9 @@
 			"BridgeServer": {
 				"description": "The bridge is a technology designed to allow users to communicate with online platforms via SMS, even without an active internet connection. It enables a secure handshake and encrypted message exchange entirely over SMS."
 			},
-			"Website": { "description": "RelaySMS Homepage" }
+			"Website": {
+				"description": "RelaySMS Homepage"
+			}
 		},
 		"GatewayClients": {
 			"title": "Sé una parte crucial de RelaySMS configurando Gateway Clients",
@@ -514,10 +551,41 @@
 			"cta": "Aprende todo sobre Gateway Clients"
 		}
 	},
-	"404": {
-		"title": "¡Ups! Página No Encontrada",
-		"description": "La página que buscas no existe. Puede que haya sido movida, eliminada, o ingresaste una URL incorrecta.",
-		"homeButton": "Volver al Inicio",
-		"backButton": "Regresar"
+	"Step2Button": "Learn More",
+	"About": {
+		"Flow": {
+			"Phone": {
+				"Title": "Tu teléfono",
+				"Subtitle": "Mensaje sin conexión por SMS"
+			},
+			"Gateway": {
+				"Title": "Cliente Gateway",
+				"Subtitle": "El puente que envía mensajes a internet"
+			},
+			"Platform": {
+				"Title": "Plataforma",
+				"Subtitle": "Entregado a Telegram, Gmail y más"
+			}
+		},
+		"Hero": {
+			"Title": "RelaySMS utiliza SMS para superar la censura y los bloqueos de internet",
+			"Subtitle": "No dejes que la censura o los cortes de internet te impidan comunicarte. RelaySMS es un proyecto gratuito y de código abierto que te permite enviar mensajes a plataformas populares como Gmail, Telegram, Bluesky y más, cuando no tienes acceso a internet."
+		},
+		"GatewayShare": "Si estás en una zona con conexión a internet, puedes configurar un Cliente Gateway y compartir acceso con familiares y amigos en zonas sin conectividad.",
+		"CTA": {
+			"SetupGateway": "Configurar un Cliente Gateway",
+			"SMSWithoutBorders": "Más sobre SMSWithoutBorders",
+			"Contribute": "Guía de contribución"
+		},
+		"WhoBuilt": {
+			"Title": "¿Quién está detrás de RelaySMS?",
+			"Description": "RelaySMS es un proyecto de SMSWithoutBorders, desarrollado y mantenido por el equipo de Afkanerd con apoyo de colaboradores y aliados de código abierto. Aceptamos e incentivamos contribuciones de la comunidad para mejorar RelaySMS y ampliar su alcance."
+		}
+	},
+	"awesomeButton": "¡Genial!",
+	"Common": {
+		"Aria": {
+			"Logo": "RelaySMS logo"
+		}
 	}
 }

@@ -159,11 +159,11 @@ export default function Navigation() {
 						ml: { xs: 0, md: isRtl ? "auto" : 0 }
 					}}
 				>
-					<Link to="/" style={{ textDecoration: "none" }} aria-label="Home">
+					<Link to="/" style={{ textDecoration: "none" }} aria-label={t("Navbar.Aria.Home", "Home")}>
 						<Box
 							component="img"
 							src={muiTheme.palette.mode === "dark" ? "/RelaySMSDark.png" : "/logo.png"}
-							alt="Logo"
+							alt={t("Navbar.Aria.Logo", "RelaySMS logo")}
 							sx={{
 								height: { xs: 20, sm: 30, md: 30 },
 								display: "block"
@@ -342,7 +342,7 @@ export default function Navigation() {
 						href="https://github.com/smswithoutborders"
 						target="_blank"
 						rel="noopener noreferrer"
-						aria-label="GitHub"
+						aria-label={t("Navbar.Aria.GitHub", "GitHub")}
 						sx={{ color: iconColor }}
 					>
 						<FaGithub size={16} />
@@ -352,7 +352,7 @@ export default function Navigation() {
 						href="https://x.com/RelaySMS"
 						target="_blank"
 						rel="noopener noreferrer"
-						aria-label="RelaySMS on X"
+						aria-label={t("Navbar.Aria.X", "RelaySMS on X")}
 						sx={{ color: iconColor }}
 					>
 						<FaXTwitter size={16} />
@@ -362,13 +362,17 @@ export default function Navigation() {
 						href="https://bsky.app/profile/relaysms.bsky.social"
 						target="_blank"
 						rel="noopener noreferrer"
-						aria-label="RelaySMS on Bluesky"
+						aria-label={t("Navbar.Aria.Bluesky", "RelaySMS on Bluesky")}
 						sx={{ color: "primary.light" }}
 					>
 						<SiBluesky size={16} />
 					</IconButton>
-					<Tooltip title={`Theme: ${themeLabel[mode]}`}>
-						<IconButton onClick={cycleTheme} aria-label="Toggle theme" sx={{ color: iconColor }}>
+					<Tooltip title={t("Navbar.Aria.ThemeTooltip", "Theme") + ": " + themeLabel[mode]}>
+						<IconButton
+							onClick={cycleTheme}
+							aria-label={t("Navbar.Aria.ToggleTheme", "Toggle theme")}
+							sx={{ color: iconColor }}
+						>
 							<ThemeIcon size={16} />
 						</IconButton>
 					</Tooltip>
@@ -381,7 +385,7 @@ export default function Navigation() {
 				<Box sx={{ display: { xs: "flex", md: "none" }, ml: 1 }}>
 					<IconButton
 						size="large"
-						aria-label="open navigation menu"
+						aria-label={t("Navbar.Aria.OpenMenu", "Open navigation menu")}
 						aria-controls="menu-appbar"
 						aria-haspopup="true"
 						onClick={handleOpenNavMenu}
@@ -533,7 +537,7 @@ export default function Navigation() {
 									href="https://github.com/smswithoutborders"
 									target="_blank"
 									rel="noopener noreferrer"
-									aria-label="GitHub"
+									aria-label={t("Navbar.Aria.GitHub", "GitHub")}
 									sx={{
 										color: iconColor,
 										transition: "transform 0.2s ease",
@@ -547,7 +551,7 @@ export default function Navigation() {
 									href="https://x.com/RelaySMS"
 									target="_blank"
 									rel="noopener noreferrer"
-									aria-label="RelaySMS on X"
+									aria-label={t("Navbar.Aria.X", "RelaySMS on X")}
 									sx={{
 										color: iconColor,
 										transition: "transform 0.2s ease",
@@ -561,7 +565,7 @@ export default function Navigation() {
 									href="https://bsky.app/profile/relaysms.bsky.social"
 									target="_blank"
 									rel="noopener noreferrer"
-									aria-label="RelaySMS on Bluesky"
+									aria-label={t("Navbar.Aria.Bluesky", "RelaySMS on Bluesky")}
 									sx={{
 										color: "primary.light",
 										transition: "transform 0.2s ease",
@@ -570,10 +574,10 @@ export default function Navigation() {
 								>
 									<SiBluesky />
 								</IconButton>
-								<Tooltip title={`Theme: ${themeLabel[mode]}`}>
+								<Tooltip title={t("Navbar.Aria.ThemeTooltip", "Theme") + ": " + themeLabel[mode]}>
 									<IconButton
 										onClick={cycleTheme}
-										aria-label="Toggle theme"
+										aria-label={t("Navbar.Aria.ToggleTheme", "Toggle theme")}
 										sx={{ color: iconColor }}
 									>
 										<ThemeIcon size={16} />

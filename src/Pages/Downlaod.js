@@ -293,7 +293,7 @@ const Download = () => {
 						<Box
 							component="img"
 							src="/relayplaystore.png"
-							alt="Download RelaySMS"
+							alt={t("download.heroImageAlt", "Download RelaySMS")}
 							sx={{
 								width: "100%",
 								maxWidth: 450,

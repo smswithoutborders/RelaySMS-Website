@@ -61,7 +61,6 @@ const MobileCarousel = ({ slides, t }) => {
 				onTouchEnd={onTouchEnd}
 				sx={{ overflow: "hidden", position: "relative" }}
 			>
-				{/* Track */}
 				<Box
 					sx={{
 						display: "flex",
@@ -380,19 +379,6 @@ const GettingStarted = () => {
 										"&:hover": { opacity: isActive ? 1 : 0.55 }
 									}}
 								>
-									{/* <Typography
-										sx={{
-											color: "primary.light",
-											fontWeight: 700,
-											letterSpacing: "0.15em",
-											fontFamily: "Ubuntu",
-											fontSize: "0.7rem",
-											textTransform: "uppercase",
-											mb: 0.25
-										}}
-									>
-										Step {slide.number}
-									</Typography> */}
 									<Typography
 										variant="h6"
 										sx={{

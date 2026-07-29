@@ -25,25 +25,22 @@ const AboutFlowIllustration = ({ t }) => {
 				position: "absolute",
 				left: `${((x / W) * 100).toFixed(2)}%`,
 				top: `${((y / H) * 100).toFixed(2)}%`,
+				width: isGateway ? 74 : 58,
+				height: isGateway ? 74 : 58,
 				transform: "translate(-50%, -50%)",
-				display: "flex",
-				flexDirection: "column",
-				alignItems: "center",
-				gap: 0.8,
 				zIndex: isGateway ? 3 : 2
 			}}
 		>
 			<Box
 				sx={{
-					width: isGateway ? 74 : 58,
-					height: isGateway ? 74 : 58,
+					position: "relative",
+					width: "100%",
+					height: "100%",
 					borderRadius: "50%",
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center",
-					border: "1px solid",
-					borderColor: isGateway ? "text.primary" : "divider",
-					bgcolor: "background.paper",
+
 					boxShadow: isGateway ? "0 0 0 10px rgba(255, 255, 255, 0.04)" : "none",
 					"&::after": isGateway
 						? {
@@ -59,32 +56,48 @@ const AboutFlowIllustration = ({ t }) => {
 						: undefined
 				}}
 			>
-				<Icon style={{ fontSize: isGateway ? 32 : 25, color: isGateway ? accent : textSec }} />
+				<Icon style={{ fontSize: isGateway ? 38 : 30, color: isGateway ? accent : textSec }} />
 			</Box>
-			<Typography
+
+			<Box
 				sx={{
-					fontSize: isGateway ? "0.96rem" : "0.86rem",
-					fontWeight: isGateway ? 700 : 600,
-					color: accent,
-					fontFamily: "Ubuntu",
-					textAlign: "center",
-					lineHeight: 1.2
+					position: "absolute",
+					top: "100%",
+					left: "50%",
+					transform: "translateX(-50%)",
+					mt: 0.8,
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+					gap: 0.3,
+					width: "max-content"
 				}}
 			>
-				{title}
-			</Typography>
-			<Typography
-				sx={{
-					fontSize: "0.73rem",
-					color: textSec,
-					fontFamily: "Ubuntu",
-					textAlign: "center",
-					lineHeight: 1.2,
-					maxWidth: isGateway ? 130 : 100
-				}}
-			>
-				{subtitle}
-			</Typography>
+				<Typography
+					sx={{
+						fontSize: isGateway ? "0.96rem" : "0.86rem",
+						fontWeight: isGateway ? 700 : 600,
+						color: accent,
+						fontFamily: "Ubuntu",
+						textAlign: "center",
+						lineHeight: 1.2
+					}}
+				>
+					{title}
+				</Typography>
+				<Typography
+					sx={{
+						fontSize: "0.73rem",
+						color: textSec,
+						fontFamily: "Ubuntu",
+						textAlign: "center",
+						lineHeight: 1.2,
+						maxWidth: isGateway ? 130 : 100
+					}}
+				>
+					{subtitle}
+				</Typography>
+			</Box>
 		</Box>
 	);
 
@@ -97,10 +110,6 @@ const AboutFlowIllustration = ({ t }) => {
 				mx: "auto",
 				mb: { xs: 3, md: 4 },
 				p: { xs: 1.25, md: 1.5 }
-				// border: "1px solid",
-				// borderColor: "divider",
-				// borderRadius: "18px",
-				// bgcolor: "background.paper"
 			}}
 		>
 			<Box
@@ -168,44 +177,15 @@ const About = () => {
 	const { t, i18n } = useTranslation();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 
-	// const sections = [
-	// 	{
-	// 		icon: <FaCircleNodes size={20} />,
-	// 		title: t("About.WhatIsRelay.Title", "What RelaySMS is"),
-	// 		description: t(
-	// 			"About.WhatIsRelay.Description",
-	// 			"RelaySMS helps people send and receive online messages even when they do not have internet on their own device. It uses SMS and trusted gateway clients to bridge offline users with online messaging platforms."
-	// 		)
-	// 	},
-	// 	{
-	// 		icon: <FaHeart size={20} />,
-	// 		title: t("About.WhyExists.Title", "Why it exists"),
-	// 		description: t(
-	// 			"About.WhyExists.Description",
-	// 			"Reliable communication should not depend on stable internet access. RelaySMS exists to reduce the digital divide, support communities with poor connectivity, and keep critical communication possible in low-resource environments."
-	// 		)
-	// 	},
-	// 	{
-	// 		icon: <FaHandHoldingHeart size={20} />,
-	// 		title: t("About.HowToHelp.Title", "How to help"),
-	// 		description: t(
-	// 			"About.HowToHelp.Description",
-	// 			"You can support RelaySMS by donating to sustain development, running a gateway client to expand coverage, contributing code, improving docs, or helping users get started in your community."
-	// 		)
-	// 	}
-	// ];
-
 	return (
 		<Container maxWidth="lg" dir={isRtl ? "rtl" : "ltr"} sx={{ minHeight: "100vh", px: 2, pb: 10 }}>
 			<Box
 				sx={{
 					mx: "auto",
-					pt: { xs: "120px", md: "250px" }
-					// pb: { xs: 5, md: 7 }
-					// textAlign: "center"
+					pt: { xs: "200px", md: "250px" }
 				}}
 			>
-				<Stack direction="row" spacing={4}>
+				<Stack direction={{ md: "row", xs: "column" }} spacing={4}>
 					<Typography
 						variant="h2"
 						sx={{
@@ -238,24 +218,17 @@ const About = () => {
 				</Stack>
 			</Box>
 
-			<Box sx={{ mx: "auto", mt: 20 }}>
-				<Stack spacing={3} direction={{ xs: "column", md: "row" }} alignItems="center">
-					<Box>
-						<Typography
-							sx={{
-								maxWidth: 700,
-								mx: "auto",
-								fontSize: { xs: "1rem", md: "1.1rem" },
-								lineHeight: 1.8,
-								color: "text.secondary"
-							}}
-						>
-							{t(
-								"WhoShouldUse.Description",
-								"Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns should use RelaySMS to circumvent shutdowns and stay connected. The majority of RelaySMS users currently live in Africa and India—but the app is available for use all around the world. Users can download the app for Android in Google Play or iOS in the App Store."
-							)}
-						</Typography>
-
+			<Box sx={{ mx: "auto", mt: { xs: 20, md: 30 } }}>
+				<Stack spacing={6} direction={{ xs: "column", md: "row" }} alignItems="center">
+					<AboutFlowIllustration t={t} />
+					<Box
+						sx={{
+							display: "flex",
+							flexDirection: "column",
+							alignItems: { xs: "center", md: "flex-start" },
+							textAlign: { xs: "center", md: "left" }
+						}}
+					>
 						<Typography
 							sx={{
 								maxWidth: 700,
@@ -271,6 +244,21 @@ const About = () => {
 								"After setting up RelaySMS on your phone, you can seamlessly connect and send messages on your preferred online messaging platforms without using any data at all (standard SMS rates will apply)."
 							)}
 						</Typography>
+						<Typography
+							sx={{
+								maxWidth: 700,
+								mx: "auto",
+								mb: 4,
+								fontSize: { xs: "1rem", md: "1.1rem" },
+								lineHeight: 1.8,
+								color: "text.secondary"
+							}}
+						>
+							{t(
+								"About.GatewayShare",
+								"If you are in an area with internet connection, you can set up a Gateway Client and share access with your family and friends in areas without internet connectivity."
+							)}
+						</Typography>
 						<Button
 							variant="contained"
 							size="large"
@@ -279,10 +267,9 @@ const About = () => {
 							rel="noopener noreferrer"
 							sx={{ textTransform: "none", borderRadius: "8px", width: "fit-content", p: 1.6 }}
 						>
-							{t("About.CTA.SetupGateway", "Help by setting up a Gateway Client")}
+							{t("About.CTA.SetupGateway", "Setting up a Gateway Client")}
 						</Button>
 					</Box>
-					<AboutFlowIllustration t={t} />
 				</Stack>
 			</Box>
 
@@ -290,8 +277,9 @@ const About = () => {
 				sx={{
 					maxWidth: 900,
 					mx: "auto",
-					mt: 20,
+					mt: { xs: 20, md: 30 },
 					p: { xs: 3, md: 4 },
+					mb: 20,
 					textAlign: "center"
 				}}
 			>
@@ -323,26 +311,22 @@ const About = () => {
 				<Box sx={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: 1.5 }}>
 					<Button
 						variant="contained"
-						href="/contributing"
-						// target="_blank"
-						// rel="noopener noreferrer"
-						size="large"
-						sx={{ textTransform: "none", p: 1.6 }}
-					>
-						{t("About.CTA.Contribute", "Contribution Guide")}
-					</Button>
-					<Button
-						variant="text"
 						href="https://smswithoutborders.com"
 						target="_blank"
 						rel="noopener noreferrer"
 						size="large"
-						sx={{ textTransform: "none", borderRadius: "8px", p: 1.6, color: "primary.light" }}
+						sx={{ textTransform: "none", borderRadius: "8px", p: 1.6 }}
 					>
 						{t("About.CTA.SMSWithoutBorders", "Learn more about SMSWithoutBorders")}
 					</Button>
-
-					
+					<Button
+						variant="text"
+						href="/contributing"
+						size="large"
+						sx={{ textTransform: "none", p: 1.6, color: "primary.light" }}
+					>
+						{t("About.CTA.Contribute", "Contribution Guide")}
+					</Button>
 				</Box>
 			</Box>
 		</Container>
