@@ -30,7 +30,7 @@
 		"github": "Ver nuestro GitHub"
 	},
 	"Landing": {
-		"span": "¿Sin datos? No te preocupes.",
+		"span": "¿Sin conexión a internet? No te preocupes.",
 		"h1": "Manténte conectado incluso sin acceso a Internet.",
 		"h2": "RelaySMS permite a los usuarios enviar mensajes a plataformas en línea sin una conexión activa a Internet. Los mensajes se envían por SMS desde tu dispositivo.",
 		"Android": "Descargar RelaySMS ",
@@ -67,7 +67,7 @@
 	},
 	"WhoShouldUse": {
 		"Header": "Todos pueden usar RelaySMS",
-		"Description": "Cualquier persona que experimente mala conectividad a Internet o viva en una región propensa a cortes de Internet debería usar RelaySMS para eludir los cortes y mantenerse conectado. Después de configurar RelaySMS en tu teléfono, puedes enviar mensajes a tu plataforma de mensajería en línea preferida sin usar datos en absoluto (se aplicarán tarifas SMS estándar).",
+		"Description": "Cualquier persona que experimente mala conectividad a Internet o viva en una región propensa a cortes de Internet debería usar RelaySMS para eludir los cortes y mantenerse conectado. Después de configurar RelaySMS en tu teléfono, puedes enviar mensajes a tu plataforma de mensajería en línea preferida sin ninguna conexión a internet (se aplicarán tarifas SMS estándar).",
 		"AndroidButton": "Descargar para Android",
 		"iOSButton": "Descargar para iOS",
 		"FlowNodes": {
@@ -209,7 +209,7 @@
 		"doubleOptInTitle": "Revisa tu correo.",
 		"successHint": "Gracias. Revisa tu correo para confirmar tu suscripción.",
 		"doubleOptInHint": "Revisa tu correo y pulsa el enlace de confirmación para terminar la suscripción.",
-		"error": "Algo salió mal. Inténtalo de nuevo.",
+		"error": "Algo salió mal, no es tu culpa. Por favor, inténtalo de nuevo más tarde.",
 		"privacyHint": "Sin spam. Puedes darte de baja en cualquier momento.",
 		"confirmationErrorTitle": "Este enlace de confirmación ha caducado o ya se usó.",
 		"confirmationErrorBody": "Vuelve a suscribirte abajo y te enviaremos un nuevo correo de confirmación.",
@@ -565,7 +565,7 @@
 		},
 		"WhoBuilt": {
 			"Title": "¿Quién está detrás de RelaySMS?",
-			"Description": "RelaySMS es un proyecto de SMSWithoutBorders, desarrollado y mantenido por el equipo de Afkanerd con apoyo de colaboradores y aliados de código abierto. Aceptamos e incentivamos contribuciones de la comunidad para mejorar RelaySMS y ampliar su alcance."
+			"Description": "RelaySMS es una aplicación de SMSWithoutBorders, desarrollada y mantenida por el equipo de Afkanerd con apoyo de colaboradores y aliados de código abierto. Aceptamos e incentivamos contribuciones de la comunidad para mejorar RelaySMS y ampliar su alcance."
 		}
 	},
 	"awesomeButton": "¡Genial!",

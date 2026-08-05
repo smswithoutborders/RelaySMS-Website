@@ -30,7 +30,7 @@
 		"github": "Voir notre GitHub"
 	},
 	"Landing": {
-		"span": "Pas de données ? Pas de souci.",
+		"span": "Pas de connexion internet ? Pas de souci.",
 		"h1": "Restez connecté même sans accès à Internet.",
 		"h2": "RelaySMS permet aux utilisateurs d'envoyer des messages vers des plateformes en ligne sans connexion Internet active. Les messages sont envoyés par SMS depuis votre appareil.",
 		"Android": "Télécharger RelaySMS ",
@@ -67,7 +67,7 @@
 	},
 	"WhoShouldUse": {
 		"Header": "Tout le monde peut utiliser RelaySMS",
-		"Description": "Toute personne confrontée à une connectivité Internet médiocre ou vivant dans une région sujette aux coupures d'Internet devrait utiliser RelaySMS pour contourner les coupures et rester connectée. Après avoir configuré RelaySMS sur votre téléphone, vous pouvez envoyer des messages à votre plateforme de messagerie en ligne préférée sans utiliser de données (tarifs SMS standard applicables).",
+		"Description": "Toute personne confrontée à une connectivité Internet médiocre ou vivant dans une région sujette aux coupures d'Internet devrait utiliser RelaySMS pour contourner les coupures et rester connectée. Après avoir configuré RelaySMS sur votre téléphone, vous pouvez envoyer des messages à votre plateforme de messagerie en ligne préférée sans aucune connexion internet (tarifs SMS standard applicables).",
 		"AndroidButton": "Télécharger pour Android",
 		"iOSButton": "Télécharger pour iOS",
 		"FlowNodes": {
@@ -209,7 +209,7 @@
 		"doubleOptInTitle": "Vérifiez votre boîte mail.",
 		"successHint": "Merci. Vérifiez votre boîte mail pour confirmer votre abonnement.",
 		"doubleOptInHint": "Vérifiez votre boîte mail et cliquez sur le lien de confirmation pour terminer l’abonnement.",
-		"error": "Une erreur est survenue. Veuillez réessayer.",
+		"error": "Une erreur est survenue, ce n'est pas votre faute. Veuillez réessayer plus tard.",
 		"privacyHint": "Pas de spam. Désabonnement possible à tout moment.",
 		"confirmationErrorTitle": "Ce lien de confirmation a expiré ou a déjà été utilisé.",
 		"confirmationErrorBody": "Réabonnez-vous ci-dessous et nous vous enverrons un nouvel e-mail de confirmation.",
@@ -565,7 +565,7 @@
 		},
 		"WhoBuilt": {
 			"Title": "Qui est derrière RelaySMS ?",
-			"Description": "RelaySMS est un projet SMSWithoutBorders, développé et maintenu par l'équipe Afkanerd avec le soutien de contributeurs open source et de partenaires. Nous accueillons et encourageons les contributions de la communauté pour améliorer RelaySMS et élargir sa portée."
+			"Description": "RelaySMS est une application SMSWithoutBorders, développée et maintenue par l'équipe Afkanerd avec le soutien de contributeurs open source et de partenaires. Nous accueillons et encourageons les contributions de la communauté pour améliorer RelaySMS et élargir sa portée."
 		}
 	},
 	"awesomeButton": "Super !",

@@ -81,11 +81,18 @@ const NewsletterForm = ({
 			setStatus("doubleOptIn");
 		} catch (error) {
 			setStatus("error");
-			setErrorMessage(
-				error instanceof Error
-					? error.message
-					: t("Newsletter.error", "Something went wrong while subscribing. Please try again.")
+			const fallbackError = t(
+				"Newsletter.error",
+				"Something went wrong, not your fault please try again later"
 			);
+			const rawError = error instanceof Error ? error.message : "";
+			const normalizedError = rawError.toLowerCase();
+			const isNetworkOrFetchError =
+				normalizedError.includes("failed to fetch") ||
+				normalizedError.includes("networkerror") ||
+				normalizedError.includes("network request failed");
+
+			setErrorMessage(isNetworkOrFetchError ? fallbackError : rawError || fallbackError);
 		}
 	};
 
