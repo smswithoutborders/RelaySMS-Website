@@ -67,7 +67,7 @@ const Hero = () => {
 						<Typography
 							sx={{
 								mb: { xs: 2, md: 3, lg: 1 },
-								fontSize: { xs: "1.8rem", md: "2.5rem", lg: "2.3rem", xl: "3.3rem" },
+								fontSize: { xs: "1.9rem", md: "2.5rem", lg: "2.5rem", xl: "3.8rem" },
 								whiteSpace: "pre-wrap",
 								fontWeight: 700,
 								wordBreak: "break-word",
@@ -106,7 +106,7 @@ const Hero = () => {
 								flexDirection: { xs: "column", sm: "row" },
 								justifyContent: "center",
 								gap: 2,
-								mt: { xs: 3, md: 2 },
+								mt: { xs: 3, md: 3 },
 								mb: { xs: 2, md: 1 },
 								px: { xs: 2, md: 0 },
 								width: "100%"
@@ -120,7 +120,7 @@ const Hero = () => {
 								sx={{
 									bgcolor: "primary.main",
 									textTransform: "none",
-									fontFamily: "Ubuntu",
+									fontFamily: "Unbounded",
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
 										transform: "translateY(-3px)"
@@ -142,9 +142,8 @@ const Hero = () => {
 								}}
 								sx={{
 									textTransform: "none",
-									color: (theme) =>
-										theme.palette.mode === "dark" ? "primary.light" : "primary.main",
-									fontFamily: "Ubuntu",
+									color: "text.primary",
+									fontFamily: "Unbounded",
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
 										transform: "translateY(-3px)"

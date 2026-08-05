@@ -321,7 +321,7 @@ const WhoShouldUse = () => {
 											mb: 2
 										}}
 									>
-										{t("GatewayClient.Header", "Setting Up Gateway Clients")}
+										{t("GatewayClient.Header", "Setting Up Routing Numbers")}
 									</Typography>
 									<Typography
 										variant="body1"
@@ -334,7 +334,7 @@ const WhoShouldUse = () => {
 									>
 										{t(
 											"GatewayClient.Description",
-											"Gateway Clients are devices with active internet that act as a bridge between offline users and online platforms. When you send a message without internet, it goes via SMS to a Gateway Clients which forwards it to your selected platform. Within the app, Gateway Clients are listed under the Countries tab. They can be set up using the DekuSMS app."
+											"Routing numbers are phone numbers with internet access that bridge offline users and online platforms. When you send a message without internet, it goes by SMS to a routing number, which forwards it to your selected platform."
 										)}
 									</Typography>
 									<Button

@@ -129,7 +129,12 @@ const Overview = () => {
 							sm: "calc(100vh - 64px)",
 							md: "calc(100vh - 80px)"
 						},
-						zIndex: 1200
+						zIndex: 1200,
+						bgcolor: (theme) =>
+							theme.palette.mode === "dark" ? "#000000" : "#f4f8ff",
+						color: "text.primary",
+						borderLeft: "1px solid",
+						borderColor: "divider"
 					}
 				}}
 				ModalProps={{
@@ -148,7 +153,17 @@ const Overview = () => {
 						<span style={{ fontSize: 24 }}>&times;</span>
 					</IconButton>
 				</Box>
-				<Box mt={2} sx={{ height: "calc(100vh - 120px)", overflow: "auto" }}>
+				<Box
+					mt={2}
+					sx={{
+						height: "calc(100vh - 120px)",
+						overflow: "auto",
+						color: "text.primary",
+						"& a": {
+							color: "secondary.main"
+						}
+					}}
+				>
 					{loading ? (
 						<Typography>{t("Overview.loading")}</Typography>
 					) : (

@@ -34,14 +34,13 @@
 		"h1": "Restez connecté même sans accès à Internet.",
 		"h2": "RelaySMS permet aux utilisateurs d'envoyer des messages vers des plateformes en ligne sans connexion Internet active. Les messages sont envoyés par SMS depuis votre appareil.",
 		"Android": "Télécharger RelaySMS ",
-		"GatewayClient": "Configurer le client passerelle",
+		"RoutingNumbers": "Configurer des numéros de routage",
 		"supportedPlatforms": "Plateformes supportées :",
 		"auditMessage": {
 			"part1": "RelaySMS s'engage pour la sécurité et la transparence. Lisez notre ",
 			"link": "rapport d’audit de sécurité",
 			"part2": "."
-		},
-		"RoutingNumbers": "Set Up Gateway Clients"
+		}
 	},
 	"Howitworks": {
 		"ReadMore": "Lire la suite",
@@ -54,16 +53,53 @@
 		"Step2Desc": "Créez un compte en cliquant sur \"Ajouter un compte\" et en complétant les informations. Un code PIN vous sera envoyé pour vérification.",
 		"Step2Button": "En savoir plus",
 		"Step3Title": "Enregistrez les plateformes",
-		"Step3Desc": "Ajoutez vos identifiants pour les plateformes prises en charge afin de les préparer à une utilisation hors ligne.",
+		"Step3Desc": "Enregistrez l’accès aux plateformes quand vous êtes en ligne. Il reste sur votre téléphone, donc faites une sauvegarde. Cet accès enregistré vous permet de communiquer quand internet est coupé.",
 		"Step3Button": "Configurer maintenant",
-		"Step4Title": "Sélectionnez un client passerelle",
-		"Step4Desc": "Choisissez un client passerelle SMS. Sélectionnez un client préconfiguré ou ajoutez un numéro de passerelle dans vos contacts.",
-		"Step4Button": "Configurer la passerelle",
+		"Step4Title": "Sélectionnez un numéro de routage",
+		"Step4Desc": "Choisissez un numéro de routage pour envoyer des SMS. Vous pouvez sélectionner un numéro préconfiguré ou ajouter un numéro personnalisé dans vos contacts.",
+		"Step4Button": "Configurer le numéro de routage",
 		"Step5Title": "Envoyez des messages",
-		"Step5Desc": "Composez des messages hors ligne, envoyez-les par SMS à un numéro de passerelle pré-enregistré, avec chiffrement.",
+		"Step5Desc": "Envoyez des messages avec vos plateformes enregistrées, ou envoyez rapidement avec RMail de façon anonyme.",
 		"Step5Button": "Commencer",
+		"FullDocsButton": "Lire le guide complet de configuration",
 		"StepLabel": "Étape",
 		"ScrollHint": "Faites défiler pour avancer les étapes"
+	},
+	"WhoShouldUse": {
+		"Header": "Tout le monde peut utiliser RelaySMS",
+		"Description": "Toute personne confrontée à une connectivité Internet médiocre ou vivant dans une région sujette aux coupures d'Internet devrait utiliser RelaySMS pour contourner les coupures et rester connectée. Après avoir configuré RelaySMS sur votre téléphone, vous pouvez envoyer des messages à votre plateforme de messagerie en ligne préférée sans utiliser de données (tarifs SMS standard applicables).",
+		"AndroidButton": "Télécharger pour Android",
+		"iOSButton": "Télécharger pour iOS",
+		"FlowNodes": {
+			"relaySublabel": "Votre téléphone",
+			"encryptedLabel": "Chiffré",
+			"encryptedSublabel": "SMS",
+			"relayCloudLabel": "Relay Cloud",
+			"relayCloudSublabel": "Passerelle",
+			"platformLabel": "Plateforme",
+			"platformSublabel": "Livré"
+		}
+	},
+	"HowRelaySMSWorks": {
+		"Header": "Comment ça marche",
+		"Description1": "RelaySMS utilise la messagerie SMS (aussi appelée \"messagerie texte\") pour rediriger les messages hors ligne vers en ligne.",
+		"Description2": "La clé de RelaySMS réside dans l’utilisation de numéros de routage. Ces numéros opèrent dans des zones avec internet actif, reçoivent les SMS des utilisateurs RelaySMS hors ligne, puis transmettent les messages vers des plateformes en ligne où l’accès a déjà été enregistré.",
+		"TrainingTitle": "Télécharger les guides de formation",
+		"EnglishPDF": "Guide anglais (PDF)",
+		"FrenchPDF": "Guide français (PDF)",
+		"SeeSpecification": "Lire la suite"
+	},
+	"GatewayClient": {
+		"Header": "Configuration des numéros de routage",
+		"Description": "Les numéros de routage sont des numéros de téléphone avec internet actif qui relient les utilisateurs hors ligne aux plateformes en ligne. Quand vous envoyez un message sans internet, il passe par SMS vers un numéro de routage, puis est transmis à la plateforme choisie.",
+		"ReadMore": "Lire Plus"
+	},
+	"SupportedPlatforms": {
+		"Header": "Plateformes prises en charge",
+		"SubText": "Envoyez des messages à <bold>{{platform}}</bold> en utilisant RelaySMS.",
+		"Description": "Envoyez des messages vers ces plateformes en ligne par SMS en utilisant RelaySMS, même lorsque vous n'avez pas accès à Internet.",
+		"Error": "Impossible de charger les plateformes prises en charge. Veuillez réessayer plus tard.",
+		"Note": "D'autres plateformes sont continuellement ajoutées. Restez à l'écoute pour les mises à jour !"
 	},
 	"Blog": {
 		"Header": "Articles de blog",
@@ -76,8 +112,8 @@
 		"RebrandD": "SMSWithoutBorders devient le projet principal…",
 		"ReadMore": "Lire la suite",
 		"ReadOtherArticles": "Lire d'autres articles",
-		"articles1": "Résilience des clients passerelle dans SMSWithoutBorders",
-		"articles2": "Fiabilité des clients passerelle dans Smswithoutborders",
+		"articles1": "Résilience des numéros de routage dans SMSWithoutBorders",
+		"articles2": "Fiabilité des numéros de routage dans SMSWithoutBorders",
 		"articles3": "Nouvelle version alpha : Vault 0.1.0",
 		"tag": "Articles",
 		"tags": "Sortie",
@@ -106,7 +142,7 @@
 		},
 		"faq2": {
 			"question": "Comment fonctionne RelaySMS ?",
-			"answer": "RelaySMS envoie des SMS aux passerelles bénévoles qui les retransmettent en ligne."
+			"answer": "RelaySMS fonctionne en utilisant des SMS envoyés depuis votre application vers des numéros de routage SMS gérés par des bénévoles, qui les transfèrent vers internet."
 		},
 		"faq3": {
 			"question": "Ai-je besoin d’Internet ?",
@@ -142,33 +178,19 @@
 		"GitHub": "GitHub",
 		"DeveloperDocs": "Documentation Développeur",
 		"Contributing": "Contribuer",
-		"Tutorials": "Tutoriels",
-		"AndroidTutorial": "Tutoriel Android",
-		"iOSTutorial": "Tutoriel iOS",
-		"GatewayClientSetup": "Configuration du client passerelle",
-		"Troubleshooting": "Dépannage",
-		"Newsletter": {
-			"title": "Abonnez-vous à notre newsletter",
-			"description": "Recevez les mises à jour RelaySMS, les nouveautés des versions et des conseils pratiques par email.",
-			"emailPlaceholder": "Adresse e-mail",
-			"emailAria": "Adresse e-mail",
-			"submit": "S'abonner",
-			"subscribing": "Abonnement en cours…",
-			"successTitle": "Vous êtes abonné.",
-			"doubleOptInTitle": "Vérifiez votre boîte mail.",
-			"successHint": "Merci. Vérifiez votre boîte mail pour confirmer votre abonnement.",
-			"doubleOptInHint": "Vérifiez votre boîte mail et cliquez sur le lien de confirmation pour terminer l’abonnement.",
-			"error": "Une erreur est survenue. Veuillez réessayer.",
-			"privacyHint": "Pas de spam. Désabonnement possible à tout moment."
-		},
 		"PrivacyPolicy": "Politique de Confidentialité",
 		"AuditReport": "Rapport d'Audit",
 		"Jobs": "Emplois",
 		"ContactUs": "Contactez-nous",
-		"copyright": "AFKANERD",
+		"Tutorials": "Tutoriels",
+		"AndroidTutorial": "Tutoriel Android",
+		"iOSTutorial": "Tutoriel iOS",
+		"GatewayClientSetup": "Configuration du numéro de routage",
+		"Troubleshooting": "Dépannage",
 		"NewsletterTitle": "Subscribe to our newsletter",
 		"NewsletterDescription": "Get RelaySMS updates and release highlights in your mail.",
 		"SubscribeNow": "Subscribe now",
+		"copyright": "AFKANERD",
 		"Aria": {
 			"Logo": "RelaySMS logo",
 			"GitHub": "GitHub",
@@ -177,8 +199,8 @@
 		}
 	},
 	"Newsletter": {
-		"title": "Abonnez-vous à notre newsletter",
-		"description": "Recevez les mises à jour RelaySMS, les nouveautés des versions et des conseils pratiques par email.",
+		"title": "Suivez ce que nous construisons.",
+		"description": "Inscrivez-vous à nos e-mails pour recevoir des actualités produit et technologiques.",
 		"emailPlaceholder": "Adresse e-mail",
 		"emailAria": "Adresse e-mail",
 		"submit": "S'abonner",
@@ -346,45 +368,9 @@
 		"iosDescription": "Disponible dès maintenant sur l'App Store d'Apple.",
 		"heroImageAlt": "Download RelaySMS"
 	},
-	"WhoShouldUse": {
-		"Header": "Tout le monde peut utiliser RelaySMS",
-		"Description": "Toute personne confrontée à une connectivité Internet médiocre ou vivant dans une région sujette aux coupures d'Internet devrait utiliser RelaySMS pour contourner les coupures et rester connectée. Après avoir configuré RelaySMS sur votre téléphone, vous pouvez envoyer des messages à votre plateforme de messagerie en ligne préférée sans utiliser de données (tarifs SMS standard applicables).",
-		"AndroidButton": "Télécharger pour Android",
-		"iOSButton": "Télécharger pour iOS",
-		"FlowNodes": {
-			"relaySublabel": "Votre téléphone",
-			"encryptedLabel": "Chiffré",
-			"encryptedSublabel": "SMS",
-			"relayCloudLabel": "Relay Cloud",
-			"relayCloudSublabel": "Passerelle",
-			"platformLabel": "Plateforme",
-			"platformSublabel": "Livré"
-		}
-	},
-	"HowRelaySMSWorks": {
-		"Header": "Comment ça marche",
-		"Description1": "RelaySMS utilise la messagerie SMS (aussi appelée \"messagerie texte\") pour rediriger les messages hors ligne vers en ligne.",
-		"Description2": "La clé de RelaySMS réside dans son utilisation de clients passerelles. Ces appareils fonctionnent dans des zones avec une connexion Internet active, leur permettant de recevoir un message SMS d'un utilisateur RelaySMS hors ligne et de le transmettre à un serveur en ligne où l'utilisateur a déjà enregistré ses autorisations de plateforme.",
-		"TrainingTitle": "Télécharger les guides de formation",
-		"EnglishPDF": "Guide anglais (PDF)",
-		"FrenchPDF": "Guide français (PDF)",
-		"SeeSpecification": "Lire la suite"
-	},
-	"GatewayClient": {
-		"Header": "Configuration d'un Client Passerelle",
-		"Description": "Les clients passerelle sont des appareils avec une connexion Internet active qui servent de pont entre les utilisateurs hors ligne et les plateformes en ligne. Lorsque vous envoyez un message sans Internet, il transite par SMS vers un client passerelle qui le transmet à votre plateforme sélectionnée. Dans l'application, les clients passerelle sont répertoriés sous l'onglet Pays. Ils peuvent être configurés à l'aide de l'application DekuSMS.",
-		"ReadMore": "Lire Plus"
-	},
-	"SupportedPlatforms": {
-		"Header": "Plateformes prises en charge",
-		"SubText": "Envoyez des messages à <bold>{{platform}}</bold> en utilisant RelaySMS.",
-		"Description": "Envoyez des messages vers ces plateformes en ligne par SMS en utilisant RelaySMS, même lorsque vous n'avez pas accès à Internet.",
-		"Error": "Impossible de charger les plateformes prises en charge. Veuillez réessayer plus tard.",
-		"Note": "D'autres plateformes sont continuellement ajoutées. Restez à l'écoute pour les mises à jour !"
-	},
 	"Overview": {
 		"title": "Vue d'Ensemble du Système RelaySMS",
-		"description": "Le diagramme ci-dessous illustre le flux de messages et de données entre les composants principaux de RelaySMS, des applications client via les passerelles, serveurs et services externes.",
+		"description": "Le diagramme ci-dessous illustre le flux de messages et de données entre les composants principaux de RelaySMS, des applications client via les numéros de routage, serveurs et services externes.",
 		"tip": "Astuce : Cliquez sur un nœud du diagramme pour voir plus d'informations sur ce composant.",
 		"details": "Détails",
 		"loading": "Chargement de la documentation...",
@@ -392,7 +378,7 @@
 			"Client": "Client",
 			"Vault": "Coffre-fort",
 			"Publisher": "Éditeur",
-			"GatewayClient": "Client Passerelle",
+			"GatewayClient": "Numéros de routage",
 			"GatewayServer": "Serveur Passerelle",
 			"BridgeServer": "Serveur Pont",
 			"Platforms": "Plateformes",
@@ -400,7 +386,7 @@
 		},
 		"nodes": {
 			"Client": "Client (Apps)",
-			"GatewayClient": "Client Passerelle",
+			"GatewayClient": "Numéros de routage",
 			"GatewayServer": "Serveur Passerelle",
 			"Publisher": "Éditeur",
 			"BridgeServer": "Serveur Pont",
@@ -417,55 +403,6 @@
 			"content": "Contenu"
 		},
 		"documentationError": "Erreur lors du chargement de la documentation. Veuillez réessayer."
-	},
-	"AppFeatures": {
-		"Header": "Fonctionnalités de l'application",
-		"Subheader": "Comparez ce qui est disponible sur Android, iOS et bureau.",
-		"Features": {
-			"OfflineMessaging": "Messagerie hors ligne via SMS",
-			"Gmail": "Gmail",
-			"Twitter": "Twitter / X",
-			"Telegram": "Telegram",
-			"GatewaySetup": "Configuration du client passerelle",
-			"DarkMode": "Mode sombre",
-			"MultiLanguage": "Support multilingue",
-			"E2EEncryption": "Chiffrement de bout en bout",
-			"OpenSource": "Gratuit et open source"
-		},
-		"Platforms": {
-			"Android": {
-				"label": "Android",
-				"badge": "Disponible sur Google Play",
-				"imageAlt": "RelaySMS sur Android"
-			},
-			"iOS": {
-				"label": "iOS",
-				"badge": "Disponible sur l'App Store",
-				"imageAlt": "RelaySMS sur iOS"
-			},
-			"Desktop": {
-				"label": "Bureau",
-				"badge": "Application Web et bureau",
-				"imageAlt": "RelaySMS Bureau"
-			}
-		}
-	},
-	"Navbar": {
-		"Theme": {
-			"Light": "Clair",
-			"Dark": "Sombre",
-			"System": "Système"
-		},
-		"Aria": {
-			"Home": "Home",
-			"Logo": "RelaySMS logo",
-			"GitHub": "GitHub",
-			"X": "RelaySMS on X",
-			"Bluesky": "RelaySMS on Bluesky",
-			"ThemeTooltip": "Theme",
-			"ToggleTheme": "Toggle theme",
-			"OpenMenu": "Open navigation menu"
-		}
 	},
 	"Contributing": {
 		"Hero": {
@@ -546,9 +483,58 @@
 			}
 		},
 		"GatewayClients": {
-			"title": "Jouez un role essentiel dans RelaySMS en configurant des Gateway Clients",
-			"description": "Lorsque vous configurez un Gateway Client (numero de telephone) dans une region avec une connexion internet, ce numero aide a acheminer les messages des utilisateurs hors ligne vers des plateformes en ligne.",
-			"cta": "Tout savoir sur les Gateway Clients"
+			"title": "Jouez un role essentiel dans RelaySMS en configurant des numéros de routage",
+			"description": "Quand vous configurez un numéro de routage dans une région avec connexion internet, ce numéro aide à acheminer les messages des utilisateurs hors ligne vers des plateformes en ligne.",
+			"cta": "Tout savoir sur les numéros de routage"
+		}
+	},
+	"AppFeatures": {
+		"Features": {
+			"OfflineMessaging": "Messagerie hors ligne via SMS",
+			"Gmail": "Gmail",
+			"Twitter": "Twitter / X",
+			"Telegram": "Telegram",
+			"GatewaySetup": "Configuration du numéro de routage",
+			"DarkMode": "Mode sombre",
+			"MultiLanguage": "Support multilingue",
+			"E2EEncryption": "Chiffrement de bout en bout",
+			"OpenSource": "Gratuit et open source"
+		},
+		"Platforms": {
+			"Android": {
+				"label": "Android",
+				"imageAlt": "RelaySMS sur Android",
+				"badge": "Disponible sur Google Play"
+			},
+			"iOS": {
+				"label": "iOS",
+				"imageAlt": "RelaySMS sur iOS",
+				"badge": "Disponible sur l'App Store"
+			},
+			"Desktop": {
+				"label": "Bureau",
+				"imageAlt": "RelaySMS Bureau",
+				"badge": "Application Web et bureau"
+			}
+		},
+		"Header": "Fonctionnalités de l'application",
+		"Subheader": "Comparez ce qui est disponible sur Android, iOS et bureau."
+	},
+	"Navbar": {
+		"Theme": {
+			"Light": "Clair",
+			"Dark": "Sombre",
+			"System": "Système"
+		},
+		"Aria": {
+			"Home": "Home",
+			"Logo": "RelaySMS logo",
+			"GitHub": "GitHub",
+			"X": "RelaySMS on X",
+			"Bluesky": "RelaySMS on Bluesky",
+			"ThemeTooltip": "Theme",
+			"ToggleTheme": "Toggle theme",
+			"OpenMenu": "Open navigation menu"
 		}
 	},
 	"Step2Button": "Learn More",
@@ -559,7 +545,7 @@
 				"Subtitle": "Message hors ligne via SMS"
 			},
 			"Gateway": {
-				"Title": "Client passerelle",
+				"Title": "Numéro de routage",
 				"Subtitle": "Le pont qui envoie les messages en ligne"
 			},
 			"Platform": {
@@ -571,9 +557,9 @@
 			"Title": "RelaySMS utilise les SMS pour contourner la censure et les coupures d'internet",
 			"Subtitle": "Ne laissez pas la censure ou les coupures d'internet vous empêcher de communiquer. RelaySMS est un projet gratuit et open source qui vous permet d'envoyer des messages vers des plateformes populaires comme Gmail, Telegram, Bluesky et bien plus, même sans accès à internet."
 		},
-		"GatewayShare": "Si vous êtes dans une zone avec internet, vous pouvez configurer un Client passerelle et partager l'accès avec votre famille et vos amis dans des zones sans connectivité.",
+		"GatewayShare": "Si vous êtes dans une zone avec internet, vous pouvez configurer un numéro de routage et partager l'accès avec votre famille et vos amis dans des zones sans connectivité.",
 		"CTA": {
-			"SetupGateway": "Configurer un Client passerelle",
+			"SetupGateway": "Configurer un numéro de routage",
 			"SMSWithoutBorders": "En savoir plus sur SMSWithoutBorders",
 			"Contribute": "Guide de contribution"
 		},

@@ -156,7 +156,7 @@ const AboutFlowIllustration = ({ t }) => {
 						x={gateway.x}
 						y={gateway.y}
 						Icon={CloudOutlined}
-						title={t("About.Flow.Gateway.Title", "Gateway Client")}
+						title={t("About.Flow.Gateway.Title", "Routing Number")}
 						subtitle={t("About.Flow.Gateway.Subtitle", "The bridge that pushes messages online")}
 						isGateway
 					/>
@@ -256,7 +256,7 @@ const About = () => {
 						>
 							{t(
 								"About.GatewayShare",
-								"If you are in an area with internet connection, you can set up a Gateway Client and share access with your family and friends in areas without internet connectivity."
+								"If you are in an area with internet access, you can set up a routing number and share access with family and friends in areas without connectivity."
 							)}
 						</Typography>
 						<Button
@@ -267,7 +267,7 @@ const About = () => {
 							rel="noopener noreferrer"
 							sx={{ textTransform: "none", borderRadius: "8px", width: "fit-content", p: 1.6 }}
 						>
-							{t("About.CTA.SetupGateway", "Setting up a Gateway Client")}
+							{t("About.CTA.SetupGateway", "Setting up a Routing Number")}
 						</Button>
 					</Box>
 				</Stack>
