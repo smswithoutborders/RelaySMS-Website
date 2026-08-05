@@ -30,7 +30,7 @@
 		"github": "View our GitHub"
 	},
 	"Landing": {
-		"span": "No Data? No Worries.",
+		"span": "No Internet connection? No Worries.",
 		"h1": "Stay connected even with no internet access.",
 		"h2": "RelaySMS enables you to send messages to online platforms like Gmail, Telegram and others without an active internet connection. Messages are sent via SMS from your mobile device.",
 		"Android": "Download RelaySMS ",
@@ -67,7 +67,7 @@
 	},
 	"WhoShouldUse": {
 		"Header": "Everyone can use RelaySMS",
-		"Description": "Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns should use RelaySMS to circumvent shutdowns and stay connected. After setting up RelaySMS on your phone, you can seamlessly send messages to your preferred online messaging platform without using any data at all (standard SMS rates will apply).",
+		"Description": "Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns should use RelaySMS to circumvent shutdowns and stay connected. After setting up RelaySMS on your phone, you can seamlessly send messages to your preferred online messaging platform without any internet connection (standard SMS rates will apply).",
 		"AndroidButton": "Download for Android",
 		"iOSButton": "Download for iOS",
 		"FlowNodes": {
@@ -91,7 +91,7 @@
 	},
 	"GatewayClient": {
 		"Header": "Setting Up Routing Numbers",
-		"Description": "Routing numbers are phone numbers with internet access that bridge offline users and online platforms. When you send a message without internet, it goes by SMS to a routing number, which forwards it to your selected platform.",
+		"Description": "Routing numbers are phone numbers with internet access that connects offline users to online platforms. When you send a message without internet, it goes by SMS to a routing number, which forwards it to your selected platform.",
 		"ReadMore": "Read More"
 	},
 	"SupportedPlatforms": {
@@ -209,7 +209,7 @@
 		"doubleOptInTitle": "Check your inbox.",
 		"successHint": "Thanks for confirming your email. Watch your inbox - a welcome email is on its way.",
 		"doubleOptInHint": "Check your inbox and click the confirmation link to finish subscribing.",
-		"error": "Something went wrong. Please try again.",
+		"error": "Something went wrong, not your fault please try again later",
 		"privacyHint": "No spam. Unsubscribe anytime.",
 		"confirmationErrorTitle": "This confirmation link has expired or has already been used.",
 		"confirmationErrorBody": "Try subscribing again below and we will send you a fresh confirmation email.",
@@ -565,7 +565,7 @@
 		},
 		"WhoBuilt": {
 			"Title": "The team behind RelaySMS?",
-			"Description": "RelaySMS is an SMSWithoutBorders project, built and maintained by the Afkanerd team with support from open-source contributors and partners. We accept and encourage contributions from the community to improve RelaySMS and expand its reach."
+			"Description": "RelaySMS is an SMSWithoutBorders app, built and maintained by the Afkanerd team with support from open-source contributors and partners. We accept and encourage contributions from the community to improve RelaySMS and expand its reach."
 		}
 	},
 	"awesomeButton": "Awesome!",
