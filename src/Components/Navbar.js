@@ -11,7 +11,7 @@ import Box from "@mui/material/Box";
 import Tooltip from "@mui/material/Tooltip";
 import Divider from "@mui/material/Divider";
 import MenuIcon from "@mui/icons-material/Menu";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
+import { DownloadOutlined } from "@ant-design/icons";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
@@ -317,6 +317,7 @@ export default function Navigation() {
 						component={Link}
 						to="/download"
 						onClick={handleCloseNavMenu}
+						startIcon={<DownloadOutlined style={{ fontSize: "16px" }} />}
 						sx={{
 							color: iconColor,
 							textTransform: "none",
@@ -382,7 +383,40 @@ export default function Navigation() {
 					<LanguageSwitcher />
 				</Box>
 
-				<Box sx={{ display: { xs: "flex", md: "none" }, ml: 1 }}>
+				<Box
+					sx={{
+						display: { xs: "flex", md: "none" },
+						ml: 1,
+						alignItems: "center",
+						gap: 0.5
+					}}
+				>
+					<Button
+						component={Link}
+						to="/download"
+						onClick={handleCloseNavMenu}
+						startIcon={<DownloadOutlined style={{ fontSize: "16px" }} />}
+						sx={{
+							color: iconColor,
+							textTransform: "none",
+							fontWeight: 500,
+							fontSize: "13px",
+							border: "1px solid",
+							borderColor: "divider",
+							borderRadius: "8px",
+							px: 1.2,
+							py: 0.5,
+							minWidth: "auto",
+							"&:hover": {
+								borderColor: "secondary.main",
+								color: "secondary.main",
+								backgroundColor: "action.hover"
+							}
+						}}
+					>
+						{t("Nav.Download")}
+					</Button>
+
 					<IconButton
 						size="large"
 						aria-label={t("Navbar.Aria.OpenMenu", "Open navigation menu")}
@@ -530,7 +564,7 @@ export default function Navigation() {
 										"&:hover": { transform: "scale(1.2)", color: "secondary.main" }
 									}}
 								>
-									<DownloadOutlinedIcon fontSize="small" />
+									<DownloadOutlined fontSize="small" />
 								</IconButton>
 								<IconButton
 									component="a"

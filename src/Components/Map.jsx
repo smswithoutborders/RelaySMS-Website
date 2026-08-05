@@ -13,7 +13,7 @@ const Map = ({ handleDrawerOpen }) => {
       data: { label: t("Overview.nodes.Client") },
       position: { x: 0, y: 180 },
       sourcePosition: "right",
-      style: { width: 120, background: "#e3f2fd" },
+      style: { width: 130, background: "#e3f2fd" },
     },
     {
       id: "GatewayClient",
@@ -21,56 +21,27 @@ const Map = ({ handleDrawerOpen }) => {
       position: { x: 240, y: 180 },
       targetPosition: "left",
       sourcePosition: "right",
-      style: { width: 120, background: "#fffde7" },
+      style: { width: 130, background: "#fffde7" },
     },
-    {
-      id: "GatewayServer",
-      data: { label: t("Overview.nodes.GatewayServer") },
-      position: { x: 500, y: 180 },
-      targetPosition: "left",
-      sourcePosition: "right",
-      style: { width: 120, background: "#fffde7" },
-    },
+   
     {
       id: "Publisher",
       data: { label: t("Overview.nodes.Publisher") },
-      position: { x: 540, y: 80 },
+      position: { x: 540, y: 180 },
       targetPosition: "left",
       sourcePosition: "right",
-      style: { width: 120, background: "#e8f5e9" },
+      style: { width: 130, background: "#e8f5e9" },
     },
-    {
-      id: "BridgeServer",
-      data: { label: t("Overview.nodes.BridgeServer") },
-      position: { x: 540, y: 280 },
-      targetPosition: "left",
-      sourcePosition: "right",
-      style: { width: 120, background: "#e8f5e9" },
-    },
-    {
-      id: "Vault",
-      data: { label: t("Overview.nodes.Vault") },
-      position: { x: 720, y: 180 },
-      targetPosition: "left",
-      sourcePosition: "right",
-      style: { width: 120, background: "#f3e5f5" },
-    },
+   
     {
       id: "Platforms",
       data: { label: t("Overview.nodes.Platforms") },
-      position: { x: 940, y: 120 },
+      position: { x: 820, y: 180 },
       targetPosition: "left",
       sourcePosition: "right",
-      style: { width: 120, background: "#e3f2fd" },
+      style: { width: 130, background: "#e3f2fd" },
     },
-    {
-      id: "EmailBridge",
-      data: { label: t("Overview.nodes.EmailBridge") },
-      position: { x: 940, y: 280 },
-      targetPosition: "left",
-      sourcePosition: "right",
-      style: { width: 120, background: "#fff3e0" },
-    },
+   
   ];
 
   const edges = [
@@ -90,7 +61,7 @@ const Map = ({ handleDrawerOpen }) => {
     {
       id: "e2",
       source: "GatewayClient",
-      target: "GatewayServer",
+      target: "Publisher",
       label: t("Overview.edges.httpsSmtpFtp"),
       type: "straight",
       animated: true,
@@ -102,70 +73,9 @@ const Map = ({ handleDrawerOpen }) => {
     },
     {
       id: "e3",
-      source: "GatewayServer",
-      target: "Publisher",
-      label: t("Overview.edges.platformPayload"),
-      type: "smoothstep",
-      animated: true,
-      markerEnd: {
-        type: MarkerType.ArrowClosed,
-        width: 20,
-        height: 20,
-      },
-    },
-    {
-      id: "e4",
-      source: "GatewayServer",
-      target: "BridgeServer",
-      label: t("Overview.edges.bridgePayload"),
-      type: "smoothstep",
-      animated: true,
-      markerEnd: {
-        type: MarkerType.ArrowClosed,
-        width: 20,
-        height: 20,
-      },
-    },
-    {
-      id: "e5",
-      source: "Publisher",
-      target: "Vault",
-      label: t("Overview.edges.decryptAuth"),
-      animated: true,
-      markerEnd: {
-        type: MarkerType.ArrowClosed,
-        width: 20,
-        height: 20,
-      },
-    },
-    {
-      id: "e6",
-      source: "BridgeServer",
-      target: "Vault",
-      label: t("Overview.edges.decryptAuth"),
-      animated: true,
-      markerEnd: {
-        type: MarkerType.ArrowClosed,
-        width: 20,
-        height: 20,
-      },
-    },
-    {
-      id: "e9",
       source: "Publisher",
       target: "Platforms",
       label: t("Overview.edges.content"),
-      animated: true,
-      markerEnd: {
-        type: MarkerType.ArrowClosed,
-        width: 20,
-        height: 20,
-      },
-    },
-    {
-      id: "e12",
-      source: "BridgeServer",
-      target: "EmailBridge",
       type: "straight",
       animated: true,
       markerEnd: {
@@ -173,18 +83,14 @@ const Map = ({ handleDrawerOpen }) => {
         width: 20,
         height: 20,
       },
-    },
+    }
   ];
 
   const nodeClickMap = {
     ClientApp: "Client",
     GatewayClient: "GatewayClient",
-    GatewayServer: "GatewayServer",
     Publisher: "Publisher",
-    BridgeServer: "BridgeServer",
-    Vault: "Vault",
     Platforms: "Platforms",
-    EmailBridge: "EmailBridge"
   };
 
   return (

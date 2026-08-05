@@ -10,7 +10,7 @@ const useAppFeaturesData = (t) => {
 		{ label: t("AppFeatures.Features.Gmail", "Gmail"), android: true, ios: true, desktop: true },
 		{ label: t("AppFeatures.Features.Twitter", "Twitter / X"), android: true, ios: true, desktop: true },
 		{ label: t("AppFeatures.Features.Telegram", "Telegram"), android: true, ios: true, desktop: true },
-		{ label: t("AppFeatures.Features.GatewaySetup", "Gateway client setup"), android: true, ios: false, desktop: false },
+		{ label: t("AppFeatures.Features.GatewaySetup", "Routing number setup"), android: true, ios: false, desktop: false },
 		{ label: t("AppFeatures.Features.DarkMode", "Dark mode"), android: true, ios: true, desktop: true },
 		{ label: t("AppFeatures.Features.MultiLanguage", "Multi-language support"), android: true, ios: true, desktop: true },
 		{ label: t("AppFeatures.Features.E2EEncryption", "End-to-end encryption"), android: true, ios: true, desktop: true },

@@ -228,7 +228,9 @@ const Contributing = () => {
 						startIcon={<FaTelegram size={18} />}
 						sx={{
 							textTransform: "none",
-							borderRadius: 2
+							borderRadius: 2,
+							color: "text.primary",
+							borderColor: "divider",
 						}}
 					>
 						{t("Blog.joinTelegram")}

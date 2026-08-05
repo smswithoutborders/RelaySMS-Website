@@ -34,7 +34,7 @@
 		"h1": "Stay connected even with no internet access.",
 		"h2": "RelaySMS enables you to send messages to online platforms like Gmail, Telegram and others without an active internet connection. Messages are sent via SMS from your mobile device.",
 		"Android": "Download RelaySMS ",
-		"RoutingNumbers": "Set Up Gateway Clients",
+		"RoutingNumbers": "Set Up Routing Numbers",
 		"supportedPlatforms": "Supported Platforms:",
 		"auditMessage": {
 			"part1": "RelaySMS is committed to security and transparency. Read our ",
@@ -53,14 +53,15 @@
 		"Step2Desc": "Create an account by clicking 'Add Account,' and filling in the required details. An authentication PIN will be sent to your phone for verification.",
 		"Step2Button": "Learn More",
 		"Step3Title": "Save Platforms",
-		"Step3Desc": "Save access to platforms while connected to the internet. Add your credentials to platforms supported by RelaySMS and prepare them for offline use.",
+		"Step3Desc": "Save platform access while online. It stays on your phone, so back it up. Saved access lets you keep communicating when the internet is off.",
 		"Step3Button": "Set Up Now",
 		"Step4Title": "Select a Routing Number",
 		"Step4Desc": "Choose a Routing Number for sending SMS. You can select from pre-configured numbers or set up a custom number by adding the routing number to your contacts.",
 		"Step4Button": "Configure Routing Number",
 		"Step5Title": "Send Messages",
-		"Step5Desc": "Compose messages for supported platforms without internet. Send these as SMS to a pre-saved gateway number, ensuring encrypted communication.",
+		"Step5Desc": "Send messages with your saved platforms, or quickly send with RMail anonymously.",
 		"Step5Button": "Start Messaging",
+		"FullDocsButton": "Read full setup guide",
 		"StepLabel": "Step",
 		"ScrollHint": "Scroll to advance steps"
 	},
@@ -82,15 +83,15 @@
 	"HowRelaySMSWorks": {
 		"Header": "How it works",
 		"Description1": "RelaySMS utilizes SMS messaging (aka \"text messaging\") to route offline messages back online.",
-		"Description2": "The key to RelaySMS lies in its use of Gateway Clients. These devices  operate in areas with an active internet connection, allowing them to  receive an SMS message from an offline RelaySMS user and then forward it to an online server where the user has already saved their platform  permissions.",
+		"Description2": "The key to RelaySMS lies in its use of routing numbers. These numbers operate in areas with active internet, receive SMS from offline RelaySMS users, and forward messages to online platforms where access was already saved.",
 		"TrainingTitle": "Download Training Guides",
 		"EnglishPDF": "English Guide (PDF)",
 		"FrenchPDF": "French Guide (PDF)",
 		"SeeSpecification": "Read more"
 	},
 	"GatewayClient": {
-		"Header": "Setting Up a Gateway-Client",
-		"Description": "Gateway Clients are devices with active internet that act as a bridge between offline users and online platforms. When you send a message without internet, it goes via SMS to a Gateway Clients which forwards it to your selected platform. Within the app, Gateway Clients are listed under the Countries tab. They can be set up using the DekuSMS app.",
+		"Header": "Setting Up Routing Numbers",
+		"Description": "Routing numbers are phone numbers with internet access that bridge offline users and online platforms. When you send a message without internet, it goes by SMS to a routing number, which forwards it to your selected platform.",
 		"ReadMore": "Read More"
 	},
 	"SupportedPlatforms": {
@@ -111,8 +112,8 @@
 		"RebrandD": "SMSWithoutBorders itself is becoming the umbrella project encompassing RelaySMS and other messaging tools. The core functionality remains the same, but users can expect a new name, enhanced security features, and a focus on future growth under the SMSWithoutBorders project.",
 		"ReadMore": "Read More",
 		"ReadOtherArticles": "Read Other Articles",
-		"articles1": "Resilience Of Gateway Clients In SMSWithoutBorders",
-		"articles2": "Reliability Of Gateway Clients In Smswithoutborders",
+		"articles1": "Resilience Of Routing Numbers In SMSWithoutBorders",
+		"articles2": "Reliability Of Routing Numbers In Smswithoutborders",
 		"articles3": "New Alpha Release: Vault 0.1.0",
 		"tag": "Articles",
 		"tags": "Release",
@@ -141,7 +142,7 @@
 		},
 		"faq2": {
 			"question": "How does RelaySMS work?",
-			"answer": "RelaySMS works by using SMS messages sent from your app to SMS Gateway Clients run by volunteers, who forward them to the internet."
+			"answer": "RelaySMS works by using SMS messages sent from your app to SMS routing numbers run by volunteers, who forward them to the internet."
 		},
 		"faq3": {
 			"question": "Do I need an internet connection to use RelaySMS?",
@@ -167,7 +168,7 @@
 	},
 	"Footer": {
 		"Resources": "Resources",
-		"TechnicalResources": "Technical Resources",
+		"TechnicalResources": "Devs",
 		"More": "More",
 		"Changelog": "Changelog",
 		"Blog": "Blog",
@@ -184,7 +185,7 @@
 		"Tutorials": "Tutorials",
 		"AndroidTutorial": "Android Tutorial",
 		"iOSTutorial": "iOS Tutorial",
-		"GatewayClientSetup": "Gateway Client Setup",
+		"GatewayClientSetup": "Routing Number Setup",
 		"Troubleshooting": "Troubleshooting",
 		"NewsletterTitle": "Subscribe to our newsletter",
 		"NewsletterDescription": "Get RelaySMS updates and release highlights in your mail.",
@@ -198,8 +199,8 @@
 		}
 	},
 	"Newsletter": {
-		"title": "Subscribe to MailingList",
-		"description": "Get RelaySMS news and release updates in your mail.",
+		"title": "Follow what we are building.",
+		"description": "Sign up for our emails to get product and technology updates.",
 		"emailPlaceholder": "Email address",
 		"emailAria": "Email address",
 		"submit": "Subscribe",
@@ -369,7 +370,7 @@
 	},
 	"Overview": {
 		"title": "RelaySMS System Overview",
-		"description": "The diagram below illustrates the flow of messages and data between the main components of the RelaySMS, from client apps through Gateway Clients, servers, and external services.",
+		"description": "The diagram below illustrates the flow of messages and data between the main components of RelaySMS, from client apps through routing numbers, servers, and external services.",
 		"tip": "Tip: Click on a node in the diagram to view more information about that component.",
 		"details": "Details",
 		"loading": "Loading documentation...",
@@ -377,7 +378,7 @@
 			"Client": "Client",
 			"Vault": "Vault",
 			"Publisher": "Publisher",
-			"GatewayClient": "Gateway Clients",
+			"GatewayClient": "Routing Numbers",
 			"GatewayServer": "Gateway Server",
 			"BridgeServer": "Bridge Server",
 			"Platforms": "Platforms",
@@ -385,7 +386,7 @@
 		},
 		"nodes": {
 			"Client": "Client (Apps)",
-			"GatewayClient": "Gateway Clients",
+			"GatewayClient": "Routing Numbers",
 			"GatewayServer": "Gateway Server",
 			"Publisher": "Publisher",
 			"BridgeServer": "Bridge Server",
@@ -482,9 +483,9 @@
 			}
 		},
 		"GatewayClients": {
-			"title": "Be a crucial part of RelaySMS by setting up a Gateway Clients",
-			"description": "When you set up a Gateway Client (phone number) in a region with internet connectivity, this number helps route messages from users who are offline to online platforms.",
-			"cta": "Learn all about Gateway Clients"
+			"title": "Be a crucial part of RelaySMS by setting up routing numbers",
+			"description": "When you set up a routing number in a region with internet connectivity, it helps route messages from offline users to online platforms.",
+			"cta": "Learn all about routing numbers"
 		}
 	},
 	"AppFeatures": {
@@ -493,7 +494,7 @@
 			"Gmail": "Gmail",
 			"Twitter": "Twitter / X",
 			"Telegram": "Telegram",
-			"GatewaySetup": "Gateway client setup",
+			"GatewaySetup": "Routing number setup",
 			"DarkMode": "Dark mode",
 			"MultiLanguage": "Multi-language support",
 			"E2EEncryption": "End-to-end encryption",
@@ -544,7 +545,7 @@
 				"Subtitle": "Offline message via SMS"
 			},
 			"Gateway": {
-				"Title": "Gateway Client",
+				"Title": "Routing Number",
 				"Subtitle": "The bridge that pushes messages online"
 			},
 			"Platform": {
@@ -556,9 +557,9 @@
 			"Title": "RelaySMS is utilizing SMS to bridge internet censorships and shutdowns",
 			"Subtitle": "Don't let internet censorship or shutdowns stop you from communicating. RelaySMS is a free and open-source project that allows you to send messages to popular platforms like Gmail, Telegram, Bluesky, and more, when you don't have internet access."
 		},
-		"GatewayShare": "If you are in an area with internet connection, you can set up a Gateway Client and share access with your family and friends in areas without internet connectivity.",
+		"GatewayShare": "If you are in an area with internet access, you can set up a routing number and share access with family and friends in areas without connectivity.",
 		"CTA": {
-			"SetupGateway": "Setting up a Gateway Client",
+			"SetupGateway": "Setting up a Routing Number",
 			"SMSWithoutBorders": "Learn more about SMSWithoutBorders",
 			"Contribute": "Contribution Guide"
 		},

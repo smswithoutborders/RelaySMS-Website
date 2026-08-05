@@ -95,7 +95,7 @@ const NewsletterForm = ({
 	return (
 		<Box sx={sx}>
 			{showHeading && (
-				<Box sx={{ mb: 2 }}>
+				<Box sx={{ mb: 4 }}>
 					<Typography
 						variant="h6"
 						sx={{
@@ -164,6 +164,7 @@ const NewsletterForm = ({
 								"& .MuiOutlinedInput-root": {
 									color: dark ? "#ffffff" : "text.primary",
 									backgroundColor: dark ? "rgba(255,255,255,0.05)" : "background.paper",
+									borderRadius: 3,
 									"& fieldset": {
 										borderColor: dark ? "#ffffff44" : "divider"
 									},
@@ -203,9 +204,10 @@ const NewsletterForm = ({
 							sx={{
 								textTransform: "none",
 								fontWeight: 600,
+								borderRadius: 3,
 								whiteSpace: "nowrap",
 								alignSelf: centered ? "center" : "stretch",
-								px: 2,
+								px: 1.5,
 								py: 0.9,
 								minWidth: { sm: stacked ? "100%" : 140 },
 								bgcolor: submitButtonBg,
