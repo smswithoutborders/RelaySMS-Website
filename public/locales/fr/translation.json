@@ -89,6 +89,36 @@
 		"FrenchPDF": "Guide français (PDF)",
 		"SeeSpecification": "Lire la suite"
 	},
+	"RelayFeatures": {
+		"Header": "Une communication privée et résiliente",
+		"Description": "RelaySMS est conçu pour que votre communication reste entre vos mains avant, pendant et après une coupure d'Internet.",
+		"items": [
+			{
+				"title": "Aucune inscription requise",
+				"description": "Pas d'e-mail, pas de numéro de téléphone, pas d'inscription. Enregistrez ce dont vous avez besoin et utilisez-le quand vous le souhaitez, en commençant par les SMS."
+			},
+			{
+				"title": "Messages chiffrés",
+				"description": "Tous vos messages sont sécurisés. Les opérateurs réseau ne peuvent pas lire le contenu de vos messages RelaySMS."
+			},
+			{
+				"title": "Utilisez les plateformes que vous connaissez",
+				"description": "Enregistrez l'accès à vos comptes lorsque vous êtes en ligne, puis communiquez via ceux-ci lorsque l'accès à Internet est coupé."
+			},
+			{
+				"title": "Votre accès reste sur votre appareil",
+				"description": "L'accès à vos plateformes est stocké sur votre téléphone, et non sur un serveur RelaySMS."
+			},
+			{
+				"title": "Verrouillage de l'application",
+				"description": "Vous pouvez verrouiller l'application pour ajouter une couche de protection supplémentaire à votre appareil."
+			},
+			{
+				"title": "Envoyez des pièces jointes",
+				"description": "Vous pouvez envoyer des pièces jointes avec RelaySMS afin de rendre vos messages plus polyvalents."
+			}
+		]
+	},
 	"GatewayClient": {
 		"Header": "Configuration des numéros de routage",
 		"Description": "Les numéros de routage sont des numéros de téléphone avec internet actif qui relient les utilisateurs hors ligne aux plateformes en ligne. Quand vous envoyez un message sans internet, il passe par SMS vers un numéro de routage, puis est transmis à la plateforme choisie.",
@@ -182,6 +212,7 @@
 		"AuditReport": "Rapport d'Audit",
 		"Jobs": "Emplois",
 		"ContactUs": "Contactez-nous",
+		"ServiceStatus": "Etat du service",
 		"Tutorials": "Tutoriels",
 		"AndroidTutorial": "Tutoriel Android",
 		"iOSTutorial": "Tutoriel iOS",
