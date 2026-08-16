@@ -247,7 +247,7 @@ const GettingStarted = () => {
 				number: 2,
 				title: t("Howitworks.Step3Title"),
 				description: t("Howitworks.Step3Desc"),
-				image: "/save-platform.png",
+				image: "/accounts-saved.png",
 				buttonText: t("Howitworks.Step3Button", "Set Up Now"),
 				link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-5-save-access-to-platforms"
 			},
@@ -263,7 +263,7 @@ const GettingStarted = () => {
 				number: 3,
 				title: t("Howitworks.Step5Title"),
 				description: t("Howitworks.Step5Desc"),
-				image: "/compose.png",
+				image: "/compose (2).png",
 				buttonText: t("Howitworks.Step5Button", "Start Messaging"),
 				link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-3-compose-your-message-and-send-as-sms"
 			}

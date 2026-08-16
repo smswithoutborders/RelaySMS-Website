@@ -13,6 +13,7 @@ import FAQ from "./FAQ";
 import WhoShouldUse from "./WhoShouldUse";
 import SupportedPlatforms from "./SupportedPlatforms";
 import TrainingGuide from "./TrainingGuide";
+import RelayFeatures from "./RelayFeatures";
 
 const Hero = () => {
 	const [showCursor, setShowCursor] = useState(true);
@@ -48,7 +49,7 @@ const Hero = () => {
 					textAlign: "center",
 					background: (theme) =>
 						theme.palette.mode === "dark"
-							? `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(77, 125, 192, 0.25) 0%, transparent 65%),
+							? `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(77, 108, 192, 0.25) 0%, transparent 65%),
 						   linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
 						   linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`
 							: `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(0,24,113,0.09) 0%, transparent 65%),
@@ -157,6 +158,7 @@ const Hero = () => {
 				</Grid>
 			</Box>
 
+			<RelayFeatures />
 			<GettingStarted />
 			<Box my={15}>
 				<TrainingGuide />

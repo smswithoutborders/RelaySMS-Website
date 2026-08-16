@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Box, Typography, Paper, Button } from "@mui/material";
 import { FaUser, FaClock } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa6";
+import { UserOutlined } from "@ant-design/icons";
 import { keyframes } from "@emotion/react";
 import { useTranslation } from "react-i18next";
 import NewsletterForm from "./NewsletterForm";
@@ -32,7 +33,7 @@ const BlogCard = ({ post, calculateReadTime, defaultAuthor, minReadLabel }) => (
 			p: 2.5,
 			py: 3,
 			bgcolor: "background.paper",
-			border: "0.5px solid",
+			border: "0.2px solid",
 			borderColor: "divider",
 			textDecoration: "none",
 			display: "flex",
@@ -59,7 +60,7 @@ const BlogCard = ({ post, calculateReadTime, defaultAuthor, minReadLabel }) => (
 					flexShrink: 0
 				}}
 			>
-				<FaUser size={14} color="text.secondary" />
+				<UserOutlined style={{ fontSize: 14, color: "text.secondary" }} />
 			</Box>
 			<Typography
 				variant="caption"
@@ -80,6 +81,7 @@ const BlogCard = ({ post, calculateReadTime, defaultAuthor, minReadLabel }) => (
 				display: "-webkit-box",
 				WebkitLineClamp: 2,
 				WebkitBoxOrient: "vertical",
+				fontFamily: "Unbounded",
 				overflow: "hidden"
 			}}
 		>

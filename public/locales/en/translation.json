@@ -89,6 +89,36 @@
 		"FrenchPDF": "French Guide (PDF)",
 		"SeeSpecification": "Read more"
 	},
+	"RelayFeatures": {
+		"Header": "Made for private, resilient communication",
+		"Description": "RelaySMS is designed with privacy and resilience in mind. It allows you to communicate without an internet connection, while keeping your messages secure and your platform access private.",
+		"items": [
+			{
+				"title": "No sign-up required",
+				"description": "No emails, no phone number, no signups. Save what you need and use whenever you want - starting with SMS"
+			},
+			{
+				"title": "Encrypted messages",
+				"description": "All your messages are secure. Network providers cannot read the contents of your RelaySMS messages."
+			},
+			{
+				"title": "Use platforms you know",
+				"description": "Save access to your accounts (platforms) while you are online, then communicate through them when internet access is cut."
+			},
+			{
+				"title": "Your access stays on your device",
+				"description": "Your platform access is stored on your phone, not on a RelaySMS server."
+			},
+			{
+				"title": "App lock",
+				"description": "You can lock the app to add another layer of protection on your device."
+			},
+			{
+				"title": "Send Attachments",
+				"description": "You can send attachments through RelaySMS, adding more versatility to your messages."
+			}
+		]
+	},
 	"GatewayClient": {
 		"Header": "Setting Up Routing Numbers",
 		"Description": "Routing numbers are phone numbers with internet access that connects offline users to online platforms. When you send a message without internet, it goes by SMS to a routing number, which forwards it to your selected platform.",
@@ -182,6 +212,7 @@
 		"AuditReport": "Audit Report",
 		"Jobs": "Jobs",
 		"ContactUs": "Contact Us",
+		"ServiceStatus": "Service status",
 		"Tutorials": "Tutorials",
 		"AndroidTutorial": "Android Tutorial",
 		"iOSTutorial": "iOS Tutorial",
