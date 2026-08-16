@@ -89,6 +89,36 @@
 		"FrenchPDF": "Guía en Francés (PDF)",
 		"SeeSpecification": "Leer más"
 	},
+	"RelayFeatures": {
+		"Header": "Comunicación privada y resistente",
+		"Description": "RelaySMS está diseñado para que tu comunicación permanezca en tus manos antes, durante y después de un corte de internet.",
+		"items": [
+			{
+				"title": "No se requiere registro",
+				"description": "Sin correo electrónico, número de teléfono ni registros. Guarda lo que necesitas y úsalo cuando quieras, empezando por SMS."
+			},
+			{
+				"title": "Mensajes cifrados",
+				"description": "Todos tus mensajes están protegidos. Los proveedores de red no pueden leer el contenido de tus mensajes de RelaySMS."
+			},
+			{
+				"title": "Usa las plataformas que conoces",
+				"description": "Guarda el acceso a tus cuentas mientras estás en línea y comunícate a través de ellas cuando se corte el acceso a internet."
+			},
+			{
+				"title": "Tu acceso permanece en tu dispositivo",
+				"description": "El acceso a tus plataformas se guarda en tu teléfono, no en un servidor de RelaySMS."
+			},
+			{
+				"title": "Bloqueo de la aplicación",
+				"description": "Puedes bloquear la aplicación para añadir otra capa de protección a tu dispositivo."
+			},
+			{
+				"title": "Envía archivos adjuntos",
+				"description": "Puedes enviar archivos adjuntos a través de RelaySMS para que tus mensajes sean más versátiles."
+			}
+		]
+	},
 	"GatewayClient": {
 		"Header": "Configurar números de enrutamiento",
 		"Description": "Los números de enrutamiento son números de teléfono con internet activo que conectan usuarios sin conexión con plataformas en línea. Cuando envías un mensaje sin internet, va por SMS a un número de enrutamiento y este lo reenvía a la plataforma elegida.",
@@ -182,6 +212,7 @@
 		"AuditReport": "Informe de Auditoría",
 		"Jobs": "Empleos",
 		"ContactUs": "Contáctanos",
+		"ServiceStatus": "Estado del servicio",
 		"Tutorials": "Tutoriales",
 		"AndroidTutorial": "Tutorial de Android",
 		"iOSTutorial": "Tutorial de iOS",

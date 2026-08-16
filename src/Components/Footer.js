@@ -1,4 +1,4 @@
-import { Grid, Typography, Link, Divider } from "@mui/material";
+import { Chip, Grid, Typography, Link, Divider } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link as RouterLink } from "react-router-dom";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
@@ -22,14 +22,14 @@ const Footer = () => {
 		{
 			title: t("Footer.Resources"),
 			links: [
+				{ label: t("Footer.Blog"), href: "https://blog.smswithoutborders.com/", external: true },
+				{ label: t("Footer.BrandResources"), to: "/branding" },
+				{ label: t("Footer.SystemOverview"), to: "/system-overview" },
 				{
 					label: t("Footer.Changelog", "Changelog"),
 					href: "https://github.com/smswithoutborders/RelaySMS-Android/releases",
 					external: true
-				},
-				{ label: t("Footer.Blog"), href: "https://blog.smswithoutborders.com/", external: true },
-				{ label: t("Footer.BrandResources"), to: "/branding" },
-				{ label: t("Footer.SystemOverview"), to: "/system-overview" }
+				}
 			]
 		},
 		{
@@ -82,12 +82,13 @@ const Footer = () => {
 					href: "https://www.opentech.fund/security-safety-audits/smswithoutborders-penetration-testt/",
 					external: true
 				},
+				{ label: t("Footer.ContactUs"), to: "/contact" },
 				{
-					label: t("Footer.Jobs"),
-					href: "https://afkanerd.com/careers",
-					external: true
-				},
-				{ label: t("Footer.ContactUs"), to: "/contact" }
+					label: t("Footer.ServiceStatus", "Service status"),
+					href: "https://status.smswithoutborders.afkanerd.com/status/rs1",
+					external: true,
+					status: true
+				}
 			]
 		}
 	];
@@ -195,7 +196,32 @@ const Footer = () => {
 									}}
 								>
 									{section.links.map((link, linkIndex) =>
-										link.external ? (
+										link.status ? (
+											<Chip
+												key={linkIndex}
+												component="a"
+												href={link.href}
+												target="_blank"
+												rel="noopener noreferrer"
+												label={link.label}
+												variant="outlined"
+												icon={
+													<Box
+														component="span"
+														sx={{ width: 6, height: 6, borderRadius: "50%", bgcolor: "#65c466" }}
+													/>
+												}
+												size="small"
+												sx={{
+													color: "#cccccc",
+													borderColor: "#3b3b3d",
+													fontSize: "0.75rem",
+													alignSelf: "flex-start",
+													"&:hover": { borderColor: "#65c466", color: "#ffffff" },
+													"& .MuiChip-icon": { ml: 1, mr: -0.25 }
+												}}
+											/>
+										) : link.external ? (
 											<Link
 												key={linkIndex}
 												href={link.href}
@@ -313,7 +339,7 @@ const Footer = () => {
 				sx={{
 					width: { xs: "78%", md: "70%" },
 					mx: "auto",
-					borderColor: "#232324",
+					borderColor: "#232324"
 				}}
 			/>
 			<Grid container sx={{ px: { xs: 2, md: 5 }, pt: 3 }}>
