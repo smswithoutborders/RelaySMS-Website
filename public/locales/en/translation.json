@@ -67,7 +67,7 @@
 	},
 	"WhoShouldUse": {
 		"Header": "Everyone can use RelaySMS",
-		"Description": "Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns should use RelaySMS to circumvent shutdowns and stay connected. After setting up RelaySMS on your phone, you can seamlessly send messages to your preferred online messaging platform without any internet connection (standard SMS rates will apply).",
+		"Description": "Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns can use RelaySMS to circumvent shutdowns and stay connected. After setting up RelaySMS on your phone, you can send messages to your preferred online messaging platform without any internet connection (standard SMS rates will apply).",
 		"AndroidButton": "Download for Android",
 		"iOSButton": "Download for iOS",
 		"FlowNodes": {
@@ -95,7 +95,7 @@
 		"items": [
 			{
 				"title": "No sign-up required",
-				"description": "No emails, no phone number, no signups. Save what you need and use whenever you want - starting with SMS"
+				"description": "No emails, no phone numbers, no signups. Save what you need and use it whenever you want - all over SMS"
 			},
 			{
 				"title": "Encrypted messages",
@@ -577,7 +577,7 @@
 			},
 			"Gateway": {
 				"Title": "Routing Number",
-				"Subtitle": "The bridge that pushes messages online"
+				"Subtitle": "Receives your SMS and sends it online"
 			},
 			"Platform": {
 				"Title": "Platform",
@@ -585,18 +585,18 @@
 			}
 		},
 		"Hero": {
-			"Title": "RelaySMS is utilizing SMS to bridge internet censorships and shutdowns",
-			"Subtitle": "Don't let internet censorship or shutdowns stop you from communicating. RelaySMS is a free and open-source project that allows you to send messages to popular platforms like Gmail, Telegram, Bluesky, and more, when you don't have internet access."
+			"Title": "RelaySMS uses SMS to bridge internet censorship and shutdowns",
+			"Subtitle": "Internet censorship and shutdowns won't stop you from communicating. RelaySMS is a free and open-source project that allows you to send messages to popular platforms like Gmail, Telegram, Bluesky, and more when you don't have internet access."
 		},
-		"GatewayShare": "If you are in an area with internet access, you can set up a routing number and share access with family and friends in areas without connectivity.",
+		"GatewayShare": "If you are in an area with internet access, you can set up a routing number and share access with family and friends who don't have internet access.",
 		"CTA": {
 			"SetupGateway": "Setting up a Routing Number",
 			"SMSWithoutBorders": "Learn more about SMSWithoutBorders",
 			"Contribute": "Contribution Guide"
 		},
 		"WhoBuilt": {
-			"Title": "The team behind RelaySMS?",
-			"Description": "RelaySMS is an SMSWithoutBorders app, built and maintained by the Afkanerd team with support from open-source contributors and partners. We accept and encourage contributions from the community to improve RelaySMS and expand its reach."
+			"Title": "The team behind RelaySMS",
+			"Description": "RelaySMS is an SMSWithoutBorders app, built and maintained by the Afkanerd team with support from open-source contributors and partners. We welcome contributions from the community to improve RelaySMS and expand its reach."
 		}
 	},
 	"awesomeButton": "Awesome!",

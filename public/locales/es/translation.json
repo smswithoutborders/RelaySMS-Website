@@ -1,9 +1,9 @@
 {
 	"404": {
-		"title": "¡Ups! Página No Encontrada",
-		"description": "La página que buscas no existe. Puede que haya sido movida, eliminada, o ingresaste una URL incorrecta.",
-		"homeButton": "Volver al Inicio",
-		"backButton": "Regresar"
+		"title": "¡Ups! Página no encontrada",
+		"description": "La página que buscas no existe. Puede que se haya movido, eliminado o que hayas introducido una URL incorrecta.",
+		"homeButton": "Volver al inicio",
+		"backButton": "Volver"
 	},
 	"Nav": {
 		"Home": "Inicio",
@@ -13,61 +13,61 @@
 		"Contact": "Contáctanos",
 		"Support": "Soporte",
 		"Back": "Atrás",
-		"Download": "Descargar",
+		"Download": "Descargar la aplicación",
 		"Developers": "Desarrolladores",
 		"Branding": "Marca",
-		"Overview": "Descripción del Sistema",
+		"Overview": "Descripción general del sistema",
 		"Changelog": "Registro de cambios",
 		"About": "Acerca de"
 	},
 	"Alert": {
-		"message": "¡Ahora puedes hacer de RelaySMS tu aplicación SMS predeterminada en Android!",
+		"message": "¡Ahora puedes convertir RelaySMS en tu aplicación de SMS predeterminada en Android!",
 		"readMore": "Leer más"
 	},
 	"social": {
 		"x": "Síguenos en X",
-		"bluesky": "Visítanos en Bluesky",
+		"bluesky": "Echa un vistazo a Bluesky",
 		"github": "Ver nuestro GitHub"
 	},
 	"Landing": {
-		"span": "¿Sin conexión a internet? No te preocupes.",
-		"h1": "Manténte conectado incluso sin acceso a Internet.",
-		"h2": "RelaySMS permite a los usuarios enviar mensajes a plataformas en línea sin una conexión activa a Internet. Los mensajes se envían por SMS desde tu dispositivo.",
+		"span": "¿Sin conexión a Internet? No hay problema.",
+		"h1": "Mantente conectado incluso sin acceso a Internet.",
+		"h2": "RelaySMS te permite enviar mensajes a plataformas en línea como Gmail, Telegram y otras sin una conexión a Internet activa. Los mensajes se envían por SMS desde tu dispositivo móvil.",
 		"Android": "Descargar RelaySMS ",
 		"RoutingNumbers": "Configurar números de enrutamiento",
 		"supportedPlatforms": "Plataformas compatibles:",
 		"auditMessage": {
-			"part1": "RelaySMS está comprometido con la seguridad y la transparencia. Lee nuestro ",
+			"part1": "RelaySMS se compromete con la seguridad y la transparencia. Lee nuestro ",
 			"link": "informe de auditoría de seguridad",
 			"part2": "."
 		}
 	},
 	"Howitworks": {
 		"ReadMore": "Leer más",
-		"Header": "Primeros pasos con RelaySMS",
-		"SubHeader": "Aprende a configurar y usar RelaySMS para comunicación offline sin inconvenientes.",
-		"Step1Title": "Download the App",
-		"Step1Desc": "Download the RelaySMS App from <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>Google PlayStore</a>, <a href='https://github.com/smswithoutborders/RelaySMS-Android' target='_blank' rel='noopener noreferrer'>GitHub</a>, or <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>build it from source</a>. Ensure your Android device meets the technical requirements (Android 6.0+ with SMS capability).",
-		"Step1Button": "Download",
-		"Step2Title": "Crea una cuenta",
-		"Step2Desc": "Haz clic en \"Añadir cuenta\" y completa los datos. Se enviará un PIN a tu teléfono para verificar.",
-		"Step2Button": "Saber más",
-		"Step3Title": "Guarda plataformas",
-		"Step3Desc": "Guarda el acceso a plataformas cuando tengas internet. Queda en tu teléfono, así que haz una copia de seguridad. El acceso guardado te permite comunicarte cuando internet esté caído.",
+		"Header": "Cómo configurar RelaySMS",
+		"SubHeader": "No esperes a que se corten los servicios de Internet para configurar RelaySMS. Sigue estos pasos para asegurarte de que puedes mantenerte conectado cuando más lo necesites.",
+		"Step1Title": "Descargar la aplicación",
+		"Step1Desc": "Descarga la aplicación RelaySMS desde <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>Google Play Store</a>, <a href='https://github.com/smswithoutborders/RelaySMS-Android' target='_blank' rel='noopener noreferrer'>GitHub</a> o <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>compílala desde el código fuente</a>. Asegúrate de que tu dispositivo Android cumple los requisitos técnicos (Android 6.0+ con capacidad SMS).",
+		"Step1Button": "Descargar",
+		"Step2Title": "Crear una cuenta",
+		"Step2Desc": "Crea una cuenta haciendo clic en «Añadir cuenta» y completando los datos necesarios. Se enviará un PIN de autenticación a tu teléfono para su verificación.",
+		"Step2Button": "Más información",
+		"Step3Title": "Guardar plataformas",
+		"Step3Desc": "Guarda el acceso a las plataformas cuando tengas conexión. Se mantiene en tu teléfono, así que haz una copia de seguridad. El acceso guardado te permite seguir comunicándote cuando Internet caiga.",
 		"Step3Button": "Configurar ahora",
 		"Step4Title": "Selecciona un número de enrutamiento",
-		"Step4Desc": "Elige un número de enrutamiento para enviar SMS. Puedes usar números preconfigurados o agregar uno personalizado a tus contactos.",
+		"Step4Desc": "Elige un número de enrutamiento para enviar SMS. Puedes seleccionar entre números preconfigurados o configurar un número personalizado añadiéndolo a tus contactos.",
 		"Step4Button": "Configurar número de enrutamiento",
-		"Step5Title": "Envía mensajes",
-		"Step5Desc": "Envía mensajes con tus plataformas guardadas o usa RMail para enviar rápido y de forma anónima.",
-		"Step5Button": "Enviar mensajes",
-		"FullDocsButton": "Leer guía completa de configuración",
+		"Step5Title": "Enviar mensajes",
+		"Step5Desc": "Envía mensajes con tus plataformas guardadas o envía rápidamente mensajes anónimos con RMail.",
+		"Step5Button": "Empezar a enviar mensajes",
+		"FullDocsButton": "Leer la guía completa de configuración",
 		"StepLabel": "Paso",
-		"ScrollHint": "Desplázate para avanzar pasos"
+		"ScrollHint": "Desplázate para avanzar"
 	},
 	"WhoShouldUse": {
 		"Header": "Todos pueden usar RelaySMS",
-		"Description": "Cualquier persona que experimente mala conectividad a Internet o viva en una región propensa a cortes de Internet debería usar RelaySMS para eludir los cortes y mantenerse conectado. Después de configurar RelaySMS en tu teléfono, puedes enviar mensajes a tu plataforma de mensajería en línea preferida sin ninguna conexión a internet (se aplicarán tarifas SMS estándar).",
+		"Description": "Cualquier persona que tenga una conectividad a Internet deficiente o viva en una zona propensa a cortes de Internet puede usar RelaySMS para sortear los apagones y seguir conectado. Después de configurar RelaySMS en tu teléfono, podrás enviar mensajes a tu plataforma de mensajería preferida sin ninguna conexión a Internet (se aplicarán las tarifas estándar de SMS).",
 		"AndroidButton": "Descargar para Android",
 		"iOSButton": "Descargar para iOS",
 		"FlowNodes": {
@@ -82,20 +82,20 @@
 	},
 	"HowRelaySMSWorks": {
 		"Header": "Cómo funciona",
-		"Description1": "RelaySMS utiliza mensajería SMS (también conocida como \"mensajes de texto\") para enrutar mensajes fuera de línea de vuelta en línea.",
-		"Description2": "La clave de RelaySMS está en el uso de números de enrutamiento. Estos números operan en zonas con internet activo, reciben SMS de usuarios de RelaySMS sin conexión y los reenvían a plataformas en línea donde ya se guardó el acceso.",
-		"TrainingTitle": "Descargar Guías de Entrenamiento",
-		"EnglishPDF": "Guía en Inglés (PDF)",
-		"FrenchPDF": "Guía en Francés (PDF)",
+		"Description1": "RelaySMS utiliza la mensajería SMS (también conocida como “mensajes de texto”) para devolver a Internet los mensajes fuera de línea.",
+		"Description2": "La clave de RelaySMS está en el uso de números de enrutamiento. Estos números operan en zonas con conexión a Internet activa, reciben SMS de usuarios offline de RelaySMS y reenviarán los mensajes a las plataformas en línea donde ya se guardó el acceso.",
+		"TrainingTitle": "Descargar guías de entrenamiento",
+		"EnglishPDF": "Guía en inglés (PDF)",
+		"FrenchPDF": "Guía en francés (PDF)",
 		"SeeSpecification": "Leer más"
 	},
 	"RelayFeatures": {
-		"Header": "Comunicación privada y resistente",
-		"Description": "RelaySMS está diseñado para que tu comunicación permanezca en tus manos antes, durante y después de un corte de internet.",
+		"Header": "Diseñado para una comunicación privada y resistente",
+		"Description": "RelaySMS está diseñado pensando en la privacidad y la resistencia. Te permite comunicarte sin conexión a Internet manteniendo tus mensajes seguros y tu acceso a las plataformas privado.",
 		"items": [
 			{
 				"title": "No se requiere registro",
-				"description": "Sin correo electrónico, número de teléfono ni registros. Guarda lo que necesitas y úsalo cuando quieras, empezando por SMS."
+				"description": "Sin correos, sin números de teléfono ni registros. Guarda lo que necesites y úsalo cuando quieras, todo por SMS."
 			},
 			{
 				"title": "Mensajes cifrados",
@@ -103,7 +103,7 @@
 			},
 			{
 				"title": "Usa las plataformas que conoces",
-				"description": "Guarda el acceso a tus cuentas mientras estás en línea y comunícate a través de ellas cuando se corte el acceso a internet."
+				"description": "Guarda el acceso a tus cuentas (plataformas) cuando estés en línea y comunícate mediante ellas si se corta el acceso a Internet."
 			},
 			{
 				"title": "Tu acceso permanece en tu dispositivo",
@@ -114,32 +114,32 @@
 				"description": "Puedes bloquear la aplicación para añadir otra capa de protección a tu dispositivo."
 			},
 			{
-				"title": "Envía archivos adjuntos",
-				"description": "Puedes enviar archivos adjuntos a través de RelaySMS para que tus mensajes sean más versátiles."
+				"title": "Enviar archivos adjuntos",
+				"description": "Puedes enviar archivos adjuntos a través de RelaySMS para hacer tus mensajes más versátiles."
 			}
 		]
 	},
 	"GatewayClient": {
-		"Header": "Configurar números de enrutamiento",
-		"Description": "Los números de enrutamiento son números de teléfono con internet activo que conectan usuarios sin conexión con plataformas en línea. Cuando envías un mensaje sin internet, va por SMS a un número de enrutamiento y este lo reenvía a la plataforma elegida.",
-		"ReadMore": "Leer Más"
+		"Header": "Configuración de números de enrutamiento",
+		"Description": "Los números de enrutamiento son números de teléfono con acceso a Internet que conectan a los usuarios sin conexión con plataformas en línea. Cuando envías un mensaje sin Internet, este va por SMS a un número de enrutamiento y luego se reenvía a la plataforma elegida.",
+		"ReadMore": "Leer más"
 	},
 	"SupportedPlatforms": {
-		"Header": "Plataformas Compatibles",
+		"Header": "Plataformas compatibles",
 		"SubText": "Envía mensajes a <bold>{{platform}}</bold> usando RelaySMS.",
-		"Description": "Envía mensajes a estas plataformas en línea a través de SMS usando RelaySMS, incluso cuando no tengas acceso a Internet.",
-		"Error": "No se pudieron cargar las plataformas compatibles. Por favor, inténtalo de nuevo más tarde.",
-		"Note": "¡Se están añadiendo continuamente más plataformas. ¡Mantente atento a las actualizaciones!"
+		"Description": "Envía mensajes a estas plataformas en línea por SMS usando RelaySMS, incluso cuando no tengas acceso a Internet.",
+		"Error": "No se pudieron cargar las plataformas compatibles. Inténtalo de nuevo más tarde.",
+		"Note": "Se están añadiendo más plataformas continuamente. ¡Mantente atento a las actualizaciones!"
 	},
 	"Blog": {
 		"Header": "Publicaciones del blog",
-		"SubHeader": "Mantente al día con las últimas novedades, consejos e historias en el blog de RelaySMS.",
+		"SubHeader": " Mantente informado sobre las últimas novedades, consejos e historias del blog de RelaySMS.",
 		"Resilience": "Nuevas funciones en RelaySMS",
-		"ResilienceD": "En SMSWithoutBorders trabajamos continuamente para mejorar la conexión sin Internet…",
+		"ResilienceD": "En SMSWithoutBorders, estamos constantemente trabajando para mejorar la forma en que los usuarios siguen conectados aunque no tengan acceso a Internet....",
 		"IDHeader": "Nuevas funciones en RelaySMS",
-		"IDD": "Uno de los mayores retos del modo offline es saber si el destinatario respondió.…",
-		"Rebrand": "Rebranding",
-		"RebrandD": "SMSWithoutBorders pasa a ser el proyecto principal que engloba RelaySMS…",
+		"IDD": "Uno de los mayores desafíos de la comunicación fuera de línea es saber si el destinatario ha respondido. Introdujimos la función Bridge en una actualización anterior, que permite a los usuarios comunicarse sin guardar sus cuentas, pero con alias primarios que actúan como sus cuentas predeterminadas de RelaySMS. La nueva función, Replies for Bridges, permite que quienes envían mensajes a través de Bridge reciban ahora las respuestas directamente por SMS.",
+		"Rebrand": "Cambio de marca",
+		"RebrandD": "SMSWithoutBorders se está convirtiendo en el proyecto paraguas que engloba RelaySMS y otras herramientas de mensajería. La funcionalidad principal sigue siendo la misma, pero los usuarios pueden esperar un nuevo nombre, funciones de seguridad mejoradas y un enfoque en el crecimiento futuro bajo el proyecto SMSWithoutBorders.",
 		"ReadMore": "Leer más",
 		"ReadOtherArticles": "Leer otros artículos",
 		"articles1": "Resiliencia de los números de enrutamiento en SMSWithoutBorders",
@@ -153,7 +153,7 @@
 		"defaultAuthor": "Equipo de SMSWithoutBorders",
 		"sectionTitle": "Blogs y documentación",
 		"communityTitle": "Únete a la comunidad",
-		"communityDescription": "Haz una pregunta, comparte cómo usas RelaySMS o cuéntanos qué podría mejorar. Cada voz ayuda a que la app sea más útil para todos, especialmente en lugares donde mantenerse conectado es más difícil.",
+		"communityDescription": "Haz una pregunta, comparte cómo usas RelaySMS o cuéntanos qué podría mejorarse. Cada voz ayuda a que la aplicación sea más útil para todos, especialmente en lugares donde mantenerse conectado es más difícil.",
 		"joinTelegram": "Unirse a la comunidad de Telegram",
 		"categories": {
 			"Featured": "Destacado",
@@ -164,66 +164,66 @@
 		}
 	},
 	"Faq": {
-		"faqTitle": "Preguntas Frecuentes",
-		"SubHeader": "Encuentra respuestas a las preguntas más comunes sobre RelaySMS.",
+		"faqTitle": "Preguntas frecuentes",
+		"SubHeader": "Encuentra respuestas a las preguntas más comunes sobre RelaySMS y su funcionamiento.",
 		"faq1": {
-			"question": "¿Cuándo usar RelaySMS?",
-			"answer": "Durante inestabilidad (elecciones, protestas…) o en zonas sin internet."
+			"question": "¿Cuándo debo usar RelaySMS?",
+			"answer": "Durante periodos de inestabilidad (elecciones, protestas, etc.) y en otras situaciones con cortes de Internet o conectividad limitada."
 		},
 		"faq2": {
 			"question": "¿Cómo funciona RelaySMS?",
-			"answer": "RelaySMS funciona usando mensajes SMS enviados desde tu app a números de enrutamiento SMS gestionados por voluntarios, quienes los reenvían a internet."
+			"answer": "RelaySMS funciona enviando mensajes SMS desde tu aplicación a números de enrutamiento gestionados por voluntarios, quienes los reenvían a Internet."
 		},
 		"faq3": {
-			"question": "¿Necesito internet?",
-			"answer": "Una vez configurado, no necesitas internet — los mensajes van por SMS."
+			"question": "¿Necesito conexión a Internet para usar RelaySMS?",
+			"answer": "Una vez configurado, ya no necesitas conexión a Internet. Los mensajes se envían por SMS desde tu dispositivo."
 		},
 		"faq4": {
-			"question": "¿Está disponible en mi dispositivo?",
-			"answer": "Disponible para Android e iOS. Soporte Linux próximamente."
+			"question": "¿Está RelaySMS disponible en mi dispositivo?",
+			"answer": "RelaySMS está disponible actualmente en Android e iOS. La compatibilidad con Linux llegará pronto."
 		},
 		"faq5": {
 			"question": "¿Puedo recibir respuestas de mensajes a través de RelaySMS?",
-			"answer": "Sí, puedes recibir respuestas en la app RelaySMS usando la función bridge. Las respuestas se envían por SMS a tu dispositivo, incluso sin conexión a internet."
+			"answer": "Sí, puedes recibir respuestas en la aplicación RelaySMS usando la función Bridge. Las respuestas se envían por SMS a tu dispositivo, incluso sin conexión a Internet."
 		},
 		"contact": {
-			"didn't": "¿No encontraste tu respuesta?",
+			"didn't": "¿No encontraste la respuesta?",
 			"Contant Us": "Contáctanos"
 		},
 		"support": {
-			"header": "¿Experimentas dificultades técnicas u quieres darnos comentarios?",
+			"header": "¿Tienes dificultades técnicas o quieres enviarnos comentarios?",
 			"troubleshootingGuide": "Guía de solución de problemas",
 			"mailSupport": "Soporte por correo:"
 		}
 	},
 	"Footer": {
 		"Resources": "Recursos",
-		"TechnicalResources": "Recursos Técnicos",
+		"TechnicalResources": "Desarrolladores",
 		"More": "Más",
 		"Changelog": "Registro de cambios",
 		"Blog": "Blog",
-		"BrandResources": "Recursos de Marca",
+		"BrandResources": "Recursos de marca",
 		"Features": "Características",
-		"SystemOverview": "Descripción del Sistema",
+		"SystemOverview": "Descripción general del sistema",
 		"GitHub": "GitHub",
-		"DeveloperDocs": "Documentación para Desarrolladores",
+		"DeveloperDocs": "Documentación para desarrolladores",
 		"Contributing": "Contribuir",
-		"PrivacyPolicy": "Política de Privacidad",
-		"AuditReport": "Informe de Auditoría",
+		"PrivacyPolicy": "Política de privacidad",
+		"AuditReport": "Informe de auditoría",
 		"Jobs": "Empleos",
 		"ContactUs": "Contáctanos",
 		"ServiceStatus": "Estado del servicio",
 		"Tutorials": "Tutoriales",
 		"AndroidTutorial": "Tutorial de Android",
 		"iOSTutorial": "Tutorial de iOS",
-		"GatewayClientSetup": "Configuración de número de enrutamiento",
-		"Troubleshooting": "Resolución de problemas",
+		"GatewayClientSetup": "Configuración del número de enrutamiento",
+		"Troubleshooting": "Solución de problemas",
 		"NewsletterTitle": "Suscríbete a nuestro boletín",
-		"NewsletterDescription": "Recibe actualizaciones de RelaySMS, novedades de versiones y consejos prácticos en tu correo.",
-		"SubscribeNow": "Suscribirse ahora",
+		"NewsletterDescription": "Recibe actualizaciones de RelaySMS y novedades de versiones en tu correo.",
+		"SubscribeNow": "Suscríbete ahora",
 		"copyright": "AFKANERD",
 		"Aria": {
-			"Logo": "RelaySMS logo",
+			"Logo": "Logo de RelaySMS",
 			"GitHub": "GitHub",
 			"X": "X",
 			"Bluesky": "Bluesky"
@@ -231,39 +231,39 @@
 	},
 	"Newsletter": {
 		"title": "Sigue lo que estamos construyendo.",
-		"description": "Suscríbete a nuestros correos para recibir novedades de producto y tecnología.",
+		"description": "Suscríbete a nuestros correos para recibir actualizaciones de producto y tecnología.",
 		"emailPlaceholder": "Correo electrónico",
 		"emailAria": "Correo electrónico",
 		"submit": "Suscribirse",
 		"subscribing": "Suscribiendo…",
-		"successTitle": "Ya estás suscrito.",
-		"doubleOptInTitle": "Revisa tu correo.",
-		"successHint": "Gracias. Revisa tu correo para confirmar tu suscripción.",
-		"doubleOptInHint": "Revisa tu correo y pulsa el enlace de confirmación para terminar la suscripción.",
-		"error": "Algo salió mal, no es tu culpa. Por favor, inténtalo de nuevo más tarde.",
+		"successTitle": "¡Ya estás suscrito!",
+		"doubleOptInTitle": "Revisa tu bandeja de entrada.",
+		"successHint": "Gracias por confirmar tu correo. Revisa tu bandeja de entrada: pronto llegará un correo de bienvenida.",
+		"doubleOptInHint": "Revisa tu bandeja de entrada y haz clic en el enlace de confirmación para terminar la suscripción.",
+		"error": "Algo salió mal, no es tu culpa. Inténtalo de nuevo más tarde.",
 		"privacyHint": "Sin spam. Puedes darte de baja en cualquier momento.",
-		"confirmationErrorTitle": "Este enlace de confirmación ha caducado o ya se usó.",
-		"confirmationErrorBody": "Vuelve a suscribirte abajo y te enviaremos un nuevo correo de confirmación.",
+		"confirmationErrorTitle": "Este enlace de confirmación ha caducado o ya se ha utilizado.",
+		"confirmationErrorBody": "Vuelve a suscribirte más abajo y te enviaremos un nuevo correo de confirmación.",
 		"unsubscribedTitle": "Te has dado de baja de esta lista.",
 		"unsubscribedBody": "Ya no recibirás correos de este boletín.",
 		"backHome": "Volver al inicio",
-		"successImageAlt": "Suscripción al boletín completada",
+		"successImageAlt": "Boletín completado",
 		"awesomeButton": "¡Genial!"
 	},
 	"Changelog": {
 		"title": "Registro de cambios del producto",
 		"comingSoon": "Próximamente",
-		"subtitle": "Mira qué cambió recientemente, agrupado por el impacto que realmente sientes.",
-		"editorHint": "¿Quieres publicar una actualización? Agrega un archivo markdown en public/changelog y súmalo en public/changelog/index.json.",
+		"subtitle": "Mira qué ha cambiado recientemente, agrupado por el impacto que más sientes.",
+		"editorHint": "¿Quieres publicar una actualización? Añade un archivo Markdown en public/changelog y regístralo en public/changelog/index.json.",
 		"whatsNew": "Novedades",
 		"technicalDetails": "Detalles técnicos",
 		"productDefault": "RelaySMS",
 		"version": "Versión",
 		"viewOnGithub": "Ver en GitHub",
 		"loading": "Cargando registro de cambios...",
-		"empty": "Aún no se encontraron entradas del registro de cambios.",
-		"fetchError": "No se puede cargar el registro ahora. Inténtalo de nuevo pronto.",
-		"fallbackSummary": "Se publicó una nueva actualización.",
+		"empty": "Aún no se han encontrado entradas del registro de cambios.",
+		"fetchError": "No se puede cargar el registro de cambios ahora mismo. Inténtalo de nuevo pronto.",
+		"fallbackSummary": "Se ha publicado una nueva actualización.",
 		"update": "Actualización",
 		"notAvailable": "No disponible",
 		"noTechnicalDetails": "No se proporcionaron detalles técnicos adicionales.",
@@ -271,69 +271,69 @@
 		"impact": {
 			"major": "Actualizaciones importantes para usuarios",
 			"quality": "Mejoras de calidad y experiencia",
-			"fixes": "Correcciones y confiabilidad"
+			"fixes": "Correcciones y fiabilidad"
 		},
-		"impactMajorDescription": "Mejoras grandes que los usuarios notarán de inmediato.",
+		"impactMajorDescription": "Grandes mejoras que los usuarios notarán de inmediato.",
 		"impactQualityDescription": "Pulido, rendimiento y mejoras de uso diario.",
-		"impactFixDescription": "Correcciones y estabilidad para que todo funcione sin problemas."
+		"impactFixDescription": "Correcciones de errores y mejoras de estabilidad para un funcionamiento fluido."
 	},
 	"policy": "Política de privacidad",
 	"ContactUs": {
-		"Title": "Contactar al equipo RelaySMS",
-		"Subtitle": "Estamos aquí para ayudarte a través de estos canales.",
+		"Title": "Contactar al equipo de RelaySMS",
+		"Subtitle": " Estamos aquí para ayudarte. Ponte en contacto con nosotros a través de cualquiera de estos canales.",
 		"Items": {
 			"GitHub": {
 				"Link": "https://github.com/smswithoutborders",
 				"Label": "GitHub",
-				"Description": "Explora nuestros proyectos open source.",
+				"Description": "Explora nuestros proyectos y repositorios de código abierto.",
 				"ButtonText": "Ver GitHub"
 			},
 			"Twitter": {
 				"Link": "https://x.com/RelaySMS",
 				"Label": "Twitter",
-				"Description": "Síguenos para recibir actualizaciones y consejos.",
+				"Description": "Síguenos para recibir actualizaciones, consejos y reflexiones de desarrollo.",
 				"ButtonText": "Seguir en Twitter"
 			},
 			"Email": {
 				"Link": "mailto:developers@smswithoutborders.com",
-				"Label": "Correo electrónico",
-				"Description": "Envíanos un email para colaboración o dudas.",
+				"Label": "Email",
+				"Description": "Contacta directamente por correo para preguntas y colaboración.",
 				"ButtonText": "Enviar correo"
 			}
 		}
 	},
 	"Branding": {
-		"title": "Recursos de Marca RelaySMS",
-		"description": "Descarga logotipos oficiales de RelaySMS, iconos y materiales de marca para tus proyectos, presentaciones y materiales de marketing.",
+		"title": "Recursos de marca RelaySMS",
+		"description": "Descarga logotipos, iconos y materiales de marca oficiales de RelaySMS para tus proyectos, presentaciones y materiales de marketing.",
 		"tabs": {
-			"fullLogos": "Logotipos Completos",
-			"logoIcons": "Iconos de Logo",
-			"socialMedia": "Redes Sociales"
+			"fullLogos": "Logotipos completos",
+			"logoIcons": "Iconos de logo",
+			"socialMedia": "Redes sociales"
 		},
 		"categories": {
 			"fullLogos": {
-				"title": "Logotipos Completos",
+				"title": "Logotipos completos",
 				"description": "Logotipos completos de RelaySMS con texto para uso oficial"
 			},
 			"logoIcons": {
-				"title": "Iconos de Logo",
-				"description": "Versiones solo de icono para espacios compactos e iconos de aplicaciones"
+				"title": "Iconos de logo",
+				"description": "Versiones solo de icono para espacios reducidos e iconos de aplicaciones"
 			},
 			"socialMedia": {
-				"title": "Recursos de Redes Sociales",
+				"title": "Recursos de redes sociales",
 				"description": "Recursos listos para usar en plataformas de redes sociales"
 			}
 		},
 		"assets": {
 			"default": "Predeterminado",
-			"defaultShaped": "Predeterminado (Con Forma)",
+			"defaultShaped": "Predeterminado (con forma)",
 			"black": "Negro",
-			"blackShaped": "Negro (Con Forma)",
+			"blackShaped": "Negro (con forma)",
 			"blue": "Azul",
-			"blueShaped": "Azul (Con Forma)",
+			"blueShaped": "Azul (con forma)",
 			"white": "Blanco",
-			"whiteShaped": "Blanco (Con Forma)",
-			"darkTheme": "Tema Oscuro",
+			"whiteShaped": "Blanco (con forma)",
+			"darkTheme": "Tema oscuro",
 			"avatar1": "Avatar 1",
 			"avatar2": "Avatar 2",
 			"cover1": "Portada 1",
@@ -347,9 +347,9 @@
 			"shapedMonochrome": "Monocromático con forma para avatares",
 			"blueTech": "Variante azul para contenido tecnológico",
 			"shapedBlue": "Versión azul con forma",
-			"darkBackgrounds": "Para fondos oscuros y superposiciones",
+			"darkBackgrounds": "Para fondos oscuros y transparencias",
 			"shapedWhite": "Versión blanca con forma para temas oscuros",
-			"darkMode": "Optimizado para interfaces de modo oscuro",
+			"darkMode": "Optimizado para interfaces en modo oscuro",
 			"primaryIcon": "Icono principal para fondos claros",
 			"shapedApp": "Icono con forma para tiendas de aplicaciones",
 			"monochromeIcon": "Icono monocromático para impresión",
@@ -360,29 +360,29 @@
 			"shapedIconDark": "Icono blanco con forma para temas oscuros",
 			"socialAvatar": "Avatar principal para perfiles sociales",
 			"altAvatar": "Diseño de avatar alternativo",
-			"facebookCover": "Imagen de portada de página de Facebook",
-			"eventPromo": "Gráficos promocionales de eventos",
+			"facebookCover": "Imagen de portada de la página de Facebook",
+			"eventPromo": "Gráficos promocionales del evento",
 			"socialPost": "Gráficos para publicaciones en redes sociales"
 		},
 		"buttons": {
-			"preview": "Vista Previa",
+			"preview": "Vista previa",
 			"download": "Descargar"
 		},
 		"guidelines": {
-			"title": "Pautas de Uso",
-			"logoUsage": "Uso del Logo:",
-			"logoUsageText": "Mantén siempre un espacio libre alrededor del logo igual a la altura de la \"R\" en RelaySMS. No modifiques, estires o alteres las proporciones del logo.",
-			"colorVariations": "Variaciones de Color:",
-			"colorVariationsText": "Usa la variante apropiada del logo basada en el color de fondo. Logos blancos para fondos oscuros, logos oscuros para fondos claros.",
+			"title": "Pautas de uso",
+			"logoUsage": "Uso del logo:",
+			"logoUsageText": "Mantén siempre un espacio libre alrededor del logo equivalente a la altura de la “R” en RelaySMS. No modifiques, estires ni alteres las proporciones del logo.",
+			"colorVariations": "Variaciones de color:",
+			"colorVariationsText": "Usa la variante del logo adecuada según el color de fondo. Logos blancos para fondos oscuros y logos oscuros para fondos claros.",
 			"attribution": "Atribución:",
 			"attributionText": "Al usar los recursos de marca de RelaySMS, mantén la atribución a SMSWithoutBorders y enlaza a nuestro sitio web oficial cuando sea apropiado."
 		}
 	},
 	"download": {
 		"Header": "Descargas seguras y verificadas",
-		"Description": "Accede a RelaySMS desde fuentes confiables y verificadas para garantizar tu seguridad y privacidad.",
-		"android": "Opción de Android",
-		"ios": "Opción de iOS",
+		"Description": "Accede a RelaySMS desde fuentes fiables y verificadas para garantizar tu seguridad y privacidad.",
+		"android": "Android",
+		"ios": "iOS",
 		"downloadButton": "Descargar",
 		"Titles": {
 			"Github": "GitHub",
@@ -394,161 +394,161 @@
 		"androidDescription": {
 			"apk": "Descarga el archivo APK directamente desde GitHub.",
 			"playStore": "Obtén RelaySMS desde la tienda oficial de Google Play.",
-			"fDroid": "Instala desde F-Droid para los amantes del código abierto."
+			"fDroid": "Instálalo mediante F-Droid para los amantes del software libre."
 		},
 		"iosDescription": "Disponible ahora en la App Store de Apple.",
-		"heroImageAlt": "Download RelaySMS"
+		"heroImageAlt": "Descargar RelaySMS"
 	},
 	"Overview": {
-		"title": "Descripción General del Sistema RelaySMS",
-		"description": "El diagrama a continuación ilustra el flujo de mensajes y datos entre los componentes principales de RelaySMS, desde aplicaciones cliente a través de números de enrutamiento, servidores y servicios externos.",
-		"tip": "Consejo: Haz clic en un nodo del diagrama para ver más información sobre ese componente.",
+		"title": "Resumen del sistema RelaySMS",
+		"description": "El diagrama a continuación ilustra el flujo de mensajes y datos entre los componentes principales de RelaySMS, desde las aplicaciones cliente hasta los números de enrutamiento, servidores y servicios externos.",
+		"tip": "Consejo: haz clic en un nodo del diagrama para ver más información sobre ese componente.",
 		"details": "Detalles",
 		"loading": "Cargando documentación...",
 		"components": {
 			"Client": "Cliente",
-			"Vault": "Bóveda",
+			"Vault": "Cofre",
 			"Publisher": "Publicador",
 			"GatewayClient": "Números de enrutamiento",
-			"GatewayServer": "Servidor Pasarela",
-			"BridgeServer": "Servidor Puente",
+			"GatewayServer": "Servidor de pasarela",
+			"BridgeServer": "Servidor Bridge",
 			"Platforms": "Plataformas",
-			"EmailBridge": "Puente de Correo"
+			"EmailBridge": "Puente de correo"
 		},
 		"nodes": {
-			"Client": "Cliente (Apps)",
+			"Client": "Cliente (aplicaciones)",
 			"GatewayClient": "Números de enrutamiento",
-			"GatewayServer": "Servidor Pasarela",
+			"GatewayServer": "Servidor de pasarela",
 			"Publisher": "Publicador",
-			"BridgeServer": "Servidor Puente",
-			"Vault": "Bóveda",
+			"BridgeServer": "Servidor Bridge",
+			"Vault": "Cofre",
 			"Platforms": "Plataformas",
-			"EmailBridge": "Puente de Correo"
+			"EmailBridge": "Puente de correo"
 		},
 		"edges": {
-			"encryptedSMS": "SMS Cifrado",
+			"encryptedSMS": "SMS cifrados",
 			"httpsSmtpFtp": "HTTPS / SMTP / FTP",
-			"platformPayload": "Carga de Plataforma",
-			"bridgePayload": "Carga del Puente",
-			"decryptAuth": "Descifrar y Autenticar",
+			"platformPayload": "Carga útil de la plataforma",
+			"bridgePayload": "Carga útil del Bridge",
+			"decryptAuth": "Descifrado y autenticación",
 			"content": "Contenido"
 		},
-		"documentationError": "Error al cargar la documentación. Por favor, inténtalo de nuevo."
+		"documentationError": "Error al cargar la documentación. Inténtalo de nuevo."
 	},
 	"Contributing": {
 		"Hero": {
-			"eyebrow": "Código Abierto",
-			"title": "Únete a la comunidad de contribuidores de RelaySMS",
-			"subtitle": "RelaySMS es de código abierto y orientado a la comunidad. Ya sea que escribas código, reportes problemas o mejores la documentación — cada contribución importa.",
+			"eyebrow": "Código abierto",
+			"title": "Únete a la comunidad de colaboradores de RelaySMS",
+			"subtitle": "RelaySMS es de código abierto y está impulsado por la comunidad. Ya sea que escribas código, reportes problemas o mejores la documentación, cada contribución ayuda a mantener a la gente conectada.",
 			"cta": "Ver en GitHub",
 			"docs": "Leer la documentación"
 		},
 		"Ways": {
-			"title": "Cómo contribuir",
-			"subtitle": "Hay muchas formas de participar — elige la que mejor se adapte a tus habilidades.",
+			"title": "Formas de contribuir",
+			"subtitle": "Hay muchas formas de participar. Elige la que mejor se adapte a tus habilidades.",
 			"ReportBug": {
 				"title": "Reportar un error",
-				"description": "¿Encontraste algo roto? Abre un issue en GitHub para que podamos investigarlo."
+				"description": "¿Has encontrado algo roto? Abre un problema en GitHub para que podamos investigarlo y corregirlo."
 			},
 			"WriteCode": {
 				"title": "Escribir código",
-				"description": "Toma un 'good-first-issue' o trabaja en un error existente — todos los niveles son bienvenidos."
+				"description": "Elige una buena primera incidencia o resuelve un error existente."
 			},
 			"ImproveDoc": {
 				"title": "Mejorar la documentación",
-				"description": "Aclara guías, corrige errores tipográficos o añade tutoriales para ayudar a nuevos usuarios."
+				"description": "Aclara guías, corrige errores tipográficos o añade tutoriales para ayudar a nuevos usuarios a empezar más rápido."
 			},
 			"HelpCommunity": {
 				"title": "Ayudar a la comunidad",
-				"description": "Responde preguntas y comparte tu experiencia para ayudar a otros a construir con RelaySMS."
+				"description": "Responde preguntas y comparte tu experiencia para ayudar a otros a crear con RelaySMS."
 			}
 		},
 		"HowTo": {
-			"title": "Cómo contribuir",
+			"title": "Guía de contribución en GitHub",
 			"subtitle": "Sigue estos pasos para que tus cambios se integren en RelaySMS.",
 			"Steps": {
 				"Fork": {
-					"title": "Bifurcar y clonar",
-					"description": "Bifurca el repositorio en GitHub y clona tu fork localmente para comenzar."
+					"title": "Hacer fork y clonar",
+					"description": "Haz un fork del repositorio en GitHub y clónalo localmente para empezar a trabajar."
 				},
 				"Branch": {
 					"title": "Crear una rama",
-					"description": "Crea una nueva rama desde la rama dev para tu función o corrección de errores."
+					"description": "Crea una nueva rama desde la rama dev para tu función o corrección."
 				},
 				"Commit": {
-					"title": "Hacer cambios",
-					"description": "Realiza tus cambios y envíalos con mensajes de commit claros y descriptivos."
+					"title": "Realizar cambios",
+					"description": "Haz tus cambios y confírmalos con mensajes de commit claros y descriptivos."
 				},
 				"PR": {
-					"title": "Abrir un Pull Request",
-					"description": "Sube tu rama y abre un pull request apuntando a la rama dev para revisión."
+					"title": "Abrir una pull request",
+					"description": "Sube tu rama y abre una pull request dirigida a la rama dev para revisión."
 				}
 			}
 		},
 		"Repos": {
 			"title": "Nuestros repositorios",
-			"subtitle": "Elige un proyecto. Todos los repos tienen licencia GPL-3.0.",
+			"subtitle": "Elige un proyecto al que te gustaría contribuir. Todos los repositorios tienen licencia GPL-3.0.",
 			"openIssues": "problemas",
-			"goodFirstIssue": "primer issue fácil",
+			"goodFirstIssue": "primera buena incidencia",
 			"viewAll": "Ver todos los repositorios",
 			"Android": {
-				"description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like Android Apps which posses well tested tools for security"
+				"description": "SWOB depende en gran medida de la seguridad de los mensajes que transmite. Lo logramos usando herramientas como las aplicaciones de Android, que cuentan con herramientas bien probadas para la seguridad."
 			},
 			"iOS": {
-				"description": "SWOB relies heavily on the security of the messages it transmits. We accomplish this by using tools like iOS Apps which posses well tested tools for security"
+				"description": "SWOB depende en gran medida de la seguridad de los mensajes que transmite. Lo logramos usando herramientas como las apps de iOS, que cuentan con herramientas bien probadas para la seguridad."
 			},
 			"Publisher": {
-				"description": "Publisher is the middle-ware that sits between the Gateway Server and the SMSWithoutBorder backend. It does the handshake between the necessary parties and performs the request to decrypt the encrypted stored tokens."
+				"description": "Publisher es el middleware que se sitúa entre el servidor Gateway y el backend de SMSWithoutBorders. Realiza el protocolo de enlace entre las partes necesarias y ejecuta la solicitud para descifrar los tokens cifrados almacenados."
 			},
 			"Vault": {
-				"description": "A secure access token management system for safe message publishing."
+				"description": "Un sistema seguro de gestión de tokens de acceso para la publicación segura de mensajes."
 			},
 			"GatewayServer": {
-				"description": "Gateway-servers enables the users to synchronize and communicate with the publisher module"
+				"description": "Los servidores Gateway permiten a los usuarios sincronizarse y comunicarse con el módulo Publisher."
 			},
 			"BridgeServer": {
-				"description": "The bridge is a technology designed to allow users to communicate with online platforms via SMS, even without an active internet connection. It enables a secure handshake and encrypted message exchange entirely over SMS."
+				"description": "Bridge es una tecnología diseñada para permitir a los usuarios comunicarse con plataformas en línea por SMS, incluso sin conexión a Internet activa. Permite un intercambio seguro y cifrado de mensajes completamente por SMS."
 			},
 			"Website": {
-				"description": "RelaySMS Homepage"
+				"description": "Página de inicio de RelaySMS"
 			}
 		},
 		"GatewayClients": {
-			"title": "Sé una parte clave de RelaySMS configurando números de enrutamiento",
-			"description": "Cuando configuras un número de enrutamiento en una región con internet, ese número ayuda a enrutar mensajes de usuarios sin conexión hacia plataformas en línea.",
-			"cta": "Aprende todo sobre números de enrutamiento"
+			"title": "Sé una parte crucial de RelaySMS configurando números de enrutamiento",
+			"description": "Cuando configuras un número de enrutamiento en una zona con conexión a Internet, ayuda a enrutar mensajes de usuarios sin conexión hacia plataformas en línea.",
+			"cta": "Conoce todo sobre los números de enrutamiento"
 		}
 	},
 	"AppFeatures": {
 		"Features": {
-			"OfflineMessaging": "Mensajería sin conexión vía SMS",
+			"OfflineMessaging": "Mensajería offline por SMS",
 			"Gmail": "Gmail",
 			"Twitter": "Twitter / X",
 			"Telegram": "Telegram",
-			"GatewaySetup": "Configuración de número de enrutamiento",
+			"GatewaySetup": "Configuración del número de enrutamiento",
 			"DarkMode": "Modo oscuro",
-			"MultiLanguage": "Soporte multiidioma",
+			"MultiLanguage": "Soporte multilingüe",
 			"E2EEncryption": "Cifrado de extremo a extremo",
-			"OpenSource": "Gratuito y código abierto"
+			"OpenSource": "Gratis y de código abierto"
 		},
 		"Platforms": {
 			"Android": {
 				"label": "Android",
-				"imageAlt": "RelaySMS en Android",
+				"imageAlt": "RelaySMS on Android",
 				"badge": "Disponible en Google Play"
 			},
 			"iOS": {
 				"label": "iOS",
-				"imageAlt": "RelaySMS en iOS",
-				"badge": "Disponible en App Store"
+				"imageAlt": "RelaySMS on iOS",
+				"badge": "Disponible en la App Store"
 			},
 			"Desktop": {
-				"label": "Escritorio",
-				"imageAlt": "RelaySMS Escritorio",
-				"badge": "Aplicación web y escritorio"
+				"label": "Desktop",
+				"imageAlt": "RelaySMS Desktop",
+				"badge": "Aplicación web y de escritorio"
 			}
 		},
-		"Header": "Funciones de la app",
+		"Header": "Funcionalidades de la aplicación",
 		"Subheader": "Compara lo que está disponible en Android, iOS y escritorio."
 	},
 	"Navbar": {
@@ -558,17 +558,17 @@
 			"System": "Sistema"
 		},
 		"Aria": {
-			"Home": "Home",
-			"Logo": "RelaySMS logo",
+			"Home": "Inicio",
+			"Logo": "Logo de RelaySMS",
 			"GitHub": "GitHub",
-			"X": "RelaySMS on X",
-			"Bluesky": "RelaySMS on Bluesky",
-			"ThemeTooltip": "Theme",
-			"ToggleTheme": "Toggle theme",
-			"OpenMenu": "Open navigation menu"
+			"X": "RelaySMS en X",
+			"Bluesky": "RelaySMS en Bluesky",
+			"ThemeTooltip": "Tema",
+			"ToggleTheme": "Cambiar tema",
+			"OpenMenu": "Abrir menú de navegación"
 		}
 	},
-	"Step2Button": "Learn More",
+	"Step2Button": "Más información",
 	"About": {
 		"Flow": {
 			"Phone": {
@@ -577,7 +577,7 @@
 			},
 			"Gateway": {
 				"Title": "Número de enrutamiento",
-				"Subtitle": "El puente que envía mensajes a internet"
+				"Subtitle": "Recibe tus SMS y los envía en línea"
 			},
 			"Platform": {
 				"Title": "Plataforma",
@@ -585,24 +585,24 @@
 			}
 		},
 		"Hero": {
-			"Title": "RelaySMS utiliza SMS para superar la censura y los bloqueos de internet",
-			"Subtitle": "No dejes que la censura o los cortes de internet te impidan comunicarte. RelaySMS es un proyecto gratuito y de código abierto que te permite enviar mensajes a plataformas populares como Gmail, Telegram, Bluesky y más, cuando no tienes acceso a internet."
+			"Title": "RelaySMS usa SMS para sortear la censura y los cortes de Internet",
+			"Subtitle": "La censura y los cortes de Internet no impedirán que te comuniques. RelaySMS es un proyecto gratuito y de código abierto que te permite enviar mensajes a plataformas populares como Gmail, Telegram, Bluesky y más cuando no tienes acceso a Internet."
 		},
-		"GatewayShare": "Si estás en una zona con internet, puedes configurar un número de enrutamiento y compartir acceso con familiares y amigos en zonas sin conectividad.",
+		"GatewayShare": "Si estás en una zona con acceso a Internet, puedes configurar un número de enrutamiento y compartir el acceso con familiares y amigos que no tienen conexión.",
 		"CTA": {
 			"SetupGateway": "Configurar un número de enrutamiento",
-			"SMSWithoutBorders": "Más sobre SMSWithoutBorders",
+			"SMSWithoutBorders": "Más información sobre SMSWithoutBorders",
 			"Contribute": "Guía de contribución"
 		},
 		"WhoBuilt": {
-			"Title": "¿Quién está detrás de RelaySMS?",
-			"Description": "RelaySMS es una aplicación de SMSWithoutBorders, desarrollada y mantenida por el equipo de Afkanerd con apoyo de colaboradores y aliados de código abierto. Aceptamos e incentivamos contribuciones de la comunidad para mejorar RelaySMS y ampliar su alcance."
+			"Title": "El equipo detrás de RelaySMS",
+			"Description": "RelaySMS es una aplicación de SMSWithoutBorders, creada y mantenida por el equipo de Afkanerd con el apoyo de colaboradores y socios de código abierto. Agradecemos las contribuciones de la comunidad para mejorar RelaySMS y ampliar su alcance."
 		}
 	},
 	"awesomeButton": "¡Genial!",
 	"Common": {
 		"Aria": {
-			"Logo": "RelaySMS logo"
+			"Logo": "Logo de RelaySMS"
 		}
 	}
 }
