@@ -586,7 +586,7 @@
 		},
 		"Hero": {
 			"Title": "RelaySMS uses SMS to bridge internet censorship and shutdowns",
-			"Subtitle": "Internet censorship and shutdowns won't stop you from communicating. RelaySMS is a free and open-source project that allows you to send messages to popular platforms like Gmail, Telegram, Bluesky, and more when you don't have internet access."
+			"Subtitle": "Internet censorship and shutdowns won't stop you from communicating. RelaySMS is a free and open-source app that allows you to send messages to popular platforms like Gmail, Telegram, Bluesky, and more when you don't have internet access."
 		},
 		"GatewayShare": "If you are in an area with internet access, you can set up a routing number and share access with family and friends who don't have internet access.",
 		"CTA": {
@@ -596,7 +596,7 @@
 		},
 		"WhoBuilt": {
 			"Title": "The team behind RelaySMS",
-			"Description": "RelaySMS is an SMSWithoutBorders app, built and maintained by the Afkanerd team with support from open-source contributors and partners. We welcome contributions from the community to improve RelaySMS and expand its reach."
+			"Description": "RelaySMS is an app under SMSWithoutBorders project, built and maintained by the Afkanerd team with support from open-source contributors and partners. We welcome contributions from the community to improve RelaySMS and expand its reach."
 		}
 	},
 	"awesomeButton": "Awesome!",
