@@ -76,30 +76,62 @@ const FlowAnimation = ({ t }) => {
 	);
 
 	return (
-		<Box sx={{ position: "relative", width: "100%", maxWidth: W, paddingTop: `${((H / W) * 100).toFixed(2)}%`, mx: "auto" }}>
+		<Box
+			sx={{
+				position: "relative",
+				width: "100%",
+				maxWidth: W,
+				paddingTop: `${((H / W) * 100).toFixed(2)}%`,
+				mx: "auto"
+			}}
+		>
 			<Box sx={{ position: "absolute", inset: 0 }}>
-			<svg
-				width="100%"
-				height="100%"
-				viewBox={`0 0 ${W} ${H}`}
-				style={{ position: "absolute", inset: 0 }}
-			>
-				<line x1={L.x} y1={L.y} x2={T.x} y2={T.y} stroke={divider} strokeWidth="1" />
-				<line x1={T.x} y1={T.y} x2={B.x} y2={B.y} stroke={divider} strokeWidth="1" />
-				<line x1={B.x} y1={B.y} x2={R.x} y2={R.y} stroke={divider} strokeWidth="1" />
+				<svg
+					width="100%"
+					height="100%"
+					viewBox={`0 0 ${W} ${H}`}
+					style={{ position: "absolute", inset: 0 }}
+				>
+					<line x1={L.x} y1={L.y} x2={T.x} y2={T.y} stroke={divider} strokeWidth="1" />
+					<line x1={T.x} y1={T.y} x2={B.x} y2={B.y} stroke={divider} strokeWidth="1" />
+					<line x1={B.x} y1={B.y} x2={R.x} y2={R.y} stroke={divider} strokeWidth="1" />
 
-				<circle r="3.5" fill={accent}>
-					<animateMotion path={circuit} dur="4s" repeatCount="indefinite" begin="0s" />
-				</circle>
-				<circle r="3" fill={accent} opacity="0.35">
-					<animateMotion path={circuit} dur="4s" repeatCount="indefinite" begin="2s" />
-				</circle>
-			</svg>
+					<circle r="3.5" fill={accent}>
+						<animateMotion path={circuit} dur="4s" repeatCount="indefinite" begin="0s" />
+					</circle>
+					<circle r="3" fill={accent} opacity="0.35">
+						<animateMotion path={circuit} dur="4s" repeatCount="indefinite" begin="2s" />
+					</circle>
+				</svg>
 
-			<NodeBox cx={L.x} cy={L.y} Icon={MobileOutlined} label="RelaySMS" sublabel={t("WhoShouldUse.FlowNodes.relaySublabel", "Your phone")} />
-			<NodeBox cx={T.x} cy={T.y} Icon={LockOutlined} label={t("WhoShouldUse.FlowNodes.encryptedLabel", "Encrypted")} sublabel={t("WhoShouldUse.FlowNodes.encryptedSublabel", "SMS")} />
-			<NodeBox cx={B.x} cy={B.y} Icon={CloudOutlined} label={t("WhoShouldUse.FlowNodes.relayCloudLabel", "Relay Cloud")} sublabel={t("WhoShouldUse.FlowNodes.relayCloudSublabel", "Gateway")} />
-			<NodeBox cx={R.x} cy={R.y} Icon={CheckCircleOutlined} label={t("WhoShouldUse.FlowNodes.platformLabel", "Platform")} sublabel={t("WhoShouldUse.FlowNodes.platformSublabel", "Delivered")} />
+				<NodeBox
+					cx={L.x}
+					cy={L.y}
+					Icon={MobileOutlined}
+					label="RelaySMS"
+					sublabel={t("WhoShouldUse.FlowNodes.relaySublabel", "Your phone")}
+				/>
+				<NodeBox
+					cx={T.x}
+					cy={T.y}
+					Icon={LockOutlined}
+					label={t("WhoShouldUse.FlowNodes.encryptedLabel", "Encrypted")}
+					sublabel={t("WhoShouldUse.FlowNodes.encryptedSublabel", "SMS")}
+				/>
+				<NodeBox
+					cx={B.x}
+					cy={B.y}
+					Icon={CloudOutlined}
+					label={t("WhoShouldUse.FlowNodes.relayCloudLabel", "Relay Cloud")}
+					sublabel={t("WhoShouldUse.FlowNodes.relayCloudSublabel", "Gateway")}
+				/>
+				<NodeBox
+					cx={R.x}
+					cy={R.y}
+					Icon={CheckCircleOutlined}
+					label={t("WhoShouldUse.FlowNodes.platformLabel", "Platform")}
+					sublabel={t("WhoShouldUse.FlowNodes.platformSublabel", "Delivered")}
+				/>
 			</Box>
 		</Box>
 	);
@@ -183,6 +215,28 @@ const WhoShouldUse = () => {
 									"After setting up RelaySMS on your phone, you can seamlessly connect and send messages on your preferred online messaging platforms without using any data at all (standard SMS rates will apply)."
 								)}
 							</Typography>
+							<Button
+								component="a"
+								href="/system-overview"
+								target="_blank"
+								rel="noopener noreferrer"
+								variant="text"
+								sx={{
+									color: "text.primary",
+									textTransform: "none",
+									fontFamily: "Ubuntu",
+									fontSize: "16px",
+									px: 0,
+									my: 2,
+									alignSelf: "flex-start",
+									"&:hover": {
+										color: "secondary.main"
+									}
+								}}
+								endIcon={<FaExternalLinkAlt size={12} />}
+							>
+								{t("Step2Button", "Learn More")}
+							</Button>
 						</Paper>
 					</Grid>
 
@@ -192,7 +246,7 @@ const WhoShouldUse = () => {
 							direction="column"
 							spacing={4}
 							sx={{
-								height: "105%",
+								height: "103%",
 								flex: 1,
 								"& .MuiGrid-item": {
 									display: "flex",
@@ -267,7 +321,7 @@ const WhoShouldUse = () => {
 											mb: 2
 										}}
 									>
-										{t("GatewayClient.Header", "Setting Up Gateway Clients")}
+										{t("GatewayClient.Header", "Setting Up Routing Numbers")}
 									</Typography>
 									<Typography
 										variant="body1"
@@ -280,7 +334,7 @@ const WhoShouldUse = () => {
 									>
 										{t(
 											"GatewayClient.Description",
-											"Gateway Clients are devices with active internet that act as a bridge between offline users and online platforms. When you send a message without internet, it goes via SMS to a Gateway Clients which forwards it to your selected platform. Within the app, Gateway Clients are listed under the Countries tab. They can be set up using the DekuSMS app."
+											"Routing numbers are phone numbers with internet access that bridge offline users and online platforms. When you send a message without internet, it goes by SMS to a routing number, which forwards it to your selected platform."
 										)}
 									</Typography>
 									<Button

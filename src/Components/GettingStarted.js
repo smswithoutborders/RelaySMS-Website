@@ -4,6 +4,9 @@ import { useTranslation } from "react-i18next";
 import DOMPurify from "dompurify";
 import { FiExternalLink } from "react-icons/fi";
 
+const FULL_SETUP_DOCS_URL =
+	"https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android";
+
 const MobileCarousel = ({ slides, t }) => {
 	const [current, setCurrent] = useState(0);
 	const touchStartX = useRef(null);
@@ -61,7 +64,6 @@ const MobileCarousel = ({ slides, t }) => {
 				onTouchEnd={onTouchEnd}
 				sx={{ overflow: "hidden", position: "relative" }}
 			>
-				{/* Track */}
 				<Box
 					sx={{
 						display: "flex",
@@ -195,6 +197,22 @@ const MobileCarousel = ({ slides, t }) => {
 					›
 				</Box>
 			</Box>
+			<Button
+				variant="text"
+				href={FULL_SETUP_DOCS_URL}
+				target="_blank"
+				rel="noopener noreferrer"
+				endIcon={<FiExternalLink style={{ marginLeft: 4 }} />}
+				sx={{
+					mt: 2,
+					textTransform: "none",
+					color: "text.primary",
+					fontFamily: "unbounded",
+					fontSize: "0.9rem"
+				}}
+			>
+				{t("Howitworks.FullDocsButton", "Read full setup guide")}
+			</Button>
 		</Box>
 	);
 };
@@ -217,35 +235,35 @@ const GettingStarted = () => {
 				buttonText: t("Howitworks.Step1Button", "Download"),
 				link: "/download"
 			},
+			// {
+			// 	number: 2,
+			// 	title: t("Howitworks.Step2Title"),
+			// 	description: t("Howitworks.Step2Desc"),
+			// 	image: "/Login-half.png",
+			// 	buttonText: t("Howitworks.Step2Button", "Learn More"),
+			// 	link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-2-create-an-account"
+			// },
 			{
 				number: 2,
-				title: t("Howitworks.Step2Title"),
-				description: t("Howitworks.Step2Desc"),
-				image: "/Login-half.png",
-				buttonText: t("Howitworks.Step2Button", "Learn More"),
-				link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-2-create-an-account"
-			},
-			{
-				number: 3,
 				title: t("Howitworks.Step3Title"),
 				description: t("Howitworks.Step3Desc"),
-				image: "/saveplatform-copy.png",
+				image: "/accounts-saved.png",
 				buttonText: t("Howitworks.Step3Button", "Set Up Now"),
 				link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-5-save-access-to-platforms"
 			},
+			// {
+			// 	number: 3,
+			// 	title: t("Howitworks.Step4Title"),
+			// 	description: t("Howitworks.Step4Desc"),
+			// 	image: "/Gateway-copy.png",
+			// 	buttonText: t("Howitworks.Step4Button", "Select a Gateway"),
+			// 	link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-6-choose-a-gateway-client"
+			// },
 			{
-				number: 4,
-				title: t("Howitworks.Step4Title"),
-				description: t("Howitworks.Step4Desc"),
-				image: "/Gateway-copy.png",
-				buttonText: t("Howitworks.Step4Button", "Select a Gateway"),
-				link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-6-choose-a-gateway-client"
-			},
-			{
-				number: 5,
+				number: 3,
 				title: t("Howitworks.Step5Title"),
 				description: t("Howitworks.Step5Desc"),
-				image: "/saveplatform-copy.png",
+				image: "/compose (2).png",
 				buttonText: t("Howitworks.Step5Button", "Start Messaging"),
 				link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-3-compose-your-message-and-send-as-sms"
 			}
@@ -323,7 +341,7 @@ const GettingStarted = () => {
 							fontFamily: "'Unbounded', Ubuntu"
 						}}
 					>
-						{t("Howitworks.Header", "Getting Started with RelaySMS")}
+						{t("Howitworks.Header", "How to set up RelaySMS")}
 					</Typography>
 					<Typography
 						variant="body1"
@@ -331,12 +349,14 @@ const GettingStarted = () => {
 							fontSize: "1.1rem",
 							color: "text.secondary",
 							mt: 1,
+							mx: "auto",
+							maxWidth: 800,
 							fontFamily: "Ubuntu"
 						}}
 					>
 						{t(
 							"Howitworks.SubHeader",
-							"Learn how to set up and use RelaySMS for seamless offline communication."
+							"Do not wait for internet shutdowns to set up RelaySMS. Follow these steps to ensure you can stay connected when you need it most."
 						)}
 					</Typography>
 				</Box>
@@ -378,19 +398,6 @@ const GettingStarted = () => {
 										"&:hover": { opacity: isActive ? 1 : 0.55 }
 									}}
 								>
-									{/* <Typography
-										sx={{
-											color: "primary.light",
-											fontWeight: 700,
-											letterSpacing: "0.15em",
-											fontFamily: "Ubuntu",
-											fontSize: "0.7rem",
-											textTransform: "uppercase",
-											mb: 0.25
-										}}
-									>
-										Step {slide.number}
-									</Typography> */}
 									<Typography
 										variant="h6"
 										sx={{
@@ -460,6 +467,23 @@ const GettingStarted = () => {
 						>
 							{t("Howitworks.ScrollHint", "Scroll to advance steps")}
 						</Typography>
+						<Button
+							variant="text"
+							href={FULL_SETUP_DOCS_URL}
+							target="_blank"
+							rel="noopener noreferrer"
+							endIcon={<FiExternalLink style={{ marginLeft: 4 }} />}
+							sx={{
+								mt: 3.5,
+								color: "text.primary",
+								fontFamily: "unbounded",
+								width: "fit-content",
+								textTransform: "none",
+								fontSize: "0.95rem"
+							}}
+						>
+							{t("Howitworks.FullDocsButton", "Read full setup guide")}
+						</Button>
 					</Box>
 
 					<Box
@@ -489,6 +513,23 @@ const GettingStarted = () => {
 						))}
 					</Box>
 				</Box>
+				{/* <Box sx={{ display: { xs: "none", md: "flex" }, justifyContent: "start", mt: 6, maxWidth: 700 }}>
+					<Button
+						variant="outlined"
+						href={FULL_SETUP_DOCS_URL}
+						target="_blank"
+						rel="noopener noreferrer"
+						endIcon={<FiExternalLink style={{ marginLeft: 4 }} />}
+						sx={{
+							mt: 2.5,
+							textTransform: "none",
+							fontFamily: "Ubuntu",
+							fontSize: "0.95rem"
+						}}
+					>
+						{t("Howitworks.FullDocsButton", "Read full setup guide")}
+					</Button>
+				</Box> */}
 			</Box>
 
 			<MobileCarousel slides={slides} t={t} />

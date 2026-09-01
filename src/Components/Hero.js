@@ -13,6 +13,7 @@ import FAQ from "./FAQ";
 import WhoShouldUse from "./WhoShouldUse";
 import SupportedPlatforms from "./SupportedPlatforms";
 import TrainingGuide from "./TrainingGuide";
+import RelayFeatures from "./RelayFeatures";
 
 const Hero = () => {
 	const [showCursor, setShowCursor] = useState(true);
@@ -48,7 +49,7 @@ const Hero = () => {
 					textAlign: "center",
 					background: (theme) =>
 						theme.palette.mode === "dark"
-							? `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(77, 125, 192, 0.25) 0%, transparent 65%),
+							? `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(77, 108, 192, 0.25) 0%, transparent 65%),
 						   linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
 						   linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`
 							: `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(0,24,113,0.09) 0%, transparent 65%),
@@ -67,7 +68,7 @@ const Hero = () => {
 						<Typography
 							sx={{
 								mb: { xs: 2, md: 3, lg: 1 },
-								fontSize: { xs: "1.8rem", md: "2.5rem", lg: "2.3rem", xl: "3rem" },
+								fontSize: { xs: "1.9rem", md: "2.5rem", lg: "2.5rem", xl: "3.8rem" },
 								whiteSpace: "pre-wrap",
 								fontWeight: 700,
 								wordBreak: "break-word",
@@ -106,7 +107,7 @@ const Hero = () => {
 								flexDirection: { xs: "column", sm: "row" },
 								justifyContent: "center",
 								gap: 2,
-								mt: { xs: 3, md: 2 },
+								mt: { xs: 3, md: 3 },
 								mb: { xs: 2, md: 1 },
 								px: { xs: 2, md: 0 },
 								width: "100%"
@@ -120,10 +121,7 @@ const Hero = () => {
 								sx={{
 									bgcolor: "primary.main",
 									textTransform: "none",
-									// py: 1.5,
-									// px: 6,
-									fontFamily: "Ubuntu",
-									// fontSize: { xs: "15px", md: "19px" },
+									fontFamily: "Unbounded",
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
 										transform: "translateY(-3px)"
@@ -145,9 +143,8 @@ const Hero = () => {
 								}}
 								sx={{
 									textTransform: "none",
-									color: (theme) =>
-										theme.palette.mode === "dark" ? "primary.light" : "primary.main",
-									fontFamily: "Ubuntu",
+									color: "text.primary",
+									fontFamily: "Unbounded",
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
 										transform: "translateY(-3px)"
@@ -158,38 +155,15 @@ const Hero = () => {
 							</Button>
 						</Box>
 					</Grid>
-
-					{/* <Grid
-						item
-						xs={12}
-						md={6}
-						sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-					>
-						<Box
-							sx={{
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center"
-							}}
-						>
-							<Box
-								component="img"
-								src="/new-phones.png"
-								alt="RelaySMS Background"
-								sx={{
-									width: { xl: "620px", xs: "100%", md: "100%", sm: "80%", lg: "80%" }
-								}}
-							/>
-						</Box>
-					</Grid> */}
 				</Grid>
 			</Box>
 
-			{/* ========== OTHER SECTIONS ========== */}
+			<RelayFeatures />
 			<GettingStarted />
-			<TrainingGuide />
+			<Box my={15}>
+				<TrainingGuide />
+			</Box>
 			<WhoShouldUse />
-			{/* <AppFeatures /> */}
 			<Box
 				data-aos="fade-up"
 				sx={{
@@ -211,9 +185,18 @@ const Hero = () => {
 					&nbsp;{t("Landing.auditMessage.part2")}
 				</Typography>
 			</Box>
-			<SupportedPlatforms />
-			<Blog />
-			<FAQ />
+
+			<Box mt={15}>
+				<SupportedPlatforms />
+			</Box>
+
+			<Box mt={15}>
+				<Blog />
+			</Box>
+
+			<Box mb={15}>
+				<FAQ />
+			</Box>
 		</>
 	);
 };

@@ -1,4 +1,10 @@
 {
+	"404": {
+		"title": "Oops! Page Not Found",
+		"description": "The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.",
+		"homeButton": "Go Back Home",
+		"backButton": "Go Back"
+	},
 	"Nav": {
 		"Home": "Home",
 		"Help": "Documentation",
@@ -7,9 +13,12 @@
 		"Contact": "Contact Us",
 		"Support": "Support",
 		"Back": "Back",
-		"Download": "Download",
+		"Download": "Download App",
+		"Developers": "Developers",
 		"Branding": "Branding",
-		"Overview": "System Overview"
+		"Overview": "System Overview",
+		"Changelog": "Changelog",
+		"About": "About"
 	},
 	"Alert": {
 		"message": "You can now make RelaySMS your default SMS app on Android!",
@@ -21,11 +30,11 @@
 		"github": "View our GitHub"
 	},
 	"Landing": {
-		"span": "No Data? No Worries.",
-		"h1": "Stay Connected even with no internet access.",
-		"h2": "RelaySMS enables users send messages to online platforms without an active internet connection. Messages are sent via SMS from your device.",
+		"span": "No Internet connection? No Worries.",
+		"h1": "Stay connected even with no internet access.",
+		"h2": "RelaySMS enables you to send messages to online platforms like Gmail, Telegram and others without an active internet connection. Messages are sent via SMS from your mobile device.",
 		"Android": "Download RelaySMS ",
-		"RoutingNumbers": "Set Up Gateway Clients",
+		"RoutingNumbers": "Set Up Routing Numbers",
 		"supportedPlatforms": "Supported Platforms:",
 		"auditMessage": {
 			"part1": "RelaySMS is committed to security and transparency. Read our ",
@@ -33,11 +42,10 @@
 			"part2": "."
 		}
 	},
-
 	"Howitworks": {
 		"ReadMore": "Read More",
-		"Header": "Getting Started with RelaySMS",
-		"SubHeader": "Learn how to set up and use RelaySMS for seamless offline communication.",
+		"Header": "How to set up RelaySMS",
+		"SubHeader": "Do not wait for internet shutdowns to set up RelaySMS. Follow these steps to ensure you can stay connected when you need it most.",
 		"Step1Title": "Download the App",
 		"Step1Desc": "Download the RelaySMS App from <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>Google PlayStore</a>, <a href='https://github.com/smswithoutborders/RelaySMS-Android' target='_blank' rel='noopener noreferrer'>GitHub</a>, or <a href='https://play.google.com/store/apps/details?id=com.afkanerd.sw0b' target='_blank' rel='noopener noreferrer'>build it from source</a>. Ensure your Android device meets the technical requirements (Android 6.0+ with SMS capability).",
 		"Step1Button": "Download",
@@ -45,20 +53,21 @@
 		"Step2Desc": "Create an account by clicking 'Add Account,' and filling in the required details. An authentication PIN will be sent to your phone for verification.",
 		"Step2Button": "Learn More",
 		"Step3Title": "Save Platforms",
-		"Step3Desc": "Save access to platforms while connected to the internet. Add your credentials to platforms supported by RelaySMS and prepare them for offline use.",
+		"Step3Desc": "Save platform access while online. It stays on your phone, so back it up. Saved access lets you keep communicating when the internet is off.",
 		"Step3Button": "Set Up Now",
 		"Step4Title": "Select a Routing Number",
 		"Step4Desc": "Choose a Routing Number for sending SMS. You can select from pre-configured numbers or set up a custom number by adding the routing number to your contacts.",
 		"Step4Button": "Configure Routing Number",
 		"Step5Title": "Send Messages",
-		"Step5Desc": "Compose messages for supported platforms without internet. Send these as SMS to a pre-saved gateway number, ensuring encrypted communication.",
+		"Step5Desc": "Send messages with your saved platforms, or quickly send with RMail anonymously.",
 		"Step5Button": "Start Messaging",
+		"FullDocsButton": "Read full setup guide",
 		"StepLabel": "Step",
 		"ScrollHint": "Scroll to advance steps"
 	},
 	"WhoShouldUse": {
 		"Header": "Everyone can use RelaySMS",
-		"Description": "Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns should use RelaySMS to circumvent shutdowns and stay connected. After setting up RelaySMS on your phone, you can seamlessly send messages to your preferred online messaging platform without using any data at all (standard SMS rates will apply).",
+		"Description": "Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns can use RelaySMS to circumvent shutdowns and stay connected. After setting up RelaySMS on your phone, you can send messages to your preferred online messaging platform without any internet connection (standard SMS rates will apply).",
 		"AndroidButton": "Download for Android",
 		"iOSButton": "Download for iOS",
 		"FlowNodes": {
@@ -74,15 +83,45 @@
 	"HowRelaySMSWorks": {
 		"Header": "How it works",
 		"Description1": "RelaySMS utilizes SMS messaging (aka \"text messaging\") to route offline messages back online.",
-		"Description2": "The key to RelaySMS lies in its use of Gateway Clients. These devices  operate in areas with an active internet connection, allowing them to  receive an SMS message from an offline RelaySMS user and then forward it to an online server where the user has already saved their platform  permissions.",
+		"Description2": "The key to RelaySMS lies in its use of routing numbers. These numbers operate in areas with active internet, receive SMS from offline RelaySMS users, and forward messages to online platforms where access was already saved.",
 		"TrainingTitle": "Download Training Guides",
 		"EnglishPDF": "English Guide (PDF)",
 		"FrenchPDF": "French Guide (PDF)",
 		"SeeSpecification": "Read more"
 	},
+	"RelayFeatures": {
+		"Header": "Made for private, resilient communication",
+		"Description": "RelaySMS is designed with privacy and resilience in mind. It allows you to communicate without an internet connection, while keeping your messages secure and your platform access private.",
+		"items": [
+			{
+				"title": "No sign-up required",
+				"description": "No emails, no phone numbers, no signups. Save what you need and use it whenever you want - all over SMS"
+			},
+			{
+				"title": "Encrypted messages",
+				"description": "All your messages are secure. Network providers cannot read the contents of your RelaySMS messages."
+			},
+			{
+				"title": "Use platforms you know",
+				"description": "Save access to your accounts (platforms) while you are online, then communicate through them when internet access is cut."
+			},
+			{
+				"title": "Your access stays on your device",
+				"description": "Your platform access is stored on your phone, not on a RelaySMS server."
+			},
+			{
+				"title": "App lock",
+				"description": "You can lock the app to add another layer of protection on your device."
+			},
+			{
+				"title": "Send Attachments",
+				"description": "You can send attachments through RelaySMS, adding more versatility to your messages."
+			}
+		]
+	},
 	"GatewayClient": {
-		"Header": "Setting Up a Gateway-Client",
-		"Description": "Gateway Clients are devices with active internet that act as a bridge between offline users and online platforms. When you send a message without internet, it goes via SMS to a Gateway Clients which forwards it to your selected platform. Within the app, Gateway Clients are listed under the Countries tab. They can be set up using the DekuSMS app.",
+		"Header": "Setting Up Routing Numbers",
+		"Description": "Routing numbers are phone numbers with internet access that connects offline users to online platforms. When you send a message without internet, it goes by SMS to a routing number, which forwards it to your selected platform.",
 		"ReadMore": "Read More"
 	},
 	"SupportedPlatforms": {
@@ -97,15 +136,14 @@
 		"SubHeader": " Stay informed with the latest updates, tips, and stories from the RelaySMS blog.",
 		"Resilience": "New Features on RelaySMS",
 		"ResilienceD": "At SMSWithoutBorders, we're constantly working to improve how users stay connected even without internet access....",
-
 		"IDHeader": "New Features on RelaySMS",
 		"IDD": "One of the greatest challenges of offline communication is knowing if the recipient has responded. We introduced the Bridge feature in a previous update, which enables users to communicate without saving their accounts, but are given primary aliases which act as their default RelaySMS accounts. The new feature, Replies for Bridges, enables users who send messages through Bridges to now receive replies directly via SMS.",
 		"Rebrand": "Rebranding",
 		"RebrandD": "SMSWithoutBorders itself is becoming the umbrella project encompassing RelaySMS and other messaging tools. The core functionality remains the same, but users can expect a new name, enhanced security features, and a focus on future growth under the SMSWithoutBorders project.",
 		"ReadMore": "Read More",
 		"ReadOtherArticles": "Read Other Articles",
-		"articles1": "Resilience Of Gateway Clients In SMSWithoutBorders",
-		"articles2": "Reliability Of Gateway Clients In Smswithoutborders",
+		"articles1": "Resilience Of Routing Numbers In SMSWithoutBorders",
+		"articles2": "Reliability Of Routing Numbers In Smswithoutborders",
 		"articles3": "New Alpha Release: Vault 0.1.0",
 		"tag": "Articles",
 		"tags": "Release",
@@ -125,7 +163,6 @@
 			"Release": "Release"
 		}
 	},
-
 	"Faq": {
 		"faqTitle": "Frequently Asked Questions",
 		"SubHeader": "Find answers to the most common questions about RelaySMS and how it works.",
@@ -135,7 +172,7 @@
 		},
 		"faq2": {
 			"question": "How does RelaySMS work?",
-			"answer": "RelaySMS works by using SMS messages sent from your app to SMS Gateway Clients run by volunteers, who forward them to the internet."
+			"answer": "RelaySMS works by using SMS messages sent from your app to SMS routing numbers run by volunteers, who forward them to the internet."
 		},
 		"faq3": {
 			"question": "Do I need an internet connection to use RelaySMS?",
@@ -146,8 +183,8 @@
 			"answer": "RelaySMS is currently available on Android and iOS. Linux support is coming soon."
 		},
 		"faq5": {
-			"question": "I'm experiencing technical difficulties. How can I get help?",
-			"answer": "Check out our <a href='https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ' target='_blank' rel='noopener noreferrer'>Troubleshooting guide</a> or reach out to support at <a href='mailto:developers@smswithoutborders.com'>developers@smswithoutborders.com</a>."
+			"question": "Can I get message replies through RelaySMS?",
+			"answer": "Yes you can receive replies in the RelaySMS app using the bridge feature. Replies are sent via SMS to your device, even without an internet connection."
 		},
 		"contact": {
 			"didn't": "Did not find your answer?",
@@ -161,8 +198,9 @@
 	},
 	"Footer": {
 		"Resources": "Resources",
-		"TechnicalResources": "Technical Resources",
+		"TechnicalResources": "Devs",
 		"More": "More",
+		"Changelog": "Changelog",
 		"Blog": "Blog",
 		"BrandResources": "Brand Resources",
 		"Features": "Features",
@@ -174,19 +212,75 @@
 		"AuditReport": "Audit Report",
 		"Jobs": "Jobs",
 		"ContactUs": "Contact Us",
+		"ServiceStatus": "Service status",
 		"Tutorials": "Tutorials",
 		"AndroidTutorial": "Android Tutorial",
 		"iOSTutorial": "iOS Tutorial",
-		"GatewayClientSetup": "Gateway Client Setup",
+		"GatewayClientSetup": "Routing Number Setup",
 		"Troubleshooting": "Troubleshooting",
-		"copyright": "AFKANERD"
+		"NewsletterTitle": "Subscribe to our newsletter",
+		"NewsletterDescription": "Get RelaySMS updates and release highlights in your mail.",
+		"SubscribeNow": "Subscribe now",
+		"copyright": "AFKANERD",
+		"Aria": {
+			"Logo": "RelaySMS logo",
+			"GitHub": "GitHub",
+			"X": "X",
+			"Bluesky": "Bluesky"
+		}
+	},
+	"Newsletter": {
+		"title": "Follow what we are building.",
+		"description": "Sign up for our emails to get product and technology updates.",
+		"emailPlaceholder": "Email address",
+		"emailAria": "Email address",
+		"submit": "Subscribe",
+		"subscribing": "Subscribing…",
+		"successTitle": "You're subscribed!",
+		"doubleOptInTitle": "Check your inbox.",
+		"successHint": "Thanks for confirming your email. Watch your inbox - a welcome email is on its way.",
+		"doubleOptInHint": "Check your inbox and click the confirmation link to finish subscribing.",
+		"error": "Something went wrong, not your fault please try again later",
+		"privacyHint": "No spam. Unsubscribe anytime.",
+		"confirmationErrorTitle": "This confirmation link has expired or has already been used.",
+		"confirmationErrorBody": "Try subscribing again below and we will send you a fresh confirmation email.",
+		"unsubscribedTitle": "You have unsubscribed from this list.",
+		"unsubscribedBody": "You will no longer receive emails from this newsletter.",
+		"backHome": "Back to home",
+		"successImageAlt": "Newsletter success",
+		"awesomeButton": "Awesome!"
+	},
+	"Changelog": {
+		"title": "Product Changelog",
+		"comingSoon": "Coming soon",
+		"subtitle": "See what changed recently, grouped by the impact you feel most.",
+		"editorHint": "Want to publish an update? Add a markdown file in public/changelog and list it in public/changelog/index.json.",
+		"whatsNew": "What's New",
+		"technicalDetails": "Technical details",
+		"productDefault": "RelaySMS",
+		"version": "Version",
+		"viewOnGithub": "View on GitHub",
+		"loading": "Loading changelog...",
+		"empty": "No changelog entries found yet.",
+		"fetchError": "Unable to load changelog right now. Please try again soon.",
+		"fallbackSummary": "A new update has been published.",
+		"update": "Update",
+		"notAvailable": "Not available",
+		"noTechnicalDetails": "No additional technical details were provided.",
+		"noItemsInGroup": "No updates in this impact group yet.",
+		"impact": {
+			"major": "Major user-facing updates",
+			"quality": "Quality and experience improvements",
+			"fixes": "Fixes and reliability"
+		},
+		"impactMajorDescription": "Big improvements users are likely to notice immediately.",
+		"impactQualityDescription": "Polish, performance, and day-to-day usability improvements.",
+		"impactFixDescription": "Bug fixes and stability updates to keep things working smoothly."
 	},
 	"policy": "Privacy Policy",
-
 	"ContactUs": {
 		"Title": "Contact RelaySMS Team",
 		"Subtitle": " We’re here to help. Reach out to us through any of these channels.",
-
 		"Items": {
 			"GitHub": {
 				"Link": "https://github.com/smswithoutborders",
@@ -302,11 +396,12 @@
 			"playStore": "Get RelaySMS from the official Google Play Store.",
 			"fDroid": "Install via F-Droid for open source lovers."
 		},
-		"iosDescription": "Available now on the Apple App Store."
+		"iosDescription": "Available now on the Apple App Store.",
+		"heroImageAlt": "Download RelaySMS"
 	},
 	"Overview": {
 		"title": "RelaySMS System Overview",
-		"description": "The diagram below illustrates the flow of messages and data between the main components of the RelaySMS, from client apps through Gateway Clients, servers, and external services.",
+		"description": "The diagram below illustrates the flow of messages and data between the main components of RelaySMS, from client apps through routing numbers, servers, and external services.",
 		"tip": "Tip: Click on a node in the diagram to view more information about that component.",
 		"details": "Details",
 		"loading": "Loading documentation...",
@@ -314,7 +409,7 @@
 			"Client": "Client",
 			"Vault": "Vault",
 			"Publisher": "Publisher",
-			"GatewayClient": "Gateway Clients",
+			"GatewayClient": "Routing Numbers",
 			"GatewayServer": "Gateway Server",
 			"BridgeServer": "Bridge Server",
 			"Platforms": "Platforms",
@@ -322,7 +417,7 @@
 		},
 		"nodes": {
 			"Client": "Client (Apps)",
-			"GatewayClient": "Gateway Clients",
+			"GatewayClient": "Routing Numbers",
 			"GatewayServer": "Gateway Server",
 			"Publisher": "Publisher",
 			"BridgeServer": "Bridge Server",
@@ -369,7 +464,7 @@
 			}
 		},
 		"HowTo": {
-			"title": "How to Contribute",
+			"title": "GitHub contribution Guide",
 			"subtitle": "Follow these steps to get your changes merged into RelaySMS.",
 			"Steps": {
 				"Fork": {
@@ -417,12 +512,97 @@
 			"Website": {
 				"description": "RelaySMS Homepage"
 			}
+		},
+		"GatewayClients": {
+			"title": "Be a crucial part of RelaySMS by setting up routing numbers",
+			"description": "When you set up a routing number in a region with internet connectivity, it helps route messages from offline users to online platforms.",
+			"cta": "Learn all about routing numbers"
 		}
 	},
-	"404": {
-		"title": "Oops! Page Not Found",
-		"description": "The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.",
-		"homeButton": "Go Back Home",
-		"backButton": "Go Back"
+	"AppFeatures": {
+		"Features": {
+			"OfflineMessaging": "Offline messaging via SMS",
+			"Gmail": "Gmail",
+			"Twitter": "Twitter / X",
+			"Telegram": "Telegram",
+			"GatewaySetup": "Routing number setup",
+			"DarkMode": "Dark mode",
+			"MultiLanguage": "Multi-language support",
+			"E2EEncryption": "End-to-end encryption",
+			"OpenSource": "Free & open source"
+		},
+		"Platforms": {
+			"Android": {
+				"label": "Android",
+				"imageAlt": "RelaySMS on Android",
+				"badge": "Available on Google Play"
+			},
+			"iOS": {
+				"label": "iOS",
+				"imageAlt": "RelaySMS on iOS",
+				"badge": "Available on the App Store"
+			},
+			"Desktop": {
+				"label": "Desktop",
+				"imageAlt": "RelaySMS Desktop",
+				"badge": "Web & Desktop app"
+			}
+		},
+		"Header": "App Features",
+		"Subheader": "Compare what's available across Android, iOS, and Desktop."
+	},
+	"Navbar": {
+		"Theme": {
+			"Light": "Light",
+			"Dark": "Dark",
+			"System": "System"
+		},
+		"Aria": {
+			"Home": "Home",
+			"Logo": "RelaySMS logo",
+			"GitHub": "GitHub",
+			"X": "RelaySMS on X",
+			"Bluesky": "RelaySMS on Bluesky",
+			"ThemeTooltip": "Theme",
+			"ToggleTheme": "Toggle theme",
+			"OpenMenu": "Open navigation menu"
+		}
+	},
+	"Step2Button": "Learn More",
+	"About": {
+		"Flow": {
+			"Phone": {
+				"Title": "Your Phone",
+				"Subtitle": "Offline message via SMS"
+			},
+			"Gateway": {
+				"Title": "Routing Number",
+				"Subtitle": "Receives your SMS and sends it online"
+			},
+			"Platform": {
+				"Title": "Platform",
+				"Subtitle": "Delivered to Telegram, Gmail, and more"
+			}
+		},
+		"Hero": {
+			"Title": "RelaySMS uses SMS to bridge internet censorship and shutdowns",
+			"Subtitle": "Internet censorship and shutdowns won't stop you from communicating. RelaySMS is a free and open-source app that allows you to send messages to popular platforms like Gmail, Telegram, Bluesky, and more when you don't have internet access."
+		},
+		"GatewayShare": "If you are in an area with internet access, you can set up a routing number and share access with family and friends who don't have internet access.",
+		"CTA": {
+			"SetupGateway": "Setting up a Routing Number",
+			"SMSWithoutBorders": "Learn more about SMSWithoutBorders",
+			"Contribute": "Contribution Guide"
+		},
+		"WhoBuilt": {
+			"Title": "The team behind RelaySMS",
+			"Description": "RelaySMS is an app under SMSWithoutBorders project, built and maintained by the Afkanerd team with support from open-source contributors and partners. We welcome contributions from the community to improve RelaySMS and expand its reach."
+		}
+	},
+	"awesomeButton": "Awesome!",
+	"Common": {
+		"Aria": {
+			"Logo": "RelaySMS logo"
+		}
 	}
 }

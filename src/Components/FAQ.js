@@ -1,6 +1,6 @@
 import { Box, Typography, Paper, Divider, Button, Grid } from "@mui/material";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 const FAQSection = ({ isFarsi }) => {
 	const { t, i18n } = useTranslation();
@@ -23,6 +23,10 @@ const FAQSection = ({ isFarsi }) => {
 			question: t("Faq.faq4.question"),
 			answer: t("Faq.faq4.answer")
 		}
+		// {
+		// 	question: t("Faq.faq5.question"),
+		// 	answer: t("Faq.faq5.answer")
+		// }
 	];
 
 	return (
@@ -47,7 +51,8 @@ const FAQSection = ({ isFarsi }) => {
 					sx={{
 						fontSize: { xs: "1.5rem", md: "1.9rem" },
 						color: "text.primary",
-						fontFamily: "'Unbounded', Ubuntu"
+						fontFamily: "'Unbounded', Ubuntu",
+						mb: 2
 					}}
 				>
 					{t("Faq.faqTitle", "Frequently Asked Questions")}
@@ -75,7 +80,8 @@ const FAQSection = ({ isFarsi }) => {
 				sx={{
 					maxWidth: "1200px",
 					mx: { md: "auto", xs: -2 },
-					width: "100%"
+					width: "100%",
+					mt: 5
 				}}
 			>
 				<Grid item xs={12} md={8} sx={{ display: "flex", justifyContent: "center" }}>
@@ -116,7 +122,23 @@ const FAQSection = ({ isFarsi }) => {
 										}
 									}}
 								>
-									{answer}
+									{idx === 4 ? (
+										<Trans
+											i18nKey="Faq.faq5.answer"
+											components={{
+												docLink: (
+													<a
+														href="https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ"
+														target="_blank"
+														rel="noopener noreferrer"
+													/>
+												),
+												emailLink: <a href="mailto:developers@smswithoutborders.com" />
+											}}
+										/>
+									) : (
+										answer
+									)}
 								</Typography>
 
 								{idx < faqs.length - 1 && (

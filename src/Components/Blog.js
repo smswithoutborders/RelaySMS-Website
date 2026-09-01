@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { Box, Typography, Paper, Button } from "@mui/material";
 import { FaUser, FaClock } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa6";
+import { UserOutlined } from "@ant-design/icons";
 import { keyframes } from "@emotion/react";
 import { useTranslation } from "react-i18next";
+import NewsletterForm from "./NewsletterForm";
 
 const TELEGRAM_URL = "https://t.me/+IPYp6q06dWsyZjY0";
 
@@ -31,7 +33,7 @@ const BlogCard = ({ post, calculateReadTime, defaultAuthor, minReadLabel }) => (
 			p: 2.5,
 			py: 3,
 			bgcolor: "background.paper",
-			border: "0.5px solid",
+			border: "0.2px solid",
 			borderColor: "divider",
 			textDecoration: "none",
 			display: "flex",
@@ -58,7 +60,7 @@ const BlogCard = ({ post, calculateReadTime, defaultAuthor, minReadLabel }) => (
 					flexShrink: 0
 				}}
 			>
-				<FaUser size={14} color="text.secondary" />
+				<UserOutlined style={{ fontSize: 14, color: "text.secondary" }} />
 			</Box>
 			<Typography
 				variant="caption"
@@ -79,6 +81,7 @@ const BlogCard = ({ post, calculateReadTime, defaultAuthor, minReadLabel }) => (
 				display: "-webkit-box",
 				WebkitLineClamp: 2,
 				WebkitBoxOrient: "vertical",
+				fontFamily: "Unbounded",
 				overflow: "hidden"
 			}}
 		>
@@ -298,9 +301,7 @@ const BlogSectionNew = () => {
 					minReadLabel={minReadLabel}
 				/>
 			)}
-			{/* {row2.length > 0 && (
-				<MarqueeRow posts={row2} direction="right" calculateReadTime={calculateReadTime} />
-			)} */}
+		
 
 			{/* ── Join the Community ── */}
 			<Box
@@ -341,6 +342,7 @@ const BlogSectionNew = () => {
 				>
 					{t("Blog.communityDescription")}
 				</Typography>
+				
 				<Button
 					component="a"
 					href={TELEGRAM_URL}

@@ -1,9 +1,41 @@
 import { Box, Container, Grid, Typography, Button, Paper } from "@mui/material";
+import { GithubOutlined, AppleFilled } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 
 const Download = () => {
 	const { t, i18n } = useTranslation();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
+
+	const renderLinkVisual = (source, title) => {
+		if (typeof source === "string") {
+			return (
+				<Box
+					component="img"
+					src={source}
+					alt={title}
+					sx={{ width: 50, height: 50, mr: 3, flexShrink: 0 }}
+				/>
+			);
+		}
+
+		return (
+			<Box
+				sx={{
+					width: 50,
+					height: 50,
+					mr: 3,
+					flexShrink: 0,
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+					fontSize: 44,
+					color: "text.primary"
+				}}
+			>
+				{source}
+			</Box>
+		);
+	};
 
 	const androidLinks = [
 		{
@@ -25,7 +57,7 @@ const Download = () => {
 			link: "https://apt.izzysoft.de/fdroid/index/apk/com.afkanerd.sw0b"
 		},
 		{
-			imgSrc: "/android.svg",
+			imgSrc: <GithubOutlined />,
 			title: t("download.Titles.Github"),
 			description: t(
 				"download.androidDescription.apk",
@@ -37,7 +69,7 @@ const Download = () => {
 
 	const iosLinks = [
 		{
-			imgSrc: "/ios.png",
+			imgSrc: <AppleFilled />,
 			title: t("download.Titles.ios"),
 			description: t("download.iosDescription", "Available now on the Apple App Store."),
 			link: "https://apps.apple.com/us/app/relaysms/id6630382970"
@@ -48,10 +80,9 @@ const Download = () => {
 		<Box
 			dir={isRtl ? "rtl" : "ltr"}
 			sx={{
-				py: { xs: 6, md: 22 },
-				pt: { xs: "120px", md: "140px" },
+				py: { xs: "120px", md: "250px" },
 				minHeight: "100vh",
-				pb: 8,
+			
 				px: { xs: 2, md: 6 }
 			}}
 		>
@@ -79,7 +110,7 @@ const Download = () => {
 							fontSize: "1.2rem",
 							color: "text.secondary",
 							fontFamily: "Ubuntu",
-							mt: 1
+							mt: 2
 						}}
 					>
 						{t(
@@ -89,12 +120,12 @@ const Download = () => {
 					</Typography>
 				</Box>
 				<Grid container spacing={6} alignItems="center">
-					<Grid item xs={12} md={6}>
+					<Grid item xs={12} md={7}>
 						<Typography
 							variant="body1"
 							sx={{
 								mb: 3,
-								color: " #666",
+								color: "text.secondary",
 								fontFamily: "Unbounded",
 								fontWeight: 400,
 								fontSize: "1rem"
@@ -125,20 +156,15 @@ const Download = () => {
 									"&:hover": {
 										transform: "scale(1.03)"
 									},
-									"& img": {
+									"& .download-visual": {
 										transition: "transform 0.3s ease"
 									},
-									"&:hover img": {
+									"&:hover .download-visual": {
 										transform: "scale(1.1)"
 									}
 								}}
 							>
-								<Box
-									component="img"
-									src={item.imgSrc}
-									alt={item.title}
-									sx={{ width: 50, height: 50, mr: 3, flexShrink: 0 }}
-								/>
+								<Box className="download-visual">{renderLinkVisual(item.imgSrc, item.title)}</Box>
 								<Box sx={{ flexGrow: 1 }}>
 									<Typography
 										variant="h6"
@@ -161,7 +187,7 @@ const Download = () => {
 										fontSize: "0.9rem",
 										fontFamily: "Ubuntu",
 										bgcolor: "secondary.main",
-										color: "primary.main",
+										color: "#fff",
 										fontWeight: 400,
 										textTransform: "none",
 										ml: 3,
@@ -210,20 +236,15 @@ const Download = () => {
 									"&:hover": {
 										transform: "scale(1.03)"
 									},
-									"& img": {
+									"& .download-visual": {
 										transition: "transform 0.3s ease"
 									},
-									"&:hover img": {
+									"&:hover .download-visual": {
 										transform: "scale(1.1)"
 									}
 								}}
 							>
-								<Box
-									component="img"
-									src={item.imgSrc}
-									alt={item.title}
-									sx={{ width: 50, height: 50, mr: 3, flexShrink: 0 }}
-								/>
+								<Box className="download-visual">{renderLinkVisual(item.imgSrc, item.title)}</Box>
 								<Box sx={{ flexGrow: 1 }}>
 									<Typography
 										variant="h6"
@@ -262,7 +283,7 @@ const Download = () => {
 					<Grid
 						item
 						xs={12}
-						md={6}
+						md={5}
 						sx={{
 							display: "flex",
 							justifyContent: "center",
@@ -272,7 +293,7 @@ const Download = () => {
 						<Box
 							component="img"
 							src="/relayplaystore.png"
-							alt="Download RelaySMS"
+							alt={t("download.heroImageAlt", "Download RelaySMS")}
 							sx={{
 								width: "100%",
 								maxWidth: 450,

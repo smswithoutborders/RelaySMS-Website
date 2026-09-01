@@ -17,7 +17,7 @@ const SupportedPlatforms = () => {
 	useEffect(() => {
 		const fetchPlatforms = async () => {
 			try {
-				const response = await fetch("https://publisher.smswithoutborders.com/v1/platforms", {
+				const response = await fetch("https://relaysms.smswithoutborders.afkanerd.com/v1/platforms", {
 					method: "GET",
 					headers: { "Content-Type": "application/json" },
 					mode: "cors"
@@ -59,11 +59,11 @@ const SupportedPlatforms = () => {
 							"https://raw.githubusercontent.com/smswithoutborders/bluesky-oauth2-adapter/main/icons/bluesky.svg"
 					},
 					{
-						name: "twitter",
+						name: "relaysms-mail",
 						icon_png:
-							"https://raw.githubusercontent.com/smswithoutborders/twitter-oauth2-adapter/main/icons/twitter.png",
+							"https://raw.githubusercontent.com/smswithoutborders/relaysms-mail-pnba-adapter/main/icons/relaysms-mail.png",
 						icon_svg:
-							"https://raw.githubusercontent.com/smswithoutborders/twitter-oauth2-adapter/main/icons/twitter.svg"
+							"https://raw.githubusercontent.com/smswithoutborders/relaysms-mail-pnba-adapter/main/icons/relaysms-mail.svg"
 					}
 				]);
 			} finally {
@@ -91,7 +91,6 @@ const SupportedPlatforms = () => {
 			sx={{
 				py: { xs: 6, md: 8 },
 				px: { xs: 3, md: 6, lg: 10 },
-				bgcolor: "background.default"
 			}}
 		>
 			<Grid
@@ -100,7 +99,6 @@ const SupportedPlatforms = () => {
 				alignItems="center"
 				direction={isRtl ? "row-reverse" : "row"}
 			>
-				{/* Left: text */}
 				<Grid item xs={12} md={6}>
 					<Typography
 						variant="h4"

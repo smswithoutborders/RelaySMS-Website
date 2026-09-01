@@ -1,8 +1,8 @@
 import { Box, Button, Typography, Container, Grid } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { FaFilePdf } from "react-icons/fa";
-import EnglishPDF from "../assets/RelaySMS Training Guide Flyer (English).pdf";
-import FrenchPDF from "../assets/RelaySMS Training Guide Flyer (Français).pdf";
+import EnglishPDF from "../assets/RelaySMS Training Guide English New.pdf";
+import FrenchPDF from "../assets/RelaySMS Training Guide French New.pdf";
 
 function TrainingGuide() {
 	const { t } = useTranslation();

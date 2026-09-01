@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { keyframes } from "@mui/system";
+import { useTranslation } from "react-i18next";
 
 const spin = keyframes`
 	from {
@@ -11,6 +12,8 @@ const spin = keyframes`
 `;
 
 const LoadingLogo = ({ label = "Loading...", fullScreen = true }) => {
+	const { t } = useTranslation();
+
 	return (
 		<Box
 			role="status"
@@ -33,7 +36,7 @@ const LoadingLogo = ({ label = "Loading...", fullScreen = true }) => {
 			<Box
 				component="img"
 				src="/Relaysms.png"
-				alt="RelaySMS logo"
+				alt={t("Common.Aria.Logo", "RelaySMS logo")}
 				sx={{
 					width: 64,
 					height: 64,
