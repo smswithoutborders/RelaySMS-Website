@@ -11,6 +11,7 @@ import Navbar from "./Components/Navbar";
 import Overview from "./Pages/Overview";
 import Contributing from "./Pages/Contributing";
 import About from "./Pages/About";
+import Resources from "./Pages/Resources";
 import NewsletterSubscribed from "./Pages/NewsletterSubscribed";
 import NewsletterConfirmationError from "./Pages/NewsletterConfirmationError";
 import NewsletterUnsubscribed from "./Pages/NewsletterUnsubscribed";
@@ -44,6 +45,7 @@ const App = () => {
 				<Route path="/branding" element={<Branding />} />
 				<Route path="/system-overview" element={<Overview />} />
 				<Route path="/contributing" element={<Contributing />} />
+				<Route path="/resources" element={<Resources />} />
 				<Route path={NEWSLETTER_ROUTES.subscribed} element={<NewsletterSubscribed />} />
 				<Route
 					path={NEWSLETTER_ROUTES.confirmationError}

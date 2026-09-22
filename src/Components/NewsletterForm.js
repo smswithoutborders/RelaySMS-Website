@@ -146,7 +146,7 @@ const NewsletterForm = ({
 					<Stack
 						direction={{ xs: "column", sm: stacked ? "column" : "row" }}
 						spacing={1}
-						sx={{ width: "100%" }}
+						sx={{ width: "100%", justifyContent: centered ? "center" : "flex-start" }}
 					>
 						<TextField
 							type="email"
