@@ -18,7 +18,8 @@
 		"Branding": "Branding",
 		"Overview": "System Overview",
 		"Changelog": "Changelog",
-		"About": "About"
+		"About": "About",
+		"Resources": "Resources"
 	},
 	"Alert": {
 		"message": "You can now make RelaySMS your default SMS app on Android!",
@@ -517,6 +518,26 @@
 			"title": "Be a crucial part of RelaySMS by setting up routing numbers",
 			"description": "When you set up a routing number in a region with internet connectivity, it helps route messages from offline users to online platforms.",
 			"cta": "Learn all about routing numbers"
+		}
+	},
+	"Resources": {
+		"Title": "Resources",
+		"Description": "Download guides and materials to help you get the most out of RelaySMS.",
+		"Preview": "Preview",
+		"Download": "Download",
+		"Items": {
+			"EnglishTrainingGuide": {
+				"Title": "Training Guide (English)",
+				"Description": "A complete walkthrough of RelaySMS features and setup, in English."
+			},
+			"FrenchTrainingGuide": {
+				"Title": "Training Guide (French)",
+				"Description": "A complete walkthrough of RelaySMS features and setup, in French."
+			},
+			"RoutingNumberGuide": {
+				"Title": "Routing Number Guide",
+				"Description": "Step-by-step instructions for setting up and sharing a routing number."
+			}
 		}
 	},
 	"AppFeatures": {

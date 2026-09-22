@@ -18,7 +18,8 @@
 		"Branding": "Marca",
 		"Overview": "Descripción general del sistema",
 		"Changelog": "Registro de cambios",
-		"About": "Acerca de"
+		"About": "Acerca de",
+		"Resources": "Recursos"
 	},
 	"Alert": {
 		"message": "¡Ahora puedes convertir RelaySMS en tu aplicación de SMS predeterminada en Android!",
@@ -517,6 +518,26 @@
 			"title": "Sé una parte crucial de RelaySMS configurando números de enrutamiento",
 			"description": "Cuando configuras un número de enrutamiento en una zona con conexión a Internet, ayuda a enrutar mensajes de usuarios sin conexión hacia plataformas en línea.",
 			"cta": "Conoce todo sobre los números de enrutamiento"
+		}
+	},
+	"Resources": {
+		"Title": "Recursos",
+		"Description": "Descarga guías y materiales para aprovechar al máximo RelaySMS.",
+		"Preview": "Vista previa",
+		"Download": "Descargar",
+		"Items": {
+			"EnglishTrainingGuide": {
+				"Title": "Guía de capacitación (inglés)",
+				"Description": "Un recorrido completo por las funciones y la configuración de RelaySMS, en inglés."
+			},
+			"FrenchTrainingGuide": {
+				"Title": "Guía de capacitación (francés)",
+				"Description": "Un recorrido completo por las funciones y la configuración de RelaySMS, en francés."
+			},
+			"RoutingNumberGuide": {
+				"Title": "Guía del número de enrutamiento",
+				"Description": "Instrucciones paso a paso para configurar y compartir un número de enrutamiento."
+			}
 		}
 	},
 	"AppFeatures": {

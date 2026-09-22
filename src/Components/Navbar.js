@@ -66,6 +66,7 @@ export default function Navigation() {
 			href: "https://docs.smswithoutborders.com/",
 			external: true
 		},
+		{ label: t("Nav.Resources", "Resources"), to: "/resources" },
 		{ label: t("Nav.Contact"), to: "/contact" }
 	];
 

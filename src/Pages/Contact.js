@@ -2,10 +2,9 @@ import React from "react";
 import { Box, Typography, Button, useTheme } from "@mui/material";
 import { FaGithub, FaXTwitter, FaEnvelope, FaTelegram } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
-
+import NewsletterForm from "../Components/NewsletterForm";
 
 const TELEGRAM_URL = "https://t.me/+IPYp6q06dWsyZjY0";
-
 
 const Contact = () => {
 	const { t, i18n } = useTranslation();
@@ -68,8 +67,7 @@ const Contact = () => {
 					color: "#000",
 					maxWidth: "1200px",
 					mx: "auto",
-					pt: { xs: "120px", md: "140px" },
-					
+					pt: { xs: "120px", md: "140px" }
 				}}
 			>
 				<Typography
@@ -161,6 +159,25 @@ const Contact = () => {
 					))}
 				</Box>
 			</Box>
+			{/* ── Mailing List ── */}
+			<Box
+				sx={{
+					mt: { xs: 6, md: 2 },
+					mx: { xs: 3, md: 6 },
+					mb: { xs: 6, md: 10 },
+					borderRadius: 4,
+					py: { xs: 6, md: 8 },
+					px: { xs: 3, md: 8 },
+					textAlign: "center",
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+					gap: 3
+				}}
+			>
+				<NewsletterForm showHeading={true} align="center" sx={{ width: "100%", maxWidth: 800 }} />
+			</Box>
+			
 			{/* ── Join the Community ── */}
 			<Box
 				sx={{
@@ -200,11 +217,6 @@ const Contact = () => {
 				>
 					{t("Blog.communityDescription")}
 				</Typography>
-				{/* <NewsletterForm
-								showHeading={false}
-								align="center"
-								sx={{ width: "100%", maxWidth: 620 }}
-							/> */}
 				<Button
 					component="a"
 					href={TELEGRAM_URL}
