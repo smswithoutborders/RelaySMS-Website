@@ -30,15 +30,15 @@ const Resources = () => {
 			file: FrenchTrainingGuide,
 			filename: "RelaySMS Training Guide French.pdf"
 		},
-		{
-			title: t("Resources.Items.RoutingNumberGuide.Title", "Routing Number Guide"),
-			description: t(
-				"Resources.Items.RoutingNumberGuide.Description",
-				"Step-by-step instructions for setting up and sharing a routing number."
-			),
-			file: RoutingNumberGuide,
-			filename: "Routing Number Guide.pdf"
-		}
+		// {
+		// 	title: t("Resources.Items.RoutingNumberGuide.Title", "Routing Number Guide"),
+		// 	description: t(
+		// 		"Resources.Items.RoutingNumberGuide.Description",
+		// 		"Step-by-step instructions for setting up and sharing a routing number."
+		// 	),
+		// 	file: RoutingNumberGuide,
+		// 	filename: "Routing Number Guide.pdf"
+		// }
 	];
 
 	const downloadResource = (url, filename) => {
@@ -106,7 +106,7 @@ const Resources = () => {
 						gridTemplateColumns: {
 							xs: "1fr",
 							sm: "repeat(2, 1fr)",
-							md: "repeat(3, 1fr)"
+							md: "repeat(2, 1fr)"
 						},
 						gap: 4,
 						width: "100%",
