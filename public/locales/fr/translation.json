@@ -18,7 +18,8 @@
 		"Branding": "Identité visuelle",
 		"Overview": "Vue d’ensemble du système",
 		"Changelog": "Journal des modifications",
-		"About": "À propos"
+		"About": "À propos",
+		"Resources": "Ressources"
 	},
 	"Alert": {
 		"message": "Vous pouvez désormais utiliser RelaySMS comme application SMS par défaut sur Android !",
@@ -517,6 +518,26 @@
 			"title": "Faites partie intégrante de RelaySMS en configurant des numéros de routage",
 			"description": "Lorsque vous configurez un numéro de routage dans une région avec accès Internet, il permet de relayer les messages des utilisateurs hors ligne vers les plateformes en ligne.",
 			"cta": "Tout savoir sur les numéros de routage"
+		}
+	},
+	"Resources": {
+		"Title": "Ressources",
+		"Description": "Téléchargez des guides et des documents pour tirer le meilleur parti de RelaySMS.",
+		"Preview": "Aperçu",
+		"Download": "Télécharger",
+		"Items": {
+			"EnglishTrainingGuide": {
+				"Title": "Guide de formation (anglais)",
+				"Description": "Un tour complet des fonctionnalités et de la configuration de RelaySMS, en anglais."
+			},
+			"FrenchTrainingGuide": {
+				"Title": "Guide de formation (français)",
+				"Description": "Un tour complet des fonctionnalités et de la configuration de RelaySMS, en français."
+			},
+			"RoutingNumberGuide": {
+				"Title": "Guide du numéro de routage",
+				"Description": "Instructions étape par étape pour configurer et partager un numéro de routage."
+			}
 		}
 	},
 	"AppFeatures": {
