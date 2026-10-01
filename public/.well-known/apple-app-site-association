@@ -1,20 +1,12 @@
 {
   "applinks": {
-      "details": [
-           {
-             "appIDs": [ "6630382970.com.afkanerd.smswithoutborders.relaysms"],
-             "components": [
-               {
-                  "#": "no_universal_links",
-                  "exclude": true,
-                  "comment": "Matches any URL with a fragment that equals no_universal_links and instructs the system not to open it as a universal link."
-               },
-               {
-                  "/": "/ios",
-                  "comment": "Matches any URL with a path that starts with /buy/."
-               }
-             ]
-           }
-       ]
-   }
+    "apps": [],
+    "details": [
+      {
+        "appID": "7J8Q6GLPGN.com.afkanerd.smswithoutborders.relaysms",
+        "paths": [ "*" ]
+      }
+    ]
+  }
 }
+
