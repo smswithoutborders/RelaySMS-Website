@@ -1,17 +1,15 @@
 {
+  "webcredentials": {
+    "apps": ["7J8Q6GLPGN.com.afkanerd.smswithoutborders.relaysms"]
+  },
   "applinks": {
-    "apps": [],
     "details": [
       {
-        "appID": "7J8Q6GLPGN.com.afkanerd.smswithoutborders.relaysms",
+        "appIDs": ["7J8Q6GLPGN.com.afkanerd.smswithoutborders.relaysms"],
         "components": [
-          {
-            "/":"/ios",
-            "comment":"Matches any url whose paths starts with /ios"
-          }
+          { "/": "/ios", "comment": "Matches any url whose path starts with /ios" }
         ]
       }
     ]
   }
 }
-
