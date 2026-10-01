@@ -4,7 +4,12 @@
     "details": [
       {
         "appID": "7J8Q6GLPGN.com.afkanerd.smswithoutborders.relaysms",
-        "paths": [ "*" ]
+        "components": [
+          {
+            "/":"/ios",
+            "comment":"Matches any url whose paths starts with /ios"
+          }
+        ]
       }
     ]
   }
