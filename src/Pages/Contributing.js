@@ -596,7 +596,7 @@ const Contributing = () => {
 						</Grid>
 					))}
 				</Grid>
-
+{/* 
 				<Box
 					sx={{
 						mt: 8,
@@ -648,7 +648,7 @@ const Contributing = () => {
 							</Button>
 						</Box>
 					</Stack>
-				</Box>
+				</Box> */}
 			</Box>
 
 			{/* ── Join the Community ── */}
