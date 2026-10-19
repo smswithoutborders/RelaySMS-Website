@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
-import { FaFilePdf, FaEye } from "react-icons/fa";
+import { Box, Typography, Button, Paper } from "@mui/material";
+import { FaFilePdf, FaEye, FaExternalLinkAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import EnglishTrainingGuide from "../assets/RelaySMS Training Guide English New.pdf";
 import FrenchTrainingGuide from "../assets/RelaySMS Training Guide French New.pdf";
@@ -40,6 +40,8 @@ const Resources = () => {
 		// 	filename: "Routing Number Guide.pdf"
 		// }
 	];
+
+	const RESEARCH_URL = "https://smswithoutborders.com/research";
 
 	const downloadResource = (url, filename) => {
 		const link = document.createElement("a");
@@ -100,6 +102,21 @@ const Resources = () => {
 					)}
 				</Typography>
 
+				<Typography
+					variant="h5"
+					sx={{
+						mb: 3,
+						fontSize: { xs: "1.15rem", md: "1.3rem" },
+						color: "text.primary",
+						fontWeight: 700,
+						fontFamily: "'Unbounded', Ubuntu",
+						textAlign: "left",
+						px: { xs: 2, sm: 4 }
+					}}
+				>
+					{t("Resources.GuidesHeading", "Guides")}
+				</Typography>
+
 				<Box
 					sx={{
 						display: "grid",
@@ -110,7 +127,8 @@ const Resources = () => {
 						},
 						gap: 4,
 						width: "100%",
-						px: { xs: 2, sm: 4 }
+						px: { xs: 2, sm: 4 },
+						mb: { xs: 8, md: 16 }
 					}}
 				>
 					{resources.map(({ title, description, file, filename }, index) => (
@@ -195,6 +213,78 @@ const Resources = () => {
 							</Box>
 						</Box>
 					))}
+				</Box>
+
+				<Typography
+					variant="h5"
+					sx={{
+						mb: 3,
+						fontSize: { xs: "1.15rem", md: "1.3rem" },
+						color: "text.primary",
+						fontWeight: 700,
+						fontFamily: "'Unbounded', Ubuntu",
+						textAlign: "left",
+						px: { xs: 2, sm: 4 }
+					}}
+				>
+					{t("Resources.PapersHeading", "Research Papers")}
+				</Typography>
+
+				<Box sx={{ px: { xs: 2, sm: 4 }, mb: 8 }}>
+					<Paper
+						elevation={0}
+						sx={{
+							p: 4,
+							bgcolor: "background.paper",
+							border: "1px solid",
+							borderColor: "divider",
+							display: "flex",
+							flexDirection: "column",
+							textAlign: "left",
+							transition: "transform 0.3s ease, box-shadow 0.3s ease",
+							"&:hover": {
+								transform: "translateY(-4px)",
+								boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)"
+							}
+						}}
+					>
+						<Typography
+							variant="body1"
+							sx={{
+								color: "text.secondary",
+								fontFamily: "Ubuntu",
+								lineHeight: 1.7,
+								mb: 4
+							}}
+						>
+							{t(
+								"Resources.PapersDescription",
+								"The RelaySMS team publishes white papers and technical write-ups on the project's architecture, protocols, and security design. Browse the latest papers on the SMSWithoutBorders research library."
+							)}
+						</Typography>
+						<Button
+							component="a"
+							href={RESEARCH_URL}
+							target="_blank"
+							rel="noopener noreferrer"
+							variant="text"
+							endIcon={<FaExternalLinkAlt size={12} />}
+							sx={{
+								color: "text.primary",
+								textTransform: "none",
+								fontFamily: "Ubuntu",
+								fontSize: "16px",
+								px: 0,
+								alignSelf: "flex-start",
+								"&:hover": {
+									color: "secondary.main",
+									backgroundColor: "transparent"
+								}
+							}}
+						>
+							{t("Resources.SeeResearchPapers", "See Research Papers")}
+						</Button>
+					</Paper>
 				</Box>
 			</Box>
 		</Box>
