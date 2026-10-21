@@ -6,7 +6,9 @@ import {
 	MobileOutlined,
 	CloudOutlined,
 	LockOutlined,
-	CheckCircleOutlined
+	CheckCircleOutlined,
+	AndroidOutlined,
+	AppleFilled
 } from "@ant-design/icons";
 
 const FlowAnimation = ({ t }) => {
@@ -16,7 +18,7 @@ const FlowAnimation = ({ t }) => {
 	const textSec = theme.palette.text.secondary;
 
 	const W = 340,
-		H = 260;
+		H = 240;
 	const L = { x: 20, y: 130 };
 	const T = { x: 170, y: 20 };
 	const B = { x: 170, y: 210 };
@@ -39,8 +41,7 @@ const FlowAnimation = ({ t }) => {
 			<Box
 				sx={{
 					width: 36,
-					height: 36,
-
+					height: 20,
 					display: "flex",
 					alignItems: "center",
 					justifyContent: "center"
@@ -81,7 +82,7 @@ const FlowAnimation = ({ t }) => {
 				position: "relative",
 				width: "100%",
 				maxWidth: W,
-				paddingTop: `${((H / W) * 100).toFixed(2)}%`,
+				paddingTop: `${((H / W) * 80).toFixed(2)}%`,
 				mx: "auto"
 			}}
 		>
@@ -241,125 +242,100 @@ const WhoShouldUse = () => {
 					</Grid>
 
 					<Grid item xs={12} md={6} sx={{ display: "flex" }}>
-						<Grid
-							container
-							direction="column"
-							spacing={4}
+						<Paper
+							elevation={0}
 							sx={{
-								height: "103%",
+								p: 4,
+								height: "100%",
 								flex: 1,
-								"& .MuiGrid-item": {
-									display: "flex",
-									flexDirection: "column"
-								}
+								bgcolor: "background.paper",
+								border: "1px solid",
+								borderColor: "divider",
+								display: "flex",
+								flexDirection: "column",
+								justifyContent: "center"
 							}}
 						>
-							<Grid item sx={{ flex: 1, minHeight: { md: 0, sm: "300px" } }}>
-								<Paper
-									elevation={0}
+							<Typography
+								variant="h6"
+								sx={{
+									color: "text.primary",
+									fontWeight: 700,
+									fontFamily: "'Unbounded', Ubuntu",
+									mb: 2
+								}}
+							>
+								{renderTextWithStrikethrough(
+									t("WhoShouldUse.Header", "Everyone <strike>can</strike> should use RelaySMS")
+								)}
+							</Typography>
+							<Typography
+								variant="body1"
+								sx={{
+									color: "text.secondary",
+									fontFamily: "Ubuntu",
+									lineHeight: 1.7,
+									mb: 4
+								}}
+							>
+								{t(
+									"WhoShouldUse.Description",
+									"Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns should use RelaySMS to circumvent shutdowns and stay connected. The majority of RelaySMS users currently live in Africa and India—but the app is available for use all around the world. Users can download the app for Android in Google Play or iOS in the App Store."
+								)}
+							</Typography>
+							<Box
+								sx={{
+									display: "flex",
+									flexDirection: { xs: "column", sm: "row" },
+									gap: 2
+								}}
+							>
+								<Button
+									component="a"
+									href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
+									target="_blank"
+									rel="noopener noreferrer"
+									variant="outlined"
+									startIcon={<AndroidOutlined />}
 									sx={{
-										p: 3,
-										height: "100%",
-										bgcolor: "background.paper",
-										border: "1px solid",
+										textTransform: "none",
+										fontFamily: "Ubuntu",
+										fontSize: "15px",
+										color: "text.primary",
 										borderColor: "divider",
-										display: "flex",
-										flexDirection: "column",
-										justifyContent: "center"
+										"&:hover": {
+											borderColor: "secondary.main",
+											color: "secondary.main",
+											backgroundColor: "action.hover"
+										}
 									}}
 								>
-									<Typography
-										variant="h6"
-										sx={{
-											color: "text.primary",
-											fontWeight: 700,
-											fontFamily: "'Unbounded', Ubuntu",
-											mb: 2
-										}}
-									>
-										{renderTextWithStrikethrough(
-											t("WhoShouldUse.Header", "Everyone <strike>can</strike> should use RelaySMS")
-										)}
-									</Typography>
-									<Typography
-										variant="body1"
-										sx={{
-											color: "text.secondary",
-											fontFamily: "Ubuntu",
-											lineHeight: 1.6,
-											mb: 2
-										}}
-									>
-										{t(
-											"WhoShouldUse.Description",
-											"Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns should use RelaySMS to circumvent shutdowns and stay connected. The majority of RelaySMS users currently live in Africa and India—but the app is available for use all around the world. Users can download the app for Android in Google Play or iOS in the App Store."
-										)}
-									</Typography>
-								</Paper>
-							</Grid>
-
-							<Grid item sx={{ flex: 1, minHeight: 0 }}>
-								<Paper
-									elevation={0}
+									{t("WhoShouldUse.AndroidButton", "Download for Android")}
+								</Button>
+								<Button
+									component="a"
+									href="https://apps.apple.com/us/app/relaysms/id6630382970"
+									target="_blank"
+									rel="noopener noreferrer"
+									variant="outlined"
+									startIcon={<AppleFilled />}
 									sx={{
-										p: 3,
-										border: "1px solid",
+										textTransform: "none",
+										fontFamily: "Ubuntu",
+										fontSize: "15px",
+										color: "text.primary",
 										borderColor: "divider",
-										height: "100%",
-										bgcolor: "background.paper",
-										display: "flex",
-										flexDirection: "column",
-										justifyContent: "center"
+										"&:hover": {
+											borderColor: "secondary.main",
+											color: "secondary.main",
+											backgroundColor: "action.hover"
+										}
 									}}
 								>
-									<Typography
-										variant="h6"
-										sx={{
-											color: "text.primary",
-											fontWeight: 700,
-											fontFamily: "'Unbounded', Ubuntu",
-											mb: 2
-										}}
-									>
-										{t("GatewayClient.Header", "Setting Up Routing Numbers")}
-									</Typography>
-									<Typography
-										variant="body1"
-										sx={{
-											color: "text.secondary",
-											fontFamily: "Ubuntu",
-											lineHeight: 1.6,
-											mb: 3
-										}}
-									>
-										{t(
-											"GatewayClient.Description",
-											"Routing numbers are phone numbers with internet access that bridge offline users and online platforms. When you send a message without internet, it goes by SMS to a routing number, which forwards it to your selected platform."
-										)}
-									</Typography>
-									<Button
-										component="a"
-										href="https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide"
-										target="_blank"
-										rel="noopener noreferrer"
-										variant="text"
-										sx={{
-											color: "text.primary",
-											textTransform: "none",
-											fontFamily: "Ubuntu",
-											fontSize: "16px",
-											alignSelf: "flex-start",
-											"&:hover": {
-												color: "secondary.main"
-											}
-										}}
-										endIcon={<FaExternalLinkAlt size={12} />}
-									>
-										{t("GatewayClient.ReadMore", "Read More")}
-									</Button>
-								</Paper>
-							</Grid>
-						</Grid>
+									{t("WhoShouldUse.iOSButton", "Download for iOS")}
+								</Button>
+							</Box>
+						</Paper>
 					</Grid>
 				</Grid>
 			</Container>

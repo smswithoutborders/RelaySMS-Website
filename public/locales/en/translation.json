@@ -525,6 +525,10 @@
 		"Description": "Download guides and materials to help you get the most out of RelaySMS.",
 		"Preview": "Preview",
 		"Download": "Download",
+		"GuidesHeading": "Guides",
+		"PapersHeading": "Research Papers",
+		"PapersDescription": "The team publishes research papers and notes behind the stack, from architecture and encryption to threat modeling. Hosted on the SMSWithoutBorders research library.",
+		"SeeResearchPapers": "See Research Papers",
 		"Items": {
 			"EnglishTrainingGuide": {
 				"Title": "Training Guide (English)",
