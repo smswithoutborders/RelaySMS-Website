@@ -1,4 +1,4 @@
-name: PR Check
+name: Build SMSWithoutBorders Relay Homepage (pull request)
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: pr-check-${{ github.event.pull_request.number }}
+  group: build-pr-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
 jobs:
