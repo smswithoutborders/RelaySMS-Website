@@ -1,4 +1,4 @@
-import { Box, Typography, Paper, Divider, Button, Grid } from "@mui/material";
+import { Box, Typography, Paper, Divider, Button, Stack } from "@mui/material";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { Trans, useTranslation } from "react-i18next";
 
@@ -74,8 +74,8 @@ const FAQSection = ({ isFarsi }) => {
 				</Typography>
 			</Box>
 
-			<Grid
-				container
+			<Stack
+				direction={{ xs: "column", md: "row" }}
 				spacing={4}
 				sx={{
 					maxWidth: "1200px",
@@ -84,7 +84,7 @@ const FAQSection = ({ isFarsi }) => {
 					mt: 5
 				}}
 			>
-				<Grid item xs={12} md={8} sx={{ display: "flex", justifyContent: "center" }}>
+				<Box sx={{ display: "flex", justifyContent: "center", flex: { md: 2 } }}>
 					<Box sx={{ width: "100%", overflow: "hidden", maxWidth: { xs: "600px", md: "100%" } }}>
 						{faqs.map(({ question, answer }, idx) => (
 							<Box key={idx}>
@@ -152,20 +152,20 @@ const FAQSection = ({ isFarsi }) => {
 							</Box>
 						))}
 					</Box>
-				</Grid>
+				</Box>
 
-				<Grid item xs={12} md={4}>
-					<Paper
-						elevation={0}
-						sx={{
-							px: { xs: 1.5, md: 4 },
-							py: { xs: 4, md: 10 },
-							bgcolor: "background.paper",
-							border: "1px solid",
-							borderColor: "divider",
-							width: "100%"
-						}}
-					>
+				<Paper
+					elevation={0}
+					sx={{
+						px: { xs: 1.5, md: 4 },
+						py: { xs: 4, md: 10 },
+						bgcolor: "background.paper",
+						border: "1px solid",
+						borderColor: "divider",
+						width: "100%",
+						flex: { md: 1 }
+					}}
+				>
 						<Typography
 							variant="h6"
 							sx={{
@@ -244,9 +244,8 @@ const FAQSection = ({ isFarsi }) => {
 								developers@smswithoutborders.com
 							</Button>
 						</Box>
-					</Paper>
-				</Grid>
-			</Grid>
+				</Paper>
+			</Stack>
 		</Box>
 	);
 };

@@ -1,4 +1,4 @@
-import { Box, Typography, Container, Grid, Button, Paper } from "@mui/material";
+import { Box, Typography, Container, Stack, Button, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@mui/material/styles";
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -167,177 +167,177 @@ const WhoShouldUse = () => {
 			}}
 		>
 			<Container>
-				<Grid container spacing={4} alignItems="stretch" sx={{ maxWidth: 1500 }}>
-					<Grid item xs={12} md={6}>
-						<Paper
-							elevation={0}
-							sx={{ p: 4, border: "1px solid", borderColor: "divider", height: "100%" }}
-						>
-							<Box sx={{ mb: 6 }}>
-								<FlowAnimation t={t} />
-							</Box>{" "}
-							<Typography
-								variant="h6"
-								sx={{
-									color: "text.primary",
-									fontWeight: 700,
-									fontFamily: "'Unbounded', Ubuntu",
-									mb: 3
-								}}
-							>
-								{renderTextWithStrikethrough(
-									t("HowRelaySMSWorks.Header", "How the <strike>tech</strike> magic happens")
-								)}
-							</Typography>
-							<Typography
-								variant="body1"
-								sx={{
-									color: "text.secondary",
-									fontFamily: "Ubuntu",
-									lineHeight: 1.7,
-									mb: 4
-								}}
-							>
-								{t(
-									"HowRelaySMSWorks.Description1",
-									'Designed by an expert team of technologists who had grown tired of internet shutdowns disrupting their ability to communicate, RelaySMS utilizes SMS messaging (aka "text messaging") to route offline messages back online.'
-								)}
-							</Typography>
-							<Typography
-								variant="body1"
-								sx={{
-									color: "text.secondary",
-									fontFamily: "Ubuntu",
-									lineHeight: 1.6
-								}}
-							>
-								{t(
-									"HowRelaySMSWorks.Description2",
-									"After setting up RelaySMS on your phone, you can seamlessly connect and send messages on your preferred online messaging platforms without using any data at all (standard SMS rates will apply)."
-								)}
-							</Typography>
-							<Button
-								component="a"
-								href="/system-overview"
-								target="_blank"
-								rel="noopener noreferrer"
-								variant="text"
-								sx={{
-									color: "text.primary",
-									textTransform: "none",
-									fontFamily: "Ubuntu",
-									fontSize: "16px",
-									px: 0,
-									my: 2,
-									alignSelf: "flex-start",
-									"&:hover": {
-										color: "secondary.main"
-									}
-								}}
-								endIcon={<FaExternalLinkAlt size={12} />}
-							>
-								{t("Step2Button", "Learn More")}
-							</Button>
-						</Paper>
-					</Grid>
-
-					<Grid item xs={12} md={6} sx={{ display: "flex" }}>
-						<Paper
-							elevation={0}
+				<Stack
+					direction={{ xs: "column", md: "row" }}
+					spacing={4}
+					alignItems="stretch"
+					sx={{ maxWidth: 1500 }}
+				>
+					<Paper
+						elevation={0}
+						sx={{ p: 4, border: "1px solid", borderColor: "divider", flex: 1 }}
+					>
+						<Box sx={{ mb: 6 }}>
+							<FlowAnimation t={t} />
+						</Box>{" "}
+						<Typography
+							variant="h6"
 							sx={{
-								p: 4,
-								height: "100%",
-								flex: 1,
-								bgcolor: "background.paper",
-								border: "1px solid",
-								borderColor: "divider",
-								display: "flex",
-								flexDirection: "column",
-								justifyContent: "center"
+								color: "text.primary",
+								fontWeight: 700,
+								fontFamily: "'Unbounded', Ubuntu",
+								mb: 3
 							}}
 						>
-							<Typography
-								variant="h6"
+							{renderTextWithStrikethrough(
+								t("HowRelaySMSWorks.Header", "How the <strike>tech</strike> magic happens")
+							)}
+						</Typography>
+						<Typography
+							variant="body1"
+							sx={{
+								color: "text.secondary",
+								fontFamily: "Ubuntu",
+								lineHeight: 1.7,
+								mb: 4
+							}}
+						>
+							{t(
+								"HowRelaySMSWorks.Description1",
+								'Designed by an expert team of technologists who had grown tired of internet shutdowns disrupting their ability to communicate, RelaySMS utilizes SMS messaging (aka "text messaging") to route offline messages back online.'
+							)}
+						</Typography>
+						<Typography
+							variant="body1"
+							sx={{
+								color: "text.secondary",
+								fontFamily: "Ubuntu",
+								lineHeight: 1.6
+							}}
+						>
+							{t(
+								"HowRelaySMSWorks.Description2",
+								"After setting up RelaySMS on your phone, you can seamlessly connect and send messages on your preferred online messaging platforms without using any data at all (standard SMS rates will apply)."
+							)}
+						</Typography>
+						<Button
+							component="a"
+							href="/system-overview"
+							target="_blank"
+							rel="noopener noreferrer"
+							variant="text"
+							sx={{
+								color: "text.primary",
+								textTransform: "none",
+								fontFamily: "Ubuntu",
+								fontSize: "16px",
+								px: 0,
+								my: 2,
+								alignSelf: "flex-start",
+								"&:hover": {
+									color: "secondary.main"
+								}
+							}}
+							endIcon={<FaExternalLinkAlt size={12} />}
+						>
+							{t("Step2Button", "Learn More")}
+						</Button>
+					</Paper>
+
+					<Paper
+						elevation={0}
+						sx={{
+							p: 4,
+							flex: 1,
+							bgcolor: "background.paper",
+							border: "1px solid",
+							borderColor: "divider",
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center"
+						}}
+					>
+						<Typography
+							variant="h6"
+							sx={{
+								color: "text.primary",
+								fontWeight: 700,
+								fontFamily: "'Unbounded', Ubuntu",
+								mb: 2
+							}}
+						>
+							{renderTextWithStrikethrough(
+								t("WhoShouldUse.Header", "Everyone <strike>can</strike> should use RelaySMS")
+							)}
+						</Typography>
+						<Typography
+							variant="body1"
+							sx={{
+								color: "text.secondary",
+								fontFamily: "Ubuntu",
+								lineHeight: 1.7,
+								mb: 4
+							}}
+						>
+							{t(
+								"WhoShouldUse.Description",
+								"Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns should use RelaySMS to circumvent shutdowns and stay connected. The majority of RelaySMS users currently live in Africa and India—but the app is available for use all around the world. Users can download the app for Android in Google Play or iOS in the App Store."
+							)}
+						</Typography>
+						<Box
+							sx={{
+								display: "flex",
+								flexDirection: { xs: "column", sm: "row" },
+								gap: 2
+							}}
+						>
+							<Button
+								component="a"
+								href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
+								target="_blank"
+								rel="noopener noreferrer"
+								variant="outlined"
+								startIcon={<AndroidOutlined />}
 								sx={{
-									color: "text.primary",
-									fontWeight: 700,
-									fontFamily: "'Unbounded', Ubuntu",
-									mb: 2
-								}}
-							>
-								{renderTextWithStrikethrough(
-									t("WhoShouldUse.Header", "Everyone <strike>can</strike> should use RelaySMS")
-								)}
-							</Typography>
-							<Typography
-								variant="body1"
-								sx={{
-									color: "text.secondary",
+									textTransform: "none",
 									fontFamily: "Ubuntu",
-									lineHeight: 1.7,
-									mb: 4
+									fontSize: "15px",
+									color: "text.primary",
+									borderColor: "divider",
+									"&:hover": {
+										borderColor: "secondary.main",
+										color: "secondary.main",
+										backgroundColor: "action.hover"
+									}
 								}}
 							>
-								{t(
-									"WhoShouldUse.Description",
-									"Anyone experiencing poor internet connectivity or living in a region prone to internet shutdowns should use RelaySMS to circumvent shutdowns and stay connected. The majority of RelaySMS users currently live in Africa and India—but the app is available for use all around the world. Users can download the app for Android in Google Play or iOS in the App Store."
-								)}
-							</Typography>
-							<Box
+								{t("WhoShouldUse.AndroidButton", "Download for Android")}
+							</Button>
+							<Button
+								component="a"
+								href="https://apps.apple.com/us/app/relaysms/id6630382970"
+								target="_blank"
+								rel="noopener noreferrer"
+								variant="outlined"
+								startIcon={<AppleFilled />}
 								sx={{
-									display: "flex",
-									flexDirection: { xs: "column", sm: "row" },
-									gap: 2
+									textTransform: "none",
+									fontFamily: "Ubuntu",
+									fontSize: "15px",
+									color: "text.primary",
+									borderColor: "divider",
+									"&:hover": {
+										borderColor: "secondary.main",
+										color: "secondary.main",
+										backgroundColor: "action.hover"
+									}
 								}}
 							>
-								<Button
-									component="a"
-									href="https://play.google.com/store/apps/details?id=com.afkanerd.sw0b"
-									target="_blank"
-									rel="noopener noreferrer"
-									variant="outlined"
-									startIcon={<AndroidOutlined />}
-									sx={{
-										textTransform: "none",
-										fontFamily: "Ubuntu",
-										fontSize: "15px",
-										color: "text.primary",
-										borderColor: "divider",
-										"&:hover": {
-											borderColor: "secondary.main",
-											color: "secondary.main",
-											backgroundColor: "action.hover"
-										}
-									}}
-								>
-									{t("WhoShouldUse.AndroidButton", "Download for Android")}
-								</Button>
-								<Button
-									component="a"
-									href="https://apps.apple.com/us/app/relaysms/id6630382970"
-									target="_blank"
-									rel="noopener noreferrer"
-									variant="outlined"
-									startIcon={<AppleFilled />}
-									sx={{
-										textTransform: "none",
-										fontFamily: "Ubuntu",
-										fontSize: "15px",
-										color: "text.primary",
-										borderColor: "divider",
-										"&:hover": {
-											borderColor: "secondary.main",
-											color: "secondary.main",
-											backgroundColor: "action.hover"
-										}
-									}}
-								>
-									{t("WhoShouldUse.iOSButton", "Download for iOS")}
-								</Button>
-							</Box>
-						</Paper>
-					</Grid>
-				</Grid>
+								{t("WhoShouldUse.iOSButton", "Download for iOS")}
+							</Button>
+						</Box>
+					</Paper>
+				</Stack>
 			</Container>
 		</Box>
 	);

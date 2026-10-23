@@ -3,7 +3,6 @@ import {
 	Box,
 	Typography,
 	Button,
-	Grid,
 	Card,
 	CardContent,
 	CardActions,
@@ -369,13 +368,22 @@ bgcolor: asset.name.includes("White") ? undefined : "background.paper",
 				</Box>
 
 				<Box>
-					<Grid container spacing={3}>
+					<Box
+						sx={{
+							display: "grid",
+							gridTemplateColumns: {
+								xs: "1fr",
+								sm: "repeat(2, minmax(0, 1fr))",
+								md: "repeat(3, minmax(0, 1fr))",
+								lg: "repeat(4, minmax(0, 1fr))"
+							},
+							gap: 3
+						}}
+					>
 						{getCurrentAssets().assets.map((asset, index) => (
-							<Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-								<AssetCard asset={asset} />
-							</Grid>
+							<AssetCard key={index} asset={asset} />
 						))}
-					</Grid>
+					</Box>
 				</Box>
 
 				<Box sx={{ mb: 8, mt: 10 }}>

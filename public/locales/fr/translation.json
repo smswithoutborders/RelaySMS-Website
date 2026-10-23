@@ -525,6 +525,10 @@
 		"Description": "Téléchargez des guides et des documents pour tirer le meilleur parti de RelaySMS.",
 		"Preview": "Aperçu",
 		"Download": "Télécharger",
+		"GuidesHeading": "Guides",
+		"PapersHeading": "Articles de recherche",
+		"PapersDescription": "L'équipe publie des articles de recherche et des notes sur l'architecture, le chiffrement et la modélisation des menaces. Hébergé sur la bibliothèque de recherche de SMSWithoutBorders.",
+		"SeeResearchPapers": "Voir les articles de recherche",
 		"Items": {
 			"EnglishTrainingGuide": {
 				"Title": "Guide de formation (anglais)",
