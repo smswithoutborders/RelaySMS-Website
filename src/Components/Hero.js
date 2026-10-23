@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import { useTranslation } from "react-i18next";
-import { Grid, Typography, Box, Button } from "@mui/material";
+import { Typography, Box, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -58,12 +58,14 @@ const Hero = () => {
 					backgroundSize: "auto, 44px 44px, 44px 44px"
 				}}
 			>
-				<Grid container spacing={4} alignItems="center" justifyContent="center">
-					<Grid
-						item
-						xs={12}
-						md={6}
-						sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }}
+				<Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+					<Box
+						sx={{
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							width: { xs: "100%", md: "50%" }
+						}}
 					>
 						<Typography
 							sx={{
@@ -154,8 +156,8 @@ const Hero = () => {
 								{t("HowRelaySMSWorks.TrainingTitle", "Download Training Guides")}
 							</Button>
 						</Box>
-					</Grid>
-				</Grid>
+					</Box>
+				</Box>
 			</Box>
 
 			<RelayFeatures />

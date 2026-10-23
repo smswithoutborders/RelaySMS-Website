@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Typography, Grid, Button, Link, Stack } from "@mui/material";
+import { Box, Typography, Button, Link, Stack } from "@mui/material";
 import {
 	FaGithub,
 	FaCodeBranch,
@@ -490,47 +490,56 @@ const Contributing = () => {
 				<Typography sx={{ color: "text.secondary", mb: 5, maxWidth: 540 }}>
 					{t("Contributing.HowTo.subtitle")}
 				</Typography>
-				<Grid container spacing={2}>
+				<Box
+					sx={{
+						display: "grid",
+						gridTemplateColumns: {
+							xs: "1fr",
+							sm: "repeat(2, minmax(0, 1fr))",
+							md: "repeat(4, minmax(0, 1fr))"
+						},
+						gap: 2
+					}}
+				>
 					{steps.map((step, i) => (
-						<Grid item xs={12} sm={6} md={3} key={i}>
-							<Box
+						<Box
+							key={i}
+							sx={{
+								p: 3,
+								height: "100%",
+								borderRadius: 2,
+								border: "1px solid",
+								borderColor: "divider",
+								bgcolor: "background.paper",
+								display: "flex",
+								flexDirection: "column",
+								gap: 1.5,
+								position: "relative"
+							}}
+						>
+							<Typography
 								sx={{
-									p: 3,
-									height: "100%",
-									borderRadius: 2,
-									border: "1px solid",
-									borderColor: "divider",
-									bgcolor: "background.paper",
-									display: "flex",
-									flexDirection: "column",
-									gap: 1.5,
-									position: "relative"
+									position: "absolute",
+									top: 16,
+									right: isRtl ? "unset" : 16,
+									left: isRtl ? 16 : "unset",
+									fontFamily: "'Unbounded', Ubuntu",
+									fontWeight: 800,
+									fontSize: "1.5rem",
+									color: isDark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)",
+									lineHeight: 1,
+									userSelect: "none"
 								}}
 							>
-								<Typography
-									sx={{
-										position: "absolute",
-										top: 16,
-										right: isRtl ? "unset" : 16,
-										left: isRtl ? 16 : "unset",
-										fontFamily: "'Unbounded', Ubuntu",
-										fontWeight: 800,
-										fontSize: "1.5rem",
-										color: isDark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)",
-										lineHeight: 1,
-										userSelect: "none"
-									}}
-								>
-									{i + 1}
-								</Typography>
-								<Typography sx={{ fontWeight: 700, fontSize: "0.95rem" }}>{step.title}</Typography>
-								<Typography sx={{ color: "text.secondary", fontSize: "0.85rem", lineHeight: 1.65 }}>
-									{step.description}
-								</Typography>
-							</Box>
-						</Grid>
+								{i + 1}
+							</Typography>
+							<Typography sx={{ fontWeight: 700, fontSize: "0.95rem" }}>{step.title}</Typography>
+							<Typography sx={{ color: "text.secondary", fontSize: "0.85rem", lineHeight: 1.65 }}>
+								{step.description}
+							</Typography>
+						</Box>
 					))}
-				</Grid>
+				</Box>
 			</Box>
 
 			<Box sx={{ maxWidth: 1100, mx: "auto", px: { xs: 3, md: 4 }, py: { xs: 6, md: 8 } }}>
@@ -547,55 +556,64 @@ const Contributing = () => {
 				<Typography sx={{ color: "text.secondary", mb: 5, maxWidth: 540 }}>
 					{t("Contributing.Ways.subtitle")}
 				</Typography>
-				<Grid container spacing={2}>
+				<Box
+					sx={{
+						display: "grid",
+						gridTemplateColumns: {
+							xs: "1fr",
+							sm: "repeat(2, minmax(0, 1fr))",
+							md: "repeat(4, minmax(0, 1fr))"
+						},
+						gap: 2
+					}}
+				>
 					{ways.map((way, i) => (
-						<Grid item xs={12} sm={6} md={3} key={i}>
+						<Box
+							key={i}
+							component="a"
+							href={way.href}
+							target="_blank"
+							rel="noopener noreferrer"
+							sx={{
+								display: "flex",
+								flexDirection: "column",
+								gap: 1.5,
+								p: 3,
+								height: "100%",
+								borderRadius: 2,
+								border: "1px solid",
+								borderColor: "divider",
+								bgcolor: "background.paper",
+								textDecoration: "none",
+								color: "inherit",
+								transition: "border-color 0.2s, box-shadow 0.2s",
+								"&:hover": {
+									borderColor: "primary.main",
+									boxShadow: `0 0 0 1px ${theme.palette.primary.main}22`
+								}
+							}}
+						>
 							<Box
-								component="a"
-								href={way.href}
-								target="_blank"
-								rel="noopener noreferrer"
 								sx={{
+									width: 40,
+									height: 40,
+									borderRadius: 1.5,
+									bgcolor: isDark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)",
 									display: "flex",
-									flexDirection: "column",
-									gap: 1.5,
-									p: 3,
-									height: "100%",
-									borderRadius: 2,
-									border: "1px solid",
-									borderColor: "divider",
-									bgcolor: "background.paper",
-									textDecoration: "none",
-									color: "inherit",
-									transition: "border-color 0.2s, box-shadow 0.2s",
-									"&:hover": {
-										borderColor: "primary.main",
-										boxShadow: `0 0 0 1px ${theme.palette.primary.main}22`
-									}
+									alignItems: "center",
+									justifyContent: "center",
+									color: "primary.main"
 								}}
 							>
-								<Box
-									sx={{
-										width: 40,
-										height: 40,
-										borderRadius: 1.5,
-										bgcolor: isDark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)",
-										display: "flex",
-										alignItems: "center",
-										justifyContent: "center",
-										color: "primary.main"
-									}}
-								>
-									{way.icon}
-								</Box>
-								<Typography sx={{ fontWeight: 700, fontSize: "0.95rem" }}>{way.title}</Typography>
-								<Typography sx={{ color: "text.secondary", fontSize: "0.85rem", lineHeight: 1.65 }}>
-									{way.description}
-								</Typography>
+								{way.icon}
 							</Box>
-						</Grid>
+							<Typography sx={{ fontWeight: 700, fontSize: "0.95rem" }}>{way.title}</Typography>
+							<Typography sx={{ color: "text.secondary", fontSize: "0.85rem", lineHeight: 1.65 }}>
+								{way.description}
+							</Typography>
+						</Box>
 					))}
-				</Grid>
+				</Box>
 {/* 
 				<Box
 					sx={{

@@ -525,6 +525,10 @@
 		"Description": "راهنماها و مطالبی را دانلود کنید تا بیشترین بهره را از RelaySMS ببرید.",
 		"Preview": "پیش‌نمایش",
 		"Download": "دانلود",
+		"GuidesHeading": "راهنماها",
+		"PapersHeading": "مقالات پژوهشی",
+		"PapersDescription": "تیم مقالات پژوهشی و یادداشت‌هایی درباره معماری، رمزگذاری و مدل‌سازی تهدید منتشر می‌کند. میزبانی‌شده در کتابخانه پژوهشی SMSWithoutBorders.",
+		"SeeResearchPapers": "مشاهده مقالات پژوهشی",
 		"Items": {
 			"EnglishTrainingGuide": {
 				"Title": "راهنمای آموزشی (انگلیسی)",
