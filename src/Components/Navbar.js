@@ -83,6 +83,11 @@ export default function Navigation() {
 			label: t("Footer.Troubleshooting", "Troubleshooting"),
 			href: "https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ",
 			external: true
+		},
+		{
+			label: t("Footer.SelfHosting", "Self-Hosting Guide"),
+			href: "https://docs.relaysms.smswithoutborders.afkanerd.com/",
+			external: true
 		}
 	];
 

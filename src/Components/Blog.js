@@ -301,12 +301,20 @@ const BlogSectionNew = () => {
 					minReadLabel={minReadLabel}
 				/>
 			)}
-		
+			{row2.length > 0 && (
+				<MarqueeRow
+					posts={row2}
+					direction="right"
+					calculateReadTime={calculateReadTime}
+					defaultAuthor={defaultAuthor}
+					minReadLabel={minReadLabel}
+				/>
+			)}
 
 			{/* ── Join the Community ── */}
 			<Box
 				sx={{
-					mt: { xs: 6, md: 12 },
+					mt: { xs: 8, md: 15 },
 					mx: { xs: 3, md: 6 },
 					mb: { xs: 6, md: 8 },
 					borderRadius: 4,

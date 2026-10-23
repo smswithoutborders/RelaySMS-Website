@@ -66,7 +66,12 @@ const Footer = () => {
 					href: "https://docs.smswithoutborders.com/",
 					external: true
 				},
-				{ label: t("Footer.Contributing"), to: "/contributing" }
+				{ label: t("Footer.Contributing"), to: "/contributing" },
+				{
+					label: t("Footer.SelfHosting", "Self-Hosting Guide"),
+					href: "https://docs.relaysms.smswithoutborders.afkanerd.com/",
+					external: true
+				}
 			]
 		},
 		{
