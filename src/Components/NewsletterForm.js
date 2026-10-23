@@ -9,6 +9,7 @@ const NewsletterForm = ({
 	dark = false,
 	stacked = false,
 	adaptiveButtonContrast = false,
+	large = false,
 	sx = {}
 }) => {
 	const { t } = useTranslation();
@@ -104,12 +105,12 @@ const NewsletterForm = ({
 			{showHeading && (
 				<Box sx={{ mb: 4 }}>
 					<Typography
-						variant="h6"
+						variant={large ? "h3" : "h6"}
 						sx={{
-							fontWeight: 600,
+							fontWeight: large ? 800 : 600,
 							fontFamily: "'Unbounded', Ubuntu",
-							mb: 0.75,
-							fontSize: { xs: "1rem", md: "1.15rem" },
+							mb: large ? 2 : 0.75,
+							fontSize: large ? { xs: "1.5rem", md: "1.9rem" } : { xs: "1rem", md: "1.15rem" },
 							textAlign: centered ? "center" : "start",
 							color: dark ? "#ffffff" : "text.primary"
 						}}
@@ -119,7 +120,7 @@ const NewsletterForm = ({
 					<Typography
 						sx={{
 							color: helperColor,
-							fontSize: "0.95rem",
+							fontSize: large ? { xs: "0.95rem", md: "1.05rem" } : "0.95rem",
 							textAlign: centered ? "center" : "start"
 						}}
 					>

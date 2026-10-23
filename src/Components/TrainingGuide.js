@@ -16,7 +16,7 @@ function TrainingGuide() {
 				<Typography
 					variant="h6"
 					sx={{
-						fontSize: { xs: "1.5rem", md: "1.9rem" },
+						fontSize: { xs: "1.5rem", md: "1.6rem" },
 						color: "text.primary",
 						fontWeight: 600,
 						fontFamily: "'Unbounded', Ubuntu",

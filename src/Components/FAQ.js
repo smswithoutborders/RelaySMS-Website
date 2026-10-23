@@ -1,27 +1,39 @@
-import { Box, Typography, Paper, Divider, Button, Stack } from "@mui/material";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { useState } from "react";
+import { Box, Typography, Paper, Divider, Button, Stack, Collapse } from "@mui/material";
+import { FaExternalLinkAlt, FaPlus, FaMinus } from "react-icons/fa";
 import { Trans, useTranslation } from "react-i18next";
 
 const FAQSection = ({ isFarsi }) => {
 	const { t, i18n } = useTranslation();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
+	const [openIndex, setOpenIndex] = useState(null);
+	const toggleFaq = (idx) => setOpenIndex((current) => (current === idx ? null : idx));
 
 	const faqs = [
 		{
+			id: "faq1",
 			question: t("Faq.faq1.question"),
 			answer: t("Faq.faq1.answer")
 		},
 		{
+			id: "faq2",
 			question: t("Faq.faq2.question"),
 			answer: t("Faq.faq2.answer")
 		},
 		{
+			id: "faq3",
 			question: t("Faq.faq3.question"),
 			answer: t("Faq.faq3.answer")
 		},
 		{
+			id: "faq4",
 			question: t("Faq.faq4.question"),
 			answer: t("Faq.faq4.answer")
+		},
+		{
+			id: "selfHosting",
+			question: t("Faq.selfHosting.question"),
+			answer: t("Faq.selfHosting.answer")
 		}
 		// {
 		// 	question: t("Faq.faq5.question"),
@@ -34,7 +46,8 @@ const FAQSection = ({ isFarsi }) => {
 			dir={isRtl ? "rtl" : "ltr"}
 			id="faq"
 			sx={{
-				py: { xs: 10, md: 14 },
+				pb: { xs: 10, md: 14 },
+				pt: { xs: 8, md: 8 },
 				px: { xs: 2, md: 8 },
 				fontFamily: "'Unbounded', 'Ubuntu', sans-serif",
 				direction: isFarsi ? "rtl" : "ltr"
@@ -86,71 +99,112 @@ const FAQSection = ({ isFarsi }) => {
 			>
 				<Box sx={{ display: "flex", justifyContent: "center", flex: { md: 2 } }}>
 					<Box sx={{ width: "100%", overflow: "hidden", maxWidth: { xs: "600px", md: "100%" } }}>
-						{faqs.map(({ question, answer }, idx) => (
-							<Box key={idx}>
-								<Typography
-									variant="h6"
-									sx={{
-										fontWeight: 700,
-										color: "text.primary",
-										fontSize: { xs: "1.1rem", md: "1.2rem" },
-										fontFamily: "'Unbounded', Ubuntu",
-										mb: 2,
-										lineHeight: 1.4
-									}}
-								>
-									{question}
-								</Typography>
+						{faqs.map(({ id, question, answer }, idx) => {
+							const isOpen = openIndex === idx;
+							return (
+								<Box key={idx}>
+									<Box
+										onClick={() => toggleFaq(idx)}
+										sx={{
+											display: "flex",
+											alignItems: "center",
+											justifyContent: "space-between",
+											gap: 2,
+											py: 2.5,
+											cursor: "pointer",
+											userSelect: "none"
+										}}
+									>
+										<Typography
+											variant="h6"
+											sx={{
+												fontWeight: 700,
+												color: "text.primary",
+												fontSize: { xs: "1.1rem", md: "1.2rem" },
+												fontFamily: "'Unbounded', Ubuntu",
+												lineHeight: 1.4
+											}}
+										>
+											{question}
+										</Typography>
+										<Box
+											sx={{
+												flexShrink: 0,
+												display: "flex",
+												alignItems: "center",
+												justifyContent: "center",
+												color: isOpen ? "secondary.main" : "text.secondary",
+												transition: "color 0.2s ease"
+											}}
+										>
+											{isOpen ? <FaMinus size={16} /> : <FaPlus size={16} />}
+										</Box>
+									</Box>
 
-								<Typography
-									variant="body1"
-									sx={{
-										color: "text.secondary",
-										fontFamily: "Ubuntu",
-										fontSize: "1rem",
-										lineHeight: 1.7,
-										mb: 3,
-										width: "100%",
-										overflowWrap: "break-word",
-										wordBreak: "break-word",
-										"& a": {
-											color: "secondary.main",
-											textDecoration: "underline",
-											"&:hover": {
-												color: "secondary.dark"
-											}
-										}
-									}}
-								>
-									{idx === 4 ? (
-										<Trans
-											i18nKey="Faq.faq5.answer"
-											components={{
-												docLink: (
-													<a
-														href="https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ"
-														target="_blank"
-														rel="noopener noreferrer"
-													/>
-												),
-												emailLink: <a href="mailto:developers@smswithoutborders.com" />
+									<Collapse in={isOpen} timeout="auto" unmountOnExit>
+										<Typography
+											variant="body1"
+											sx={{
+												color: "text.secondary",
+												fontFamily: "Ubuntu",
+												fontSize: "1rem",
+												lineHeight: 1.7,
+												pb: 3,
+												width: "100%",
+												overflowWrap: "break-word",
+												wordBreak: "break-word",
+												"& a": {
+													color: "secondary.main",
+													textDecoration: "underline",
+													"&:hover": {
+														color: "secondary.dark"
+													}
+												}
+											}}
+										>
+											{id === "faq5" ? (
+												<Trans
+													i18nKey="Faq.faq5.answer"
+													components={{
+														docLink: (
+															<a
+																href="https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ"
+																target="_blank"
+																rel="noopener noreferrer"
+															/>
+														),
+														emailLink: <a href="mailto:developers@smswithoutborders.com" />
+													}}
+												/>
+											) : id === "selfHosting" ? (
+												<Trans
+													i18nKey="Faq.selfHosting.answer"
+													components={{
+														guideLink: (
+															<a
+																href="https://docs.relaysms.smswithoutborders.afkanerd.com/"
+																target="_blank"
+																rel="noopener noreferrer"
+															/>
+														)
+													}}
+												/>
+											) : (
+												answer
+											)}
+										</Typography>
+									</Collapse>
+
+									{idx < faqs.length - 1 && (
+										<Divider
+											sx={{
+												borderColor: "divider"
 											}}
 										/>
-									) : (
-										answer
 									)}
-								</Typography>
-
-								{idx < faqs.length - 1 && (
-									<Divider
-										sx={{
-											my: 4,
-											borderColor: "divider"
-										}}
-									/>
-								)}
-							</Box>
-						))}
+								</Box>
+							);
+						})}
 					</Box>
 				</Box>
 

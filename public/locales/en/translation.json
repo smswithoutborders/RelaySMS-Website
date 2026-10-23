@@ -187,6 +187,10 @@
 			"question": "Can I get message replies through RelaySMS?",
 			"answer": "Yes you can receive replies in the RelaySMS app using the bridge feature. Replies are sent via SMS to your device, even without an internet connection."
 		},
+		"selfHosting": {
+			"question": "Can I run my own RelaySMS instance?",
+			"answer": "Yes. RelaySMS Publisher can be self-hosted if you'd rather run your own instance instead of relying on ours. Follow the <guideLink>self-hosting guide</guideLink> to get started."
+		},
 		"contact": {
 			"didn't": "Did not find your answer?",
 			"Contant Us": "Contact Us"
@@ -219,6 +223,7 @@
 		"iOSTutorial": "iOS Tutorial",
 		"GatewayClientSetup": "Routing Number Setup",
 		"Troubleshooting": "Troubleshooting",
+		"SelfHosting": "Self-Hosting Guide",
 		"NewsletterTitle": "Subscribe to our newsletter",
 		"NewsletterDescription": "Get RelaySMS updates and release highlights in your mail.",
 		"SubscribeNow": "Subscribe now",
@@ -526,6 +531,10 @@
 		"Preview": "Preview",
 		"Download": "Download",
 		"GuidesHeading": "Guides",
+		"GuidesDescription": "Teaching someone how to use RelaySMS? Share these guides to walk them through it step by step, or use them yourself to learn the ropes.",
+		"SelfHostingHeading": "Run Your Own Instance",
+		"SelfHostingDescription": "RelaySMS is open source, and you don't have to depend on our servers to use it. Anyone can run their own Publisher instance - join the community keeping the network resilient and help more people stay connected during shutdowns.",
+		"SeeSelfHostingGuide": "Set Up Your Own Instance",
 		"PapersHeading": "Research Papers",
 		"PapersDescription": "The team publishes research papers and notes behind the stack, from architecture and encryption to threat modeling. Hosted on the SMSWithoutBorders research library.",
 		"SeeResearchPapers": "See Research Papers",
@@ -617,11 +626,16 @@
 		"CTA": {
 			"SetupGateway": "Setting up a Routing Number",
 			"SMSWithoutBorders": "Learn more about SMSWithoutBorders",
+			"Resources": "Browse Resources",
 			"Contribute": "Contribution Guide"
 		},
 		"WhoBuilt": {
 			"Title": "The team behind RelaySMS",
 			"Description": "RelaySMS is an app under SMSWithoutBorders project, built and maintained by the Afkanerd team with support from open-source contributors and partners. We welcome contributions from the community to improve RelaySMS and expand its reach."
+		},
+		"Resources": {
+			"Title": "Training Others, or Need a Hand Yourself?",
+			"Description": "Whether you're teaching a community how to use RelaySMS or just need help getting set up yourself, we've put together guides and training material for that. We also publish technical papers on how RelaySMS works under the hood."
 		}
 	},
 	"awesomeButton": "Awesome!",

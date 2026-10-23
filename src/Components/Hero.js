@@ -14,6 +14,9 @@ import WhoShouldUse from "./WhoShouldUse";
 import SupportedPlatforms from "./SupportedPlatforms";
 import TrainingGuide from "./TrainingGuide";
 import RelayFeatures from "./RelayFeatures";
+import NewsletterForm from "./NewsletterForm";
+
+const SECTION_SPACING = { xs: 8, md: 15 };
 
 const Hero = () => {
 	const [showCursor, setShowCursor] = useState(true);
@@ -135,14 +138,8 @@ const Hero = () => {
 							<Button
 								variant="text"
 								size="large"
-								onClick={() => {
-									const el = document.getElementById("training-guide");
-									if (el) {
-										const navbarHeight = 100;
-										const top = el.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-										window.scrollTo({ top, behavior: "smooth" });
-									}
-								}}
+								to="/resources"
+								component={Link}
 								sx={{
 									textTransform: "none",
 									color: "text.primary",
@@ -160,18 +157,27 @@ const Hero = () => {
 				</Box>
 			</Box>
 
-			<RelayFeatures />
-			<GettingStarted />
-			<Box my={15}>
-				<TrainingGuide />
+			<Box sx={{ mt: SECTION_SPACING }}>
+				<RelayFeatures />
 			</Box>
-			<WhoShouldUse />
+			<Box sx={{ mt: SECTION_SPACING }}>
+				<GettingStarted />
+			</Box>
+			<Box sx={{ mt: SECTION_SPACING }}>
+				<SupportedPlatforms />
+			</Box>
+			{/* <Box sx={{ mt: SECTION_SPACING }}>
+				<TrainingGuide />
+			</Box> */}
+			<Box sx={{ mt: SECTION_SPACING }}>
+				<WhoShouldUse />
+			</Box>
 			<Box
 				data-aos="fade-up"
 				sx={{
+					mt: { xs: 3, md: 4 },
 					textAlign: "center",
-					px: 2,
-					pb: 4
+					px: 2
 				}}
 			>
 				<Typography variant="body1" color="text.secondary" sx={{ fontFamily: "Ubuntu" }}>
@@ -188,16 +194,26 @@ const Hero = () => {
 				</Typography>
 			</Box>
 
-			<Box mt={15}>
-				<SupportedPlatforms />
-			</Box>
-
-			<Box mt={15}>
+			<Box sx={{ mt: SECTION_SPACING }}>
 				<Blog />
 			</Box>
 
-			<Box mb={15}>
+			<Box sx={{ mt: SECTION_SPACING }}>
 				<FAQ />
+			</Box>
+
+			<Box
+				sx={{
+					mt: SECTION_SPACING,
+					mb: SECTION_SPACING,
+					mx: { xs: 3, md: 6 },
+					textAlign: "center",
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center"
+				}}
+			>
+				<NewsletterForm showHeading large align="center" sx={{ width: "100%", maxWidth: 800 }} />
 			</Box>
 		</>
 	);
