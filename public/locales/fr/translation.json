@@ -187,6 +187,10 @@
 			"question": "Puis-je recevoir des réponses par RelaySMS ?",
 			"answer": "Oui, vous pouvez recevoir des réponses dans l’application RelaySMS via la fonctionnalité Bridge. Les réponses sont envoyées par SMS vers votre appareil, même sans connexion Internet."
 		},
+		"selfHosting": {
+			"question": "Puis-je faire tourner ma propre instance de RelaySMS ?",
+			"answer": "Oui. RelaySMS Publisher peut être auto-hébergé si vous préférez faire tourner votre propre instance plutôt que de dépendre de la nôtre. Suivez le <guideLink>guide d'auto-hébergement</guideLink> pour commencer."
+		},
 		"contact": {
 			"didn't": "Vous n’avez pas trouvé de réponse ?",
 			"Contant Us": "Contactez-nous"
@@ -219,6 +223,7 @@
 		"iOSTutorial": "Tutoriel iOS",
 		"GatewayClientSetup": "Configuration du numéro de routage",
 		"Troubleshooting": "Dépannage",
+		"SelfHosting": "Guide d'auto-hébergement",
 		"NewsletterTitle": "Abonnez-vous à notre newsletter",
 		"NewsletterDescription": "Recevez les mises à jour RelaySMS et les points forts des versions par e-mail.",
 		"SubscribeNow": "S’abonner maintenant",
@@ -526,6 +531,10 @@
 		"Preview": "Aperçu",
 		"Download": "Télécharger",
 		"GuidesHeading": "Guides",
+		"GuidesDescription": "Vous voulez apprendre à quelqu'un à utiliser RelaySMS ? Partagez ces guides pour l'accompagner étape par étape, ou utilisez-les vous-même pour apprendre les bases.",
+		"SelfHostingHeading": "Hébergez votre propre instance",
+		"SelfHostingDescription": "RelaySMS est open source, et vous n'avez pas à dépendre de nos serveurs pour l'utiliser. N'importe qui peut faire tourner sa propre instance de Publisher : rejoignez la communauté qui maintient le réseau résilient et aidez davantage de personnes à rester connectées pendant les coupures.",
+		"SeeSelfHostingGuide": "Configurez votre propre instance",
 		"PapersHeading": "Articles de recherche",
 		"PapersDescription": "L'équipe publie des articles de recherche et des notes sur l'architecture, le chiffrement et la modélisation des menaces. Hébergé sur la bibliothèque de recherche de SMSWithoutBorders.",
 		"SeeResearchPapers": "Voir les articles de recherche",
@@ -617,11 +626,16 @@
 		"CTA": {
 			"SetupGateway": "Configurer un numéro de routage",
 			"SMSWithoutBorders": "En savoir plus sur SMSWithoutBorders",
+			"Resources": "Parcourir les ressources",
 			"Contribute": "Guide de contribution"
 		},
 		"WhoBuilt": {
 			"Title": "L’équipe derrière RelaySMS",
 			"Description": "RelaySMS est une application SMSWithoutBorders, créée et maintenue par l’équipe Afkanerd avec le soutien des contributeurs et partenaires open source. Nous accueillons les contributions de la communauté pour améliorer RelaySMS et élargir sa portée."
+		},
+		"Resources": {
+			"Title": "Vous formez d'autres personnes, ou besoin d'aide vous-même ?",
+			"Description": "Que vous appreniez à une communauté à utiliser RelaySMS ou que vous ayez simplement besoin d'aide pour vous installer, nous avons des guides et du matériel de formation pour ça. Nous publions aussi des articles techniques sur le fonctionnement interne de RelaySMS."
 		}
 	},
 	"awesomeButton": "Super !",

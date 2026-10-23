@@ -187,6 +187,10 @@
 			"question": "¿Puedo recibir respuestas de mensajes a través de RelaySMS?",
 			"answer": "Sí, puedes recibir respuestas en la aplicación RelaySMS usando la función Bridge. Las respuestas se envían por SMS a tu dispositivo, incluso sin conexión a Internet."
 		},
+		"selfHosting": {
+			"question": "¿Puedo ejecutar mi propia instancia de RelaySMS?",
+			"answer": "Sí. RelaySMS Publisher se puede autoalojar si prefieres ejecutar tu propia instancia en lugar de depender de la nuestra. Sigue la <guideLink>guía de autoalojamiento</guideLink> para empezar."
+		},
 		"contact": {
 			"didn't": "¿No encontraste la respuesta?",
 			"Contant Us": "Contáctanos"
@@ -219,6 +223,7 @@
 		"iOSTutorial": "Tutorial de iOS",
 		"GatewayClientSetup": "Configuración del número de enrutamiento",
 		"Troubleshooting": "Solución de problemas",
+		"SelfHosting": "Guía de autoalojamiento",
 		"NewsletterTitle": "Suscríbete a nuestro boletín",
 		"NewsletterDescription": "Recibe actualizaciones de RelaySMS y novedades de versiones en tu correo.",
 		"SubscribeNow": "Suscríbete ahora",
@@ -526,6 +531,10 @@
 		"Preview": "Vista previa",
 		"Download": "Descargar",
 		"GuidesHeading": "Guías",
+		"GuidesDescription": "¿Vas a enseñarle a alguien a usar RelaySMS? Comparte estas guías para acompañarlo paso a paso, o úsalas tú mismo para aprender lo básico.",
+		"SelfHostingHeading": "Ejecuta tu propia instancia",
+		"SelfHostingDescription": "RelaySMS es de código abierto y no necesitas depender de nuestros servidores para usarlo. Cualquiera puede ejecutar su propia instancia de Publisher: únete a la comunidad que mantiene la red resiliente y ayuda a que más personas sigan conectadas durante los apagones.",
+		"SeeSelfHostingGuide": "Configura tu propia instancia",
 		"PapersHeading": "Artículos de investigación",
 		"PapersDescription": "El equipo publica artículos de investigación y notas sobre la arquitectura, el cifrado y el modelado de amenazas. Alojado en la biblioteca de investigación de SMSWithoutBorders.",
 		"SeeResearchPapers": "Ver artículos de investigación",
@@ -617,11 +626,16 @@
 		"CTA": {
 			"SetupGateway": "Configurar un número de enrutamiento",
 			"SMSWithoutBorders": "Más información sobre SMSWithoutBorders",
+			"Resources": "Explorar recursos",
 			"Contribute": "Guía de contribución"
 		},
 		"WhoBuilt": {
 			"Title": "El equipo detrás de RelaySMS",
 			"Description": "RelaySMS es una aplicación de SMSWithoutBorders, creada y mantenida por el equipo de Afkanerd con el apoyo de colaboradores y socios de código abierto. Agradecemos las contribuciones de la comunidad para mejorar RelaySMS y ampliar su alcance."
+		},
+		"Resources": {
+			"Title": "¿Capacitas a otros o necesitas ayuda tú mismo?",
+			"Description": "Ya sea que estés enseñando a una comunidad a usar RelaySMS o simplemente necesites ayuda para configurarlo tú mismo, tenemos guías y material de capacitación para eso. También publicamos documentos técnicos sobre cómo funciona RelaySMS por dentro."
 		}
 	},
 	"awesomeButton": "¡Genial!",

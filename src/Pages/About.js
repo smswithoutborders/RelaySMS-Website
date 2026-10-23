@@ -1,7 +1,10 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { Box, Button, Typography, Container, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { MobileOutlined, CloudOutlined, CheckCircleOutlined } from "@ant-design/icons";
+
+const SECTION_SPACING = { xs: 8, md: 15 };
 
 const AboutFlowIllustration = ({ t }) => {
 	const theme = useTheme();
@@ -218,7 +221,7 @@ const About = () => {
 				</Stack>
 			</Box>
 
-			<Box sx={{ mx: "auto", mt: { xs: 20, md: 30 } }}>
+			<Box sx={{ mx: "auto", mt: SECTION_SPACING }}>
 				<Stack spacing={6} direction={{ xs: "column", md: "row" }} alignItems="center">
 					<AboutFlowIllustration t={t} />
 					<Box
@@ -277,9 +280,8 @@ const About = () => {
 				sx={{
 					maxWidth: 900,
 					mx: "auto",
-					mt: { xs: 20, md: 30 },
+					mt: SECTION_SPACING,
 					p: { xs: 3, md: 4 },
-					mb: 20,
 					textAlign: "center"
 				}}
 			>
@@ -320,14 +322,60 @@ const About = () => {
 						{t("About.CTA.SMSWithoutBorders", "Learn more about SMSWithoutBorders")}
 					</Button>
 					<Button
+						component={Link}
+						to="/contributing"
 						variant="text"
-						href="/contributing"
 						size="large"
 						sx={{ textTransform: "none", p: 1.6, color: "primary.light" }}
 					>
 						{t("About.CTA.Contribute", "Contribution Guide")}
 					</Button>
 				</Box>
+			</Box>
+
+			<Box
+				sx={{
+					maxWidth: 900,
+					mx: "auto",
+					mt: SECTION_SPACING,
+					mb: SECTION_SPACING,
+					p: { xs: 3, md: 4 },
+					textAlign: "center"
+				}}
+			>
+				<Typography
+					sx={{
+						fontFamily: "'Unbounded', Ubuntu",
+						fontWeight: 700,
+						fontSize: { xs: "1.15rem", md: "1.3rem" },
+						mb: 1.5
+					}}
+				>
+					{t("About.Resources.Title", "Training Others, or Need a Hand Yourself?")}
+				</Typography>
+				<Typography
+					variant="body1"
+					sx={{
+						color: "text.secondary",
+						fontSize: { xs: "1rem", md: "1.1rem" },
+						lineHeight: 1.8,
+						mb: 3
+					}}
+				>
+					{t(
+						"About.Resources.Description",
+						"Whether you're teaching a community how to use RelaySMS or just need help getting set up yourself, we've put together guides and training material for that. We also publish technical papers on how RelaySMS works under the hood."
+					)}
+				</Typography>
+				<Button
+					component={Link}
+					to="/resources"
+					variant="contained"
+					size="large"
+					sx={{ textTransform: "none", borderRadius: "8px", p: 1.6 }}
+				>
+					{t("About.CTA.Resources", "Browse Resources")}
+				</Button>
 			</Box>
 		</Container>
 	);

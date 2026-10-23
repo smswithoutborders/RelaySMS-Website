@@ -1,11 +1,11 @@
 import React from "react";
 import { Box, Typography, Button, Paper } from "@mui/material";
-import { FaFilePdf, FaEye, FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import EnglishTrainingGuide from "../assets/RelaySMS Training Guide English New.pdf";
 import FrenchTrainingGuide from "../assets/RelaySMS Training Guide French New.pdf";
-import RoutingNumberGuide from "../assets/Routing Number Guide.pdf";
-import { DownloadOutlined } from "@ant-design/icons";
+// import RoutingNumberGuide from "../assets/Routing Number Guide.pdf";
+import TrainingGuide from "../Components/TrainingGuide";
 
 const Resources = () => {
 	const { t, i18n } = useTranslation();
@@ -29,7 +29,7 @@ const Resources = () => {
 			),
 			file: FrenchTrainingGuide,
 			filename: "RelaySMS Training Guide French.pdf"
-		},
+		}
 		// {
 		// 	title: t("Resources.Items.RoutingNumberGuide.Title", "Routing Number Guide"),
 		// 	description: t(
@@ -42,6 +42,7 @@ const Resources = () => {
 	];
 
 	const RESEARCH_URL = "https://smswithoutborders.com/research";
+	const SELF_HOSTING_URL = "https://docs.relaysms.smswithoutborders.afkanerd.com/";
 
 	const downloadResource = (url, filename) => {
 		const link = document.createElement("a");
@@ -70,14 +71,14 @@ const Resources = () => {
 					minHeight: "85vh",
 					maxWidth: "1200px",
 					mx: "auto",
-					pt: { xs: "120px", md: "160px", lg: "230px" },
+					pt: { xs: "120px", md: "160px", lg: "180px" },
 					pb: 8
 				}}
 			>
 				<Typography
 					variant="h2"
 					sx={{
-						mb: 2,
+						mb: 4,
 						fontSize: { md: "2rem", xs: "1.5rem" },
 						color: "text.primary",
 						fontWeight: 700,
@@ -97,10 +98,13 @@ const Resources = () => {
 					}}
 				>
 					{t(
-						"Resources.Description",
-						"Download guides and materials to help you get the most out of RelaySMS."
+						"Resources.GuidesDescription",
+						"Teaching someone how to use RelaySMS? Share these guides to walk them through it step by step, or use them yourself to learn the ropes."
 					)}
 				</Typography>
+
+				
+				<TrainingGuide />
 
 				<Typography
 					variant="h5"
@@ -114,105 +118,64 @@ const Resources = () => {
 						px: { xs: 2, sm: 4 }
 					}}
 				>
-					{t("Resources.GuidesHeading", "Guides")}
+					{t("Resources.SelfHostingHeading", "Run Your Own Instance")}
 				</Typography>
 
-				<Box
-					sx={{
-						display: "grid",
-						gridTemplateColumns: {
-							xs: "1fr",
-							sm: "repeat(2, 1fr)",
-							md: "repeat(2, 1fr)"
-						},
-						gap: 4,
-						width: "100%",
-						px: { xs: 2, sm: 4 },
-						mb: { xs: 8, md: 16 }
-					}}
-				>
-					{resources.map(({ title, description, file, filename }, index) => (
-						<Box
-							key={index}
+				<Box sx={{ px: { xs: 2, sm: 4 }, mb: 8 }}>
+					<Paper
+						elevation={0}
+						sx={{
+							p: 4,
+							bgcolor: "background.paper",
+							border: "1px solid",
+							borderColor: "divider",
+							display: "flex",
+							flexDirection: "column",
+							textAlign: "left",
+							transition: "transform 0.3s ease, box-shadow 0.3s ease",
+							"&:hover": {
+								transform: "translateY(-4px)",
+								boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)"
+							}
+						}}
+					>
+						<Typography
+							variant="body1"
 							sx={{
-								borderRadius: "6px",
-								padding: 3,
-								display: "flex",
-								flexDirection: "column",
-								alignItems: "flex-start",
-								textAlign: "left",
-								transition: "transform 0.3s ease, box-shadow 0.3s ease",
-								border: "1px solid",
-								borderColor: "divider",
+								color: "text.secondary",
+								fontFamily: "Ubuntu",
+								lineHeight: 1.7,
+								mb: 4
+							}}
+						>
+							{t(
+								"Resources.SelfHostingDescription",
+								"RelaySMS is open source, and you don't have to depend on our servers to use it. Anyone can run their own Publisher instance — join the community keeping the network resilient and help more people stay connected during shutdowns."
+							)}
+						</Typography>
+						<Button
+							component="a"
+							href={SELF_HOSTING_URL}
+							target="_blank"
+							rel="noopener noreferrer"
+							variant="text"
+							endIcon={<FaExternalLinkAlt size={12} />}
+							sx={{
+								color: "text.primary",
+								textTransform: "none",
+								fontFamily: "Ubuntu",
+								fontSize: "16px",
+								px: 0,
+								alignSelf: "flex-start",
 								"&:hover": {
-									transform: "translateY(-4px)",
-									boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)"
+									color: "secondary.main",
+									backgroundColor: "transparent"
 								}
 							}}
 						>
-							<FaFilePdf
-								style={{
-									fontSize: "1.6rem",
-									color: "#e53935",
-									marginBottom: "2.5rem"
-								}}
-							/>
-							<Typography variant="body1" sx={{ fontWeight: 600, mb: 1.5, color: "text.primary" }}>
-								{title}
-							</Typography>
-							<Typography
-								variant="body2"
-								sx={{ mb: 3, color: "text.secondary", lineHeight: 1.6, flex: 1 }}
-							>
-								{description}
-							</Typography>
-							<Box sx={{ display: "flex", gap: 6 }}>
-								<Button
-									href={file}
-									target="_blank"
-									rel="noopener noreferrer"
-									startIcon={<FaEye />}
-									sx={{
-										color: "text.primary",
-										textTransform: "none",
-										fontWeight: 400,
-										fontSize: "15px",
-										padding: 0,
-										textDecoration: "none",
-										transition: "all 0.3s ease",
-										"&:hover": {
-											color: "text.primary",
-											textDecorationColor: "primary.main",
-											backgroundColor: "transparent"
-										}
-									}}
-								>
-									{t("Resources.Preview", "Preview")}
-								</Button>
-								<Button
-									onClick={() => downloadResource(file, filename)}
-									startIcon={<DownloadOutlined />}
-									sx={{
-										color: "text.primary",
-										textTransform: "none",
-										fontWeight: 400,
-										fontSize: "15px",
-										padding: 0,
-										textDecoration: "none",
-
-										transition: "all 0.3s ease",
-										"&:hover": {
-											color: "text.primary",
-											textDecorationColor: "primary.main",
-											backgroundColor: "transparent"
-										}
-									}}
-								>
-									{t("Resources.Download", "Download")}
-								</Button>
-							</Box>
-						</Box>
-					))}
+							{t("Resources.SeeSelfHostingGuide", "Set Up Your Own Instance")}
+						</Button>
+					</Paper>
 				</Box>
 
 				<Typography
