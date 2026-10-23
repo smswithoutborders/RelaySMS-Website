@@ -1,4 +1,4 @@
-import { Chip, Grid, Typography, Link, Divider } from "@mui/material";
+import { Chip, Stack, Typography, Link, Divider } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link as RouterLink } from "react-router-dom";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
@@ -109,8 +109,8 @@ const Footer = () => {
 				overflow: "hidden"
 			}}
 		>
-			<Grid
-				container
+			<Stack
+				direction={{ xs: "column", md: "row" }}
 				spacing={{ xs: 4, md: 3 }}
 				sx={{
 					px: { xs: 2, md: 8, lg: 12 },
@@ -120,34 +120,27 @@ const Footer = () => {
 					alignItems: "center"
 				}}
 			>
-				<Grid
-					item
-					xs={12}
-					sm={8}
-					md={5}
-					lg={4}
+				<Box
 					sx={{
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "flex-start",
 						gap: 3,
 						px: { md: 1 },
-						pr: { md: 6 }
+						pr: { md: 6 },
+						flex: { md: 5, lg: 4 }
 					}}
 				>
 					<NewsletterForm dark sx={{ width: "100%" }} />
-				</Grid>
-				<Grid
-					item
-					xs={12}
-					sm={12}
-					md={7}
-					lg={8}
+				</Box>
+				<Box
 					sx={{
 						display: "flex",
 						flexDirection: "column",
 						alignItems: { xs: "flex-start", md: "flex-end" },
-						px: { md: 1 }
+						px: { md: 1 },
+						width: "100%",
+						flex: { md: 7, lg: 8 }
 					}}
 				>
 					<Box
@@ -332,8 +325,8 @@ const Footer = () => {
 							<SiBluesky size={18} />
 						</IconButton>
 					</Box>
-				</Grid>
-			</Grid>
+				</Box>
+			</Stack>
 
 			<Divider
 				sx={{
@@ -342,22 +335,18 @@ const Footer = () => {
 					borderColor: "#232324"
 				}}
 			/>
-			<Grid container sx={{ px: { xs: 2, md: 5 }, pt: 3 }}>
-				<Grid item xs={12}>
-					<Box sx={{ textAlign: "center" }}>
-						<Typography
-							variant="body2"
-							sx={{
-								fontSize: "0.85rem",
-								color: "#cccccc",
-								mb: 0
-							}}
-						>
-							&copy; {new Date().getFullYear()} {t("Footer.copyright")}
-						</Typography>
-					</Box>
-				</Grid>
-			</Grid>
+			<Box sx={{ px: { xs: 2, md: 5 }, pt: 3, textAlign: "center" }}>
+				<Typography
+					variant="body2"
+					sx={{
+						fontSize: "0.85rem",
+						color: "#cccccc",
+						mb: 0
+					}}
+				>
+					&copy; {new Date().getFullYear()} {t("Footer.copyright")}
+				</Typography>
+			</Box>
 		</Box>
 	);
 };

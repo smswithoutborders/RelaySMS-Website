@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Container, Typography, Tabs, Tab, Grid } from "@mui/material";
+import { Box, Container, Typography, Tabs, Tab, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import { FaAndroid, FaApple, FaDesktop, FaCheck, FaTimes } from "react-icons/fa";
@@ -88,20 +88,29 @@ const FeatureRow = ({ label, supported }) => {
 };
 
 const TabPanel = ({ platform, features }) => (
-	<Grid container spacing={4} justifyContent="center" alignItems="center" sx={{ mt: 1 }}>
-		<Grid item xs={12} md={5} sx={{ display: "flex", justifyContent: "center" }}>
+	<Stack
+		direction={{ xs: "column", md: "row" }}
+		spacing={4}
+		justifyContent="center"
+		alignItems="center"
+		sx={{ mt: 1 }}
+	>
+		<Box sx={{ display: "flex", justifyContent: "center", flex: { md: 5 }, width: "100%" }}>
 			<Box
 				component="img"
 				src={platform.image}
 				alt={platform.imageAlt}
 				sx={{ maxWidth: "100%", objectFit: "contain", borderRadius: 2 }}
 			/>
-		</Grid>
-		<Grid
-			item
-			xs={12}
-			md={7}
-			sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+		</Box>
+		<Box
+			sx={{
+				display: "flex",
+				flexDirection: "column",
+				alignItems: "center",
+				flex: { md: 7 },
+				width: "100%"
+			}}
 		>
 			<Box sx={{ width: "100%", maxWidth: 380 }}>
 				<Typography
@@ -126,8 +135,8 @@ const TabPanel = ({ platform, features }) => (
 					))}
 				</Box>
 			</Box>
-		</Grid>
-	</Grid>
+		</Box>
+	</Stack>
 );
 
 const AppFeatures = () => {

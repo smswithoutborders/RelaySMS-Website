@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography, Button, Paper } from "@mui/material";
+import { Box, Container, Stack, Typography, Button, Paper } from "@mui/material";
 import { GithubOutlined, AppleFilled } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 
@@ -119,8 +119,8 @@ const Download = () => {
 						)}
 					</Typography>
 				</Box>
-				<Grid container spacing={6} alignItems="center">
-					<Grid item xs={12} md={7}>
+				<Stack direction={{ xs: "column", md: "row" }} spacing={6} alignItems="center">
+					<Box sx={{ flex: { md: 7 }, width: "100%" }}>
 						<Typography
 							variant="body1"
 							sx={{
@@ -279,15 +279,14 @@ const Download = () => {
 								</Button>
 							</Paper>
 						))}
-					</Grid>
-					<Grid
-						item
-						xs={12}
-						md={5}
+					</Box>
+					<Box
 						sx={{
 							display: "flex",
 							justifyContent: "center",
-							mb: { xs: 6, md: 0 }
+							mb: { xs: 6, md: 0 },
+							flex: { md: 5 },
+							width: "100%"
 						}}
 					>
 						<Box
@@ -302,8 +301,8 @@ const Download = () => {
 								borderRadius: 3
 							}}
 						/>
-					</Grid>
-				</Grid>
+					</Box>
+				</Stack>
 			</Container>
 		</Box>
 	);

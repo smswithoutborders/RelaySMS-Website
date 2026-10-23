@@ -525,6 +525,10 @@
 		"Description": "Descarga guías y materiales para aprovechar al máximo RelaySMS.",
 		"Preview": "Vista previa",
 		"Download": "Descargar",
+		"GuidesHeading": "Guías",
+		"PapersHeading": "Artículos de investigación",
+		"PapersDescription": "El equipo publica artículos de investigación y notas sobre la arquitectura, el cifrado y el modelado de amenazas. Alojado en la biblioteca de investigación de SMSWithoutBorders.",
+		"SeeResearchPapers": "Ver artículos de investigación",
 		"Items": {
 			"EnglishTrainingGuide": {
 				"Title": "Guía de capacitación (inglés)",

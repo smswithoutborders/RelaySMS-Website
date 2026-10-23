@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, Typography, CircularProgress, Grid, Container } from "@mui/material";
+import { Box, Typography, CircularProgress, Stack, Container } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useTranslation, Trans } from "react-i18next";
 
@@ -93,13 +93,12 @@ const SupportedPlatforms = () => {
 				px: { xs: 3, md: 6, lg: 10 },
 			}}
 		>
-			<Grid
-				container
+			<Stack
+				direction={{ xs: "column", md: isRtl ? "row-reverse" : "row" }}
 				spacing={{ xs: 5, md: 8 }}
 				alignItems="center"
-				direction={isRtl ? "row-reverse" : "row"}
 			>
-				<Grid item xs={12} md={6}>
+				<Box sx={{ flex: { md: 1 } }}>
 					<Typography
 						variant="h4"
 						sx={{
@@ -130,12 +129,18 @@ const SupportedPlatforms = () => {
 							components={{ bold: <strong /> }}
 						/>
 					</Typography>
-				</Grid>
+				</Box>
 
-				<Grid item xs={12} md={6}>
-					<Grid container spacing={{ xs: 3, sm: 4 }} alignItems="center">
+				<Box sx={{ flex: { md: 1 }, width: "100%" }}>
+					<Stack
+						direction="row"
+						flexWrap="wrap"
+						spacing={{ xs: 3, sm: 4 }}
+						useFlexGap
+						alignItems="center"
+					>
 						{platforms.map((platform) => (
-							<Grid item key={platform.name} xs="auto">
+							<Box key={platform.name}>
 								<Box
 									onMouseEnter={() => setHoveredPlatform(platform.name)}
 									onMouseLeave={() => setHoveredPlatform(null)}
@@ -173,11 +178,11 @@ const SupportedPlatforms = () => {
 										}}
 									/>
 								</Box>
-							</Grid>
+							</Box>
 						))}
-					</Grid>
-				</Grid>
-			</Grid>
+					</Stack>
+				</Box>
+			</Stack>
 		</Container>
 	);
 };
