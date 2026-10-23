@@ -73,7 +73,7 @@ const Hero = () => {
 						<Typography
 							sx={{
 								mb: { xs: 2, md: 3, lg: 1 },
-								fontSize: { xs: "1.9rem", md: "2.5rem", lg: "2.5rem", xl: "3.8rem" },
+								fontSize: { xs: "2rem", md: "2.5rem", lg: "2.5rem", xl: "3.8rem" },
 								whiteSpace: "pre-wrap",
 								fontWeight: 700,
 								wordBreak: "break-word",
