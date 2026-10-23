@@ -103,25 +103,25 @@ const Resources = () => {
 					)}
 				</Typography>
 
-				
 				<TrainingGuide />
 
 				<Typography
 					variant="h5"
 					sx={{
 						mb: 3,
+						mt: 12,
 						fontSize: { xs: "1.15rem", md: "1.3rem" },
 						color: "text.primary",
 						fontWeight: 700,
 						fontFamily: "'Unbounded', Ubuntu",
-						textAlign: "left",
+						textAlign: { xs: "center", md: "left" },
 						px: { xs: 2, sm: 4 }
 					}}
 				>
 					{t("Resources.SelfHostingHeading", "Run Your Own Instance")}
 				</Typography>
 
-				<Box sx={{ px: { xs: 2, sm: 4 }, mb: 8 }}>
+				<Box sx={{ px: { xs: 2, sm: 4 }, mb: { xs: 10, md: 12 } }}>
 					<Paper
 						elevation={0}
 						sx={{
@@ -186,14 +186,14 @@ const Resources = () => {
 						color: "text.primary",
 						fontWeight: 700,
 						fontFamily: "'Unbounded', Ubuntu",
-						textAlign: "left",
+						textAlign: { xs: "center", md: "left" },
 						px: { xs: 2, sm: 4 }
 					}}
 				>
 					{t("Resources.PapersHeading", "Research Papers")}
 				</Typography>
 
-				<Box sx={{ px: { xs: 2, sm: 4 }, mb: 8 }}>
+				<Box sx={{ px: { xs: 2, sm: 4 }, mb: { xs: 10, md: 8 } }}>
 					<Paper
 						elevation={0}
 						sx={{
