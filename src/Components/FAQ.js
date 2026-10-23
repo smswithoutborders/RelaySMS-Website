@@ -92,7 +92,7 @@ const FAQSection = ({ isFarsi }) => {
 				spacing={4}
 				sx={{
 					maxWidth: "1200px",
-					mx: { md: "auto", xs: -2 },
+					mx: { xs: 0, md: "auto" },
 					width: "100%",
 					mt: 5
 				}}
