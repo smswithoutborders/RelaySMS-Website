@@ -77,7 +77,7 @@ const Contact = () => {
 						fontSize: { md: "2rem", xs: "1.5rem" },
 						color: "text.primary",
 						fontWeight: 700,
-						fontFamily: "'Unbounded', Ubuntu",
+						fontFamily: "'Unbounded'",
 						mt: { xs: 6, md: 0 }
 					}}
 				>
@@ -199,7 +199,7 @@ const Contact = () => {
 					sx={{
 						fontSize: { xs: "1.5rem", md: "1.9rem" },
 						fontWeight: 800,
-						fontFamily: "'Unbounded', Ubuntu",
+						fontFamily: "'Unbounded'",
 						color: "text.primary",
 						lineHeight: 1.25
 					}}
@@ -210,7 +210,6 @@ const Contact = () => {
 					sx={{
 						fontSize: { xs: "0.95rem", md: "1.05rem" },
 						color: "text.secondary",
-						fontFamily: "Ubuntu",
 						maxWidth: 520,
 						lineHeight: 1.75
 					}}
@@ -227,7 +226,6 @@ const Contact = () => {
 					sx={{
 						bgcolor: "primary.main",
 						color: "#ffffff",
-						fontFamily: "Ubuntu",
 						fontWeight: 600,
 						fontSize: "1rem",
 						textTransform: "none",

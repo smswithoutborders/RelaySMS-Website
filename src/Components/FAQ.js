@@ -35,10 +35,6 @@ const FAQSection = ({ isFarsi }) => {
 			question: t("Faq.selfHosting.question"),
 			answer: t("Faq.selfHosting.answer")
 		}
-		// {
-		// 	question: t("Faq.faq5.question"),
-		// 	answer: t("Faq.faq5.answer")
-		// }
 	];
 
 	return (
@@ -49,7 +45,7 @@ const FAQSection = ({ isFarsi }) => {
 				pb: { xs: 10, md: 14 },
 				pt: { xs: 8, md: 8 },
 				px: { xs: 2, md: 8 },
-				fontFamily: "'Unbounded', 'Ubuntu', sans-serif",
+				fontFamily: "'Unbounded', sans-serif",
 				direction: isFarsi ? "rtl" : "ltr"
 			}}
 		>
@@ -64,7 +60,7 @@ const FAQSection = ({ isFarsi }) => {
 					sx={{
 						fontSize: { xs: "1.5rem", md: "1.9rem" },
 						color: "text.primary",
-						fontFamily: "'Unbounded', Ubuntu",
+						fontFamily: "'Unbounded'",
 						mb: 2
 					}}
 				>
@@ -75,7 +71,6 @@ const FAQSection = ({ isFarsi }) => {
 					sx={{
 						fontSize: "1.2rem",
 						color: "text.secondary",
-						fontFamily: "Ubuntu",
 						mt: 1,
 						px: 2
 					}}
@@ -121,7 +116,7 @@ const FAQSection = ({ isFarsi }) => {
 												fontWeight: 700,
 												color: "text.primary",
 												fontSize: { xs: "1.1rem", md: "1.2rem" },
-												fontFamily: "'Unbounded', Ubuntu",
+												fontFamily: "'Unbounded'",
 												lineHeight: 1.4
 											}}
 										>
@@ -146,7 +141,6 @@ const FAQSection = ({ isFarsi }) => {
 											variant="body1"
 											sx={{
 												color: "text.secondary",
-												fontFamily: "Ubuntu",
 												fontSize: "1rem",
 												lineHeight: 1.7,
 												pb: 3,
@@ -220,84 +214,82 @@ const FAQSection = ({ isFarsi }) => {
 						flex: { md: 1 }
 					}}
 				>
-						<Typography
-							variant="h6"
+					<Typography
+						variant="h6"
+						sx={{
+							fontWeight: 600,
+							color: "text.primary",
+							fontSize: { xs: "1rem", md: "1.1rem" },
+							fontFamily: "'Unbounded'",
+							mb: 2,
+							lineHeight: 1.3,
+							overflowWrap: "break-word",
+							wordBreak: "break-word"
+						}}
+					>
+						{t("Faq.support.header")}
+					</Typography>
+
+					<Box sx={{ mb: 3 }}>
+						<Button
+							component="a"
+							href="https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ"
+							target="_blank"
+							rel="noopener noreferrer"
+							endIcon={<FaExternalLinkAlt size={12} />}
 							sx={{
-								fontWeight: 600,
-								color: "text.primary",
-								fontSize: { xs: "1rem", md: "1.1rem" },
-								fontFamily: "'Unbounded', Ubuntu",
+								display: "flex",
+								justifyContent: "flex-start",
+								alignItems: "center",
+								color: "text.secondary",
+								textTransform: "none",
+								fontSize: "1rem",
+								p: 0,
 								mb: 2,
-								lineHeight: 1.3,
-								overflowWrap: "break-word",
-								wordBreak: "break-word"
+								"&:hover": {
+									backgroundColor: "transparent",
+									color: "secondary.main"
+								}
 							}}
 						>
-							{t("Faq.support.header")}
+							{t("Faq.support.troubleshootingGuide")}
+						</Button>
+					</Box>
+
+					<Box>
+						<Typography
+							variant="body1"
+							sx={{
+								color: "text.primary",
+								fontFamily: "Unbounded",
+								fontWeight: 600,
+								fontSize: "1rem",
+								mb: 1,
+								mt: 6
+							}}
+						>
+							{t("Faq.support.mailSupport")}
 						</Typography>
-
-						<Box sx={{ mb: 3 }}>
-							<Button
-								component="a"
-								href="https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ"
-								target="_blank"
-								rel="noopener noreferrer"
-								endIcon={<FaExternalLinkAlt size={12} />}
-								sx={{
-									display: "flex",
-									justifyContent: "flex-start",
-									alignItems: "center",
-									color: "text.secondary",
-									textTransform: "none",
-									fontSize: "1rem",
-									fontFamily: "Ubuntu",
-									p: 0,
-									mb: 2,
-									"&:hover": {
-										backgroundColor: "transparent",
-										color: "secondary.main"
-									}
-								}}
-							>
-								{t("Faq.support.troubleshootingGuide")}
-							</Button>
-						</Box>
-
-						<Box>
-							<Typography
-								variant="body1"
-								sx={{
-									color: "text.primary",
-									fontFamily: "Unbounded, Ubuntu",
-									fontWeight: 600,
-									fontSize: "1rem",
-									mb: 1,
-									mt: 6
-								}}
-							>
-								{t("Faq.support.mailSupport")}
-							</Typography>
-							<Button
-								component="a"
-								href="mailto:developers@smswithoutborders.com"
-								sx={{
-									alignItems: "center",
-									color: "text.secondary",
-									textTransform: "none",
-									overflowWrap: "break-word",
-									wordBreak: "break-word",
-									fontSize: "1rem",
-									fontFamily: "Ubuntu",
-									p: 0,
-									"&:hover": {
-										backgroundColor: "transparent",
-										color: "secondary.main"
-									}
-								}}
-							>
-								developers@smswithoutborders.com
-							</Button>
-						</Box>
+						<Button
+							component="a"
+							href="mailto:developers@smswithoutborders.com"
+							sx={{
+								alignItems: "center",
+								color: "text.secondary",
+								textTransform: "none",
+								overflowWrap: "break-word",
+								wordBreak: "break-word",
+								fontSize: "1rem",
+								p: 0,
+								"&:hover": {
+									backgroundColor: "transparent",
+									color: "secondary.main"
+								}
+							}}
+						>
+							developers@smswithoutborders.com
+						</Button>
+					</Box>
 				</Paper>
 			</Stack>
 		</Box>

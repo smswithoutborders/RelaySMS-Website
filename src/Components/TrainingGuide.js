@@ -19,7 +19,7 @@ function TrainingGuide() {
 						fontSize: { xs: "1.2rem", md: "1.6rem" },
 						color: "text.primary",
 						fontWeight: 600,
-						fontFamily: "'Unbounded', Ubuntu",
+						fontFamily: "'Unbounded'",
 						textAlign: "center"
 					}}
 				>
@@ -48,7 +48,6 @@ function TrainingGuide() {
 							py: 1,
 							px: 3,
 							fontSize: "14px",
-							fontFamily: "Ubuntu",
 							transition: "all 0.3s ease",
 							borderRadius: "8px",
 							"&:hover": {
@@ -76,7 +75,6 @@ function TrainingGuide() {
 							py: 1,
 							px: 3,
 							fontSize: "14px",
-							fontFamily: "Ubuntu",
 							transition: "all 0.3s ease",
 							borderRadius: "8px",
 							"&:hover": {

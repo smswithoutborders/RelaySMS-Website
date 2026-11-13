@@ -76,7 +76,6 @@ const FeatureRow = ({ label, supported }) => {
 			</Box>
 			<Typography
 				sx={{
-					fontFamily: "Ubuntu",
 					fontSize: "0.9rem",
 					color: supported ? "text.primary" : "text.disabled"
 				}}
@@ -115,7 +114,7 @@ const TabPanel = ({ platform, features }) => (
 			<Box sx={{ width: "100%", maxWidth: 380 }}>
 				<Typography
 					sx={{
-						fontFamily: "'Unbounded', Ubuntu",
+						fontFamily: "'Unbounded'",
 						fontWeight: 700,
 						fontSize: { xs: "1rem", md: "1.15rem" },
 						color: "text.primary",
@@ -125,7 +124,7 @@ const TabPanel = ({ platform, features }) => (
 					{platform.label}
 				</Typography>
 				<Typography
-					sx={{ fontFamily: "Ubuntu", fontSize: "0.8rem", color: "text.secondary", mb: 2.5 }}
+					sx={{ fontSize: "0.8rem", color: "text.secondary", mb: 2.5 }}
 				>
 					{platform.badge}
 				</Typography>
@@ -151,7 +150,7 @@ const AppFeatures = () => {
 				<Typography
 					variant="h5"
 					sx={{
-						fontFamily: "'Unbounded', Ubuntu",
+						fontFamily: "'Unbounded'",
 						fontWeight: 700,
 						color: "text.primary",
 						fontSize: { xs: "1.5rem", md: "1.9rem" },
@@ -162,7 +161,7 @@ const AppFeatures = () => {
 					{t("AppFeatures.Header", "App Features")}
 				</Typography>
 				<Typography
-					sx={{ fontFamily: "Ubuntu", color: "text.secondary", textAlign: "center", mb: 4 }}
+					sx={{ color: "text.secondary", textAlign: "center", mb: 4 }}
 				>
 					{t("AppFeatures.Subheader", "Compare what's available across Android, iOS, and Desktop.")}
 				</Typography>
@@ -177,7 +176,6 @@ const AppFeatures = () => {
 						"& .MuiTabs-flexContainer": { gap: 1 },
 						"& .MuiTab-root": {
 							textTransform: "none",
-							fontFamily: "Ubuntu",
 							fontWeight: 600,
 							fontSize: "0.9rem",
 							color: "text.secondary",

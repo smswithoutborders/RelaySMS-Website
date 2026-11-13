@@ -185,7 +185,7 @@ const Contributing = () => {
 				<Typography
 					variant="h2"
 					sx={{
-						fontFamily: "'Unbounded', Ubuntu",
+						fontFamily: "'Unbounded'",
 						fontWeight: 800,
 						fontSize: { xs: "1.5rem", md: "1.9rem" },
 						lineHeight: 1.15,
@@ -230,7 +230,7 @@ const Contributing = () => {
 							textTransform: "none",
 							borderRadius: 2,
 							color: "text.primary",
-							borderColor: "divider",
+							borderColor: "divider"
 						}}
 					>
 						{t("Blog.joinTelegram")}
@@ -252,7 +252,7 @@ const Contributing = () => {
 					<Box>
 						<Typography
 							sx={{
-								fontFamily: "'Unbounded', Ubuntu",
+								fontFamily: "'Unbounded'",
 								fontWeight: 700,
 								fontSize: { xs: "1.2rem", md: "1.2rem" },
 								mb: 0.5
@@ -356,7 +356,7 @@ const Contributing = () => {
 											fontSize: "0.9rem",
 											color: "text.primary",
 											textDecoration: "none",
-											fontFamily: "'Unbounded', Ubuntu",
+											fontFamily: "'Unbounded'",
 											"&:hover": { color: "primary.main" }
 										}}
 									>
@@ -479,7 +479,7 @@ const Contributing = () => {
 			<Box sx={{ maxWidth: 1100, mx: "auto", px: { xs: 3, md: 4 }, py: { xs: 6, md: 8 } }}>
 				<Typography
 					sx={{
-						fontFamily: "'Unbounded', Ubuntu",
+						fontFamily: "'Unbounded'",
 						fontWeight: 700,
 						fontSize: { xs: "1.2rem", md: "1.3rem" },
 						mb: 1
@@ -523,7 +523,7 @@ const Contributing = () => {
 									top: 16,
 									right: isRtl ? "unset" : 16,
 									left: isRtl ? 16 : "unset",
-									fontFamily: "'Unbounded', Ubuntu",
+									fontFamily: "'Unbounded'",
 									fontWeight: 800,
 									fontSize: "1.5rem",
 									color: isDark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)",
@@ -545,7 +545,7 @@ const Contributing = () => {
 			<Box sx={{ maxWidth: 1100, mx: "auto", px: { xs: 3, md: 4 }, py: { xs: 6, md: 8 } }}>
 				<Typography
 					sx={{
-						fontFamily: "'Unbounded', Ubuntu",
+						fontFamily: "'Unbounded'",
 						fontSize: { xs: "1.2rem", md: "1.3rem" },
 						fontWeight: 700,
 						mb: 1
@@ -614,59 +614,6 @@ const Contributing = () => {
 						</Box>
 					))}
 				</Box>
-{/* 
-				<Box
-					sx={{
-						mt: 8,
-						p: 5,
-						borderRadius: 2,
-						border: "1px solid",
-						borderColor: "divider",
-						bgcolor: "background.paper",
-						textDecoration: "none",
-						color: "inherit",
-						transition: "border-color 0.2s, box-shadow 0.2s",
-						"&:hover": {
-							borderColor: "primary.main",
-							boxShadow: `0 0 0 1px ${theme.palette.primary.main}22`
-						}
-					}}
-				>
-					<Stack
-						direction={{ xs: "column", sm: "row" }}
-						justifyContent="center"
-						alignItems="center"
-						spacing={4}
-						mt={2}
-					>
-						<Box>
-							<Typography variant="h6" sx={{ fontFamily: "'Unbounded', Ubuntu", fontWeight: 600 }}>
-								{t("Contributing.GatewayClients.title")}
-							</Typography>
-						</Box>
-						<Box>
-							<Typography variant="body1" sx={{ color: "text.secondary" }}>
-								{t("Contributing.GatewayClients.description")}
-							</Typography>
-							<Button
-								variant="contained"
-								component="a"
-								href="https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide"
-								target="_blank"
-								rel="noopener noreferrer"
-								sx={{
-									mt: 2,
-									color: isDark ? "#000000" : "#ffffff",
-									bgcolor: isDark ? "#fff" : "primary.main",
-									textTransform: "none",
-									borderRadius: 2
-								}}
-							>
-								{t("Contributing.GatewayClients.cta")}
-							</Button>
-						</Box>
-					</Stack>
-				</Box> */}
 			</Box>
 
 			{/* ── Join the Community ── */}
@@ -690,7 +637,7 @@ const Contributing = () => {
 					sx={{
 						fontSize: { xs: "1.5rem", md: "1.9rem" },
 						fontWeight: 800,
-						fontFamily: "'Unbounded', Ubuntu",
+						fontFamily: "'Unbounded'",
 						color: "text.primary",
 						lineHeight: 1.25
 					}}
@@ -701,7 +648,6 @@ const Contributing = () => {
 					sx={{
 						fontSize: { xs: "0.95rem", md: "1.05rem" },
 						color: "text.secondary",
-						fontFamily: "Ubuntu",
 						maxWidth: 520,
 						lineHeight: 1.75
 					}}
@@ -719,7 +665,6 @@ const Contributing = () => {
 					sx={{
 						bgcolor: "primary.main",
 						color: "#ffffff",
-						fontFamily: "Ubuntu",
 						fontWeight: 600,
 						fontSize: "1rem",
 						textTransform: "none",

@@ -3,15 +3,18 @@ import { useTranslation } from "react-i18next";
 import { FormControl, Select, MenuItem, Box } from "@mui/material";
 import { KeyboardArrowDown } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
+import { darkTheme } from "../theme";
 
 const LanguageSwitcher = ({ theme: themeProp }) => {
 	const { i18n } = useTranslation();
 	const [selectedLang, setSelectedLang] = useState("en");
 	const muiTheme = useTheme();
-	const isDark = themeProp === "dark" || (!themeProp && muiTheme.palette.mode === "dark");
-	const textColor = isDark ? "#ffffff" : muiTheme.palette.text.primary;
-	const bgColor = isDark ? "#0b0e11" : muiTheme.palette.background.paper;
-	const hoverColor = isDark ? "#1a1a1a" : muiTheme.palette.action.hover;
+	const activeTheme = themeProp === "dark" ? darkTheme : muiTheme;
+	const isDark = activeTheme.palette.mode === "dark";
+	const textColor = activeTheme.palette.text.primary;
+	const bgColor = activeTheme.palette.background.paper;
+	const hoverColor = activeTheme.palette.action.hover;
+	const dividerColor = activeTheme.palette.divider;
 
 	const languages = {
 		en: { flag: "🇺🇸", name: "English" },
@@ -86,13 +89,26 @@ const LanguageSwitcher = ({ theme: themeProp }) => {
 								vertical: "top",
 								horizontal: "left"
 							},
-					PaperProps: {
-						sx: {
-							bgcolor: bgColor,
-							color: textColor,
-							"& .MuiMenuItem-root": {
-								"&:hover": {
-									backgroundColor: hoverColor
+					slotProps: {
+						paper: {
+							elevation: 0,
+							sx: {
+								bgcolor: bgColor,
+								color: textColor,
+								borderRadius: "12px",
+								border: "1px solid",
+								borderColor: dividerColor,
+								backdropFilter: "blur(20px)",
+								backgroundImage: "none",
+								boxShadow: isDark
+									? "0 10px 24px rgba(0, 0, 0, 0.35)"
+									: "0 12px 28px rgba(0, 24, 113, 0.12)",
+								mt: 1,
+								overflow: "visible",
+								"& .MuiMenuItem-root": {
+									"&:hover": {
+										backgroundColor: hoverColor
+									}
 								}
 							}
 						}

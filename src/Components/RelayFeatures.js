@@ -18,32 +18,32 @@ function RelayFeatures() {
 	return (
 		<Container maxWidth="lg" dir={isRtl ? "rtl" : "ltr"} sx={{ py: { xs: 7, md: 10 } }}>
 			<Stack spacing={{ xs: 4, md: 8 }}>
-				<Box>
-					<Typography
-						variant="h2"
-						sx={{
-							fontSize: { xs: "1.8rem", md: "2rem" },
-							fontFamily: "'Unbounded', Ubuntu",
-							fontWeight: 700,
-							lineHeight: 1.25,
-							textAlign: "center",
-							mb: 2
-						}}
-					>
-						{t("RelayFeatures.Header", "Made for private, resilient communication")}
-					</Typography>
-					<Typography sx={{ color: "text.secondary", fontFamily: "Ubuntu", lineHeight: 1.75, textAlign: "center", maxWidth: 700, mx: "auto" }}>
-						{t(
-							"RelayFeatures.Description",
-							"RelaySMS is designed to keep your communication in your hands before, during, and after a shutdown."
-						)}
-					</Typography>
-				</Box>
 				<Box
 					sx={{
 						display: "grid",
-						gridTemplateColumns: { xs: "1fr", sm: "repeat(3, minmax(0, 1fr))" },
-						gap: 2
+						gridTemplateColumns: "1fr",
+						gap: 0,
+						"& > div": {
+							borderBottom: "1px solid",
+							borderColor: "divider"
+						},
+						"& > div:last-of-type": {
+							borderBottom: "none"
+						},
+						"@media (min-width:600px)": {
+							gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+							"& > div": {
+								borderBottom: "1px solid",
+								borderRight: "1px solid",
+								borderColor: "divider"
+							},
+							"& > div:nth-of-type(3n)": {
+								borderRight: "none"
+							},
+							"& > div:nth-last-of-type(-n+3)": {
+								borderBottom: "none"
+							}
+						}
 					}}
 				>
 					{Array.isArray(features) &&
@@ -54,16 +54,10 @@ function RelayFeatures() {
 									key={feature.title}
 									sx={{
 										minHeight: 176,
-										p: 2.5,
-										border: "1px solid",
-										borderColor: "divider",
-										borderRadius: "2px",
-										bgcolor: "background.paper",
-										transition: "border-color 0.2s ease, transform 0.2s ease",
-										"&:hover": {
-											borderColor: "secondary.main",
-											transform: "translateY(-3px)"
-										}
+										p: 3
+										// "&:hover img": {
+										// 	filter: "grayscale(0%)"
+										// }
 									}}
 								>
 									<Box
@@ -73,18 +67,23 @@ function RelayFeatures() {
 										aria-hidden="true"
 										sx={{
 											width: "100%",
-											height: 78,
+											height: 68,
 											objectFit: "contain",
 											objectPosition: "left center",
 											mb: 2,
-											display: "block"
+											display: "block",
+											// filter: "grayscale(100%)",
+											transition: "filter 0.3s ease"
 										}}
 									/>
 									<Box>
-										<Typography sx={{ fontFamily: "'Unbounded', Ubuntu", fontWeight: 600, mb: 0.5 }}>
+										<Typography
+											variant="h6"
+											sx={{ fontFamily: "'Unbounded'", fontWeight: 600, mb: 0.5 }}
+										>
 											{feature.title}
 										</Typography>
-										<Typography sx={{ color: "text.secondary", fontFamily: "Ubuntu", lineHeight: 1.65 }}>
+										<Typography sx={{ color: "text.secondary", lineHeight: 1.65 }}>
 											{feature.description}
 										</Typography>
 									</Box>

@@ -27,7 +27,6 @@ const AlertBanner = () => {
 					color: "white",
 					fontSize: { xs: "13px", sm: "14px", md: "15px" },
 					textAlign: "center",
-					fontFamily: "Ubuntu",
 					lineHeight: 1.4
 				}}
 			>

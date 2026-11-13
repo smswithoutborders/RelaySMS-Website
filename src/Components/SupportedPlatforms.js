@@ -105,7 +105,7 @@ const SupportedPlatforms = () => {
 							fontSize: { xs: "1.5rem", md: "1.9rem" },
 							color: "text.primary",
 							fontWeight: 700,
-							fontFamily: "'Unbounded', Ubuntu",
+							fontFamily: "'Unbounded'",
 							lineHeight: 1.25,
 							mb: 1.5
 						}}
@@ -115,7 +115,6 @@ const SupportedPlatforms = () => {
 
 					<Typography
 						sx={{
-							fontFamily: "Ubuntu",
 							fontSize: "1rem",
 							color: "text.secondary",
 							lineHeight: 1.7,

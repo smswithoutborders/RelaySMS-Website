@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Button, Paper } from "@mui/material";
+import { Box, Typography, Button, Paper, Stack } from "@mui/material";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import EnglishTrainingGuide from "../assets/RelaySMS Training Guide English New.pdf";
@@ -82,7 +82,7 @@ const Resources = () => {
 						fontSize: { md: "2rem", xs: "1.5rem" },
 						color: "text.primary",
 						fontWeight: 700,
-						fontFamily: "'Unbounded', Ubuntu"
+						fontFamily: "'Unbounded'"
 					}}
 				>
 					{t("Resources.Title", "Resources")}
@@ -105,149 +105,148 @@ const Resources = () => {
 
 				<TrainingGuide />
 
-				<Typography
-					variant="h5"
-					sx={{
-						mb: 3,
-						mt: 12,
-						fontSize: { xs: "1.15rem", md: "1.3rem" },
-						color: "text.primary",
-						fontWeight: 700,
-						fontFamily: "'Unbounded', Ubuntu",
-						textAlign: { xs: "center", md: "left" },
-						px: { xs: 2, sm: 4 }
-					}}
-				>
-					{t("Resources.SelfHostingHeading", "Run Your Own Instance")}
-				</Typography>
+				<Box sx={{ px: { xs: 2, sm: 4 }, mt: 12, mb: { xs: 10, md: 8 } }}>
+					<Stack direction={{ xs: "column", md: "row" }} spacing={4}>
+						<Box sx={{ flex: 1 }}>
+							<Typography
+								variant="h5"
+								sx={{
+									mb: 3,
+									fontSize: { xs: "1.15rem", md: "1.3rem" },
+									color: "text.primary",
+									fontWeight: 700,
+									fontFamily: "'Unbounded'",
+									textAlign: { xs: "center", md: "left" }
+								}}
+							>
+								{t("Resources.SelfHostingHeading", "Run Your Own Instance")}
+							</Typography>
+							<Paper
+								elevation={0}
+								sx={{
+									p: 4,
+									height: "100%",
+									bgcolor: "background.paper",
+									border: "1px solid",
+									borderColor: "divider",
+									display: "flex",
+									flexDirection: "column",
+									textAlign: "left",
+									transition: "transform 0.3s ease, box-shadow 0.3s ease",
+									"&:hover": {
+										transform: "translateY(-4px)",
+										boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)"
+									}
+								}}
+							>
+								<Typography
+									variant="body1"
+									sx={{
+										color: "text.secondary",
+										lineHeight: 1.7,
+										mb: 4
+									}}
+								>
+									{t(
+										"Resources.SelfHostingDescription",
+										"RelaySMS is open source, and you don't have to depend on our servers to use it. Anyone can run their own Publisher instance — join the community keeping the network resilient and help more people stay connected during shutdowns."
+									)}
+								</Typography>
+								<Button
+									component="a"
+									href={SELF_HOSTING_URL}
+									target="_blank"
+									rel="noopener noreferrer"
+									variant="text"
+									endIcon={<FaExternalLinkAlt size={12} />}
+									sx={{
+										color: "text.primary",
+										textTransform: "none",
+										fontSize: "16px",
+										px: 0,
+										mt: "auto",
+										alignSelf: "flex-start",
+										"&:hover": {
+											color: "secondary.main",
+											backgroundColor: "transparent"
+										}
+									}}
+								>
+									{t("Resources.SeeSelfHostingGuide", "Set Up Your Own Instance")}
+								</Button>
+							</Paper>
+						</Box>
 
-				<Box sx={{ px: { xs: 2, sm: 4 }, mb: { xs: 10, md: 12 } }}>
-					<Paper
-						elevation={0}
-						sx={{
-							p: 4,
-							bgcolor: "background.paper",
-							border: "1px solid",
-							borderColor: "divider",
-							display: "flex",
-							flexDirection: "column",
-							textAlign: "left",
-							transition: "transform 0.3s ease, box-shadow 0.3s ease",
-							"&:hover": {
-								transform: "translateY(-4px)",
-								boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)"
-							}
-						}}
-					>
-						<Typography
-							variant="body1"
-							sx={{
-								color: "text.secondary",
-								fontFamily: "Ubuntu",
-								lineHeight: 1.7,
-								mb: 4
-							}}
-						>
-							{t(
-								"Resources.SelfHostingDescription",
-								"RelaySMS is open source, and you don't have to depend on our servers to use it. Anyone can run their own Publisher instance — join the community keeping the network resilient and help more people stay connected during shutdowns."
-							)}
-						</Typography>
-						<Button
-							component="a"
-							href={SELF_HOSTING_URL}
-							target="_blank"
-							rel="noopener noreferrer"
-							variant="text"
-							endIcon={<FaExternalLinkAlt size={12} />}
-							sx={{
-								color: "text.primary",
-								textTransform: "none",
-								fontFamily: "Ubuntu",
-								fontSize: "16px",
-								px: 0,
-								alignSelf: "flex-start",
-								"&:hover": {
-									color: "secondary.main",
-									backgroundColor: "transparent"
-								}
-							}}
-						>
-							{t("Resources.SeeSelfHostingGuide", "Set Up Your Own Instance")}
-						</Button>
-					</Paper>
-				</Box>
-
-				<Typography
-					variant="h5"
-					sx={{
-						mb: 3,
-						fontSize: { xs: "1.15rem", md: "1.3rem" },
-						color: "text.primary",
-						fontWeight: 700,
-						fontFamily: "'Unbounded', Ubuntu",
-						textAlign: { xs: "center", md: "left" },
-						px: { xs: 2, sm: 4 }
-					}}
-				>
-					{t("Resources.PapersHeading", "Research Papers")}
-				</Typography>
-
-				<Box sx={{ px: { xs: 2, sm: 4 }, mb: { xs: 10, md: 8 } }}>
-					<Paper
-						elevation={0}
-						sx={{
-							p: 4,
-							bgcolor: "background.paper",
-							border: "1px solid",
-							borderColor: "divider",
-							display: "flex",
-							flexDirection: "column",
-							textAlign: "left",
-							transition: "transform 0.3s ease, box-shadow 0.3s ease",
-							"&:hover": {
-								transform: "translateY(-4px)",
-								boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)"
-							}
-						}}
-					>
-						<Typography
-							variant="body1"
-							sx={{
-								color: "text.secondary",
-								fontFamily: "Ubuntu",
-								lineHeight: 1.7,
-								mb: 4
-							}}
-						>
-							{t(
-								"Resources.PapersDescription",
-								"The RelaySMS team publishes white papers and technical write-ups on the project's architecture, protocols, and security design. Browse the latest papers on the SMSWithoutBorders research library."
-							)}
-						</Typography>
-						<Button
-							component="a"
-							href={RESEARCH_URL}
-							target="_blank"
-							rel="noopener noreferrer"
-							variant="text"
-							endIcon={<FaExternalLinkAlt size={12} />}
-							sx={{
-								color: "text.primary",
-								textTransform: "none",
-								fontFamily: "Ubuntu",
-								fontSize: "16px",
-								px: 0,
-								alignSelf: "flex-start",
-								"&:hover": {
-									color: "secondary.main",
-									backgroundColor: "transparent"
-								}
-							}}
-						>
-							{t("Resources.SeeResearchPapers", "See Research Papers")}
-						</Button>
-					</Paper>
+						<Box sx={{ flex: 1 }}>
+							<Typography
+								variant="h5"
+								sx={{
+									mb: 3,
+									fontSize: { xs: "1.15rem", md: "1.3rem" },
+									color: "text.primary",
+									fontWeight: 700,
+									fontFamily: "'Unbounded'",
+									textAlign: { xs: "center", md: "left" }
+								}}
+							>
+								{t("Resources.PapersHeading", "Research Papers")}
+							</Typography>
+							<Paper
+								elevation={0}
+								sx={{
+									p: 4,
+									height: "100%",
+									bgcolor: "background.paper",
+									border: "1px solid",
+									borderColor: "divider",
+									display: "flex",
+									flexDirection: "column",
+									textAlign: "left",
+									transition: "transform 0.3s ease, box-shadow 0.3s ease",
+									"&:hover": {
+										transform: "translateY(-4px)",
+										boxShadow: "0 8px 25px rgba(0, 0, 0, 0.1)"
+									}
+								}}
+							>
+								<Typography
+									variant="body1"
+									sx={{
+										color: "text.secondary",
+										lineHeight: 1.7,
+										mb: 4
+									}}
+								>
+									{t(
+										"Resources.PapersDescription",
+										"The RelaySMS team publishes white papers and technical write-ups on the project's architecture, protocols, and security design. Browse the latest papers on the SMSWithoutBorders research library."
+									)}
+								</Typography>
+								<Button
+									component="a"
+									href={RESEARCH_URL}
+									target="_blank"
+									rel="noopener noreferrer"
+									variant="text"
+									endIcon={<FaExternalLinkAlt size={12} />}
+									sx={{
+										color: "text.primary",
+										textTransform: "none",
+										fontSize: "16px",
+										px: 0,
+										mt: "auto",
+										alignSelf: "flex-start",
+										"&:hover": {
+											color: "secondary.main",
+											backgroundColor: "transparent"
+										}
+									}}
+								>
+									{t("Resources.SeeResearchPapers", "See Research Papers")}
+								</Button>
+							</Paper>
+						</Box>
+					</Stack>
 				</Box>
 			</Box>
 		</Box>
