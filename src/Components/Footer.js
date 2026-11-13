@@ -45,11 +45,7 @@ const Footer = () => {
 					href: "https://docs.smswithoutborders.com/docs/iOS%20Tutorial/Getting-Started-With-iOS",
 					external: true
 				},
-				{
-					label: t("Footer.GatewayClientSetup"),
-					href: "https://docs.smswithoutborders.com/docs/Gateway%20Clients%20Guide/GatewayClientsGuide",
-					external: true
-				},
+
 				{
 					label: t("Footer.Troubleshooting"),
 					href: "https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ",
@@ -103,12 +99,12 @@ const Footer = () => {
 			component="footer"
 			dir={isRtl ? "rtl" : "ltr"}
 			sx={{
-				bgcolor: "#07080a",
+				bgcolor: "#000000",
 				// color: "#ffffff",
-				py: { xs: 4, md: 6 },
+				py: { xs: 8, md: 10 },
 				width: "100%",
-				borderTopLeftRadius: { xs: 28, md: 60 },
-				borderTopRightRadius: { xs: 28, md: 60 },
+				borderTopLeftRadius: { xs: 28, md: 80 },
+				borderTopRightRadius: { xs: 28, md: 80 },
 				borderTop: "1px solid",
 				borderColor: "divider",
 				overflow: "hidden"
@@ -176,7 +172,7 @@ const Footer = () => {
 									variant="h6"
 									sx={{
 										fontWeight: 600,
-										fontFamily: "'Unbounded', Ubuntu",
+										fontFamily: "'Unbounded'",
 										mb: 3,
 										fontSize: { xs: "1rem", md: "1.1rem" },
 										color: "#ffffff",

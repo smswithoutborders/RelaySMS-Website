@@ -49,7 +49,7 @@ const NewsletterSubscribed = () => {
 						<Typography
 							variant="h4"
 							sx={{
-								fontFamily: "'Unbounded', Ubuntu",
+								fontFamily: "'Unbounded'",
 								fontWeight: 700,
 								fontSize: { xs: "1.4rem", md: "2rem" }
 							}}

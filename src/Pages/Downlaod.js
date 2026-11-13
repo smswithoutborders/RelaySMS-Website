@@ -98,7 +98,7 @@ const Download = () => {
 						sx={{
 							fontSize: { md: "2rem", xs: "1.5rem" },
 							color: "text.primary",
-							fontFamily: "'Unbounded', Ubuntu",
+							fontFamily: "'Unbounded'",
 							mt: { xs: 6, md: 0 }
 						}}
 					>
@@ -109,7 +109,6 @@ const Download = () => {
 						sx={{
 							fontSize: "1.2rem",
 							color: "text.secondary",
-							fontFamily: "Ubuntu",
 							mt: 2
 						}}
 					>
@@ -177,7 +176,7 @@ const Download = () => {
 									>
 										{item.title}
 									</Typography>
-									<Typography variant="body2" color="text.secondary" sx={{ fontFamily: "Ubuntu" }}>
+									<Typography variant="body2" color="text.secondary">
 										{item.description}
 									</Typography>
 								</Box>
@@ -185,7 +184,6 @@ const Download = () => {
 									variant="contained"
 									sx={{
 										fontSize: "0.9rem",
-										fontFamily: "Ubuntu",
 										bgcolor: "secondary.main",
 										color: "#fff",
 										fontWeight: 400,
@@ -257,7 +255,7 @@ const Download = () => {
 									>
 										{item.title}
 									</Typography>
-									<Typography variant="body2" color="text.secondary" sx={{ fontFamily: "Ubuntu" }}>
+									<Typography variant="body2" color="text.secondary">
 										{item.description}
 									</Typography>
 								</Box>
@@ -266,7 +264,6 @@ const Download = () => {
 									sx={{
 										bgcolor: "primary.main",
 										fontSize: "0.9rem",
-										fontFamily: "Ubuntu",
 										color: "#fff",
 										fontWeight: 400,
 										textTransform: "none",

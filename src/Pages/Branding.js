@@ -387,7 +387,7 @@ bgcolor: asset.name.includes("White") ? undefined : "background.paper",
 				</Box>
 
 				<Box sx={{ mb: 8, mt: 10 }}>
-					<Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8, fontFamily: "Ubuntu" }}>
+					<Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
 						<strong style={{fontFamily: "Unbounded"}}>{t("Branding.guidelines.logoUsage")}</strong>{" "}
 						{t("Branding.guidelines.logoUsageText")}
 					</Typography>

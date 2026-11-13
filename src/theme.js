@@ -1,13 +1,13 @@
 import { createTheme } from "@mui/material/styles";
 
 const baseTypography = {
-	fontFamily: "Ubuntu, sans-serif",
-	h1: { fontFamily: "'Unbounded', Ubuntu, sans-serif" },
-	h2: { fontFamily: "'Unbounded', Ubuntu, sans-serif" },
-	h3: { fontFamily: "'Unbounded', Ubuntu, sans-serif" },
-	h4: { fontFamily: "'Unbounded', Ubuntu, sans-serif" },
-	h5: { fontFamily: "'Unbounded', Ubuntu, sans-serif" },
-	h6: { fontFamily: "'Unbounded', Ubuntu, sans-serif" }
+	fontFamily: "'Mona Sans Variable', sans-serif",
+	h1: { fontFamily: "'Unbounded', sans-serif" },
+	h2: { fontFamily: "'Unbounded', sans-serif" },
+	h3: { fontFamily: "'Unbounded', sans-serif" },
+	h4: { fontFamily: "'Unbounded', sans-serif" },
+	h5: { fontFamily: "'Unbounded', sans-serif" },
+	h6: { fontFamily: "'Unbounded', sans-serif" }
 };
 
 export const lightTheme = createTheme({
@@ -40,9 +40,9 @@ export const darkTheme = createTheme({
 	palette: {
 		mode: "dark",
 		primary: {
-			main: "#213faa",
+			main: "#001871",
 			light: "#4285F4",
-			dark: "#001871",
+			dark: "#000158",
 			contrastText: "#ffffff"
 		},
 		secondary: {
@@ -50,8 +50,8 @@ export const darkTheme = createTheme({
 			contrastText: "#0e1117"
 		},
 		background: {
-			default: "#0c0f13",
-			paper: "#0b0e11"
+			default: "#0d0e10",
+			paper: "#121314"
 		},
 		text: {
 			primary: "#e6e8ed",

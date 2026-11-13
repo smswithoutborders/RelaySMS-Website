@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
+import "@fontsource-variable/mona-sans";
 import "./App.css";
 import "./index.css";
 import App from "./App";

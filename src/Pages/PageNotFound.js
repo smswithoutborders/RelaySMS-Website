@@ -26,7 +26,7 @@ export default function PageNotFound() {
 							fontSize: { xs: "8rem", sm: "12rem", md: "16rem" },
 							fontWeight: 900,
 							lineHeight: 0.8,
-							fontFamily: "'Unbounded', 'Ubuntu', sans-serif",
+							fontFamily: "'Unbounded', sans-serif",
 							mb: 6
 						}}
 					>
@@ -38,7 +38,7 @@ export default function PageNotFound() {
 						sx={{
 							fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
 							fontWeight: 600,
-							fontFamily: "'Unbounded', 'Ubuntu', sans-serif",
+							fontFamily: "'Unbounded', sans-serif",
 							mb: 2
 						}}
 					>
@@ -60,58 +60,36 @@ export default function PageNotFound() {
 						)}
 					</Typography>
 
-					<Button
-						component="a"
-						href="/"
-						variant="contained"
-						size="large"
-						startIcon={<FaHouse />}
-						sx={{
-							bgcolor: "secondary.main",
-							color: "primary.main",
-							fontWeight: 600,
-							py: 1.5,
-							px: 4,
-							fontSize: "1rem",
-							borderRadius: "50px",
-							textTransform: "none",
-							boxShadow: "0 8px 24px rgba(255, 158, 67, 0.4)",
-							transition: "all 0.3s ease",
-							"&:hover": {
-								bgcolor: "primary.main",
-								color: "secondary.contrastText",
-								transform: "translateY(-2px)",
-								boxShadow: "0 12px 32px rgba(255, 158, 67, 0.6)"
-							}
-						}}
+					<Stack
+						direction={{ xs: "column", sm: "row" }}
+						spacing={2}
+						sx={{ width: { xs: "100%", sm: "auto" }, alignSelf: "flex-start" }}
 					>
-						{t("404.homeButton", "Go Back Home")}
-					</Button>
-
-					<Button
-						onClick={() => window.history.back()}
-						variant="outlined"
-						size="large"
-						startIcon={<FaArrowRight style={{ transform: "rotate(180deg)" }} />}
-						sx={{
-							color: "white",
-							borderColor: "rgba(255, 255, 255, 0.5)",
-							fontWeight: 600,
-							py: 1.5,
-							px: 4,
-							fontSize: "1.1rem",
-							borderRadius: "50px",
-							textTransform: "none",
-							transition: "all 0.3s ease",
-							"&:hover": {
-								borderColor: "white",
-								bgcolor: "rgba(255, 255, 255, 0.1)",
-								transform: "translateY(-2px)"
-							}
-						}}
-					>
-						{t("404.backButton", "Go Back")}
-					</Button>
+						<Button
+							onClick={() => window.history.back()}
+							variant="outlined"
+							size="large"
+							startIcon={<FaArrowRight style={{ transform: "rotate(180deg)" }} />}
+							sx={{
+								color: "white",
+								borderColor: "rgba(255, 255, 255, 0.5)",
+								fontWeight: 600,
+								py: 1.5,
+								px: 4,
+								fontSize: "1.1rem",
+								borderRadius: "50px",
+								textTransform: "none",
+								transition: "all 0.3s ease",
+								"&:hover": {
+									borderColor: "white",
+									bgcolor: "rgba(255, 255, 255, 0.1)",
+									transform: "translateY(-2px)"
+								}
+							}}
+						>
+							{t("404.backButton", "Go Back")}
+						</Button>
+					</Stack>
 				</Stack>
 			</Container>
 		</Box>

@@ -33,7 +33,7 @@ const NewsletterUnsubscribed = () => {
 					<Typography
 						variant="h4"
 						sx={{
-							fontFamily: "'Unbounded', Ubuntu",
+							fontFamily: "'Unbounded'",
 							fontWeight: 700,
 							fontSize: { xs: "1.25rem", md: "1.9rem" }
 						}}

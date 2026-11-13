@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
@@ -107,6 +106,21 @@ export default function Navigation() {
 		setAnchorElDevelopers(null);
 	};
 
+	const navMenuPaperSx = {
+		borderRadius: "12px",
+		border: "1px solid",
+		borderColor: "divider",
+		backdropFilter: "blur(20px)",
+		backgroundImage: "none",
+		boxShadow: (theme) =>
+			theme.palette.mode === "dark"
+				? "0 10px 24px rgba(0, 0, 0, 0.35)"
+				: "0 12px 28px rgba(0, 24, 113, 0.12)",
+		minWidth: "280px",
+		mt: 1,
+		overflow: "visible"
+	};
+
 	const developerMenuItemSx = {
 		my: 0.25,
 		mx: 0.5,
@@ -124,14 +138,22 @@ export default function Navigation() {
 	};
 
 	return (
-		<AppBar
+		<Box
+			component="header"
 			dir={isRtl ? "rtl" : "ltr"}
-			position="fixed"
-			elevation={0}
 			sx={{
-				backgroundColor: scrolled ? "background.default" : "transparent",
-				left: 0,
-				right: 0,
+				position: "fixed",
+				top: { xs: 12, sm: 16, md: 20 },
+				left: "50%",
+				right: "auto",
+				transform: "translateX(-50%)",
+				width: { xs: "calc(100% - 24px)", sm: "calc(100% - 40px)", md: "calc(100% - 48px)" },
+				maxWidth: 1620,
+				borderRadius: "20px",
+				border: "1px solid",
+				borderColor: "divider",
+				backgroundColor: "background.paper",
+				backdropFilter: "blur(20px)",
 				zIndex: (theme) => theme.zIndex.drawer + 1,
 				transition: "all 0.3s ease",
 				height: 70,
@@ -140,21 +162,21 @@ export default function Navigation() {
 				boxShadow: (theme) =>
 					scrolled
 						? theme.palette.mode === "dark"
-							? "0 4px 24px rgba(0,0,0,0.3)"
-							: "0 4px 20px rgba(0,24,113,0.07)"
-						: "none"
+							? "0 10px 30px rgba(0,0,0,0.4)"
+							: "0 10px 28px rgba(0,24,113,0.12)"
+						: theme.palette.mode === "dark"
+							? "0 6px 20px rgba(0,0,0,0.25)"
+							: "0 6px 18px rgba(0,24,113,0.06)"
 			}}
 		>
 			<Toolbar
 				sx={{
-					maxWidth: 1826,
-					mx: "auto",
 					width: "100%",
 					display: "flex",
 					justifyContent: "flex-start",
 					alignItems: "center",
-					px: { xs: 1, sm: 2 },
-					minHeight: { xs: 64, sm: 72 },
+					px: { xs: 1.5, sm: 2.5 },
+					minHeight: { xs: 64, sm: 70 },
 					height: "100%",
 					transition: "all 0.3s ease"
 				}}
@@ -182,10 +204,10 @@ export default function Navigation() {
 					sx={{
 						display: { xs: "none", md: "flex" },
 						alignItems: "center",
-						gap: 3,
+						gap: { md: 2, lg: 3 },
 						flexGrow: 1,
 						justifyContent: "flex-start",
-						ml: 3
+						ml: { md: 2, lg: 3 }
 					}}
 				>
 					{navLinks.map((link, index) =>
@@ -205,6 +227,7 @@ export default function Navigation() {
 									backgroundSize: "0% 2px",
 									backgroundRepeat: "no-repeat",
 									backgroundPosition: "left bottom",
+									whiteSpace: "nowrap",
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
 										backgroundSize: "100% 2px"
@@ -228,6 +251,7 @@ export default function Navigation() {
 									backgroundSize: "0% 2px",
 									backgroundRepeat: "no-repeat",
 									backgroundPosition: "left bottom",
+									whiteSpace: "nowrap",
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
 										backgroundSize: "100% 2px",
@@ -252,6 +276,7 @@ export default function Navigation() {
 							backgroundSize: "0% 2px",
 							backgroundRepeat: "no-repeat",
 							backgroundPosition: "left bottom",
+							whiteSpace: "nowrap",
 							transition: "all 0.3s ease-in-out",
 							"&:hover": {
 								backgroundSize: "100% 2px",
@@ -268,19 +293,10 @@ export default function Navigation() {
 						onClose={handleCloseDevelopersMenu}
 						anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
 						transformOrigin={{ vertical: "top", horizontal: "left" }}
-						PaperProps={{
-							elevation: 0,
-							sx: {
-								mt: 1,
-								minWidth: 250,
-								borderRadius: "12px",
-								border: "1px solid",
-								borderColor: "divider",
-								backgroundImage: "none",
-								boxShadow: (theme) =>
-									theme.palette.mode === "dark"
-										? "0 10px 24px rgba(0, 0, 0, 0.35)"
-										: "0 12px 28px rgba(0, 24, 113, 0.12)"
+						slotProps={{
+							paper: {
+								elevation: 0,
+								sx: navMenuPaperSx
 							}
 						}}
 						MenuListProps={{
@@ -335,6 +351,7 @@ export default function Navigation() {
 							borderRadius: "8px",
 							px: 2,
 							minWidth: "auto",
+							whiteSpace: "nowrap",
 							"&:hover": {
 								borderColor: "secondary.main",
 								color: "secondary.main",
@@ -452,21 +469,7 @@ export default function Navigation() {
 							horizontal: "right"
 						}}
 						sx={{
-							"& .MuiPaper-root": {
-								borderRadius: "12px",
-								boxShadow: "0 8px 32px rgba(0, 0, 0, 0.12)",
-								border: "1px solid",
-								borderColor: "divider",
-								backdropFilter: "blur(20px)",
-								backgroundImage: "none",
-								boxShadow: (theme) =>
-									theme.palette.mode === "dark"
-										? "0 10px 24px rgba(0, 0, 0, 0.35)"
-										: "0 12px 28px rgba(0, 24, 113, 0.12)",
-								minWidth: "280px",
-								mt: 1,
-								overflow: "visible",
-							},
+							"& .MuiPaper-root": navMenuPaperSx,
 							"& .MuiList-root": {
 								padding: "12px 0"
 							},
@@ -628,6 +631,6 @@ export default function Navigation() {
 					</Menu>
 				</Box>
 			</Toolbar>
-		</AppBar>
+		</Box>
 	);
 }

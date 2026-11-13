@@ -72,13 +72,15 @@
 		"AndroidButton": "دانلود برای اندروید",
 		"iOSButton": "دانلود برای iOS",
 		"FlowNodes": {
-			"relaySublabel": "گوشی شما",
-			"encryptedLabel": "رمزگذاری‌شده",
-			"encryptedSublabel": "پیامک",
-			"relayCloudLabel": "ابر رله",
-			"relayCloudSublabel": "دروازه",
-			"platformLabel": "پلتفرم",
-			"platformSublabel": "تحویل شده"
+			"smsLabel": "پیامک",
+			"publisherLabel": "Relay Publisher",
+			"platformLabel": "پلتفرم"
+		},
+		"FlowStatus": {
+			"ready": "برای ارسال ضربه بزنید",
+			"sending": "در حال ارسال…",
+			"relaying": "در حال انتقال…",
+			"published": "منتشر شد"
 		}
 	},
 	"HowRelaySMSWorks": {
@@ -622,20 +624,29 @@
 			"Title": "RelaySMS از SMS برای عبور از سانسور و قطع اینترنت استفاده می‌کند",
 			"Subtitle": "سانسور و قطع اینترنت مانع ارتباط شما نخواهد شد. RelaySMS یک پروژه رایگان و متن‌باز است که به شما اجازه می‌دهد هنگام نداشتن دسترسی اینترنتی، پیام‌هایی را به پلتفرم‌های محبوبی مانند Gmail، Telegram، Bluesky و بیشتر ارسال کنید."
 		},
+		"Origin": {
+			"Title": "همه‌چیز از کجا شروع شد",
+			"Description": "در ژانویه ۲۰۱۷، اینترنت در مناطق انگلیسی‌زبان کامرون برای ماه‌ها قطع شد. این رویداد منجر به ایجاد یک تیم از توسعه‌دهندگان شد که یک راه حل مبتنی بر SMS برای دسترسی به اینترنت در زمانی که هیچ اینترنتی وجود نداشت، ساختند — ایده‌ای که به SMSWithoutBorders و بعدها RelaySMS تبدیل شد."
+		},
 		"GatewayShare": "اگر در منطقه‌ای با دسترسی اینترنتی هستید، می‌توانید یک شماره مسیریابی راه‌اندازی کنید و دسترسی را با خانواده و دوستانی که دسترسی اینترنتی ندارند به اشتراک بگذارید.",
 		"CTA": {
 			"SetupGateway": "راه‌اندازی شماره مسیریابی",
-			"SMSWithoutBorders": "درباره SMSWithoutBorders بیشتر بدانید",
-			"Resources": "مشاهده منابع",
-			"Contribute": "راهنمای مشارکت"
+			"Resources": "مشاهده منابع"
 		},
 		"WhoBuilt": {
 			"Title": "تیم پشت RelaySMS",
-			"Description": "RelaySMS یکی از اپلیکیشن‌های SMSWithoutBorders است که توسط تیم Afkanerd ساخته و نگهداری می‌شود و از حمایت مشارکت‌کنندگان و شرکای متن‌باز بهره می‌برد. ما از مشارکت‌های جامعه برای بهبود RelaySMS و گسترش دامنه آن استقبال می‌کنیم."
+			"Description": "RelaySMS ابزاری در چارچوب پروژه SMSWithoutBorders (SWOB) است که توسط Afkanerd ساخته شده است؛ تیمی که به پژوهش، توسعه و ترویج ابزارهای ارتباطی امن و در دسترس اختصاص دارد که حتى بدون اتصال اینترنت هم کار مي‌کنند."
+		},
+		"Links": {
+			"SMSWithoutBorders": "SMSWithoutBorders",
+			"SMSWithoutBordersDescription": "پروژه پشت RelaySMS",
+			"Afkanerd": "Afkanerd",
+			"AfkanerdDescription": "تیم سازنده SMSWithoutBorders",
+			"GitHub": "گیت‌هاب",
+			"GitHubDescription": "مخازن متن‌باز ما را ببینید"
 		},
 		"Resources": {
-			"Title": "دیگران را آموزش می‌دهید یا خودتان به کمک نیاز دارید؟",
-			"Description": "چه در حال آموزش یک جامعه برای استفاده از RelaySMS باشید و چه فقط برای راه‌اندازی آن به کمک نیاز داشته باشید، ما راهنما و مطالب آموزشی برای آن فراهم کرده‌ایم. همچنین مقالات فنی درباره نحوه عملکرد درونی RelaySMS منتشر می‌کنیم."
+			"Statement": "در حال آموزش دیگران درباره RelaySMS هستید یا خودتان برای شروع به کمک نیاز دارید؟ ما راهنما، مطالب آموزشی و مقالات فنی برای آن داریم."
 		}
 	},
 	"awesomeButton": "عالی!",
