@@ -5,7 +5,6 @@ import { FaTelegram } from "react-icons/fa6";
 import { UserOutlined } from "@ant-design/icons";
 import { keyframes } from "@emotion/react";
 import { useTranslation } from "react-i18next";
-import NewsletterForm from "./NewsletterForm";
 
 const TELEGRAM_URL = "https://t.me/+IPYp6q06dWsyZjY0";
 
@@ -64,7 +63,7 @@ const BlogCard = ({ post, calculateReadTime, defaultAuthor, minReadLabel }) => (
 			</Box>
 			<Typography
 				variant="caption"
-				sx={{ color: "text.secondary", fontFamily: "Ubuntu", fontWeight: 600, fontSize: "0.8rem" }}
+				sx={{ color: "text.secondary", fontWeight: 600, fontSize: "0.8rem" }}
 			>
 				{post.author || defaultAuthor}
 			</Typography>
@@ -93,7 +92,6 @@ const BlogCard = ({ post, calculateReadTime, defaultAuthor, minReadLabel }) => (
 			sx={{
 				fontSize: "0.875rem",
 				color: "text.secondary",
-				fontFamily: "Ubuntu",
 				lineHeight: 1.6,
 				mb: 2,
 				flexGrow: 1,
@@ -109,7 +107,7 @@ const BlogCard = ({ post, calculateReadTime, defaultAuthor, minReadLabel }) => (
 		{/* Read time */}
 		<Box sx={{ display: "flex", alignItems: "center", gap: 0.75, mt: "auto" }}>
 			<FaClock size={11} color="#888" />
-			<Typography variant="caption" sx={{ color: "#888", fontFamily: "Ubuntu" }}>
+			<Typography variant="caption" sx={{ color: "#888" }}>
 				{calculateReadTime(post.excerpt)} {minReadLabel}
 			</Typography>
 		</Box>
@@ -281,7 +279,7 @@ const BlogSectionNew = () => {
 					sx={{
 						fontSize: { xs: "1.5rem", md: "1.9rem" },
 						fontWeight: 800,
-						fontFamily: "'Unbounded', Ubuntu",
+						fontFamily: "'Unbounded'",
 						color: "text.primary",
 						mb: 2,
 						lineHeight: 1.2
@@ -332,7 +330,7 @@ const BlogSectionNew = () => {
 					sx={{
 						fontSize: { xs: "1.5rem", md: "1.9rem" },
 						fontWeight: 800,
-						fontFamily: "'Unbounded', Ubuntu",
+						fontFamily: "'Unbounded'",
 						color: "text.primary",
 						lineHeight: 1.25
 					}}
@@ -343,7 +341,6 @@ const BlogSectionNew = () => {
 					sx={{
 						fontSize: { xs: "0.95rem", md: "1.05rem" },
 						color: "text.secondary",
-						fontFamily: "Ubuntu",
 						maxWidth: 520,
 						lineHeight: 1.75
 					}}
@@ -361,7 +358,6 @@ const BlogSectionNew = () => {
 					sx={{
 						bgcolor: "primary.main",
 						color: "#ffffff",
-						fontFamily: "Ubuntu",
 						fontWeight: 600,
 						fontSize: "1rem",
 						textTransform: "none",

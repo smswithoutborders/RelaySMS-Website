@@ -1,138 +1,233 @@
+import { useEffect, useState } from "react";
 import { Box, Typography, Container, Stack, Button, Paper } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "@mui/material/styles";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import {
-	MobileOutlined,
-	CloudOutlined,
-	LockOutlined,
+	MessageOutlined,
 	CheckCircleOutlined,
 	AndroidOutlined,
 	AppleFilled
 } from "@ant-design/icons";
 
+const RELAY_ICON_WHITE = "/RelaySMS-Icon-White.svg";
+
+const FLOW_TIMING = { pause: 900, travel: 900, dwell: 700, hold: 1800 };
+
 const FlowAnimation = ({ t }) => {
-	const theme = useTheme();
-	const accent = theme.palette.text.primary;
-	const divider = theme.palette.divider;
-	const textSec = theme.palette.text.secondary;
+	const [activeIndex, setActiveIndex] = useState(0);
+	const [moving, setMoving] = useState(false);
+	const [done, setDone] = useState(false);
 
-	const W = 340,
-		H = 240;
-	const L = { x: 20, y: 130 };
-	const T = { x: 170, y: 20 };
-	const B = { x: 170, y: 210 };
-	const R = { x: 320, y: 130 };
+	useEffect(() => {
+		const timers = [];
+		const run = () => {
+			setActiveIndex(0);
+			setMoving(false);
+			setDone(false);
 
-	const circuit = `M${L.x},${L.y} L${T.x},${T.y} L${B.x},${B.y} L${R.x},${R.y}`;
+			let elapsed = FLOW_TIMING.pause;
+			timers.push(setTimeout(() => setMoving(true), elapsed));
 
-	const NodeBox = ({ cx, cy, Icon, label, sublabel }) => (
-		<Box
-			sx={{
-				position: "absolute",
-				left: `${(((cx - 18) / W) * 100).toFixed(2)}%`,
-				top: `${(((cy - 18) / H) * 100).toFixed(2)}%`,
-				display: "flex",
-				flexDirection: "column",
-				alignItems: "center",
-				gap: 0.4
-			}}
-		>
-			<Box
-				sx={{
-					width: 36,
-					height: 20,
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center"
-				}}
-			>
-				<Icon style={{ fontSize: 22, color: textSec }} />
-			</Box>
-			<Typography
-				sx={{
-					fontSize: "0.68rem",
-					fontWeight: 600,
-					color: accent,
-					fontFamily: "Ubuntu",
-					textAlign: "center",
-					lineHeight: 1.2,
-					maxWidth: 58
-				}}
-			>
-				{label}
-			</Typography>
-			<Typography
-				sx={{
-					fontSize: "0.58rem",
-					color: textSec,
-					fontFamily: "Ubuntu",
-					textAlign: "center",
-					maxWidth: 58
-				}}
-			>
-				{sublabel}
-			</Typography>
-		</Box>
-	);
+			elapsed += FLOW_TIMING.travel;
+			timers.push(
+				setTimeout(() => {
+					setMoving(false);
+					setActiveIndex(1);
+				}, elapsed)
+			);
+
+			elapsed += FLOW_TIMING.dwell;
+			timers.push(setTimeout(() => setMoving(true), elapsed));
+
+			elapsed += FLOW_TIMING.travel;
+			timers.push(
+				setTimeout(() => {
+					setMoving(false);
+					setActiveIndex(2);
+					setDone(true);
+				}, elapsed)
+			);
+
+			elapsed += FLOW_TIMING.hold;
+			timers.push(setTimeout(run, elapsed));
+		};
+
+		run();
+		return () => timers.forEach(clearTimeout);
+	}, []);
+
+	const nodes = [
+		{ Icon: MessageOutlined, label: t("WhoShouldUse.FlowNodes.smsLabel", "SMS") },
+		{
+			image: RELAY_ICON_WHITE,
+			label: t("WhoShouldUse.FlowNodes.publisherLabel", "Relay Publisher")
+		},
+		{ Icon: CheckCircleOutlined, label: t("WhoShouldUse.FlowNodes.platformLabel", "Platform") }
+	];
+
+	const progress = (moving ? activeIndex + 1 : activeIndex) * 50;
+
+	const statusText = done
+		? t("WhoShouldUse.FlowStatus.published", "Published")
+		: moving
+			? t("WhoShouldUse.FlowStatus.sending", "Sending…")
+			: activeIndex === 1
+				? t("WhoShouldUse.FlowStatus.relaying", "Relaying…")
+				: t("WhoShouldUse.FlowStatus.ready", "Tap to send");
 
 	return (
-		<Box
-			sx={{
-				position: "relative",
-				width: "100%",
-				maxWidth: W,
-				paddingTop: `${((H / W) * 80).toFixed(2)}%`,
-				mx: "auto"
-			}}
-		>
-			<Box sx={{ position: "absolute", inset: 0 }}>
-				<svg
-					width="100%"
-					height="100%"
-					viewBox={`0 0 ${W} ${H}`}
-					style={{ position: "absolute", inset: 0 }}
+		<Box sx={{ width: "100%", maxWidth: 340, mx: "auto" }}>
+			<Box sx={{ position: "relative", height: 52 }}>
+				<Box
+					sx={{
+						position: "absolute",
+						top: "50%",
+						left: 0,
+						right: 0,
+						height: 2,
+						bgcolor: "divider",
+						transform: "translateY(-50%)"
+					}}
+				/>
+				<Box
+					sx={{
+						position: "absolute",
+						top: "50%",
+						left: 0,
+						width: `${progress}%`,
+						height: 2,
+						bgcolor: "primary.main",
+						transform: "translateY(-50%)",
+						transition: `width ${FLOW_TIMING.travel}ms cubic-bezier(.45,0,.2,1)`
+					}}
+				/>
+				<Box
+					sx={{
+						position: "absolute",
+						top: "50%",
+						left: `${progress}%`,
+						width: 9,
+						height: 9,
+						borderRadius: "50%",
+						bgcolor: "secondary.main",
+						transform: "translate(-50%, -50%)",
+						transition: `left ${FLOW_TIMING.travel}ms cubic-bezier(.45,0,.2,1)`,
+						opacity: done ? 0 : 1
+					}}
+				/>
+
+				{nodes.map((node, index) => {
+					const reached = index <= activeIndex;
+					const isCurrent = index === activeIndex && !moving;
+					const isPublished = index === 2 && done;
+
+					return (
+						<Box
+							key={node.label}
+							sx={{
+								position: "absolute",
+								top: "50%",
+								left: `${index * 50}%`,
+								transform: "translate(-50%, -50%)",
+								zIndex: 2
+							}}
+						>
+							<Box
+								sx={{
+									position: "relative",
+									width: 40,
+									height: 40,
+									borderRadius: "50%",
+									display: "flex",
+									alignItems: "center",
+									justifyContent: "center",
+									bgcolor: isPublished
+										? "success.main"
+										: reached
+											? "primary.main"
+											: "action.disabledBackground",
+									color: isPublished || reached ? "primary.contrastText" : "text.disabled",
+									transform: isCurrent || isPublished ? "scale(1.14)" : "scale(1)",
+									transition:
+										"background-color 0.3s ease, color 0.3s ease, transform 0.35s cubic-bezier(.34,1.56,.64,1)",
+									"&::after":
+										isCurrent && index === 0
+											? {
+													content: '""',
+													position: "absolute",
+													inset: 0,
+													borderRadius: "50%",
+													border: "2px solid",
+													borderColor: "primary.main",
+													animation: "relayNodePing 1.4s ease-out infinite"
+												}
+											: undefined,
+									"@keyframes relayNodePing": {
+										"0%": { transform: "scale(1)", opacity: 0.6 },
+										"100%": { transform: "scale(1.9)", opacity: 0 }
+									}
+								}}
+							>
+								{node.image ? (
+									<Box
+										sx={{
+											width: 16,
+											height: 16,
+											bgcolor: isPublished || reached ? "primary.contrastText" : "text.disabled",
+											transition: "background-color 0.3s ease",
+											maskImage: `url(${node.image})`,
+											maskSize: "contain",
+											maskRepeat: "no-repeat",
+											maskPosition: "center",
+											WebkitMaskImage: `url(${node.image})`,
+											WebkitMaskSize: "contain",
+											WebkitMaskRepeat: "no-repeat",
+											WebkitMaskPosition: "center"
+										}}
+									/>
+								) : (
+									<node.Icon style={{ fontSize: 17 }} />
+								)}
+							</Box>
+						</Box>
+					);
+				})}
+			</Box>
+
+			<Stack direction="row" sx={{ mt: 1.5 }}>
+				{nodes.map((node, index) => (
+					<Typography
+						key={node.label}
+						sx={{
+							flex: 1,
+							fontSize: "0.68rem",
+							fontWeight: 600,
+							color: index <= activeIndex ? "text.primary" : "text.secondary",
+							textAlign: index === 0 ? "left" : index === 2 ? "right" : "center",
+							transition: "color 0.3s ease"
+						}}
+					>
+						{node.label}
+					</Typography>
+				))}
+			</Stack>
+
+			<Box sx={{ display: "flex", justifyContent: "center", mt: 2.5 }}>
+				<Box
+					sx={{
+						px: 1.75,
+						py: 0.5,
+						borderRadius: 10,
+						fontSize: "0.72rem",
+						fontWeight: 700,
+						letterSpacing: "0.02em",
+						bgcolor: done ? "success.main" : "action.hover",
+						color: done ? "primary.contrastText" : "text.secondary",
+						transition: "background-color 0.3s ease, color 0.3s ease"
+					}}
 				>
-					<line x1={L.x} y1={L.y} x2={T.x} y2={T.y} stroke={divider} strokeWidth="1" />
-					<line x1={T.x} y1={T.y} x2={B.x} y2={B.y} stroke={divider} strokeWidth="1" />
-					<line x1={B.x} y1={B.y} x2={R.x} y2={R.y} stroke={divider} strokeWidth="1" />
-
-					<circle r="3.5" fill={accent}>
-						<animateMotion path={circuit} dur="4s" repeatCount="indefinite" begin="0s" />
-					</circle>
-					<circle r="3" fill={accent} opacity="0.35">
-						<animateMotion path={circuit} dur="4s" repeatCount="indefinite" begin="2s" />
-					</circle>
-				</svg>
-
-				<NodeBox
-					cx={L.x}
-					cy={L.y}
-					Icon={MobileOutlined}
-					label="RelaySMS"
-					sublabel={t("WhoShouldUse.FlowNodes.relaySublabel", "Your phone")}
-				/>
-				<NodeBox
-					cx={T.x}
-					cy={T.y}
-					Icon={LockOutlined}
-					label={t("WhoShouldUse.FlowNodes.encryptedLabel", "Encrypted")}
-					sublabel={t("WhoShouldUse.FlowNodes.encryptedSublabel", "SMS")}
-				/>
-				<NodeBox
-					cx={B.x}
-					cy={B.y}
-					Icon={CloudOutlined}
-					label={t("WhoShouldUse.FlowNodes.relayCloudLabel", "Relay Cloud")}
-					sublabel={t("WhoShouldUse.FlowNodes.relayCloudSublabel", "Gateway")}
-				/>
-				<NodeBox
-					cx={R.x}
-					cy={R.y}
-					Icon={CheckCircleOutlined}
-					label={t("WhoShouldUse.FlowNodes.platformLabel", "Platform")}
-					sublabel={t("WhoShouldUse.FlowNodes.platformSublabel", "Delivered")}
-				/>
+					{statusText}
+				</Box>
 			</Box>
 		</Box>
 	);
@@ -173,19 +268,13 @@ const WhoShouldUse = () => {
 					alignItems="stretch"
 					sx={{ maxWidth: 1500 }}
 				>
-					<Paper
-						elevation={0}
-						sx={{ p: 4, border: "1px solid", borderColor: "divider", flex: 1 }}
-					>
-						<Box sx={{ mb: 6 }}>
-							<FlowAnimation t={t} />
-						</Box>{" "}
+					<Paper elevation={0} sx={{ px: 4, py: 6, border: "1px solid", borderColor: "divider", flex: 1 }}>
 						<Typography
 							variant="h6"
 							sx={{
 								color: "text.primary",
 								fontWeight: 700,
-								fontFamily: "'Unbounded', Ubuntu",
+								fontFamily: "'Unbounded'",
 								mb: 3
 							}}
 						>
@@ -197,7 +286,6 @@ const WhoShouldUse = () => {
 							variant="body1"
 							sx={{
 								color: "text.secondary",
-								fontFamily: "Ubuntu",
 								lineHeight: 1.7,
 								mb: 4
 							}}
@@ -207,11 +295,13 @@ const WhoShouldUse = () => {
 								'Designed by an expert team of technologists who had grown tired of internet shutdowns disrupting their ability to communicate, RelaySMS utilizes SMS messaging (aka "text messaging") to route offline messages back online.'
 							)}
 						</Typography>
+						<Box sx={{ mb: 6 }}>
+							<FlowAnimation t={t} />
+						</Box>{" "}
 						<Typography
 							variant="body1"
 							sx={{
 								color: "text.secondary",
-								fontFamily: "Ubuntu",
 								lineHeight: 1.6
 							}}
 						>
@@ -229,7 +319,6 @@ const WhoShouldUse = () => {
 							sx={{
 								color: "text.primary",
 								textTransform: "none",
-								fontFamily: "Ubuntu",
 								fontSize: "16px",
 								px: 0,
 								my: 2,
@@ -262,7 +351,7 @@ const WhoShouldUse = () => {
 							sx={{
 								color: "text.primary",
 								fontWeight: 700,
-								fontFamily: "'Unbounded', Ubuntu",
+								fontFamily: "'Unbounded'",
 								mb: 2
 							}}
 						>
@@ -274,7 +363,6 @@ const WhoShouldUse = () => {
 							variant="body1"
 							sx={{
 								color: "text.secondary",
-								fontFamily: "Ubuntu",
 								lineHeight: 1.7,
 								mb: 4
 							}}
@@ -300,7 +388,6 @@ const WhoShouldUse = () => {
 								startIcon={<AndroidOutlined />}
 								sx={{
 									textTransform: "none",
-									fontFamily: "Ubuntu",
 									fontSize: "15px",
 									color: "text.primary",
 									borderColor: "divider",
@@ -322,7 +409,6 @@ const WhoShouldUse = () => {
 								startIcon={<AppleFilled />}
 								sx={{
 									textTransform: "none",
-									fontFamily: "Ubuntu",
 									fontSize: "15px",
 									color: "text.primary",
 									borderColor: "divider",

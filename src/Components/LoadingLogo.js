@@ -48,7 +48,6 @@ const LoadingLogo = ({ label = "Loading...", fullScreen = true }) => {
 			<Typography
 				variant="h6"
 				sx={{
-					fontFamily: "Ubuntu, sans-serif",
 					fontWeight: 500,
 					color: "text.secondary"
 				}}

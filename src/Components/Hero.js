@@ -50,18 +50,27 @@ const Hero = () => {
 					position: "relative",
 					overflow: "hidden",
 					textAlign: "center",
-					background: (theme) =>
-						theme.palette.mode === "dark"
-							? `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(77, 108, 192, 0.25) 0%, transparent 65%),
-						   linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-						   linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`
-							: `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(0,24,113,0.09) 0%, transparent 65%),
-							   linear-gradient(rgba(0,24,113,0.05) 1px, transparent 1px),
-							   linear-gradient(90deg, rgba(0,24,113,0.05) 1px, transparent 1px)`,
-					backgroundSize: "auto, 44px 44px, 44px 44px"
+					"&::before": {
+						content: '""',
+						position: "absolute",
+						inset: 0,
+						zIndex: 0,
+						pointerEvents: "none",
+						background: (theme) =>
+							theme.palette.mode === "dark"
+								? `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(77, 108, 192, 0.25) 0%, transparent 65%),
+							   linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+							   linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`
+								: `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(0,24,113,0.09) 0%, transparent 65%),
+								   linear-gradient(rgba(0,24,113,0.05) 1px, transparent 1px),
+								   linear-gradient(90deg, rgba(0,24,113,0.05) 1px, transparent 1px)`,
+						backgroundSize: "auto, 64px 64px, 64px 64px",
+						maskImage: "linear-gradient(to bottom, black 0%, black 75%, transparent 100%)",
+						WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 75%, transparent 100%)"
+					}
 				}}
 			>
-				<Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+				<Box sx={{ display: "flex", justifyContent: "center", width: "100%", position: "relative", zIndex: 1 }}>
 					<Box
 						sx={{
 							display: "flex",
@@ -74,10 +83,11 @@ const Hero = () => {
 							sx={{
 								mb: { xs: 2, md: 3, lg: 1 },
 								fontSize: { xs: "2rem", md: "2.5rem", lg: "2.5rem", xl: "3.8rem" },
+								lineHeight: { xs: 1.4, md: 1.35 },
 								whiteSpace: "pre-wrap",
 								fontWeight: 700,
 								wordBreak: "break-word",
-								fontFamily: "'Unbounded', Ubuntu"
+								fontFamily: "'Unbounded'"
 							}}
 							gutterBottom
 						>
@@ -94,14 +104,13 @@ const Hero = () => {
 						</Typography>
 
 						<Typography
-							variant="h6"
-							color="text.secondary"
+							variant="body1"
 							paragraph
 							sx={{
 								mt: { xs: 2, md: 2 },
 								mb: 2,
-								fontFamily: "Ubuntu",
-								fontSize: { xs: "16px", md: "18px", lg: "18px", xl: "20px" }
+								fontSize: { xs: "16px", md: "18px", lg: "18px", xl: "22px" },
+								color: "text.secondary",
 							}}
 						>
 							{t("Landing.h2")}
@@ -111,7 +120,8 @@ const Hero = () => {
 								display: "flex",
 								flexDirection: { xs: "column", sm: "row" },
 								justifyContent: "center",
-								gap: 2,
+								alignItems: "center",
+								gap: { xs: 2, sm: 3 },
 								mt: { xs: 3, md: 3 },
 								mb: { xs: 2, md: 1 },
 								px: { xs: 2, md: 0 },
@@ -127,6 +137,10 @@ const Hero = () => {
 									bgcolor: "primary.main",
 									textTransform: "none",
 									fontFamily: "Unbounded",
+									fontSize: "1rem",
+									px: 4,
+									py: 1.5,
+									borderRadius: "10px",
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
 										transform: "translateY(-3px)"
@@ -136,16 +150,22 @@ const Hero = () => {
 								{t("Landing.Android")}
 							</Button>
 							<Button
-								variant="text"
+								variant="outlined"
 								size="large"
 								to="/resources"
 								component={Link}
 								sx={{
 									textTransform: "none",
 									color: "text.primary",
+									borderColor: "divider",
 									fontFamily: "Unbounded",
+									fontSize: "1rem",
+									px: 4,
+									py: 1.5,
+									borderRadius: "10px",
 									transition: "all 0.3s ease-in-out",
 									"&:hover": {
+										borderColor: "text.primary",
 										transform: "translateY(-3px)"
 									}
 								}}
@@ -180,7 +200,7 @@ const Hero = () => {
 					px: 2
 				}}
 			>
-				<Typography variant="body1" color="text.secondary" sx={{ fontFamily: "Ubuntu" }}>
+				<Typography variant="body1" color="text.secondary">
 					{t("Landing.auditMessage.part1")}&nbsp;
 					<a
 						href="https://www.opentech.fund/security-safety-audits/smswithoutborders-penetration-testt/"
@@ -205,7 +225,7 @@ const Hero = () => {
 			<Box
 				sx={{
 					mt: SECTION_SPACING,
-					mb: SECTION_SPACING,
+					mb: 25,
 					mx: { xs: 3, md: 6 },
 					textAlign: "center",
 					display: "flex",

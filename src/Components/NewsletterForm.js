@@ -108,7 +108,7 @@ const NewsletterForm = ({
 						variant={large ? "h3" : "h6"}
 						sx={{
 							fontWeight: large ? 800 : 600,
-							fontFamily: "'Unbounded', Ubuntu",
+							fontFamily: "'Unbounded'",
 							mb: large ? 2 : 0.75,
 							fontSize: large ? { xs: "1.5rem", md: "1.9rem" } : { xs: "1rem", md: "1.15rem" },
 							textAlign: centered ? "center" : "start",

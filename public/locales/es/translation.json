@@ -72,13 +72,15 @@
 		"AndroidButton": "Descargar para Android",
 		"iOSButton": "Descargar para iOS",
 		"FlowNodes": {
-			"relaySublabel": "Tu teléfono",
-			"encryptedLabel": "Cifrado",
-			"encryptedSublabel": "SMS",
-			"relayCloudLabel": "Relay Cloud",
-			"relayCloudSublabel": "Pasarela",
-			"platformLabel": "Plataforma",
-			"platformSublabel": "Entregado"
+			"smsLabel": "SMS",
+			"publisherLabel": "Relay Publisher",
+			"platformLabel": "Plataforma"
+		},
+		"FlowStatus": {
+			"ready": "Toca para enviar",
+			"sending": "Enviando…",
+			"relaying": "Retransmitiendo…",
+			"published": "Publicado"
 		}
 	},
 	"HowRelaySMSWorks": {
@@ -622,20 +624,29 @@
 			"Title": "RelaySMS usa SMS para sortear la censura y los cortes de Internet",
 			"Subtitle": "La censura y los cortes de Internet no impedirán que te comuniques. RelaySMS es un proyecto gratuito y de código abierto que te permite enviar mensajes a plataformas populares como Gmail, Telegram, Bluesky y más cuando no tienes acceso a Internet."
 		},
+		"Origin": {
+			"Title": "Cómo empezó",
+			"Description": "En enero de 2017, Internet se apagó durante meses en las regiones anglófonas de Camerún. Atrapado en el apagón, nuestro fundador creó una forma de llegar a Internet mediante SMS cuando no había ninguna — la idea que se convirtió en SMSWithoutBorders y, más tarde, en RelaySMS."
+		},
 		"GatewayShare": "Si estás en una zona con acceso a Internet, puedes configurar un número de enrutamiento y compartir el acceso con familiares y amigos que no tienen conexión.",
 		"CTA": {
 			"SetupGateway": "Configurar un número de enrutamiento",
-			"SMSWithoutBorders": "Más información sobre SMSWithoutBorders",
-			"Resources": "Explorar recursos",
-			"Contribute": "Guía de contribución"
+			"Resources": "Explorar recursos"
 		},
 		"WhoBuilt": {
 			"Title": "El equipo detrás de RelaySMS",
-			"Description": "RelaySMS es una aplicación de SMSWithoutBorders, creada y mantenida por el equipo de Afkanerd con el apoyo de colaboradores y socios de código abierto. Agradecemos las contribuciones de la comunidad para mejorar RelaySMS y ampliar su alcance."
+			"Description": "RelaySMS es una herramienta del proyecto SMSWithoutBorders (SWOB), creada por Afkanerd, un equipo dedicado a investigar, desarrollar y promover herramientas de comunicación seguras y accesibles que funcionan incluso sin conexión a Internet."
+		},
+		"Links": {
+			"SMSWithoutBorders": "SMSWithoutBorders",
+			"SMSWithoutBordersDescription": "El proyecto detrás de RelaySMS",
+			"Afkanerd": "Afkanerd",
+			"AfkanerdDescription": "El equipo que construye SMSWithoutBorders",
+			"GitHub": "GitHub",
+			"GitHubDescription": "Explora nuestros repositorios de código abierto"
 		},
 		"Resources": {
-			"Title": "¿Capacitas a otros o necesitas ayuda tú mismo?",
-			"Description": "Ya sea que estés enseñando a una comunidad a usar RelaySMS o simplemente necesites ayuda para configurarlo tú mismo, tenemos guías y material de capacitación para eso. También publicamos documentos técnicos sobre cómo funciona RelaySMS por dentro."
+			"Statement": "¿Estás capacitando a otros en RelaySMS o necesitas ayuda para empezar tú mismo? Tenemos guías, material de capacitación y artículos técnicos para eso."
 		}
 	},
 	"awesomeButton": "¡Genial!",

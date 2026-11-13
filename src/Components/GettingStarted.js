@@ -43,19 +43,10 @@ const MobileCarousel = ({ slides, t }) => {
 						fontSize: "1.5rem",
 						color: "text.primary",
 						fontWeight: 700,
-						fontFamily: "'Unbounded', Ubuntu"
+						fontFamily: "'Unbounded'"
 					}}
 				>
 					{t("Howitworks.Header", "Getting Started with RelaySMS")}
-				</Typography>
-				<Typography
-					variant="body1"
-					sx={{ fontSize: "1rem", color: "text.secondary", mt: 1, fontFamily: "Ubuntu" }}
-				>
-					{t(
-						"Howitworks.SubHeader",
-						"Learn how to set up and use RelaySMS for seamless offline communication."
-					)}
 				</Typography>
 			</Box>
 
@@ -86,14 +77,13 @@ const MobileCarousel = ({ slides, t }) => {
 								component="img"
 								src={s.image}
 								alt={s.title}
-								sx={{ width: "70%", maxHeight: 260, objectFit: "contain", mb: 3 }}
+								sx={{ width: "75%", objectFit: "contain", mb: 3 }}
 							/>
 							<Typography
 								sx={{
 									color: "primary.light",
 									fontWeight: 700,
 									letterSpacing: "0.15em",
-									fontFamily: "Ubuntu",
 									fontSize: "0.75rem",
 									textTransform: "uppercase",
 									mb: 0.75,
@@ -105,7 +95,7 @@ const MobileCarousel = ({ slides, t }) => {
 							<Typography
 								variant="h5"
 								sx={{
-									fontFamily: "'Unbounded', Ubuntu",
+									fontFamily: "'Unbounded'",
 									fontWeight: 700,
 									color: "text.primary",
 									fontSize: "1.1rem",
@@ -118,7 +108,6 @@ const MobileCarousel = ({ slides, t }) => {
 							<Typography
 								variant="body1"
 								sx={{
-									fontFamily: "Ubuntu",
 									color: "text.secondary",
 									fontSize: "0.95rem",
 									lineHeight: 1.8,
@@ -136,7 +125,6 @@ const MobileCarousel = ({ slides, t }) => {
 								rel="noopener noreferrer"
 								sx={{
 									textTransform: "none",
-									fontFamily: "Ubuntu",
 									fontSize: "13px",
 									alignSelf: "flex-start",
 									color: "primary.light"
@@ -231,39 +219,25 @@ const GettingStarted = () => {
 				number: 1,
 				title: t("Howitworks.Step1Title"),
 				description: t("Howitworks.Step1Desc"),
-				image: "/Download-copy.png",
+				image: "/play-store.png",
 				buttonText: t("Howitworks.Step1Button", "Download"),
 				link: "/download"
 			},
-			// {
-			// 	number: 2,
-			// 	title: t("Howitworks.Step2Title"),
-			// 	description: t("Howitworks.Step2Desc"),
-			// 	image: "/Login-half.png",
-			// 	buttonText: t("Howitworks.Step2Button", "Learn More"),
-			// 	link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-2-create-an-account"
-			// },
+
 			{
 				number: 2,
 				title: t("Howitworks.Step3Title"),
 				description: t("Howitworks.Step3Desc"),
-				image: "/accounts-saved.png",
+				image: "/saved-accounts.png",
 				buttonText: t("Howitworks.Step3Button", "Set Up Now"),
 				link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-5-save-access-to-platforms"
 			},
-			// {
-			// 	number: 3,
-			// 	title: t("Howitworks.Step4Title"),
-			// 	description: t("Howitworks.Step4Desc"),
-			// 	image: "/Gateway-copy.png",
-			// 	buttonText: t("Howitworks.Step4Button", "Select a Gateway"),
-			// 	link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-6-choose-a-gateway-client"
-			// },
+
 			{
 				number: 3,
 				title: t("Howitworks.Step5Title"),
 				description: t("Howitworks.Step5Desc"),
-				image: "/compose (2).png",
+				image: "/compose-platform-select.png",
 				buttonText: t("Howitworks.Step5Button", "Start Messaging"),
 				link: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android#step-3-compose-your-message-and-send-as-sms"
 			}
@@ -331,36 +305,6 @@ const GettingStarted = () => {
 					boxSizing: "border-box"
 				}}
 			>
-				<Box sx={{ textAlign: "center", mb: 10 }}>
-					<Typography
-						variant="h3"
-						sx={{
-							fontSize: { md: "2rem", xs: "1.5rem" },
-							color: "text.primary",
-							fontWeight: 700,
-							fontFamily: "'Unbounded', Ubuntu"
-						}}
-					>
-						{t("Howitworks.Header", "How to set up RelaySMS")}
-					</Typography>
-					<Typography
-						variant="body1"
-						sx={{
-							fontSize: "1.1rem",
-							color: "text.secondary",
-							mt: 1,
-							mx: "auto",
-							maxWidth: 800,
-							fontFamily: "Ubuntu"
-						}}
-					>
-						{t(
-							"Howitworks.SubHeader",
-							"Do not wait for internet shutdowns to set up RelaySMS. Follow these steps to ensure you can stay connected when you need it most."
-						)}
-					</Typography>
-				</Box>
-
 				<Box
 					sx={{
 						display: "flex",
@@ -380,6 +324,19 @@ const GettingStarted = () => {
 							justifyContent: "center"
 						}}
 					>
+						<Box sx={{ mb: 6 }}>
+							<Typography
+								variant="h3"
+								sx={{
+									fontSize: { xs: "1.5rem", md: "1.9rem" },
+									color: "text.primary",
+									fontWeight: 700,
+									fontFamily: "'Unbounded'"
+								}}
+							>
+								{t("Howitworks.Header", "How to set up RelaySMS")}
+							</Typography>
+						</Box>
 						{slides.map((slide, index) => {
 							const isActive = activeStep === index;
 							return (
@@ -401,7 +358,7 @@ const GettingStarted = () => {
 									<Typography
 										variant="h6"
 										sx={{
-											fontFamily: "'Unbounded', Ubuntu",
+											fontFamily: "'Unbounded'",
 											fontWeight: 700,
 											color: "text.primary",
 											lineHeight: 1.3
@@ -422,7 +379,6 @@ const GettingStarted = () => {
 										<Typography
 											variant="body1"
 											sx={{
-												fontFamily: "Ubuntu",
 												color: "text.secondary",
 												lineHeight: 1.8,
 												mb: 2,
@@ -445,7 +401,6 @@ const GettingStarted = () => {
 											sx={{
 												textTransform: "none",
 												py: 0.75,
-												fontFamily: "Ubuntu",
 												color: "primary.light"
 											}}
 										>
@@ -459,7 +414,6 @@ const GettingStarted = () => {
 						<Typography
 							sx={{
 								mt: 3,
-								fontFamily: "Ubuntu",
 								fontSize: "0.75rem",
 								color: "text.secondary",
 								letterSpacing: "0.05em"
@@ -490,7 +444,7 @@ const GettingStarted = () => {
 						sx={{
 							flex: 1,
 							position: "relative",
-							height: "55vh"
+							height: "80vh"
 						}}
 					>
 						{slides.map((slide, index) => (
@@ -513,23 +467,6 @@ const GettingStarted = () => {
 						))}
 					</Box>
 				</Box>
-				{/* <Box sx={{ display: { xs: "none", md: "flex" }, justifyContent: "start", mt: 6, maxWidth: 700 }}>
-					<Button
-						variant="outlined"
-						href={FULL_SETUP_DOCS_URL}
-						target="_blank"
-						rel="noopener noreferrer"
-						endIcon={<FiExternalLink style={{ marginLeft: 4 }} />}
-						sx={{
-							mt: 2.5,
-							textTransform: "none",
-							fontFamily: "Ubuntu",
-							fontSize: "0.95rem"
-						}}
-					>
-						{t("Howitworks.FullDocsButton", "Read full setup guide")}
-					</Button>
-				</Box> */}
 			</Box>
 
 			<MobileCarousel slides={slides} t={t} />

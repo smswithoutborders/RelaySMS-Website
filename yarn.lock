@@ -2166,6 +2166,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource-variable/mona-sans@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@fontsource-variable/mona-sans@npm:5.3.0"
+  checksum: 10c0/0be6f5ea39d60267568a519ece0fe6af057a344007e982f9cf3ce5d7d7f407b27259a824903ed1812f92a8d929d25f059aab452e7d47b24e9d8bef07dee193b7
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.13.0":
   version: 0.13.0
   resolution: "@humanwhocodes/config-array@npm:0.13.0"
@@ -13110,6 +13117,7 @@ __metadata:
     "@craco/craco": "npm:^7.1.0"
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.0"
+    "@fontsource-variable/mona-sans": "npm:^5.3.0"
     "@mui/icons-material": "npm:^9.5.0"
     "@mui/material": "npm:^9.5.0"
     aos: "npm:^2.3.4"

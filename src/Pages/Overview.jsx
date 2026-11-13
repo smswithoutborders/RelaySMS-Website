@@ -73,13 +73,13 @@ const Overview = () => {
 			sx={{
 				background: (theme) =>
 					theme.palette.mode === "dark"
-						? `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(77, 125, 192, 0.07) 0%, transparent 65%),
-							   linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-							   linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`
+						? `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(77, 108, 192, 0.25) 0%, transparent 65%),
+						   linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+						   linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`
 						: `radial-gradient(ellipse 90% 55% at 50% -10%, rgba(0,24,113,0.09) 0%, transparent 65%),
 							   linear-gradient(rgba(0,24,113,0.05) 1px, transparent 1px),
 							   linear-gradient(90deg, rgba(0,24,113,0.05) 1px, transparent 1px)`,
-				backgroundSize: "auto, 44px 44px, 44px 44px"
+				backgroundSize: "auto, 64px 64px, 64px 64px"
 			}}
 		>
 			<Box
@@ -98,7 +98,7 @@ const Overview = () => {
 						fontSize: { xs: "2.5rem", sm: "3rem", md: "3rem" },
 						mb: 10,
 						color: "text.primary",
-						fontFamily: "'Unbounded', Ubuntu"
+						fontFamily: "'Unbounded'"
 					}}
 				>
 					{t("Overview.title")}
@@ -130,8 +130,7 @@ const Overview = () => {
 							md: "calc(100vh - 80px)"
 						},
 						zIndex: 1200,
-						bgcolor: (theme) =>
-							theme.palette.mode === "dark" ? "#000000" : "#f4f8ff",
+						bgcolor: (theme) => (theme.palette.mode === "dark" ? "#000000" : "#f4f8ff"),
 						color: "text.primary",
 						borderLeft: "1px solid",
 						borderColor: "divider"
@@ -144,7 +143,7 @@ const Overview = () => {
 				}}
 			>
 				<Box display="flex" justifyContent="space-between" alignItems="center">
-					<Typography variant="h5" fontWeight="bold" sx={{ fontFamily: "'Unbounded', Ubuntu" }}>
+					<Typography variant="h5" fontWeight="bold" sx={{ fontFamily: "'Unbounded'" }}>
 						{drawerTitle
 							? t(`Overview.components.${drawerTitle}`, drawerTitle)
 							: t("Overview.details")}
