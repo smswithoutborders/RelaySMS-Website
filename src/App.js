@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./Components/Footer";
+import AlertBanner from "./Components/AlertBanner";
 import Landing from "./Pages/Landing";
 import Contact from "./Pages/Contact";
 import PageNotFound from "./Pages/PageNotFound";
@@ -34,6 +35,7 @@ const App = () => {
 			}}
 		>
 			<ScrollToTop />
+			<AlertBanner />
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Landing />} />

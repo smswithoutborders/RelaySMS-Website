@@ -8,6 +8,9 @@
 	"Nav": {
 		"Home": "Home",
 		"Help": "Documentation",
+		"AllDocs": "All Documentation",
+		"AndroidDocs": "Android",
+		"iOSDocs": "iOS",
 		"github": "GitHub",
 		"Blog": "Blog",
 		"Contact": "Contact Us",
@@ -22,8 +25,9 @@
 		"Resources": "Resources"
 	},
 	"Alert": {
-		"message": "You can now make RelaySMS your default SMS app on Android!",
-		"readMore": "Read more"
+		"message": "RelaySMS on iOS is now fully up to date with Android!",
+		"readMore": "Download",
+		"dismiss": "Dismiss"
 	},
 	"social": {
 		"x": "Follow us on X",
@@ -64,7 +68,12 @@
 		"Step5Button": "Start Messaging",
 		"FullDocsButton": "Read full setup guide",
 		"StepLabel": "Step",
-		"ScrollHint": "Scroll to advance steps"
+		"ScrollHint": "Scroll to advance steps",
+		"iOS": {
+			"Step1Desc": "Download RelaySMS from the <a href='https://apps.apple.com/us/app/relaysms/id6630382970' target='_blank' rel='noopener noreferrer'>Apple App Store</a> or <a href='https://github.com/smswithoutborders/RelaySMS-iOS' target='_blank' rel='noopener noreferrer'>build it from source</a>. Ensure your iPhone is running iOS 16 or later.",
+			"Step3Desc": "Save platform access while online, right from the app. It stays on your phone, so back it up. Saved access lets you keep communicating when the internet is off.",
+			"Step5Desc": "Send messages with your saved platforms, or quickly send with RMail anonymously — no setup required."
+		}
 	},
 	"WhoShouldUse": {
 		"Header": "Everyone can use RelaySMS",
