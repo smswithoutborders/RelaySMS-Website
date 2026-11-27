@@ -1,49 +1,94 @@
-import { Box, Typography } from "@mui/material";
+import { useState } from "react";
+import { Box, Typography, IconButton } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { FiX } from "react-icons/fi";
+
+const DISMISS_KEY = "alertBannerDismissed_ios-parity";
 
 const AlertBanner = () => {
 	const { t } = useTranslation();
+	const [dismissed, setDismissed] = useState(() => {
+		try {
+			return localStorage.getItem(DISMISS_KEY) === "1";
+		} catch {
+			return false;
+		}
+	});
+
+	if (dismissed) return null;
+
+	const handleDismiss = () => {
+		setDismissed(true);
+		try {
+			localStorage.setItem(DISMISS_KEY, "1");
+		} catch {
+			/* ignore storage errors (private mode, etc.) */
+		}
+	};
 
 	return (
 		<Box
 			sx={{
 				position: "fixed",
-				top: 0,
-				left: 0,
-				right: 0,
-				width: "100%",
+				bottom: { xs: 16, sm: 24 },
+				left: "50%",
+				transform: "translateX(-50%)",
+				width: { xs: "calc(100% - 32px)", sm: "auto" },
+				maxWidth: { xs: "calc(100% - 32px)", sm: 560 },
 				bgcolor: "primary.main",
-				py: 1.2,
-				px: { xs: 2, md: 5, lg: 8, xl: 20 },
+				borderRadius: { xs: "20px", sm: "999px" },
+				py: 2,
+				pl: { md: 2.5, xs: 1.5 },
+				pr: { md: 2.5, xs: 1.5 },
 				display: "flex",
 				justifyContent: "center",
 				alignItems: "center",
+				gap: 0.5,
 				zIndex: (theme) => theme.zIndex.drawer + 2,
-				boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
+				boxShadow: "0 8px 24px rgba(0,0,0,0.25)"
 			}}
 		>
 			<Typography
 				sx={{
 					color: "white",
-					fontSize: { xs: "13px", sm: "14px", md: "15px" },
+					fontSize: { xs: "12px", sm: "15px" },
+					lineHeight: 1.4,
 					textAlign: "center",
-					lineHeight: 1.4
+					whiteSpace: { xs: "normal", sm: "nowrap" },
+					overflow: { xs: "visible", sm: "hidden" },
+					textOverflow: { xs: "clip", sm: "ellipsis" },
+					maxWidth: "100%"
 				}}
 			>
-				✨ {t("Alert.message", "You can now make RelaySMS your default SMS app on Android!")}{" "}
+				🎉 {t("Alert.message", "RelaySMS on iOS is now fully up to date with Android!")}{" "}
 				<a
-					href="https://blog.smswithoutborders.com/posts/default-app"
+					href="https://apps.apple.com/us/app/relaysms/id6630382970"
 					target="_blank"
 					rel="noopener noreferrer"
 					style={{
-						color: "primary.contrastText",
+						color: "#ffffff",
 						textDecoration: "underline",
-						fontWeight: "500"
+						fontWeight: "600",
+						whiteSpace: "nowrap"
 					}}
 				>
-					{t("Alert.readMore", "Read more")}
+					{t("Alert.readMore", "Download")}
 				</a>
 			</Typography>
+			<IconButton
+				onClick={handleDismiss}
+				aria-label={t("Alert.dismiss", "Dismiss")}
+				size="small"
+				sx={{
+					color: "white",
+					opacity: 0.8,
+					flexShrink: 0,
+					p: 0.5,
+					"&:hover": { opacity: 1, bgcolor: "rgba(255,255,255,0.15)" }
+				}}
+			>
+				<FiX size={15} />
+			</IconButton>
 		</Box>
 	);
 };

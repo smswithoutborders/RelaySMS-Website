@@ -24,6 +24,7 @@ export default function Navigation() {
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 	const [anchorElNav, setAnchorElNav] = useState(null);
 	const [anchorElDevelopers, setAnchorElDevelopers] = useState(null);
+	const [anchorElDocs, setAnchorElDocs] = useState(null);
 	const [scrolled, setScrolled] = useState(false);
 	const muiTheme = useTheme();
 	const { mode, setMode } = useThemeMode();
@@ -60,13 +61,31 @@ export default function Navigation() {
 			href: "https://blog.smswithoutborders.com/",
 			external: true
 		},
+		{ label: t("Nav.Resources", "Resources"), to: "/resources" },
+		{ label: t("Nav.Contact"), to: "/contact" }
+	];
+
+	const docsLinks = [
 		{
-			label: t("Nav.Help"),
+			label: t("Nav.AllDocs", "All Documentation"),
 			href: "https://docs.smswithoutborders.com/",
 			external: true
 		},
-		{ label: t("Nav.Resources", "Resources"), to: "/resources" },
-		{ label: t("Nav.Contact"), to: "/contact" }
+		{
+			label: t("Nav.AndroidDocs", "Android"),
+			href: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android",
+			external: true
+		},
+		{
+			label: t("Nav.iOSDocs", "iOS"),
+			href: "https://docs.smswithoutborders.com/docs/iOS%20Tutorial/Getting-Started-With-iOS",
+			external: true
+		},
+		{
+			label: t("Footer.SelfHosting", "Self-Hosting Guide"),
+			href: "https://docs.relaysms.smswithoutborders.afkanerd.com/",
+			external: true
+		}
 	];
 
 	const developerLinks = [
@@ -81,11 +100,6 @@ export default function Navigation() {
 		{
 			label: t("Footer.Troubleshooting", "Troubleshooting"),
 			href: "https://docs.smswithoutborders.com/docs/Troubleshooting/Troubleshooting-FAQ",
-			external: true
-		},
-		{
-			label: t("Footer.SelfHosting", "Self-Hosting Guide"),
-			href: "https://docs.relaysms.smswithoutborders.afkanerd.com/",
 			external: true
 		}
 	];
@@ -104,6 +118,14 @@ export default function Navigation() {
 
 	const handleCloseDevelopersMenu = () => {
 		setAnchorElDevelopers(null);
+	};
+
+	const handleOpenDocsMenu = (event) => {
+		setAnchorElDocs(event.currentTarget);
+	};
+
+	const handleCloseDocsMenu = () => {
+		setAnchorElDocs(null);
 	};
 
 	const navMenuPaperSx = {
@@ -263,6 +285,63 @@ export default function Navigation() {
 							</Button>
 						)
 					)}
+
+					<Button
+						onClick={handleOpenDocsMenu}
+						endIcon={<KeyboardArrowDownIcon fontSize="small" />}
+						sx={{
+							color: iconColor,
+							textTransform: "none",
+							fontWeight: 500,
+							fontSize: { md: "15px", lg: "15px", xl: "16px" },
+							backgroundImage: "linear-gradient(to right,rgb(23, 114, 184),rgb(5, 105, 155))",
+							backgroundSize: "0% 2px",
+							backgroundRepeat: "no-repeat",
+							backgroundPosition: "left bottom",
+							whiteSpace: "nowrap",
+							transition: "all 0.3s ease-in-out",
+							"&:hover": {
+								backgroundSize: "100% 2px",
+								color: "secondary.main"
+							}
+						}}
+					>
+						{t("Nav.Help", "Documentation")}
+					</Button>
+
+					<Menu
+						anchorEl={anchorElDocs}
+						open={Boolean(anchorElDocs)}
+						onClose={handleCloseDocsMenu}
+						anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+						transformOrigin={{ vertical: "top", horizontal: "left" }}
+						slotProps={{
+							paper: {
+								elevation: 0,
+								sx: navMenuPaperSx
+							}
+						}}
+						MenuListProps={{
+							sx: {
+								py: 1,
+								px: 0.5
+							}
+						}}
+					>
+						{docsLinks.map((link, index) => (
+							<MenuItem
+								key={`docs-${index}`}
+								component="a"
+								href={link.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								onClick={handleCloseDocsMenu}
+								sx={developerMenuItemSx}
+							>
+								{link.label}
+							</MenuItem>
+						))}
+					</Menu>
 
 					<Button
 						onClick={handleOpenDevelopersMenu}
@@ -519,6 +598,21 @@ export default function Navigation() {
 								</MenuItem>
 							)
 						)}
+
+						<Divider sx={{ my: 0.5 }} />
+						<MenuItem disabled>{t("Nav.Help", "Documentation")}</MenuItem>
+						{docsLinks.map((link, index) => (
+							<MenuItem
+								key={`mobile-docs-${index}`}
+								component="a"
+								href={link.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								onClick={handleCloseNavMenu}
+							>
+								{link.label}
+							</MenuItem>
+						))}
 
 						<Divider sx={{ my: 0.5 }} />
 						<MenuItem disabled>{t("Nav.Developers", "Developers")}</MenuItem>

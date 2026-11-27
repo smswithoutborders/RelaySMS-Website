@@ -1,13 +1,55 @@
 import { useState, useMemo, useEffect, useRef } from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import DOMPurify from "dompurify";
 import { FiExternalLink } from "react-icons/fi";
+import { FaAndroid, FaApple } from "react-icons/fa6";
 
-const FULL_SETUP_DOCS_URL =
-	"https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android";
+const FULL_SETUP_DOCS_URL = {
+	android: "https://docs.smswithoutborders.com/docs/Android%20Tutorial/Getting-Started-With-Android",
+	ios: "https://docs.smswithoutborders.com/docs/iOS%20Tutorial/Getting-Started-With-iOS"
+};
 
-const MobileCarousel = ({ slides, t }) => {
+const PlatformToggle = ({ platform, onChange, t, sx }) => (
+	<ToggleButtonGroup
+		value={platform}
+		exclusive
+		onChange={(_, value) => value && onChange(value)}
+		size="small"
+		sx={{
+			gap: 1,
+			"& .MuiToggleButton-root": {
+				textTransform: "none",
+				fontWeight: 600,
+				fontSize: "0.85rem",
+				color: "text.secondary",
+				borderRadius: "999px !important",
+				border: (theme) => `1.5px solid ${theme.palette.divider}`,
+				px: 2.5,
+				py: 0.5,
+				gap: 0.75,
+				"&.Mui-selected": {
+					color: "primary.contrastText",
+					borderColor: "primary.main",
+					bgcolor: "primary.main",
+					"&:hover": { bgcolor: "primary.main" }
+				}
+			},
+			...sx
+		}}
+	>
+		<ToggleButton value="android" disableRipple>
+			{/* <FaAndroid size={14} /> */}
+			{t("AppFeatures.Platforms.Android.label", "Android")}
+		</ToggleButton>
+		<ToggleButton value="ios" disableRipple>
+			{/* <FaApple size={14} /> */}
+			{t("AppFeatures.Platforms.iOS.label", "iOS")}
+		</ToggleButton>
+	</ToggleButtonGroup>
+);
+
+const MobileCarousel = ({ slides, t, platform, onPlatformChange }) => {
 	const [current, setCurrent] = useState(0);
 	const touchStartX = useRef(null);
 	const touchStartY = useRef(null);
@@ -36,18 +78,25 @@ const MobileCarousel = ({ slides, t }) => {
 
 	return (
 		<Box sx={{ display: { xs: "flex", md: "none" }, flexDirection: "column", px: 3, py: 6 }}>
-			<Box sx={{ textAlign: "center", mb: 4 }}>
+			<Box sx={{ textAlign: "center", mb: 3 }}>
 				<Typography
 					variant="h3"
 					sx={{
 						fontSize: "1.5rem",
 						color: "text.primary",
 						fontWeight: 700,
-						fontFamily: "'Unbounded'"
+						fontFamily: "'Unbounded'",
+						mb: 2
 					}}
 				>
 					{t("Howitworks.Header", "Getting Started with RelaySMS")}
 				</Typography>
+				<PlatformToggle
+					platform={platform}
+					onChange={onPlatformChange}
+					t={t}
+					sx={{ justifyContent: "center", display: "flex" }}
+				/>
 			</Box>
 
 			<Box
@@ -187,7 +236,7 @@ const MobileCarousel = ({ slides, t }) => {
 			</Box>
 			<Button
 				variant="text"
-				href={FULL_SETUP_DOCS_URL}
+				href={FULL_SETUP_DOCS_URL[platform]}
 				target="_blank"
 				rel="noopener noreferrer"
 				endIcon={<FiExternalLink style={{ marginLeft: 4 }} />}
@@ -209,11 +258,17 @@ const GettingStarted = () => {
 	const { t, i18n } = useTranslation();
 	const isRtl = i18n.language === "fa" || i18n.language === "farshi";
 	const [activeStep, setActiveStep] = useState(0);
+	const [platform, setPlatform] = useState("android");
 	const activeStepRef = useRef(0);
 	const sectionRef = useRef(null);
 	const lastWheelTime = useRef(0);
 
-	const slides = useMemo(
+	const handlePlatformChange = (value) => {
+		setPlatform(value);
+		goToStep(0);
+	};
+
+	const androidSlides = useMemo(
 		() => [
 			{
 				number: 1,
@@ -244,6 +299,40 @@ const GettingStarted = () => {
 		],
 		[t]
 	);
+
+	const iosSlides = useMemo(
+		() => [
+			{
+				number: 1,
+				title: t("Howitworks.Step1Title"),
+				description: t("Howitworks.iOS.Step1Desc"),
+				image: "/ios-mockup/app-store.png",
+				buttonText: t("Howitworks.Step1Button", "Download"),
+				link: "/download"
+			},
+
+			{
+				number: 2,
+				title: t("Howitworks.Step3Title"),
+				description: t("Howitworks.iOS.Step3Desc"),
+				image: "/ios-mockup/platforms-saved.png",
+				buttonText: t("Howitworks.Step3Button", "Set Up Now"),
+				link: "https://docs.smswithoutborders.com/docs/iOS%20Tutorial/Getting-Started-With-iOS#b-communicating-using-saved-platforms"
+			},
+
+			{
+				number: 3,
+				title: t("Howitworks.Step5Title"),
+				description: t("Howitworks.iOS.Step5Desc"),
+				image: "/ios-mockup/compose-send-with.png",
+				buttonText: t("Howitworks.Step5Button", "Start Messaging"),
+				link: "https://docs.smswithoutborders.com/docs/iOS%20Tutorial/Getting-Started-With-iOS#6-send-a-message"
+			}
+		],
+		[t]
+	);
+
+	const slides = platform === "ios" ? iosSlides : androidSlides;
 
 	const goToStep = (index) => {
 		activeStepRef.current = index;
@@ -331,11 +420,13 @@ const GettingStarted = () => {
 									fontSize: { xs: "1.5rem", md: "1.9rem" },
 									color: "text.primary",
 									fontWeight: 700,
-									fontFamily: "'Unbounded'"
+									fontFamily: "'Unbounded'",
+									mb: 2.5
 								}}
 							>
 								{t("Howitworks.Header", "How to set up RelaySMS")}
 							</Typography>
+							<PlatformToggle platform={platform} onChange={handlePlatformChange} t={t} />
 						</Box>
 						{slides.map((slide, index) => {
 							const isActive = activeStep === index;
@@ -423,7 +514,7 @@ const GettingStarted = () => {
 						</Typography>
 						<Button
 							variant="text"
-							href={FULL_SETUP_DOCS_URL}
+							href={FULL_SETUP_DOCS_URL[platform]}
 							target="_blank"
 							rel="noopener noreferrer"
 							endIcon={<FiExternalLink style={{ marginLeft: 4 }} />}
@@ -469,7 +560,12 @@ const GettingStarted = () => {
 				</Box>
 			</Box>
 
-			<MobileCarousel slides={slides} t={t} />
+			<MobileCarousel
+				slides={slides}
+				t={t}
+				platform={platform}
+				onPlatformChange={handlePlatformChange}
+			/>
 		</Box>
 	);
 };
