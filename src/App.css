@@ -20,8 +20,3 @@ body {
 h1,h2,h3,h4,h5 {
 	font-family: "Unbounded", sans-serif;
 }
-
-.markdown-drawer .MuiDrawer-paper {
-	line-height: 30px;
-	padding: 20px;
-}

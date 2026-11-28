@@ -8,6 +8,9 @@
 	"Nav": {
 		"Home": "Inicio",
 		"Help": "Documentación",
+		"AllDocs": "Toda la documentación",
+		"AndroidDocs": "Android",
+		"iOSDocs": "iOS",
 		"github": "GitHub",
 		"Blog": "Blog",
 		"Contact": "Contáctanos",
@@ -22,8 +25,9 @@
 		"Resources": "Recursos"
 	},
 	"Alert": {
-		"message": "¡Ahora puedes convertir RelaySMS en tu aplicación de SMS predeterminada en Android!",
-		"readMore": "Leer más"
+		"message": "¡RelaySMS en iOS ya está totalmente al día con Android!",
+		"readMore": "Descargar",
+		"dismiss": "Cerrar"
 	},
 	"social": {
 		"x": "Síguenos en X",
@@ -64,7 +68,12 @@
 		"Step5Button": "Empezar a enviar mensajes",
 		"FullDocsButton": "Leer la guía completa de configuración",
 		"StepLabel": "Paso",
-		"ScrollHint": "Desplázate para avanzar"
+		"ScrollHint": "Desplázate para avanzar",
+		"iOS": {
+			"Step1Desc": "Descarga RelaySMS desde la <a href='https://apps.apple.com/us/app/relaysms/id6630382970' target='_blank' rel='noopener noreferrer'>App Store de Apple</a> o <a href='https://github.com/smswithoutborders/RelaySMS-iOS' target='_blank' rel='noopener noreferrer'>compílala desde el código fuente</a>. Asegúrate de que tu iPhone tenga iOS 16 o una versión posterior.",
+			"Step3Desc": "Guarda el acceso a las plataformas directamente desde la app cuando tengas conexión. Se mantiene en tu teléfono, así que haz una copia de seguridad. El acceso guardado te permite seguir comunicándote cuando Internet caiga.",
+			"Step5Desc": "Envía mensajes con tus plataformas guardadas o envía rápidamente mensajes anónimos con RMail, sin necesidad de configuración."
+		}
 	},
 	"WhoShouldUse": {
 		"Header": "Todos pueden usar RelaySMS",
